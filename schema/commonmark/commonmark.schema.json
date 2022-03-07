@@ -171,19 +171,53 @@
           "description": "custom information relating to the node",
           "type": "string"
         },
+        "class": {
+          "description": "user-defined class for code block",
+          "type": "string"
+        },
+        "showLineNumbers": {
+          "type": "boolean"
+        },
+        "startingLineNumber": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "emphasizeLines": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "minimum": 1
+          }
+        },
+        "identifier": {},
+        "label": {},
         "value": {},
         "position": {},
         "data": {}
       },
-      "if": {
-        "required": ["meta"]
-      },
-      "then": {
-        "required": ["lang"]
-      },
-      "else": {},
       "additionalProperties": false,
-      "allOf": [{ "$ref": "unist.schema.json#/$defs/Literal" }]
+      "allOf": [
+        {
+          "if": {
+            "required": ["meta"]
+          },
+          "then": {
+            "required": ["lang"]
+          },
+          "else": {}
+        },
+        {
+          "if": {
+            "required": ["startingLineNumber"]
+          },
+          "then": {
+            "required": ["showLineNumbers"]
+          },
+          "else": {}
+        },
+        { "$ref": "unist.schema.json#/$defs/Literal" },
+        { "$ref": "#/$defs/OptionalAssociation" }
+      ]
     },
     "Definition": {
       "description": "reference to a url resource",
@@ -362,6 +396,18 @@
       "properties": {
         "type": {
           "const": "image"
+        },
+        "class": {
+          "description": "user-defined class for image",
+          "type": "string"
+        },
+        "width": {
+          "description": "image width in pixels or percentage",
+          "type": "string"
+        },
+        "align": {
+          "type": "string",
+          "enum": ["left", "center", "right"]
         },
         "url": {},
         "title": {},
