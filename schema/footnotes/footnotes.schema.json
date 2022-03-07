@@ -6,7 +6,7 @@
     "FootnoteReference": {
       "description": "Inilne reference to footnote",
       "type": "object",
-      "required": ["type", "identifier"],
+      "required": ["identifier"],
       "properties": {
         "type": {
           "const": "footnoteReference"
@@ -25,7 +25,7 @@
     "FootnoteDefinition": {
       "description": "Rich footnote content associated with footnote reference",
       "type": "object",
-      "required": ["type", "identifier", "children"],
+      "required": ["identifier"],
       "properties": {
         "type": {
           "const": "footnoteDefinition"
@@ -43,7 +43,7 @@
       },
       "additionalProperties": false,
       "allOf": [
-        { "$ref": "unist.schema.json#/$defs/Node" },
+        { "$ref": "unist.schema.json#/$defs/Parent" },
         { "$ref": "commonmark.schema.json#/$defs/Association" }
       ]
     }

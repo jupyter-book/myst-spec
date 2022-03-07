@@ -6,7 +6,7 @@
     "Directive": {
       "description": "unknown directive, in the format ```{kind} args\n\nvalue\n```",
       "type": "object",
-      "required": ["type", "kind"],
+      "required": ["kind"],
       "properties": {
         "type": {
           "const": "directive"
@@ -17,17 +17,19 @@
         "args": {
           "type": "string"
         },
-        "value": {},
+        "value": {
+          "description": "body of the directive, including options",
+          "type": "string"
+        },
         "position": {},
         "data": {}
       },
       "additionalProperties": false,
-      "allOf": [{ "$ref": "unist.schema.json#/$defs/Literal" }]
+      "allOf": [{ "$ref": "unist.schema.json#/$defs/Node" }]
     },
     "Admonition": {
       "description": "highlighted block of text slightly separated from neighboring content",
       "type": "object",
-      "required": ["type"],
       "properties": {
         "type": {
           "const": "admonition"
@@ -70,7 +72,6 @@
     "AdmonitionTitle": {
       "description": "custom title for admonition, replaces kind as title",
       "type": "object",
-      "required": ["type", "children"],
       "properties": {
         "type": {
           "const": "admonitionTitle"
@@ -85,12 +86,11 @@
         "data": {}
       },
       "additionalProperties": false,
-      "allOf": [{ "$ref": "unist.schema.json#/$defs/Node" }]
+      "allOf": [{ "$ref": "unist.schema.json#/$defs/Parent" }]
     },
     "Math": {
       "description": "block of math",
       "type": "object",
-      "required": ["type", "value"],
       "properties": {
         "type": {
           "const": "math"
@@ -110,7 +110,7 @@
     "Container": {
       "description": "top-level container node to provide association and numbering to child content",
       "type": "object",
-      "required": ["type", "kind", "children"],
+      "required": ["kind"],
       "properties": {
         "type": {
           "const": "container"
@@ -169,14 +169,13 @@
       },
       "additionalProperties": false,
       "allOf": [
-        { "$ref": "unist.schema.json#/$defs/Node" },
+        { "$ref": "unist.schema.json#/$defs/Parent" },
         { "$ref": "commonmark.schema.json#/$defs/OptionalAssociation" }
       ]
     },
     "Caption": {
       "description": "caption for container content",
       "type": "object",
-      "required": ["type", "children"],
       "properties": {
         "type": {
           "const": "caption"
@@ -191,12 +190,11 @@
         "data": {}
       },
       "additionalProperties": false,
-      "allOf": [{ "$ref": "unist.schema.json#/$defs/Node" }]
+      "allOf": [{ "$ref": "unist.schema.json#/$defs/Parent" }]
     },
     "Table": {
       "description": "two-dimensional table data",
       "type": "object",
-      "required": ["type", "children"],
       "properties": {
         "type": {
           "const": "table"
@@ -215,12 +213,11 @@
         "data": {}
       },
       "additionalProperties": false,
-      "allOf": [{ "$ref": "unist.schema.json#/$defs/Node" }]
+      "allOf": [{ "$ref": "unist.schema.json#/$defs/Parent" }]
     },
     "TableRow": {
       "description": "one row of table containing cells",
       "type": "object",
-      "required": ["type", "children"],
       "properties": {
         "type": {
           "const": "tableRow"
@@ -235,12 +232,11 @@
         "data": {}
       },
       "additionalProperties": false,
-      "allOf": [{ "$ref": "unist.schema.json#/$defs/Node" }]
+      "allOf": [{ "$ref": "unist.schema.json#/$defs/Parent" }]
     },
     "TableCell": {
       "description": "one cell of table",
       "type": "object",
-      "required": ["type", "children"],
       "properties": {
         "type": {
           "const": "tableCell"
@@ -263,7 +259,7 @@
         "data": {}
       },
       "additionalProperties": false,
-      "allOf": [{ "$ref": "unist.schema.json#/$defs/Node" }]
+      "allOf": [{ "$ref": "unist.schema.json#/$defs/Parent" }]
     }
   }
 }

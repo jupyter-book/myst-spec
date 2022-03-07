@@ -41,7 +41,7 @@
   "allOf": [{ "$ref": "unist.schema.json#/$defs/Node" }],
   "$defs": {
     "FlowContent": {
-      "oneOf": [
+      "anyOf": [
         { "$ref": "commonmark.schema.json#/$defs/Paragraph" },
         { "$ref": "commonmark.schema.json#/$defs/Definition" },
         { "$ref": "commonmark.schema.json#/$defs/Heading" },
@@ -59,7 +59,7 @@
       ]
     },
     "ListContent": {
-      "oneOf": [{ "$ref": "commonmark.schema.json#/$defs/ListItem" }]
+      "anyOf": [{ "$ref": "commonmark.schema.json#/$defs/ListItem" }]
     },
     "PhrasingContent": {
       "anyOf": [
@@ -77,7 +77,7 @@
       ]
     },
     "StaticPhrasingContent": {
-      "oneOf": [
+      "anyOf": [
         { "$ref": "commonmark.schema.json#/$defs/Text" },
         { "$ref": "commonmark.schema.json#/$defs/HTML" },
         { "$ref": "commonmark.schema.json#/$defs/EmphasisStatic" },
