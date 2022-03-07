@@ -15,6 +15,7 @@
           "items": {
             "anyOf": [
               { "$ref": "blocks.schema.json#/$defs/Block" },
+              { "$ref": "directives.schema.json#/$defs/Container" },
               { "$ref": "#/$defs/FlowContent" }
             ]
           }
@@ -50,6 +51,10 @@
         { "$ref": "commonmark.schema.json#/$defs/HTML" },
         { "$ref": "commonmark.schema.json#/$defs/Code" },
         { "$ref": "blocks.schema.json#/$defs/Comment" },
+        { "$ref": "directives.schema.json#/$defs/Directive" },
+        { "$ref": "directives.schema.json#/$defs/Admonition" },
+        { "$ref": "directives.schema.json#/$defs/Math" },
+        { "$ref": "directives.schema.json#/$defs/Table" },
         { "$ref": "footnotes.schema.json#/$defs/FootnoteDefinition" }
       ]
     },

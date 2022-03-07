@@ -9,6 +9,7 @@ import unistSchema from './unist/unist.schema.json';
 import commonmarkSchema from './commonmark/commonmark.schema.json';
 import blocksSchema from './blocks/blocks.schema.json';
 import rolesSchema from './roles/roles.schema.json';
+import directivesSchema from './directives/directives.schema.json';
 import footnotesSchema from './footnotes/footnotes.schema.json';
 
 const ajv = new Ajv();
@@ -18,6 +19,7 @@ ajv.addSchema(unistSchema);
 ajv.addSchema(commonmarkSchema);
 ajv.addSchema(blocksSchema);
 ajv.addSchema(rolesSchema);
+ajv.addSchema(directivesSchema);
 ajv.addSchema(footnotesSchema);
 
 type TestFile = {

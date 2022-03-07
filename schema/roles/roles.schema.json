@@ -184,7 +184,7 @@
     "ContentReference": {
       "description": "reference to associated node, using role {eq}, {ref}, {numref}",
       "type": "object",
-      "required": ["type", "children"],
+      "required": ["type"],
       "properties": {
         "type": {
           "const": "contentReference"
