@@ -15,8 +15,11 @@
           "items": {
             "$ref": "myst.schema.json#/$defs/PhrasingContent"
           }
-        }
+        },
+        "position": {},
+        "data": {}
       },
+      "additionalProperties": false,
       "allOf": [{ "$ref": "unist.schema.json#/$defs/Node" }]
     },
     "Heading": {
@@ -36,8 +39,11 @@
           "items": {
             "$ref": "myst.schema.json#/$defs/PhrasingContent"
           }
-        }
+        },
+        "position": {},
+        "data": {}
       },
+      "additionalProperties": false,
       "allOf": [{ "$ref": "unist.schema.json#/$defs/Node" }]
     },
     "ThematicBreak": {
@@ -46,8 +52,11 @@
       "properties": {
         "type": {
           "const": "thematicBreak"
-        }
+        },
+        "position": {},
+        "data": {}
       },
+      "additionalProperties": false,
       "allOf": [{ "$ref": "unist.schema.json#/$defs/Node" }]
     },
     "Blockquote": {
@@ -62,8 +71,11 @@
           "items": {
             "$ref": "myst.schema.json#/$defs/FlowContent"
           }
-        }
+        },
+        "position": {},
+        "data": {}
       },
+      "additionalProperties": false,
       "allOf": [{ "$ref": "unist.schema.json#/$defs/Node" }]
     },
     "List": {
@@ -90,8 +102,11 @@
           "items": {
             "$ref": "myst.schema.json#/$defs/ListContent"
           }
-        }
+        },
+        "position": {},
+        "data": {}
       },
+      "additionalProperties": false,
       "allOf": [{ "$ref": "unist.schema.json#/$defs/Node" }]
     },
     "ListItem": {
@@ -113,8 +128,11 @@
               { "$ref": "myst.schema.json#/$defs/FlowContent" }
             ]
           }
-        }
+        },
+        "position": {},
+        "data": {}
       },
+      "additionalProperties": false,
       "allOf": [{ "$ref": "unist.schema.json#/$defs/Node" }]
     },
     "HTML": {
@@ -124,8 +142,12 @@
       "properties": {
         "type": {
           "const": "html"
-        }
+        },
+        "value": {},
+        "position": {},
+        "data": {}
       },
+      "additionalProperties": false,
       "allOf": [{ "$ref": "unist.schema.json#/$defs/Literal" }]
     },
     "Code": {
@@ -143,7 +165,10 @@
         "meta": {
           "description": "custom information relating to the node",
           "type": "string"
-        }
+        },
+        "value": {},
+        "position": {},
+        "data": {}
       },
       "if": {
         "required": ["meta"]
@@ -152,6 +177,7 @@
         "required": ["lang"]
       },
       "else": {},
+      "additionalProperties": false,
       "allOf": [{ "$ref": "unist.schema.json#/$defs/Literal" }]
     },
     "Definition": {
@@ -161,8 +187,15 @@
       "properties": {
         "type": {
           "const": "definition"
-        }
+        },
+        "identifier": {},
+        "label": {},
+        "url": {},
+        "title": {},
+        "position": {},
+        "data": {}
       },
+      "additionalProperties": false,
       "allOf": [
         { "$ref": "unist.schema.json#/$defs/Node" },
         { "$ref": "#/$defs/Association" },
@@ -175,8 +208,12 @@
       "properties": {
         "type": {
           "const": "text"
-        }
+        },
+        "value": {},
+        "position": {},
+        "data": {}
       },
+      "additionalProperties": false,
       "allOf": [{ "$ref": "unist.schema.json#/$defs/Literal" }]
     },
     "Emphasis": {
@@ -192,8 +229,11 @@
           "items": {
             "$ref": "myst.schema.json#/$defs/PhrasingContent"
           }
-        }
+        },
+        "position": {},
+        "data": {}
       },
+      "additionalProperties": false,
       "allOf": [{ "$ref": "unist.schema.json#/$defs/Node" }]
     },
     "EmphasisStatic": {
@@ -209,8 +249,11 @@
           "items": {
             "$ref": "myst.schema.json#/$defs/StaticPhrasingContent"
           }
-        }
+        },
+        "position": {},
+        "data": {}
       },
+      "additionalProperties": false,
       "allOf": [{ "$ref": "unist.schema.json#/$defs/Node" }]
     },
     "Strong": {
@@ -226,8 +269,11 @@
           "items": {
             "$ref": "myst.schema.json#/$defs/PhrasingContent"
           }
-        }
+        },
+        "position": {},
+        "data": {}
       },
+      "additionalProperties": false,
       "allOf": [{ "$ref": "unist.schema.json#/$defs/Node" }]
     },
     "StrongStatic": {
@@ -243,8 +289,11 @@
           "items": {
             "$ref": "myst.schema.json#/$defs/StaticPhrasingContent"
           }
-        }
+        },
+        "position": {},
+        "data": {}
       },
+      "additionalProperties": false,
       "allOf": [{ "$ref": "unist.schema.json#/$defs/Node" }]
     },
     "InlineCode": {
@@ -254,8 +303,12 @@
       "properties": {
         "type": {
           "const": "inlineCode"
-        }
+        },
+        "value": {},
+        "position": {},
+        "data": {}
       },
+      "additionalProperties": false,
       "allOf": [{ "$ref": "unist.schema.json#/$defs/Literal" }]
     },
     "Break": {
@@ -265,8 +318,11 @@
       "properties": {
         "type": {
           "const": "break"
-        }
+        },
+        "position": {},
+        "data": {}
       },
+      "additionalProperties": false,
       "allOf": [{ "$ref": "unist.schema.json#/$defs/Node" }]
     },
     "Link": {
@@ -282,8 +338,13 @@
           "items": {
             "$ref": "myst.schema.json#/$defs/StaticPhrasingContent"
           }
-        }
+        },
+        "url": {},
+        "title": {},
+        "position": {},
+        "data": {}
       },
+      "additionalProperties": false,
       "allOf": [
         { "$ref": "unist.schema.json#/$defs/Node" },
         { "$ref": "#/$defs/Resource" }
@@ -296,8 +357,14 @@
       "properties": {
         "type": {
           "const": "image"
-        }
+        },
+        "url": {},
+        "title": {},
+        "alt": {},
+        "position": {},
+        "data": {}
       },
+      "additionalProperties": false,
       "allOf": [
         { "$ref": "unist.schema.json#/$defs/Node" },
         { "$ref": "#/$defs/Resource" },
@@ -317,11 +384,18 @@
           "items": {
             "$ref": "myst.schema.json#/$defs/StaticPhrasingContent"
           }
-        }
+        },
+        "referenceType": {},
+        "identifier": {},
+        "label": {},
+        "position": {},
+        "data": {}
       },
+      "additionalProperties": false,
       "allOf": [
         { "$ref": "unist.schema.json#/$defs/Node" },
-        { "$ref": "#/$defs/Reference" }
+        { "$ref": "#/$defs/Reference" },
+        { "$ref": "#/$defs/Association" }
       ]
     },
     "ImageReference": {
@@ -331,11 +405,19 @@
       "properties": {
         "type": {
           "const": "imageReference"
-        }
+        },
+        "referenceType": {},
+        "identifier": {},
+        "label": {},
+        "alt": {},
+        "position": {},
+        "data": {}
       },
+      "additionalProperties": false,
       "allOf": [
         { "$ref": "unist.schema.json#/$defs/Node" },
         { "$ref": "#/$defs/Reference" },
+        { "$ref": "#/$defs/Association" },
         { "$ref": "#/$defs/Alternative" }
       ]
     },
@@ -363,7 +445,7 @@
           "description": "identifier that may match another node; value is unparsed and must be normalized such that whitespace is collapsed to single space, initial/final space is trimmed, and case is folded",
           "type": "string"
         },
-        "value": {
+        "label": {
           "description": "node label; character escapes and references are parsed; may be normalized to a unique identifier",
           "type": "string"
         }
@@ -389,8 +471,7 @@
           "type": "string",
           "enum": ["shortcut", "collapsed", "full"]
         }
-      },
-      "allOf": [{ "$ref": "#/$defs/Association" }]
+      }
     }
   }
 }

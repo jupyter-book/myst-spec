@@ -29,8 +29,11 @@
           }
         }
       ]
-    }
+    },
+    "position": {},
+    "data": {}
   },
+  "additionalProperties": false,
   "allOf": [{ "$ref": "unist.schema.json#/$defs/Node" }],
   "$defs": {
     "Content": {
