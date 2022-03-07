@@ -49,7 +49,8 @@
         { "$ref": "commonmark.schema.json#/$defs/List" },
         { "$ref": "commonmark.schema.json#/$defs/HTML" },
         { "$ref": "commonmark.schema.json#/$defs/Code" },
-        { "$ref": "blocks.schema.json#/$defs/Comment" }
+        { "$ref": "blocks.schema.json#/$defs/Comment" },
+        { "$ref": "footnotes.schema.json#/$defs/FootnoteDefinition" }
       ]
     },
     "ListContent": {
@@ -66,7 +67,8 @@
         { "$ref": "roles.schema.json#/$defs/Superscript" },
         { "$ref": "roles.schema.json#/$defs/Underline" },
         { "$ref": "roles.schema.json#/$defs/Abbreviation" },
-        { "$ref": "roles.schema.json#/$defs/ContentReference" }
+        { "$ref": "roles.schema.json#/$defs/ContentReference" },
+        { "$ref": "footnotes.schema.json#/$defs/FootnoteReference" }
       ]
     },
     "StaticPhrasingContent": {
