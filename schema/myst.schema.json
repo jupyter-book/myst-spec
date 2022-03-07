@@ -61,7 +61,12 @@
         { "$ref": "commonmark.schema.json#/$defs/Emphasis" },
         { "$ref": "commonmark.schema.json#/$defs/Strong" },
         { "$ref": "commonmark.schema.json#/$defs/Link" },
-        { "$ref": "commonmark.schema.json#/$defs/LinkReference" }
+        { "$ref": "commonmark.schema.json#/$defs/LinkReference" },
+        { "$ref": "roles.schema.json#/$defs/Subscript" },
+        { "$ref": "roles.schema.json#/$defs/Superscript" },
+        { "$ref": "roles.schema.json#/$defs/Underline" },
+        { "$ref": "roles.schema.json#/$defs/Abbreviation" },
+        { "$ref": "roles.schema.json#/$defs/ContentReference" }
       ]
     },
     "StaticPhrasingContent": {
@@ -73,7 +78,12 @@
         { "$ref": "commonmark.schema.json#/$defs/InlineCode" },
         { "$ref": "commonmark.schema.json#/$defs/Break" },
         { "$ref": "commonmark.schema.json#/$defs/Image" },
-        { "$ref": "commonmark.schema.json#/$defs/ImageReference" }
+        { "$ref": "commonmark.schema.json#/$defs/ImageReference" },
+        { "$ref": "roles.schema.json#/$defs/Role" },
+        { "$ref": "roles.schema.json#/$defs/SubscriptStatic" },
+        { "$ref": "roles.schema.json#/$defs/SuperscriptStatic" },
+        { "$ref": "roles.schema.json#/$defs/UnderlineStatic" },
+        { "$ref": "roles.schema.json#/$defs/InlineMath" }
       ]
     }
   }

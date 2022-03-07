@@ -8,6 +8,7 @@ import mystSchema from './myst.schema.json';
 import unistSchema from './unist/unist.schema.json';
 import commonmarkSchema from './commonmark/commonmark.schema.json';
 import blocksSchema from './blocks/blocks.schema.json';
+import rolesSchema from './roles/roles.schema.json';
 
 const ajv = new Ajv();
 addFormats(ajv); // allows {"format": "uri-reference"}
@@ -15,6 +16,7 @@ ajv.addSchema(mystSchema);
 ajv.addSchema(unistSchema);
 ajv.addSchema(commonmarkSchema);
 ajv.addSchema(blocksSchema);
+ajv.addSchema(rolesSchema);
 
 type TestFile = {
   cases: TestCase[];
