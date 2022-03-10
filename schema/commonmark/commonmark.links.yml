@@ -27,6 +27,8 @@ cases:
       Search engine: <https://www.google.com>
     html: |-
       <p>Search engine: <a href="https://www.google.com">https://www.google.com</a></p>
+    latex: |-
+      Search engine: \url{https://google.com}
   - title: CommonMark inline link
     mdast:
       type: root
@@ -43,6 +45,8 @@ cases:
       [search engine](https://www.google.com "Google")
     html: |-
       <p><a href="https://www.google.com" title="Google">search engine</a></p>
+    latex: |-
+      Search engine: \href{https://google.com}{search engine}
   - title: CommonMark inline image
     mdast:
       type: root
@@ -55,3 +59,5 @@ cases:
       ![alt](src "title")
     html: |-
       <img src="src" alt="alt" title="title">
+    latex: |-
+      \includegraphics{src}

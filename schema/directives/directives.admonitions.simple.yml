@@ -22,6 +22,11 @@ cases:
         <p class="admonition-title">Attention</p>
         <p>Admonition attention</p>
       </aside>
+    latex: |-
+      \begin{callout}
+        \section*{Attention}
+        Admonition attention
+      \end{callout}
 
   - title: caution
     mdast:
@@ -46,6 +51,11 @@ cases:
         <p class="admonition-title">Caution</p>
         <p>Admonition caution</p>
       </aside>
+    latex: |-
+      \begin{callout}
+        \section*{Caution}
+        Admonition caution
+      \end{callout}
 
   - title: danger
     mdast:
@@ -70,6 +80,11 @@ cases:
         <p class="admonition-title">Danger</p>
         <p>Admonition danger</p>
       </aside>
+    latex: |-
+      \begin{callout}
+        \section*{Danger}
+        Admonition danger
+      \end{callout}
 
   - title: error
     mdast:
@@ -94,6 +109,11 @@ cases:
         <p class="admonition-title">Error</p>
         <p>Admonition error</p>
       </aside>
+    latex: |-
+      \begin{callout}
+        \section*{Error}
+        Admonition error
+      \end{callout}
 
   - title: important
     mdast:
@@ -118,6 +138,11 @@ cases:
         <p class="admonition-title">Important</p>
         <p>Admonition important</p>
       </aside>
+    latex: |-
+      \begin{callout}
+        \section*{Important}
+        Admonition important
+      \end{callout}
 
   - title: hint
     mdast:
@@ -142,6 +167,11 @@ cases:
         <p class="admonition-title">Hint</p>
         <p>Admonition hint</p>
       </aside>
+    latex: |-
+      \begin{callout}
+        \section*{Hint}
+        Admonition hint
+      \end{callout}
 
   - title: note
     mdast:
@@ -166,6 +196,11 @@ cases:
         <p class="admonition-title">Note</p>
         <p>Admonition note</p>
       </aside>
+    latex: |-
+      \begin{callout}
+        \section*{Note}
+        Admonition note
+      \end{callout}
 
   - title: seealso
     mdast:
@@ -190,6 +225,11 @@ cases:
         <p class="admonition-title">See Also</p>
         <p>Admonition seealso</p>
       </aside>
+    latex: |-
+      \begin{callout}
+        \section*{Seealso}
+        Admonition seealso
+      \end{callout}
 
   - title: tip
     mdast:
@@ -214,6 +254,11 @@ cases:
         <p class="admonition-title">Tip</p>
         <p>Admonition tip</p>
       </aside>
+    latex: |-
+      \begin{callout}
+        \section*{Tip}
+        Admonition tip
+      \end{callout}
 
   - title: warning
     mdast:
@@ -238,3 +283,8 @@ cases:
         <p class="admonition-title">Warning</p>
         <p>Admonition warning</p>
       </aside>
+    latex: |-
+      \begin{callout}
+        \section*{Warning}
+        Admonition warning
+      \end{callout}

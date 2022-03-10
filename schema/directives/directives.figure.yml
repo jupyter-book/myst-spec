@@ -84,6 +84,13 @@ cases:
           <p><span class="caption-number">Figure 1</span>This is the figure caption!</p>
         </figcaption>
       </figure>
+    latex: |-
+      \begin{figure}[!htbp]
+        \centering
+        \includegraphics{https://via.placeholder.com/150}
+        \caption*{This is the figure caption!}
+        \label{fig:myFigure}
+      \end{figure}
 
   - title: Named figure with a caption in a no alt
     mdast:

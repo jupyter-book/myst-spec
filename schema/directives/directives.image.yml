@@ -39,6 +39,8 @@ cases:
       ```
     html: |-
       <img src="fun-fish.png" alt="fishy" class="align-center bg-primary mb-1" width="200px">
+    latex: |-
+      \includegraphics[width=200px]{fun-fish.png}
 
   - title: Image directive, left
     mdast:
@@ -62,3 +64,5 @@ cases:
       ```
     html: |-
       <img src="fun-fish.png" alt="fishy" class="align-left">
+    latex: |-
+      \includegraphics{fun-fish.png}

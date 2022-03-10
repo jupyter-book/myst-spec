@@ -13,6 +13,10 @@ cases:
     html: |-
       <pre><code>print('this is python')
       </code></pre>
+    latex: |-
+      \begin{verbatim}
+        print('this is python')
+      \end{verbatim}
   - title: CommonMark python code block
     mdast:
       type: root
@@ -27,6 +31,10 @@ cases:
     html: |-
       <pre><code class="language-python">print('this is python')
       </code></pre>
+    latex: |-
+      \begin{verbatim}
+        print('this is python')
+      \end{verbatim}
   - title: CommonMark indented code block
     mdast:
       type: root
@@ -54,3 +62,10 @@ cases:
         'literal': '*text*'
       }
       </code></pre>
+    latex: |-
+      Some JSON:
+      \begin{verbatim}
+        {
+          'literal': '*text*'
+        }
+      \end{verbatim}

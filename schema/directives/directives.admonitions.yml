@@ -33,6 +33,11 @@ cases:
         <p class="admonition-title">This is a title</p>
         <p>An example of an admonition with a <em>title</em>.</p>
       </aside>
+    latex: |-
+      \begin{callout}
+        \section*{This is a title}
+        An example of an admonition with a \textit{title}.
+      \end{callout}
 
   - title: Note with no title
     mdast:
@@ -58,6 +63,11 @@ cases:
         <p class="admonition-title">Note</p>
         <p>Please note!</p>
       </aside>
+    latex: |-
+      \begin{callout}
+        \section*{Note}
+        Please note!
+      \end{callout}
 
   - title: Note with split title
     mdast:
@@ -65,9 +75,13 @@ cases:
       children:
         - type: directive
           kind: note
-          args: This is NOT a title
-          value: but an example of a note admonition.
+          args: This is a title in myst
+          value: and an example of a note admonition.
           children:
+            - type: admonitionTitle
+              children:
+                - type: text
+                  value: This is a title in msyt
             - type: admonition
               kind: note
               children:
@@ -75,20 +89,23 @@ cases:
                   children:
                     - type: text
                       value: |-
-                        This is NOT a title
-                        but an example of a note admonition.
+                        and an example of a note admonition.
     myst: |-
-      ```{note} This is NOT a title
-        but an example of a note admonition.
+      ```{note} This is a title in myst
+        and an example of a note admonition.
       ```
     html: |-
       <aside class="admonition note">
-        <p class="admonition-title">Note</p>
+        <p class="admonition-title">This is a title in myst</p>
         <p>
-          This is NOT a title
-          but an example of a note admonition.
+          and an example of a note admonition.
         </p>
       </aside>
+    latex: |-
+      \begin{callout}
+        \section*{This is a title in myst}
+        and an example of a note admonition.
+      \end{callout}
 
   - title: Danger on a single line
     mdast:
@@ -96,23 +113,25 @@ cases:
       children:
         - type: directive
           kind: danger
-          args: This is NOT a title!
+          args: This is a title!
           children:
+            - type: admonitionTitle
+              children:
+                - type: text
+                  value: This is a title!
             - type: admonition
               kind: danger
-              children:
-                - type: paragraph
-                  children:
-                    - type: text
-                      value: This is NOT a title!
     myst: |-
-      ```{danger} This is NOT a title!
+      ```{danger} This is a title!
       ```
     html: |-
       <aside class="admonition danger">
-        <p class="admonition-title">Danger</p>
-        <p>This is NOT a title!</p>
+        <p class="admonition-title">This is a title!</p>
       </aside>
+    latex: |-
+      \begin{callout}
+        \section*{This is a title!}
+      \end{callout}
 
   - title: Admonition with overridding class name
     mdast:
@@ -157,6 +176,11 @@ cases:
         <p class="admonition-title">This is a title!</p>
         <p>An example of a general <code>admonition</code> with a custom <em>class</em>.</p>
       </aside>
+    latex: |-
+      \begin{callout}
+        \section*{This is a title!}
+        An example of a general \texttt{admonition} with a custom \textit{class}.
+      \end{callout}
 
   - title: See Also with overridding class name of tip
     description: The `tip` class must be appended to the start
@@ -187,8 +211,10 @@ cases:
     html: |-
       <aside class="tip admonition seealso">
         <p class="admonition-title">See Also</p>
-        <p>
-          This is NOT a title!
-          Tip class comes first!!
-        </p>
+        <p>Tip class comes first!!</p>
       </aside>
+    latex: |-
+      \begin{callout}
+        \section*{See Also}
+        Tip class comes first!!
+      \end{callout}

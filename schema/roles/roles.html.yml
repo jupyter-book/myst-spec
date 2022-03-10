@@ -21,6 +21,8 @@ cases:
       H{sub}`2`O
     html: |-
       <p>H<sub>2</sub>O</p>
+    latex: |-
+      H\textsubscript{2}O
 
   - title: Subscript spelled out
     mdast:
@@ -44,6 +46,8 @@ cases:
       H{subscript}`2`O
     html: |-
       <p>H<sub>2</sub>O</p>
+    latex: |-
+      H\textsubscript{2}O
 
   - title: Superscript
     mdast:

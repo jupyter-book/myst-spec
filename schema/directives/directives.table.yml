@@ -51,6 +51,14 @@ cases:
           </tr>
         </tbody>
       </table>
+    latex: |-
+      \begin{tabular}{*{2}{c}}
+        \hline
+        header 1 & header 2 \\
+        \hline
+        3 & 4 \\
+        \hline
+      \end{tabular}
 
   - title: Basic list table
     mdast:
@@ -189,3 +197,17 @@ cases:
           </tbody>
         </table>
       </figure>
+    latex: |-
+      \begin{table}[!htbp]
+        \centering
+        \caption*{Caption \textit{text}}
+
+        \begin{tabular}{*{3}{c}}
+          \hline
+          Head 1, Column 1 & Head 1, Column 1 & Head 3, Column 3 \\
+          \hline
+          Row 1, Column 1 & Row 1, Column 2 & Row 1, Column 3 \\
+          Row 2, Column 1 & Row 2, Column 2 & Row 2, \textbf{Column 3} \\
+          \hline
+        \end{tabular}
+      \end{table}

@@ -30,6 +30,10 @@ cases:
     html: |-
       <p>Something</p>
       <p>Something else</p>
+    latex: |-
+      Something
+
+      Something else
   - title: CommonMark inline styling
     mdast:
       type: root
@@ -56,3 +60,5 @@ cases:
       **strong**, _emphasis_, `literal text`, \*escaped symbols\*
     html: |-
       <p><strong>strong</strong>, <em>emphasis</em>, <code>literal text</code>, *escaped symbols*</p>
+    latex: |-
+      \textbf{strong}, \textit{emphasis}, \textttf{literal text}, *escaped symbols*

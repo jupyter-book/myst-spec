@@ -53,6 +53,16 @@ cases:
         </li>
         <li>code blocks</li>
       </ul>
+    latex: |-
+      \begin{itemize}
+        \item headings
+        \item lists
+          \begin{itemize}
+            \item bullets
+            \item numbers
+          |end{itemize}
+        \item code blocks
+      \end{itemize}
   - title: CommonMark numbered list
     mdast:
       type: root
@@ -87,3 +97,9 @@ cases:
         <li>breaks</li>
         <li>links</li>
       </ol>
+    latex: |-
+      \begin{enumerate}
+        \item quotes
+        \item breaks
+        \item links
+      \end{enumerate}

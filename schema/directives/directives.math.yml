@@ -16,6 +16,10 @@ cases:
       ```
     html: |-
       <div class="math block">Ax = b</div>
+    latex: |-
+      \begin{equation}
+      Ax = b
+      \end{equation}
 
   - title: Math directive with label
     mdast:
@@ -39,3 +43,8 @@ cases:
       ```
     html: |-
       <div id="matrix" class="math block">Ax = b</div>
+    latex: |-
+      \begin{equation}
+      \label{matrix}
+      Ax = b
+      \end{equation}
