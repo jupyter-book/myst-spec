@@ -4,7 +4,7 @@
   "description": "Myst directives - custom block behavior, in the format ```{kind} args\n\nvalue\n```",
   "$defs": {
     "Directive": {
-      "description": "unknown directive, in the format ```{kind} args\n\nvalue\n```",
+      "description": "myst directive, in the format ```{kind} args\n\n:options:\n\nvalue\n```",
       "type": "object",
       "required": ["kind"],
       "properties": {
@@ -165,6 +165,7 @@
             "items": {
               "anyOf": [
                 { "$ref": "#/$defs/Caption" },
+                { "$ref": "#/$defs/Legend" },
                 { "$ref": "commonmark.schema.json#/$defs/Image" }
               ]
             }
@@ -178,6 +179,7 @@
             "items": {
               "anyOf": [
                 { "$ref": "#/$defs/Caption" },
+                { "$ref": "#/$defs/Legend" },
                 { "$ref": "directives.schema.json#/$defs/Table" }
               ]
             }
@@ -196,6 +198,25 @@
       "properties": {
         "type": {
           "const": "caption"
+        },
+        "children": {
+          "type": "array",
+          "items": {
+            "$ref": "myst.schema.json#/$defs/FlowContent"
+          }
+        },
+        "position": {},
+        "data": {}
+      },
+      "additionalProperties": false,
+      "allOf": [{ "$ref": "unist.schema.json#/$defs/Parent" }]
+    },
+    "Legend": {
+      "description": "legend for container content",
+      "type": "object",
+      "properties": {
+        "type": {
+          "const": "legend"
         },
         "children": {
           "type": "array",

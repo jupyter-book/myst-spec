@@ -22,9 +22,18 @@ cases:
                       children:
                         - type: text
                           value: This is the figure caption!
+                - type: legend
+                  children:
+                    - type: paragraph
+                      children:
+                        - type: text
+                          value: Something! A legend!?
+
     myst: |-
       ```{figure} https://via.placeholder.com/150
       This is the figure caption!
+
+      Something! A legend!?
       ```
     html: |-
       <figure>
