@@ -5,7 +5,6 @@
   "$defs": {
     "Comment": {
       "type": "object",
-      "required": ["type", "value"],
       "properties": {
         "type": {
           "const": "comment"
@@ -19,7 +18,6 @@
     },
     "Block": {
       "type": "object",
-      "required": ["type"],
       "properties": {
         "type": {
           "const": "block"
@@ -56,6 +54,23 @@
       },
       "additionalProperties": false,
       "allOf": [{ "$ref": "unist.schema.json#/$defs/Node" }]
+    },
+    "Target": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "const": "target"
+        },
+        "identifier": {},
+        "label": {},
+        "position": {},
+        "data": {}
+      },
+      "additionalProperties": false,
+      "allOf": [
+        { "$ref": "unist.schema.json#/$defs/Node" },
+        { "$ref": "commonmark.schema.json#/$defs/Association" }
+      ]
     }
   }
 }

@@ -7,10 +7,17 @@ cases:
           children:
             - type: text
               value: 'See: '
-            - type: contentReference
+            - type: role
               kind: ref
-              identifier: my_id
-              label: my_id
+              value: my_id
+              children:
+                - type: crossReference
+                  kind: ref
+                  identifier: my_id
+                  label: my_id
+        - type: target
+          identifier: my_id
+          label: my_id
         - type: heading
           depth: 1
           children:
@@ -20,8 +27,6 @@ cases:
                   value: My
             - type: text
               value: ' Header'
-          identifier: my_id
-          label: my_id
     myst: |-
       See: {ref}`my_id`
 
@@ -38,20 +43,25 @@ cases:
           children:
             - type: text
               value: 'See: '
-            - type: contentReference
+            - type: role
               kind: ref
-              identifier: my_id
-              label: my_id
+              value: something... <my_id>
               children:
-                - type: text
-                  value: something...
+                - type: crossReference
+                  kind: ref
+                  identifier: my_id
+                  label: my_id
+                  children:
+                    - type: text
+                      value: something...
+        - type: target
+          identifier: my_id
+          label: my_id
         - type: heading
           depth: 1
           children:
             - type: text
               value: My Header
-          identifier: my_id
-          label: my_id
     myst: |-
       See: {ref}`something... <my_id>`
 
@@ -71,6 +81,9 @@ cases:
             - type: link
               url: my_id
               children: []
+        - type: target
+          identifier: my_id
+          label: my_id
         - type: heading
           depth: 1
           children:
@@ -80,8 +93,6 @@ cases:
                   value: My
             - type: text
               value: ' Header'
-          identifier: my_id
-          label: my_id
     myst: |-
       See: [](my_id)
 
@@ -104,13 +115,14 @@ cases:
               children:
                 - type: text
                   value: something...
+        - type: target
+          identifier: my_id
+          label: my_id
         - type: heading
           depth: 1
           children:
             - type: text
               value: My Header
-          identifier: my_id
-          label: my_id
     myst: |-
       See: [something...](My_Id "Title")
 

@@ -50,6 +50,7 @@
         { "$ref": "commonmark.schema.json#/$defs/HTML" },
         { "$ref": "commonmark.schema.json#/$defs/Code" },
         { "$ref": "blocks.schema.json#/$defs/Comment" },
+        { "$ref": "blocks.schema.json#/$defs/Target" },
         { "$ref": "directives.schema.json#/$defs/Directive" },
         { "$ref": "directives.schema.json#/$defs/Admonition" },
         { "$ref": "directives.schema.json#/$defs/Container" },
