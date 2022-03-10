@@ -7,10 +7,14 @@ cases:
           children:
             - type: text
               value: 'see '
-            - type: contentReference
+            - type: role
               kind: eq
-              identifier: matrix
-              label: '  matrix  '
+              value: '  matrix  '
+              children:
+                - type: crossReference
+                  kind: eq
+                  identifier: matrix
+                  label: '  matrix  '
         - type: container
           kind: figure
           identifier: matrix
@@ -50,10 +54,14 @@ cases:
           children:
             - type: text
               value: 'see '
-            - type: contentReference
+            - type: role
               kind: eq
-              identifier: matrix
-              label: matrix
+              value: matrix
+              children:
+                - type: crossReference
+                  kind: eq
+                  identifier: matrix
+                  label: matrix
         - type: math
           identifier: matrix
           label: matrix

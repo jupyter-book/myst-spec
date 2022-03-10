@@ -3,22 +3,27 @@ cases:
     mdast:
       type: root
       children:
-        - type: admonition
+        - type: directive
+          kind: attention
+          args: This is a title
+          value: An example of an admonition with a _title_.
           children:
-            - type: admonitionTitle
+            - type: admonition
               children:
-                - type: text
-                  value: This is a title
-            - type: paragraph
-              children:
-                - type: text
-                  value: 'An example of an admonition with a '
-                - type: emphasis
+                - type: admonitionTitle
                   children:
                     - type: text
-                      value: title
-                - type: text
-                  value: '.'
+                      value: This is a title
+                - type: paragraph
+                  children:
+                    - type: text
+                      value: 'An example of an admonition with a '
+                    - type: emphasis
+                      children:
+                        - type: text
+                          value: title
+                    - type: text
+                      value: '.'
     myst: |-
       ```{admonition} This is a title
         An example of an admonition with a _title_.
@@ -33,13 +38,17 @@ cases:
     mdast:
       type: root
       children:
-        - type: admonition
+        - type: directive
           kind: note
+          value: Please note!
           children:
-            - type: paragraph
+            - type: admonition
+              kind: note
               children:
-                - type: text
-                  value: Please note!
+                - type: paragraph
+                  children:
+                    - type: text
+                      value: Please note!
     myst: |-
       ```{note}
         Please note!
@@ -54,15 +63,20 @@ cases:
     mdast:
       type: root
       children:
-        - type: admonition
+        - type: directive
           kind: note
+          args: This is NOT a title
+          value: but an example of a note admonition.
           children:
-            - type: paragraph
+            - type: admonition
+              kind: note
               children:
-                - type: text
-                  value: |-
-                    This is NOT a title
-                    but an example of a note admonition.
+                - type: paragraph
+                  children:
+                    - type: text
+                      value: |-
+                        This is NOT a title
+                        but an example of a note admonition.
     myst: |-
       ```{note} This is NOT a title
         but an example of a note admonition.
@@ -80,13 +94,17 @@ cases:
     mdast:
       type: root
       children:
-        - type: admonition
+        - type: directive
           kind: danger
+          args: This is NOT a title!
           children:
-            - type: paragraph
+            - type: admonition
+              kind: danger
               children:
-                - type: text
-                  value: This is NOT a title!
+                - type: paragraph
+                  children:
+                    - type: text
+                      value: This is NOT a title!
     myst: |-
       ```{danger} This is NOT a title!
       ```
@@ -100,27 +118,34 @@ cases:
     mdast:
       type: root
       children:
-        - type: admonition
-          class: tip
+        - type: directive
+          kind: admonition
+          args: This is a title!
+          options:
+            class: tip
+          value: An example of a general `admonition` with a custom _class_.
           children:
-            - type: admonitionTitle
+            - type: admonition
+              class: tip
               children:
-                - type: text
-                  value: This is a title!
-            - type: paragraph
-              children:
-                - type: text
-                  value: 'An example of a general '
-                - type: inlineCode
-                  value: admonition
-                - type: text
-                  value: ' with a custom '
-                - type: emphasis
+                - type: admonitionTitle
                   children:
                     - type: text
-                      value: 'class'
-                - type: text
-                  value: '.'
+                      value: This is a title!
+                - type: paragraph
+                  children:
+                    - type: text
+                      value: 'An example of a general '
+                    - type: inlineCode
+                      value: admonition
+                    - type: text
+                      value: ' with a custom '
+                    - type: emphasis
+                      children:
+                        - type: text
+                          value: 'class'
+                    - type: text
+                      value: '.'
     myst: |-
       ```{admonition} This is a title!
       :class: tip
@@ -138,18 +163,24 @@ cases:
     mdast:
       type: root
       children:
-        - type: admonition
+        - type: directive
           kind: seealso
-          class: tip
+          options:
+            class: tip
+          value: |-
+            Tip class comes first!!
           children:
-            - type: paragraph
+            - type: admonition
+              kind: seealso
+              class: tip
               children:
-                - type: text
-                  value: |-
-                    This is NOT a title!
-                    Tip class comes first!!
+                - type: paragraph
+                  children:
+                    - type: text
+                      value: |-
+                        Tip class comes first!!
     myst: |-
-      ```{seealso} This is NOT a title!
+      ```{seealso}
       :class: tip
       Tip class comes first!!
       ```

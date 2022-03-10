@@ -3,12 +3,21 @@ cases:
     mdast:
       type: root
       children:
-        - type: code
-          lang: python
-          showLineNumbers: true
+        - type: directive
+          kind: code
+          args: python
+          options:
+            number-lines: 1
           value: |-
             def five():
               return 5
+          children:
+            - type: code
+              lang: python
+              showLineNumbers: true
+              value: |-
+                def five():
+                  return 5
     myst: |-
       ```{code} python
       :number-lines: 1
@@ -24,16 +33,27 @@ cases:
     mdast:
       type: root
       children:
-        - type: code
-          lang: python
-          identifier: my code
-          label: My code
-          class: fun-code
-          showLineNumbers: true
-          startingLineNumber: 2
+        - type: directive
+          kind: code
+          args: python
+          options:
+            name: My code
+            number-lines: 2
+            class: fun-code
           value: |-
             def five():
               return 5
+          children:
+            - type: code
+              lang: python
+              identifier: my code
+              label: My code
+              class: fun-code
+              showLineNumbers: true
+              startingLineNumber: 2
+              value: |-
+                def five():
+                  return 5
     myst: |-
       ```{code} python
       :name: My code
@@ -51,16 +71,28 @@ cases:
     mdast:
       type: root
       children:
-        - type: code
-          lang: python
-          identifier: my code
-          label: My code
-          class: fun-code
-          showLineNumbers: true
-          startingLineNumber: 2
+        - type: directive
+          kind: code-block
+          args: python
+          options:
+            name: My code
+            linenos: true
+            lineno-start: 2
+            class: fun-code
           value: |-
             def five():
               return 5
+          children:
+            - type: code
+              lang: python
+              identifier: my code
+              label: My code
+              class: fun-code
+              showLineNumbers: true
+              startingLineNumber: 2
+              value: |-
+                def five():
+                  return 5
     myst: |-
       ```{code-block} python
       :name: My code
@@ -79,11 +111,20 @@ cases:
     mdast:
       type: root
       children:
-        - type: code
-          lang: python
+        - type: directive
+          kind: code-block
+          args: python
+          options:
+            lineno-start: 2
           value: |-
             def five():
               return 5
+          children:
+            - type: code
+              lang: python
+              value: |-
+                def five():
+                  return 5
     myst: |-
       ```{code-block} python
       :lineno-start: 2
@@ -110,15 +151,25 @@ cases:
     mdast:
       type: root
       children:
-        - type: code
-          lang: python
-          emphasizeLines:
-            - 2
-            - 3
+        - type: directive
+          kind: code-block
+          args: python
+          options:
+            emphasize-lines: 2, 3
           value: |-
             def five():
               print('five')
               return 5
+          children:
+            - type: code
+              lang: python
+              emphasizeLines:
+                - 2
+                - 3
+              value: |-
+                def five():
+                  print('five')
+                  return 5
     myst: |-
       ```{code-block} python
       :emphasize-lines: 2, 3

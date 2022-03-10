@@ -3,13 +3,17 @@ cases:
     mdast:
       type: root
       children:
-        - type: admonition
+        - type: directive
           kind: attention
+          args: Admonition attention
           children:
-            - type: paragraph
+            - type: admonition
+              kind: attention
               children:
-                - type: text
-                  value: Admonition attention
+                - type: paragraph
+                  children:
+                    - type: text
+                      value: Admonition attention
     myst: |-
       ```{attention} Admonition attention
       ```
@@ -23,13 +27,17 @@ cases:
     mdast:
       type: root
       children:
-        - type: admonition
+        - type: directive
           kind: caution
+          args: Admonition caution
           children:
-            - type: paragraph
+            - type: admonition
+              kind: caution
               children:
-                - type: text
-                  value: Admonition caution
+                - type: paragraph
+                  children:
+                    - type: text
+                      value: Admonition caution
     myst: |-
       ```{caution} Admonition caution
       ```
@@ -43,13 +51,17 @@ cases:
     mdast:
       type: root
       children:
-        - type: admonition
+        - type: directive
           kind: danger
+          args: Admonition danger
           children:
-            - type: paragraph
+            - type: admonition
+              kind: danger
               children:
-                - type: text
-                  value: Admonition danger
+                - type: paragraph
+                  children:
+                    - type: text
+                      value: Admonition danger
     myst: |-
       ```{danger} Admonition danger
       ```
@@ -63,13 +75,17 @@ cases:
     mdast:
       type: root
       children:
-        - type: admonition
+        - type: directive
           kind: error
+          args: Admonition error
           children:
-            - type: paragraph
+            - type: admonition
+              kind: error
               children:
-                - type: text
-                  value: Admonition error
+                - type: paragraph
+                  children:
+                    - type: text
+                      value: Admonition error
     myst: |-
       ```{error} Admonition error
       ```
@@ -83,13 +99,17 @@ cases:
     mdast:
       type: root
       children:
-        - type: admonition
+        - type: directive
           kind: important
+          args: Admonition important
           children:
-            - type: paragraph
+            - type: admonition
+              kind: important
               children:
-                - type: text
-                  value: Admonition important
+                - type: paragraph
+                  children:
+                    - type: text
+                      value: Admonition important
     myst: |-
       ```{important} Admonition important
       ```
@@ -103,13 +123,17 @@ cases:
     mdast:
       type: root
       children:
-        - type: admonition
+        - type: directive
           kind: hint
+          args: Admonition hint
           children:
-            - type: paragraph
+            - type: admonition
+              kind: hint
               children:
-                - type: text
-                  value: Admonition hint
+                - type: paragraph
+                  children:
+                    - type: text
+                      value: Admonition hint
     myst: |-
       ```{hint} Admonition hint
       ```
@@ -123,13 +147,17 @@ cases:
     mdast:
       type: root
       children:
-        - type: admonition
+        - type: directive
           kind: note
+          args: Admonition note
           children:
-            - type: paragraph
+            - type: admonition
+              kind: note
               children:
-                - type: text
-                  value: Admonition note
+                - type: paragraph
+                  children:
+                    - type: text
+                      value: Admonition note
     myst: |-
       ```{note} Admonition note
       ```
@@ -143,13 +171,17 @@ cases:
     mdast:
       type: root
       children:
-        - type: admonition
+        - type: directive
           kind: seealso
+          args: Admonition seealso
           children:
-            - type: paragraph
+            - type: admonition
+              kind: seealso
               children:
-                - type: text
-                  value: Admonition seealso
+                - type: paragraph
+                  children:
+                    - type: text
+                      value: Admonition seealso
     myst: |-
       ```{seealso} Admonition seealso
       ```
@@ -163,13 +195,17 @@ cases:
     mdast:
       type: root
       children:
-        - type: admonition
+        - type: directive
           kind: tip
+          args: Admonition tip
           children:
-            - type: paragraph
+            - type: admonition
+              kind: tip
               children:
-                - type: text
-                  value: Admonition tip
+                - type: paragraph
+                  children:
+                    - type: text
+                      value: Admonition tip
     myst: |-
       ```{tip} Admonition tip
       ```
@@ -183,13 +219,17 @@ cases:
     mdast:
       type: root
       children:
-        - type: admonition
+        - type: directive
           kind: warning
+          args: Admonition warning
           children:
-            - type: paragraph
+            - type: admonition
+              kind: warning
               children:
-                - type: text
-                  value: Admonition warning
+                - type: paragraph
+                  children:
+                    - type: text
+                      value: Admonition warning
     myst: |-
       ```{warning} Admonition warning
       ```

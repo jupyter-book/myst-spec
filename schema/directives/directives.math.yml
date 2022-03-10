@@ -3,9 +3,13 @@ cases:
     mdast:
       type: root
       children:
-        - type: math
-          value: |-
-            Ax = b
+        - type: directive
+          kind: math
+          value: Ax = b
+          children:
+            - type: math
+              value: |-
+                Ax = b
     myst: |-
       ```{math}
       Ax = b
@@ -17,11 +21,17 @@ cases:
     mdast:
       type: root
       children:
-        - type: math
-          identifier: matrix
-          label: matrix
-          value: |-
-            Ax = b
+        - type: directive
+          kind: math
+          options:
+            label: matrix
+          value: Ax = b
+          children:
+            - type: math
+              identifier: matrix
+              label: matrix
+              value: |-
+                Ax = b
     myst: |-
       ```{math}
       :label: matrix

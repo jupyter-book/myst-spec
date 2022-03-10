@@ -7,10 +7,14 @@ cases:
           children:
             - type: text
               value: H
-            - type: subscript
+            - type: role
+              kind: sub
+              value: '2'
               children:
-                - type: text
-                  value: '2'
+                - type: subscript
+                  children:
+                    - type: text
+                      value: '2'
             - type: text
               value: O
     myst: |-
@@ -26,10 +30,14 @@ cases:
           children:
             - type: text
               value: H
-            - type: subscript
+            - type: role
+              kind: subscript
+              value: '2'
               children:
-                - type: text
-                  value: '2'
+                - type: subscript
+                  children:
+                    - type: text
+                      value: '2'
             - type: text
               value: O
     myst: |-
@@ -45,10 +53,14 @@ cases:
           children:
             - type: text
               value: '4'
-            - type: superscript
+            - type: role
+              kind: sup
+              value: th
               children:
-                - type: text
-                  value: 'th'
+                - type: superscript
+                  children:
+                    - type: text
+                      value: 'th'
             - type: text
               value: ' of July'
     myst: |-
@@ -64,10 +76,14 @@ cases:
           children:
             - type: text
               value: '4'
-            - type: superscript
+            - type: role
+              kind: superscript
+              value: th
               children:
-                - type: text
-                  value: 'th'
+                - type: superscript
+                  children:
+                    - type: text
+                      value: 'th'
             - type: text
               value: ' of July'
     myst: |-

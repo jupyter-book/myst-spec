@@ -7,8 +7,12 @@ cases:
           children:
             - type: text
               value: 'This is genius '
-            - type: inlineMath
+            - type: role
+              kind: math
               value: e=mc^2
+              children:
+                - type: inlineMath
+                  value: e=mc^2
     myst: |-
       This is genius {math}`e=mc^2`
     html: |-

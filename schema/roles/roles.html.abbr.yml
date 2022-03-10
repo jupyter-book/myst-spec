@@ -7,11 +7,15 @@ cases:
           children:
             - type: text
               value: 'Well '
-            - type: abbreviation
-              title: Cascading Style Sheets
+            - type: role
+              kind: abbr
+              value: CSS (Cascading Style Sheets)
               children:
-                - type: text
-                  value: CSS
+                - type: abbreviation
+                  title: Cascading Style Sheets
+                  children:
+                    - type: text
+                      value: CSS
             - type: text
               value: ' is cool?'
     myst: |-
@@ -27,10 +31,14 @@ cases:
           children:
             - type: text
               value: 'Well '
-            - type: abbreviation
+            - type: role
+              kind: abbr
+              value: CSS
               children:
-                - type: text
-                  value: CSS
+                - type: abbreviation
+                  children:
+                    - type: text
+                      value: CSS
             - type: text
               value: ' is cool?'
     myst: |-
@@ -44,11 +52,15 @@ cases:
       children:
         - type: paragraph
           children:
-            - type: abbreviation
-              title: Sheets
+            - type: role
+              kind: abbr
+              value: CSS (Cascading) Style( Sheets)
               children:
-                - type: text
-                  value: CSS (Cascading) Style
+                - type: abbreviation
+                  title: Sheets
+                  children:
+                    - type: text
+                      value: CSS (Cascading) Style
     myst: |-
       {abbr}`CSS (Cascading) Style( Sheets)`
     html: |-

@@ -17,9 +17,26 @@
         "args": {
           "type": "string"
         },
+        "options": {
+          "type": "object"
+        },
         "value": {
-          "description": "body of the directive, including options",
+          "description": "body of the directive, excluding options",
           "type": "string"
+        },
+        "processed": {
+          "description": "",
+          "type": "boolean"
+        },
+        "children": {
+          "description": "parsed directive content",
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "$ref": "myst.schema.json#/$defs/FlowContent" },
+              { "$ref": "myst.schema.json#/$defs/PhrasingContent" }
+            ]
+          }
         },
         "position": {},
         "data": {}

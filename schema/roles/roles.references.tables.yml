@@ -7,10 +7,14 @@ cases:
           children:
             - type: text
               value: 'see '
-            - type: contentReference
+            - type: role
               kind: numref
-              identifier: my-table
-              label: my-table
+              value: my-table
+              children:
+                - type: crossReference
+                  kind: numref
+                  identifier: my-table
+                  label: my-table
         - type: container
           kind: table
           identifier: my-table
@@ -72,13 +76,17 @@ cases:
           children:
             - type: text
               value: 'see '
-            - type: contentReference
+            - type: role
               kind: numref
-              identifier: my-table
-              label: my-table
+              value: T%s <my-table>
               children:
-                - type: text
-                  value: T%s
+                - type: crossReference
+                  kind: numref
+                  identifier: my-table
+                  label: my-table
+                  children:
+                    - type: text
+                      value: T%s
         - type: container
           kind: table
           identifier: my-table
@@ -140,10 +148,14 @@ cases:
           children:
             - type: text
               value: 'see '
-            - type: contentReference
+            - type: role
               kind: ref
-              identifier: my-table
-              label: my-table
+              value: my-table
+              children:
+                - type: crossReference
+                  kind: ref
+                  identifier: my-table
+                  label: my-table
         - type: container
           kind: table
           identifier: my-table
@@ -205,13 +217,17 @@ cases:
           children:
             - type: text
               value: 'see '
-            - type: contentReference
+            - type: role
               kind: ref
-              identifier: my-table
-              label: my-table
+              value: My Table <my-table>
               children:
-                - type: text
-                  value: My Table
+                - type: crossReference
+                  kind: ref
+                  identifier: my-table
+                  label: my-table
+                  children:
+                    - type: text
+                      value: My Table
         - type: container
           kind: table
           identifier: my-table

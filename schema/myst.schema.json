@@ -15,7 +15,6 @@
           "items": {
             "anyOf": [
               { "$ref": "blocks.schema.json#/$defs/Block" },
-              { "$ref": "directives.schema.json#/$defs/Container" },
               { "$ref": "#/$defs/FlowContent" }
             ]
           }
@@ -53,6 +52,7 @@
         { "$ref": "blocks.schema.json#/$defs/Comment" },
         { "$ref": "directives.schema.json#/$defs/Directive" },
         { "$ref": "directives.schema.json#/$defs/Admonition" },
+        { "$ref": "directives.schema.json#/$defs/Container" },
         { "$ref": "directives.schema.json#/$defs/Math" },
         { "$ref": "directives.schema.json#/$defs/Table" },
         { "$ref": "footnotes.schema.json#/$defs/FootnoteDefinition" }
@@ -72,7 +72,7 @@
         { "$ref": "roles.schema.json#/$defs/Superscript" },
         { "$ref": "roles.schema.json#/$defs/Underline" },
         { "$ref": "roles.schema.json#/$defs/Abbreviation" },
-        { "$ref": "roles.schema.json#/$defs/ContentReference" },
+        { "$ref": "roles.schema.json#/$defs/CrossReference" },
         { "$ref": "footnotes.schema.json#/$defs/FootnoteReference" }
       ]
     },

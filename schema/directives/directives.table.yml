@@ -56,75 +56,94 @@ cases:
     mdast:
       type: root
       children:
-        - type: container
-          kind: table
-          identifier: my-table
-          label: my-table
-          numbered: true
-          class: myclass
+        - type: directive
+          kind: list-table
+          args: Caption *text*
+          options:
+            name: my-table
+            header-rows: 1
+            align: center
+            class: myclass
+          value: |-
+            *   - Head 1, Column 1
+                - Head 1, Column 2
+                - Head 1, Column 3
+            *   - Row 1, Column 1
+                - Row 1, Column 2
+                - Row 1, Column 3
+            *   - Row 2, Column 1
+                - Row 2, Column 2
+                - Row 2, **Column 3**
           children:
-            - type: caption
+            - type: container
+              kind: table
+              identifier: my-table
+              label: my-table
+              numbered: true
+              class: myclass
               children:
-                - type: paragraph
+                - type: caption
                   children:
-                    - type: text
-                      value: 'Caption '
-                    - type: emphasis
+                    - type: paragraph
                       children:
                         - type: text
-                          value: text
-            - type: table
-              align: center
-              children:
-                - type: tableRow
-                  children:
-                    - type: tableCell
-                      header: true
-                      children:
-                        - type: text
-                          value: Head 1, Column 1
-                    - type: tableCell
-                      header: true
-                      children:
-                        - type: text
-                          value: Head 1, Column 2
-                    - type: tableCell
-                      header: true
-                      children:
-                        - type: text
-                          value: Head 1, Column 3
-                - type: tableRow
-                  children:
-                    - type: tableCell
-                      children:
-                        - type: text
-                          value: Row 1, Column 1
-                    - type: tableCell
-                      children:
-                        - type: text
-                          value: Row 1, Column 2
-                    - type: tableCell
-                      children:
-                        - type: text
-                          value: Row 1, Column 3
-                - type: tableRow
-                  children:
-                    - type: tableCell
-                      children:
-                        - type: text
-                          value: Row 2, Column 1
-                    - type: tableCell
-                      children:
-                        - type: text
-                          value: Row 2, Column 2
-                    - type: tableCell
-                      children:
-                        - type: text
-                          value: 'Row 2, '
-                        - type: strong
+                          value: 'Caption '
+                        - type: emphasis
                           children:
                             - type: text
-                              value: Column 3
+                              value: text
+                - type: table
+                  align: center
+                  children:
+                    - type: tableRow
+                      children:
+                        - type: tableCell
+                          header: true
+                          children:
+                            - type: text
+                              value: Head 1, Column 1
+                        - type: tableCell
+                          header: true
+                          children:
+                            - type: text
+                              value: Head 1, Column 2
+                        - type: tableCell
+                          header: true
+                          children:
+                            - type: text
+                              value: Head 1, Column 3
+                    - type: tableRow
+                      children:
+                        - type: tableCell
+                          children:
+                            - type: text
+                              value: Row 1, Column 1
+                        - type: tableCell
+                          children:
+                            - type: text
+                              value: Row 1, Column 2
+                        - type: tableCell
+                          children:
+                            - type: text
+                              value: Row 1, Column 3
+                    - type: tableRow
+                      children:
+                        - type: tableCell
+                          children:
+                            - type: text
+                              value: Row 2, Column 1
+                        - type: tableCell
+                          children:
+                            - type: text
+                              value: Row 2, Column 2
+                        - type: tableCell
+                          children:
+                            - type: text
+                              value: 'Row 2, '
+                            - type: strong
+                              children:
+                                - type: text
+                                  value: Column 3
 
     myst: |-
       ```{list-table}  Caption *text*

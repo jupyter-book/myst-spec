@@ -5,10 +5,14 @@ cases:
       children:
         - type: paragraph
           children:
-            - type: contentReference
+            - type: role
               kind: numref
-              identifier: my-figure
-              label: my-figure
+              value: my-figure
+              children:
+                - type: crossReference
+                  kind: numref
+                  identifier: my-figure
+                  label: my-figure
     myst: |-
       {numref}`my-figure`
     html: |-
@@ -19,13 +23,17 @@ cases:
       children:
         - type: paragraph
           children:
-            - type: contentReference
+            - type: role
               kind: numref
-              identifier: my-figure
-              label: my-figure
+              value: Figure %s <my-figure>
               children:
-                - type: text
-                  value: Figure %s
+                - type: crossReference
+                  kind: numref
+                  identifier: my-figure
+                  label: my-figure
+                  children:
+                    - type: text
+                      value: Figure %s
     myst: |-
       {numref}`Figure %s <my-figure>`
     html: |-
@@ -36,13 +44,17 @@ cases:
       children:
         - type: paragraph
           children:
-            - type: contentReference
+            - type: role
               kind: numref
-              identifier: my - figure
-              label: '  My   -   Figure  '
+              value: Figure %s <  My   -   Figure  >
               children:
-                - type: text
-                  value: Figure %s
+                - type: crossReference
+                  kind: numref
+                  identifier: my - figure
+                  label: '  My   -   Figure  '
+                  children:
+                    - type: text
+                      value: Figure %s
     myst: |-
       {numref}`Figure %s <  My   -   Figure  >`
     html: |-
@@ -55,24 +67,35 @@ cases:
           children:
             - type: text
               value: 'see '
-            - type: contentReference
+            - type: role
               kind: numref
+              value: my-figure
+              children:
+                - type: crossReference
+                  kind: numref
+                  identifier: my-figure
+                  label: my-figure
+        - type: directive
+          kind: figure
+          args: fig.jpg
+          options:
+            name: my-figure
+          value: Cool caption!
+          children:
+            - type: container
+              kind: figure
               identifier: my-figure
               label: my-figure
-        - type: container
-          kind: figure
-          identifier: my-figure
-          label: my-figure
-          numbered: true
-          children:
-            - type: image
-              url: fig.jpg
-            - type: caption
+              numbered: true
               children:
-                - type: paragraph
+                - type: image
+                  url: fig.jpg
+                - type: caption
                   children:
-                    - type: text
-                      value: Cool caption!
+                    - type: paragraph
+                      children:
+                        - type: text
+                          value: Cool caption!
     myst: |-
       see {numref}`my-figure`
 
@@ -97,13 +120,17 @@ cases:
           children:
             - type: text
               value: 'see '
-            - type: contentReference
+            - type: role
               kind: numref
-              identifier: my-figure
-              label: my-figure
+              value: Figure %s%s%s, I said {number}<my-figure>
               children:
-                - type: text
-                  value: Figure %s%s%s, I said {number}
+                - type: crossReference
+                  kind: numref
+                  identifier: my-figure
+                  label: my-figure
+                  children:
+                    - type: text
+                      value: Figure %s%s%s, I said {number}
         - type: container
           kind: figure
           identifier: my-figure
@@ -142,10 +169,14 @@ cases:
           children:
             - type: text
               value: 'see '
-            - type: contentReference
+            - type: role
               kind: ref
-              identifier: my-figure
-              label: my-figure
+              value: my-figure
+              children:
+                - type: crossReference
+                  kind: ref
+                  identifier: my-figure
+                  label: my-figure
         - type: container
           kind: figure
           identifier: my-figure
@@ -190,13 +221,17 @@ cases:
           children:
             - type: text
               value: 'see '
-            - type: contentReference
+            - type: role
               kind: ref
-              identifier: my-figure
-              label: my-figure
+              value: Custom *caption* <my-figure>
               children:
-                - type: text
-                  value: Custom *caption*
+                - type: crossReference
+                  kind: ref
+                  identifier: my-figure
+                  label: my-figure
+                  children:
+                    - type: text
+                      value: Custom *caption*
         - type: container
           kind: figure
           identifier: my-figure

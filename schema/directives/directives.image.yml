@@ -15,12 +15,21 @@ cases:
     mdast:
       type: root
       children:
-        - type: image
-          url: fun-fish.png
-          alt: fishy
-          class: bg-primary mb-1
-          width: 200px
-          align: center
+        - type: directive
+          kind: image
+          args: fun-fish.png
+          options:
+            alt: fishy
+            class: bg-primary mb-1
+            width: 200px
+            align: center
+          children:
+            - type: image
+              url: fun-fish.png
+              alt: fishy
+              class: bg-primary mb-1
+              width: 200px
+              align: center
     myst: |-
       ```{image} fun-fish.png
       :alt: fishy
@@ -35,10 +44,17 @@ cases:
     mdast:
       type: root
       children:
-        - type: image
-          url: fun-fish.png
-          alt: fishy
-          align: left
+        - type: directive
+          kind: image
+          args: fun-fish.png
+          options:
+            alt: fishy
+            align: left
+          children:
+            - type: image
+              url: fun-fish.png
+              alt: fishy
+              align: left
     myst: |-
       ```{image} fun-fish.png
       :alt: fishy

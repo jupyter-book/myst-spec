@@ -5,11 +5,10 @@ cases:
       children:
         - type: directive
           kind: abc
-          value: |-
-            :a: one
-            :b: two
-
-            ABC directive
+          options:
+            a: one
+            b: two
+          value: ABC directive
     myst: |-
       ```{abc}
       :a: one
@@ -32,11 +31,10 @@ cases:
         - type: directive
           kind: abc
           args: foo bar
-          value: |-
-            :a: one
-            :b: two
-
-            ABC directive
+          options:
+            a: one
+            b: two
+          value: ABC directive
     myst: |-
       ```{abc} foo bar
       :a: one
