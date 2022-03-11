@@ -78,13 +78,13 @@ cases:
           args: This is a title in myst
           value: and an example of a note admonition.
           children:
-            - type: admonitionTitle
-              children:
-                - type: text
-                  value: This is a title in msyt
             - type: admonition
               kind: note
               children:
+                - type: admonitionTitle
+                  children:
+                    - type: text
+                      value: This is a title in myst
                 - type: paragraph
                   children:
                     - type: text
@@ -115,12 +115,13 @@ cases:
           kind: danger
           args: This is a title!
           children:
-            - type: admonitionTitle
-              children:
-                - type: text
-                  value: This is a title!
             - type: admonition
               kind: danger
+              children:
+                - type: admonitionTitle
+                  children:
+                    - type: text
+                      value: This is a title!
     myst: |-
       ```{danger} This is a title!
       ```
