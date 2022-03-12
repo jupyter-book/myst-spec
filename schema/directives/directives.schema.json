@@ -24,10 +24,6 @@
           "description": "body of the directive, excluding options",
           "type": "string"
         },
-        "processed": {
-          "description": "",
-          "type": "boolean"
-        },
         "children": {
           "description": "parsed directive content",
           "type": "array",
