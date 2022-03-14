@@ -51,22 +51,11 @@ type TestCase = {
   html?: string;
 };
 
-const directory = 'schema';
-let subdirs: string[] = fs
+const directory = 'docs/examples';
+const files: string[] = fs
   .readdirSync(directory)
-  .map((name) => path.join(directory, name))
-  .filter((name) => fs.lstatSync(name).isDirectory());
-subdirs = subdirs.concat(directory);
-
-let files: string[] = [];
-subdirs.forEach((directory) => {
-  files = files.concat(
-    fs
-      .readdirSync(directory)
-      .filter((name) => name.endsWith('.yml'))
-      .map((name) => path.join(directory, name))
-  );
-});
+  .filter((name) => name.endsWith('.yml'))
+  .map((name) => path.join(directory, name));
 
 // For prettier printing of test cases
 const length = files
