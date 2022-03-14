@@ -61,4 +61,4 @@ cases:
     html: |-
       <p><strong>strong</strong>, <em>emphasis</em>, <code>literal text</code>, *escaped symbols*</p>
     latex: |-
-      \textbf{strong}, \textit{emphasis}, \textttf{literal text}, *escaped symbols*
+      \textbf{strong}, \textit{emphasis}, \texttt{literal text}, *escaped symbols*
