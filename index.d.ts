@@ -13,14 +13,17 @@ export type Root = {
   /**
    * Top-level children of myst document
    */
-  children?: (Block | FlowContent)[] | ListContent[] | PhrasingContent[];
+  children?: (Block | BlockBreak | FlowContent)[] | ListContent[] | PhrasingContent[];
   position?: unknown;
   data?: unknown;
 } & Node;
+/**
+ * top-level content blocks or cells the myst document, delimited by BlockBreaks
+ */
 export type Block = {
   type?: "block";
   /**
-   * block metadata; conventionally, a stringified JSON dictionary but may be any arbitrary string
+   * block metadata from preceding break; conventionally, a stringified JSON dictionary but may be any arbitrary string
    */
   meta?: string;
   /**
@@ -746,7 +749,7 @@ export type ImageReference = {
     };
   };
 /**
- * myst role in the format {kind}`value`
+ * myst role - custom in-line behavior, in the format {kind}`value`
  */
 export type Role = {
   type?: "role";
@@ -1560,7 +1563,7 @@ export type Underline = {
   };
 });
 /**
- * abbreviation described by title, using role {abbr}
+ * abbreviation node described by title, using role {abbr}`content (title)`
  */
 export type Abbreviation = {
   type?: "abbreviation";
@@ -1630,7 +1633,7 @@ export type Abbreviation = {
 });
 export type AbbreviatedValue = StaticPhrasingContent[];
 /**
- * reference to associated node, using role {eq}, {ref}, {numref}
+ * in-line reference to an associated node, using role {eq}, {ref}, {numref}
  */
 export type CrossReference = {
   type?: "crossReference";
@@ -2291,6 +2294,9 @@ export type Code = {
       indent?: number;
     };
   });
+/**
+ * comment nodes for comments present in myst but ingnored upon render
+ */
 export type Comment = {
   type?: "comment";
   value?: unknown;
@@ -2353,6 +2359,9 @@ export type Comment = {
     indent?: number;
   };
 });
+/**
+ * target node - provides identifier/label for the following node
+ */
 export type Target = {
   type?: "target";
   identifier?: unknown;
@@ -2506,7 +2515,12 @@ export type Directive = {
   };
 };
 /**
- * highlighted block of text slightly separated from neighboring content
+ * admonition node for drawing attention to text, separate from the neighboring content, in the format ```{kind} args
+ *
+ * :options:
+ *
+ * value
+ * ```
  */
 export type Admonition = {
   type?: "admonition";
@@ -3061,7 +3075,7 @@ export type TableCell = {
   };
 });
 /**
- * block of math
+ * math node for presenting numbered equations
  */
 export type Math = {
   type?: "math";
@@ -3215,6 +3229,72 @@ export type FootnoteDefinition = {
       indent?: number;
     };
   });
+/**
+ * top-level break in the myst document, breaking it into Blocks
+ */
+export type BlockBreak = {
+  type?: "blockBreak";
+  /**
+   * block break metadata; conventionally, a stringified JSON dictionary but may be any arbitrary string
+   */
+  meta?: string;
+  position?: unknown;
+  data?: unknown;
+} & {
+  /**
+   * identifier for node variant
+   */
+  type: string;
+  /**
+   * information associated by the ecosystem with the node; never specified by mdast
+   */
+  data?: {
+    [k: string]: unknown;
+  };
+  /**
+   * location of node in source file; must not be present for generated nodes
+   */
+  position?: {
+    /**
+     * place of first character of parsed source region
+     */
+    start: {
+      /**
+       * line in the source file, 1-indexed
+       */
+      line: number;
+      /**
+       * column in the source file, 1-indexed
+       */
+      column: number;
+      /**
+       * offset character in the source file, 0-indexed
+       */
+      offset?: number;
+    };
+    /**
+     * place of first character after parsed source region, whether it exists or not
+     */
+    end: {
+      /**
+       * line in the source file, 1-indexed
+       */
+      line: number;
+      /**
+       * column in the source file, 1-indexed
+       */
+      column: number;
+      /**
+       * offset character in the source file, 0-indexed
+       */
+      offset?: number;
+    };
+    /**
+     * start column at each index in the source region, for elements that span multiple lines
+     */
+    indent?: number;
+  };
+};
 
 /**
  * base unist node

@@ -27,28 +27,36 @@ function flattenRefs(schema: Record<string, any>) {
   );
 }
 
-const mystSchema = loadSchema(join(__dirname, 'schema', 'myst.schema.json'));
+const myst = loadSchema(join(__dirname, 'schema', 'myst.schema.json'));
 
-const subfolders = [
+const subschemas = [
   'unist',
-  'commonmark',
+  'abbreviations',
+  'admonitions',
   'blocks',
-  'roles',
+  'comments',
+  'commonmark',
+  'containers',
   'directives',
   'footnotes',
+  'math',
+  'references',
+  'roles',
+  'styles',
+  'tables',
 ];
 // Combine all schema files into the single myst schema document
-subfolders.forEach(
-  (folder) =>
-    (mystSchema.$defs = {
-      ...mystSchema.$defs,
-      ...loadSchema(join(__dirname, 'schema', folder, `${folder}.schema.json`))
+subschemas.forEach(
+  (subschema) =>
+    (myst.$defs = {
+      ...myst.$defs,
+      ...loadSchema(join(__dirname, 'schema', `${subschema}.schema.json`))
         .$defs,
     })
 );
 
 async function generate() {
-  writeFileSync('index.d.ts', await compile(flattenRefs(mystSchema), 'Root'));
+  writeFileSync('index.d.ts', await compile(flattenRefs(myst), 'Root'));
 }
 
 generate();
