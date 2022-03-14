@@ -23,10 +23,9 @@ cases:
         <p>Admonition attention</p>
       </aside>
     latex: |-
-      \begin{callout}
-        \section*{Attention}
+      \begin{mdframed}[style=attention]
         Admonition attention
-      \end{callout}
+      \end{mdframed}
 
   - title: caution
     mdast:
@@ -52,10 +51,9 @@ cases:
         <p>Admonition caution</p>
       </aside>
     latex: |-
-      \begin{callout}
-        \section*{Caution}
+      \begin{mdframed}[style=caution]
         Admonition caution
-      \end{callout}
+      \end{mdframed}
 
   - title: danger
     mdast:
@@ -81,10 +79,9 @@ cases:
         <p>Admonition danger</p>
       </aside>
     latex: |-
-      \begin{callout}
-        \section*{Danger}
+      \begin{mdframed}[style=danger]
         Admonition danger
-      \end{callout}
+      \end{mdframed}
 
   - title: error
     mdast:
@@ -110,10 +107,9 @@ cases:
         <p>Admonition error</p>
       </aside>
     latex: |-
-      \begin{callout}
-        \section*{Error}
+      \begin{mdframed}[style=error]
         Admonition error
-      \end{callout}
+      \end{mdframed}
 
   - title: important
     mdast:
@@ -139,10 +135,9 @@ cases:
         <p>Admonition important</p>
       </aside>
     latex: |-
-      \begin{callout}
-        \section*{Important}
+      \begin{mdframed}[style=important]
         Admonition important
-      \end{callout}
+      \end{mdframed}
 
   - title: hint
     mdast:
@@ -168,10 +163,9 @@ cases:
         <p>Admonition hint</p>
       </aside>
     latex: |-
-      \begin{callout}
-        \section*{Hint}
+      \begin{mdframed}[style=hint]
         Admonition hint
-      \end{callout}
+      \end{mdframed}
 
   - title: note
     mdast:
@@ -197,10 +191,9 @@ cases:
         <p>Admonition note</p>
       </aside>
     latex: |-
-      \begin{callout}
-        \section*{Note}
+      \begin{mdframed}[style=note]
         Admonition note
-      \end{callout}
+      \end{mdframed}
 
   - title: seealso
     mdast:
@@ -226,10 +219,9 @@ cases:
         <p>Admonition seealso</p>
       </aside>
     latex: |-
-      \begin{callout}
-        \section*{Seealso}
+      \begin{mdframed}[style=seealso]
         Admonition seealso
-      \end{callout}
+      \end{mdframed}
 
   - title: tip
     mdast:
@@ -255,10 +247,9 @@ cases:
         <p>Admonition tip</p>
       </aside>
     latex: |-
-      \begin{callout}
-        \section*{Tip}
+      \begin{mdframed}[style=tip]
         Admonition tip
-      \end{callout}
+      \end{mdframed}
 
   - title: warning
     mdast:
@@ -284,7 +275,6 @@ cases:
         <p>Admonition warning</p>
       </aside>
     latex: |-
-      \begin{callout}
-        \section*{Warning}
+      \begin{mdframed}[style=warning]
         Admonition warning
-      \end{callout}
+      \end{mdframed}

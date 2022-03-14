@@ -34,10 +34,10 @@ cases:
         <p>An example of an admonition with a <em>title</em>.</p>
       </aside>
     latex: |-
-      \begin{callout}
+      \begin{mdframed}
         \section*{This is a title}
         An example of an admonition with a \textit{title}.
-      \end{callout}
+      \end{mdframed}
 
   - title: Note with no title
     mdast:
@@ -64,10 +64,9 @@ cases:
         <p>Please note!</p>
       </aside>
     latex: |-
-      \begin{callout}
-        \section*{Note}
+      \begin{mdframed}[style=note]
         Please note!
-      \end{callout}
+      \end{mdframed}
 
   - title: Note with split title
     mdast:
@@ -102,10 +101,10 @@ cases:
         </p>
       </aside>
     latex: |-
-      \begin{callout}
+      \begin{mdframed}[style=note]
         \section*{This is a title in myst}
         and an example of a note admonition.
-      \end{callout}
+      \end{mdframed}
 
   - title: Danger on a single line
     mdast:
@@ -130,9 +129,9 @@ cases:
         <p class="admonition-title">This is a title!</p>
       </aside>
     latex: |-
-      \begin{callout}
+      \begin{mdframed}[style=danger]
         \section*{This is a title!}
-      \end{callout}
+      \end{mdframed}
 
   - title: Admonition with overridding class name
     mdast:
@@ -178,10 +177,10 @@ cases:
         <p>An example of a general <code>admonition</code> with a custom <em>class</em>.</p>
       </aside>
     latex: |-
-      \begin{callout}
+      \begin{mdframed}[style=tip]
         \section*{This is a title!}
         An example of a general \texttt{admonition} with a custom \textit{class}.
-      \end{callout}
+      \end{mdframed}
 
   - title: See Also with overridding class name of tip
     description: The `tip` class must be appended to the start
@@ -215,7 +214,6 @@ cases:
         <p>Tip class comes first!!</p>
       </aside>
     latex: |-
-      \begin{callout}
-        \section*{See Also}
+      \begin{mdframed}[style=tip]
         Tip class comes first!!
-      \end{callout}
+      \end{mdframed}
