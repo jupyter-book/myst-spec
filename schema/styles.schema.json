@@ -1,0 +1,163 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://spec.myst.tools/json-schema/styles.schema.json",
+  "description": "style nodes - similar to commonmark styles like emphasis/strong, but defined with a role",
+  "$defs": {
+    "Subscript": {
+      "description": "subscript content, using role {subscript}",
+      "type": "object",
+      "allOf": [
+        {
+          "properties": {
+            "type": {
+              "const": "subscript"
+            },
+            "children": {
+              "type": "array",
+              "items": {
+                "$ref": "myst.schema.json#/$defs/PhrasingContent"
+              }
+            },
+            "position": {},
+            "data": {}
+          },
+          "additionalProperties": false
+        },
+        { "$ref": "unist.schema.json#/$defs/Parent" }
+      ]
+    },
+    "SubscriptStatic": {
+      "description": "subscript content, with static children; used when parent node requires static content",
+      "type": "object",
+      "allOf": [
+        {
+          "properties": {
+            "type": {
+              "const": "subscript"
+            },
+            "children": {
+              "type": "array",
+              "items": {
+                "$ref": "myst.schema.json#/$defs/StaticPhrasingContent"
+              }
+            },
+            "position": {},
+            "data": {}
+          },
+          "additionalProperties": false
+        },
+        { "$ref": "unist.schema.json#/$defs/Parent" }
+      ]
+    },
+    "Superscript": {
+      "description": "superscript content, using role {superscript}",
+      "type": "object",
+      "allOf": [
+        {
+          "properties": {
+            "type": {
+              "const": "superscript"
+            },
+            "children": {
+              "type": "array",
+              "items": {
+                "$ref": "myst.schema.json#/$defs/PhrasingContent"
+              }
+            },
+            "position": {},
+            "data": {}
+          },
+          "additionalProperties": false
+        },
+        { "$ref": "unist.schema.json#/$defs/Parent" }
+      ]
+    },
+    "SuperscriptStatic": {
+      "description": "superscript content, with static children; used when parent node requires static content",
+      "type": "object",
+      "allOf": [
+        {
+          "properties": {
+            "type": {
+              "const": "superscript"
+            },
+            "children": {
+              "type": "array",
+              "items": {
+                "$ref": "myst.schema.json#/$defs/StaticPhrasingContent"
+              }
+            },
+            "position": {},
+            "data": {}
+          },
+          "additionalProperties": false
+        },
+        { "$ref": "unist.schema.json#/$defs/Parent" }
+      ]
+    },
+    "Underline": {
+      "description": "underline content, using role {underline}",
+      "type": "object",
+      "allOf": [
+        {
+          "properties": {
+            "type": {
+              "const": "underline"
+            },
+            "children": {
+              "type": "array",
+              "items": {
+                "$ref": "myst.schema.json#/$defs/PhrasingContent"
+              }
+            },
+            "position": {},
+            "data": {}
+          },
+          "additionalProperties": false
+        },
+        { "$ref": "unist.schema.json#/$defs/Parent" }
+      ]
+    },
+    "UnderlineStatic": {
+      "description": "underline content, with static children; used when parent node requires static content",
+      "type": "object",
+      "allOf": [
+        {
+          "properties": {
+            "type": {
+              "const": "underline"
+            },
+            "children": {
+              "type": "array",
+              "items": {
+                "$ref": "myst.schema.json#/$defs/StaticPhrasingContent"
+              }
+            },
+            "position": {},
+            "data": {}
+          },
+          "additionalProperties": false
+        },
+        { "$ref": "unist.schema.json#/$defs/Parent" }
+      ]
+    },
+    "InlineMath": {
+      "description": "fragment of math, similar to InlineCode, using role {math}",
+      "type": "object",
+      "allOf": [
+        {
+          "properties": {
+            "type": {
+              "const": "inlineMath"
+            },
+            "value": {},
+            "position": {},
+            "data": {}
+          },
+          "additionalProperties": false
+        },
+        { "$ref": "unist.schema.json#/$defs/Literal" }
+      ]
+    }
+  }
+}
