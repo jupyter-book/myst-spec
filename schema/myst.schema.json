@@ -41,7 +41,7 @@
       },
       "additionalProperties": false
     },
-    { "$ref": "unist.schema.json#/$defs/Node" }
+    { "$ref": "unist.schema.json#/$defs/Parent" }
   ],
   "$defs": {
     "FlowContent": {

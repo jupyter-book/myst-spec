@@ -93,8 +93,11 @@
         },
         "indent": {
           "description": "start column at each index in the source region, for elements that span multiple lines",
-          "type": "integer",
-          "minimum": 0
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "minimum": 0
+          }
         }
       },
       "additionalProperties": false
