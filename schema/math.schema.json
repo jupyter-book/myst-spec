@@ -23,6 +23,24 @@
         { "$ref": "commonmark.schema.json#/$defs/OptionalAssociation" },
         { "$ref": "unist.schema.json#/$defs/Literal" }
       ]
+    },
+    "InlineMath": {
+      "description": "fragment of math, similar to InlineCode, using role {math}",
+      "type": "object",
+      "allOf": [
+        {
+          "properties": {
+            "type": {
+              "const": "inlineMath"
+            },
+            "value": {},
+            "position": {},
+            "data": {}
+          },
+          "additionalProperties": false
+        },
+        { "$ref": "unist.schema.json#/$defs/Literal" }
+      ]
     }
   }
 }

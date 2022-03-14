@@ -96,7 +96,7 @@
         { "$ref": "styles.schema.json#/$defs/SubscriptStatic" },
         { "$ref": "styles.schema.json#/$defs/SuperscriptStatic" },
         { "$ref": "styles.schema.json#/$defs/UnderlineStatic" },
-        { "$ref": "styles.schema.json#/$defs/InlineMath" }
+        { "$ref": "math.schema.json#/$defs/InlineMath" }
       ]
     }
   }
