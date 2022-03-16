@@ -13,7 +13,7 @@
               "const": "abbreviation"
             },
             "children": {
-              "title": "abbreviated value",
+              "description": "abbreviated value",
               "type": "array",
               "items": {
                 "$ref": "myst.schema.json#/$defs/StaticPhrasingContent"
