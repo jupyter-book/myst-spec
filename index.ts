@@ -234,7 +234,7 @@ async function generate() {
     JSON.stringify(schema, null, 2)
   );
   allOfForEverything(schema);
-  writeFileSync(join('dist', 'docs.md'), schema2md(schema));
+  writeFileSync(join('dist', 'myst.schema.md'), schema2md(schema));
   additionalPropsFalse(schema);
   writeFileSync(join('dist', 'index.d.ts'), await compile(schema, 'Root'));
 }
