@@ -49,20 +49,20 @@ function allOfForEverything(schema: Record<string, any>) {
 const myst = loadSchema(join(__dirname, 'schema', 'myst.schema.json'));
 
 const subschemas = [
-  'unist',
+  'blocks',
+  'roles',
+  'directives',
+  'references',
   'abbreviations',
   'admonitions',
-  'blocks',
-  'comments',
-  'commonmark',
   'containers',
-  'directives',
   'footnotes',
   'math',
-  'references',
-  'roles',
-  'styles',
   'tables',
+  'styles',
+  'comments',
+  'commonmark',
+  'unist',
 ];
 // Combine all schema files into the single myst schema document
 subschemas.forEach(
@@ -81,8 +81,10 @@ type PropertyDefinition = {
   from?: string;
 };
 
+type Properties = Record<string, PropertyDefinition>;
+
 type PropertyInfo = {
-  properties: Record<string, PropertyDefinition>;
+  properties: Properties;
   required: string[];
 };
 
@@ -94,13 +96,9 @@ function mdReferenceFromRef(ref?: string): string {
   return `[${typeFromRef(ref)}]()`;
 }
 
-function definitionsFromProps(
-  props,
-  from?: string
-): Record<string, PropertyDefinition> {
-  const defs: Record<string, PropertyDefinition> = {};
+function definitionsFromProps(props, from?: string): Properties {
+  const defs: Properties = {};
   Object.keys(props).forEach((key) => {
-    if (Object.keys(props[key]).length === 0) return defs;
     const def: PropertyDefinition = {
       description: props[key].description,
       type: props[key].type,
@@ -113,7 +111,7 @@ function definitionsFromProps(
       def.type = 'object';
     } else if (props[key].const) {
       def.type = 'string';
-      def.value = props[key].const;
+      def.value = `"${props[key].const}"`;
     } else if (props[key].type === 'array') {
       def.type = 'array';
       if (props[key].items.type) {
@@ -137,42 +135,44 @@ function definitionsFromProps(
       }
     }
     if (props[key].enum) {
-      def.value = props[key].enum;
+      def.value = props[key].enum.map((v) => `"${v}"`);
     }
-    if (props[key]) {
-      defs[key] = def;
-    }
+    defs[key] = def;
   });
   return defs;
 }
 
+function spliceProperties(primary: Properties, secondary: Properties): void {
+  for (const prop in secondary) {
+    if (primary[prop]) {
+      primary[prop].type = primary[prop].type || secondary[prop].type;
+      primary[prop].value = primary[prop].value || secondary[prop].value;
+      primary[prop].from = secondary[prop].from || primary[prop].from;
+    } else {
+      primary[prop] = secondary[prop];
+    }
+  }
+}
+
 function propsFromObject(schemaDefinitions, key, from?): PropertyInfo {
-  let properties: Record<string, PropertyDefinition> = {};
+  let properties: Properties = {};
   let required: string[] = [];
   schemaDefinitions[key].allOf.forEach((subschema) => {
     if (subschema.required) {
       required = required.concat(...subschema.required);
     }
     if (subschema.properties) {
-      properties = {
-        ...properties,
-        // todo: this will overwrite richer property definitions if they exist in properties
-        //       but we want this second to maintain the order
-        ...definitionsFromProps(subschema.properties, from),
-      };
+      spliceProperties(
+        properties,
+        definitionsFromProps(subschema.properties, from)
+      );
     } else if (subschema.$ref) {
       const key = typeFromRef(subschema.$ref);
-      const refProps = propsFromObject(schemaDefinitions, key, from || key);
+      const refProps = propsFromObject(schemaDefinitions, key, key);
       required = required.concat(...refProps.required);
-      properties = {
-        ...properties,
-        ...refProps.properties,
-      };
+      spliceProperties(properties, refProps.properties);
     } else if (subschema.anyOf) {
-      properties = {
-        ...properties,
-        ...definitionsFromProps(subschema),
-      };
+      spliceProperties(properties, definitionsFromProps(subschema));
     }
   });
   return { properties, required };
@@ -183,7 +183,7 @@ function schema2md(schema): string {
   Object.keys(schema.$defs).forEach((key) => {
     md += `# ${key}\n\n`;
     if (schema.$defs[key].description) {
-      md += `${schema.$defs[key].description}\n\n`;
+      md += `${schema.$defs[key].description.replace(/`/g, '\\`')}\n\n`;
     }
     if (schema.$defs[key].allOf) {
       const { properties, required } = propsFromObject(schema.$defs, key);
@@ -204,10 +204,7 @@ function schema2md(schema): string {
           md += `(${typeof val === 'object' ? val.join(' | ') : val}) `;
         }
         if (properties[prop].description) {
-          md += `${properties[prop].description} `;
-        }
-        if (properties[prop].description) {
-          md += `${properties[prop].description} `;
+          md += `- ${properties[prop].description.replace(/`/g, '\\`')} `;
         }
         if (properties[prop].from) {
           md += `- See ${mdReferenceFromRef(properties[prop].from)}`;
@@ -215,7 +212,11 @@ function schema2md(schema): string {
         md += '\n';
       }
     } else if (schema.$defs[key].anyOf) {
-      md += 'Any of ';
+      if (schema.$defs[key].anyOf.length > 1) {
+        md += 'Any of ';
+      } else {
+        md += 'Only ';
+      }
       md += schema.$defs[key].anyOf
         .map((a) => mdReferenceFromRef(a.$ref))
         .join(' | ');
