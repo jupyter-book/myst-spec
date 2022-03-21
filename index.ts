@@ -1,10 +1,4 @@
-import {
-  existsSync,
-  mkdirSync,
-  readdirSync,
-  readFileSync,
-  writeFileSync,
-} from 'fs';
+import { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from 'fs';
 import { join } from 'path';
 import { compile } from 'json-schema-to-typescript';
 import { load, dump } from 'js-yaml';
@@ -59,9 +53,7 @@ function additionalPropsFalse(schema: Schema): void {
  * will resolve the references without creating a new type.
  */
 function flattenRefs(schema: Schema): Schema {
-  return JSON.parse(
-    JSON.stringify(schema).replace(/"[a-z]+.schema.json#\//g, '"#/')
-  );
+  return JSON.parse(JSON.stringify(schema).replace(/"[a-z]+.schema.json#\//g, '"#/'));
 }
 
 /**
@@ -132,9 +124,7 @@ function definitionsFromProps(props: Schema, from?: string): Properties {
         def.value = mdReferenceFromRef(props[key].items.$ref);
       } else if (props[key].items.anyOf) {
         // "prop": {"type": "array", "items": {"anyOf": [{ "$ref": "..."}, { "$ref": "..."}]}}
-        def.value = props[key].items.anyOf.map((a) =>
-          mdReferenceFromRef(a.$ref)
-        );
+        def.value = props[key].items.anyOf.map((a) => mdReferenceFromRef(a.$ref));
       }
     } else if (props[key].anyOf) {
       if (props[key].anyOf[0].type === 'array') {
@@ -144,14 +134,10 @@ function definitionsFromProps(props: Schema, from?: string): Properties {
           // In this case, we ignore everything except the first case.
           // In practice, this only occurs with Root nodes, where the first case is
           // the most likely to be used. Other cases are mentioned in the description.
-          def.value = props[key].anyOf[0].items.anyOf.map((a) =>
-            mdReferenceFromRef(a.$ref)
-          );
+          def.value = props[key].anyOf[0].items.anyOf.map((a) => mdReferenceFromRef(a.$ref));
         } else {
           // "prop": {"anyOf": [{"type": "array", "items": "anyOf": [{ "$ref": "..."}, { "$ref": "..."}]}, ...]}
-          def.value = props[key].anyOf.map((a) =>
-            mdReferenceFromRef(a.items.$ref)
-          );
+          def.value = props[key].anyOf.map((a) => mdReferenceFromRef(a.items.$ref));
         }
       } else {
         // "prop": {"anyOf": [{ "$ref": "..."}, { "$ref": "..."}]}
@@ -198,11 +184,7 @@ function spliceProperties(primary: Properties, secondary: Properties): void {
 /**
  * Extract property information from object definition
  */
-function propsFromObject(
-  schemaDefinitions: Schema,
-  key: string,
-  from?: string
-): PropertyInfo {
+function propsFromObject(schemaDefinitions: Schema, key: string, from?: string): PropertyInfo {
   let properties: Properties = {};
   let required: string[] = [];
   schemaDefinitions[key].allOf.forEach((subschema) => {
@@ -212,10 +194,7 @@ function propsFromObject(
     }
     if (subschema.properties) {
       // Properties defined directly on the object
-      spliceProperties(
-        properties,
-        definitionsFromProps(subschema.properties, from)
-      );
+      spliceProperties(properties, definitionsFromProps(subschema.properties, from));
     } else if (subschema.$ref) {
       // Properties defined on referenced definitions
       const key = typeFromRef(subschema.$ref);
@@ -228,7 +207,7 @@ function propsFromObject(
 }
 
 function schemaKey2md(schema: Schema, key: string): string {
-  let md = `## ${key}\n\n`;
+  let md = '';
   if (schema.$defs[key].description) {
     md += `${schema.$defs[key].description.replace(/`/g, '\\`')}\n\n`;
   }
@@ -236,11 +215,7 @@ function schemaKey2md(schema: Schema, key: string): string {
     const { properties, required } = propsFromObject(schema.$defs, key);
     for (const prop in properties) {
       md += `- __${prop}${required.includes(prop) ? '*' : ''}__`;
-      if (
-        properties[prop].type ||
-        properties[prop].value ||
-        properties[prop].description
-      ) {
+      if (properties[prop].type || properties[prop].value || properties[prop].description) {
         md += ': ';
       }
       if (properties[prop].type) {
@@ -264,9 +239,7 @@ function schemaKey2md(schema: Schema, key: string): string {
     } else {
       md += 'Only ';
     }
-    md += schema.$defs[key].anyOf
-      .map((a) => mdReferenceFromRef(a.$ref))
-      .join(' | ');
+    md += schema.$defs[key].anyOf.map((a) => mdReferenceFromRef(a.$ref)).join(' | ');
     md += '\n';
   }
   return md;
@@ -288,7 +261,7 @@ function schemaKey2md(schema: Schema, key: string): string {
 function schema2md(schema: Schema): string {
   let md = '# Node Type Index\n\n';
   Object.keys(schema.$defs).forEach((key) => {
-    md += `(${key.toLowerCase()})=\n`;
+    md += `(${key.toLowerCase()})=\n## ${key}\n\n`;
     md += schemaKey2md(schema, key);
     md += '\n';
   });
@@ -308,10 +281,7 @@ async function generate(myst: Schema) {
   if (!existsSync('docs')) mkdirSync('docs');
   if (!existsSync(join('docs', 'nodes'))) mkdirSync(join('docs', 'nodes'));
   let schema = flattenRefs(myst);
-  writeFileSync(
-    join('dist', outputSchemaFile),
-    JSON.stringify(schema, null, 2)
-  );
+  writeFileSync(join('dist', outputSchemaFile), JSON.stringify(schema, null, 2));
   simplifyForDocGeneration(schema);
   writeFileSync(join('docs', outputDocFile), schema2md(schema));
   additionalPropsFalse(schema);
