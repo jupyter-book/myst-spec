@@ -284,6 +284,10 @@ async function generate(myst: Schema) {
   writeFileSync(join('dist', outputSchemaFile), JSON.stringify(schema, null, 2));
   simplifyForDocGeneration(schema);
   writeFileSync(join('docs', outputDocFile), schema2md(schema));
+  Object.keys(schema.$defs).forEach((key) => {
+    writeFileSync(join('docs', 'nodes', `${key.toLowerCase()}.md`), schemaKey2md(schema, key));
+  });
+  schema = flattenRefs(myst);
   additionalPropsFalse(schema);
   writeFileSync(join('dist', outputTsFile), await compile(schema, 'Root'));
 }
@@ -310,9 +314,8 @@ subschemas.forEach(
   (subschema) =>
     (myst.$defs = {
       ...myst.$defs,
-      ...loadSchema(join(__dirname, 'schema', `${subschema}.schema.json`))
-        .$defs,
-    })
+      ...loadSchema(join(__dirname, 'schema', `${subschema}.schema.json`)).$defs,
+    }),
 );
 generate(myst);
 
@@ -329,3 +332,19 @@ type TestCase = {
   myst?: string;
   html?: string;
 };
+
+const directory = join('docs', 'examples');
+const files: string[] = readdirSync(directory)
+  .filter((name) => name.endsWith('.yml'))
+  .map((name) => join(directory, name));
+
+files.forEach((file) => {
+  const testYaml = readFileSync(file).toString();
+  const cases = load(testYaml) as TestFile;
+  cases.cases.forEach((testCase) => {
+    if (testCase.id) {
+      const outFile = join(directory, `${testCase.id}.md`);
+      writeFileSync(outFile, `\`\`\`\n${dump(testCase.mdast)}\n\`\`\``);
+    }
+  });
+});
