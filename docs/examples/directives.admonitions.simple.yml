@@ -1,5 +1,6 @@
 cases:
   - title: attention
+    id: admonition
     mdast:
       type: root
       children:
