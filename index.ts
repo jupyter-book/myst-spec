@@ -344,7 +344,18 @@ files.forEach((file) => {
   cases.cases.forEach((testCase) => {
     if (testCase.id) {
       const outFile = join(directory, `${testCase.id}.md`);
-      writeFileSync(outFile, `\`\`\`\n${dump(testCase.mdast)}\n\`\`\``);
+      let md = '`````{tabbed} AST:\n';
+      md += `\`\`\`yaml\n${dump(testCase.mdast)}\n\`\`\`\n`;
+      md += '`````\n\n';
+      if (testCase.myst) {
+        md += '`````{tabbed} Markup:\n';
+        md += `\`\`\`\`\n${testCase.myst}\n\`\`\`\`\n`;
+        md += '`````\n\n';
+        md += '`````{tabbed} Render:\n\n';
+        md += `${testCase.myst}\n\n`;
+        md += '`````\n\n';
+      }
+      writeFileSync(outFile, md);
     }
   });
 });
