@@ -1,8 +1,9 @@
 # Jupyter Book settings
 # Learn more at https://jupyterbook.org/customize/config.html
 
-title: Notes
+title: ''
 author: Franklin Koch <franklin@curvenote.com>
+logo: images/logo-wide.svg
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
