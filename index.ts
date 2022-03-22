@@ -344,14 +344,19 @@ files.forEach((file) => {
   cases.cases.forEach((testCase) => {
     if (testCase.id) {
       const outFile = join(directory, `${testCase.id}.md`);
-      let md = '`````{tabbed} AST:\n';
-      md += `\`\`\`yaml\n${dump(testCase.mdast)}\n\`\`\`\n`;
-      md += '`````\n\n';
+      let md = '';
       if (testCase.myst) {
-        md += '`````{tabbed} Markup:\n';
+        md += '`````{tabbed} Markup\n';
         md += `\`\`\`\`\n${testCase.myst}\n\`\`\`\`\n`;
         md += '`````\n\n';
-        md += '`````{tabbed} Render:\n\n';
+      }
+      if (testCase.mdast) {
+        md += '`````{tabbed} AST\n';
+        md += `\`\`\`yaml\n${dump(testCase.mdast)}\n\`\`\`\n`;
+        md += '`````\n\n';
+      }
+      if (testCase.myst) {
+        md += '`````{tabbed} Render\n\n';
         md += `${testCase.myst}\n\n`;
         md += '`````\n\n';
       }

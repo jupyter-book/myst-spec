@@ -71,7 +71,7 @@ Remember, specifying directive keywords with `:key:` or `---` will make no diffe
 
 ### Roles
 
-Roles are very similar to directives, but they are written entirely in one line. 
+Roles are very similar to directives, but they are written entirely in one line.
 
 #### Specification
 
@@ -113,14 +113,18 @@ yields
 
 Thus, if you’d like to nest directives inside one another, you can take the same approach. For example, the following syntax:
 
-`````{raw} html
-<myst-demo>
+`````
 ````{important}
 ```{note}
 Here's my `important`, highly nested note! 🪆
 ```
 ````
-</myst-demo>
 `````
 
-produces a note in the margin!
+produces a nested, `important` > `note`:
+
+````{important}
+```{note}
+Here's my `important`, highly nested note! 🪆
+```
+````
