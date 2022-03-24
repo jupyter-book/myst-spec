@@ -28,6 +28,7 @@
     "clean": "rimraf index.js dist docs/_build",
     "test": "node --experimental-vm-modules ./node_modules/.bin/jest",
     "test:watch": "node --experimental-vm-modules ./node_modules/.bin/jest --watchAll",
+    "lint": "prettier --write *.ts schema/*.ts",
     "prepublishOnly": "npm run build;"
   },
   "bugs": {

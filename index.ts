@@ -1,4 +1,4 @@
-import { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from 'fs';
+import { copyFileSync, existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from 'fs';
 import { join } from 'path';
 import { compile } from 'json-schema-to-typescript';
 import { load, dump } from 'js-yaml';
@@ -269,15 +269,18 @@ function schema2md(schema: Schema): string {
 }
 
 /**
- * Generate three files:
+ * Generate files:
  *
  * - dist/myst.schema.json - JSON schema for MyST root and all dependent object
  *   types, consolidated into a single file
- * - dist/myst.schema.md - markdown documentation of all myst-schema objects
  * - dist/index.d.ts - typescript types for all myst-schema objects
+ * - docs/myst.schema.md - markdown documentation of all myst-schema objects
+ * - docs/nodes/*.md - markdown schema snippets for each node type
+ * - dist/examples/*.yml - example files distributed for external testing
  */
 async function generate(myst: Schema) {
   if (!existsSync('dist')) mkdirSync('dist');
+  if (!existsSync(join('dist', 'examples'))) mkdirSync(join('dist', 'examples'));
   if (!existsSync('docs')) mkdirSync('docs');
   if (!existsSync(join('docs', 'nodes'))) mkdirSync(join('docs', 'nodes'));
   let schema = flattenRefs(myst);
@@ -290,6 +293,11 @@ async function generate(myst: Schema) {
   schema = flattenRefs(myst);
   additionalPropsFalse(schema);
   writeFileSync(join('dist', outputTsFile), await compile(schema, 'Root'));
+  readdirSync(join('docs', 'examples'))
+    .filter((name) => name.endsWith('.yml'))
+    .forEach((name) =>
+      copyFileSync(join('docs', 'examples', name), join('dist', 'examples', name)),
+    );
 }
 
 const myst = loadSchema(join(__dirname, 'schema', 'myst.schema.json'));
