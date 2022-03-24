@@ -1,0 +1,7 @@
+- __type*__: _string_ ("list") - See {ref}`node`
+- __ordered__: _boolean_ - Is item order important or not? 
+- __start__: _integer_ - Starting number of ordered list 
+- __spread__: _boolean_ - One or more children are separated with a blank line from others 
+- __children*__: _array_ ({ref}`listcontent`) - See {ref}`parent`
+- __position__: _object_ ({ref}`position`) - See {ref}`node`
+- __data__: _object_ - See {ref}`node`

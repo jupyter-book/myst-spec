@@ -1,0 +1,3 @@
+- __type*__: _string_ ("thematicBreak") - See {ref}`node`
+- __position__: _object_ ({ref}`position`) - See {ref}`node`
+- __data__: _object_ - See {ref}`node`

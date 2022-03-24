@@ -1,0 +1,7 @@
+- __type*__: _string_ ("heading") - See {ref}`node`
+- __depth*__: _integer_ 
+- __children*__: _array_ ({ref}`phrasingcontent`) - See {ref}`parent`
+- __identifier__: _string_ - See {ref}`optionalassociation`
+- __label__: _string_ - See {ref}`optionalassociation`
+- __position__: _object_ ({ref}`position`) - See {ref}`node`
+- __data__: _object_ - See {ref}`node`
