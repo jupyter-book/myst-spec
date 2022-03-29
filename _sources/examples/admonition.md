@@ -1,11 +1,3 @@
-`````{tabbed} Markup
-````
-```{note} This is a title in myst
-  and an example of a note admonition.
-```
-````
-`````
-
 `````{tabbed} AST
 ```yaml
 type: root
@@ -28,13 +20,5 @@ children:
                 value: and an example of a note admonition.
 
 ```
-`````
-
-`````{tabbed} Render
-
-```{note} This is a title in myst
-  and an example of a note admonition.
-```
-
 `````
 

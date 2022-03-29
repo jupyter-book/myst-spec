@@ -16,17 +16,17 @@ children:
     spread: false
     children:
       - type: listItem
-        spread: false
+        spread: true
         children:
           - type: text
             value: quotes
       - type: listItem
-        spread: false
+        spread: true
         children:
           - type: text
             value: breaks
       - type: listItem
-        spread: false
+        spread: true
         children:
           - type: text
             value: links

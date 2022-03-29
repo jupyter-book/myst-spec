@@ -8,9 +8,11 @@
 ```yaml
 type: root
 children:
-  - type: image
-    url: fun-fish.png
-    alt: fishy
+  - type: paragraph
+    children:
+      - type: image
+        url: fun-fish.png
+        alt: fishy
 
 ```
 `````

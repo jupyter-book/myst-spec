@@ -16,10 +16,11 @@ children:
   - type: directive
     kind: abc
     args: foo bar
-    options:
-      a: one
-      b: two
-    value: ABC directive
+    value: |-
+      :a: one
+      :b: two
+
+      ABC directive
 
 ```
 `````

@@ -27,32 +27,41 @@ children:
             kind: numref
             identifier: my-table
             label: my-table
-  - type: container
-    kind: table
-    identifier: my-table
-    label: my-table
-    numbered: true
+  - type: directive
+    kind: list-table
+    args: Caption text
+    options:
+      name: my-table
+    value: |-
+      *   - Head 1
+      *   - Row 1
     children:
-      - type: caption
+      - type: container
+        kind: table
+        identifier: my-table
+        label: my-table
+        numbered: true
         children:
-          - type: paragraph
+          - type: caption
             children:
-              - type: text
-                value: Caption text
-      - type: table
-        children:
-          - type: tableRow
-            children:
-              - type: tableCell
+              - type: paragraph
                 children:
                   - type: text
-                    value: Head 1
-          - type: tableRow
+                    value: Caption text
+          - type: table
             children:
-              - type: tableCell
+              - type: tableRow
                 children:
-                  - type: text
-                    value: Row 1
+                  - type: tableCell
+                    children:
+                      - type: text
+                        value: Head 1
+              - type: tableRow
+                children:
+                  - type: tableCell
+                    children:
+                      - type: text
+                        value: Row 1
 
 ```
 `````

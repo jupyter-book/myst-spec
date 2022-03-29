@@ -504,8 +504,8 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="section" id="example">
 <h3>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h3>
 <div class="tabbed-set docutils">
-<input checked="checked" id="4d43e62a-feaa-40ae-a629-acb2885951a7" name="27eaa01e-b174-4762-b7a6-4c7561427e12" type="radio">
-</input><label class="tabbed-label" for="4d43e62a-feaa-40ae-a629-acb2885951a7">
+<input checked="checked" id="521dcc92-5b3b-4734-ab09-a61fed911c9b" name="d11eee5e-ad5e-41da-821e-c3b24935d2c8" type="radio">
+</input><label class="tabbed-label" for="521dcc92-5b3b-4734-ab09-a61fed911c9b">
 Markup</label><div class="tabbed-content docutils">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>see {numref}`my-table`
 
@@ -518,8 +518,8 @@ Markup</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="5c81e590-d986-490c-9003-87ac787eb8b7" name="27eaa01e-b174-4762-b7a6-4c7561427e12" type="radio">
-</input><label class="tabbed-label" for="5c81e590-d986-490c-9003-87ac787eb8b7">
+<input id="d1337936-730f-4eb7-b4ad-567b319a9862" name="d11eee5e-ad5e-41da-821e-c3b24935d2c8" type="radio">
+</input><label class="tabbed-label" for="d1337936-730f-4eb7-b4ad-567b319a9862">
 AST</label><div class="tabbed-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">root</span><span class="w"></span>
 <span class="nt">children</span><span class="p">:</span><span class="w"></span>
@@ -535,37 +535,46 @@ AST</label><div class="tabbed-content docutils">
 <span class="w">            </span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">numref</span><span class="w"></span>
 <span class="w">            </span><span class="nt">identifier</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-table</span><span class="w"></span>
 <span class="w">            </span><span class="nt">label</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-table</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">container</span><span class="w"></span>
-<span class="w">    </span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">table</span><span class="w"></span>
-<span class="w">    </span><span class="nt">identifier</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-table</span><span class="w"></span>
-<span class="w">    </span><span class="nt">label</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-table</span><span class="w"></span>
-<span class="w">    </span><span class="nt">numbered</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">directive</span><span class="w"></span>
+<span class="w">    </span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">list-table</span><span class="w"></span>
+<span class="w">    </span><span class="nt">args</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Caption text</span><span class="w"></span>
+<span class="w">    </span><span class="nt">options</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-table</span><span class="w"></span>
+<span class="w">    </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|-</span><span class="w"></span>
+<span class="w">      </span><span class="no">*   - Head 1</span><span class="w"></span>
+<span class="w">      </span><span class="no">*   - Row 1</span><span class="w"></span>
 <span class="w">    </span><span class="nt">children</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">caption</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">container</span><span class="w"></span>
+<span class="w">        </span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">table</span><span class="w"></span>
+<span class="w">        </span><span class="nt">identifier</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-table</span><span class="w"></span>
+<span class="w">        </span><span class="nt">label</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-table</span><span class="w"></span>
+<span class="w">        </span><span class="nt">numbered</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
 <span class="w">        </span><span class="nt">children</span><span class="p">:</span><span class="w"></span>
-<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">paragraph</span><span class="w"></span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">caption</span><span class="w"></span>
 <span class="w">            </span><span class="nt">children</span><span class="p">:</span><span class="w"></span>
-<span class="w">              </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">text</span><span class="w"></span>
-<span class="w">                </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Caption text</span><span class="w"></span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">table</span><span class="w"></span>
-<span class="w">        </span><span class="nt">children</span><span class="p">:</span><span class="w"></span>
-<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tableRow</span><span class="w"></span>
-<span class="w">            </span><span class="nt">children</span><span class="p">:</span><span class="w"></span>
-<span class="w">              </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tableCell</span><span class="w"></span>
+<span class="w">              </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">paragraph</span><span class="w"></span>
 <span class="w">                </span><span class="nt">children</span><span class="p">:</span><span class="w"></span>
 <span class="w">                  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">text</span><span class="w"></span>
-<span class="w">                    </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Head 1</span><span class="w"></span>
-<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tableRow</span><span class="w"></span>
+<span class="w">                    </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Caption text</span><span class="w"></span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">table</span><span class="w"></span>
 <span class="w">            </span><span class="nt">children</span><span class="p">:</span><span class="w"></span>
-<span class="w">              </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tableCell</span><span class="w"></span>
+<span class="w">              </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tableRow</span><span class="w"></span>
 <span class="w">                </span><span class="nt">children</span><span class="p">:</span><span class="w"></span>
-<span class="w">                  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">text</span><span class="w"></span>
-<span class="w">                    </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Row 1</span><span class="w"></span>
+<span class="w">                  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tableCell</span><span class="w"></span>
+<span class="w">                    </span><span class="nt">children</span><span class="p">:</span><span class="w"></span>
+<span class="w">                      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">text</span><span class="w"></span>
+<span class="w">                        </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Head 1</span><span class="w"></span>
+<span class="w">              </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tableRow</span><span class="w"></span>
+<span class="w">                </span><span class="nt">children</span><span class="p">:</span><span class="w"></span>
+<span class="w">                  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tableCell</span><span class="w"></span>
+<span class="w">                    </span><span class="nt">children</span><span class="p">:</span><span class="w"></span>
+<span class="w">                      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">text</span><span class="w"></span>
+<span class="w">                        </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Row 1</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
-<input id="5c277a07-bb18-4ea7-acba-e372487a59c1" name="27eaa01e-b174-4762-b7a6-4c7561427e12" type="radio">
-</input><label class="tabbed-label" for="5c277a07-bb18-4ea7-acba-e372487a59c1">
+<input id="1e3937df-d178-408e-b5e9-f180e58796a6" name="d11eee5e-ad5e-41da-821e-c3b24935d2c8" type="radio">
+</input><label class="tabbed-label" for="1e3937df-d178-408e-b5e9-f180e58796a6">
 Render</label><div class="tabbed-content docutils">
 <p>see <a class="reference internal" href="#my-table"><span class="std std-numref">Table 1</span></a></p>
 <table class="table" id="my-table">
@@ -676,16 +685,16 @@ See Equation {eq}`my-math-label`!
 <div class="section" id="id2">
 <h3>Example<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <div class="tabbed-set docutils">
-<input checked="checked" id="c017eb19-22c0-4039-a06a-32cd7ec83508" name="c3af7f91-6940-4431-91d0-2b7d480a2792" type="radio">
-</input><label class="tabbed-label" for="c017eb19-22c0-4039-a06a-32cd7ec83508">
+<input checked="checked" id="a85ce77b-b62d-48fb-b0f3-08d4d8f95d33" name="5c45c62d-4cc8-4c9b-b5a0-6e98a5bd6521" type="radio">
+</input><label class="tabbed-label" for="a85ce77b-b62d-48fb-b0f3-08d4d8f95d33">
 Markup</label><div class="tabbed-content docutils">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">my_ID</span><span class="p">)</span><span class="o">=</span>
 <span class="c1"># My Header</span>
 </pre></div>
 </div>
 </div>
-<input id="403ae04f-d1c1-4109-8c98-d34b9ea851b7" name="c3af7f91-6940-4431-91d0-2b7d480a2792" type="radio">
-</input><label class="tabbed-label" for="403ae04f-d1c1-4109-8c98-d34b9ea851b7">
+<input id="de92e6b4-9527-4cdf-9b3e-f78b9eb2f82c" name="5c45c62d-4cc8-4c9b-b5a0-6e98a5bd6521" type="radio">
+</input><label class="tabbed-label" for="de92e6b4-9527-4cdf-9b3e-f78b9eb2f82c">
 AST</label><div class="tabbed-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">root</span><span class="w"></span>
 <span class="nt">children</span><span class="p">:</span><span class="w"></span>
@@ -700,8 +709,8 @@ AST</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="90642806-33f6-4cd3-9a1e-fa6c37b54f2c" name="c3af7f91-6940-4431-91d0-2b7d480a2792" type="radio">
-</input><label class="tabbed-label" for="90642806-33f6-4cd3-9a1e-fa6c37b54f2c">
+<input id="ff531e84-3741-4445-b6dd-fe42caf6e697" name="5c45c62d-4cc8-4c9b-b5a0-6e98a5bd6521" type="radio">
+</input><label class="tabbed-label" for="ff531e84-3741-4445-b6dd-fe42caf6e697">
 Render</label><div class="tabbed-content docutils">
 </div>
 </div>
