@@ -4,6 +4,10 @@
 `myst-spec` is still in development; any structures or features present in the JSON schema may change at any time without notice.
 ```
 
+```{note}
+MyST JSON specification, test cases, and typscript types are available here: https://unpkg.com/browse/myst-spec/dist/
+```
+
 MyST (Markedly Structured Text) is designed to create publication-quality, computational documents written entirely in Markdown. The main use case driving the development and design of MyST is [JupyterBook](https://jupyterbook.org/), which creates educational online textbooks and tutorials with Jupyter Notebooks and narrative content written in MyST.
 
 ## Overview
@@ -22,7 +26,7 @@ The MyST AST introduces nodes for directives and roles, as well as numerous new 
 
 ## MyST Test Cases
 
-To validate implementations of MyST spec, a suite of test cases is provided [**here**](https://raw.githubusercontent.com/executablebooks/myst-spec/main/docs/examples/myst.tests.json). This file is a JSON list of test cases with MyST markup, MyST AST, and some example HTML (optional). The cases are similar to [CommonMark test cases](https://spec.commonmark.org/) with the addition of the AST representation. The MyST test casese include all the CommonMark examples as well as many MyST specific examples.
+To validate implementations of MyST spec, a suite of test cases is provided [here in `myst.tests.json`](https://unpkg.com/browse/myst-spec/dist/). This file is a JSON list of test cases with MyST markup, MyST AST, and some example HTML (optional). The cases are similar to [CommonMark test cases](https://spec.commonmark.org/) with the addition of the AST representation. The MyST test casese include all the CommonMark examples as well as many MyST specific examples.
 
 ```{note}
 These test cases are still being expanded as the spec is developed.  They do not yet include all edge cases and are also subject to change as the spec is developed.
