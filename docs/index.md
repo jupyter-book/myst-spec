@@ -26,7 +26,7 @@ The MyST AST introduces nodes for directives and roles, as well as numerous new 
 
 ## MyST Test Cases
 
-To validate implementations of MyST spec, a suite of test cases is provided [here in `myst.tests.json`](https://unpkg.com/browse/myst-spec/dist/). This file is a JSON list of test cases with MyST markup, MyST AST, and some example HTML (optional). The cases are similar to [CommonMark test cases](https://spec.commonmark.org/) with the addition of the AST representation. The MyST test casese include all the CommonMark examples as well as many MyST specific examples.
+To validate implementations of MyST spec, a suite of test cases is provided [here in `myst.tests.json`](https://unpkg.com/browse/myst-spec/dist/). This file is a JSON list of test cases with MyST markup, MyST AST, and some example HTML (optional). The cases are similar to [CommonMark test cases](https://spec.commonmark.org/) with the addition of the AST representation. The MyST test cases include all the CommonMark examples as well as many MyST specific examples.
 
 ```{note}
 These test cases are still being expanded as the spec is developed.  They do not yet include all edge cases and are also subject to change as the spec is developed.
