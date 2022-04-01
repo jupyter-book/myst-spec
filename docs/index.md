@@ -20,6 +20,14 @@ Fundamentally, the specification for MyST documents can be broken down into abst
 
 The MyST AST introduces nodes for directives and roles, as well as numerous new features, like admonitions, citiations, and equations, all of which build upon `mdast` and other existing standards and nomenclature. The MyST AST, like `mdast`, is serializable to JSON or YAML, and can be effectively shared between projects, languages, and implementations.
 
-### Working with the MyST AST
+## MyST Test Cases
+
+To validate implementations of MyST spec, a suite of test cases is provided [**here**](https://raw.githubusercontent.com/executablebooks/myst-spec/main/docs/examples/myst.tests.json). This file is a JSON list of test cases with MyST markup, MyST AST, and some example HTML (optional). The cases are similar to [CommonMark test cases](https://spec.commonmark.org/) with the addition of the AST representation. The MyST test casese include all the CommonMark examples as well as many MyST specific examples.
+
+```{note}
+These test cases are still being expanded as the spec is developed.  They do not yet include all edge cases and are also subject to change as the spec is developed.
+```
+
+## Working with the MyST AST
 
 This documentation contains all the node types used to construct a MyST document. Conventionally, the AST representation of a MyST document represents the state immediately after parsing. This means, for example, references are not resolved, directive/role structures are still present, etc. You may work with AST nodes by either modifying or adding to them to modify and update the corresponding MyST document, or you may transform and reduce them into a simpler structure to consume in other contexts.
