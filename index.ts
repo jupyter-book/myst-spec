@@ -357,11 +357,15 @@ files.forEach((file) => {
   const cases = load(testYaml) as TestFile;
   cases.cases.forEach((testCase) => {
     if (!testCase.invalid && !testCase.skip && testCase.mdast && testCase.myst) {
+      let html = testCase.html;
+      if (html && !html.endsWith('\n')) {
+        html = html.concat('\n');
+      }
       jsonTestCases = jsonTestCases.concat({
         title: `${file.replace('.yml', '')}: ${testCase.title}`,
         mdast: testCase.mdast,
         myst: testCase.myst,
-        html: testCase.html || undefined,
+        html,
       });
     }
     if (testCase.id) {
