@@ -4,8 +4,10 @@
 `myst-spec` is still in development; any structures or features present in the JSON schema may change at any time without notice.
 ```
 
-```{note}
-MyST JSON specification, test cases, and typscript types are available here: https://unpkg.com/browse/myst-spec/dist/
+```{admonition} Test Cases
+:class: note
+
+Test cases are available for download here: https://unpkg.com/browse/myst-spec/dist/
 ```
 
 MyST (Markedly Structured Text) is designed to create publication-quality, computational documents written entirely in Markdown. The main use case driving the development and design of MyST is [JupyterBook](https://jupyterbook.org/), which creates educational online textbooks and tutorials with Jupyter Notebooks and narrative content written in MyST.
