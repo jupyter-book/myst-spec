@@ -249,13 +249,16 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal nav-link" href="#myst-abstract-syntax-tree">
    MyST Abstract Syntax Tree
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#working-with-the-myst-ast">
-     Working with the MyST AST
-    </a>
-   </li>
-  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#myst-test-cases">
+   MyST Test Cases
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#working-with-the-myst-ast">
+   Working with the MyST AST
+  </a>
  </li>
 </ul>
 
@@ -291,13 +294,16 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal nav-link" href="#myst-abstract-syntax-tree">
    MyST Abstract Syntax Tree
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#working-with-the-myst-ast">
-     Working with the MyST AST
-    </a>
-   </li>
-  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#myst-test-cases">
+   MyST Test Cases
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#working-with-the-myst-ast">
+   Working with the MyST AST
+  </a>
  </li>
 </ul>
 
@@ -314,6 +320,10 @@ const thebe_selector_output = ".output, .cell_output"
 <p class="admonition-title">Warning</p>
 <p><code class="docutils literal notranslate"><span class="pre">myst-spec</span></code> is still in development; any structures or features present in the JSON schema may change at any time without notice.</p>
 </div>
+<div class="note admonition">
+<p class="admonition-title">Test Cases</p>
+<p>Test cases are available for download here: <a class="reference external" href="https://unpkg.com/browse/myst-spec/dist/">https://unpkg.com/browse/myst-spec/dist/</a></p>
+</div>
 <p>MyST (Markedly Structured Text) is designed to create publication-quality, computational documents written entirely in Markdown. The main use case driving the development and design of MyST is <a class="reference external" href="https://jupyterbook.org/">JupyterBook</a>, which creates educational online textbooks and tutorials with Jupyter Notebooks and narrative content written in MyST.</p>
 <div class="section" id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
@@ -327,10 +337,18 @@ const thebe_selector_output = ".output, .cell_output"
 <h2>MyST Abstract Syntax Tree<a class="headerlink" href="#myst-abstract-syntax-tree" title="Permalink to this headline">¶</a></h2>
 <p>Fundamentally, the specification for MyST documents can be broken down into abstract syntax tree (AST) node types and their document-level counterparts. The <code class="docutils literal notranslate"><span class="pre">myst-spec</span></code> AST builds on <a class="reference external" href="https://github.com/syntax-tree/mdast">Markdown AST, or <code class="docutils literal notranslate"><span class="pre">mdast</span></code></a>, an intermediate format that in turn builds upon the existing <a class="reference external" href="https://github.com/syntax-tree/unsit">Universal Syntax Tree, or <code class="docutils literal notranslate"><span class="pre">unist</span></code> spec</a>. <code class="docutils literal notranslate"><span class="pre">unist</span></code> is used throughout the <a class="reference external" href="https://unifiedjs.com/">unifiedjs</a> Javascript community with hundreds of <a class="reference external" href="https://unifiedjs.com/explore/">existing transformations</a>, <a class="reference external" href="https://unifiedjs.com/explore/keyword/unist-util/">utilities</a> and <a class="reference external" href="https://unifiedjs.com/explore/keyword/rehype/">serializers</a>. <code class="docutils literal notranslate"><span class="pre">unist</span></code> has a simple, with a <code class="docutils literal notranslate"><span class="pre">type</span></code> defining the node optional properties on the node and optional <code class="docutils literal notranslate"><span class="pre">children</span></code> (a leaf node has a <code class="docutils literal notranslate"><span class="pre">value</span></code>).</p>
 <p>The MyST AST introduces nodes for directives and roles, as well as numerous new features, like admonitions, citiations, and equations, all of which build upon <code class="docutils literal notranslate"><span class="pre">mdast</span></code> and other existing standards and nomenclature. The MyST AST, like <code class="docutils literal notranslate"><span class="pre">mdast</span></code>, is serializable to JSON or YAML, and can be effectively shared between projects, languages, and implementations.</p>
-<div class="section" id="working-with-the-myst-ast">
-<h3>Working with the MyST AST<a class="headerlink" href="#working-with-the-myst-ast" title="Permalink to this headline">¶</a></h3>
-<p>This documentation contains all the node types used to construct a MyST document. Conventionally, the AST representation of a MyST document represents the state immediately after parsing. This means, for example, references are not resolved, directive/role structures are still present, etc. You may work with AST nodes by either modifying or adding to them to modify and update the corresponding MyST document, or you may transform and reduce them into a simpler structure to consume in other contexts.</p>
 </div>
+<div class="section" id="myst-test-cases">
+<h2>MyST Test Cases<a class="headerlink" href="#myst-test-cases" title="Permalink to this headline">¶</a></h2>
+<p>To validate implementations of MyST spec, a suite of test cases is provided <a class="reference external" href="https://unpkg.com/browse/myst-spec/dist/">here in <code class="docutils literal notranslate"><span class="pre">myst.tests.json</span></code></a>. This file is a JSON list of test cases with MyST markup, MyST AST, and some example HTML (optional). The cases are similar to <a class="reference external" href="https://spec.commonmark.org/">CommonMark test cases</a> with the addition of the AST representation. The MyST test cases include all the CommonMark examples as well as many MyST specific examples.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>These test cases are still being expanded as the spec is developed.  They do not yet include all edge cases and are also subject to change as the spec is developed.</p>
+</div>
+</div>
+<div class="section" id="working-with-the-myst-ast">
+<h2>Working with the MyST AST<a class="headerlink" href="#working-with-the-myst-ast" title="Permalink to this headline">¶</a></h2>
+<p>This documentation contains all the node types used to construct a MyST document. Conventionally, the AST representation of a MyST document represents the state immediately after parsing. This means, for example, references are not resolved, directive/role structures are still present, etc. You may work with AST nodes by either modifying or adding to them to modify and update the corresponding MyST document, or you may transform and reduce them into a simpler structure to consume in other contexts.</p>
 </div>
 <div class="toctree-wrapper compound">
 </div>
