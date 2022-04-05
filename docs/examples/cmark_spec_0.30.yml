@@ -51,7 +51,7 @@ cases:
                     - type: text
                       value: bar
     myst: "  - foo\n\n\tbar\n"
-    html: |
+    html: |-
       <ul>
       <li>
       <p>foo</p>
@@ -80,7 +80,7 @@ cases:
                   meta: null
                   value: '  bar'
     myst: "- foo\n\n\t\tbar\n"
-    html: |
+    html: |-
       <ul>
       <li>
       <p>foo</p>
@@ -99,7 +99,7 @@ cases:
               meta: null
               value: '  foo'
     myst: ">\t\tfoo\n"
-    html: |
+    html: |-
       <blockquote>
       <pre><code>  foo
       </code></pre>
@@ -122,7 +122,7 @@ cases:
                   meta: null
                   value: '  foo'
     myst: "-\t\tfoo\n"
-    html: |
+    html: |-
       <ul>
       <li>
       <pre><code>  foo
@@ -140,7 +140,7 @@ cases:
             foo
             bar
     myst: "    foo\n\tbar\n"
-    html: |
+    html: |-
       <pre><code>foo
       bar
       </code></pre>
@@ -188,7 +188,7 @@ cases:
                                     - type: text
                                       value: baz
     myst: " - foo\n   - bar\n\t - baz\n"
-    html: |
+    html: |-
       <ul>
       <li>foo
       <ul>
@@ -210,7 +210,7 @@ cases:
             - type: text
               value: Foo
     myst: "#\tFoo\n"
-    html: |
+    html: |-
       <h1>Foo</h1>
   - title: Tabs - example 11
     mdast:
@@ -218,7 +218,7 @@ cases:
       children:
         - type: thematicBreak
     myst: "*\t*\t*\t\n"
-    html: |
+    html: |-
       <hr />
   - title: Backslash escapes - example 12
     mdast:
@@ -230,7 +230,7 @@ cases:
               value: '!"#$%&''()*+,-./:;<=>?@[\]^_`{|}~'
     myst: |
       \!\"\#\$\%\&\'\(\)\*\+\,\-\.\/\:\;\<\=\>\?\@\[\\\]\^\_\`\{\|\}\~
-    html: |
+    html: |-
       <p>!&quot;#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</p>
   - title: Backslash escapes - example 13
     mdast:
@@ -269,7 +269,7 @@ cases:
       \# not a heading
       \[foo]: /url "not a reference"
       \&ouml; not a character entity
-    html: |
+    html: |-
       <p>*not emphasized*
       &lt;br/&gt; not a tag
       [not a link](/foo)
@@ -293,7 +293,7 @@ cases:
                   value: emphasis
     myst: |
       \\*emphasis*
-    html: |
+    html: |-
       <p>\<em>emphasis</em></p>
   - title: Backslash escapes - example 16
     mdast:
@@ -309,7 +309,7 @@ cases:
     myst: |
       foo\
       bar
-    html: |
+    html: |-
       <p>foo<br />
       bar</p>
   - title: Backslash escapes - example 17
@@ -322,7 +322,7 @@ cases:
               value: \[\`
     myst: |
       `` \[\` ``
-    html: |
+    html: |-
       <p><code>\[\`</code></p>
   - title: Backslash escapes - example 18
     mdast:
@@ -334,7 +334,7 @@ cases:
           value: \[\]
     myst: |2
           \[\]
-    html: |
+    html: |-
       <pre><code>\[\]
       </code></pre>
   - title: Backslash escapes - example 19
@@ -349,7 +349,7 @@ cases:
       ~~~
       \[\]
       ~~~
-    html: |
+    html: |-
       <pre><code>\[\]
       </code></pre>
   - title: Backslash escapes - example 20
@@ -377,7 +377,7 @@ cases:
           value: <a href="/bar\/)">
     myst: |
       <a href="/bar\/)">
-    html: |
+    html: |-
       <a href="/bar\/)">
   - title: Backslash escapes - example 22
     mdast:
@@ -393,7 +393,7 @@ cases:
                   value: foo
     myst: |
       [foo](/bar\* "ti\*tle")
-    html: |
+    html: |-
       <p><a href="/bar*" title="ti*tle">foo</a></p>
   - title: Backslash escapes - example 23
     mdast:
@@ -417,7 +417,7 @@ cases:
       [foo]
 
       [foo]: /bar\* "ti\*tle"
-    html: |
+    html: |-
       <p><a href="/bar*" title="ti*tle">foo</a></p>
   - title: Backslash escapes - example 24
     mdast:
@@ -431,7 +431,7 @@ cases:
       ``` foo\+bar
       foo
       ```
-    html: |
+    html: |-
       <pre><code class="language-foo+bar">foo
       </code></pre>
   - title: Entity and numeric character references - example 25
@@ -446,7 +446,7 @@ cases:
       &nbsp; &amp; &copy; &AElig; &Dcaron;
       &frac34; &HilbertSpace; &DifferentialD;
       &ClockwiseContourIntegral; &ngE;
-    html: |
+    html: |-
       <p>  &amp; © Æ Ď
       ¾ ℋ ⅆ
       ∲ ≧̸</p>
@@ -460,7 +460,7 @@ cases:
               value: '# Ӓ Ϡ �'
     myst: |
       &#35; &#1234; &#992; &#0;
-    html: |
+    html: |-
       <p># Ӓ Ϡ �</p>
   - title: Entity and numeric character references - example 27
     mdast:
@@ -472,7 +472,7 @@ cases:
               value: '" ആ ಫ'
     myst: |
       &#X22; &#XD06; &#xcab;
-    html: |
+    html: |-
       <p>&quot; ആ ಫ</p>
   - title: Entity and numeric character references - example 28
     mdast:
@@ -491,7 +491,7 @@ cases:
       &#87654321;
       &#abcdef0;
       &ThisIsNotDefined; &hi?;
-    html: |
+    html: |-
       <p>&amp;nbsp &amp;x; &amp;#; &amp;#x;
       &amp;#87654321;
       &amp;#abcdef0;
@@ -506,7 +506,7 @@ cases:
               value: '&copy'
     myst: |
       &copy
-    html: |
+    html: |-
       <p>&amp;copy</p>
   - title: Entity and numeric character references - example 30
     mdast:
@@ -518,7 +518,7 @@ cases:
               value: '&MadeUpEntity;'
     myst: |
       &MadeUpEntity;
-    html: |
+    html: |-
       <p>&amp;MadeUpEntity;</p>
   - title: Entity and numeric character references - example 31
     mdast:
@@ -528,7 +528,7 @@ cases:
           value: <a href="&ouml;&ouml;.html">
     myst: |
       <a href="&ouml;&ouml;.html">
-    html: |
+    html: |-
       <a href="&ouml;&ouml;.html">
   - title: Entity and numeric character references - example 32
     mdast:
@@ -544,7 +544,7 @@ cases:
                   value: foo
     myst: |
       [foo](/f&ouml;&ouml; "f&ouml;&ouml;")
-    html: |
+    html: |-
       <p><a href="/f%C3%B6%C3%B6" title="föö">foo</a></p>
   - title: Entity and numeric character references - example 33
     mdast:
@@ -568,7 +568,7 @@ cases:
       [foo]
 
       [foo]: /f&ouml;&ouml; "f&ouml;&ouml;"
-    html: |
+    html: |-
       <p><a href="/f%C3%B6%C3%B6" title="föö">foo</a></p>
   - title: Entity and numeric character references - example 34
     mdast:
@@ -582,7 +582,7 @@ cases:
       ``` f&ouml;&ouml;
       foo
       ```
-    html: |
+    html: |-
       <pre><code class="language-föö">foo
       </code></pre>
   - title: Entity and numeric character references - example 35
@@ -595,7 +595,7 @@ cases:
               value: f&ouml;&ouml;
     myst: |
       `f&ouml;&ouml;`
-    html: |
+    html: |-
       <p><code>f&amp;ouml;&amp;ouml;</code></p>
   - title: Entity and numeric character references - example 36
     mdast:
@@ -607,7 +607,7 @@ cases:
           value: f&ouml;f&ouml;
     myst: |2
           f&ouml;f&ouml;
-    html: |
+    html: |-
       <pre><code>f&amp;ouml;f&amp;ouml;
       </code></pre>
   - title: Entity and numeric character references - example 37
@@ -626,7 +626,7 @@ cases:
     myst: |
       &#42;foo&#42;
       *foo*
-    html: |
+    html: |-
       <p>*foo*
       <em>foo</em></p>
   - title: Entity and numeric character references - example 38
@@ -654,7 +654,7 @@ cases:
       &#42; foo
 
       * foo
-    html: |
+    html: |-
       <p>* foo</p>
       <ul>
       <li>foo</li>
@@ -672,7 +672,7 @@ cases:
                 bar
     myst: |
       foo&#10;&#10;bar
-    html: |
+    html: |-
       <p>foo
 
       bar</p>
@@ -697,7 +697,7 @@ cases:
               value: '[a](url "tit")'
     myst: |
       [a](url &quot;tit&quot;)
-    html: |
+    html: |-
       <p>[a](url &quot;tit&quot;)</p>
   - title: Precedence - example 42
     mdast:
@@ -727,7 +727,7 @@ cases:
     myst: |
       - `one
       - two`
-    html: |
+    html: |-
       <ul>
       <li>`one</li>
       <li>two`</li>
@@ -743,7 +743,7 @@ cases:
       ***
       ---
       ___
-    html: |
+    html: |-
       <hr />
       <hr />
       <hr />
@@ -757,7 +757,7 @@ cases:
               value: '==='
     myst: |
       ===
-    html: |
+    html: |-
       <p>===</p>
   - title: Thematic breaks - example 46
     mdast:
@@ -774,7 +774,7 @@ cases:
       --
       **
       __
-    html: |
+    html: |-
       <p>--
       **
       __</p>
@@ -789,7 +789,7 @@ cases:
        ***
         ***
          ***
-    html: |
+    html: |-
       <hr />
       <hr />
       <hr />
@@ -803,7 +803,7 @@ cases:
           value: '***'
     myst: |2
           ***
-    html: |
+    html: |-
       <pre><code>***
       </code></pre>
   - title: Thematic breaks - example 49
@@ -819,7 +819,7 @@ cases:
     myst: |
       Foo
           ***
-    html: |
+    html: |-
       <p>Foo
       ***</p>
   - title: Thematic breaks - example 50
@@ -829,7 +829,7 @@ cases:
         - type: thematicBreak
     myst: |
       _____________________________________
-    html: |
+    html: |-
       <hr />
   - title: Thematic breaks - example 51
     mdast:
@@ -838,7 +838,7 @@ cases:
         - type: thematicBreak
     myst: |2
        - - -
-    html: |
+    html: |-
       <hr />
   - title: Thematic breaks - example 52
     mdast:
@@ -847,7 +847,7 @@ cases:
         - type: thematicBreak
     myst: |2
        **  * ** * ** * **
-    html: |
+    html: |-
       <hr />
   - title: Thematic breaks - example 53
     mdast:
@@ -856,7 +856,7 @@ cases:
         - type: thematicBreak
     myst: |
       -     -      -      -
-    html: |
+    html: |-
       <hr />
   - title: Thematic breaks - example 54
     mdast:
@@ -865,7 +865,7 @@ cases:
         - type: thematicBreak
     myst: |
       - - - -
-    html: |
+    html: |-
       <hr />
   - title: Thematic breaks - example 55
     mdast:
@@ -889,7 +889,7 @@ cases:
       a------
 
       ---a---
-    html: |
+    html: |-
       <p>_ _ _ _ a</p>
       <p>a------</p>
       <p>---a---</p>
@@ -905,7 +905,7 @@ cases:
                   value: '-'
     myst: |2
        *-*
-    html: |
+    html: |-
       <p><em>-</em></p>
   - title: Thematic breaks - example 57
     mdast:
@@ -942,7 +942,7 @@ cases:
       - foo
       ***
       - bar
-    html: |
+    html: |-
       <ul>
       <li>foo</li>
       </ul>
@@ -967,7 +967,7 @@ cases:
       Foo
       ***
       bar
-    html: |
+    html: |-
       <p>Foo</p>
       <hr />
       <p>bar</p>
@@ -988,7 +988,7 @@ cases:
       Foo
       ---
       bar
-    html: |
+    html: |-
       <h2>Foo</h2>
       <p>bar</p>
   - title: Thematic breaks - example 60
@@ -1026,7 +1026,7 @@ cases:
       * Foo
       * * *
       * Bar
-    html: |
+    html: |-
       <ul>
       <li>Foo</li>
       </ul>
@@ -1059,7 +1059,7 @@ cases:
     myst: |
       - Foo
       - * * *
-    html: |
+    html: |-
       <ul>
       <li>Foo</li>
       <li>
@@ -1107,7 +1107,7 @@ cases:
       #### foo
       ##### foo
       ###### foo
-    html: |
+    html: |-
       <h1>foo</h1>
       <h2>foo</h2>
       <h3>foo</h3>
@@ -1124,7 +1124,7 @@ cases:
               value: '####### foo'
     myst: |
       ####### foo
-    html: |
+    html: |-
       <p>####### foo</p>
   - title: ATX headings - example 64
     mdast:
@@ -1142,7 +1142,7 @@ cases:
       #5 bolt
 
       #hashtag
-    html: |
+    html: |-
       <p>#5 bolt</p>
       <p>#hashtag</p>
   - title: ATX headings - example 65
@@ -1155,7 +1155,7 @@ cases:
               value: '## foo'
     myst: |
       \## foo
-    html: |
+    html: |-
       <p>## foo</p>
   - title: ATX headings - example 66
     mdast:
@@ -1174,7 +1174,7 @@ cases:
               value: ' *baz*'
     myst: |
       # foo *bar* \*baz\*
-    html: |
+    html: |-
       <h1>foo <em>bar</em> *baz*</h1>
   - title: ATX headings - example 67
     mdast:
@@ -1187,7 +1187,7 @@ cases:
               value: foo
     myst: |
       #                  foo
-    html: |
+    html: |-
       <h1>foo</h1>
   - title: ATX headings - example 68
     mdast:
@@ -1212,7 +1212,7 @@ cases:
        ### foo
         ## foo
          # foo
-    html: |
+    html: |-
       <h3>foo</h3>
       <h2>foo</h2>
       <h1>foo</h1>
@@ -1226,7 +1226,7 @@ cases:
           value: '# foo'
     myst: |2
           # foo
-    html: |
+    html: |-
       <pre><code># foo
       </code></pre>
   - title: ATX headings - example 70
@@ -1242,7 +1242,7 @@ cases:
     myst: |
       foo
           # bar
-    html: |
+    html: |-
       <p>foo
       # bar</p>
   - title: ATX headings - example 71
@@ -1262,7 +1262,7 @@ cases:
     myst: |
       ## foo ##
         ###   bar    ###
-    html: |
+    html: |-
       <h2>foo</h2>
       <h3>bar</h3>
   - title: ATX headings - example 72
@@ -1282,7 +1282,7 @@ cases:
     myst: |
       # foo ##################################
       ##### foo ##
-    html: |
+    html: |-
       <h1>foo</h1>
       <h5>foo</h5>
   - title: ATX headings - example 73
@@ -1296,7 +1296,7 @@ cases:
               value: foo
     myst: |
       ### foo ###
-    html: |
+    html: |-
       <h3>foo</h3>
   - title: ATX headings - example 74
     mdast:
@@ -1309,7 +1309,7 @@ cases:
               value: 'foo ### b'
     myst: |
       ### foo ### b
-    html: |
+    html: |-
       <h3>foo ### b</h3>
   - title: ATX headings - example 75
     mdast:
@@ -1322,7 +1322,7 @@ cases:
               value: foo#
     myst: |
       # foo#
-    html: |
+    html: |-
       <h1>foo#</h1>
   - title: ATX headings - example 76
     mdast:
@@ -1347,7 +1347,7 @@ cases:
       ### foo \###
       ## foo #\##
       # foo \#
-    html: |
+    html: |-
       <h3>foo ###</h3>
       <h2>foo ###</h2>
       <h1>foo #</h1>
@@ -1366,7 +1366,7 @@ cases:
       ****
       ## foo
       ****
-    html: |
+    html: |-
       <hr />
       <h2>foo</h2>
       <hr />
@@ -1391,7 +1391,7 @@ cases:
       Foo bar
       # baz
       Bar foo
-    html: |
+    html: |-
       <p>Foo bar</p>
       <h1>baz</h1>
       <p>Bar foo</p>
@@ -1412,7 +1412,7 @@ cases:
       ## 
       #
       ### ###
-    html: |
+    html: |-
       <h2></h2>
       <h1></h1>
       <h3></h3>
@@ -1444,7 +1444,7 @@ cases:
 
       Foo *bar*
       ---------
-    html: |
+    html: |-
       <h1>Foo <em>bar</em></h1>
       <h2>Foo <em>bar</em></h2>
   - title: Setext headings - example 81
@@ -1466,7 +1466,7 @@ cases:
       Foo *bar
       baz*
       ====
-    html: |
+    html: |-
       <h1>Foo <em>bar
       baz</em></h1>
   - title: Setext headings - example 82
@@ -1485,7 +1485,7 @@ cases:
                     bar
                     baz
     myst: "  Foo *bar\nbaz*\t\n====\n"
-    html: |
+    html: |-
       <h1>Foo <em>bar
       baz</em></h1>
   - title: Setext headings - example 83
@@ -1508,7 +1508,7 @@ cases:
 
       Foo
       =
-    html: |
+    html: |-
       <h2>Foo</h2>
       <h1>Foo</h1>
   - title: Setext headings - example 84
@@ -1539,7 +1539,7 @@ cases:
 
         Foo
         ===
-    html: |
+    html: |-
       <h2>Foo</h2>
       <h2>Foo</h2>
       <h1>Foo</h1>
@@ -1562,7 +1562,7 @@ cases:
 
           Foo
       ---
-    html: |
+    html: |-
       <pre><code>Foo
       ---
 
@@ -1581,7 +1581,7 @@ cases:
     myst: |
       Foo
          ----
-    html: |
+    html: |-
       <h2>Foo</h2>
   - title: Setext headings - example 87
     mdast:
@@ -1596,7 +1596,7 @@ cases:
     myst: |
       Foo
           ---
-    html: |
+    html: |-
       <p>Foo
       ---</p>
   - title: Setext headings - example 88
@@ -1620,7 +1620,7 @@ cases:
 
       Foo
       --- -
-    html: |
+    html: |-
       <p>Foo
       = =</p>
       <p>Foo</p>
@@ -1637,7 +1637,7 @@ cases:
     myst: |
       Foo  
       -----
-    html: |
+    html: |-
       <h2>Foo</h2>
   - title: Setext headings - example 90
     mdast:
@@ -1651,7 +1651,7 @@ cases:
     myst: |
       Foo\
       ----
-    html: |
+    html: |-
       <h2>Foo\</h2>
   - title: Setext headings - example 91
     mdast:
@@ -1683,7 +1683,7 @@ cases:
       <a title="a lot
       ---
       of dashes"/>
-    html: |
+    html: |-
       <h2>`Foo</h2>
       <p>`</p>
       <h2>&lt;a title=&quot;a lot</h2>
@@ -1702,7 +1702,7 @@ cases:
     myst: |
       > Foo
       ---
-    html: |
+    html: |-
       <blockquote>
       <p>Foo</p>
       </blockquote>
@@ -1724,7 +1724,7 @@ cases:
       > foo
       bar
       ===
-    html: |
+    html: |-
       <blockquote>
       <p>foo
       bar
@@ -1751,7 +1751,7 @@ cases:
     myst: |
       - Foo
       ---
-    html: |
+    html: |-
       <ul>
       <li>Foo</li>
       </ul>
@@ -1771,7 +1771,7 @@ cases:
       Foo
       Bar
       ---
-    html: |
+    html: |-
       <h2>Foo
       Bar</h2>
   - title: Setext headings - example 96
@@ -1796,7 +1796,7 @@ cases:
       Bar
       ---
       Baz
-    html: |
+    html: |-
       <hr />
       <h2>Foo</h2>
       <h2>Bar</h2>
@@ -1812,7 +1812,7 @@ cases:
     myst: |
 
       ====
-    html: |
+    html: |-
       <p>====</p>
   - title: Setext headings - example 98
     mdast:
@@ -1823,7 +1823,7 @@ cases:
     myst: |
       ---
       ---
-    html: |
+    html: |-
       <hr />
       <hr />
   - title: Setext headings - example 99
@@ -1847,7 +1847,7 @@ cases:
     myst: |
       - foo
       -----
-    html: |
+    html: |-
       <ul>
       <li>foo</li>
       </ul>
@@ -1864,7 +1864,7 @@ cases:
     myst: |2
           foo
       ---
-    html: |
+    html: |-
       <pre><code>foo
       </code></pre>
       <hr />
@@ -1882,7 +1882,7 @@ cases:
     myst: |
       > foo
       -----
-    html: |
+    html: |-
       <blockquote>
       <p>foo</p>
       </blockquote>
@@ -1899,7 +1899,7 @@ cases:
     myst: |
       \> foo
       ------
-    html: |
+    html: |-
       <h2>&gt; foo</h2>
   - title: Setext headings - example 103
     mdast:
@@ -1924,7 +1924,7 @@ cases:
       bar
       ---
       baz
-    html: |
+    html: |-
       <p>Foo</p>
       <h2>bar</h2>
       <p>baz</p>
@@ -1950,7 +1950,7 @@ cases:
       ---
 
       baz
-    html: |
+    html: |-
       <p>Foo
       bar</p>
       <hr />
@@ -1975,7 +1975,7 @@ cases:
       bar
       * * *
       baz
-    html: |
+    html: |-
       <p>Foo
       bar</p>
       <hr />
@@ -1997,7 +1997,7 @@ cases:
       bar
       \---
       baz
-    html: |
+    html: |-
       <p>Foo
       bar
       ---
@@ -2015,7 +2015,7 @@ cases:
     myst: |2
           a simple
             indented code block
-    html: |
+    html: |-
       <pre><code>a simple
         indented code block
       </code></pre>
@@ -2044,7 +2044,7 @@ cases:
         - foo
 
           bar
-    html: |
+    html: |-
       <ul>
       <li>
       <p>foo</p>
@@ -2085,7 +2085,7 @@ cases:
       1.  foo
 
           - bar
-    html: |
+    html: |-
       <ol>
       <li>
       <p>foo</p>
@@ -2111,7 +2111,7 @@ cases:
           *hi*
 
           - one
-    html: |
+    html: |-
       <pre><code>&lt;a/&gt;
       *hi*
 
@@ -2140,7 +2140,7 @@ cases:
        
        
           chunk3
-    html: |
+    html: |-
       <pre><code>chunk1
 
       chunk2
@@ -2164,7 +2164,7 @@ cases:
           chunk1
             
             chunk2
-    html: |
+    html: |-
       <pre><code>chunk1
         
         chunk2
@@ -2183,7 +2183,7 @@ cases:
       Foo
           bar
 
-    html: |
+    html: |-
       <p>Foo
       bar</p>
   - title: Indented code blocks - example 114
@@ -2201,7 +2201,7 @@ cases:
     myst: |2
           foo
       bar
-    html: |
+    html: |-
       <pre><code>foo
       </code></pre>
       <p>bar</p>
@@ -2235,7 +2235,7 @@ cases:
       ------
           foo
       ----
-    html: |
+    html: |-
       <h1>Heading</h1>
       <pre><code>foo
       </code></pre>
@@ -2256,7 +2256,7 @@ cases:
     myst: |2
               foo
           bar
-    html: |
+    html: |-
       <pre><code>    foo
       bar
       </code></pre>
@@ -2274,7 +2274,7 @@ cases:
           foo
           
 
-    html: |
+    html: |-
       <pre><code>foo
       </code></pre>
   - title: Indented code blocks - example 118
@@ -2286,7 +2286,7 @@ cases:
           meta: null
           value: 'foo  '
     myst: '    foo  '
-    html: |
+    html: |-
       <pre><code>foo  
       </code></pre>
   - title: Fenced code blocks - example 119
@@ -2304,7 +2304,7 @@ cases:
       <
        >
       ```
-    html: |
+    html: |-
       <pre><code>&lt;
        &gt;
       </code></pre>
@@ -2323,7 +2323,7 @@ cases:
       <
        >
       ~~~
-    html: |
+    html: |-
       <pre><code>&lt;
        &gt;
       </code></pre>
@@ -2339,7 +2339,7 @@ cases:
       ``
       foo
       ``
-    html: |
+    html: |-
       <p><code>foo</code></p>
   - title: Fenced code blocks - example 122
     mdast:
@@ -2356,7 +2356,7 @@ cases:
       aaa
       ~~~
       ```
-    html: |
+    html: |-
       <pre><code>aaa
       ~~~
       </code></pre>
@@ -2375,7 +2375,7 @@ cases:
       aaa
       ```
       ~~~
-    html: |
+    html: |-
       <pre><code>aaa
       ```
       </code></pre>
@@ -2394,7 +2394,7 @@ cases:
       aaa
       ```
       ``````
-    html: |
+    html: |-
       <pre><code>aaa
       ```
       </code></pre>
@@ -2413,7 +2413,7 @@ cases:
       aaa
       ~~~
       ~~~~
-    html: |
+    html: |-
       <pre><code>aaa
       ~~~
       </code></pre>
@@ -2427,7 +2427,7 @@ cases:
           value: ''
     myst: |
       ```
-    html: |
+    html: |-
       <pre><code></code></pre>
   - title: Fenced code blocks - example 127
     mdast:
@@ -2445,7 +2445,7 @@ cases:
 
       ```
       aaa
-    html: |
+    html: |-
       <pre><code>
       ```
       aaa
@@ -2469,7 +2469,7 @@ cases:
       > aaa
 
       bbb
-    html: |
+    html: |-
       <blockquote>
       <pre><code>aaa
       </code></pre>
@@ -2490,7 +2490,7 @@ cases:
 
         
       ```
-    html: |
+    html: |-
       <pre><code>
         
       </code></pre>
@@ -2505,7 +2505,7 @@ cases:
     myst: |
       ```
       ```
-    html: |
+    html: |-
       <pre><code></code></pre>
   - title: Fenced code blocks - example 131
     mdast:
@@ -2522,7 +2522,7 @@ cases:
        aaa
       aaa
       ```
-    html: |
+    html: |-
       <pre><code>aaa
       aaa
       </code></pre>
@@ -2543,7 +2543,7 @@ cases:
         aaa
       aaa
         ```
-    html: |
+    html: |-
       <pre><code>aaa
       aaa
       aaa
@@ -2565,7 +2565,7 @@ cases:
           aaa
         aaa
          ```
-    html: |
+    html: |-
       <pre><code>aaa
        aaa
       aaa
@@ -2585,7 +2585,7 @@ cases:
           ```
           aaa
           ```
-    html: |
+    html: |-
       <pre><code>```
       aaa
       ```
@@ -2602,7 +2602,7 @@ cases:
       ```
       aaa
         ```
-    html: |
+    html: |-
       <pre><code>aaa
       </code></pre>
   - title: Fenced code blocks - example 136
@@ -2617,7 +2617,7 @@ cases:
          ```
       aaa
         ```
-    html: |
+    html: |-
       <pre><code>aaa
       </code></pre>
   - title: Fenced code blocks - example 137
@@ -2634,7 +2634,7 @@ cases:
       ```
       aaa
           ```
-    html: |
+    html: |-
       <pre><code>aaa
           ```
       </code></pre>
@@ -2653,7 +2653,7 @@ cases:
     myst: |
       ``` ```
       aaa
-    html: |
+    html: |-
       <p><code> </code>
       aaa</p>
   - title: Fenced code blocks - example 139
@@ -2670,7 +2670,7 @@ cases:
       ~~~~~~
       aaa
       ~~~ ~~
-    html: |
+    html: |-
       <pre><code>aaa
       ~~~ ~~
       </code></pre>
@@ -2696,7 +2696,7 @@ cases:
       bar
       ```
       baz
-    html: |
+    html: |-
       <p>foo</p>
       <pre><code>bar
       </code></pre>
@@ -2726,7 +2726,7 @@ cases:
       bar
       ~~~
       # baz
-    html: |
+    html: |-
       <h2>foo</h2>
       <pre><code>bar
       </code></pre>
@@ -2748,7 +2748,7 @@ cases:
         return 3
       end
       ```
-    html: |
+    html: |-
       <pre><code class="language-ruby">def foo(x)
         return 3
       end
@@ -2770,7 +2770,7 @@ cases:
         return 3
       end
       ~~~~~~~
-    html: |
+    html: |-
       <pre><code class="language-ruby">def foo(x)
         return 3
       end
@@ -2786,7 +2786,7 @@ cases:
     myst: |
       ````;
       ````
-    html: |
+    html: |-
       <pre><code class="language-;"></code></pre>
   - title: Fenced code blocks - example 145
     mdast:
@@ -2803,7 +2803,7 @@ cases:
     myst: |
       ``` aa ```
       foo
-    html: |
+    html: |-
       <p><code>aa</code>
       foo</p>
   - title: Fenced code blocks - example 146
@@ -2818,7 +2818,7 @@ cases:
       ~~~ aa ``` ~~~
       foo
       ~~~
-    html: |
+    html: |-
       <pre><code class="language-aa">foo
       </code></pre>
   - title: Fenced code blocks - example 147
@@ -2833,7 +2833,7 @@ cases:
       ```
       ``` aaa
       ```
-    html: |
+    html: |-
       <pre><code>``` aaa
       </code></pre>
   - title: HTML blocks - example 148
@@ -2866,7 +2866,7 @@ cases:
       _world_.
       </pre>
       </td></tr></table>
-    html: |
+    html: |-
       <table><tr><td>
       <pre>
       **Hello**,
@@ -2900,7 +2900,7 @@ cases:
       </table>
 
       okay.
-    html: |
+    html: |-
       <table>
         <tr>
           <td>
@@ -2922,7 +2922,7 @@ cases:
        <div>
         *hello*
                <foo><a>
-    html: |2
+    html: |-2
        <div>
         *hello*
                <foo><a>
@@ -2937,7 +2937,7 @@ cases:
     myst: |
       </div>
       *foo*
-    html: |
+    html: |-
       </div>
       *foo*
   - title: HTML blocks - example 152
@@ -2960,7 +2960,7 @@ cases:
       *Markdown*
 
       </DIV>
-    html: |
+    html: |-
       <DIV CLASS="foo">
       <p><em>Markdown</em></p>
       </DIV>
@@ -2977,7 +2977,7 @@ cases:
       <div id="foo"
         class="bar">
       </div>
-    html: |
+    html: |-
       <div id="foo"
         class="bar">
       </div>
@@ -2994,7 +2994,7 @@ cases:
       <div id="foo" class="bar
         baz">
       </div>
-    html: |
+    html: |-
       <div id="foo" class="bar
         baz">
       </div>
@@ -3017,7 +3017,7 @@ cases:
       *foo*
 
       *bar*
-    html: |
+    html: |-
       <div>
       *foo*
       <p><em>bar</em></p>
@@ -3032,7 +3032,7 @@ cases:
     myst: |
       <div id="foo"
       *hi*
-    html: |
+    html: |-
       <div id="foo"
       *hi*
   - title: HTML blocks - example 157
@@ -3046,7 +3046,7 @@ cases:
     myst: |
       <div class
       foo
-    html: |
+    html: |-
       <div class
       foo
   - title: HTML blocks - example 158
@@ -3060,7 +3060,7 @@ cases:
     myst: |
       <div *???-&&&-<---
       *foo*
-    html: |
+    html: |-
       <div *???-&&&-<---
       *foo*
   - title: HTML blocks - example 159
@@ -3071,7 +3071,7 @@ cases:
           value: <div><a href="bar">*foo*</a></div>
     myst: |
       <div><a href="bar">*foo*</a></div>
-    html: |
+    html: |-
       <div><a href="bar">*foo*</a></div>
   - title: HTML blocks - example 160
     mdast:
@@ -3086,7 +3086,7 @@ cases:
       <table><tr><td>
       foo
       </td></tr></table>
-    html: |
+    html: |-
       <table><tr><td>
       foo
       </td></tr></table>
@@ -3105,7 +3105,7 @@ cases:
       ``` c
       int x = 33;
       ```
-    html: |
+    html: |-
       <div></div>
       ``` c
       int x = 33;
@@ -3123,7 +3123,7 @@ cases:
       <a href="foo">
       *bar*
       </a>
-    html: |
+    html: |-
       <a href="foo">
       *bar*
       </a>
@@ -3140,7 +3140,7 @@ cases:
       <Warning>
       *bar*
       </Warning>
-    html: |
+    html: |-
       <Warning>
       *bar*
       </Warning>
@@ -3157,7 +3157,7 @@ cases:
       <i class="foo">
       *bar*
       </i>
-    html: |
+    html: |-
       <i class="foo">
       *bar*
       </i>
@@ -3172,7 +3172,7 @@ cases:
     myst: |
       </ins>
       *bar*
-    html: |
+    html: |-
       </ins>
       *bar*
   - title: HTML blocks - example 166
@@ -3188,7 +3188,7 @@ cases:
       <del>
       *foo*
       </del>
-    html: |
+    html: |-
       <del>
       *foo*
       </del>
@@ -3212,7 +3212,7 @@ cases:
       *foo*
 
       </del>
-    html: |
+    html: |-
       <del>
       <p><em>foo</em></p>
       </del>
@@ -3232,7 +3232,7 @@ cases:
               value: </del>
     myst: |
       <del>*foo*</del>
-    html: |
+    html: |-
       <p><del><em>foo</em></del></p>
   - title: HTML blocks - example 169
     mdast:
@@ -3258,7 +3258,7 @@ cases:
       main = print $ parseTags tags
       </code></pre>
       okay
-    html: |
+    html: |-
       <pre language="haskell"><code>
       import Text.HTML.TagSoup
 
@@ -3288,7 +3288,7 @@ cases:
       document.getElementById("demo").innerHTML = "Hello JavaScript!";
       </script>
       okay
-    html: |
+    html: |-
       <script type="text/javascript">
       // JavaScript example
 
@@ -3316,7 +3316,7 @@ cases:
       _bar_
 
       </textarea>
-    html: |
+    html: |-
       <textarea>
 
       *foo*
@@ -3348,7 +3348,7 @@ cases:
       p {color:blue;}
       </style>
       okay
-    html: |
+    html: |-
       <style
         type="text/css">
       h1 {color:red;}
@@ -3371,7 +3371,7 @@ cases:
         type="text/css">
 
       foo
-    html: |
+    html: |-
       <style
         type="text/css">
 
@@ -3395,7 +3395,7 @@ cases:
       > foo
 
       bar
-    html: |
+    html: |-
       <blockquote>
       <div>
       foo
@@ -3427,7 +3427,7 @@ cases:
     myst: |
       - <div>
       - foo
-    html: |
+    html: |-
       <ul>
       <li>
       <div>
@@ -3449,7 +3449,7 @@ cases:
     myst: |
       <style>p{color:red;}</style>
       *foo*
-    html: |
+    html: |-
       <style>p{color:red;}</style>
       <p><em>foo</em></p>
   - title: HTML blocks - example 177
@@ -3467,7 +3467,7 @@ cases:
     myst: |
       <!-- foo -->*bar*
       *baz*
-    html: |
+    html: |-
       <!-- foo -->*bar*
       <p><em>baz</em></p>
   - title: HTML blocks - example 178
@@ -3483,7 +3483,7 @@ cases:
       <script>
       foo
       </script>1. *bar*
-    html: |
+    html: |-
       <script>
       foo
       </script>1. *bar*
@@ -3507,7 +3507,7 @@ cases:
       bar
          baz -->
       okay
-    html: |
+    html: |-
       <!-- Foo
 
       bar
@@ -3535,7 +3535,7 @@ cases:
 
       ?>
       okay
-    html: |
+    html: |-
       <?php
 
         echo '>';
@@ -3550,7 +3550,7 @@ cases:
           value: <!DOCTYPE html>
     myst: |
       <!DOCTYPE html>
-    html: |
+    html: |-
       <!DOCTYPE html>
   - title: HTML blocks - example 182
     mdast:
@@ -3588,7 +3588,7 @@ cases:
       }
       ]]>
       okay
-    html: |
+    html: |-
       <![CDATA[
       function matchwo(a,b)
       {
@@ -3616,7 +3616,7 @@ cases:
         <!-- foo -->
 
           <!-- foo -->
-    html: |2
+    html: |-2
         <!-- foo -->
       <pre><code>&lt;!-- foo --&gt;
       </code></pre>
@@ -3634,7 +3634,7 @@ cases:
         <div>
 
           <div>
-    html: |2
+    html: |-2
         <div>
       <pre><code>&lt;div&gt;
       </code></pre>
@@ -3656,7 +3656,7 @@ cases:
       <div>
       bar
       </div>
-    html: |
+    html: |-
       <p>Foo</p>
       <div>
       bar
@@ -3676,7 +3676,7 @@ cases:
       bar
       </div>
       *foo*
-    html: |
+    html: |-
       <div>
       bar
       </div>
@@ -3700,7 +3700,7 @@ cases:
       Foo
       <a href="bar">
       baz
-    html: |
+    html: |-
       <p>Foo
       <a href="bar">
       baz</p>
@@ -3726,7 +3726,7 @@ cases:
       *Emphasized* text.
 
       </div>
-    html: |
+    html: |-
       <div>
       <p><em>Emphasized</em> text.</p>
       </div>
@@ -3743,7 +3743,7 @@ cases:
       <div>
       *Emphasized* text.
       </div>
-    html: |
+    html: |-
       <div>
       *Emphasized* text.
       </div>
@@ -3776,7 +3776,7 @@ cases:
       </tr>
 
       </table>
-    html: |
+    html: |-
       <table>
       <tr>
       <td>
@@ -3815,7 +3815,7 @@ cases:
         </tr>
 
       </table>
-    html: |
+    html: |-
       <table>
         <tr>
       <pre><code>&lt;td&gt;
@@ -3846,7 +3846,7 @@ cases:
       [foo]: /url "title"
 
       [foo]
-    html: |
+    html: |-
       <p><a href="/url" title="title">foo</a></p>
   - title: Link reference definitions - example 193
     mdast:
@@ -3872,7 +3872,7 @@ cases:
                  'the title'  
 
       [foo]
-    html: |
+    html: |-
       <p><a href="/url" title="the title">foo</a></p>
   - title: Link reference definitions - example 194
     mdast:
@@ -3896,7 +3896,7 @@ cases:
       [Foo*bar\]]:my_(url) 'title (with parens)'
 
       [Foo*bar\]]
-    html: |
+    html: |-
       <p><a href="my_(url)" title="title (with parens)">Foo*bar]</a></p>
   - title: Link reference definitions - example 195
     mdast:
@@ -3922,7 +3922,7 @@ cases:
       'title'
 
       [Foo bar]
-    html: |
+    html: |-
       <p><a href="my%20url" title="title">Foo bar</a></p>
   - title: Link reference definitions - example 196
     mdast:
@@ -3954,7 +3954,7 @@ cases:
       '
 
       [foo]
-    html: |
+    html: |-
       <p><a href="/url" title="
       title
       line1
@@ -3982,7 +3982,7 @@ cases:
       with blank line'
 
       [foo]
-    html: |
+    html: |-
       <p>[foo]: /url 'title</p>
       <p>with blank line'</p>
       <p>[foo]</p>
@@ -4009,7 +4009,7 @@ cases:
       /url
 
       [foo]
-    html: |
+    html: |-
       <p><a href="/url">foo</a></p>
   - title: Link reference definitions - example 199
     mdast:
@@ -4027,7 +4027,7 @@ cases:
       [foo]:
 
       [foo]
-    html: |
+    html: |-
       <p>[foo]:</p>
       <p>[foo]</p>
   - title: Link reference definitions - example 200
@@ -4052,7 +4052,7 @@ cases:
       [foo]: <>
 
       [foo]
-    html: |
+    html: |-
       <p><a href="">foo</a></p>
   - title: Link reference definitions - example 201
     mdast:
@@ -4074,7 +4074,7 @@ cases:
       [foo]: <bar>(baz)
 
       [foo]
-    html: |
+    html: |-
       <p>[foo]: <bar>(baz)</p>
       <p>[foo]</p>
   - title: Link reference definitions - example 202
@@ -4099,7 +4099,7 @@ cases:
       [foo]: /url\bar\*baz "foo\"bar\baz"
 
       [foo]
-    html: |
+    html: |-
       <p><a href="/url%5Cbar*baz" title="foo&quot;bar\baz">foo</a></p>
   - title: Link reference definitions - example 203
     mdast:
@@ -4123,7 +4123,7 @@ cases:
       [foo]
 
       [foo]: url
-    html: |
+    html: |-
       <p><a href="url">foo</a></p>
   - title: Link reference definitions - example 204
     mdast:
@@ -4153,7 +4153,7 @@ cases:
 
       [foo]: first
       [foo]: second
-    html: |
+    html: |-
       <p><a href="first">foo</a></p>
   - title: Link reference definitions - example 205
     mdast:
@@ -4177,7 +4177,7 @@ cases:
       [FOO]: /url
 
       [Foo]
-    html: |
+    html: |-
       <p><a href="/url">Foo</a></p>
   - title: Link reference definitions - example 206
     mdast:
@@ -4201,7 +4201,7 @@ cases:
       [ΑΓΩ]: /φου
 
       [αγω]
-    html: |
+    html: |-
       <p><a href="/%CF%86%CE%BF%CF%85">αγω</a></p>
   - title: Link reference definitions - example 207
     mdast:
@@ -4235,7 +4235,7 @@ cases:
       foo
       ]: /url
       bar
-    html: |
+    html: |-
       <p>bar</p>
   - title: Link reference definitions - example 209
     mdast:
@@ -4247,7 +4247,7 @@ cases:
               value: '[foo]: /url "title" ok'
     myst: |
       [foo]: /url "title" ok
-    html: |
+    html: |-
       <p>[foo]: /url &quot;title&quot; ok</p>
   - title: Link reference definitions - example 210
     mdast:
@@ -4265,7 +4265,7 @@ cases:
     myst: |
       [foo]: /url
       "title" ok
-    html: |
+    html: |-
       <p>&quot;title&quot; ok</p>
   - title: Link reference definitions - example 211
     mdast:
@@ -4283,7 +4283,7 @@ cases:
           [foo]: /url "title"
 
       [foo]
-    html: |
+    html: |-
       <pre><code>[foo]: /url &quot;title&quot;
       </code></pre>
       <p>[foo]</p>
@@ -4305,7 +4305,7 @@ cases:
       ```
 
       [foo]
-    html: |
+    html: |-
       <pre><code>[foo]: /url
       </code></pre>
       <p>[foo]</p>
@@ -4328,7 +4328,7 @@ cases:
       [bar]: /baz
 
       [bar]
-    html: |
+    html: |-
       <p>Foo
       [bar]: /baz</p>
       <p>[bar]</p>
@@ -4361,7 +4361,7 @@ cases:
       # [Foo]
       [foo]: /url
       > bar
-    html: |
+    html: |-
       <h1><a href="/url">Foo</a></h1>
       <blockquote>
       <p>bar</p>
@@ -4394,7 +4394,7 @@ cases:
       bar
       ===
       [foo]
-    html: |
+    html: |-
       <h1>bar</h1>
       <p><a href="/url">foo</a></p>
   - title: Link reference definitions - example 216
@@ -4422,7 +4422,7 @@ cases:
       [foo]: /url
       ===
       [foo]
-    html: |
+    html: |-
       <p>===
       <a href="/url">foo</a></p>
   - title: Link reference definitions - example 217
@@ -4482,7 +4482,7 @@ cases:
       [foo],
       [bar],
       [baz]
-    html: |
+    html: |-
       <p><a href="/foo-url" title="foo">foo</a>,
       <a href="/bar-url" title="bar">bar</a>,
       <a href="/baz-url">baz</a></p>
@@ -4510,7 +4510,7 @@ cases:
       [foo]
 
       > [foo]: /url
-    html: |
+    html: |-
       <p><a href="/url">foo</a></p>
       <blockquote>
       </blockquote>
@@ -4530,7 +4530,7 @@ cases:
       aaa
 
       bbb
-    html: |
+    html: |-
       <p>aaa</p>
       <p>bbb</p>
   - title: Paragraphs - example 220
@@ -4555,7 +4555,7 @@ cases:
 
       ccc
       ddd
-    html: |
+    html: |-
       <p>aaa
       bbb</p>
       <p>ccc
@@ -4577,7 +4577,7 @@ cases:
 
 
       bbb
-    html: |
+    html: |-
       <p>aaa</p>
       <p>bbb</p>
   - title: Paragraphs - example 222
@@ -4593,7 +4593,7 @@ cases:
     myst: |2
         aaa
        bbb
-    html: |
+    html: |-
       <p>aaa
       bbb</p>
   - title: Paragraphs - example 223
@@ -4611,7 +4611,7 @@ cases:
       aaa
                    bbb
                                              ccc
-    html: |
+    html: |-
       <p>aaa
       bbb
       ccc</p>
@@ -4628,7 +4628,7 @@ cases:
     myst: |2
          aaa
       bbb
-    html: |
+    html: |-
       <p>aaa
       bbb</p>
   - title: Paragraphs - example 225
@@ -4646,7 +4646,7 @@ cases:
     myst: |2
           aaa
       bbb
-    html: |
+    html: |-
       <pre><code>aaa
       </code></pre>
       <p>bbb</p>
@@ -4664,7 +4664,7 @@ cases:
     myst: |
       aaa     
       bbb
-    html: |
+    html: |-
       <p>aaa<br />
       bbb</p>
   - title: Blank lines - example 227
@@ -4687,7 +4687,7 @@ cases:
         
 
       # aaa
-    html: |
+    html: |-
       <p>aaa</p>
       <h1>aaa</h1>
   - title: Block quotes - example 228
@@ -4711,7 +4711,7 @@ cases:
       > # Foo
       > bar
       > baz
-    html: |
+    html: |-
       <blockquote>
       <h1>Foo</h1>
       <p>bar
@@ -4738,7 +4738,7 @@ cases:
       ># Foo
       >bar
       > baz
-    html: |
+    html: |-
       <blockquote>
       <h1>Foo</h1>
       <p>bar
@@ -4765,7 +4765,7 @@ cases:
          > # Foo
          > bar
        > baz
-    html: |
+    html: |-
       <blockquote>
       <h1>Foo</h1>
       <p>bar
@@ -4786,7 +4786,7 @@ cases:
           > # Foo
           > bar
           > baz
-    html: |
+    html: |-
       <pre><code>&gt; # Foo
       &gt; bar
       &gt; baz
@@ -4812,7 +4812,7 @@ cases:
       > # Foo
       > bar
       baz
-    html: |
+    html: |-
       <blockquote>
       <h1>Foo</h1>
       <p>bar
@@ -4835,7 +4835,7 @@ cases:
       > bar
       baz
       > foo
-    html: |
+    html: |-
       <blockquote>
       <p>bar
       baz
@@ -4855,7 +4855,7 @@ cases:
     myst: |
       > foo
       ---
-    html: |
+    html: |-
       <blockquote>
       <p>foo</p>
       </blockquote>
@@ -4895,7 +4895,7 @@ cases:
     myst: |
       > - foo
       - bar
-    html: |
+    html: |-
       <blockquote>
       <ul>
       <li>foo</li>
@@ -4921,7 +4921,7 @@ cases:
     myst: |
       >     foo
           bar
-    html: |
+    html: |-
       <blockquote>
       <pre><code>foo
       </code></pre>
@@ -4950,7 +4950,7 @@ cases:
       > ```
       foo
       ```
-    html: |
+    html: |-
       <blockquote>
       <pre><code></code></pre>
       </blockquote>
@@ -4971,7 +4971,7 @@ cases:
     myst: |
       > foo
           - bar
-    html: |
+    html: |-
       <blockquote>
       <p>foo
       - bar</p>
@@ -4984,7 +4984,7 @@ cases:
           children: []
     myst: |
       >
-    html: |
+    html: |-
       <blockquote>
       </blockquote>
   - title: Block quotes - example 240
@@ -4997,7 +4997,7 @@ cases:
       >
       >  
       >
-    html: |
+    html: |-
       <blockquote>
       </blockquote>
   - title: Block quotes - example 241
@@ -5014,7 +5014,7 @@ cases:
       >
       > foo
       >
-    html: |
+    html: |-
       <blockquote>
       <p>foo</p>
       </blockquote>
@@ -5038,7 +5038,7 @@ cases:
       > foo
 
       > bar
-    html: |
+    html: |-
       <blockquote>
       <p>foo</p>
       </blockquote>
@@ -5060,7 +5060,7 @@ cases:
     myst: |
       > foo
       > bar
-    html: |
+    html: |-
       <blockquote>
       <p>foo
       bar</p>
@@ -5083,7 +5083,7 @@ cases:
       > foo
       >
       > bar
-    html: |
+    html: |-
       <blockquote>
       <p>foo</p>
       <p>bar</p>
@@ -5105,7 +5105,7 @@ cases:
     myst: |
       foo
       > bar
-    html: |
+    html: |-
       <p>foo</p>
       <blockquote>
       <p>bar</p>
@@ -5131,7 +5131,7 @@ cases:
       > aaa
       ***
       > bbb
-    html: |
+    html: |-
       <blockquote>
       <p>aaa</p>
       </blockquote>
@@ -5154,7 +5154,7 @@ cases:
     myst: |
       > bar
       baz
-    html: |
+    html: |-
       <blockquote>
       <p>bar
       baz</p>
@@ -5177,7 +5177,7 @@ cases:
       > bar
 
       baz
-    html: |
+    html: |-
       <blockquote>
       <p>bar</p>
       </blockquote>
@@ -5200,7 +5200,7 @@ cases:
       > bar
       >
       baz
-    html: |
+    html: |-
       <blockquote>
       <p>bar</p>
       </blockquote>
@@ -5224,7 +5224,7 @@ cases:
     myst: |
       > > > foo
       bar
-    html: |
+    html: |-
       <blockquote>
       <blockquote>
       <blockquote>
@@ -5254,7 +5254,7 @@ cases:
       >>> foo
       > bar
       >>baz
-    html: |
+    html: |-
       <blockquote>
       <blockquote>
       <blockquote>
@@ -5284,7 +5284,7 @@ cases:
       >     code
 
       >    not code
-    html: |
+    html: |-
       <blockquote>
       <pre><code>code
       </code></pre>
@@ -5319,7 +5319,7 @@ cases:
           indented code
 
       > A block quote.
-    html: |
+    html: |-
       <p>A paragraph
       with two lines.</p>
       <pre><code>indented code
@@ -5363,7 +5363,7 @@ cases:
               indented code
 
           > A block quote.
-    html: |
+    html: |-
       <ol>
       <li>
       <p>A paragraph
@@ -5400,7 +5400,7 @@ cases:
       - one
 
        two
-    html: |
+    html: |-
       <ul>
       <li>one</li>
       </ul>
@@ -5430,7 +5430,7 @@ cases:
       - one
 
         two
-    html: |
+    html: |-
       <ul>
       <li>
       <p>one</p>
@@ -5462,7 +5462,7 @@ cases:
        -    one
 
            two
-    html: |
+    html: |-
       <ul>
       <li>one</li>
       </ul>
@@ -5493,7 +5493,7 @@ cases:
        -    one
 
             two
-    html: |
+    html: |-
       <ul>
       <li>
       <p>one</p>
@@ -5529,7 +5529,7 @@ cases:
          > > 1.  one
       >>
       >>     two
-    html: |
+    html: |-
       <blockquote>
       <blockquote>
       <ol>
@@ -5569,7 +5569,7 @@ cases:
       >>- one
       >>
         >  > two
-    html: |
+    html: |-
       <blockquote>
       <blockquote>
       <ul>
@@ -5594,7 +5594,7 @@ cases:
       -one
 
       2.two
-    html: |
+    html: |-
       <p>-one</p>
       <p>2.two</p>
   - title: List items - example 262
@@ -5623,7 +5623,7 @@ cases:
 
 
         bar
-    html: |
+    html: |-
       <ul>
       <li>
       <p>foo</p>
@@ -5671,7 +5671,7 @@ cases:
           baz
 
           > bam
-    html: |
+    html: |-
       <ol>
       <li>
       <p>foo</p>
@@ -5715,7 +5715,7 @@ cases:
 
 
             baz
-    html: |
+    html: |-
       <ul>
       <li>
       <p>Foo</p>
@@ -5745,7 +5745,7 @@ cases:
                       value: ok
     myst: |
       123456789. ok
-    html: |
+    html: |-
       <ol start="123456789">
       <li>ok</li>
       </ol>
@@ -5759,7 +5759,7 @@ cases:
               value: 1234567890. not ok
     myst: |
       1234567890. not ok
-    html: |
+    html: |-
       <p>1234567890. not ok</p>
   - title: List items - example 267
     mdast:
@@ -5780,7 +5780,7 @@ cases:
                       value: ok
     myst: |
       0. ok
-    html: |
+    html: |-
       <ol start="0">
       <li>ok</li>
       </ol>
@@ -5803,7 +5803,7 @@ cases:
                       value: ok
     myst: |
       003. ok
-    html: |
+    html: |-
       <ol start="3">
       <li>ok</li>
       </ol>
@@ -5817,7 +5817,7 @@ cases:
               value: '-1. not ok'
     myst: |
       -1. not ok
-    html: |
+    html: |-
       <p>-1. not ok</p>
   - title: List items - example 270
     mdast:
@@ -5844,7 +5844,7 @@ cases:
       - foo
 
             bar
-    html: |
+    html: |-
       <ul>
       <li>
       <p>foo</p>
@@ -5877,7 +5877,7 @@ cases:
         10.  foo
 
                  bar
-    html: |
+    html: |-
       <ol start="10">
       <li>
       <p>foo</p>
@@ -5907,7 +5907,7 @@ cases:
       paragraph
 
           more code
-    html: |
+    html: |-
       <pre><code>indented code
       </code></pre>
       <p>paragraph</p>
@@ -5944,7 +5944,7 @@ cases:
          paragraph
 
              more code
-    html: |
+    html: |-
       <ol>
       <li>
       <pre><code>indented code
@@ -5985,7 +5985,7 @@ cases:
          paragraph
 
              more code
-    html: |
+    html: |-
       <ol>
       <li>
       <pre><code> indented code
@@ -6011,7 +6011,7 @@ cases:
          foo
 
       bar
-    html: |
+    html: |-
       <p>foo</p>
       <p>bar</p>
   - title: List items - example 276
@@ -6039,7 +6039,7 @@ cases:
       -    foo
 
         bar
-    html: |
+    html: |-
       <ul>
       <li>foo</li>
       </ul>
@@ -6069,7 +6069,7 @@ cases:
       -  foo
 
          bar
-    html: |
+    html: |-
       <ul>
       <li>
       <p>foo</p>
@@ -6118,7 +6118,7 @@ cases:
         ```
       -
             baz
-    html: |
+    html: |-
       <ul>
       <li>foo</li>
       <li>
@@ -6150,7 +6150,7 @@ cases:
     myst: |
       -   
         foo
-    html: |
+    html: |-
       <ul>
       <li>foo</li>
       </ul>
@@ -6175,7 +6175,7 @@ cases:
       -
 
         foo
-    html: |
+    html: |-
       <ul>
       <li></li>
       </ul>
@@ -6213,7 +6213,7 @@ cases:
       - foo
       -
       - bar
-    html: |
+    html: |-
       <ul>
       <li>foo</li>
       <li></li>
@@ -6252,7 +6252,7 @@ cases:
       - foo
       -   
       - bar
-    html: |
+    html: |-
       <ul>
       <li>foo</li>
       <li></li>
@@ -6291,7 +6291,7 @@ cases:
       1. foo
       2.
       3. bar
-    html: |
+    html: |-
       <ol>
       <li>foo</li>
       <li></li>
@@ -6312,7 +6312,7 @@ cases:
               children: []
     myst: |
       *
-    html: |
+    html: |-
       <ul>
       <li></li>
       </ul>
@@ -6338,7 +6338,7 @@ cases:
 
       foo
       1.
-    html: |
+    html: |-
       <p>foo
       *</p>
       <p>foo
@@ -6379,7 +6379,7 @@ cases:
                indented code
 
            > A block quote.
-    html: |
+    html: |-
       <ol>
       <li>
       <p>A paragraph
@@ -6427,7 +6427,7 @@ cases:
                 indented code
 
             > A block quote.
-    html: |
+    html: |-
       <ol>
       <li>
       <p>A paragraph
@@ -6475,7 +6475,7 @@ cases:
                  indented code
 
              > A block quote.
-    html: |
+    html: |-
       <ol>
       <li>
       <p>A paragraph
@@ -6508,7 +6508,7 @@ cases:
                   indented code
 
               > A block quote.
-    html: |
+    html: |-
       <pre><code>1.  A paragraph
           with two lines.
 
@@ -6552,7 +6552,7 @@ cases:
                 indented code
 
             > A block quote.
-    html: |
+    html: |-
       <ol>
       <li>
       <p>A paragraph
@@ -6586,7 +6586,7 @@ cases:
     myst: |2
         1.  A paragraph
           with two lines.
-    html: |
+    html: |-
       <ol>
       <li>A paragraph
       with two lines.</li>
@@ -6617,7 +6617,7 @@ cases:
     myst: |
       > 1. > Blockquote
       continued here.
-    html: |
+    html: |-
       <blockquote>
       <ol>
       <li>
@@ -6654,7 +6654,7 @@ cases:
     myst: |
       > 1. > Blockquote
       > continued here.
-    html: |
+    html: |-
       <blockquote>
       <ol>
       <li>
@@ -6726,7 +6726,7 @@ cases:
         - bar
           - baz
             - boo
-    html: |
+    html: |-
       <ul>
       <li>foo
       <ul>
@@ -6788,7 +6788,7 @@ cases:
        - bar
         - baz
          - boo
-    html: |
+    html: |-
       <ul>
       <li>foo</li>
       <li>bar</li>
@@ -6828,7 +6828,7 @@ cases:
     myst: |
       10) foo
           - bar
-    html: |
+    html: |-
       <ol start="10">
       <li>foo
       <ul>
@@ -6869,7 +6869,7 @@ cases:
     myst: |
       10) foo
          - bar
-    html: |
+    html: |-
       <ol start="10">
       <li>foo</li>
       </ol>
@@ -6904,7 +6904,7 @@ cases:
                               value: foo
     myst: |
       - - foo
-    html: |
+    html: |-
       <ul>
       <li>
       <ul>
@@ -6949,7 +6949,7 @@ cases:
                                       value: foo
     myst: |
       1. - 2. foo
-    html: |
+    html: |-
       <ol>
       <li>
       <ul>
@@ -6997,7 +6997,7 @@ cases:
       - Bar
         ---
         baz
-    html: |
+    html: |-
       <ul>
       <li>
       <h1>Foo</h1>
@@ -7048,7 +7048,7 @@ cases:
       - foo
       - bar
       + baz
-    html: |
+    html: |-
       <ul>
       <li>foo</li>
       <li>bar</li>
@@ -7098,7 +7098,7 @@ cases:
       1. foo
       2. bar
       3) baz
-    html: |
+    html: |-
       <ol>
       <li>foo</li>
       <li>bar</li>
@@ -7139,7 +7139,7 @@ cases:
       Foo
       - bar
       - baz
-    html: |
+    html: |-
       <p>Foo</p>
       <ul>
       <li>bar</li>
@@ -7158,7 +7158,7 @@ cases:
     myst: |
       The number of windows in my house is
       14.  The number of doors is 6.
-    html: |
+    html: |-
       <p>The number of windows in my house is
       14.  The number of doors is 6.</p>
   - title: Lists - example 305
@@ -7185,7 +7185,7 @@ cases:
     myst: |
       The number of windows in my house is
       1.  The number of doors is 6.
-    html: |
+    html: |-
       <p>The number of windows in my house is</p>
       <ol>
       <li>The number of doors is 6.</li>
@@ -7230,7 +7230,7 @@ cases:
 
 
       - baz
-    html: |
+    html: |-
       <ul>
       <li>
       <p>foo</p>
@@ -7296,7 +7296,7 @@ cases:
 
 
             bim
-    html: |
+    html: |-
       <ul>
       <li>foo
       <ul>
@@ -7367,7 +7367,7 @@ cases:
 
       - baz
       - bim
-    html: |
+    html: |-
       <ul>
       <li>foo</li>
       <li>bar</li>
@@ -7422,7 +7422,7 @@ cases:
       <!-- -->
 
           code
-    html: |
+    html: |-
       <ul>
       <li>
       <p>foo</p>
@@ -7508,7 +7508,7 @@ cases:
         - e
        - f
       - g
-    html: |
+    html: |-
       <ul>
       <li>a</li>
       <li>b</li>
@@ -7557,7 +7557,7 @@ cases:
         2. b
 
          3. c
-    html: |
+    html: |-
       <ol>
       <li>
       <p>a</p>
@@ -7618,7 +7618,7 @@ cases:
         - c
          - d
           - e
-    html: |
+    html: |-
       <ul>
       <li>a</li>
       <li>b</li>
@@ -7661,7 +7661,7 @@ cases:
         2. b
 
           3. c
-    html: |
+    html: |-
       <ol>
       <li>
       <p>a</p>
@@ -7710,7 +7710,7 @@ cases:
       - b
 
       - c
-    html: |
+    html: |-
       <ul>
       <li>
       <p>a</p>
@@ -7756,7 +7756,7 @@ cases:
       *
 
       * c
-    html: |
+    html: |-
       <ul>
       <li>
       <p>a</p>
@@ -7809,7 +7809,7 @@ cases:
 
         c
       - d
-    html: |
+    html: |-
       <ul>
       <li>
       <p>a</p>
@@ -7866,7 +7866,7 @@ cases:
 
         [ref]: /url
       - d
-    html: |
+    html: |-
       <ul>
       <li>
       <p>a</p>
@@ -7921,7 +7921,7 @@ cases:
 
         ```
       - c
-    html: |
+    html: |-
       <ul>
       <li>a</li>
       <li>
@@ -7980,7 +7980,7 @@ cases:
 
           c
       - d
-    html: |
+    html: |-
       <ul>
       <li>a
       <ul>
@@ -8028,7 +8028,7 @@ cases:
         > b
         >
       * c
-    html: |
+    html: |-
       <ul>
       <li>a
       <blockquote>
@@ -8079,7 +8079,7 @@ cases:
         c
         ```
       - d
-    html: |
+    html: |-
       <ul>
       <li>a
       <blockquote>
@@ -8109,7 +8109,7 @@ cases:
                       value: a
     myst: |
       - a
-    html: |
+    html: |-
       <ul>
       <li>a</li>
       </ul>
@@ -8146,7 +8146,7 @@ cases:
     myst: |
       - a
         - b
-    html: |
+    html: |-
       <ul>
       <li>a
       <ul>
@@ -8181,7 +8181,7 @@ cases:
          ```
 
          bar
-    html: |
+    html: |-
       <ol>
       <li>
       <pre><code>foo
@@ -8228,7 +8228,7 @@ cases:
         * bar
 
         baz
-    html: |
+    html: |-
       <ul>
       <li>
       <p>foo</p>
@@ -8313,7 +8313,7 @@ cases:
       - d
         - e
         - f
-    html: |
+    html: |-
       <ul>
       <li>
       <p>a</p>
@@ -8342,7 +8342,7 @@ cases:
               value: lo`
     myst: |
       `hi`lo`
-    html: |
+    html: |-
       <p><code>hi</code>lo`</p>
   - title: Code spans - example 328
     mdast:
@@ -8354,7 +8354,7 @@ cases:
               value: foo
     myst: |
       `foo`
-    html: |
+    html: |-
       <p><code>foo</code></p>
   - title: Code spans - example 329
     mdast:
@@ -8366,7 +8366,7 @@ cases:
               value: foo ` bar
     myst: |
       `` foo ` bar ``
-    html: |
+    html: |-
       <p><code>foo ` bar</code></p>
   - title: Code spans - example 330
     mdast:
@@ -8378,7 +8378,7 @@ cases:
               value: '``'
     myst: |
       ` `` `
-    html: |
+    html: |-
       <p><code>``</code></p>
   - title: Code spans - example 331
     mdast:
@@ -8390,7 +8390,7 @@ cases:
               value: ' `` '
     myst: |
       `  ``  `
-    html: |
+    html: |-
       <p><code> `` </code></p>
   - title: Code spans - example 332
     mdast:
@@ -8402,7 +8402,7 @@ cases:
               value: ' a'
     myst: |
       ` a`
-    html: |
+    html: |-
       <p><code> a</code></p>
   - title: Code spans - example 333
     mdast:
@@ -8414,7 +8414,7 @@ cases:
               value: b
     myst: |
       ` b `
-    html: |
+    html: |-
       <p><code> b </code></p>
   - title: Code spans - example 334
     mdast:
@@ -8432,7 +8432,7 @@ cases:
     myst: |
       ` `
       `  `
-    html: |
+    html: |-
       <p><code> </code>
       <code>  </code></p>
   - title: Code spans - example 335
@@ -8452,7 +8452,7 @@ cases:
       bar  
       baz
       ``
-    html: |
+    html: |-
       <p><code>foo bar   baz</code></p>
   - title: Code spans - example 336
     mdast:
@@ -8466,7 +8466,7 @@ cases:
       ``
       foo 
       ``
-    html: |
+    html: |-
       <p><code>foo </code></p>
   - title: Code spans - example 337
     mdast:
@@ -8481,7 +8481,7 @@ cases:
     myst: |
       `foo   bar 
       baz`
-    html: |
+    html: |-
       <p><code>foo   bar  baz</code></p>
   - title: Code spans - example 338
     mdast:
@@ -8495,7 +8495,7 @@ cases:
               value: bar`
     myst: |
       `foo\`bar`
-    html: |
+    html: |-
       <p><code>foo\</code>bar`</p>
   - title: Code spans - example 339
     mdast:
@@ -8507,7 +8507,7 @@ cases:
               value: foo`bar
     myst: |
       ``foo`bar``
-    html: |
+    html: |-
       <p><code>foo`bar</code></p>
   - title: Code spans - example 340
     mdast:
@@ -8519,7 +8519,7 @@ cases:
               value: foo `` bar
     myst: |
       ` foo `` bar `
-    html: |
+    html: |-
       <p><code>foo `` bar</code></p>
   - title: Code spans - example 341
     mdast:
@@ -8533,7 +8533,7 @@ cases:
               value: '*'
     myst: |
       *foo`*`
-    html: |
+    html: |-
       <p>*foo<code>*</code></p>
   - title: Code spans - example 342
     mdast:
@@ -8549,7 +8549,7 @@ cases:
               value: )
     myst: |
       [not a `link](/foo`)
-    html: |
+    html: |-
       <p>[not a <code>link](/foo</code>)</p>
   - title: Code spans - example 343
     mdast:
@@ -8563,7 +8563,7 @@ cases:
               value: '">`'
     myst: |
       `<a href="`">`
-    html: |
+    html: |-
       <p><code>&lt;a href=&quot;</code>&quot;&gt;`</p>
   - title: Code spans - example 344
     mdast:
@@ -8577,7 +8577,7 @@ cases:
               value: '`'
     myst: |
       <a href="`">`
-    html: |
+    html: |-
       <p><a href="`">`</p>
   - title: Code spans - example 345
     mdast:
@@ -8591,7 +8591,7 @@ cases:
               value: baz>`
     myst: |
       `<http://foo.bar.`baz>`
-    html: |
+    html: |-
       <p><code>&lt;http://foo.bar.</code>baz&gt;`</p>
   - title: Code spans - example 346
     mdast:
@@ -8609,7 +8609,7 @@ cases:
               value: '`'
     myst: |
       <http://foo.bar.`baz>`
-    html: |
+    html: |-
       <p><a href="http://foo.bar.%60baz">http://foo.bar.`baz</a>`</p>
   - title: Code spans - example 347
     mdast:
@@ -8621,7 +8621,7 @@ cases:
               value: '```foo``'
     myst: |
       ```foo``
-    html: |
+    html: |-
       <p>```foo``</p>
   - title: Code spans - example 348
     mdast:
@@ -8633,7 +8633,7 @@ cases:
               value: '`foo'
     myst: |
       `foo
-    html: |
+    html: |-
       <p>`foo</p>
   - title: Code spans - example 349
     mdast:
@@ -8647,7 +8647,7 @@ cases:
               value: bar
     myst: |
       `foo``bar``
-    html: |
+    html: |-
       <p>`foo<code>bar</code></p>
   - title: Emphasis and strong emphasis - example 350
     mdast:
@@ -8661,7 +8661,7 @@ cases:
                   value: foo bar
     myst: |
       *foo bar*
-    html: |
+    html: |-
       <p><em>foo bar</em></p>
   - title: Emphasis and strong emphasis - example 351
     mdast:
@@ -8673,7 +8673,7 @@ cases:
               value: a * foo bar*
     myst: |
       a * foo bar*
-    html: |
+    html: |-
       <p>a * foo bar*</p>
   - title: Emphasis and strong emphasis - example 352
     mdast:
@@ -8685,7 +8685,7 @@ cases:
               value: a*"foo"*
     myst: |
       a*"foo"*
-    html: |
+    html: |-
       <p>a*&quot;foo&quot;*</p>
   - title: Emphasis and strong emphasis - example 353
     mdast:
@@ -8706,7 +8706,7 @@ cases:
                       value: a *
     myst: |
       * a *
-    html: |
+    html: |-
       <p>* a *</p>
   - title: Emphasis and strong emphasis - example 354
     mdast:
@@ -8722,7 +8722,7 @@ cases:
                   value: bar
     myst: |
       foo*bar*
-    html: |
+    html: |-
       <p>foo<em>bar</em></p>
   - title: Emphasis and strong emphasis - example 355
     mdast:
@@ -8740,7 +8740,7 @@ cases:
               value: '78'
     myst: |
       5*6*78
-    html: |
+    html: |-
       <p>5<em>6</em>78</p>
   - title: Emphasis and strong emphasis - example 356
     mdast:
@@ -8754,7 +8754,7 @@ cases:
                   value: foo bar
     myst: |
       _foo bar_
-    html: |
+    html: |-
       <p><em>foo bar</em></p>
   - title: Emphasis and strong emphasis - example 357
     mdast:
@@ -8766,7 +8766,7 @@ cases:
               value: _ foo bar_
     myst: |
       _ foo bar_
-    html: |
+    html: |-
       <p>_ foo bar_</p>
   - title: Emphasis and strong emphasis - example 358
     mdast:
@@ -8778,7 +8778,7 @@ cases:
               value: a_"foo"_
     myst: |
       a_"foo"_
-    html: |
+    html: |-
       <p>a_&quot;foo&quot;_</p>
   - title: Emphasis and strong emphasis - example 359
     mdast:
@@ -8790,7 +8790,7 @@ cases:
               value: foo_bar_
     myst: |
       foo_bar_
-    html: |
+    html: |-
       <p>foo_bar_</p>
   - title: Emphasis and strong emphasis - example 360
     mdast:
@@ -8802,7 +8802,7 @@ cases:
               value: '5_6_78'
     myst: |
       5_6_78
-    html: |
+    html: |-
       <p>5_6_78</p>
   - title: Emphasis and strong emphasis - example 361
     mdast:
@@ -8814,7 +8814,7 @@ cases:
               value: пристаням_стремятся_
     myst: |
       пристаням_стремятся_
-    html: |
+    html: |-
       <p>пристаням_стремятся_</p>
   - title: Emphasis and strong emphasis - example 362
     mdast:
@@ -8826,7 +8826,7 @@ cases:
               value: aa_"bb"_cc
     myst: |
       aa_"bb"_cc
-    html: |
+    html: |-
       <p>aa_&quot;bb&quot;_cc</p>
   - title: Emphasis and strong emphasis - example 363
     mdast:
@@ -8842,7 +8842,7 @@ cases:
                   value: (bar)
     myst: |
       foo-_(bar)_
-    html: |
+    html: |-
       <p>foo-<em>(bar)</em></p>
   - title: Emphasis and strong emphasis - example 364
     mdast:
@@ -8854,7 +8854,7 @@ cases:
               value: _foo*
     myst: |
       _foo*
-    html: |
+    html: |-
       <p>_foo*</p>
   - title: Emphasis and strong emphasis - example 365
     mdast:
@@ -8866,7 +8866,7 @@ cases:
               value: '*foo bar *'
     myst: |
       *foo bar *
-    html: |
+    html: |-
       <p>*foo bar *</p>
   - title: Emphasis and strong emphasis - example 366
     mdast:
@@ -8881,7 +8881,7 @@ cases:
     myst: |
       *foo bar
       *
-    html: |
+    html: |-
       <p>*foo bar
       *</p>
   - title: Emphasis and strong emphasis - example 367
@@ -8894,7 +8894,7 @@ cases:
               value: '*(*foo)'
     myst: |
       *(*foo)
-    html: |
+    html: |-
       <p>*(*foo)</p>
   - title: Emphasis and strong emphasis - example 368
     mdast:
@@ -8914,7 +8914,7 @@ cases:
                   value: )
     myst: |
       *(*foo*)*
-    html: |
+    html: |-
       <p><em>(<em>foo</em>)</em></p>
   - title: Emphasis and strong emphasis - example 369
     mdast:
@@ -8930,7 +8930,7 @@ cases:
               value: bar
     myst: |
       *foo*bar
-    html: |
+    html: |-
       <p><em>foo</em>bar</p>
   - title: Emphasis and strong emphasis - example 370
     mdast:
@@ -8942,7 +8942,7 @@ cases:
               value: _foo bar _
     myst: |
       _foo bar _
-    html: |
+    html: |-
       <p>_foo bar _</p>
   - title: Emphasis and strong emphasis - example 371
     mdast:
@@ -8954,7 +8954,7 @@ cases:
               value: _(_foo)
     myst: |
       _(_foo)
-    html: |
+    html: |-
       <p>_(_foo)</p>
   - title: Emphasis and strong emphasis - example 372
     mdast:
@@ -8974,7 +8974,7 @@ cases:
                   value: )
     myst: |
       _(_foo_)_
-    html: |
+    html: |-
       <p><em>(<em>foo</em>)</em></p>
   - title: Emphasis and strong emphasis - example 373
     mdast:
@@ -8986,7 +8986,7 @@ cases:
               value: _foo_bar
     myst: |
       _foo_bar
-    html: |
+    html: |-
       <p>_foo_bar</p>
   - title: Emphasis and strong emphasis - example 374
     mdast:
@@ -8998,7 +8998,7 @@ cases:
               value: _пристаням_стремятся
     myst: |
       _пристаням_стремятся
-    html: |
+    html: |-
       <p>_пристаням_стремятся</p>
   - title: Emphasis and strong emphasis - example 375
     mdast:
@@ -9012,7 +9012,7 @@ cases:
                   value: foo_bar_baz
     myst: |
       _foo_bar_baz_
-    html: |
+    html: |-
       <p><em>foo_bar_baz</em></p>
   - title: Emphasis and strong emphasis - example 376
     mdast:
@@ -9028,7 +9028,7 @@ cases:
               value: .
     myst: |
       _(bar)_.
-    html: |
+    html: |-
       <p><em>(bar)</em>.</p>
   - title: Emphasis and strong emphasis - example 377
     mdast:
@@ -9042,7 +9042,7 @@ cases:
                   value: foo bar
     myst: |
       **foo bar**
-    html: |
+    html: |-
       <p><strong>foo bar</strong></p>
   - title: Emphasis and strong emphasis - example 378
     mdast:
@@ -9054,7 +9054,7 @@ cases:
               value: '** foo bar**'
     myst: |
       ** foo bar**
-    html: |
+    html: |-
       <p>** foo bar**</p>
   - title: Emphasis and strong emphasis - example 379
     mdast:
@@ -9066,7 +9066,7 @@ cases:
               value: a**"foo"**
     myst: |
       a**"foo"**
-    html: |
+    html: |-
       <p>a**&quot;foo&quot;**</p>
   - title: Emphasis and strong emphasis - example 380
     mdast:
@@ -9082,7 +9082,7 @@ cases:
                   value: bar
     myst: |
       foo**bar**
-    html: |
+    html: |-
       <p>foo<strong>bar</strong></p>
   - title: Emphasis and strong emphasis - example 381
     mdast:
@@ -9096,7 +9096,7 @@ cases:
                   value: foo bar
     myst: |
       __foo bar__
-    html: |
+    html: |-
       <p><strong>foo bar</strong></p>
   - title: Emphasis and strong emphasis - example 382
     mdast:
@@ -9108,7 +9108,7 @@ cases:
               value: __ foo bar__
     myst: |
       __ foo bar__
-    html: |
+    html: |-
       <p>__ foo bar__</p>
   - title: Emphasis and strong emphasis - example 383
     mdast:
@@ -9123,7 +9123,7 @@ cases:
     myst: |
       __
       foo bar__
-    html: |
+    html: |-
       <p>__
       foo bar__</p>
   - title: Emphasis and strong emphasis - example 384
@@ -9136,7 +9136,7 @@ cases:
               value: a__"foo"__
     myst: |
       a__"foo"__
-    html: |
+    html: |-
       <p>a__&quot;foo&quot;__</p>
   - title: Emphasis and strong emphasis - example 385
     mdast:
@@ -9148,7 +9148,7 @@ cases:
               value: foo__bar__
     myst: |
       foo__bar__
-    html: |
+    html: |-
       <p>foo__bar__</p>
   - title: Emphasis and strong emphasis - example 386
     mdast:
@@ -9160,7 +9160,7 @@ cases:
               value: '5__6__78'
     myst: |
       5__6__78
-    html: |
+    html: |-
       <p>5__6__78</p>
   - title: Emphasis and strong emphasis - example 387
     mdast:
@@ -9172,7 +9172,7 @@ cases:
               value: пристаням__стремятся__
     myst: |
       пристаням__стремятся__
-    html: |
+    html: |-
       <p>пристаням__стремятся__</p>
   - title: Emphasis and strong emphasis - example 388
     mdast:
@@ -9192,7 +9192,7 @@ cases:
                   value: ', baz'
     myst: |
       __foo, __bar__, baz__
-    html: |
+    html: |-
       <p><strong>foo, <strong>bar</strong>, baz</strong></p>
   - title: Emphasis and strong emphasis - example 389
     mdast:
@@ -9208,7 +9208,7 @@ cases:
                   value: (bar)
     myst: |
       foo-__(bar)__
-    html: |
+    html: |-
       <p>foo-<strong>(bar)</strong></p>
   - title: Emphasis and strong emphasis - example 390
     mdast:
@@ -9220,7 +9220,7 @@ cases:
               value: '**foo bar **'
     myst: |
       **foo bar **
-    html: |
+    html: |-
       <p>**foo bar **</p>
   - title: Emphasis and strong emphasis - example 391
     mdast:
@@ -9232,7 +9232,7 @@ cases:
               value: '**(**foo)'
     myst: |
       **(**foo)
-    html: |
+    html: |-
       <p>**(**foo)</p>
   - title: Emphasis and strong emphasis - example 392
     mdast:
@@ -9252,7 +9252,7 @@ cases:
                   value: )
     myst: |
       *(**foo**)*
-    html: |
+    html: |-
       <p><em>(<strong>foo</strong>)</em></p>
   - title: Emphasis and strong emphasis - example 393
     mdast:
@@ -9280,7 +9280,7 @@ cases:
     myst: |
       **Gomphocarpus (*Gomphocarpus physocarpus*, syn.
       *Asclepias physocarpa*)**
-    html: |
+    html: |-
       <p><strong>Gomphocarpus (<em>Gomphocarpus physocarpus</em>, syn.
       <em>Asclepias physocarpa</em>)</strong></p>
   - title: Emphasis and strong emphasis - example 394
@@ -9301,7 +9301,7 @@ cases:
                   value: '" foo'
     myst: |
       **foo "*bar*" foo**
-    html: |
+    html: |-
       <p><strong>foo &quot;<em>bar</em>&quot; foo</strong></p>
   - title: Emphasis and strong emphasis - example 395
     mdast:
@@ -9317,7 +9317,7 @@ cases:
               value: bar
     myst: |
       **foo**bar
-    html: |
+    html: |-
       <p><strong>foo</strong>bar</p>
   - title: Emphasis and strong emphasis - example 396
     mdast:
@@ -9329,7 +9329,7 @@ cases:
               value: __foo bar __
     myst: |
       __foo bar __
-    html: |
+    html: |-
       <p>__foo bar __</p>
   - title: Emphasis and strong emphasis - example 397
     mdast:
@@ -9341,7 +9341,7 @@ cases:
               value: __(__foo)
     myst: |
       __(__foo)
-    html: |
+    html: |-
       <p>__(__foo)</p>
   - title: Emphasis and strong emphasis - example 398
     mdast:
@@ -9361,7 +9361,7 @@ cases:
                   value: )
     myst: |
       _(__foo__)_
-    html: |
+    html: |-
       <p><em>(<strong>foo</strong>)</em></p>
   - title: Emphasis and strong emphasis - example 399
     mdast:
@@ -9373,7 +9373,7 @@ cases:
               value: __foo__bar
     myst: |
       __foo__bar
-    html: |
+    html: |-
       <p>__foo__bar</p>
   - title: Emphasis and strong emphasis - example 400
     mdast:
@@ -9385,7 +9385,7 @@ cases:
               value: __пристаням__стремятся
     myst: |
       __пристаням__стремятся
-    html: |
+    html: |-
       <p>__пристаням__стремятся</p>
   - title: Emphasis and strong emphasis - example 401
     mdast:
@@ -9399,7 +9399,7 @@ cases:
                   value: foo__bar__baz
     myst: |
       __foo__bar__baz__
-    html: |
+    html: |-
       <p><strong>foo__bar__baz</strong></p>
   - title: Emphasis and strong emphasis - example 402
     mdast:
@@ -9415,7 +9415,7 @@ cases:
               value: .
     myst: |
       __(bar)__.
-    html: |
+    html: |-
       <p><strong>(bar)</strong>.</p>
   - title: Emphasis and strong emphasis - example 403
     mdast:
@@ -9435,7 +9435,7 @@ cases:
                       value: bar
     myst: |
       *foo [bar](/url)*
-    html: |
+    html: |-
       <p><em>foo <a href="/url">bar</a></em></p>
   - title: Emphasis and strong emphasis - example 404
     mdast:
@@ -9452,7 +9452,7 @@ cases:
     myst: |
       *foo
       bar*
-    html: |
+    html: |-
       <p><em>foo
       bar</em></p>
   - title: Emphasis and strong emphasis - example 405
@@ -9473,7 +9473,7 @@ cases:
                   value: ' baz'
     myst: |
       _foo __bar__ baz_
-    html: |
+    html: |-
       <p><em>foo <strong>bar</strong> baz</em></p>
   - title: Emphasis and strong emphasis - example 406
     mdast:
@@ -9493,7 +9493,7 @@ cases:
                   value: ' baz'
     myst: |
       _foo _bar_ baz_
-    html: |
+    html: |-
       <p><em>foo <em>bar</em> baz</em></p>
   - title: Emphasis and strong emphasis - example 407
     mdast:
@@ -9511,7 +9511,7 @@ cases:
                   value: ' bar'
     myst: |
       __foo_ bar_
-    html: |
+    html: |-
       <p><em><em>foo</em> bar</em></p>
   - title: Emphasis and strong emphasis - example 408
     mdast:
@@ -9529,7 +9529,7 @@ cases:
                       value: bar
     myst: |
       *foo *bar**
-    html: |
+    html: |-
       <p><em>foo <em>bar</em></em></p>
   - title: Emphasis and strong emphasis - example 409
     mdast:
@@ -9549,7 +9549,7 @@ cases:
                   value: ' baz'
     myst: |
       *foo **bar** baz*
-    html: |
+    html: |-
       <p><em>foo <strong>bar</strong> baz</em></p>
   - title: Emphasis and strong emphasis - example 410
     mdast:
@@ -9569,7 +9569,7 @@ cases:
                   value: baz
     myst: |
       *foo**bar**baz*
-    html: |
+    html: |-
       <p><em>foo<strong>bar</strong>baz</em></p>
   - title: Emphasis and strong emphasis - example 411
     mdast:
@@ -9583,7 +9583,7 @@ cases:
                   value: foo**bar
     myst: |
       *foo**bar*
-    html: |
+    html: |-
       <p><em>foo**bar</em></p>
   - title: Emphasis and strong emphasis - example 412
     mdast:
@@ -9601,7 +9601,7 @@ cases:
                   value: ' bar'
     myst: |
       ***foo** bar*
-    html: |
+    html: |-
       <p><em><strong>foo</strong> bar</em></p>
   - title: Emphasis and strong emphasis - example 413
     mdast:
@@ -9619,7 +9619,7 @@ cases:
                       value: bar
     myst: |
       *foo **bar***
-    html: |
+    html: |-
       <p><em>foo <strong>bar</strong></em></p>
   - title: Emphasis and strong emphasis - example 414
     mdast:
@@ -9637,7 +9637,7 @@ cases:
                       value: bar
     myst: |
       *foo**bar***
-    html: |
+    html: |-
       <p><em>foo<strong>bar</strong></em></p>
   - title: Emphasis and strong emphasis - example 415
     mdast:
@@ -9657,7 +9657,7 @@ cases:
               value: baz
     myst: |
       foo***bar***baz
-    html: |
+    html: |-
       <p>foo<em><strong>bar</strong></em>baz</p>
   - title: Emphasis and strong emphasis - example 416
     mdast:
@@ -9679,7 +9679,7 @@ cases:
               value: '***baz'
     myst: |
       foo******bar*********baz
-    html: |
+    html: |-
       <p>foo<strong><strong><strong>bar</strong></strong></strong>***baz</p>
   - title: Emphasis and strong emphasis - example 417
     mdast:
@@ -9705,7 +9705,7 @@ cases:
                   value: ' bop'
     myst: |
       *foo **bar *baz* bim** bop*
-    html: |
+    html: |-
       <p><em>foo <strong>bar <em>baz</em> bim</strong> bop</em></p>
   - title: Emphasis and strong emphasis - example 418
     mdast:
@@ -9727,7 +9727,7 @@ cases:
                           value: bar
     myst: |
       *foo [*bar*](/url)*
-    html: |
+    html: |-
       <p><em>foo <a href="/url"><em>bar</em></a></em></p>
   - title: Emphasis and strong emphasis - example 419
     mdast:
@@ -9739,7 +9739,7 @@ cases:
               value: '** is not an empty emphasis'
     myst: |
       ** is not an empty emphasis
-    html: |
+    html: |-
       <p>** is not an empty emphasis</p>
   - title: Emphasis and strong emphasis - example 420
     mdast:
@@ -9751,7 +9751,7 @@ cases:
               value: '**** is not an empty strong emphasis'
     myst: |
       **** is not an empty strong emphasis
-    html: |
+    html: |-
       <p>**** is not an empty strong emphasis</p>
   - title: Emphasis and strong emphasis - example 421
     mdast:
@@ -9771,7 +9771,7 @@ cases:
                       value: bar
     myst: |
       **foo [bar](/url)**
-    html: |
+    html: |-
       <p><strong>foo <a href="/url">bar</a></strong></p>
   - title: Emphasis and strong emphasis - example 422
     mdast:
@@ -9788,7 +9788,7 @@ cases:
     myst: |
       **foo
       bar**
-    html: |
+    html: |-
       <p><strong>foo
       bar</strong></p>
   - title: Emphasis and strong emphasis - example 423
@@ -9809,7 +9809,7 @@ cases:
                   value: ' baz'
     myst: |
       __foo _bar_ baz__
-    html: |
+    html: |-
       <p><strong>foo <em>bar</em> baz</strong></p>
   - title: Emphasis and strong emphasis - example 424
     mdast:
@@ -9829,7 +9829,7 @@ cases:
                   value: ' baz'
     myst: |
       __foo __bar__ baz__
-    html: |
+    html: |-
       <p><strong>foo <strong>bar</strong> baz</strong></p>
   - title: Emphasis and strong emphasis - example 425
     mdast:
@@ -9847,7 +9847,7 @@ cases:
                   value: ' bar'
     myst: |
       ____foo__ bar__
-    html: |
+    html: |-
       <p><strong><strong>foo</strong> bar</strong></p>
   - title: Emphasis and strong emphasis - example 426
     mdast:
@@ -9865,7 +9865,7 @@ cases:
                       value: bar
     myst: |
       **foo **bar****
-    html: |
+    html: |-
       <p><strong>foo <strong>bar</strong></strong></p>
   - title: Emphasis and strong emphasis - example 427
     mdast:
@@ -9885,7 +9885,7 @@ cases:
                   value: ' baz'
     myst: |
       **foo *bar* baz**
-    html: |
+    html: |-
       <p><strong>foo <em>bar</em> baz</strong></p>
   - title: Emphasis and strong emphasis - example 428
     mdast:
@@ -9905,7 +9905,7 @@ cases:
                   value: baz
     myst: |
       **foo*bar*baz**
-    html: |
+    html: |-
       <p><strong>foo<em>bar</em>baz</strong></p>
   - title: Emphasis and strong emphasis - example 429
     mdast:
@@ -9923,7 +9923,7 @@ cases:
                   value: ' bar'
     myst: |
       ***foo* bar**
-    html: |
+    html: |-
       <p><strong><em>foo</em> bar</strong></p>
   - title: Emphasis and strong emphasis - example 430
     mdast:
@@ -9941,7 +9941,7 @@ cases:
                       value: bar
     myst: |
       **foo *bar***
-    html: |
+    html: |-
       <p><strong>foo <em>bar</em></strong></p>
   - title: Emphasis and strong emphasis - example 431
     mdast:
@@ -9970,7 +9970,7 @@ cases:
     myst: |
       **foo *bar **baz**
       bim* bop**
-    html: |
+    html: |-
       <p><strong>foo <em>bar <strong>baz</strong>
       bim</em> bop</strong></p>
   - title: Emphasis and strong emphasis - example 432
@@ -9993,7 +9993,7 @@ cases:
                           value: bar
     myst: |
       **foo [*bar*](/url)**
-    html: |
+    html: |-
       <p><strong>foo <a href="/url"><em>bar</em></a></strong></p>
   - title: Emphasis and strong emphasis - example 433
     mdast:
@@ -10005,7 +10005,7 @@ cases:
               value: __ is not an empty emphasis
     myst: |
       __ is not an empty emphasis
-    html: |
+    html: |-
       <p>__ is not an empty emphasis</p>
   - title: Emphasis and strong emphasis - example 434
     mdast:
@@ -10017,7 +10017,7 @@ cases:
               value: ____ is not an empty strong emphasis
     myst: |
       ____ is not an empty strong emphasis
-    html: |
+    html: |-
       <p>____ is not an empty strong emphasis</p>
   - title: Emphasis and strong emphasis - example 435
     mdast:
@@ -10029,7 +10029,7 @@ cases:
               value: foo ***
     myst: |
       foo ***
-    html: |
+    html: |-
       <p>foo ***</p>
   - title: Emphasis and strong emphasis - example 436
     mdast:
@@ -10045,7 +10045,7 @@ cases:
                   value: '*'
     myst: |
       foo *\**
-    html: |
+    html: |-
       <p>foo <em>*</em></p>
   - title: Emphasis and strong emphasis - example 437
     mdast:
@@ -10061,7 +10061,7 @@ cases:
                   value: _
     myst: |
       foo *_*
-    html: |
+    html: |-
       <p>foo <em>_</em></p>
   - title: Emphasis and strong emphasis - example 438
     mdast:
@@ -10073,7 +10073,7 @@ cases:
               value: foo *****
     myst: |
       foo *****
-    html: |
+    html: |-
       <p>foo *****</p>
   - title: Emphasis and strong emphasis - example 439
     mdast:
@@ -10089,7 +10089,7 @@ cases:
                   value: '*'
     myst: |
       foo **\***
-    html: |
+    html: |-
       <p>foo <strong>*</strong></p>
   - title: Emphasis and strong emphasis - example 440
     mdast:
@@ -10105,7 +10105,7 @@ cases:
                   value: _
     myst: |
       foo **_**
-    html: |
+    html: |-
       <p>foo <strong>_</strong></p>
   - title: Emphasis and strong emphasis - example 441
     mdast:
@@ -10121,7 +10121,7 @@ cases:
                   value: foo
     myst: |
       **foo*
-    html: |
+    html: |-
       <p>*<em>foo</em></p>
   - title: Emphasis and strong emphasis - example 442
     mdast:
@@ -10137,7 +10137,7 @@ cases:
               value: '*'
     myst: |
       *foo**
-    html: |
+    html: |-
       <p><em>foo</em>*</p>
   - title: Emphasis and strong emphasis - example 443
     mdast:
@@ -10153,7 +10153,7 @@ cases:
                   value: foo
     myst: |
       ***foo**
-    html: |
+    html: |-
       <p>*<strong>foo</strong></p>
   - title: Emphasis and strong emphasis - example 444
     mdast:
@@ -10169,7 +10169,7 @@ cases:
                   value: foo
     myst: |
       ****foo*
-    html: |
+    html: |-
       <p>***<em>foo</em></p>
   - title: Emphasis and strong emphasis - example 445
     mdast:
@@ -10185,7 +10185,7 @@ cases:
               value: '*'
     myst: |
       **foo***
-    html: |
+    html: |-
       <p><strong>foo</strong>*</p>
   - title: Emphasis and strong emphasis - example 446
     mdast:
@@ -10201,7 +10201,7 @@ cases:
               value: '***'
     myst: |
       *foo****
-    html: |
+    html: |-
       <p><em>foo</em>***</p>
   - title: Emphasis and strong emphasis - example 447
     mdast:
@@ -10213,7 +10213,7 @@ cases:
               value: foo ___
     myst: |
       foo ___
-    html: |
+    html: |-
       <p>foo ___</p>
   - title: Emphasis and strong emphasis - example 448
     mdast:
@@ -10229,7 +10229,7 @@ cases:
                   value: _
     myst: |
       foo _\__
-    html: |
+    html: |-
       <p>foo <em>_</em></p>
   - title: Emphasis and strong emphasis - example 449
     mdast:
@@ -10245,7 +10245,7 @@ cases:
                   value: '*'
     myst: |
       foo _*_
-    html: |
+    html: |-
       <p>foo <em>*</em></p>
   - title: Emphasis and strong emphasis - example 450
     mdast:
@@ -10257,7 +10257,7 @@ cases:
               value: foo _____
     myst: |
       foo _____
-    html: |
+    html: |-
       <p>foo _____</p>
   - title: Emphasis and strong emphasis - example 451
     mdast:
@@ -10273,7 +10273,7 @@ cases:
                   value: _
     myst: |
       foo __\___
-    html: |
+    html: |-
       <p>foo <strong>_</strong></p>
   - title: Emphasis and strong emphasis - example 452
     mdast:
@@ -10289,7 +10289,7 @@ cases:
                   value: '*'
     myst: |
       foo __*__
-    html: |
+    html: |-
       <p>foo <strong>*</strong></p>
   - title: Emphasis and strong emphasis - example 453
     mdast:
@@ -10305,7 +10305,7 @@ cases:
                   value: foo
     myst: |
       __foo_
-    html: |
+    html: |-
       <p>_<em>foo</em></p>
   - title: Emphasis and strong emphasis - example 454
     mdast:
@@ -10321,7 +10321,7 @@ cases:
               value: _
     myst: |
       _foo__
-    html: |
+    html: |-
       <p><em>foo</em>_</p>
   - title: Emphasis and strong emphasis - example 455
     mdast:
@@ -10337,7 +10337,7 @@ cases:
                   value: foo
     myst: |
       ___foo__
-    html: |
+    html: |-
       <p>_<strong>foo</strong></p>
   - title: Emphasis and strong emphasis - example 456
     mdast:
@@ -10353,7 +10353,7 @@ cases:
                   value: foo
     myst: |
       ____foo_
-    html: |
+    html: |-
       <p>___<em>foo</em></p>
   - title: Emphasis and strong emphasis - example 457
     mdast:
@@ -10369,7 +10369,7 @@ cases:
               value: _
     myst: |
       __foo___
-    html: |
+    html: |-
       <p><strong>foo</strong>_</p>
   - title: Emphasis and strong emphasis - example 458
     mdast:
@@ -10385,7 +10385,7 @@ cases:
               value: ___
     myst: |
       _foo____
-    html: |
+    html: |-
       <p><em>foo</em>___</p>
   - title: Emphasis and strong emphasis - example 459
     mdast:
@@ -10399,7 +10399,7 @@ cases:
                   value: foo
     myst: |
       **foo**
-    html: |
+    html: |-
       <p><strong>foo</strong></p>
   - title: Emphasis and strong emphasis - example 460
     mdast:
@@ -10415,7 +10415,7 @@ cases:
                       value: foo
     myst: |
       *_foo_*
-    html: |
+    html: |-
       <p><em><em>foo</em></em></p>
   - title: Emphasis and strong emphasis - example 461
     mdast:
@@ -10429,7 +10429,7 @@ cases:
                   value: foo
     myst: |
       __foo__
-    html: |
+    html: |-
       <p><strong>foo</strong></p>
   - title: Emphasis and strong emphasis - example 462
     mdast:
@@ -10445,7 +10445,7 @@ cases:
                       value: foo
     myst: |
       _*foo*_
-    html: |
+    html: |-
       <p><em><em>foo</em></em></p>
   - title: Emphasis and strong emphasis - example 463
     mdast:
@@ -10461,7 +10461,7 @@ cases:
                       value: foo
     myst: |
       ****foo****
-    html: |
+    html: |-
       <p><strong><strong>foo</strong></strong></p>
   - title: Emphasis and strong emphasis - example 464
     mdast:
@@ -10477,7 +10477,7 @@ cases:
                       value: foo
     myst: |
       ____foo____
-    html: |
+    html: |-
       <p><strong><strong>foo</strong></strong></p>
   - title: Emphasis and strong emphasis - example 465
     mdast:
@@ -10495,7 +10495,7 @@ cases:
                           value: foo
     myst: |
       ******foo******
-    html: |
+    html: |-
       <p><strong><strong><strong>foo</strong></strong></strong></p>
   - title: Emphasis and strong emphasis - example 466
     mdast:
@@ -10511,7 +10511,7 @@ cases:
                       value: foo
     myst: |
       ***foo***
-    html: |
+    html: |-
       <p><em><strong>foo</strong></em></p>
   - title: Emphasis and strong emphasis - example 467
     mdast:
@@ -10529,7 +10529,7 @@ cases:
                           value: foo
     myst: |
       _____foo_____
-    html: |
+    html: |-
       <p><em><strong><strong>foo</strong></strong></em></p>
   - title: Emphasis and strong emphasis - example 468
     mdast:
@@ -10545,7 +10545,7 @@ cases:
               value: ' baz_'
     myst: |
       *foo _bar* baz_
-    html: |
+    html: |-
       <p><em>foo _bar</em> baz_</p>
   - title: Emphasis and strong emphasis - example 469
     mdast:
@@ -10565,7 +10565,7 @@ cases:
                   value: ' bam'
     myst: |
       *foo __bar *baz bim__ bam*
-    html: |
+    html: |-
       <p><em>foo <strong>bar *baz bim</strong> bam</em></p>
   - title: Emphasis and strong emphasis - example 470
     mdast:
@@ -10581,7 +10581,7 @@ cases:
                   value: bar baz
     myst: |
       **foo **bar baz**
-    html: |
+    html: |-
       <p>**foo <strong>bar baz</strong></p>
   - title: Emphasis and strong emphasis - example 471
     mdast:
@@ -10597,7 +10597,7 @@ cases:
                   value: bar baz
     myst: |
       *foo *bar baz*
-    html: |
+    html: |-
       <p>*foo <em>bar baz</em></p>
   - title: Emphasis and strong emphasis - example 472
     mdast:
@@ -10615,7 +10615,7 @@ cases:
                   value: bar*
     myst: |
       *[bar*](/url)
-    html: |
+    html: |-
       <p>*<a href="/url">bar*</a></p>
   - title: Emphasis and strong emphasis - example 473
     mdast:
@@ -10633,7 +10633,7 @@ cases:
                   value: bar_
     myst: |
       _foo [bar_](/url)
-    html: |
+    html: |-
       <p>_foo <a href="/url">bar_</a></p>
   - title: Emphasis and strong emphasis - example 474
     mdast:
@@ -10647,7 +10647,7 @@ cases:
               value: <img src="foo" title="*"/>
     myst: |
       *<img src="foo" title="*"/>
-    html: |
+    html: |-
       <p>*<img src="foo" title="*"/></p>
   - title: Emphasis and strong emphasis - example 475
     mdast:
@@ -10661,7 +10661,7 @@ cases:
               value: <a href="**">
     myst: |
       **<a href="**">
-    html: |
+    html: |-
       <p>**<a href="**"></p>
   - title: Emphasis and strong emphasis - example 476
     mdast:
@@ -10675,7 +10675,7 @@ cases:
               value: <a href="__">
     myst: |
       __<a href="__">
-    html: |
+    html: |-
       <p>__<a href="__"></p>
   - title: Emphasis and strong emphasis - example 477
     mdast:
@@ -10691,7 +10691,7 @@ cases:
                   value: '*'
     myst: |
       *a `*`*
-    html: |
+    html: |-
       <p><em>a <code>*</code></em></p>
   - title: Emphasis and strong emphasis - example 478
     mdast:
@@ -10707,7 +10707,7 @@ cases:
                   value: _
     myst: |
       _a `_`_
-    html: |
+    html: |-
       <p><em>a <code>_</code></em></p>
   - title: Emphasis and strong emphasis - example 479
     mdast:
@@ -10725,7 +10725,7 @@ cases:
                   value: http://foo.bar/?q=**
     myst: |
       **a<http://foo.bar/?q=**>
-    html: |
+    html: |-
       <p>**a<a href="http://foo.bar/?q=**">http://foo.bar/?q=**</a></p>
   - title: Emphasis and strong emphasis - example 480
     mdast:
@@ -10743,7 +10743,7 @@ cases:
                   value: http://foo.bar/?q=__
     myst: |
       __a<http://foo.bar/?q=__>
-    html: |
+    html: |-
       <p>__a<a href="http://foo.bar/?q=__">http://foo.bar/?q=__</a></p>
   - title: Links - example 481
     mdast:
@@ -10759,7 +10759,7 @@ cases:
                   value: link
     myst: |
       [link](/uri "title")
-    html: |
+    html: |-
       <p><a href="/uri" title="title">link</a></p>
   - title: Links - example 482
     mdast:
@@ -10775,7 +10775,7 @@ cases:
                   value: link
     myst: |
       [link](/uri)
-    html: |
+    html: |-
       <p><a href="/uri">link</a></p>
   - title: Links - example 483
     mdast:
@@ -10789,7 +10789,7 @@ cases:
               children: []
     myst: |
       [](./target.md)
-    html: |
+    html: |-
       <p><a href="./target.md"></a></p>
   - title: Links - example 484
     mdast:
@@ -10805,7 +10805,7 @@ cases:
                   value: link
     myst: |
       [link]()
-    html: |
+    html: |-
       <p><a href="">link</a></p>
   - title: Links - example 485
     mdast:
@@ -10821,7 +10821,7 @@ cases:
                   value: link
     myst: |
       [link](<>)
-    html: |
+    html: |-
       <p><a href="">link</a></p>
   - title: Links - example 486
     mdast:
@@ -10835,7 +10835,7 @@ cases:
               children: []
     myst: |
       []()
-    html: |
+    html: |-
       <p><a href=""></a></p>
   - title: Links - example 487
     mdast:
@@ -10847,7 +10847,7 @@ cases:
               value: '[link](/my uri)'
     myst: |
       [link](/my uri)
-    html: |
+    html: |-
       <p>[link](/my uri)</p>
   - title: Links - example 488
     mdast:
@@ -10863,7 +10863,7 @@ cases:
                   value: link
     myst: |
       [link](</my uri>)
-    html: |
+    html: |-
       <p><a href="/my%20uri">link</a></p>
   - title: Links - example 489
     mdast:
@@ -10878,7 +10878,7 @@ cases:
     myst: |
       [link](foo
       bar)
-    html: |
+    html: |-
       <p>[link](foo
       bar)</p>
   - title: Links - example 490
@@ -10898,7 +10898,7 @@ cases:
     myst: |
       [link](<foo
       bar>)
-    html: |
+    html: |-
       <p>[link](<foo
       bar>)</p>
   - title: Links - example 491
@@ -10915,7 +10915,7 @@ cases:
                   value: a
     myst: |
       [a](<b)c>)
-    html: |
+    html: |-
       <p><a href="b)c">a</a></p>
   - title: Links - example 492
     mdast:
@@ -10927,7 +10927,7 @@ cases:
               value: '[link](<foo>)'
     myst: |
       [link](<foo\>)
-    html: |
+    html: |-
       <p>[link](&lt;foo&gt;)</p>
   - title: Links - example 493
     mdast:
@@ -10948,7 +10948,7 @@ cases:
       [a](<b)c
       [a](<b)c>
       [a](<b>c)
-    html: |
+    html: |-
       <p>[a](&lt;b)c
       [a](&lt;b)c&gt;
       [a](<b>c)</p>
@@ -10966,7 +10966,7 @@ cases:
                   value: link
     myst: |
       [link](\(foo\))
-    html: |
+    html: |-
       <p><a href="(foo)">link</a></p>
   - title: Links - example 495
     mdast:
@@ -10982,7 +10982,7 @@ cases:
                   value: link
     myst: |
       [link](foo(and(bar)))
-    html: |
+    html: |-
       <p><a href="foo(and(bar))">link</a></p>
   - title: Links - example 496
     mdast:
@@ -10994,7 +10994,7 @@ cases:
               value: '[link](foo(and(bar))'
     myst: |
       [link](foo(and(bar))
-    html: |
+    html: |-
       <p>[link](foo(and(bar))</p>
   - title: Links - example 497
     mdast:
@@ -11010,7 +11010,7 @@ cases:
                   value: link
     myst: |
       [link](foo\(and\(bar\))
-    html: |
+    html: |-
       <p><a href="foo(and(bar)">link</a></p>
   - title: Links - example 498
     mdast:
@@ -11026,7 +11026,7 @@ cases:
                   value: link
     myst: |
       [link](<foo(and(bar)>)
-    html: |
+    html: |-
       <p><a href="foo(and(bar)">link</a></p>
   - title: Links - example 499
     mdast:
@@ -11042,7 +11042,7 @@ cases:
                   value: link
     myst: |
       [link](foo\)\:)
-    html: |
+    html: |-
       <p><a href="foo):">link</a></p>
   - title: Links - example 500
     mdast:
@@ -11078,7 +11078,7 @@ cases:
       [link](http://example.com#fragment)
 
       [link](http://example.com?foo=3#frag)
-    html: |
+    html: |-
       <p><a href="#fragment">link</a></p>
       <p><a href="http://example.com#fragment">link</a></p>
       <p><a href="http://example.com?foo=3#frag">link</a></p>
@@ -11096,7 +11096,7 @@ cases:
                   value: link
     myst: |
       [link](foo\bar)
-    html: |
+    html: |-
       <p><a href="foo%5Cbar">link</a></p>
   - title: Links - example 502
     mdast:
@@ -11112,7 +11112,7 @@ cases:
                   value: link
     myst: |
       [link](foo%20b&auml;)
-    html: |
+    html: |-
       <p><a href="foo%20b%C3%A4">link</a></p>
   - title: Links - example 503
     mdast:
@@ -11128,7 +11128,7 @@ cases:
                   value: link
     myst: |
       [link]("title")
-    html: |
+    html: |-
       <p><a href="%22title%22">link</a></p>
   - title: Links - example 504
     mdast:
@@ -11164,7 +11164,7 @@ cases:
       [link](/url "title")
       [link](/url 'title')
       [link](/url (title))
-    html: |
+    html: |-
       <p><a href="/url" title="title">link</a>
       <a href="/url" title="title">link</a>
       <a href="/url" title="title">link</a></p>
@@ -11182,7 +11182,7 @@ cases:
                   value: link
     myst: |
       [link](/url "title \"&quot;")
-    html: |
+    html: |-
       <p><a href="/url" title="title &quot;&quot;">link</a></p>
   - title: Links - example 506
     mdast:
@@ -11198,7 +11198,7 @@ cases:
                   value: link
     myst: |
       [link](/url "title")
-    html: |
+    html: |-
       <p><a href="/url%C2%A0%22title%22">link</a></p>
   - title: Links - example 507
     mdast:
@@ -11210,7 +11210,7 @@ cases:
               value: '[link](/url "title "and" title")'
     myst: |
       [link](/url "title "and" title")
-    html: |
+    html: |-
       <p>[link](/url &quot;title &quot;and&quot; title&quot;)</p>
   - title: Links - example 508
     mdast:
@@ -11226,7 +11226,7 @@ cases:
                   value: link
     myst: |
       [link](/url 'title "and" title')
-    html: |
+    html: |-
       <p><a href="/url" title="title &quot;and&quot; title">link</a></p>
   - title: Links - example 509
     mdast:
@@ -11243,7 +11243,7 @@ cases:
     myst: |
       [link](   /uri
         "title"  )
-    html: |
+    html: |-
       <p><a href="/uri" title="title">link</a></p>
   - title: Links - example 510
     mdast:
@@ -11255,7 +11255,7 @@ cases:
               value: '[link] (/uri)'
     myst: |
       [link] (/uri)
-    html: |
+    html: |-
       <p>[link] (/uri)</p>
   - title: Links - example 511
     mdast:
@@ -11271,7 +11271,7 @@ cases:
                   value: link [foo [bar]]
     myst: |
       [link [foo [bar]]](/uri)
-    html: |
+    html: |-
       <p><a href="/uri">link [foo [bar]]</a></p>
   - title: Links - example 512
     mdast:
@@ -11283,7 +11283,7 @@ cases:
               value: '[link] bar](/uri)'
     myst: |
       [link] bar](/uri)
-    html: |
+    html: |-
       <p>[link] bar](/uri)</p>
   - title: Links - example 513
     mdast:
@@ -11301,7 +11301,7 @@ cases:
                   value: bar
     myst: |
       [link [bar](/uri)
-    html: |
+    html: |-
       <p>[link <a href="/uri">bar</a></p>
   - title: Links - example 514
     mdast:
@@ -11317,7 +11317,7 @@ cases:
                   value: link [bar
     myst: |
       [link \[bar](/uri)
-    html: |
+    html: |-
       <p><a href="/uri">link [bar</a></p>
   - title: Links - example 515
     mdast:
@@ -11364,7 +11364,7 @@ cases:
                   alt: moon
     myst: |
       [![moon](moon.jpg)](/uri)
-    html: |
+    html: |-
       <p><a href="/uri"><img src="moon.jpg" alt="moon" /></a></p>
   - title: Links - example 517
     mdast:
@@ -11384,7 +11384,7 @@ cases:
               value: '](/uri)'
     myst: |
       [foo [bar](/uri)](/uri)
-    html: |
+    html: |-
       <p>[foo <a href="/uri">bar</a>](/uri)</p>
   - title: Links - example 518
     mdast:
@@ -11410,7 +11410,7 @@ cases:
               value: '](/uri)'
     myst: |
       [foo *[bar [baz](/uri)](/uri)*](/uri)
-    html: |
+    html: |-
       <p>[foo <em>[bar <a href="/uri">baz</a>](/uri)</em>](/uri)</p>
   - title: Links - example 519
     mdast:
@@ -11424,7 +11424,7 @@ cases:
               alt: '[foo](uri2)'
     myst: |
       ![[[foo](uri1)](uri2)](uri3)
-    html: |
+    html: |-
       <p><img src="uri3" alt="[foo](uri2)" /></p>
   - title: Links - example 520
     mdast:
@@ -11442,7 +11442,7 @@ cases:
                   value: foo*
     myst: |
       *[foo*](/uri)
-    html: |
+    html: |-
       <p>*<a href="/uri">foo*</a></p>
   - title: Links - example 521
     mdast:
@@ -11458,7 +11458,7 @@ cases:
                   value: foo *bar
     myst: |
       [foo *bar](baz*)
-    html: |
+    html: |-
       <p><a href="baz*">foo *bar</a></p>
   - title: Links - example 522
     mdast:
@@ -11474,7 +11474,7 @@ cases:
               value: ' baz]'
     myst: |
       *foo [bar* baz]
-    html: |
+    html: |-
       <p><em>foo [bar</em> baz]</p>
   - title: Links - example 523
     mdast:
@@ -11488,7 +11488,7 @@ cases:
               value: <bar attr="](baz)">
     myst: |
       [foo <bar attr="](baz)">
-    html: |
+    html: |-
       <p>[foo <bar attr="](baz)"></p>
   - title: Links - example 524
     mdast:
@@ -11502,7 +11502,7 @@ cases:
               value: '](/uri)'
     myst: |
       [foo`](/uri)`
-    html: |
+    html: |-
       <p>[foo<code>](/uri)</code></p>
   - title: Links - example 525
     mdast:
@@ -11545,7 +11545,7 @@ cases:
       [foo][bar]
 
       [bar]: /url "title"
-    html: |
+    html: |-
       <p><a href="/url" title="title">foo</a></p>
   - title: Links - example 527
     mdast:
@@ -11569,7 +11569,7 @@ cases:
       [link [foo [bar]]][ref]
 
       [ref]: /uri
-    html: |
+    html: |-
       <p><a href="/uri">link [foo [bar]]</a></p>
   - title: Links - example 528
     mdast:
@@ -11593,7 +11593,7 @@ cases:
       [link \[bar][ref]
 
       [ref]: /uri
-    html: |
+    html: |-
       <p><a href="/uri">link [bar</a></p>
   - title: Links - example 529
     mdast:
@@ -11656,7 +11656,7 @@ cases:
       [![moon](moon.jpg)][ref]
 
       [ref]: /uri
-    html: |
+    html: |-
       <p><a href="/uri"><img src="moon.jpg" alt="moon" /></a></p>
   - title: Links - example 531
     mdast:
@@ -11690,7 +11690,7 @@ cases:
       [foo [bar](/uri)][ref]
 
       [ref]: /uri
-    html: |
+    html: |-
       <p>[foo <a href="/uri">bar</a>]<a href="/uri">ref</a></p>
   - title: Links - example 532
     mdast:
@@ -11729,7 +11729,7 @@ cases:
       [foo *bar [baz][ref]*][ref]
 
       [ref]: /uri
-    html: |
+    html: |-
       <p>[foo <em>bar <a href="/uri">baz</a></em>]<a href="/uri">ref</a></p>
   - title: Links - example 533
     mdast:
@@ -11755,7 +11755,7 @@ cases:
       *[foo*][ref]
 
       [ref]: /uri
-    html: |
+    html: |-
       <p>*<a href="/uri">foo*</a></p>
   - title: Links - example 534
     mdast:
@@ -11781,7 +11781,7 @@ cases:
       [foo *bar][ref]*
 
       [ref]: /uri
-    html: |
+    html: |-
       <p><a href="/uri">foo *bar</a>*</p>
   - title: Links - example 535
     mdast:
@@ -11802,7 +11802,7 @@ cases:
       [foo <bar attr="][ref]">
 
       [ref]: /uri
-    html: |
+    html: |-
       <p>[foo <bar attr="][ref]"></p>
   - title: Links - example 536
     mdast:
@@ -11823,7 +11823,7 @@ cases:
       [foo`][ref]`
 
       [ref]: /uri
-    html: |
+    html: |-
       <p>[foo<code>][ref]</code></p>
   - title: Links - example 537
     mdast:
@@ -11873,7 +11873,7 @@ cases:
       [foo][BaR]
 
       [bar]: /url "title"
-    html: |
+    html: |-
       <p><a href="/url" title="title">foo</a></p>
   - title: Links - example 539
     mdast:
@@ -11897,7 +11897,7 @@ cases:
       [ẞ]
 
       [SS]: /url
-    html: |
+    html: |-
       <p><a href="/url">ẞ</a></p>
   - title: Links - example 540
     mdast:
@@ -11924,7 +11924,7 @@ cases:
         bar]: /url
 
       [Baz][Foo bar]
-    html: |
+    html: |-
       <p><a href="/url">Baz</a></p>
   - title: Links - example 541
     mdast:
@@ -11950,7 +11950,7 @@ cases:
       [foo] [bar]
 
       [bar]: /url "title"
-    html: |
+    html: |-
       <p>[foo] <a href="/url" title="title">bar</a></p>
   - title: Links - example 542
     mdast:
@@ -11978,7 +11978,7 @@ cases:
       [bar]
 
       [bar]: /url "title"
-    html: |
+    html: |-
       <p>[foo]
       <a href="/url" title="title">bar</a></p>
   - title: Links - example 543
@@ -12010,7 +12010,7 @@ cases:
       [foo]: /url2
 
       [bar][foo]
-    html: |
+    html: |-
       <p><a href="/url1">bar</a></p>
   - title: Links - example 544
     mdast:
@@ -12029,7 +12029,7 @@ cases:
       [bar][foo\!]
 
       [foo!]: /url
-    html: |
+    html: |-
       <p>[bar][foo!]</p>
   - title: Links - example 545
     mdast:
@@ -12047,7 +12047,7 @@ cases:
       [foo][ref[]
 
       [ref[]: /uri
-    html: |
+    html: |-
       <p>[foo][ref[]</p>
       <p>[ref[]: /uri</p>
   - title: Links - example 546
@@ -12066,7 +12066,7 @@ cases:
       [foo][ref[bar]]
 
       [ref[bar]]: /uri
-    html: |
+    html: |-
       <p>[foo][ref[bar]]</p>
       <p>[ref[bar]]: /uri</p>
   - title: Links - example 547
@@ -12085,7 +12085,7 @@ cases:
       [[[foo]]]
 
       [[[foo]]]: /url
-    html: |
+    html: |-
       <p>[[[foo]]]</p>
       <p>[[[foo]]]: /url</p>
   - title: Links - example 548
@@ -12110,7 +12110,7 @@ cases:
       [foo][ref\[]
 
       [ref\[]: /uri
-    html: |
+    html: |-
       <p><a href="/uri">foo</a></p>
   - title: Links - example 549
     mdast:
@@ -12134,7 +12134,7 @@ cases:
       [bar\\]: /uri
 
       [bar\\]
-    html: |
+    html: |-
       <p><a href="/uri">bar\</a></p>
   - title: Links - example 550
     mdast:
@@ -12152,7 +12152,7 @@ cases:
       []
 
       []: /uri
-    html: |
+    html: |-
       <p>[]</p>
       <p>[]: /uri</p>
   - title: Links - example 551
@@ -12177,7 +12177,7 @@ cases:
 
       [
        ]: /uri
-    html: |
+    html: |-
       <p>[
       ]</p>
       <p>[
@@ -12204,7 +12204,7 @@ cases:
       [foo][]
 
       [foo]: /url "title"
-    html: |
+    html: |-
       <p><a href="/url" title="title">foo</a></p>
   - title: Links - example 553
     mdast:
@@ -12232,7 +12232,7 @@ cases:
       [*foo* bar][]
 
       [*foo* bar]: /url "title"
-    html: |
+    html: |-
       <p><a href="/url" title="title"><em>foo</em> bar</a></p>
   - title: Links - example 554
     mdast:
@@ -12256,7 +12256,7 @@ cases:
       [Foo][]
 
       [foo]: /url "title"
-    html: |
+    html: |-
       <p><a href="/url" title="title">Foo</a></p>
   - title: Links - example 555
     mdast:
@@ -12285,7 +12285,7 @@ cases:
       []
 
       [foo]: /url "title"
-    html: |
+    html: |-
       <p><a href="/url" title="title">foo</a>
       []</p>
   - title: Links - example 556
@@ -12310,7 +12310,7 @@ cases:
       [foo]
 
       [foo]: /url "title"
-    html: |
+    html: |-
       <p><a href="/url" title="title">foo</a></p>
   - title: Links - example 557
     mdast:
@@ -12338,7 +12338,7 @@ cases:
       [*foo* bar]
 
       [*foo* bar]: /url "title"
-    html: |
+    html: |-
       <p><a href="/url" title="title"><em>foo</em> bar</a></p>
   - title: Links - example 558
     mdast:
@@ -12370,7 +12370,7 @@ cases:
       [[*foo* bar]]
 
       [*foo* bar]: /url "title"
-    html: |
+    html: |-
       <p>[<a href="/url" title="title"><em>foo</em> bar</a>]</p>
   - title: Links - example 559
     mdast:
@@ -12396,7 +12396,7 @@ cases:
       [[bar [foo]
 
       [foo]: /url
-    html: |
+    html: |-
       <p>[[bar <a href="/url">foo</a></p>
   - title: Links - example 560
     mdast:
@@ -12420,7 +12420,7 @@ cases:
       [Foo]
 
       [foo]: /url "title"
-    html: |
+    html: |-
       <p><a href="/url" title="title">Foo</a></p>
   - title: Links - example 561
     mdast:
@@ -12446,7 +12446,7 @@ cases:
       [foo] bar
 
       [foo]: /url
-    html: |
+    html: |-
       <p><a href="/url">foo</a> bar</p>
   - title: Links - example 562
     mdast:
@@ -12465,7 +12465,7 @@ cases:
       \[foo]
 
       [foo]: /url "title"
-    html: |
+    html: |-
       <p>[foo]</p>
   - title: Links - example 563
     mdast:
@@ -12491,7 +12491,7 @@ cases:
       [foo*]: /url
 
       *[foo*]
-    html: |
+    html: |-
       <p>*<a href="/url">foo*</a></p>
   - title: Links - example 564
     mdast:
@@ -12521,7 +12521,7 @@ cases:
 
       [foo]: /url1
       [bar]: /url2
-    html: |
+    html: |-
       <p><a href="/url2">foo</a></p>
   - title: Links - example 565
     mdast:
@@ -12545,7 +12545,7 @@ cases:
       [foo][]
 
       [foo]: /url1
-    html: |
+    html: |-
       <p><a href="/url1">foo</a></p>
   - title: Links - example 566
     mdast:
@@ -12568,7 +12568,7 @@ cases:
       [foo]()
 
       [foo]: /url1
-    html: |
+    html: |-
       <p><a href="">foo</a></p>
   - title: Links - example 567
     mdast:
@@ -12594,7 +12594,7 @@ cases:
       [foo](not a link)
 
       [foo]: /url1
-    html: |
+    html: |-
       <p><a href="/url1">foo</a>(not a link)</p>
   - title: Links - example 568
     mdast:
@@ -12620,7 +12620,7 @@ cases:
       [foo][bar][baz]
 
       [baz]: /url
-    html: |
+    html: |-
       <p>[foo]<a href="/url">bar</a></p>
   - title: Links - example 569
     mdast:
@@ -12657,7 +12657,7 @@ cases:
 
       [baz]: /url1
       [bar]: /url2
-    html: |
+    html: |-
       <p><a href="/url2">foo</a><a href="/url1">baz</a></p>
   - title: Links - example 570
     mdast:
@@ -12689,7 +12689,7 @@ cases:
 
       [baz]: /url1
       [foo]: /url2
-    html: |
+    html: |-
       <p>[foo]<a href="/url1">bar</a></p>
   - title: Images - example 571
     mdast:
@@ -12703,7 +12703,7 @@ cases:
               alt: foo
     myst: |
       ![foo](/url "title")
-    html: |
+    html: |-
       <p><img src="/url" alt="foo" title="title" /></p>
   - title: Images - example 572
     mdast:
@@ -12725,7 +12725,7 @@ cases:
       ![foo *bar*]
 
       [foo *bar*]: train.jpg "train & tracks"
-    html: |
+    html: |-
       <p><img src="train.jpg" alt="foo bar" title="train &amp; tracks" /></p>
   - title: Images - example 573
     mdast:
@@ -12739,7 +12739,7 @@ cases:
               alt: foo bar
     myst: |
       ![foo ![bar](/url)](/url2)
-    html: |
+    html: |-
       <p><img src="/url2" alt="foo bar" /></p>
   - title: Images - example 574
     mdast:
@@ -12753,7 +12753,7 @@ cases:
               alt: foo bar
     myst: |
       ![foo [bar](/url)](/url2)
-    html: |
+    html: |-
       <p><img src="/url2" alt="foo bar" /></p>
   - title: Images - example 575
     mdast:
@@ -12775,7 +12775,7 @@ cases:
       ![foo *bar*][]
 
       [foo *bar*]: train.jpg "train & tracks"
-    html: |
+    html: |-
       <p><img src="train.jpg" alt="foo bar" title="train &amp; tracks" /></p>
   - title: Images - example 576
     mdast:
@@ -12797,7 +12797,7 @@ cases:
       ![foo *bar*][foobar]
 
       [FOOBAR]: train.jpg "train & tracks"
-    html: |
+    html: |-
       <p><img src="train.jpg" alt="foo bar" title="train &amp; tracks" /></p>
   - title: Images - example 577
     mdast:
@@ -12811,7 +12811,7 @@ cases:
               alt: foo
     myst: |
       ![foo](train.jpg)
-    html: |
+    html: |-
       <p><img src="train.jpg" alt="foo" /></p>
   - title: Images - example 578
     mdast:
@@ -12827,7 +12827,7 @@ cases:
               alt: foo bar
     myst: |
       My ![foo bar](/path/to/train.jpg  "title"   )
-    html: |
+    html: |-
       <p>My <img src="/path/to/train.jpg" alt="foo bar" title="title" /></p>
   - title: Images - example 579
     mdast:
@@ -12841,7 +12841,7 @@ cases:
               alt: foo
     myst: |
       ![foo](<url>)
-    html: |
+    html: |-
       <p><img src="url" alt="foo" /></p>
   - title: Images - example 580
     mdast:
@@ -12855,7 +12855,7 @@ cases:
               alt: ''
     myst: |
       ![](/url)
-    html: |
+    html: |-
       <p><img src="/url" alt="" /></p>
   - title: Images - example 581
     mdast:
@@ -12877,7 +12877,7 @@ cases:
       ![foo][bar]
 
       [bar]: /url
-    html: |
+    html: |-
       <p><img src="/url" alt="foo" /></p>
   - title: Images - example 582
     mdast:
@@ -12899,7 +12899,7 @@ cases:
       ![foo][bar]
 
       [BAR]: /url
-    html: |
+    html: |-
       <p><img src="/url" alt="foo" /></p>
   - title: Images - example 583
     mdast:
@@ -12921,7 +12921,7 @@ cases:
       ![foo][]
 
       [foo]: /url "title"
-    html: |
+    html: |-
       <p><img src="/url" alt="foo" title="title" /></p>
   - title: Images - example 584
     mdast:
@@ -12943,7 +12943,7 @@ cases:
       ![*foo* bar][]
 
       [*foo* bar]: /url "title"
-    html: |
+    html: |-
       <p><img src="/url" alt="foo bar" title="title" /></p>
   - title: Images - example 585
     mdast:
@@ -12965,7 +12965,7 @@ cases:
       ![Foo][]
 
       [foo]: /url "title"
-    html: |
+    html: |-
       <p><img src="/url" alt="Foo" title="title" /></p>
   - title: Images - example 586
     mdast:
@@ -12992,7 +12992,7 @@ cases:
       []
 
       [foo]: /url "title"
-    html: |
+    html: |-
       <p><img src="/url" alt="foo" title="title" />
       []</p>
   - title: Images - example 587
@@ -13015,7 +13015,7 @@ cases:
       ![foo]
 
       [foo]: /url "title"
-    html: |
+    html: |-
       <p><img src="/url" alt="foo" title="title" /></p>
   - title: Images - example 588
     mdast:
@@ -13037,7 +13037,7 @@ cases:
       ![*foo* bar]
 
       [*foo* bar]: /url "title"
-    html: |
+    html: |-
       <p><img src="/url" alt="foo bar" title="title" /></p>
   - title: Images - example 589
     mdast:
@@ -13055,7 +13055,7 @@ cases:
       ![[foo]]
 
       [[foo]]: /url "title"
-    html: |
+    html: |-
       <p>![[foo]]</p>
       <p>[[foo]]: /url &quot;title&quot;</p>
   - title: Images - example 590
@@ -13078,7 +13078,7 @@ cases:
       ![Foo]
 
       [foo]: /url "title"
-    html: |
+    html: |-
       <p><img src="/url" alt="Foo" title="title" /></p>
   - title: Images - example 591
     mdast:
@@ -13097,7 +13097,7 @@ cases:
       !\[foo]
 
       [foo]: /url "title"
-    html: |
+    html: |-
       <p>![foo]</p>
   - title: Images - example 592
     mdast:
@@ -13123,7 +13123,7 @@ cases:
       \![foo]
 
       [foo]: /url "title"
-    html: |
+    html: |-
       <p>!<a href="/url" title="title">foo</a></p>
   - title: Autolinks - example 593
     mdast:
@@ -13139,7 +13139,7 @@ cases:
                   value: http://foo.bar.baz
     myst: |
       <http://foo.bar.baz>
-    html: |
+    html: |-
       <p><a href="http://foo.bar.baz">http://foo.bar.baz</a></p>
   - title: Autolinks - example 594
     mdast:
@@ -13172,7 +13172,7 @@ cases:
                   value: irc://foo.bar:2233/baz
     myst: |
       <irc://foo.bar:2233/baz>
-    html: |
+    html: |-
       <p><a href="irc://foo.bar:2233/baz">irc://foo.bar:2233/baz</a></p>
   - title: Autolinks - example 596
     mdast:
@@ -13188,7 +13188,7 @@ cases:
                   value: MAILTO:FOO@BAR.BAZ
     myst: |
       <MAILTO:FOO@BAR.BAZ>
-    html: |
+    html: |-
       <p><a href="MAILTO:FOO@BAR.BAZ">MAILTO:FOO@BAR.BAZ</a></p>
   - title: Autolinks - example 597
     mdast:
@@ -13204,7 +13204,7 @@ cases:
                   value: a+b+c:d
     myst: |
       <a+b+c:d>
-    html: |
+    html: |-
       <p><a href="a+b+c:d">a+b+c:d</a></p>
   - title: Autolinks - example 598
     mdast:
@@ -13220,7 +13220,7 @@ cases:
                   value: made-up-scheme://foo,bar
     myst: |
       <made-up-scheme://foo,bar>
-    html: |
+    html: |-
       <p><a href="made-up-scheme://foo,bar">made-up-scheme://foo,bar</a></p>
   - title: Autolinks - example 599
     mdast:
@@ -13236,7 +13236,7 @@ cases:
                   value: http://../
     myst: |
       <http://../>
-    html: |
+    html: |-
       <p><a href="http://../">http://../</a></p>
   - title: Autolinks - example 600
     mdast:
@@ -13252,7 +13252,7 @@ cases:
                   value: localhost:5001/foo
     myst: |
       <localhost:5001/foo>
-    html: |
+    html: |-
       <p><a href="localhost:5001/foo">localhost:5001/foo</a></p>
   - title: Autolinks - example 601
     mdast:
@@ -13264,7 +13264,7 @@ cases:
               value: <http://foo.bar/baz bim>
     myst: |
       <http://foo.bar/baz bim>
-    html: |
+    html: |-
       <p>&lt;http://foo.bar/baz bim&gt;</p>
   - title: Autolinks - example 602
     mdast:
@@ -13280,7 +13280,7 @@ cases:
                   value: http://example.com/\[\
     myst: |
       <http://example.com/\[\>
-    html: |
+    html: |-
       <p><a href="http://example.com/%5C%5B%5C">http://example.com/\[\</a></p>
   - title: Autolinks - example 603
     mdast:
@@ -13296,7 +13296,7 @@ cases:
                   value: foo@bar.example.com
     myst: |
       <foo@bar.example.com>
-    html: |
+    html: |-
       <p><a href="mailto:foo@bar.example.com">foo@bar.example.com</a></p>
   - title: Autolinks - example 604
     mdast:
@@ -13325,7 +13325,7 @@ cases:
               value: <foo+@bar.example.com>
     myst: |
       <foo\+@bar.example.com>
-    html: |
+    html: |-
       <p>&lt;foo+@bar.example.com&gt;</p>
   - title: Autolinks - example 606
     mdast:
@@ -13337,7 +13337,7 @@ cases:
               value: <>
     myst: |
       <>
-    html: |
+    html: |-
       <p>&lt;&gt;</p>
   - title: Autolinks - example 607
     mdast:
@@ -13349,7 +13349,7 @@ cases:
               value: < http://foo.bar >
     myst: |
       < http://foo.bar >
-    html: |
+    html: |-
       <p>&lt; http://foo.bar &gt;</p>
   - title: Autolinks - example 608
     mdast:
@@ -13361,7 +13361,7 @@ cases:
               value: <m:abc>
     myst: |
       <m:abc>
-    html: |
+    html: |-
       <p>&lt;m:abc&gt;</p>
   - title: Autolinks - example 609
     mdast:
@@ -13373,7 +13373,7 @@ cases:
               value: <foo.bar.baz>
     myst: |
       <foo.bar.baz>
-    html: |
+    html: |-
       <p>&lt;foo.bar.baz&gt;</p>
   - title: Autolinks - example 610
     mdast:
@@ -13385,7 +13385,7 @@ cases:
               value: http://example.com
     myst: |
       http://example.com
-    html: |
+    html: |-
       <p>http://example.com</p>
   - title: Autolinks - example 611
     mdast:
@@ -13397,7 +13397,7 @@ cases:
               value: foo@bar.example.com
     myst: |
       foo@bar.example.com
-    html: |
+    html: |-
       <p>foo@bar.example.com</p>
   - title: Raw HTML - example 612
     mdast:
@@ -13413,7 +13413,7 @@ cases:
               value: <c2c>
     myst: |
       <a><bab><c2c>
-    html: |
+    html: |-
       <p><a><bab><c2c></p>
   - title: Raw HTML - example 613
     mdast:
@@ -13427,7 +13427,7 @@ cases:
               value: <b2/>
     myst: |
       <a/><b2/>
-    html: |
+    html: |-
       <p><a/><b2/></p>
   - title: Raw HTML - example 614
     mdast:
@@ -13444,7 +13444,7 @@ cases:
     myst: |
       <a  /><b2
       data="foo" >
-    html: |
+    html: |-
       <p><a  /><b2
       data="foo" ></p>
   - title: Raw HTML - example 615
@@ -13460,7 +13460,7 @@ cases:
     myst: |
       <a foo="bar" bam = 'baz <em>"</em>'
       _boolean zoop:33=zoop:33 />
-    html: |
+    html: |-
       <p><a foo="bar" bam = 'baz <em>"</em>'
       _boolean zoop:33=zoop:33 /></p>
   - title: Raw HTML - example 616
@@ -13475,7 +13475,7 @@ cases:
               value: <responsive-image src="foo.jpg" />
     myst: |
       Foo <responsive-image src="foo.jpg" />
-    html: |
+    html: |-
       <p>Foo <responsive-image src="foo.jpg" /></p>
   - title: Raw HTML - example 617
     mdast:
@@ -13487,7 +13487,7 @@ cases:
               value: <33> <__>
     myst: |
       <33> <__>
-    html: |
+    html: |-
       <p>&lt;33&gt; &lt;__&gt;</p>
   - title: Raw HTML - example 618
     mdast:
@@ -13499,7 +13499,7 @@ cases:
               value: <a h*#ref="hi">
     myst: |
       <a h*#ref="hi">
-    html: |
+    html: |-
       <p>&lt;a h*#ref=&quot;hi&quot;&gt;</p>
   - title: Raw HTML - example 619
     mdast:
@@ -13511,7 +13511,7 @@ cases:
               value: <a href="hi'> <a href=hi'>
     myst: |
       <a href="hi'> <a href=hi'>
-    html: |
+    html: |-
       <p>&lt;a href=&quot;hi'&gt; &lt;a href=hi'&gt;</p>
   - title: Raw HTML - example 620
     mdast:
@@ -13530,7 +13530,7 @@ cases:
       foo><bar/ >
       <foo bar=baz
       bim!bop />
-    html: |
+    html: |-
       <p>&lt; a&gt;&lt;
       foo&gt;&lt;bar/ &gt;
       &lt;foo bar=baz
@@ -13545,7 +13545,7 @@ cases:
               value: <a href='bar'title=title>
     myst: |
       <a href='bar'title=title>
-    html: |
+    html: |-
       <p>&lt;a href='bar'title=title&gt;</p>
   - title: Raw HTML - example 622
     mdast:
@@ -13559,7 +13559,7 @@ cases:
               value: </foo >
     myst: |
       </a></foo >
-    html: |
+    html: |-
       <p></a></foo ></p>
   - title: Raw HTML - example 623
     mdast:
@@ -13571,7 +13571,7 @@ cases:
               value: </a href="foo">
     myst: |
       </a href="foo">
-    html: |
+    html: |-
       <p>&lt;/a href=&quot;foo&quot;&gt;</p>
   - title: Raw HTML - example 624
     mdast:
@@ -13588,7 +13588,7 @@ cases:
     myst: |
       foo <!-- this is a
       comment - with hyphen -->
-    html: |
+    html: |-
       <p>foo <!-- this is a
       comment - with hyphen --></p>
   - title: Raw HTML - example 625
@@ -13601,7 +13601,7 @@ cases:
               value: foo <!-- not a comment -- two hyphens -->
     myst: |
       foo <!-- not a comment -- two hyphens -->
-    html: |
+    html: |-
       <p>foo &lt;!-- not a comment -- two hyphens --&gt;</p>
   - title: Raw HTML - example 626
     mdast:
@@ -13619,7 +13619,7 @@ cases:
       foo <!--> foo -->
 
       foo <!-- foo--->
-    html: |
+    html: |-
       <p>foo &lt;!--&gt; foo --&gt;</p>
       <p>foo &lt;!-- foo---&gt;</p>
   - title: Raw HTML - example 627
@@ -13634,7 +13634,7 @@ cases:
               value: <?php echo $a; ?>
     myst: |
       foo <?php echo $a; ?>
-    html: |
+    html: |-
       <p>foo <?php echo $a; ?></p>
   - title: Raw HTML - example 628
     mdast:
@@ -13648,7 +13648,7 @@ cases:
               value: <!ELEMENT br EMPTY>
     myst: |
       foo <!ELEMENT br EMPTY>
-    html: |
+    html: |-
       <p>foo <!ELEMENT br EMPTY></p>
   - title: Raw HTML - example 629
     mdast:
@@ -13662,7 +13662,7 @@ cases:
               value: <![CDATA[>&<]]>
     myst: |
       foo <![CDATA[>&<]]>
-    html: |
+    html: |-
       <p>foo <![CDATA[>&<]]></p>
   - title: Raw HTML - example 630
     mdast:
@@ -13676,7 +13676,7 @@ cases:
               value: <a href="&ouml;">
     myst: |
       foo <a href="&ouml;">
-    html: |
+    html: |-
       <p>foo <a href="&ouml;"></p>
   - title: Raw HTML - example 631
     mdast:
@@ -13690,7 +13690,7 @@ cases:
               value: <a href="\*">
     myst: |
       foo <a href="\*">
-    html: |
+    html: |-
       <p>foo <a href="\*"></p>
   - title: Raw HTML - example 632
     mdast:
@@ -13702,7 +13702,7 @@ cases:
               value: <a href=""">
     myst: |
       <a href="\"">
-    html: |
+    html: |-
       <p>&lt;a href=&quot;&quot;&quot;&gt;</p>
   - title: Hard line breaks - example 633
     mdast:
@@ -13718,7 +13718,7 @@ cases:
     myst: |
       foo  
       baz
-    html: |
+    html: |-
       <p>foo<br />
       baz</p>
   - title: Hard line breaks - example 634
@@ -13735,7 +13735,7 @@ cases:
     myst: |
       foo\
       baz
-    html: |
+    html: |-
       <p>foo<br />
       baz</p>
   - title: Hard line breaks - example 635
@@ -13752,7 +13752,7 @@ cases:
     myst: |
       foo       
       baz
-    html: |
+    html: |-
       <p>foo<br />
       baz</p>
   - title: Hard line breaks - example 636
@@ -13769,7 +13769,7 @@ cases:
     myst: |
       foo  
            bar
-    html: |
+    html: |-
       <p>foo<br />
       bar</p>
   - title: Hard line breaks - example 637
@@ -13786,7 +13786,7 @@ cases:
     myst: |
       foo\
            bar
-    html: |
+    html: |-
       <p>foo<br />
       bar</p>
   - title: Hard line breaks - example 638
@@ -13805,7 +13805,7 @@ cases:
     myst: |
       *foo  
       bar*
-    html: |
+    html: |-
       <p><em>foo<br />
       bar</em></p>
   - title: Hard line breaks - example 639
@@ -13824,7 +13824,7 @@ cases:
     myst: |
       *foo\
       bar*
-    html: |
+    html: |-
       <p><em>foo<br />
       bar</em></p>
   - title: Hard line breaks - example 640
@@ -13840,7 +13840,7 @@ cases:
     myst: |
       `code  
       span`
-    html: |
+    html: |-
       <p><code>code   span</code></p>
   - title: Hard line breaks - example 641
     mdast:
@@ -13855,7 +13855,7 @@ cases:
     myst: |
       `code\
       span`
-    html: |
+    html: |-
       <p><code>code\ span</code></p>
   - title: Hard line breaks - example 642
     mdast:
@@ -13870,7 +13870,7 @@ cases:
     myst: |
       <a href="foo  
       bar">
-    html: |
+    html: |-
       <p><a href="foo  
       bar"></p>
   - title: Hard line breaks - example 643
@@ -13886,7 +13886,7 @@ cases:
     myst: |
       <a href="foo\
       bar">
-    html: |
+    html: |-
       <p><a href="foo\
       bar"></p>
   - title: Hard line breaks - example 644
@@ -13899,7 +13899,7 @@ cases:
               value: foo\
     myst: |
       foo\
-    html: |
+    html: |-
       <p>foo\</p>
   - title: Hard line breaks - example 645
     mdast:
@@ -13911,7 +13911,7 @@ cases:
               value: foo
     myst: |
       foo
-    html: |
+    html: |-
       <p>foo</p>
   - title: Hard line breaks - example 646
     mdast:
@@ -13924,7 +13924,7 @@ cases:
               value: foo\
     myst: |
       ### foo\
-    html: |
+    html: |-
       <h3>foo\</h3>
   - title: Hard line breaks - example 647
     mdast:
@@ -13937,7 +13937,7 @@ cases:
               value: foo
     myst: |
       ### foo
-    html: |
+    html: |-
       <h3>foo</h3>
   - title: Soft line breaks - example 648
     mdast:
@@ -13952,7 +13952,7 @@ cases:
     myst: |
       foo
       baz
-    html: |
+    html: |-
       <p>foo
       baz</p>
   - title: Soft line breaks - example 649
@@ -13968,7 +13968,7 @@ cases:
     myst: |
       foo 
        baz
-    html: |
+    html: |-
       <p>foo
       baz</p>
   - title: Textual content - example 650
@@ -13981,7 +13981,7 @@ cases:
               value: hello $.;'there
     myst: |
       hello $.;'there
-    html: |
+    html: |-
       <p>hello $.;'there</p>
   - title: Textual content - example 651
     mdast:
@@ -13993,7 +13993,7 @@ cases:
               value: Foo χρῆν
     myst: |
       Foo χρῆν
-    html: |
+    html: |-
       <p>Foo χρῆν</p>
   - title: Textual content - example 652
     mdast:
@@ -14005,5 +14005,5 @@ cases:
               value: Multiple     spaces
     myst: |
       Multiple     spaces
-    html: |
+    html: |-
       <p>Multiple     spaces</p>
