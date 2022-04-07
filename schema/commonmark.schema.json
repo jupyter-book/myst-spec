@@ -108,7 +108,7 @@
             },
             "start": {
               "description": "Starting number of ordered list",
-              "type": "integer"
+              "type": ["integer", "null"]
             },
             "spread": {
               "description": "One or more children are separated with a blank line from others",
@@ -140,13 +140,14 @@
               "description": "One or more children are separated with a blank line from others",
               "type": "boolean"
             },
+            "checked": {
+              "description": "List item is checked; checked is null or undefined for normal lists without checkmarks",
+              "type": ["boolean", "null"]
+            },
             "children": {
               "type": "array",
               "items": {
-                "anyOf": [
-                  { "$ref": "myst.schema.json#/$defs/PhrasingContent" },
-                  { "$ref": "myst.schema.json#/$defs/FlowContent" }
-                ]
+                "$ref": "myst.schema.json#/$defs/FlowContent"
               }
             },
             "position": {},
@@ -186,11 +187,11 @@
             },
             "lang": {
               "description": "language of the code",
-              "type": "string"
+              "type": ["string", "null"]
             },
             "meta": {
               "description": "custom information relating to the node",
-              "type": "string"
+              "type": ["string", "null"]
             },
             "class": {
               "description": "user-defined class for code block",
@@ -529,7 +530,7 @@
         },
         "title": {
           "description": "advisory information, e.g. for a tooltip",
-          "type": "string"
+          "type": ["string", "null"]
         }
       }
     },
