@@ -85,7 +85,7 @@ cases:
                 - Row 2, **Column 3**
           children:
             - type: container
-              name: table
+              kind: table
               identifier: my-table
               label: my-table
               class: myclass
