@@ -1,6 +1,6 @@
 Content block with predefined behavior
 
-- __type*__: _string_ ("directive") - See {ref}`node`
+- __type*__: _string_ ("mystDirective") - See {ref}`node`
 - __kind*__: _string_ 
 - __args__: _string_ 
 - __options__: _object_ 

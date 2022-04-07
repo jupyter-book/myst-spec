@@ -12,7 +12,7 @@ children:
     children:
       - type: text
         value: H
-      - type: role
+      - type: mystRole
         kind: subscript
         value: '2'
         children:

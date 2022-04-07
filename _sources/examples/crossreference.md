@@ -19,7 +19,7 @@ children:
     children:
       - type: text
         value: 'see '
-      - type: role
+      - type: mystRole
         kind: numref
         value: my-table
         children:
@@ -27,7 +27,7 @@ children:
             kind: numref
             identifier: my-table
             label: my-table
-  - type: directive
+  - type: mystDirective
     kind: list-table
     args: Caption text
     options:

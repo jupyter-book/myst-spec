@@ -12,7 +12,7 @@ children:
     children:
       - type: text
         value: 'Well '
-      - type: role
+      - type: mystRole
         kind: abbr
         value: CSS (Cascading Style Sheets)
         children:

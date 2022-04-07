@@ -2,7 +2,7 @@
 ```yaml
 type: root
 children:
-  - type: directive
+  - type: mystDirective
     kind: note
     args: This is a title in myst
     value: and an example of a note admonition.

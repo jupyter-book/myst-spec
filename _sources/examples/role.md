@@ -10,7 +10,7 @@ type: root
 children:
   - type: paragraph
     children:
-      - type: role
+      - type: mystRole
         kind: abc
         value: ABC role
 

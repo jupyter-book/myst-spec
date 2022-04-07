@@ -11,7 +11,7 @@ Ax = b
 ```yaml
 type: root
 children:
-  - type: directive
+  - type: mystDirective
     kind: math
     options:
       label: matrix

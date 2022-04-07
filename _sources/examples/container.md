@@ -12,7 +12,7 @@ Something! A legend!?
 ```yaml
 type: root
 children:
-  - type: directive
+  - type: mystDirective
     kind: figure
     args: https://via.placeholder.com/150
     value: |-

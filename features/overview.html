@@ -374,7 +374,7 @@ const thebe_selector_output = ".output, .cell_output"
 <h4>Specification<a class="headerlink" href="#specification" title="Permalink to this headline">¶</a></h4>
 <p>Content block with predefined behavior</p>
 <ul class="simple">
-<li><p><strong>type*</strong>: <em>string</em> (“directive”) - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
+<li><p><strong>type*</strong>: <em>string</em> (“mystDirective”) - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
 <li><p><strong>kind*</strong>: <em>string</em></p></li>
 <li><p><strong>args</strong>: <em>string</em></p></li>
 <li><p><strong>options</strong>: <em>object</em></p></li>
@@ -387,8 +387,8 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="section" id="example">
 <h4>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h4>
 <div class="tabbed-set docutils">
-<input checked="checked" id="7769451f-0c7b-4585-a8ab-392f8399d7b1" name="e9b3571a-4829-492f-931a-92c13d84e2a8" type="radio">
-</input><label class="tabbed-label" for="7769451f-0c7b-4585-a8ab-392f8399d7b1">
+<input checked="checked" id="b0e01e39-0bd0-4ad4-b367-c678267db90d" name="a7864c23-3f4f-43c2-92f5-a8c38cc81cbd" type="radio">
+</input><label class="tabbed-label" for="b0e01e39-0bd0-4ad4-b367-c678267db90d">
 Markup</label><div class="tabbed-content docutils">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```{abc} foo bar
 :a: one
@@ -399,12 +399,12 @@ ABC directive
 </pre></div>
 </div>
 </div>
-<input id="3e48463a-2c22-4003-9fa8-dfbcfe522969" name="e9b3571a-4829-492f-931a-92c13d84e2a8" type="radio">
-</input><label class="tabbed-label" for="3e48463a-2c22-4003-9fa8-dfbcfe522969">
+<input id="e0bbc7ac-a859-4249-9785-e672fe0345ad" name="a7864c23-3f4f-43c2-92f5-a8c38cc81cbd" type="radio">
+</input><label class="tabbed-label" for="e0bbc7ac-a859-4249-9785-e672fe0345ad">
 AST</label><div class="tabbed-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">root</span><span class="w"></span>
 <span class="nt">children</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">directive</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mystDirective</span><span class="w"></span>
 <span class="w">    </span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">abc</span><span class="w"></span>
 <span class="w">    </span><span class="nt">args</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">foo bar</span><span class="w"></span>
 <span class="w">    </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|-</span><span class="w"></span>
@@ -415,8 +415,8 @@ AST</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="0ef65444-1aec-4558-930f-f09f00968dfd" name="e9b3571a-4829-492f-931a-92c13d84e2a8" type="radio">
-</input><label class="tabbed-label" for="0ef65444-1aec-4558-930f-f09f00968dfd">
+<input id="1def0223-e012-4121-8d08-2f87a032add8" name="a7864c23-3f4f-43c2-92f5-a8c38cc81cbd" type="radio">
+</input><label class="tabbed-label" for="1def0223-e012-4121-8d08-2f87a032add8">
 Render</label><div class="tabbed-content docutils">
 </div>
 </div>
@@ -476,7 +476,7 @@ My directive content.
 <h4>Specification<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
 <p>Custom in-line behavior</p>
 <ul class="simple">
-<li><p><strong>type*</strong>: <em>string</em> (“role”) - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
+<li><p><strong>type*</strong>: <em>string</em> (“mystRole”) - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
 <li><p><strong>kind*</strong>: <em>string</em></p></li>
 <li><p><strong>value</strong>: <em>string</em> - content of the directive</p></li>
 <li><p><strong>children</strong>: <em>array</em> (<a class="reference internal" href="../myst.schema.html#phrasingcontent"><span class="std std-ref">PhrasingContent</span></a>) - parsed role content</p></li>
@@ -487,28 +487,28 @@ My directive content.
 <div class="section" id="id2">
 <h4>Example<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
 <div class="tabbed-set docutils">
-<input checked="checked" id="044931d6-1b1a-4436-ab10-767416aca994" name="2f35b1e4-97f4-44b2-b7e4-a6fb096f7170" type="radio">
-</input><label class="tabbed-label" for="044931d6-1b1a-4436-ab10-767416aca994">
+<input checked="checked" id="be0de40c-619f-4702-97c6-d987c21d3029" name="70e1892e-938a-4fa7-918b-61b210077635" type="radio">
+</input><label class="tabbed-label" for="be0de40c-619f-4702-97c6-d987c21d3029">
 Markup</label><div class="tabbed-content docutils">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>{abc}`ABC role`
 </pre></div>
 </div>
 </div>
-<input id="9f9ee6bb-9b8b-4b6a-8bf8-05ba9c49207f" name="2f35b1e4-97f4-44b2-b7e4-a6fb096f7170" type="radio">
-</input><label class="tabbed-label" for="9f9ee6bb-9b8b-4b6a-8bf8-05ba9c49207f">
+<input id="4ee117bc-da5c-4c48-88e3-b00a924936ca" name="70e1892e-938a-4fa7-918b-61b210077635" type="radio">
+</input><label class="tabbed-label" for="4ee117bc-da5c-4c48-88e3-b00a924936ca">
 AST</label><div class="tabbed-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">root</span><span class="w"></span>
 <span class="nt">children</span><span class="p">:</span><span class="w"></span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">paragraph</span><span class="w"></span>
 <span class="w">    </span><span class="nt">children</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">role</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mystRole</span><span class="w"></span>
 <span class="w">        </span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">abc</span><span class="w"></span>
 <span class="w">        </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ABC role</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
-<input id="e19788c1-7c89-4901-98bc-30bdaf05a010" name="2f35b1e4-97f4-44b2-b7e4-a6fb096f7170" type="radio">
-</input><label class="tabbed-label" for="e19788c1-7c89-4901-98bc-30bdaf05a010">
+<input id="e1db9cf7-a0ea-4938-890b-49ce59f7324b" name="70e1892e-938a-4fa7-918b-61b210077635" type="radio">
+</input><label class="tabbed-label" for="e1db9cf7-a0ea-4938-890b-49ce59f7324b">
 Render</label><div class="tabbed-content docutils">
 <p><a href="#id3"><span class="problematic" id="id4">:abc:`ABC role`</span></a></p>
 </div>

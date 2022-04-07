@@ -13,7 +13,7 @@ ABC directive
 ```yaml
 type: root
 children:
-  - type: directive
+  - type: mystDirective
     kind: abc
     args: foo bar
     value: |-

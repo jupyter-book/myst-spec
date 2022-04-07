@@ -12,7 +12,7 @@ children:
     children:
       - type: text
         value: 'This is genius '
-      - type: role
+      - type: mystRole
         kind: math
         value: e=mc^2
         children:
