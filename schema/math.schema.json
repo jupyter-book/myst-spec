@@ -8,9 +8,14 @@
       "type": "object",
       "allOf": [
         {
+          "required": ["numbered"],
           "properties": {
             "type": {
               "const": "math"
+            },
+            "numbered": {
+              "description": "count this math block for numbering based on kind, e.g. See equation (1)",
+              "type": "boolean"
             },
             "identifier": {},
             "label": {},

@@ -78,6 +78,7 @@ cases:
             - type: math
               identifier: matrix
               label: matrix
+              numbered: true
               value: |-
                 Ax = b
     myst: |-
@@ -111,6 +112,7 @@ cases:
             - type: math
               identifier: matrix
               label: matrix
+              numbered: true
               value: |-
                 Ax = b
     myst: |-

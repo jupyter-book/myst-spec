@@ -8,6 +8,7 @@ cases:
           value: Ax = b
           children:
             - type: math
+              numbered: true
               value: |-
                 Ax = b
     myst: |-
@@ -33,6 +34,7 @@ cases:
           value: Ax = b
           children:
             - type: math
+              numbered: true
               identifier: matrix
               label: matrix
               value: |-

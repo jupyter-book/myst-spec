@@ -29,7 +29,7 @@
       "type": "object",
       "allOf": [
         {
-          "required": ["depth"],
+          "required": ["depth", "numbered"],
           "properties": {
             "type": {
               "const": "heading"
@@ -38,6 +38,10 @@
               "type": "integer",
               "minimum": 1,
               "maximum": 6
+            },
+            "numbered": {
+              "description": "count this heading for numbering based on kind, e.g. Section 2.4.1",
+              "type": "boolean"
             },
             "children": {
               "type": "array",
