@@ -34,9 +34,9 @@ cases:
           value: Ax = b
           children:
             - type: math
-              numbered: true
               identifier: matrix
               label: matrix
+              numbered: true
               value: |-
                 Ax = b
     myst: |-

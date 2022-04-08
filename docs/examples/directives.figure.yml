@@ -38,7 +38,7 @@ cases:
       Something! A legend!?
       ```
     html: |-
-      <figure>
+      <figure class="numbered">
         <img src="https://via.placeholder.com/150">
         <figcaption>
           <p>This is the figure caption!</p>
