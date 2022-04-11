@@ -375,7 +375,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Content block with predefined behavior</p>
 <ul class="simple">
 <li><p><strong>type*</strong>: <em>string</em> (“mystDirective”) - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>kind*</strong>: <em>string</em></p></li>
+<li><p><strong>name*</strong>: <em>string</em></p></li>
 <li><p><strong>args</strong>: <em>string</em></p></li>
 <li><p><strong>options</strong>: <em>object</em></p></li>
 <li><p><strong>value</strong>: <em>string</em> - body of the directive, excluding options</p></li>
@@ -387,8 +387,8 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="section" id="example">
 <h4>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h4>
 <div class="tabbed-set docutils">
-<input checked="checked" id="7703e43c-add6-4387-b85d-0145fc4a8841" name="951db77b-426f-4fff-b986-92b690e2783d" type="radio">
-</input><label class="tabbed-label" for="7703e43c-add6-4387-b85d-0145fc4a8841">
+<input checked="checked" id="e6a4ce5b-16c7-4d1c-9cf3-32636310a7ec" name="6f56ee28-a1e5-4bad-8290-05465f921fa2" type="radio">
+</input><label class="tabbed-label" for="e6a4ce5b-16c7-4d1c-9cf3-32636310a7ec">
 Markup</label><div class="tabbed-content docutils">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```{abc} foo bar
 :a: one
@@ -399,13 +399,13 @@ ABC directive
 </pre></div>
 </div>
 </div>
-<input id="70c385ad-b442-4988-8404-dbdb78a60479" name="951db77b-426f-4fff-b986-92b690e2783d" type="radio">
-</input><label class="tabbed-label" for="70c385ad-b442-4988-8404-dbdb78a60479">
+<input id="0d76ce79-f8a8-4792-93e5-26627998e5ec" name="6f56ee28-a1e5-4bad-8290-05465f921fa2" type="radio">
+</input><label class="tabbed-label" for="0d76ce79-f8a8-4792-93e5-26627998e5ec">
 AST</label><div class="tabbed-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">root</span><span class="w"></span>
 <span class="nt">children</span><span class="p">:</span><span class="w"></span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mystDirective</span><span class="w"></span>
-<span class="w">    </span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">abc</span><span class="w"></span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">abc</span><span class="w"></span>
 <span class="w">    </span><span class="nt">args</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">foo bar</span><span class="w"></span>
 <span class="w">    </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|-</span><span class="w"></span>
 <span class="w">      </span><span class="no">:a: one</span><span class="w"></span>
@@ -415,8 +415,8 @@ AST</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="8f887f38-7311-46de-8978-0f04b4f81521" name="951db77b-426f-4fff-b986-92b690e2783d" type="radio">
-</input><label class="tabbed-label" for="8f887f38-7311-46de-8978-0f04b4f81521">
+<input id="fde753f7-530c-48aa-9617-9b3d9ccca041" name="6f56ee28-a1e5-4bad-8290-05465f921fa2" type="radio">
+</input><label class="tabbed-label" for="fde753f7-530c-48aa-9617-9b3d9ccca041">
 Render</label><div class="tabbed-content docutils">
 </div>
 </div>
@@ -477,7 +477,7 @@ My directive content.
 <p>Custom in-line behavior</p>
 <ul class="simple">
 <li><p><strong>type*</strong>: <em>string</em> (“mystRole”) - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>kind*</strong>: <em>string</em></p></li>
+<li><p><strong>name*</strong>: <em>string</em></p></li>
 <li><p><strong>value</strong>: <em>string</em> - content of the directive</p></li>
 <li><p><strong>children</strong>: <em>array</em> (<a class="reference internal" href="../myst.schema.html#phrasingcontent"><span class="std std-ref">PhrasingContent</span></a>) - parsed role content</p></li>
 <li><p><strong>position</strong>: <em>object</em> (<a class="reference internal" href="../myst.schema.html#position"><span class="std std-ref">Position</span></a>) - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
@@ -487,33 +487,33 @@ My directive content.
 <div class="section" id="id2">
 <h4>Example<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
 <div class="tabbed-set docutils">
-<input checked="checked" id="1ee6a6aa-5fe8-450d-b23d-032c8347a19c" name="e311abeb-2a60-4b9e-95e5-338e1e8713cb" type="radio">
-</input><label class="tabbed-label" for="1ee6a6aa-5fe8-450d-b23d-032c8347a19c">
+<input checked="checked" id="6abba792-b0e0-40f2-866c-4227ebc358ec" name="60f8a962-2d19-40ae-836f-c0c6ea55de80" type="radio">
+</input><label class="tabbed-label" for="6abba792-b0e0-40f2-866c-4227ebc358ec">
 Markup</label><div class="tabbed-content docutils">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>{abc}`ABC role`
 </pre></div>
 </div>
 </div>
-<input id="ec8a5c28-9286-491b-9c05-40902913f9e5" name="e311abeb-2a60-4b9e-95e5-338e1e8713cb" type="radio">
-</input><label class="tabbed-label" for="ec8a5c28-9286-491b-9c05-40902913f9e5">
+<input id="ea911244-56c6-43a9-84c6-c1a38772d887" name="60f8a962-2d19-40ae-836f-c0c6ea55de80" type="radio">
+</input><label class="tabbed-label" for="ea911244-56c6-43a9-84c6-c1a38772d887">
 AST</label><div class="tabbed-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">root</span><span class="w"></span>
 <span class="nt">children</span><span class="p">:</span><span class="w"></span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">paragraph</span><span class="w"></span>
 <span class="w">    </span><span class="nt">children</span><span class="p">:</span><span class="w"></span>
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mystRole</span><span class="w"></span>
-<span class="w">        </span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">abc</span><span class="w"></span>
+<span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">abc</span><span class="w"></span>
 <span class="w">        </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ABC role</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
-<input id="a8ad727f-990a-42c2-9bf4-210655bfb0af" name="e311abeb-2a60-4b9e-95e5-338e1e8713cb" type="radio">
-</input><label class="tabbed-label" for="a8ad727f-990a-42c2-9bf4-210655bfb0af">
+<input id="853c0e23-12db-4de0-a280-36e896efa877" name="60f8a962-2d19-40ae-836f-c0c6ea55de80" type="radio">
+</input><label class="tabbed-label" for="853c0e23-12db-4de0-a280-36e896efa877">
 Render</label><div class="tabbed-content docutils">
 <p><a href="#id3"><span class="problematic" id="id4">:abc:`ABC role`</span></a></p>
 </div>
 </div>
-<p>Of course, roles will only allow custom behavior work if <code class="docutils literal notranslate"><span class="pre">kind</span></code> is a valid role name! The <code class="docutils literal notranslate"><span class="pre">abbr</span></code> role creates inline abbreviations, for example, <code class="docutils literal notranslate"><span class="pre">{abbr}`MyST</span> <span class="pre">(Markedly</span> <span class="pre">Structured</span> <span class="pre">Text)`</span></code> will become <abbr title="Markedly Structured Text">MyST</abbr>! When you hover over<a class="footnote-reference brackets" href="#id6" id="id5">1</a> the abbreviation you will see the <code class="docutils literal notranslate"><span class="pre">title</span></code> appear!</p>
+<p>Of course, roles will only allow custom behavior work if <code class="docutils literal notranslate"><span class="pre">name</span></code> is a valid role name! The <code class="docutils literal notranslate"><span class="pre">abbr</span></code> role creates inline abbreviations, for example, <code class="docutils literal notranslate"><span class="pre">{abbr}`MyST</span> <span class="pre">(Markedly</span> <span class="pre">Structured</span> <span class="pre">Text)`</span></code> will become <abbr title="Markedly Structured Text">MyST</abbr>! When you hover over<a class="footnote-reference brackets" href="#id6" id="id5">1</a> the abbreviation you will see the <code class="docutils literal notranslate"><span class="pre">title</span></code> appear!</p>
 <p>Roles are defined inline, with an identifier and input. There are a number of roles included in MyST, including abbreviations, subscript, and superscript, as well as inline <a class="reference internal" href="math.html"><span class="doc std std-doc">Math &amp; Equations</span></a>.</p>
 </div>
 </div>

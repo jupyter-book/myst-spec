@@ -3,7 +3,7 @@
 type: root
 children:
   - type: mystDirective
-    kind: note
+    name: note
     args: This is a title in myst
     value: and an example of a note admonition.
     children:

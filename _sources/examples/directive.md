@@ -14,7 +14,7 @@ ABC directive
 type: root
 children:
   - type: mystDirective
-    kind: abc
+    name: abc
     args: foo bar
     value: |-
       :a: one

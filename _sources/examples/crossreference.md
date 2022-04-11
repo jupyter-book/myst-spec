@@ -20,7 +20,7 @@ children:
       - type: text
         value: 'see '
       - type: mystRole
-        kind: numref
+        name: numref
         value: my-table
         children:
           - type: crossReference
@@ -28,7 +28,7 @@ children:
             identifier: my-table
             label: my-table
   - type: mystDirective
-    kind: list-table
+    name: list-table
     args: Caption text
     options:
       name: my-table

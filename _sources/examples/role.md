@@ -11,7 +11,7 @@ children:
   - type: paragraph
     children:
       - type: mystRole
-        kind: abc
+        name: abc
         value: ABC role
 
 ```

@@ -12,7 +12,7 @@ Ax = b
 type: root
 children:
   - type: mystDirective
-    kind: math
+    name: math
     options:
       label: matrix
     value: Ax = b

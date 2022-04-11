@@ -13,7 +13,7 @@ Something! A legend!?
 type: root
 children:
   - type: mystDirective
-    kind: figure
+    name: figure
     args: https://via.placeholder.com/150
     value: |-
       This is the figure caption!

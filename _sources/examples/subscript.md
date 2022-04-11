@@ -13,7 +13,7 @@ children:
       - type: text
         value: H
       - type: mystRole
-        kind: subscript
+        name: subscript
         value: '2'
         children:
           - type: subscript

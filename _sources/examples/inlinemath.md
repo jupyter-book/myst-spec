@@ -13,7 +13,7 @@ children:
       - type: text
         value: 'This is genius '
       - type: mystRole
-        kind: math
+        name: math
         value: e=mc^2
         children:
           - type: inlineMath

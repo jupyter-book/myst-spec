@@ -13,7 +13,7 @@ children:
       - type: text
         value: '4'
       - type: mystRole
-        kind: superscript
+        name: superscript
         value: th
         children:
           - type: superscript

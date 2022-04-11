@@ -47,7 +47,7 @@ Top-level content blocks or cells the myst document, delimited by BlockBreaks
 Custom in-line behavior
 
 - __type*__: _string_ ("mystRole") - See {ref}`node`
-- __kind*__: _string_ 
+- __name*__: _string_ 
 - __value__: _string_ - content of the directive 
 - __children__: _array_ ({ref}`phrasingcontent`) - parsed role content 
 - __position__: _object_ ({ref}`position`) - See {ref}`node`
@@ -59,7 +59,7 @@ Custom in-line behavior
 Content block with predefined behavior
 
 - __type*__: _string_ ("mystDirective") - See {ref}`node`
-- __kind*__: _string_ 
+- __name*__: _string_ 
 - __args__: _string_ 
 - __options__: _object_ 
 - __value__: _string_ - body of the directive, excluding options 
