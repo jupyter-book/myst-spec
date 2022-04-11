@@ -8,7 +8,7 @@
       "type": "object",
       "allOf": [
         {
-          "required": ["kind", "numbered"],
+          "required": ["kind"],
           "properties": {
             "type": {
               "const": "container"
