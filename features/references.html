@@ -504,8 +504,8 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="section" id="example">
 <h3>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h3>
 <div class="tabbed-set docutils">
-<input checked="checked" id="54f62bdd-8579-42d6-8cd5-e2e922855e3e" name="7e8ac345-58fc-4aad-b37f-48b0031ea06e" type="radio">
-</input><label class="tabbed-label" for="54f62bdd-8579-42d6-8cd5-e2e922855e3e">
+<input checked="checked" id="4fea4838-8406-4ac1-8a47-4d9116b50b14" name="7504d988-8068-4357-b96a-bce825d45df1" type="radio">
+</input><label class="tabbed-label" for="4fea4838-8406-4ac1-8a47-4d9116b50b14">
 Markup</label><div class="tabbed-content docutils">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>see {numref}`my-table`
 
@@ -518,8 +518,8 @@ Markup</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="e81acbe5-d19e-4613-aff8-9f31609a37ba" name="7e8ac345-58fc-4aad-b37f-48b0031ea06e" type="radio">
-</input><label class="tabbed-label" for="e81acbe5-d19e-4613-aff8-9f31609a37ba">
+<input id="14e50eec-6146-45fc-9f81-af55c8ec1e9a" name="7504d988-8068-4357-b96a-bce825d45df1" type="radio">
+</input><label class="tabbed-label" for="14e50eec-6146-45fc-9f81-af55c8ec1e9a">
 AST</label><div class="tabbed-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">root</span><span class="w"></span>
 <span class="nt">children</span><span class="p">:</span><span class="w"></span>
@@ -572,8 +572,8 @@ AST</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="b25117ba-5b96-4d21-8776-6e6994c7162e" name="7e8ac345-58fc-4aad-b37f-48b0031ea06e" type="radio">
-</input><label class="tabbed-label" for="b25117ba-5b96-4d21-8776-6e6994c7162e">
+<input id="d3d704f7-8d41-44ba-8646-7e8e9436a578" name="7504d988-8068-4357-b96a-bce825d45df1" type="radio">
+</input><label class="tabbed-label" for="d3d704f7-8d41-44ba-8646-7e8e9436a578">
 Render</label><div class="tabbed-content docutils">
 <p>see <a class="reference internal" href="#my-table"><span class="std std-numref">Table 1</span></a></p>
 <table class="table" id="my-table">
@@ -674,9 +674,8 @@ See Equation {eq}`my-math-label`!
 <h3>Specification<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <p>Target node - provides identifier/label for the following node</p>
 <ul class="simple">
-<li><p><strong>type*</strong>: <em>string</em> (“target”) - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>identifier*</strong>: <em>string</em> - See <a class="reference internal" href="../myst.schema.html#optionalassociation"><span class="std std-ref">OptionalAssociation</span></a></p></li>
-<li><p><strong>label</strong>: <em>string</em> - See <a class="reference internal" href="../myst.schema.html#optionalassociation"><span class="std std-ref">OptionalAssociation</span></a></p></li>
+<li><p><strong>type*</strong>: <em>string</em> (“mystTarget”) - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
+<li><p><strong>label</strong>: <em>string</em> - unresolved target label</p></li>
 <li><p><strong>position</strong>: <em>object</em> (<a class="reference internal" href="../myst.schema.html#position"><span class="std std-ref">Position</span></a>) - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
 <li><p><strong>data</strong>: <em>object</em> - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
 </ul>
@@ -684,21 +683,20 @@ See Equation {eq}`my-math-label`!
 <div class="section" id="id2">
 <h3>Example<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <div class="tabbed-set docutils">
-<input checked="checked" id="1289549d-6acc-40f1-9949-e56d9be65dc0" name="71196619-c5b3-4f9e-8b40-1d6541f656a2" type="radio">
-</input><label class="tabbed-label" for="1289549d-6acc-40f1-9949-e56d9be65dc0">
+<input checked="checked" id="6276c7df-8d06-4aee-8fb7-c5b9aff2d505" name="1505603c-0582-4567-945a-4c8e2e333396" type="radio">
+</input><label class="tabbed-label" for="6276c7df-8d06-4aee-8fb7-c5b9aff2d505">
 Markup</label><div class="tabbed-content docutils">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">my_ID</span><span class="p">)</span><span class="o">=</span>
 <span class="c1"># My Header</span>
 </pre></div>
 </div>
 </div>
-<input id="562bd64c-b124-4944-b994-3f04cd4a2dea" name="71196619-c5b3-4f9e-8b40-1d6541f656a2" type="radio">
-</input><label class="tabbed-label" for="562bd64c-b124-4944-b994-3f04cd4a2dea">
+<input id="727d5a01-68b9-467b-85ff-55c506693eb2" name="1505603c-0582-4567-945a-4c8e2e333396" type="radio">
+</input><label class="tabbed-label" for="727d5a01-68b9-467b-85ff-55c506693eb2">
 AST</label><div class="tabbed-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">root</span><span class="w"></span>
 <span class="nt">children</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">target</span><span class="w"></span>
-<span class="w">    </span><span class="nt">identifier</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my_id</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mystTarget</span><span class="w"></span>
 <span class="w">    </span><span class="nt">label</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my_ID</span><span class="w"></span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">heading</span><span class="w"></span>
 <span class="w">    </span><span class="nt">depth</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span><span class="w"></span>
@@ -708,8 +706,8 @@ AST</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="bbb086b9-47ed-4319-9498-8986f47d31b8" name="71196619-c5b3-4f9e-8b40-1d6541f656a2" type="radio">
-</input><label class="tabbed-label" for="bbb086b9-47ed-4319-9498-8986f47d31b8">
+<input id="aac2afd4-587d-4f3e-9c16-b555061edfb3" name="1505603c-0582-4567-945a-4c8e2e333396" type="radio">
+</input><label class="tabbed-label" for="aac2afd4-587d-4f3e-9c16-b555061edfb3">
 Render</label><div class="tabbed-content docutils">
 </div>
 </div>

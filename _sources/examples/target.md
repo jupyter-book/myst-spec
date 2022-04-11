@@ -9,8 +9,7 @@
 ```yaml
 type: root
 children:
-  - type: target
-    identifier: my_id
+  - type: mystTarget
     label: my_ID
   - type: heading
     depth: 1

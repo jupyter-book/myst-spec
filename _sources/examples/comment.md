@@ -14,7 +14,7 @@ children:
     children:
       - type: text
         value: Something
-  - type: comment
+  - type: mystComment
     value: A comment
   - type: paragraph
     children:
