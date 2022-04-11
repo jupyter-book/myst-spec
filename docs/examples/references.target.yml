@@ -9,7 +9,6 @@ cases:
           label: my_ID
         - type: heading
           depth: 1
-          numbered: true
           children:
             - type: text
               value: My Header

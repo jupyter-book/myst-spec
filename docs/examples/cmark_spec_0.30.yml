@@ -181,7 +181,6 @@ cases:
       children:
         - type: heading
           depth: 1
-          numbered: true
           children:
             - type: text
               value: Foo
@@ -915,7 +914,6 @@ cases:
       children:
         - type: heading
           depth: 2
-          numbered: true
           children:
             - type: text
               value: Foo
@@ -998,37 +996,31 @@ cases:
       children:
         - type: heading
           depth: 1
-          numbered: true
           children:
             - type: text
               value: foo
         - type: heading
           depth: 2
-          numbered: true
           children:
             - type: text
               value: foo
         - type: heading
           depth: 3
-          numbered: true
           children:
             - type: text
               value: foo
         - type: heading
           depth: 4
-          numbered: true
           children:
             - type: text
               value: foo
         - type: heading
           depth: 5
-          numbered: true
           children:
             - type: text
               value: foo
         - type: heading
           depth: 6
-          numbered: true
           children:
             - type: text
               value: foo
@@ -1095,7 +1087,6 @@ cases:
       children:
         - type: heading
           depth: 1
-          numbered: true
           children:
             - type: text
               value: 'foo '
@@ -1115,7 +1106,6 @@ cases:
       children:
         - type: heading
           depth: 1
-          numbered: true
           children:
             - type: text
               value: foo
@@ -1129,19 +1119,16 @@ cases:
       children:
         - type: heading
           depth: 3
-          numbered: true
           children:
             - type: text
               value: foo
         - type: heading
           depth: 2
-          numbered: true
           children:
             - type: text
               value: foo
         - type: heading
           depth: 1
-          numbered: true
           children:
             - type: text
               value: foo
@@ -1187,13 +1174,11 @@ cases:
       children:
         - type: heading
           depth: 2
-          numbered: true
           children:
             - type: text
               value: foo
         - type: heading
           depth: 3
-          numbered: true
           children:
             - type: text
               value: bar
@@ -1209,13 +1194,11 @@ cases:
       children:
         - type: heading
           depth: 1
-          numbered: true
           children:
             - type: text
               value: foo
         - type: heading
           depth: 5
-          numbered: true
           children:
             - type: text
               value: foo
@@ -1231,7 +1214,6 @@ cases:
       children:
         - type: heading
           depth: 3
-          numbered: true
           children:
             - type: text
               value: foo
@@ -1245,7 +1227,6 @@ cases:
       children:
         - type: heading
           depth: 3
-          numbered: true
           children:
             - type: text
               value: 'foo ### b'
@@ -1259,7 +1240,6 @@ cases:
       children:
         - type: heading
           depth: 1
-          numbered: true
           children:
             - type: text
               value: foo#
@@ -1273,19 +1253,16 @@ cases:
       children:
         - type: heading
           depth: 3
-          numbered: true
           children:
             - type: text
               value: 'foo ###'
         - type: heading
           depth: 2
-          numbered: true
           children:
             - type: text
               value: 'foo ###'
         - type: heading
           depth: 1
-          numbered: true
           children:
             - type: text
               value: 'foo #'
@@ -1304,7 +1281,6 @@ cases:
         - type: thematicBreak
         - type: heading
           depth: 2
-          numbered: true
           children:
             - type: text
               value: foo
@@ -1327,7 +1303,6 @@ cases:
               value: Foo bar
         - type: heading
           depth: 1
-          numbered: true
           children:
             - type: text
               value: baz
@@ -1349,15 +1324,12 @@ cases:
       children:
         - type: heading
           depth: 2
-          numbered: true
           children: []
         - type: heading
           depth: 1
-          numbered: true
           children: []
         - type: heading
           depth: 3
-          numbered: true
           children: []
     myst: |
       ## 
@@ -1373,7 +1345,6 @@ cases:
       children:
         - type: heading
           depth: 1
-          numbered: true
           children:
             - type: text
               value: 'Foo '
@@ -1383,7 +1354,6 @@ cases:
                   value: bar
         - type: heading
           depth: 2
-          numbered: true
           children:
             - type: text
               value: 'Foo '
@@ -1406,7 +1376,6 @@ cases:
       children:
         - type: heading
           depth: 1
-          numbered: true
           children:
             - type: text
               value: 'Foo '
@@ -1429,7 +1398,6 @@ cases:
       children:
         - type: heading
           depth: 1
-          numbered: true
           children:
             - type: text
               value: 'Foo '
@@ -1449,13 +1417,11 @@ cases:
       children:
         - type: heading
           depth: 2
-          numbered: true
           children:
             - type: text
               value: Foo
         - type: heading
           depth: 1
-          numbered: true
           children:
             - type: text
               value: Foo
@@ -1474,19 +1440,16 @@ cases:
       children:
         - type: heading
           depth: 2
-          numbered: true
           children:
             - type: text
               value: Foo
         - type: heading
           depth: 2
-          numbered: true
           children:
             - type: text
               value: Foo
         - type: heading
           depth: 1
-          numbered: true
           children:
             - type: text
               value: Foo
@@ -1534,7 +1497,6 @@ cases:
       children:
         - type: heading
           depth: 2
-          numbered: true
           children:
             - type: text
               value: Foo
@@ -1591,7 +1553,6 @@ cases:
       children:
         - type: heading
           depth: 2
-          numbered: true
           children:
             - type: text
               value: Foo
@@ -1606,7 +1567,6 @@ cases:
       children:
         - type: heading
           depth: 2
-          numbered: true
           children:
             - type: text
               value: Foo\
@@ -1621,7 +1581,6 @@ cases:
       children:
         - type: heading
           depth: 2
-          numbered: true
           children:
             - type: text
               value: '`Foo'
@@ -1631,7 +1590,6 @@ cases:
               value: '`'
         - type: heading
           depth: 2
-          numbered: true
           children:
             - type: text
               value: <a title="a lot
@@ -1722,7 +1680,6 @@ cases:
       children:
         - type: heading
           depth: 2
-          numbered: true
           children:
             - type: text
               value: |-
@@ -1742,13 +1699,11 @@ cases:
         - type: thematicBreak
         - type: heading
           depth: 2
-          numbered: true
           children:
             - type: text
               value: Foo
         - type: heading
           depth: 2
-          numbered: true
           children:
             - type: text
               value: Bar
@@ -1855,7 +1810,6 @@ cases:
       children:
         - type: heading
           depth: 2
-          numbered: true
           children:
             - type: text
               value: '> foo'
@@ -1874,7 +1828,6 @@ cases:
               value: Foo
         - type: heading
           depth: 2
-          numbered: true
           children:
             - type: text
               value: bar
@@ -2163,7 +2116,6 @@ cases:
       children:
         - type: heading
           depth: 1
-          numbered: true
           children:
             - type: text
               value: Heading
@@ -2172,7 +2124,6 @@ cases:
           value: foo
         - type: heading
           depth: 2
-          numbered: true
           children:
             - type: text
               value: Heading
@@ -2635,7 +2586,6 @@ cases:
       children:
         - type: heading
           depth: 2
-          numbered: true
           children:
             - type: text
               value: foo
@@ -2644,7 +2594,6 @@ cases:
           value: bar
         - type: heading
           depth: 1
-          numbered: true
           children:
             - type: text
               value: baz
@@ -4152,7 +4101,6 @@ cases:
       children:
         - type: heading
           depth: 1
-          numbered: true
           children:
             - type: link
               url: /url
@@ -4180,7 +4128,6 @@ cases:
       children:
         - type: heading
           depth: 1
-          numbered: true
           children:
             - type: text
               value: bar
@@ -4445,7 +4392,6 @@ cases:
               value: aaa
         - type: heading
           depth: 1
-          numbered: true
           children:
             - type: text
               value: aaa
@@ -4468,7 +4414,6 @@ cases:
           children:
             - type: heading
               depth: 1
-              numbered: true
               children:
                 - type: text
                   value: Foo
@@ -4496,7 +4441,6 @@ cases:
           children:
             - type: heading
               depth: 1
-              numbered: true
               children:
                 - type: text
                   value: Foo
@@ -4524,7 +4468,6 @@ cases:
           children:
             - type: heading
               depth: 1
-              numbered: true
               children:
                 - type: text
                   value: Foo
@@ -4571,7 +4514,6 @@ cases:
           children:
             - type: heading
               depth: 1
-              numbered: true
               children:
                 - type: text
                   value: Foo
@@ -6570,7 +6512,6 @@ cases:
               children:
                 - type: heading
                   depth: 1
-                  numbered: true
                   children:
                     - type: text
                       value: Foo
@@ -6579,7 +6520,6 @@ cases:
               children:
                 - type: heading
                   depth: 2
-                  numbered: true
                   children:
                     - type: text
                       value: Bar
@@ -12872,7 +12812,6 @@ cases:
       children:
         - type: heading
           depth: 3
-          numbered: true
           children:
             - type: text
               value: foo\
@@ -12886,7 +12825,6 @@ cases:
       children:
         - type: heading
           depth: 3
-          numbered: true
           children:
             - type: text
               value: foo

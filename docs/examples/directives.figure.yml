@@ -14,7 +14,6 @@ cases:
           children:
             - type: container
               kind: figure
-              numbered: true
               children:
                 - type: image
                   url: https://via.placeholder.com/150
@@ -64,7 +63,6 @@ cases:
               kind: figure
               identifier: myfigure
               label: myFigure
-              numbered: true
               children:
                 - type: image
                   url: https://via.placeholder.com/150
@@ -112,7 +110,6 @@ cases:
               kind: figure
               identifier: myfigure
               label: myFigure
-              numbered: true
               children:
                 - type: image
                   url: https://via.placeholder.com/150
@@ -151,7 +148,6 @@ cases:
               kind: figure
               identifier: myfigure
               label: myFigure
-              numbered: true
               children:
                 - type: image
                   url: https://via.placeholder.com/150
@@ -189,7 +185,6 @@ cases:
               kind: figure
               identifier: myfigure
               label: myFigure
-              numbered: true
               children:
                 - type: image
                   url: https://via.placeholder.com/150
@@ -210,7 +205,6 @@ cases:
               kind: figure
               identifier: myotherfigure
               label: myOtherFigure
-              numbered: true
               children:
                 - type: image
                   url: https://via.placeholder.com/151

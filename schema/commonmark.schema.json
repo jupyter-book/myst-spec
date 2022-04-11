@@ -39,12 +39,12 @@
               "minimum": 1,
               "maximum": 6
             },
-            "numbered": {
+            "enumerated": {
               "description": "count this heading for numbering based on kind, e.g. Section 2.4.1",
               "type": "boolean"
             },
-            "number": {
-              "description": "resolved number value for this heading",
+            "enumerator": {
+              "description": "resolved enumerated value for this heading",
               "type": "string"
             },
             "children": {

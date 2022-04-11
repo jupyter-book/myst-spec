@@ -30,7 +30,6 @@ cases:
         - type: blockBreak
         - type: heading
           depth: 1
-          numbered: true
           children:
             - type: text
               value: Heading!
@@ -47,7 +46,6 @@ cases:
           children:
             - type: heading
               depth: 1
-              numbered: true
               children:
                 - type: text
                   value: Heading!

@@ -22,12 +22,12 @@
               "description": "any custom class information",
               "type": "string"
             },
-            "numbered": {
-              "description": "count this container for numbering based on kind, e.g. Figure 1",
+            "enumerated": {
+              "description": "count this container for numbering based on kind, e.g. Figure 1a",
               "type": "boolean"
             },
-            "number": {
-              "description": "resolved number value for this container",
+            "enumerator": {
+              "description": "resolved enumerated value for this container",
               "type": "string"
             },
             "children": {

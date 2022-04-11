@@ -6,7 +6,6 @@ cases:
       children:
         - type: heading
           depth: 3
-          numbered: true
           children:
             - type: text
               value: Heading!
@@ -21,13 +20,11 @@ cases:
       children:
         - type: heading
           depth: 1
-          numbered: true
           children:
             - type: text
               value: Heading 1
         - type: heading
           depth: 2
-          numbered: true
           children:
             - type: text
               value: Heading 2

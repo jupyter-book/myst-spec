@@ -39,7 +39,6 @@ cases:
       children:
         - type: heading
           depth: 1
-          numbered: true
           children:
             - type: text
               value: Hello world!
@@ -50,7 +49,6 @@ cases:
       children:
         - type: heading
           depth: 7
-          numbered: true
           children:
             - type: text
               value: Hello world!
@@ -61,7 +59,6 @@ cases:
       children:
         - type: heading
           depth: 7
-          numbered: true
           children:
             - type: paragraph
               children: []

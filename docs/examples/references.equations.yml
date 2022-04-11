@@ -26,7 +26,6 @@ cases:
               kind: figure
               identifier: matrix
               label: matrix
-              numbered: true
               children:
                 - type: image
                   url: fig.jpg
@@ -78,7 +77,6 @@ cases:
             - type: math
               identifier: matrix
               label: matrix
-              numbered: true
               value: |-
                 Ax = b
     myst: |-
@@ -112,7 +110,6 @@ cases:
             - type: math
               identifier: matrix
               label: matrix
-              numbered: true
               value: |-
                 Ax = b
     myst: |-
