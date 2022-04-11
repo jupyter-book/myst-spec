@@ -40,7 +40,6 @@ children:
         kind: table
         identifier: my-table
         label: my-table
-        numbered: true
         children:
           - type: caption
             children:

@@ -458,6 +458,8 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="simple">
 <li><p><strong>type*</strong>: <em>string</em> (“heading”) - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
 <li><p><strong>depth*</strong>: <em>integer</em></p></li>
+<li><p><strong>enumerated</strong>: <em>boolean</em> - count this heading for numbering based on kind, e.g. Section 2.4.1</p></li>
+<li><p><strong>enumerator</strong>: <em>string</em> - resolved enumerated value for this heading</p></li>
 <li><p><strong>children*</strong>: <em>array</em> (<a class="reference internal" href="../myst.schema.html#phrasingcontent"><span class="std std-ref">PhrasingContent</span></a>) - See <a class="reference internal" href="../myst.schema.html#parent"><span class="std std-ref">Parent</span></a></p></li>
 <li><p><strong>identifier</strong>: <em>string</em> - See <a class="reference internal" href="../myst.schema.html#optionalassociation"><span class="std std-ref">OptionalAssociation</span></a></p></li>
 <li><p><strong>label</strong>: <em>string</em> - See <a class="reference internal" href="../myst.schema.html#optionalassociation"><span class="std std-ref">OptionalAssociation</span></a></p></li>
@@ -465,15 +467,15 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p><strong>data</strong>: <em>object</em> - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
 </ul>
 <div class="tabbed-set docutils">
-<input checked="checked" id="69fdedbe-a15f-4dd8-a62a-d944542c20a2" name="a845e895-340e-4419-9c2f-47a41063ac6a" type="radio">
-</input><label class="tabbed-label" for="69fdedbe-a15f-4dd8-a62a-d944542c20a2">
+<input checked="checked" id="934dffb9-24ae-404c-a8a9-ab0d33162dda" name="dabf4049-8bac-44e1-9e9b-8e4321529b3c" type="radio">
+</input><label class="tabbed-label" for="934dffb9-24ae-404c-a8a9-ab0d33162dda">
 Markup</label><div class="tabbed-content docutils">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">### Heading!</span>
 </pre></div>
 </div>
 </div>
-<input id="ccf874f9-2d0e-400c-893e-bcd80463c685" name="a845e895-340e-4419-9c2f-47a41063ac6a" type="radio">
-</input><label class="tabbed-label" for="ccf874f9-2d0e-400c-893e-bcd80463c685">
+<input id="655ab5fd-e6ed-425a-ba6d-932fb08fa9ec" name="dabf4049-8bac-44e1-9e9b-8e4321529b3c" type="radio">
+</input><label class="tabbed-label" for="655ab5fd-e6ed-425a-ba6d-932fb08fa9ec">
 AST</label><div class="tabbed-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">root</span><span class="w"></span>
 <span class="nt">children</span><span class="p">:</span><span class="w"></span>
@@ -485,8 +487,8 @@ AST</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="e779d71b-d1cb-4a66-b823-2e2b8dc813f5" name="a845e895-340e-4419-9c2f-47a41063ac6a" type="radio">
-</input><label class="tabbed-label" for="e779d71b-d1cb-4a66-b823-2e2b8dc813f5">
+<input id="1e850d94-a3d8-4e07-90f5-98b84fb81e7e" name="dabf4049-8bac-44e1-9e9b-8e4321529b3c" type="radio">
+</input><label class="tabbed-label" for="1e850d94-a3d8-4e07-90f5-98b84fb81e7e">
 Render</label><div class="tabbed-content docutils">
 </div>
 </div>
@@ -510,8 +512,8 @@ Render</label><div class="tabbed-content docutils">
 <li><p><strong>data</strong>: <em>object</em> - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
 </ul>
 <div class="tabbed-set docutils">
-<input checked="checked" id="4f920496-f8f9-4c1d-8835-a76157f9c0cc" name="ffc9ef76-5c2e-42f5-ab00-d288e27d8c89" type="radio">
-</input><label class="tabbed-label" for="4f920496-f8f9-4c1d-8835-a76157f9c0cc">
+<input checked="checked" id="db7c5d63-df38-4297-b11f-781e9f42ae78" name="5313a5c5-302b-40f6-903e-e068d925a92c" type="radio">
+</input><label class="tabbed-label" for="db7c5d63-df38-4297-b11f-781e9f42ae78">
 Markup</label><div class="tabbed-content docutils">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">1.</span> <span class="n">quotes</span>
 <span class="mf">2.</span> <span class="n">breaks</span>
@@ -519,8 +521,8 @@ Markup</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="38e4de9b-9dd5-4639-ac8a-b1ed620fcbbf" name="ffc9ef76-5c2e-42f5-ab00-d288e27d8c89" type="radio">
-</input><label class="tabbed-label" for="38e4de9b-9dd5-4639-ac8a-b1ed620fcbbf">
+<input id="a8f18ff0-a987-448e-ab45-f12929ab029f" name="5313a5c5-302b-40f6-903e-e068d925a92c" type="radio">
+</input><label class="tabbed-label" for="a8f18ff0-a987-448e-ab45-f12929ab029f">
 AST</label><div class="tabbed-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">root</span><span class="w"></span>
 <span class="nt">children</span><span class="p">:</span><span class="w"></span>
@@ -547,8 +549,8 @@ AST</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="4a54710b-2419-45e7-95db-01fe51d95085" name="ffc9ef76-5c2e-42f5-ab00-d288e27d8c89" type="radio">
-</input><label class="tabbed-label" for="4a54710b-2419-45e7-95db-01fe51d95085">
+<input id="3e3bc01e-4400-42cc-ab5b-025bf88f3521" name="5313a5c5-302b-40f6-903e-e068d925a92c" type="radio">
+</input><label class="tabbed-label" for="3e3bc01e-4400-42cc-ab5b-025bf88f3521">
 Render</label><div class="tabbed-content docutils">
 <ol class="simple">
 <li><p>quotes</p></li>
@@ -576,8 +578,8 @@ Render</label><div class="tabbed-content docutils">
 <li><p><strong>data</strong>: <em>object</em> - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
 </ul>
 <div class="tabbed-set docutils">
-<input checked="checked" id="5e56f8ac-a7f2-4c31-91d0-fe0c7d15f0bf" name="0e7a9ccc-be27-4315-a0f6-33cfb8fe7451" type="radio">
-</input><label class="tabbed-label" for="5e56f8ac-a7f2-4c31-91d0-fe0c7d15f0bf">
+<input checked="checked" id="938dd180-cdca-4993-afc1-ec110e327da3" name="a91f7a27-5568-4ae9-92f2-678e51ee958a" type="radio">
+</input><label class="tabbed-label" for="938dd180-cdca-4993-afc1-ec110e327da3">
 Markup</label><div class="tabbed-content docutils">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```python
 print(&#39;this is python&#39;)
@@ -585,8 +587,8 @@ print(&#39;this is python&#39;)
 </pre></div>
 </div>
 </div>
-<input id="9b8a286f-481d-4df1-941a-896293d987ff" name="0e7a9ccc-be27-4315-a0f6-33cfb8fe7451" type="radio">
-</input><label class="tabbed-label" for="9b8a286f-481d-4df1-941a-896293d987ff">
+<input id="3e175358-56f9-4292-99f8-46dbd56dfcf2" name="a91f7a27-5568-4ae9-92f2-678e51ee958a" type="radio">
+</input><label class="tabbed-label" for="3e175358-56f9-4292-99f8-46dbd56dfcf2">
 AST</label><div class="tabbed-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">root</span><span class="w"></span>
 <span class="nt">children</span><span class="p">:</span><span class="w"></span>
@@ -596,8 +598,8 @@ AST</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="4beb22ad-17ef-440f-8c50-1ac44c2ef5b2" name="0e7a9ccc-be27-4315-a0f6-33cfb8fe7451" type="radio">
-</input><label class="tabbed-label" for="4beb22ad-17ef-440f-8c50-1ac44c2ef5b2">
+<input id="85d55de7-47cb-4774-997d-60fc0843ee2f" name="a91f7a27-5568-4ae9-92f2-678e51ee958a" type="radio">
+</input><label class="tabbed-label" for="85d55de7-47cb-4774-997d-60fc0843ee2f">
 Render</label><div class="tabbed-content docutils">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;this is python&#39;</span><span class="p">)</span>
 </pre></div>
@@ -612,15 +614,15 @@ Render</label><div class="tabbed-content docutils">
 <div class="section" id="quotes">
 <h3>Quotes<a class="headerlink" href="#quotes" title="Permalink to this headline">¶</a></h3>
 <div class="tabbed-set docutils">
-<input checked="checked" id="80397128-ec87-4912-984c-6a20120badb0" name="27684546-abd8-4e4b-878b-b4eb06fd8d33" type="radio">
-</input><label class="tabbed-label" for="80397128-ec87-4912-984c-6a20120badb0">
+<input checked="checked" id="71e9cdae-9f80-40a3-bc54-480a25f6095a" name="cd48ab6d-bd82-46b0-8a9e-4c1abca3dd98" type="radio">
+</input><label class="tabbed-label" for="71e9cdae-9f80-40a3-bc54-480a25f6095a">
 Markup</label><div class="tabbed-content docutils">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">To</span> <span class="n">be</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">to</span> <span class="n">be</span>
 </pre></div>
 </div>
 </div>
-<input id="06f8f904-415a-4b94-a3b3-0e91021790ed" name="27684546-abd8-4e4b-878b-b4eb06fd8d33" type="radio">
-</input><label class="tabbed-label" for="06f8f904-415a-4b94-a3b3-0e91021790ed">
+<input id="179d4bc4-a35f-47ca-9889-739ed203703b" name="cd48ab6d-bd82-46b0-8a9e-4c1abca3dd98" type="radio">
+</input><label class="tabbed-label" for="179d4bc4-a35f-47ca-9889-739ed203703b">
 AST</label><div class="tabbed-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">root</span><span class="w"></span>
 <span class="nt">children</span><span class="p">:</span><span class="w"></span>
@@ -633,8 +635,8 @@ AST</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="6874833c-a554-469f-9684-b84ef12eea2c" name="27684546-abd8-4e4b-878b-b4eb06fd8d33" type="radio">
-</input><label class="tabbed-label" for="6874833c-a554-469f-9684-b84ef12eea2c">
+<input id="5c00d216-110c-435e-bcd4-319617c295d4" name="cd48ab6d-bd82-46b0-8a9e-4c1abca3dd98" type="radio">
+</input><label class="tabbed-label" for="5c00d216-110c-435e-bcd4-319617c295d4">
 Render</label><div class="tabbed-content docutils">
 <blockquote>
 <div><p>To be or not to be</p>
@@ -651,8 +653,8 @@ Render</label><div class="tabbed-content docutils">
 <li><p><strong>data</strong>: <em>object</em> - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
 </ul>
 <div class="tabbed-set docutils">
-<input checked="checked" id="c7a26c6c-471e-44bc-bb04-2cfe5e66802a" name="678ac929-cacb-45b9-8b60-64c7c49d6c7a" type="radio">
-</input><label class="tabbed-label" for="c7a26c6c-471e-44bc-bb04-2cfe5e66802a">
+<input checked="checked" id="29fa9378-5ba7-4dda-97a2-c063fd1c83fa" name="f3d29665-9142-4fc6-b334-2835527c5d93" type="radio">
+</input><label class="tabbed-label" for="29fa9378-5ba7-4dda-97a2-c063fd1c83fa">
 Markup</label><div class="tabbed-content docutils">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">thematic</span>
 
@@ -662,8 +664,8 @@ Markup</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="c54b11dc-86dc-4493-927c-6a69e7c1da8c" name="678ac929-cacb-45b9-8b60-64c7c49d6c7a" type="radio">
-</input><label class="tabbed-label" for="c54b11dc-86dc-4493-927c-6a69e7c1da8c">
+<input id="deed58da-94e3-4646-aa0c-0724d6e07e5b" name="f3d29665-9142-4fc6-b334-2835527c5d93" type="radio">
+</input><label class="tabbed-label" for="deed58da-94e3-4646-aa0c-0724d6e07e5b">
 AST</label><div class="tabbed-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">root</span><span class="w"></span>
 <span class="nt">children</span><span class="p">:</span><span class="w"></span>
@@ -679,8 +681,8 @@ AST</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="883c4628-0a6c-4cab-909b-d7aa1e6b0199" name="678ac929-cacb-45b9-8b60-64c7c49d6c7a" type="radio">
-</input><label class="tabbed-label" for="883c4628-0a6c-4cab-909b-d7aa1e6b0199">
+<input id="efc28997-b577-4a9a-a14b-3196eb4c69d9" name="f3d29665-9142-4fc6-b334-2835527c5d93" type="radio">
+</input><label class="tabbed-label" for="efc28997-b577-4a9a-a14b-3196eb4c69d9">
 Render</label><div class="tabbed-content docutils">
 <p>thematic</p>
 <hr class="docutils" />
@@ -720,15 +722,15 @@ This syntax is also similar to <a class="reference internal" href="footnotes.htm
 <li><p><strong>data</strong>: <em>object</em> - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
 </ul>
 <div class="tabbed-set docutils">
-<input checked="checked" id="2d636cfb-a11d-4c77-84fb-25389d2ecf41" name="43b87fb1-c140-4d86-8e99-3754e2985752" type="radio">
-</input><label class="tabbed-label" for="2d636cfb-a11d-4c77-84fb-25389d2ecf41">
+<input checked="checked" id="b065463d-8976-4516-9570-28f0bd60bda0" name="a4a93c97-f05f-4f6d-85ad-57d45d492b91" type="radio">
+</input><label class="tabbed-label" for="b065463d-8976-4516-9570-28f0bd60bda0">
 Markup</label><div class="tabbed-content docutils">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Something</span>
 </pre></div>
 </div>
 </div>
-<input id="58082af8-cfcb-43a6-890f-07bed729fa9e" name="43b87fb1-c140-4d86-8e99-3754e2985752" type="radio">
-</input><label class="tabbed-label" for="58082af8-cfcb-43a6-890f-07bed729fa9e">
+<input id="fedeac6a-a9d4-455d-97a3-79ab2132a529" name="a4a93c97-f05f-4f6d-85ad-57d45d492b91" type="radio">
+</input><label class="tabbed-label" for="fedeac6a-a9d4-455d-97a3-79ab2132a529">
 AST</label><div class="tabbed-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">root</span><span class="w"></span>
 <span class="nt">children</span><span class="p">:</span><span class="w"></span>
@@ -739,8 +741,8 @@ AST</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="e7c57c51-d523-4a84-9721-30bb0af606e8" name="43b87fb1-c140-4d86-8e99-3754e2985752" type="radio">
-</input><label class="tabbed-label" for="e7c57c51-d523-4a84-9721-30bb0af606e8">
+<input id="4f6c8f61-2671-4125-a86b-d46aa032b772" name="a4a93c97-f05f-4f6d-85ad-57d45d492b91" type="radio">
+</input><label class="tabbed-label" for="4f6c8f61-2671-4125-a86b-d46aa032b772">
 Render</label><div class="tabbed-content docutils">
 <p>Something</p>
 </div>
@@ -756,15 +758,15 @@ Render</label><div class="tabbed-content docutils">
 <li><p><strong>data</strong>: <em>object</em> - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
 </ul>
 <div class="tabbed-set docutils">
-<input checked="checked" id="b2bee032-943c-47b4-801e-d5f7c95dff34" name="838084a3-70a6-4bb5-b42a-25c181c48ff4" type="radio">
-</input><label class="tabbed-label" for="b2bee032-943c-47b4-801e-d5f7c95dff34">
+<input checked="checked" id="598f9570-835d-4bae-9cf1-d54fc090859d" name="5ddd7a0a-a21f-41dc-a735-50e85d20fcc0" type="radio">
+</input><label class="tabbed-label" for="598f9570-835d-4bae-9cf1-d54fc090859d">
 Markup</label><div class="tabbed-content docutils">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">div</span><span class="o">&gt;&lt;</span><span class="n">p</span><span class="o">&gt;*</span><span class="n">some</span> <span class="n">text</span><span class="o">*&lt;/</span><span class="n">p</span><span class="o">&gt;&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
 </pre></div>
 </div>
 </div>
-<input id="39be2d70-c26f-4482-8f04-3e4b1f6d1d9a" name="838084a3-70a6-4bb5-b42a-25c181c48ff4" type="radio">
-</input><label class="tabbed-label" for="39be2d70-c26f-4482-8f04-3e4b1f6d1d9a">
+<input id="747bd0ad-d281-4b46-bf24-f0bb195013ec" name="5ddd7a0a-a21f-41dc-a735-50e85d20fcc0" type="radio">
+</input><label class="tabbed-label" for="747bd0ad-d281-4b46-bf24-f0bb195013ec">
 AST</label><div class="tabbed-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">root</span><span class="w"></span>
 <span class="nt">children</span><span class="p">:</span><span class="w"></span>
@@ -773,8 +775,8 @@ AST</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="df3b2a84-de1e-4a47-841a-f1b4ff15d16b" name="838084a3-70a6-4bb5-b42a-25c181c48ff4" type="radio">
-</input><label class="tabbed-label" for="df3b2a84-de1e-4a47-841a-f1b4ff15d16b">
+<input id="b4ad69a2-72e5-4c14-b992-3b9b1b1d40fe" name="5ddd7a0a-a21f-41dc-a735-50e85d20fcc0" type="radio">
+</input><label class="tabbed-label" for="b4ad69a2-72e5-4c14-b992-3b9b1b1d40fe">
 Render</label><div class="tabbed-content docutils">
 <div><p>*some text*</p></div>
 </div>
@@ -795,15 +797,15 @@ Render</label><div class="tabbed-content docutils">
 <li><p><strong>data</strong>: <em>object</em> - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
 </ul>
 <div class="tabbed-set docutils">
-<input checked="checked" id="53316d21-338e-49b9-b141-ca25f01c4f5a" name="921d7f93-cdeb-472d-8c70-28f60991b742" type="radio">
-</input><label class="tabbed-label" for="53316d21-338e-49b9-b141-ca25f01c4f5a">
+<input checked="checked" id="bcebd75b-c086-4eb1-ba11-074224fcec17" name="8000a6b7-db6d-4f63-b193-e7c7628aadd6" type="radio">
+</input><label class="tabbed-label" for="bcebd75b-c086-4eb1-ba11-074224fcec17">
 Markup</label><div class="tabbed-content docutils">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">search</span> <span class="n">engine</span><span class="p">](</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="o">.</span><span class="n">google</span><span class="o">.</span><span class="n">com</span> <span class="s2">&quot;Google&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input id="2e184916-6628-43e5-a985-71467b381512" name="921d7f93-cdeb-472d-8c70-28f60991b742" type="radio">
-</input><label class="tabbed-label" for="2e184916-6628-43e5-a985-71467b381512">
+<input id="4290bb42-d101-4928-8113-c62922387e37" name="8000a6b7-db6d-4f63-b193-e7c7628aadd6" type="radio">
+</input><label class="tabbed-label" for="4290bb42-d101-4928-8113-c62922387e37">
 AST</label><div class="tabbed-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">root</span><span class="w"></span>
 <span class="nt">children</span><span class="p">:</span><span class="w"></span>
@@ -818,8 +820,8 @@ AST</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="7017050e-90fc-4798-bc83-c57c8eed8c77" name="921d7f93-cdeb-472d-8c70-28f60991b742" type="radio">
-</input><label class="tabbed-label" for="7017050e-90fc-4798-bc83-c57c8eed8c77">
+<input id="d82ce3aa-9765-4988-a303-1e93fb706e03" name="8000a6b7-db6d-4f63-b193-e7c7628aadd6" type="radio">
+</input><label class="tabbed-label" for="d82ce3aa-9765-4988-a303-1e93fb706e03">
 Render</label><div class="tabbed-content docutils">
 <p><a class="reference external" href="https://www.google.com">search engine</a></p>
 </div>
@@ -844,15 +846,15 @@ Render</label><div class="tabbed-content docutils">
 <li><p><strong>data</strong>: <em>object</em> - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
 </ul>
 <div class="tabbed-set docutils">
-<input checked="checked" id="71744450-4726-481c-aab2-b32b91956a9a" name="ec6bc106-b56b-4151-8486-ab4a1edd871d" type="radio">
-</input><label class="tabbed-label" for="71744450-4726-481c-aab2-b32b91956a9a">
+<input checked="checked" id="f25505fc-4003-4e95-a823-2719681a2b4f" name="b4d5f5c3-169a-4054-8020-c66086f48ee2" type="radio">
+</input><label class="tabbed-label" for="f25505fc-4003-4e95-a823-2719681a2b4f">
 Markup</label><div class="tabbed-content docutils">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>![fishy](fun-fish.png)
 </pre></div>
 </div>
 </div>
-<input id="845f5295-0d44-492d-b8c1-de31525bbf9d" name="ec6bc106-b56b-4151-8486-ab4a1edd871d" type="radio">
-</input><label class="tabbed-label" for="845f5295-0d44-492d-b8c1-de31525bbf9d">
+<input id="79545920-6ae9-44d9-9cb5-b8e2d3cb5f80" name="b4d5f5c3-169a-4054-8020-c66086f48ee2" type="radio">
+</input><label class="tabbed-label" for="79545920-6ae9-44d9-9cb5-b8e2d3cb5f80">
 AST</label><div class="tabbed-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">root</span><span class="w"></span>
 <span class="nt">children</span><span class="p">:</span><span class="w"></span>
@@ -864,8 +866,8 @@ AST</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="894b8784-f96b-4907-b710-4d8754319faf" name="ec6bc106-b56b-4151-8486-ab4a1edd871d" type="radio">
-</input><label class="tabbed-label" for="894b8784-f96b-4907-b710-4d8754319faf">
+<input id="f9b4f4cc-fa9f-4396-b518-922f199e806f" name="b4d5f5c3-169a-4054-8020-c66086f48ee2" type="radio">
+</input><label class="tabbed-label" for="f9b4f4cc-fa9f-4396-b518-922f199e806f">
 Render</label><div class="tabbed-content docutils">
 <p><img alt="fishy" src="features/fun-fish.png" /></p>
 </div>
@@ -907,15 +909,15 @@ Render</label><div class="tabbed-content docutils">
 <li><p><strong>data</strong>: <em>object</em> - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
 </ul>
 <div class="tabbed-set docutils">
-<input checked="checked" id="0bcfed4a-d54a-4660-97cb-3e5b59010542" name="a1e6afef-d800-40bf-ae51-64108f081e52" type="radio">
-</input><label class="tabbed-label" for="0bcfed4a-d54a-4660-97cb-3e5b59010542">
+<input checked="checked" id="af5153bf-d2d1-4641-9330-a398d868d191" name="650c428d-a602-45c2-b7b4-b72bd2c05821" type="radio">
+</input><label class="tabbed-label" for="af5153bf-d2d1-4641-9330-a398d868d191">
 Markup</label><div class="tabbed-content docutils">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>**strong**, _emphasis_, `literal text`, \*escaped symbols\*
 </pre></div>
 </div>
 </div>
-<input id="c71e2d19-c192-4a9a-b03e-4abe0b90c8de" name="a1e6afef-d800-40bf-ae51-64108f081e52" type="radio">
-</input><label class="tabbed-label" for="c71e2d19-c192-4a9a-b03e-4abe0b90c8de">
+<input id="f18974b2-bd7e-49a4-82a3-3bbde9a82ef0" name="650c428d-a602-45c2-b7b4-b72bd2c05821" type="radio">
+</input><label class="tabbed-label" for="f18974b2-bd7e-49a4-82a3-3bbde9a82ef0">
 AST</label><div class="tabbed-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">root</span><span class="w"></span>
 <span class="nt">children</span><span class="p">:</span><span class="w"></span>
@@ -940,8 +942,8 @@ AST</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="e5352477-5832-4cf9-89d4-6a21f121a65a" name="a1e6afef-d800-40bf-ae51-64108f081e52" type="radio">
-</input><label class="tabbed-label" for="e5352477-5832-4cf9-89d4-6a21f121a65a">
+<input id="03c9f9b7-efef-4a7c-b35f-fcd518214dab" name="650c428d-a602-45c2-b7b4-b72bd2c05821" type="radio">
+</input><label class="tabbed-label" for="03c9f9b7-efef-4a7c-b35f-fcd518214dab">
 Render</label><div class="tabbed-content docutils">
 <p><strong>strong</strong>, <em>emphasis</em>, <code class="docutils literal notranslate"><span class="pre">literal</span> <span class="pre">text</span></code>, *escaped symbols*</p>
 </div>

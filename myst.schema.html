@@ -1003,7 +1003,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p><strong>type*</strong>: <em>string</em> (“container”) - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
 <li><p><strong>kind*</strong>: <em>string</em> (“figure” | “table”) - kind of container contents</p></li>
 <li><p><strong>class</strong>: <em>string</em> - any custom class information</p></li>
-<li><p><strong>numbered</strong>: <em>boolean</em> - count this container for numbering based on kind, e.g. Figure 1</p></li>
+<li><p><strong>enumerated</strong>: <em>boolean</em> - count this container for numbering based on kind, e.g. Figure 1a</p></li>
+<li><p><strong>enumerator</strong>: <em>string</em> - resolved enumerated value for this container</p></li>
 <li><p><strong>children*</strong>: <em>array</em> (<a class="reference internal" href="#caption"><span class="std std-ref">Caption</span></a> | <a class="reference internal" href="#legend"><span class="std std-ref">Legend</span></a> | <a class="reference internal" href="#image"><span class="std std-ref">Image</span></a> | <a class="reference internal" href="#table"><span class="std std-ref">Table</span></a>) - See <a class="reference internal" href="#parent"><span class="std std-ref">Parent</span></a></p></li>
 <li><p><strong>identifier</strong>: <em>string</em> - See <a class="reference internal" href="#optionalassociation"><span class="std std-ref">OptionalAssociation</span></a></p></li>
 <li><p><strong>label</strong>: <em>string</em> - See <a class="reference internal" href="#optionalassociation"><span class="std std-ref">OptionalAssociation</span></a></p></li>
@@ -1059,6 +1060,8 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Math node for presenting numbered equations</p>
 <ul class="simple">
 <li><p><strong>type*</strong>: <em>string</em> (“math”) - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
+<li><p><strong>enumerated</strong>: <em>boolean</em> - count this math block for numbering based on kind, e.g. See equation (1a)</p></li>
+<li><p><strong>enumerator</strong>: <em>string</em> - resolved enumerated value for this math block</p></li>
 <li><p><strong>identifier</strong>: <em>string</em> - See <a class="reference internal" href="#optionalassociation"><span class="std std-ref">OptionalAssociation</span></a></p></li>
 <li><p><strong>label</strong>: <em>string</em> - See <a class="reference internal" href="#optionalassociation"><span class="std std-ref">OptionalAssociation</span></a></p></li>
 <li><p><strong>value*</strong>: <em>string</em> - See <a class="reference internal" href="#literal"><span class="std std-ref">Literal</span></a></p></li>
@@ -1193,6 +1196,8 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="simple">
 <li><p><strong>type*</strong>: <em>string</em> (“heading”) - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
 <li><p><strong>depth*</strong>: <em>integer</em></p></li>
+<li><p><strong>enumerated</strong>: <em>boolean</em> - count this heading for numbering based on kind, e.g. Section 2.4.1</p></li>
+<li><p><strong>enumerator</strong>: <em>string</em> - resolved enumerated value for this heading</p></li>
 <li><p><strong>children*</strong>: <em>array</em> (<a class="reference internal" href="#phrasingcontent"><span class="std std-ref">PhrasingContent</span></a>) - See <a class="reference internal" href="#parent"><span class="std std-ref">Parent</span></a></p></li>
 <li><p><strong>identifier</strong>: <em>string</em> - See <a class="reference internal" href="#optionalassociation"><span class="std std-ref">OptionalAssociation</span></a></p></li>
 <li><p><strong>label</strong>: <em>string</em> - See <a class="reference internal" href="#optionalassociation"><span class="std std-ref">OptionalAssociation</span></a></p></li>

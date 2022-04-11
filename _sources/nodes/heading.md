@@ -1,5 +1,7 @@
 - __type*__: _string_ ("heading") - See {ref}`node`
 - __depth*__: _integer_ 
+- __enumerated__: _boolean_ - count this heading for numbering based on kind, e.g. Section 2.4.1 
+- __enumerator__: _string_ - resolved enumerated value for this heading 
 - __children*__: _array_ ({ref}`phrasingcontent`) - See {ref}`parent`
 - __identifier__: _string_ - See {ref}`optionalassociation`
 - __label__: _string_ - See {ref}`optionalassociation`

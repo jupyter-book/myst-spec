@@ -353,15 +353,15 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="section" id="image-node-example">
 <h2>Image Node Example<a class="headerlink" href="#image-node-example" title="Permalink to this headline">¶</a></h2>
 <div class="tabbed-set docutils">
-<input checked="checked" id="24225b75-207d-4e5b-b86c-423d9c34d2c2" name="4ed03b4a-c8d3-43fe-9a8d-fbf662a7fcf7" type="radio">
-</input><label class="tabbed-label" for="24225b75-207d-4e5b-b86c-423d9c34d2c2">
+<input checked="checked" id="106f1196-451b-4f9a-9854-974534ac04df" name="5db99134-689a-4964-a896-14a3b3f3721d" type="radio">
+</input><label class="tabbed-label" for="106f1196-451b-4f9a-9854-974534ac04df">
 Markup</label><div class="tabbed-content docutils">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>![fishy](fun-fish.png)
 </pre></div>
 </div>
 </div>
-<input id="1123cfb0-4622-4be9-912d-f461b45b8d24" name="4ed03b4a-c8d3-43fe-9a8d-fbf662a7fcf7" type="radio">
-</input><label class="tabbed-label" for="1123cfb0-4622-4be9-912d-f461b45b8d24">
+<input id="84428eee-1bad-48b4-985c-79fbad9dc391" name="5db99134-689a-4964-a896-14a3b3f3721d" type="radio">
+</input><label class="tabbed-label" for="84428eee-1bad-48b4-985c-79fbad9dc391">
 AST</label><div class="tabbed-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">root</span><span class="w"></span>
 <span class="nt">children</span><span class="p">:</span><span class="w"></span>
@@ -373,8 +373,8 @@ AST</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="7cb2d371-1e9c-4fc2-9ee7-63e4ab6f371d" name="4ed03b4a-c8d3-43fe-9a8d-fbf662a7fcf7" type="radio">
-</input><label class="tabbed-label" for="7cb2d371-1e9c-4fc2-9ee7-63e4ab6f371d">
+<input id="370045cc-df26-40aa-9755-7b3347127120" name="5db99134-689a-4964-a896-14a3b3f3721d" type="radio">
+</input><label class="tabbed-label" for="370045cc-df26-40aa-9755-7b3347127120">
 Render</label><div class="tabbed-content docutils">
 <p><img alt="fishy" src="features/fun-fish.png" /></p>
 </div>
@@ -390,7 +390,8 @@ Render</label><div class="tabbed-content docutils">
 <li><p><strong>type*</strong>: <em>string</em> (“container”) - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
 <li><p><strong>kind*</strong>: <em>string</em> (“figure” | “table”) - kind of container contents</p></li>
 <li><p><strong>class</strong>: <em>string</em> - any custom class information</p></li>
-<li><p><strong>numbered</strong>: <em>boolean</em> - count this container for numbering based on kind, e.g. Figure 1</p></li>
+<li><p><strong>enumerated</strong>: <em>boolean</em> - count this container for numbering based on kind, e.g. Figure 1a</p></li>
+<li><p><strong>enumerator</strong>: <em>string</em> - resolved enumerated value for this container</p></li>
 <li><p><strong>children*</strong>: <em>array</em> (<a class="reference internal" href="../myst.schema.html#caption"><span class="std std-ref">Caption</span></a> | <a class="reference internal" href="../myst.schema.html#legend"><span class="std std-ref">Legend</span></a> | <a class="reference internal" href="../myst.schema.html#image"><span class="std std-ref">Image</span></a> | <a class="reference internal" href="../myst.schema.html#table"><span class="std std-ref">Table</span></a>) - See <a class="reference internal" href="../myst.schema.html#parent"><span class="std std-ref">Parent</span></a></p></li>
 <li><p><strong>identifier</strong>: <em>string</em> - See <a class="reference internal" href="../myst.schema.html#optionalassociation"><span class="std std-ref">OptionalAssociation</span></a></p></li>
 <li><p><strong>label</strong>: <em>string</em> - See <a class="reference internal" href="../myst.schema.html#optionalassociation"><span class="std std-ref">OptionalAssociation</span></a></p></li>
@@ -401,8 +402,8 @@ Render</label><div class="tabbed-content docutils">
 <div class="section" id="container-node-example">
 <h2>Container Node Example<a class="headerlink" href="#container-node-example" title="Permalink to this headline">¶</a></h2>
 <div class="tabbed-set docutils">
-<input checked="checked" id="3a490947-a09a-4e91-83c7-2994a89fc149" name="772c8707-1fe8-47c7-b585-4a3709b7b9e3" type="radio">
-</input><label class="tabbed-label" for="3a490947-a09a-4e91-83c7-2994a89fc149">
+<input checked="checked" id="b408dabf-cfa3-44f7-b2ac-1bcd63dfca26" name="7cab02e4-a056-44ae-8724-0f5b391a8abe" type="radio">
+</input><label class="tabbed-label" for="b408dabf-cfa3-44f7-b2ac-1bcd63dfca26">
 Markup</label><div class="tabbed-content docutils">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```{figure} https://via.placeholder.com/150
 This is the figure caption!
@@ -412,8 +413,8 @@ Something! A legend!?
 </pre></div>
 </div>
 </div>
-<input id="e26a5e43-fc97-479d-a262-f9c5b04ab8c2" name="772c8707-1fe8-47c7-b585-4a3709b7b9e3" type="radio">
-</input><label class="tabbed-label" for="e26a5e43-fc97-479d-a262-f9c5b04ab8c2">
+<input id="716383a6-0767-4a8b-84ea-ad5262cd0300" name="7cab02e4-a056-44ae-8724-0f5b391a8abe" type="radio">
+</input><label class="tabbed-label" for="716383a6-0767-4a8b-84ea-ad5262cd0300">
 AST</label><div class="tabbed-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">root</span><span class="w"></span>
 <span class="nt">children</span><span class="p">:</span><span class="w"></span>
@@ -445,8 +446,8 @@ AST</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="223a0aff-2885-4490-b4f0-13020e4de5ba" name="772c8707-1fe8-47c7-b585-4a3709b7b9e3" type="radio">
-</input><label class="tabbed-label" for="223a0aff-2885-4490-b4f0-13020e4de5ba">
+<input id="f9e83fa5-8f93-4ae0-bbc4-0b7161b101e0" name="7cab02e4-a056-44ae-8724-0f5b391a8abe" type="radio">
+</input><label class="tabbed-label" for="f9e83fa5-8f93-4ae0-bbc4-0b7161b101e0">
 Render</label><div class="tabbed-content docutils">
 <div class="figure align-default" id="id1">
 <img alt="https://via.placeholder.com/150" src="https://via.placeholder.com/150" />
