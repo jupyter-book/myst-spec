@@ -1,4 +1,4 @@
-Inilne reference to footnote
+Inline reference to footnote
 
 - __type*__: _string_ ("footnoteReference") - See {ref}`node`
 - __identifier*__: _string_ - See {ref}`optionalassociation`

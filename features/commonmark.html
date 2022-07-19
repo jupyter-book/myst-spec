@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>CommonMark</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,20 +20,16 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -39,12 +37,13 @@
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
@@ -62,7 +61,21 @@ const thebe_selector_output = ".output, .cell_output"
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -71,9 +84,10 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -89,14 +103,15 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../index.html">
-   MyST Specification
-  </a>
- </li>
-</ul>
-<ul class="current nav bd-sidenav">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../index.html">
+                    MyST Specification
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="overview.html">
    Overview
@@ -150,92 +165,197 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Maintained by <a href="https://executablebooks.org">Executable Books</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/features/commonmark.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/executablebooks/myst-spec"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/executablebooks/myst-spec/issues/new?title=Issue%20on%20page%20%2Ffeatures/commonmark.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/executablebooks/myst-spec/edit/master/features/commonmark.md"><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div class="navbar_extra_footer">
+            Maintained by <a href="https://executablebooks.org">Executable Books</a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/executablebooks/myst-spec"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/executablebooks/myst-spec/issues/new?title=Issue%20on%20page%20%2Ffeatures/commonmark.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/executablebooks/myst-spec/edit/master/features/commonmark.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Edit this page"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="headerbtn__text-container">suggest edit</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/features/commonmark.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#block-markup">
    Block Markup
@@ -244,11 +364,6 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#headings">
      Headings
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#heading">
-     Heading!
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -329,12 +444,11 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>CommonMark</h1>
@@ -355,11 +469,6 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#headings">
      Headings
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#heading">
-     Heading!
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -444,17 +553,18 @@ const thebe_selector_output = ".output, .cell_output"
                     </div>
                 </div>
             </div>
-            
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="commonmark">
-<h1>CommonMark<a class="headerlink" href="#commonmark" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="commonmark">
+<h1>CommonMark<a class="headerlink" href="#commonmark" title="Permalink to this headline">#</a></h1>
 <p>This page provides an overview of the types of block and inline markup features supported by CommonMark and MyST, with pointers to additional content of interest. For full details on all the nuance of these features, please look at the <a class="reference external" href="https://spec.commonmark.org/">CommonMark Spec documentation</a>.</p>
 <p>MyST (Markedly Structured Text) was designed to make it easier to create publishable computational documents written with Markdown notation. It is a superset of <a class="reference external" href="https://commonmark.org/">CommonMark Markdown</a> and draws heavy inspiration from <a class="reference external" href="https://rmarkdown.rstudio.com/">RMarkdown</a> syntax. In addition to CommonMark, MyST also implements and extends <a class="reference external" href="https://github.com/syntax-tree/mdast">mdast</a>, which is a standard abstract syntax tree for Markdown. <code class="docutils literal notranslate"><span class="pre">mdast</span></code> is part of the <a class="reference external" href="https://unifiedjs.com">unifiedjs</a> community and has <a class="reference external" href="https://unifiedjs.com/explore/keyword/mdast/">many utilities</a> for exporting and transforming your content.</p>
-<div class="section" id="block-markup">
-<h2>Block Markup<a class="headerlink" href="#block-markup" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="headings">
-<h3>Headings<a class="headerlink" href="#headings" title="Permalink to this headline">¶</a></h3>
+<section id="block-markup">
+<h2>Block Markup<a class="headerlink" href="#block-markup" title="Permalink to this headline">#</a></h2>
+<section id="headings">
+<h3>Headings<a class="headerlink" href="#headings" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p><strong>type*</strong>: <em>string</em> (“heading”) - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
 <li><p><strong>depth*</strong>: <em>integer</em></p></li>
@@ -466,42 +576,13 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p><strong>position</strong>: <em>object</em> (<a class="reference internal" href="../myst.schema.html#position"><span class="std std-ref">Position</span></a>) - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
 <li><p><strong>data</strong>: <em>object</em> - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
 </ul>
-<div class="tabbed-set docutils">
-<input checked="checked" id="4d7f2eef-cffa-47c2-9c65-9e7889655d42" name="69557b37-11f4-4b19-b4d1-45a7ab424323" type="radio">
-</input><label class="tabbed-label" for="4d7f2eef-cffa-47c2-9c65-9e7889655d42">
-Markup</label><div class="tabbed-content docutils">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">### Heading!</span>
-</pre></div>
-</div>
-</div>
-<input id="ce96f2d9-087b-4a9b-bfea-4221f7e1b5cb" name="69557b37-11f4-4b19-b4d1-45a7ab424323" type="radio">
-</input><label class="tabbed-label" for="ce96f2d9-087b-4a9b-bfea-4221f7e1b5cb">
-AST</label><div class="tabbed-content docutils">
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">root</span><span class="w"></span>
-<span class="nt">children</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">heading</span><span class="w"></span>
-<span class="w">    </span><span class="nt">depth</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3</span><span class="w"></span>
-<span class="w">    </span><span class="nt">children</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">text</span><span class="w"></span>
-<span class="w">        </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Heading!</span><span class="w"></span>
-</pre></div>
-</div>
-</div>
-<input id="4a2a3610-a564-4415-80a8-f3cc3a9feee1" name="69557b37-11f4-4b19-b4d1-45a7ab424323" type="radio">
-</input><label class="tabbed-label" for="4a2a3610-a564-4415-80a8-f3cc3a9feee1">
-Render</label><div class="tabbed-content docutils">
-</div>
-</div>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <p>Reference headings by preceding headers with a <code class="docutils literal notranslate"><span class="pre">(label)=</span></code>. See <a class="reference internal" href="references.html"><span class="doc std std-doc">References &amp; Links</span></a>!</p>
 </div>
-</div>
-<div class="section" id="heading">
-<h3>Heading!<a class="headerlink" href="#heading" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="lists">
-<h3>Lists<a class="headerlink" href="#lists" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="lists">
+<h3>Lists<a class="headerlink" href="#lists" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p><strong>type*</strong>: <em>string</em> (“list”) - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
 <li><p><strong>ordered</strong>: <em>boolean</em> - Is item order important or not?</p></li>
@@ -511,57 +592,9 @@ Render</label><div class="tabbed-content docutils">
 <li><p><strong>position</strong>: <em>object</em> (<a class="reference internal" href="../myst.schema.html#position"><span class="std std-ref">Position</span></a>) - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
 <li><p><strong>data</strong>: <em>object</em> - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
 </ul>
-<div class="tabbed-set docutils">
-<input checked="checked" id="f96bfc18-461c-48c7-9804-b8cd2a84d365" name="ec81d6a7-dfe7-4af8-af33-b5acc5c5d3cc" type="radio">
-</input><label class="tabbed-label" for="f96bfc18-461c-48c7-9804-b8cd2a84d365">
-Markup</label><div class="tabbed-content docutils">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">1.</span> <span class="n">quotes</span>
-<span class="mf">2.</span> <span class="n">breaks</span>
-<span class="mf">3.</span> <span class="n">links</span>
-</pre></div>
-</div>
-</div>
-<input id="29e8d667-0576-45ed-a9e3-85969e28c1f0" name="ec81d6a7-dfe7-4af8-af33-b5acc5c5d3cc" type="radio">
-</input><label class="tabbed-label" for="29e8d667-0576-45ed-a9e3-85969e28c1f0">
-AST</label><div class="tabbed-content docutils">
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">root</span><span class="w"></span>
-<span class="nt">children</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">list</span><span class="w"></span>
-<span class="w">    </span><span class="nt">ordered</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
-<span class="w">    </span><span class="nt">start</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span><span class="w"></span>
-<span class="w">    </span><span class="nt">spread</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
-<span class="w">    </span><span class="nt">children</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">listItem</span><span class="w"></span>
-<span class="w">        </span><span class="nt">spread</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
-<span class="w">        </span><span class="nt">children</span><span class="p">:</span><span class="w"></span>
-<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">text</span><span class="w"></span>
-<span class="w">            </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">quotes</span><span class="w"></span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">listItem</span><span class="w"></span>
-<span class="w">        </span><span class="nt">spread</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
-<span class="w">        </span><span class="nt">children</span><span class="p">:</span><span class="w"></span>
-<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">text</span><span class="w"></span>
-<span class="w">            </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">breaks</span><span class="w"></span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">listItem</span><span class="w"></span>
-<span class="w">        </span><span class="nt">spread</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
-<span class="w">        </span><span class="nt">children</span><span class="p">:</span><span class="w"></span>
-<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">text</span><span class="w"></span>
-<span class="w">            </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">links</span><span class="w"></span>
-</pre></div>
-</div>
-</div>
-<input id="ca351920-5235-42a7-b4ae-12307ba49756" name="ec81d6a7-dfe7-4af8-af33-b5acc5c5d3cc" type="radio">
-</input><label class="tabbed-label" for="ca351920-5235-42a7-b4ae-12307ba49756">
-Render</label><div class="tabbed-content docutils">
-<ol class="simple">
-<li><p>quotes</p></li>
-<li><p>breaks</p></li>
-<li><p>links</p></li>
-</ol>
-</div>
-</div>
-</div>
-<div class="section" id="code">
-<h3>Code<a class="headerlink" href="#code" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="code">
+<h3>Code<a class="headerlink" href="#code" title="Permalink to this headline">#</a></h3>
 <p>Block of preformatted text</p>
 <ul class="simple">
 <li><p><strong>type*</strong>: <em>string</em> (“code”) - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
@@ -577,126 +610,30 @@ Render</label><div class="tabbed-content docutils">
 <li><p><strong>position</strong>: <em>object</em> (<a class="reference internal" href="../myst.schema.html#position"><span class="std std-ref">Position</span></a>) - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
 <li><p><strong>data</strong>: <em>object</em> - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
 </ul>
-<div class="tabbed-set docutils">
-<input checked="checked" id="53de0197-2d88-4213-a50c-0c5ca7f272df" name="8e726448-df98-4b5f-a4ef-13e128ef4945" type="radio">
-</input><label class="tabbed-label" for="53de0197-2d88-4213-a50c-0c5ca7f272df">
-Markup</label><div class="tabbed-content docutils">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```python
-print(&#39;this is python&#39;)
-```
-</pre></div>
-</div>
-</div>
-<input id="a2ba87fe-73c8-44ee-a18b-235784c87866" name="8e726448-df98-4b5f-a4ef-13e128ef4945" type="radio">
-</input><label class="tabbed-label" for="a2ba87fe-73c8-44ee-a18b-235784c87866">
-AST</label><div class="tabbed-content docutils">
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">root</span><span class="w"></span>
-<span class="nt">children</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">code</span><span class="w"></span>
-<span class="w">    </span><span class="nt">lang</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python</span><span class="w"></span>
-<span class="w">    </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">print(&#39;this is python&#39;)</span><span class="w"></span>
-</pre></div>
-</div>
-</div>
-<input id="7dc34ae9-d215-4523-9d89-0ac97216d74c" name="8e726448-df98-4b5f-a4ef-13e128ef4945" type="radio">
-</input><label class="tabbed-label" for="7dc34ae9-d215-4523-9d89-0ac97216d74c">
-Render</label><div class="tabbed-content docutils">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;this is python&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <p>Create code-blocks with additional highlighting using the <code class="docutils literal notranslate"><span class="pre">code-block</span></code> directive. See more here!</p>
 </div>
-</div>
-<div class="section" id="quotes">
-<h3>Quotes<a class="headerlink" href="#quotes" title="Permalink to this headline">¶</a></h3>
-<div class="tabbed-set docutils">
-<input checked="checked" id="17d35703-df95-4d33-93cf-ab991145c97e" name="1c99ffc9-0221-4ebc-a986-d04b1c9d7e5e" type="radio">
-</input><label class="tabbed-label" for="17d35703-df95-4d33-93cf-ab991145c97e">
-Markup</label><div class="tabbed-content docutils">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">To</span> <span class="n">be</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">to</span> <span class="n">be</span>
-</pre></div>
-</div>
-</div>
-<input id="ef7204d5-dfe4-4ea0-a565-7d16be279dc2" name="1c99ffc9-0221-4ebc-a986-d04b1c9d7e5e" type="radio">
-</input><label class="tabbed-label" for="ef7204d5-dfe4-4ea0-a565-7d16be279dc2">
-AST</label><div class="tabbed-content docutils">
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">root</span><span class="w"></span>
-<span class="nt">children</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">blockquote</span><span class="w"></span>
-<span class="w">    </span><span class="nt">children</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">paragraph</span><span class="w"></span>
-<span class="w">        </span><span class="nt">children</span><span class="p">:</span><span class="w"></span>
-<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">text</span><span class="w"></span>
-<span class="w">            </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">To be or not to be</span><span class="w"></span>
-</pre></div>
-</div>
-</div>
-<input id="1043c543-be2d-4fc9-afee-3a7491ad50d0" name="1c99ffc9-0221-4ebc-a986-d04b1c9d7e5e" type="radio">
-</input><label class="tabbed-label" for="1043c543-be2d-4fc9-afee-3a7491ad50d0">
-Render</label><div class="tabbed-content docutils">
-<blockquote>
-<div><p>To be or not to be</p>
-</div></blockquote>
-</div>
-</div>
-</div>
-<div class="section" id="thematic-break">
-<h3>Thematic Break<a class="headerlink" href="#thematic-break" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="quotes">
+<h3>Quotes<a class="headerlink" href="#quotes" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="thematic-break">
+<h3>Thematic Break<a class="headerlink" href="#thematic-break" title="Permalink to this headline">#</a></h3>
 <p>Line break</p>
 <ul class="simple">
 <li><p><strong>type*</strong>: <em>string</em> (“break”) - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
 <li><p><strong>position</strong>: <em>object</em> (<a class="reference internal" href="../myst.schema.html#position"><span class="std std-ref">Position</span></a>) - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
 <li><p><strong>data</strong>: <em>object</em> - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
 </ul>
-<div class="tabbed-set docutils">
-<input checked="checked" id="379972bd-e5a1-49ca-82a4-3a054f57e252" name="4dd479e2-5aea-4fee-8d28-daaa9743c446" type="radio">
-</input><label class="tabbed-label" for="379972bd-e5a1-49ca-82a4-3a054f57e252">
-Markup</label><div class="tabbed-content docutils">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">thematic</span>
-
-<span class="o">---</span>
-
-<span class="k">break</span>
-</pre></div>
-</div>
-</div>
-<input id="2d76a09f-1dbd-44af-92e3-517da375391e" name="4dd479e2-5aea-4fee-8d28-daaa9743c446" type="radio">
-</input><label class="tabbed-label" for="2d76a09f-1dbd-44af-92e3-517da375391e">
-AST</label><div class="tabbed-content docutils">
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">root</span><span class="w"></span>
-<span class="nt">children</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">paragraph</span><span class="w"></span>
-<span class="w">    </span><span class="nt">children</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">text</span><span class="w"></span>
-<span class="w">        </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">thematic</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">thematicBreak</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">paragraph</span><span class="w"></span>
-<span class="w">    </span><span class="nt">children</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">text</span><span class="w"></span>
-<span class="w">        </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">break</span><span class="w"></span>
-</pre></div>
-</div>
-</div>
-<input id="e90fd57d-f64a-46cb-9fdc-3b813d9ec2c9" name="4dd479e2-5aea-4fee-8d28-daaa9743c446" type="radio">
-</input><label class="tabbed-label" for="e90fd57d-f64a-46cb-9fdc-3b813d9ec2c9">
-Render</label><div class="tabbed-content docutils">
-<p>thematic</p>
-<hr class="docutils" />
-<p>break</p>
-</div>
-</div>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <p>Thematic breaks should not be confused with MyST <a class="reference internal" href="blocks.html"><span class="doc std std-doc">block syntax</span></a>,
 which is used to structurally seperate content.</p>
 </div>
-</div>
-<div class="section" id="link-definitions">
-<h3>Link Definitions<a class="headerlink" href="#link-definitions" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="link-definitions">
+<h3>Link Definitions<a class="headerlink" href="#link-definitions" title="Permalink to this headline">#</a></h3>
 <p>Reference to a url resource</p>
 <ul class="simple">
 <li><p><strong>type*</strong>: <em>string</em> (“definition”) - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
@@ -712,44 +649,18 @@ which is used to structurally seperate content.</p>
 <p>These can be used in <a class="reference internal" href="#inline-links"><span class="std std-ref">Inline links</span></a> and are similar to <a class="reference internal" href="references.html"><span class="doc std std-doc">References &amp; Links</span></a> in MyST.
 This syntax is also similar to <a class="reference internal" href="footnotes.html"><span class="doc std std-doc">Footnotes</span></a>.</p>
 </div>
-</div>
-<div class="section" id="paragraph">
-<h3>Paragraph<a class="headerlink" href="#paragraph" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="paragraph">
+<h3>Paragraph<a class="headerlink" href="#paragraph" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p><strong>type*</strong>: <em>string</em> (“paragraph”) - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
 <li><p><strong>children*</strong>: <em>array</em> (<a class="reference internal" href="../myst.schema.html#phrasingcontent"><span class="std std-ref">PhrasingContent</span></a>) - See <a class="reference internal" href="../myst.schema.html#parent"><span class="std std-ref">Parent</span></a></p></li>
 <li><p><strong>position</strong>: <em>object</em> (<a class="reference internal" href="../myst.schema.html#position"><span class="std std-ref">Position</span></a>) - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
 <li><p><strong>data</strong>: <em>object</em> - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
 </ul>
-<div class="tabbed-set docutils">
-<input checked="checked" id="41e8655d-09cd-4058-9135-acbd07f1d725" name="78c900f4-6363-4b9b-bcf4-8e297cc02515" type="radio">
-</input><label class="tabbed-label" for="41e8655d-09cd-4058-9135-acbd07f1d725">
-Markup</label><div class="tabbed-content docutils">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Something</span>
-</pre></div>
-</div>
-</div>
-<input id="35217b58-a461-4140-8a57-df2b46d1ee86" name="78c900f4-6363-4b9b-bcf4-8e297cc02515" type="radio">
-</input><label class="tabbed-label" for="35217b58-a461-4140-8a57-df2b46d1ee86">
-AST</label><div class="tabbed-content docutils">
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">root</span><span class="w"></span>
-<span class="nt">children</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">paragraph</span><span class="w"></span>
-<span class="w">    </span><span class="nt">children</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">text</span><span class="w"></span>
-<span class="w">        </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Something</span><span class="w"></span>
-</pre></div>
-</div>
-</div>
-<input id="2ac18b6d-0bf5-40e0-8ecf-c2144993708f" name="78c900f4-6363-4b9b-bcf4-8e297cc02515" type="radio">
-</input><label class="tabbed-label" for="2ac18b6d-0bf5-40e0-8ecf-c2144993708f">
-Render</label><div class="tabbed-content docutils">
-<p>Something</p>
-</div>
-</div>
-</div>
-<div class="section" id="valid-html">
-<h3>Valid HTML<a class="headerlink" href="#valid-html" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="valid-html">
+<h3>Valid HTML<a class="headerlink" href="#valid-html" title="Permalink to this headline">#</a></h3>
 <p>Fragment of raw HTML - does not need to be valid or complete</p>
 <ul class="simple">
 <li><p><strong>type*</strong>: <em>string</em> (“html”) - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
@@ -757,36 +668,12 @@ Render</label><div class="tabbed-content docutils">
 <li><p><strong>position</strong>: <em>object</em> (<a class="reference internal" href="../myst.schema.html#position"><span class="std std-ref">Position</span></a>) - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
 <li><p><strong>data</strong>: <em>object</em> - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
 </ul>
-<div class="tabbed-set docutils">
-<input checked="checked" id="301b195f-6af1-44a7-a2ca-fbebb7e61ab4" name="7223b6ee-c5b6-4986-8706-6a3869c65039" type="radio">
-</input><label class="tabbed-label" for="301b195f-6af1-44a7-a2ca-fbebb7e61ab4">
-Markup</label><div class="tabbed-content docutils">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">div</span><span class="o">&gt;&lt;</span><span class="n">p</span><span class="o">&gt;*</span><span class="n">some</span> <span class="n">text</span><span class="o">*&lt;/</span><span class="n">p</span><span class="o">&gt;&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
-</pre></div>
-</div>
-</div>
-<input id="a6ef998a-b388-43e0-8e88-2147ab4e36fd" name="7223b6ee-c5b6-4986-8706-6a3869c65039" type="radio">
-</input><label class="tabbed-label" for="a6ef998a-b388-43e0-8e88-2147ab4e36fd">
-AST</label><div class="tabbed-content docutils">
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">root</span><span class="w"></span>
-<span class="nt">children</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">html</span><span class="w"></span>
-<span class="w">    </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;div&gt;&lt;p&gt;*some text*&lt;/p&gt;&lt;/div&gt;</span><span class="w"></span>
-</pre></div>
-</div>
-</div>
-<input id="fb474a04-16f1-4fad-9e03-7960e2185daa" name="7223b6ee-c5b6-4986-8706-6a3869c65039" type="radio">
-</input><label class="tabbed-label" for="fb474a04-16f1-4fad-9e03-7960e2185daa">
-Render</label><div class="tabbed-content docutils">
-<div><p>*some text*</p></div>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="inline-markup">
-<h2>Inline Markup<a class="headerlink" href="#inline-markup" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="inline-links">
-<span id="id1"></span><h3>Inline links<a class="headerlink" href="#inline-links" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="inline-markup">
+<h2>Inline Markup<a class="headerlink" href="#inline-markup" title="Permalink to this headline">#</a></h2>
+<section id="inline-links">
+<span id="id1"></span><h3>Inline links<a class="headerlink" href="#inline-links" title="Permalink to this headline">#</a></h3>
 <p>Hyperlink</p>
 <ul class="simple">
 <li><p><strong>type*</strong>: <em>string</em> (“link”) - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
@@ -796,43 +683,13 @@ Render</label><div class="tabbed-content docutils">
 <li><p><strong>position</strong>: <em>object</em> (<a class="reference internal" href="../myst.schema.html#position"><span class="std std-ref">Position</span></a>) - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
 <li><p><strong>data</strong>: <em>object</em> - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
 </ul>
-<div class="tabbed-set docutils">
-<input checked="checked" id="c0ad9a37-d29c-4e3b-b0ce-b957ad34ee28" name="ab42c964-2567-4086-aafc-2b8dc18daee5" type="radio">
-</input><label class="tabbed-label" for="c0ad9a37-d29c-4e3b-b0ce-b957ad34ee28">
-Markup</label><div class="tabbed-content docutils">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">search</span> <span class="n">engine</span><span class="p">](</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="o">.</span><span class="n">google</span><span class="o">.</span><span class="n">com</span> <span class="s2">&quot;Google&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<input id="562a129d-1eb2-43e3-b8dd-71f792b2b3c1" name="ab42c964-2567-4086-aafc-2b8dc18daee5" type="radio">
-</input><label class="tabbed-label" for="562a129d-1eb2-43e3-b8dd-71f792b2b3c1">
-AST</label><div class="tabbed-content docutils">
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">root</span><span class="w"></span>
-<span class="nt">children</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">paragraph</span><span class="w"></span>
-<span class="w">    </span><span class="nt">children</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">link</span><span class="w"></span>
-<span class="w">        </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://www.google.com</span><span class="w"></span>
-<span class="w">        </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Google</span><span class="w"></span>
-<span class="w">        </span><span class="nt">children</span><span class="p">:</span><span class="w"></span>
-<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">text</span><span class="w"></span>
-<span class="w">            </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">search engine</span><span class="w"></span>
-</pre></div>
-</div>
-</div>
-<input id="e14dc287-c9ee-4e73-b2a8-2def2e516c75" name="ab42c964-2567-4086-aafc-2b8dc18daee5" type="radio">
-</input><label class="tabbed-label" for="e14dc287-c9ee-4e73-b2a8-2def2e516c75">
-Render</label><div class="tabbed-content docutils">
-<p><a class="reference external" href="https://www.google.com">search engine</a></p>
-</div>
-</div>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <p><a class="reference internal" href="references.html"><span class="doc std std-doc">References &amp; Links</span></a> provides other ways to reference inline content.</p>
 </div>
-</div>
-<div class="section" id="inline-images">
-<h3>Inline images<a class="headerlink" href="#inline-images" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="inline-images">
+<h3>Inline images<a class="headerlink" href="#inline-images" title="Permalink to this headline">#</a></h3>
 <p>Image hyperlink</p>
 <ul class="simple">
 <li><p><strong>type*</strong>: <em>string</em> (“image”) - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
@@ -845,42 +702,15 @@ Render</label><div class="tabbed-content docutils">
 <li><p><strong>position</strong>: <em>object</em> (<a class="reference internal" href="../myst.schema.html#position"><span class="std std-ref">Position</span></a>) - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
 <li><p><strong>data</strong>: <em>object</em> - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
 </ul>
-<div class="tabbed-set docutils">
-<input checked="checked" id="fea5ffda-b9ce-4256-880f-5c586eaccb9c" name="e52c747f-1aeb-4034-a757-b1209c3ff12e" type="radio">
-</input><label class="tabbed-label" for="fea5ffda-b9ce-4256-880f-5c586eaccb9c">
-Markup</label><div class="tabbed-content docutils">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>![fishy](fun-fish.png)
-</pre></div>
-</div>
-</div>
-<input id="0a623810-5fd2-473e-95df-88455f782e2e" name="e52c747f-1aeb-4034-a757-b1209c3ff12e" type="radio">
-</input><label class="tabbed-label" for="0a623810-5fd2-473e-95df-88455f782e2e">
-AST</label><div class="tabbed-content docutils">
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">root</span><span class="w"></span>
-<span class="nt">children</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">paragraph</span><span class="w"></span>
-<span class="w">    </span><span class="nt">children</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">image</span><span class="w"></span>
-<span class="w">        </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fun-fish.png</span><span class="w"></span>
-<span class="w">        </span><span class="nt">alt</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fishy</span><span class="w"></span>
-</pre></div>
-</div>
-</div>
-<input id="d2ffa862-634f-495b-b6a0-da3603e5b106" name="e52c747f-1aeb-4034-a757-b1209c3ff12e" type="radio">
-</input><label class="tabbed-label" for="d2ffa862-634f-495b-b6a0-da3603e5b106">
-Render</label><div class="tabbed-content docutils">
-<p><img alt="fishy" src="features/fun-fish.png" /></p>
-</div>
-</div>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <p><a class="reference internal" href="figures.html"><span class="doc std std-doc">Figures &amp; Images</span></a> provides other ways to size, label, and caption images.</p>
 </div>
-</div>
-<div class="section" id="text-formatting">
-<h3>Text formatting<a class="headerlink" href="#text-formatting" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="emphasis">
-<h4>Emphasis<a class="headerlink" href="#emphasis" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="text-formatting">
+<h3>Text formatting<a class="headerlink" href="#text-formatting" title="Permalink to this headline">#</a></h3>
+<section id="emphasis">
+<h4>Emphasis<a class="headerlink" href="#emphasis" title="Permalink to this headline">#</a></h4>
 <p>Stressed, italicized content</p>
 <ul class="simple">
 <li><p><strong>type*</strong>: <em>string</em> (“emphasis”) - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
@@ -888,9 +718,9 @@ Render</label><div class="tabbed-content docutils">
 <li><p><strong>position</strong>: <em>object</em> (<a class="reference internal" href="../myst.schema.html#position"><span class="std std-ref">Position</span></a>) - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
 <li><p><strong>data</strong>: <em>object</em> - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
 </ul>
-</div>
-<div class="section" id="strong">
-<h4>Strong<a class="headerlink" href="#strong" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="strong">
+<h4>Strong<a class="headerlink" href="#strong" title="Permalink to this headline">#</a></h4>
 <p>Important, serious, urgent, bold content</p>
 <ul class="simple">
 <li><p><strong>type*</strong>: <em>string</em> (“strong”) - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
@@ -898,9 +728,9 @@ Render</label><div class="tabbed-content docutils">
 <li><p><strong>position</strong>: <em>object</em> (<a class="reference internal" href="../myst.schema.html#position"><span class="std std-ref">Position</span></a>) - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
 <li><p><strong>data</strong>: <em>object</em> - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
 </ul>
-</div>
-<div class="section" id="inline-code">
-<h4>Inline Code<a class="headerlink" href="#inline-code" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="inline-code">
+<h4>Inline Code<a class="headerlink" href="#inline-code" title="Permalink to this headline">#</a></h4>
 <p>Fragment of code</p>
 <ul class="simple">
 <li><p><strong>type*</strong>: <em>string</em> (“inlineCode”) - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
@@ -908,54 +738,14 @@ Render</label><div class="tabbed-content docutils">
 <li><p><strong>position</strong>: <em>object</em> (<a class="reference internal" href="../myst.schema.html#position"><span class="std std-ref">Position</span></a>) - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
 <li><p><strong>data</strong>: <em>object</em> - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
 </ul>
-<div class="tabbed-set docutils">
-<input checked="checked" id="658b5501-a1f2-4681-a2d4-227dcc626a95" name="b17dbfd6-b08b-43ac-96ae-c64c0f2273c8" type="radio">
-</input><label class="tabbed-label" for="658b5501-a1f2-4681-a2d4-227dcc626a95">
-Markup</label><div class="tabbed-content docutils">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>**strong**, _emphasis_, `literal text`, \*escaped symbols\*
-</pre></div>
-</div>
-</div>
-<input id="ada9213c-45ce-44e6-8076-9881a950536e" name="b17dbfd6-b08b-43ac-96ae-c64c0f2273c8" type="radio">
-</input><label class="tabbed-label" for="ada9213c-45ce-44e6-8076-9881a950536e">
-AST</label><div class="tabbed-content docutils">
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">root</span><span class="w"></span>
-<span class="nt">children</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">paragraph</span><span class="w"></span>
-<span class="w">    </span><span class="nt">children</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">strong</span><span class="w"></span>
-<span class="w">        </span><span class="nt">children</span><span class="p">:</span><span class="w"></span>
-<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">text</span><span class="w"></span>
-<span class="w">            </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">strong</span><span class="w"></span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">text</span><span class="w"></span>
-<span class="w">        </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;,</span><span class="nv"> </span><span class="s">&#39;</span><span class="w"></span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">emphasis</span><span class="w"></span>
-<span class="w">        </span><span class="nt">children</span><span class="p">:</span><span class="w"></span>
-<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">text</span><span class="w"></span>
-<span class="w">            </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">emphasis</span><span class="w"></span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">text</span><span class="w"></span>
-<span class="w">        </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;,</span><span class="nv"> </span><span class="s">&#39;</span><span class="w"></span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">inlineCode</span><span class="w"></span>
-<span class="w">        </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">literal text</span><span class="w"></span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">text</span><span class="w"></span>
-<span class="w">        </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;,</span><span class="nv"> </span><span class="s">*escaped</span><span class="nv"> </span><span class="s">symbols*&#39;</span><span class="w"></span>
-</pre></div>
-</div>
-</div>
-<input id="ea401f4e-a354-4c62-8b2c-429f03114617" name="b17dbfd6-b08b-43ac-96ae-c64c0f2273c8" type="radio">
-</input><label class="tabbed-label" for="ea401f4e-a354-4c62-8b2c-429f03114617">
-Render</label><div class="tabbed-content docutils">
-<p><strong>strong</strong>, <em>emphasis</em>, <code class="docutils literal notranslate"><span class="pre">literal</span> <span class="pre">text</span></code>, *escaped symbols*</p>
-</div>
-</div>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <p><a class="reference internal" href="basic.html"><span class="doc std std-doc">HTML Roles</span></a> provides other roles for subscript, superscript, abbeviations, and other text formating.</p>
 </div>
-</div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -979,9 +769,11 @@ Render</label><div class="tabbed-content docutils">
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="overview.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -997,24 +789,28 @@ Render</label><div class="tabbed-content docutils">
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-  <p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Executable Book Project<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
     
-      By Executable Book Project<br/>
-    
-        &copy; Copyright 2021.<br/>
-  </p>
-</footer>
-</main>
+</div>
 
 
       </div>
     </div>
   
-  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

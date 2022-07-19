@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Overview</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,20 +20,16 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -39,12 +37,13 @@
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
@@ -62,7 +61,21 @@ const thebe_selector_output = ".output, .cell_output"
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -71,9 +84,10 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -89,14 +103,15 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../index.html">
-   MyST Specification
-  </a>
- </li>
-</ul>
-<ul class="current nav bd-sidenav">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../index.html">
+                    MyST Specification
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    Overview
@@ -150,92 +165,197 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Maintained by <a href="https://executablebooks.org">Executable Books</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/features/overview.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/executablebooks/myst-spec"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/executablebooks/myst-spec/issues/new?title=Issue%20on%20page%20%2Ffeatures/overview.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/executablebooks/myst-spec/edit/master/features/overview.md"><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div class="navbar_extra_footer">
+            Maintained by <a href="https://executablebooks.org">Executable Books</a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/executablebooks/myst-spec"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/executablebooks/myst-spec/issues/new?title=Issue%20on%20page%20%2Ffeatures/overview.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/executablebooks/myst-spec/edit/master/features/overview.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Edit this page"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="headerbtn__text-container">suggest edit</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/features/overview.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#directives-roles">
    Directives &amp; Roles
@@ -284,12 +404,11 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>Overview</h1>
@@ -354,24 +473,25 @@ const thebe_selector_output = ".output, .cell_output"
                     </div>
                 </div>
             </div>
-            
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="overview">
-<h1>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="overview">
+<h1>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">#</a></h1>
 <p>MyST (Markedly Structured Text) is designed to create publication-quality documents written entirely in Markdown. The main use case driving the development and design of MyST is <a class="reference external" href="https://jupyterbook.org/">JupyterBook</a>, which helps you create educational online textbooks and tutorials with Jupyter Notebooks and narrative content written in MyST. The extensions and design of MyST is inspired by the <a class="reference external" href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="reference external" href="https://docutils.sourceforge.io/rst.html">ReStructured Text</a> (RST) ecosystems.</p>
 <blockquote>
 <div><p>MyST is designed to harness the extensibility and community of RST and bring these super-powers into Markdown.</p>
 </div></blockquote>
 <p>MyST is a superset of <a class="reference internal" href="commonmark.html"><span class="doc std std-doc">CommonMark</span></a> (the standard form of Markdown) and allows you to directly create “directives” and “roles” as extension points in the language. <code class="docutils literal notranslate"><span class="pre">directives</span></code> are block-level extension points, like <a class="reference internal" href="admonitions.html"><span class="doc std std-doc">callout panels</span></a>, tabs, <a class="reference internal" href="figures.html"><span class="doc std std-doc">figures</span></a> or embedded charts; and roles are inline extension points, for components like <a class="reference internal" href="references.html"><span class="doc std std-doc">references</span></a> or <a class="reference internal" href="math.html"><span class="doc std std-doc">inline math</span></a>.</p>
-<div class="section" id="directives-roles">
-<h2>Directives &amp; Roles<a class="headerlink" href="#directives-roles" title="Permalink to this headline">¶</a></h2>
+<section id="directives-roles">
+<h2>Directives &amp; Roles<a class="headerlink" href="#directives-roles" title="Permalink to this headline">#</a></h2>
 <p>Roles and directives are two of the most powerful parts of MyST. They are kind of like functions, but written in a markup language. They both serve a similar purpose, but roles are written in one line whereas directives span many lines. They both accept different kinds of inputs, and what they do with those inputs depends on the specific role or directive being used.</p>
-<div class="section" id="directives">
-<h3>Directives<a class="headerlink" href="#directives" title="Permalink to this headline">¶</a></h3>
+<section id="directives">
+<h3>Directives<a class="headerlink" href="#directives" title="Permalink to this headline">#</a></h3>
 <p>Directives are multi-line containers that include an identifier, arguments, options, and content. Examples include <a class="reference internal" href="admonitions.html"><span class="doc std std-doc">admonitions</span></a>, <a class="reference internal" href="figures.html"><span class="doc std std-doc">figures</span></a>, and <a class="reference internal" href="math.html"><span class="doc std std-doc">equations</span></a>.</p>
-<div class="section" id="specification">
-<h4>Specification<a class="headerlink" href="#specification" title="Permalink to this headline">¶</a></h4>
+<section id="specification">
+<h4>Specification<a class="headerlink" href="#specification" title="Permalink to this headline">#</a></h4>
 <p>Content block with predefined behavior</p>
 <ul class="simple">
 <li><p><strong>type*</strong>: <em>string</em> (“mystDirective”) - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
@@ -383,43 +503,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p><strong>position</strong>: <em>object</em> (<a class="reference internal" href="../myst.schema.html#position"><span class="std std-ref">Position</span></a>) - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
 <li><p><strong>data</strong>: <em>object</em> - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
 </ul>
-</div>
-<div class="section" id="example">
-<h4>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h4>
-<div class="tabbed-set docutils">
-<input checked="checked" id="b9e51949-a071-4b27-9b76-57d234d16490" name="2cba17b1-bd44-44f7-8467-03b71e01adee" type="radio">
-</input><label class="tabbed-label" for="b9e51949-a071-4b27-9b76-57d234d16490">
-Markup</label><div class="tabbed-content docutils">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```{abc} foo bar
-:a: one
-:b: two
-
-ABC directive
-```
-</pre></div>
-</div>
-</div>
-<input id="504e97b4-d1a2-4f00-b825-78eff2954ff8" name="2cba17b1-bd44-44f7-8467-03b71e01adee" type="radio">
-</input><label class="tabbed-label" for="504e97b4-d1a2-4f00-b825-78eff2954ff8">
-AST</label><div class="tabbed-content docutils">
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">root</span><span class="w"></span>
-<span class="nt">children</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mystDirective</span><span class="w"></span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">abc</span><span class="w"></span>
-<span class="w">    </span><span class="nt">args</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">foo bar</span><span class="w"></span>
-<span class="w">    </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|-</span><span class="w"></span>
-<span class="w">      </span><span class="no">:a: one</span><span class="w"></span>
-<span class="w">      </span><span class="no">:b: two</span><span class="w"></span>
-
-<span class="w">      </span><span class="no">ABC directive</span><span class="w"></span>
-</pre></div>
-</div>
-</div>
-<input id="24c7c0c2-8616-4a31-abef-dc39732b6656" name="2cba17b1-bd44-44f7-8467-03b71e01adee" type="radio">
-</input><label class="tabbed-label" for="24c7c0c2-8616-4a31-abef-dc39732b6656">
-Render</label><div class="tabbed-content docutils">
-</div>
-</div>
+</section>
+<section id="example">
+<h4>Example<a class="headerlink" href="#example" title="Permalink to this headline">#</a></h4>
 <p>In addition to the directive name and the directive content, directives allow two other configuration points:</p>
 <p>1) <strong>directive arguments</strong> - a list of words that come just after the <code class="docutils literal notranslate"><span class="pre">{directivename}</span></code>.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```{directivename} arg1 arg2
@@ -467,13 +553,13 @@ My directive content.
 <p class="admonition-title">Tip</p>
 <p>Remember, specifying directive keywords with <code class="docutils literal notranslate"><span class="pre">:key:</span></code> or <code class="docutils literal notranslate"><span class="pre">---</span></code> will make no difference. We recommend using <code class="docutils literal notranslate"><span class="pre">---</span></code> if you have many keywords you wish to specify, or if some values will span multiple lines. Use the <code class="docutils literal notranslate"><span class="pre">:key:</span> <span class="pre">val</span></code> syntax as a shorthand for just one or two keywords.</p>
 </div>
-</div>
-</div>
-<div class="section" id="roles">
-<h3>Roles<a class="headerlink" href="#roles" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="roles">
+<h3>Roles<a class="headerlink" href="#roles" title="Permalink to this headline">#</a></h3>
 <p>Roles are very similar to directives, but they are written entirely in one line.</p>
-<div class="section" id="id1">
-<h4>Specification<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
+<section id="id1">
+<h4>Specification<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h4>
 <p>Custom in-line behavior</p>
 <ul class="simple">
 <li><p><strong>type*</strong>: <em>string</em> (“mystRole”) - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
@@ -483,43 +569,16 @@ My directive content.
 <li><p><strong>position</strong>: <em>object</em> (<a class="reference internal" href="../myst.schema.html#position"><span class="std std-ref">Position</span></a>) - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
 <li><p><strong>data</strong>: <em>object</em> - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
 </ul>
-</div>
-<div class="section" id="id2">
-<h4>Example<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
-<div class="tabbed-set docutils">
-<input checked="checked" id="9723480b-3cf7-4af0-9c15-f462dd8b319f" name="3df3ff07-9692-4e7a-b823-1936138ebb25" type="radio">
-</input><label class="tabbed-label" for="9723480b-3cf7-4af0-9c15-f462dd8b319f">
-Markup</label><div class="tabbed-content docutils">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>{abc}`ABC role`
-</pre></div>
-</div>
-</div>
-<input id="92c84e85-a17c-449f-8633-5b652cb7850c" name="3df3ff07-9692-4e7a-b823-1936138ebb25" type="radio">
-</input><label class="tabbed-label" for="92c84e85-a17c-449f-8633-5b652cb7850c">
-AST</label><div class="tabbed-content docutils">
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">root</span><span class="w"></span>
-<span class="nt">children</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">paragraph</span><span class="w"></span>
-<span class="w">    </span><span class="nt">children</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mystRole</span><span class="w"></span>
-<span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">abc</span><span class="w"></span>
-<span class="w">        </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ABC role</span><span class="w"></span>
-</pre></div>
-</div>
-</div>
-<input id="d01d928d-5e11-4c79-8db7-089130a834a9" name="3df3ff07-9692-4e7a-b823-1936138ebb25" type="radio">
-</input><label class="tabbed-label" for="d01d928d-5e11-4c79-8db7-089130a834a9">
-Render</label><div class="tabbed-content docutils">
-<p><a href="#id3"><span class="problematic" id="id4">:abc:`ABC role`</span></a></p>
-</div>
-</div>
-<p>Of course, roles will only allow custom behavior work if <code class="docutils literal notranslate"><span class="pre">name</span></code> is a valid role name! The <code class="docutils literal notranslate"><span class="pre">abbr</span></code> role creates inline abbreviations, for example, <code class="docutils literal notranslate"><span class="pre">{abbr}`MyST</span> <span class="pre">(Markedly</span> <span class="pre">Structured</span> <span class="pre">Text)`</span></code> will become <abbr title="Markedly Structured Text">MyST</abbr>! When you hover over<a class="footnote-reference brackets" href="#id6" id="id5">1</a> the abbreviation you will see the <code class="docutils literal notranslate"><span class="pre">title</span></code> appear!</p>
+</section>
+<section id="id2">
+<h4>Example<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h4>
+<p>Of course, roles will only allow custom behavior work if <code class="docutils literal notranslate"><span class="pre">name</span></code> is a valid role name! The <code class="docutils literal notranslate"><span class="pre">abbr</span></code> role creates inline abbreviations, for example, <code class="docutils literal notranslate"><span class="pre">{abbr}`MyST</span> <span class="pre">(Markedly</span> <span class="pre">Structured</span> <span class="pre">Text)`</span></code> will become <abbr title="Markedly Structured Text">MyST</abbr>! When you hover over<a class="footnote-reference brackets" href="#id4" id="id3">1</a> the abbreviation you will see the <code class="docutils literal notranslate"><span class="pre">title</span></code> appear!</p>
 <p>Roles are defined inline, with an identifier and input. There are a number of roles included in MyST, including abbreviations, subscript, and superscript, as well as inline <a class="reference internal" href="math.html"><span class="doc std std-doc">Math &amp; Equations</span></a>.</p>
-</div>
-</div>
-</div>
-<div class="section" id="nesting-content-blocks-in-markdown">
-<h2>Nesting content blocks in Markdown<a class="headerlink" href="#nesting-content-blocks-in-markdown" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+</section>
+<section id="nesting-content-blocks-in-markdown">
+<h2>Nesting content blocks in Markdown<a class="headerlink" href="#nesting-content-blocks-in-markdown" title="Permalink to this headline">#</a></h2>
 <p>If you’d like to nest content blocks inside one another in Markdown (for example, to put a {note} inside of a {margin}), you may do so by adding extra backticks (`) to the outer-most block. This works for literal code blocks as well.</p>
 <p>For example, the following syntax:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>````
@@ -551,12 +610,12 @@ Here&#39;s my `important`, highly nested note! 🪆
 </div>
 <hr class="footnotes docutils" />
 <dl class="footnote brackets">
-<dt class="label" id="id6"><span class="brackets"><a class="fn-backref" href="#id5">1</a></span></dt>
+<dt class="label" id="id4"><span class="brackets"><a class="fn-backref" href="#id3">1</a></span></dt>
 <dd><p>Abbreviations are also great structured data for screen-readers!</p>
 </dd>
 </dl>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -580,9 +639,11 @@ Here&#39;s my `important`, highly nested note! 🪆
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="../index.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -598,24 +659,28 @@ Here&#39;s my `important`, highly nested note! 🪆
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-  <p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Executable Book Project<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
     
-      By Executable Book Project<br/>
-    
-        &copy; Copyright 2021.<br/>
-  </p>
-</footer>
-</main>
+</div>
 
 
       </div>
     </div>
   
-  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>
