@@ -1,4 +1,6 @@
-`````{tabbed} Markup
+``````{tab-set}
+`````{tab-item} Markup
+:sync: myst
 ````
 Something
 % A comment
@@ -6,7 +8,8 @@ Something else
 ````
 `````
 
-`````{tabbed} AST
+````{tab-item} AST
+:sync: ast
 ```yaml
 type: root
 children:
@@ -22,13 +25,16 @@ children:
         value: Something else
 
 ```
-`````
+````
 
-`````{tabbed} Render
+````{tab-item} Render
+:sync: render
 
 Something
 % A comment
 Something else
 
-`````
+````
+
+``````
 

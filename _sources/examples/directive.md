@@ -1,4 +1,6 @@
-`````{tabbed} Markup
+``````{tab-set}
+`````{tab-item} Markup
+:sync: myst
 ````
 ```{abc} foo bar
 :a: one
@@ -9,7 +11,8 @@ ABC directive
 ````
 `````
 
-`````{tabbed} AST
+````{tab-item} AST
+:sync: ast
 ```yaml
 type: root
 children:
@@ -23,9 +26,10 @@ children:
       ABC directive
 
 ```
-`````
+````
 
-`````{tabbed} Render
+````{tab-item} Render
+:sync: render
 
 ```{abc} foo bar
 :a: one
@@ -34,5 +38,7 @@ children:
 ABC directive
 ```
 
-`````
+````
+
+``````
 

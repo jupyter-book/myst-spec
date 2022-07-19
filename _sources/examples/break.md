@@ -1,4 +1,6 @@
-`````{tabbed} Markup
+``````{tab-set}
+`````{tab-item} Markup
+:sync: myst
 ````
 thematic
 
@@ -8,7 +10,8 @@ break
 ````
 `````
 
-`````{tabbed} AST
+````{tab-item} AST
+:sync: ast
 ```yaml
 type: root
 children:
@@ -23,9 +26,10 @@ children:
         value: break
 
 ```
-`````
+````
 
-`````{tabbed} Render
+````{tab-item} Render
+:sync: render
 
 thematic
 
@@ -33,5 +37,7 @@ thematic
 
 break
 
-`````
+````
+
+``````
 

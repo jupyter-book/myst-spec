@@ -1,10 +1,13 @@
-`````{tabbed} Markup
+``````{tab-set}
+`````{tab-item} Markup
+:sync: myst
 ````
 > To be or not to be
 ````
 `````
 
-`````{tabbed} AST
+````{tab-item} AST
+:sync: ast
 ```yaml
 type: root
 children:
@@ -16,11 +19,14 @@ children:
             value: To be or not to be
 
 ```
-`````
+````
 
-`````{tabbed} Render
+````{tab-item} Render
+:sync: render
 
 > To be or not to be
 
-`````
+````
+
+``````
 

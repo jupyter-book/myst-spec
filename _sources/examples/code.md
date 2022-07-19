@@ -1,4 +1,6 @@
-`````{tabbed} Markup
+``````{tab-set}
+`````{tab-item} Markup
+:sync: myst
 ````
 ```python
 print('this is python')
@@ -6,7 +8,8 @@ print('this is python')
 ````
 `````
 
-`````{tabbed} AST
+````{tab-item} AST
+:sync: ast
 ```yaml
 type: root
 children:
@@ -15,13 +18,16 @@ children:
     value: print('this is python')
 
 ```
-`````
+````
 
-`````{tabbed} Render
+````{tab-item} Render
+:sync: render
 
 ```python
 print('this is python')
 ```
 
-`````
+````
+
+``````
 

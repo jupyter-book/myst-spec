@@ -250,7 +250,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/executablebooks/myst-spec/issues/new?title=Issue%20on%20page%20%2Fexamples/quote.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/executablebooks/myst-spec/issues/new?title=Issue%20on%20page%20%2Fexamples/blockquote.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -267,7 +267,7 @@ title="Open an issue"
       </li>
       
       <li>
-        <a href="https://github.com/executablebooks/myst-spec/edit/master/examples/quote.md"
+        <a href="https://github.com/executablebooks/myst-spec/edit/master/examples/blockquote.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -295,7 +295,7 @@ title="Edit this page"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/examples/quote.md"
+        <a href="../_sources/examples/blockquote.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -383,7 +383,37 @@ title="Print to PDF"
                 
               <div>
                 
-  
+  <div class="sd-tab-set docutils">
+<input checked="checked" id="510ee625-6b79-4806-81bb-e075f978b7c5" name="f4a162b8-f53e-4a86-9203-e5947fdc7475" type="radio">
+</input><label class="sd-tab-label" data-sync-id="myst" for="510ee625-6b79-4806-81bb-e075f978b7c5">
+Markup</label><div class="sd-tab-content docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">To</span> <span class="n">be</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">to</span> <span class="n">be</span>
+</pre></div>
+</div>
+</div>
+<input id="26058f52-5004-4da2-bd95-2f3f687d5a18" name="f4a162b8-f53e-4a86-9203-e5947fdc7475" type="radio">
+</input><label class="sd-tab-label" data-sync-id="ast" for="26058f52-5004-4da2-bd95-2f3f687d5a18">
+AST</label><div class="sd-tab-content docutils">
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">root</span><span class="w"></span>
+<span class="nt">children</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">blockquote</span><span class="w"></span>
+<span class="w">    </span><span class="nt">children</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">paragraph</span><span class="w"></span>
+<span class="w">        </span><span class="nt">children</span><span class="p">:</span><span class="w"></span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">text</span><span class="w"></span>
+<span class="w">            </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">To be or not to be</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+<input id="b2695eeb-2032-4880-aa62-e21fd14966ae" name="f4a162b8-f53e-4a86-9203-e5947fdc7475" type="radio">
+</input><label class="sd-tab-label" data-sync-id="render" for="b2695eeb-2032-4880-aa62-e21fd14966ae">
+Render</label><div class="sd-tab-content docutils">
+<blockquote>
+<div><p>To be or not to be</p>
+</div></blockquote>
+</div>
+</div>
+
     <script type="text/x-thebe-config">
     {
         requestKernel: true,

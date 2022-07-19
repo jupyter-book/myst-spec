@@ -1,4 +1,6 @@
-`````{tabbed} Markup
+``````{tab-set}
+`````{tab-item} Markup
+:sync: myst
 ````
 1. quotes
 2. breaks
@@ -6,7 +8,8 @@
 ````
 `````
 
-`````{tabbed} AST
+````{tab-item} AST
+:sync: ast
 ```yaml
 type: root
 children:
@@ -32,13 +35,16 @@ children:
             value: links
 
 ```
-`````
+````
 
-`````{tabbed} Render
+````{tab-item} Render
+:sync: render
 
 1. quotes
 2. breaks
 3. links
 
-`````
+````
+
+``````
 

@@ -1,10 +1,13 @@
-`````{tabbed} Markup
+``````{tab-set}
+`````{tab-item} Markup
+:sync: myst
 ````
 <div><p>*some text*</p></div>
 ````
 `````
 
-`````{tabbed} AST
+````{tab-item} AST
+:sync: ast
 ```yaml
 type: root
 children:
@@ -12,11 +15,14 @@ children:
     value: <div><p>*some text*</p></div>
 
 ```
-`````
+````
 
-`````{tabbed} Render
+````{tab-item} Render
+:sync: render
 
 <div><p>*some text*</p></div>
 
-`````
+````
+
+``````
 

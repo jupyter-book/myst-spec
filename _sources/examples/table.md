@@ -1,4 +1,6 @@
-`````{tabbed} Markup
+``````{tab-set}
+`````{tab-item} Markup
+:sync: myst
 ````
 | header 1 | header 2 |
 |:---|---:|
@@ -6,7 +8,8 @@
 ````
 `````
 
-`````{tabbed} AST
+````{tab-item} AST
+:sync: ast
 ```yaml
 type: root
 children:
@@ -40,13 +43,16 @@ children:
                 value: '4'
 
 ```
-`````
+````
 
-`````{tabbed} Render
+````{tab-item} Render
+:sync: render
 
 | header 1 | header 2 |
 |:---|---:|
 | 3 | 4 |
 
-`````
+````
+
+``````
 

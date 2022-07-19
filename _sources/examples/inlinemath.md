@@ -1,10 +1,13 @@
-`````{tabbed} Markup
+``````{tab-set}
+`````{tab-item} Markup
+:sync: myst
 ````
 This is genius {math}`e=mc^2`
 ````
 `````
 
-`````{tabbed} AST
+````{tab-item} AST
+:sync: ast
 ```yaml
 type: root
 children:
@@ -20,11 +23,14 @@ children:
             value: e=mc^2
 
 ```
-`````
+````
 
-`````{tabbed} Render
+````{tab-item} Render
+:sync: render
 
 This is genius {math}`e=mc^2`
 
-`````
+````
+
+``````
 

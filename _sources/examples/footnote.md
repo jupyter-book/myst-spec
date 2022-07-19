@@ -1,4 +1,6 @@
-`````{tabbed} Markup
+``````{tab-set}
+`````{tab-item} Markup
+:sync: myst
 ````
 Here's a simple footnote,[^1] and here's a longer one.[^bignote]
 
@@ -14,7 +16,8 @@ Here's a simple footnote,[^1] and here's a longer one.[^bignote]
 ````
 `````
 
-`````{tabbed} AST
+````{tab-item} AST
+:sync: ast
 ```yaml
 type: root
 children:
@@ -60,9 +63,10 @@ children:
             value: Add as many paragraphs as you like.
 
 ```
-`````
+````
 
-`````{tabbed} Render
+````{tab-item} Render
+:sync: render
 
 Here's a simple footnote,[^1] and here's a longer one.[^bignote]
 
@@ -76,5 +80,7 @@ Here's a simple footnote,[^1] and here's a longer one.[^bignote]
 
     Add as many paragraphs as you like.
 
-`````
+````
+
+``````
 

@@ -50,6 +50,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -383,7 +385,43 @@ title="Print to PDF"
                 
               <div>
                 
-  
+  <div class="sd-tab-set docutils">
+<input checked="checked" id="6ab3d929-c78f-442b-a0bc-d1d2976a279b" name="a497284e-c07f-4ee7-8a43-fb8c521623da" type="radio">
+</input><label class="sd-tab-label" data-sync-id="myst" for="6ab3d929-c78f-442b-a0bc-d1d2976a279b">
+Markup</label><div class="sd-tab-content docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```{math}
+:label: matrix
+Ax = b
+```
+</pre></div>
+</div>
+</div>
+<input id="19d4cd63-1ad4-4e2d-b3b2-ad13116ec795" name="a497284e-c07f-4ee7-8a43-fb8c521623da" type="radio">
+</input><label class="sd-tab-label" data-sync-id="ast" for="19d4cd63-1ad4-4e2d-b3b2-ad13116ec795">
+AST</label><div class="sd-tab-content docutils">
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">root</span><span class="w"></span>
+<span class="nt">children</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mystDirective</span><span class="w"></span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">math</span><span class="w"></span>
+<span class="w">    </span><span class="nt">options</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">label</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">matrix</span><span class="w"></span>
+<span class="w">    </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ax = b</span><span class="w"></span>
+<span class="w">    </span><span class="nt">children</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">math</span><span class="w"></span>
+<span class="w">        </span><span class="nt">identifier</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">matrix</span><span class="w"></span>
+<span class="w">        </span><span class="nt">label</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">matrix</span><span class="w"></span>
+<span class="w">        </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ax = b</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+<input id="0126113e-bde6-43f3-b785-09fa7ad1fb84" name="a497284e-c07f-4ee7-8a43-fb8c521623da" type="radio">
+</input><label class="sd-tab-label" data-sync-id="render" for="0126113e-bde6-43f3-b785-09fa7ad1fb84">
+Render</label><div class="sd-tab-content docutils">
+<div class="math notranslate nohighlight" id="equation-matrix">
+<span class="eqno">()<a class="headerlink" href="#equation-matrix" title="Permalink to this equation">#</a></span>\[Ax = b\]</div>
+</div>
+</div>
+
     <script type="text/x-thebe-config">
     {
         requestKernel: true,

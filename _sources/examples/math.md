@@ -1,4 +1,6 @@
-`````{tabbed} Markup
+``````{tab-set}
+`````{tab-item} Markup
+:sync: myst
 ````
 ```{math}
 :label: matrix
@@ -7,7 +9,8 @@ Ax = b
 ````
 `````
 
-`````{tabbed} AST
+````{tab-item} AST
+:sync: ast
 ```yaml
 type: root
 children:
@@ -23,14 +26,17 @@ children:
         value: Ax = b
 
 ```
-`````
+````
 
-`````{tabbed} Render
+````{tab-item} Render
+:sync: render
 
 ```{math}
 :label: matrix
 Ax = b
 ```
 
-`````
+````
+
+``````
 

@@ -383,7 +383,91 @@ title="Print to PDF"
                 
               <div>
                 
-  
+  <div class="sd-tab-set docutils">
+<input checked="checked" id="bc5813de-8dab-42b9-9677-9e212cefa84c" name="8b2cf8fd-ce78-4e52-b564-9c1a182fd6b1" type="radio">
+</input><label class="sd-tab-label" data-sync-id="myst" for="bc5813de-8dab-42b9-9677-9e212cefa84c">
+Markup</label><div class="sd-tab-content docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Here&#39;s a simple footnote,[^1] and here&#39;s a longer one.[^bignote]
+
+[^1]: This is the first footnote.
+
+[^bignote]: Here&#39;s one with multiple paragraphs and code.
+
+    Indent paragraphs to include them in the footnote.
+
+    `{ my code }`
+
+    Add as many paragraphs as you like.
+</pre></div>
+</div>
+</div>
+<input id="3315b005-90d3-4df8-a1f1-901f9c65c9b5" name="8b2cf8fd-ce78-4e52-b564-9c1a182fd6b1" type="radio">
+</input><label class="sd-tab-label" data-sync-id="ast" for="3315b005-90d3-4df8-a1f1-901f9c65c9b5">
+AST</label><div class="sd-tab-content docutils">
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">root</span><span class="w"></span>
+<span class="nt">children</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">paragraph</span><span class="w"></span>
+<span class="w">    </span><span class="nt">children</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">text</span><span class="w"></span>
+<span class="w">        </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Here&#39;s a simple footnote,</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">footnoteReference</span><span class="w"></span>
+<span class="w">        </span><span class="nt">identifier</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;1&#39;</span><span class="w"></span>
+<span class="w">        </span><span class="nt">label</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;1&#39;</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">text</span><span class="w"></span>
+<span class="w">        </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">here</span><span class="se">&#39;&#39;</span><span class="s">s</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">longer</span><span class="nv"> </span><span class="s">one.&#39;</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">footnoteReference</span><span class="w"></span>
+<span class="w">        </span><span class="nt">identifier</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bignote</span><span class="w"></span>
+<span class="w">        </span><span class="nt">label</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bignote</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">footnoteDefinition</span><span class="w"></span>
+<span class="w">    </span><span class="nt">identifier</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;1&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">label</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;1&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">children</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">paragraph</span><span class="w"></span>
+<span class="w">        </span><span class="nt">children</span><span class="p">:</span><span class="w"></span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">text</span><span class="w"></span>
+<span class="w">            </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">This is the first footnote.</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">footnoteDefinition</span><span class="w"></span>
+<span class="w">    </span><span class="nt">identifier</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bignote</span><span class="w"></span>
+<span class="w">    </span><span class="nt">label</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bignote</span><span class="w"></span>
+<span class="w">    </span><span class="nt">children</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">paragraph</span><span class="w"></span>
+<span class="w">        </span><span class="nt">children</span><span class="p">:</span><span class="w"></span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">text</span><span class="w"></span>
+<span class="w">            </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Here&#39;s one with multiple paragraphs and code.</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">paragraph</span><span class="w"></span>
+<span class="w">        </span><span class="nt">children</span><span class="p">:</span><span class="w"></span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">text</span><span class="w"></span>
+<span class="w">            </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Indent paragraphs to include them in the footnote.</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">paragraph</span><span class="w"></span>
+<span class="w">        </span><span class="nt">children</span><span class="p">:</span><span class="w"></span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">inlineCode</span><span class="w"></span>
+<span class="w">            </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;{</span><span class="nv"> </span><span class="s">my</span><span class="nv"> </span><span class="s">code</span><span class="nv"> </span><span class="s">}&#39;</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">paragraph</span><span class="w"></span>
+<span class="w">        </span><span class="nt">children</span><span class="p">:</span><span class="w"></span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">text</span><span class="w"></span>
+<span class="w">            </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Add as many paragraphs as you like.</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+<input id="129e60cf-9d27-4d60-bd0a-98ab79a65d8d" name="8b2cf8fd-ce78-4e52-b564-9c1a182fd6b1" type="radio">
+</input><label class="sd-tab-label" data-sync-id="render" for="129e60cf-9d27-4d60-bd0a-98ab79a65d8d">
+Render</label><div class="sd-tab-content docutils">
+<p>Here’s a simple footnote,<a class="footnote-reference brackets" href="#id3" id="id1">1</a> and here’s a longer one.<a class="footnote-reference brackets" href="#bignote" id="id2">2</a></p>
+</div>
+</div>
+<hr class="footnotes docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="id3"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>This is the first footnote.</p>
+</dd>
+<dt class="label" id="bignote"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
+<dd><p>Here’s one with multiple paragraphs and code.</p>
+<p>Indent paragraphs to include them in the footnote.</p>
+<p><code class="docutils literal notranslate"><span class="pre">{</span> <span class="pre">my</span> <span class="pre">code</span> <span class="pre">}</span></code></p>
+<p>Add as many paragraphs as you like.</p>
+</dd>
+</dl>
+
     <script type="text/x-thebe-config">
     {
         requestKernel: true,

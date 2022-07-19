@@ -1,4 +1,6 @@
-`````{tabbed} Markup
+``````{tab-set}
+`````{tab-item} Markup
+:sync: myst
 ````
 +++
 # Heading!
@@ -6,7 +8,8 @@
 ````
 `````
 
-`````{tabbed} AST
+````{tab-item} AST
+:sync: ast
 ```yaml
 type: root
 children:
@@ -19,13 +22,16 @@ children:
   - type: blockBreak
 
 ```
-`````
+````
 
-`````{tabbed} Render
+````{tab-item} Render
+:sync: render
 
 +++
 # Heading!
 +++
 
-`````
+````
+
+``````
 

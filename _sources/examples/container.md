@@ -1,4 +1,6 @@
-`````{tabbed} Markup
+``````{tab-set}
+`````{tab-item} Markup
+:sync: myst
 ````
 ```{figure} https://via.placeholder.com/150
 This is the figure caption!
@@ -8,7 +10,8 @@ Something! A legend!?
 ````
 `````
 
-`````{tabbed} AST
+````{tab-item} AST
+:sync: ast
 ```yaml
 type: root
 children:
@@ -39,9 +42,10 @@ children:
                     value: Something! A legend!?
 
 ```
-`````
+````
 
-`````{tabbed} Render
+````{tab-item} Render
+:sync: render
 
 ```{figure} https://via.placeholder.com/150
 This is the figure caption!
@@ -49,5 +53,7 @@ This is the figure caption!
 Something! A legend!?
 ```
 
-`````
+````
+
+``````
 

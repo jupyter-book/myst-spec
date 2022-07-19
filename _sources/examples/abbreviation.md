@@ -1,10 +1,13 @@
-`````{tabbed} Markup
+``````{tab-set}
+`````{tab-item} Markup
+:sync: myst
 ````
 Well {abbr}`CSS (Cascading Style Sheets)` is cool?
 ````
 `````
 
-`````{tabbed} AST
+````{tab-item} AST
+:sync: ast
 ```yaml
 type: root
 children:
@@ -25,11 +28,14 @@ children:
         value: ' is cool?'
 
 ```
-`````
+````
 
-`````{tabbed} Render
+````{tab-item} Render
+:sync: render
 
 Well {abbr}`CSS (Cascading Style Sheets)` is cool?
 
-`````
+````
+
+``````
 

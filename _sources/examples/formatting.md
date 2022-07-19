@@ -1,10 +1,13 @@
-`````{tabbed} Markup
+``````{tab-set}
+`````{tab-item} Markup
+:sync: myst
 ````
 **strong**, _emphasis_, `literal text`, \*escaped symbols\*
 ````
 `````
 
-`````{tabbed} AST
+````{tab-item} AST
+:sync: ast
 ```yaml
 type: root
 children:
@@ -28,11 +31,14 @@ children:
         value: ', *escaped symbols*'
 
 ```
-`````
+````
 
-`````{tabbed} Render
+````{tab-item} Render
+:sync: render
 
 **strong**, _emphasis_, `literal text`, \*escaped symbols\*
 
-`````
+````
+
+``````
 

@@ -1,4 +1,6 @@
-`````{tabbed} Markup
+``````{tab-set}
+`````{tab-item} Markup
+:sync: myst
 ````
 see {numref}`my-table`
 
@@ -11,7 +13,8 @@ see {numref}`my-table`
 ````
 `````
 
-`````{tabbed} AST
+````{tab-item} AST
+:sync: ast
 ```yaml
 type: root
 children:
@@ -63,9 +66,10 @@ children:
                         value: Row 1
 
 ```
-`````
+````
 
-`````{tabbed} Render
+````{tab-item} Render
+:sync: render
 
 see {numref}`my-table`
 
@@ -76,5 +80,7 @@ see {numref}`my-table`
 *   - Row 1
 ```
 
-`````
+````
+
+``````
 

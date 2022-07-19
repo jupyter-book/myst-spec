@@ -506,6 +506,40 @@ title="Print to PDF"
 </section>
 <section id="example">
 <h4>Example<a class="headerlink" href="#example" title="Permalink to this headline">#</a></h4>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="80c8756a-b578-42eb-bbd9-f364b658fda7" name="509e6be0-e1bc-475d-b8fd-1b93986f8ffc" type="radio">
+</input><label class="sd-tab-label" data-sync-id="myst" for="80c8756a-b578-42eb-bbd9-f364b658fda7">
+Markup</label><div class="sd-tab-content docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```{abc} foo bar
+:a: one
+:b: two
+
+ABC directive
+```
+</pre></div>
+</div>
+</div>
+<input id="7d90317e-3b2d-4806-a3eb-3ae0fe7229da" name="509e6be0-e1bc-475d-b8fd-1b93986f8ffc" type="radio">
+</input><label class="sd-tab-label" data-sync-id="ast" for="7d90317e-3b2d-4806-a3eb-3ae0fe7229da">
+AST</label><div class="sd-tab-content docutils">
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">root</span><span class="w"></span>
+<span class="nt">children</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mystDirective</span><span class="w"></span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">abc</span><span class="w"></span>
+<span class="w">    </span><span class="nt">args</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">foo bar</span><span class="w"></span>
+<span class="w">    </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|-</span><span class="w"></span>
+<span class="w">      </span><span class="no">:a: one</span><span class="w"></span>
+<span class="w">      </span><span class="no">:b: two</span><span class="w"></span>
+
+<span class="w">      </span><span class="no">ABC directive</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+<input id="6f672fde-ebc6-4218-ac5a-a91b50a3c95a" name="509e6be0-e1bc-475d-b8fd-1b93986f8ffc" type="radio">
+</input><label class="sd-tab-label" data-sync-id="render" for="6f672fde-ebc6-4218-ac5a-a91b50a3c95a">
+Render</label><div class="sd-tab-content docutils">
+</div>
+</div>
 <p>In addition to the directive name and the directive content, directives allow two other configuration points:</p>
 <p>1) <strong>directive arguments</strong> - a list of words that come just after the <code class="docutils literal notranslate"><span class="pre">{directivename}</span></code>.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```{directivename} arg1 arg2
@@ -572,7 +606,34 @@ My directive content.
 </section>
 <section id="id2">
 <h4>Example<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h4>
-<p>Of course, roles will only allow custom behavior work if <code class="docutils literal notranslate"><span class="pre">name</span></code> is a valid role name! The <code class="docutils literal notranslate"><span class="pre">abbr</span></code> role creates inline abbreviations, for example, <code class="docutils literal notranslate"><span class="pre">{abbr}`MyST</span> <span class="pre">(Markedly</span> <span class="pre">Structured</span> <span class="pre">Text)`</span></code> will become <abbr title="Markedly Structured Text">MyST</abbr>! When you hover over<a class="footnote-reference brackets" href="#id4" id="id3">1</a> the abbreviation you will see the <code class="docutils literal notranslate"><span class="pre">title</span></code> appear!</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="91cfa71d-542b-41c7-894e-2c9d30224b09" name="2b9db7de-c77a-468d-8d2e-38a2a4d3dcd0" type="radio">
+</input><label class="sd-tab-label" data-sync-id="myst" for="91cfa71d-542b-41c7-894e-2c9d30224b09">
+Markup</label><div class="sd-tab-content docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>{abc}`ABC role`
+</pre></div>
+</div>
+</div>
+<input id="6c0db404-0fdb-40f0-a911-dfdf0a5d9660" name="2b9db7de-c77a-468d-8d2e-38a2a4d3dcd0" type="radio">
+</input><label class="sd-tab-label" data-sync-id="ast" for="6c0db404-0fdb-40f0-a911-dfdf0a5d9660">
+AST</label><div class="sd-tab-content docutils">
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">root</span><span class="w"></span>
+<span class="nt">children</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">paragraph</span><span class="w"></span>
+<span class="w">    </span><span class="nt">children</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mystRole</span><span class="w"></span>
+<span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">abc</span><span class="w"></span>
+<span class="w">        </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ABC role</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+<input id="95481ac7-2ba0-44d6-8da4-f5d2cc7e9817" name="2b9db7de-c77a-468d-8d2e-38a2a4d3dcd0" type="radio">
+</input><label class="sd-tab-label" data-sync-id="render" for="95481ac7-2ba0-44d6-8da4-f5d2cc7e9817">
+Render</label><div class="sd-tab-content docutils">
+<p><a href="#id3"><span class="problematic" id="id4">:abc:`ABC role`</span></a></p>
+</div>
+</div>
+<p>Of course, roles will only allow custom behavior work if <code class="docutils literal notranslate"><span class="pre">name</span></code> is a valid role name! The <code class="docutils literal notranslate"><span class="pre">abbr</span></code> role creates inline abbreviations, for example, <code class="docutils literal notranslate"><span class="pre">{abbr}`MyST</span> <span class="pre">(Markedly</span> <span class="pre">Structured</span> <span class="pre">Text)`</span></code> will become <abbr title="Markedly Structured Text">MyST</abbr>! When you hover over<a class="footnote-reference brackets" href="#id6" id="id5">1</a> the abbreviation you will see the <code class="docutils literal notranslate"><span class="pre">title</span></code> appear!</p>
 <p>Roles are defined inline, with an identifier and input. There are a number of roles included in MyST, including abbreviations, subscript, and superscript, as well as inline <a class="reference internal" href="math.html"><span class="doc std std-doc">Math &amp; Equations</span></a>.</p>
 </section>
 </section>
@@ -610,7 +671,7 @@ Here&#39;s my `important`, highly nested note! 🪆
 </div>
 <hr class="footnotes docutils" />
 <dl class="footnote brackets">
-<dt class="label" id="id4"><span class="brackets"><a class="fn-backref" href="#id3">1</a></span></dt>
+<dt class="label" id="id6"><span class="brackets"><a class="fn-backref" href="#id5">1</a></span></dt>
 <dd><p>Abbreviations are also great structured data for screen-readers!</p>
 </dd>
 </dl>
