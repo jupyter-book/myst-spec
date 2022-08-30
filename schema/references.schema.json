@@ -42,7 +42,8 @@
               "type": "array",
               "items": {
                 "$ref": "myst.schema.json#/$defs/StaticPhrasingContent"
-              }
+              },
+              "description": "Children of the crossReference, can include text with \"%s\" or \"{number}\" and enumerated references will be filled in."
             },
             "identifier": {},
             "label": {},
@@ -52,7 +53,7 @@
           "additionalProperties": false
         },
         { "$ref": "commonmark.schema.json#/$defs/Association" },
-        { "$ref": "unist.schema.json#/$defs/Parent" }
+        { "$ref": "unist.schema.json#/$defs/Node" }
       ]
     }
   }
