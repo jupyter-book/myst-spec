@@ -47,7 +47,7 @@
           },
           "additionalProperties": false
         },
-        { "$ref": "unist.schema.json#/$defs/Parent" }
+        { "$ref": "unist.schema.json#/$defs/Node" }
       ]
     },
     "AdmonitionTitle": {
