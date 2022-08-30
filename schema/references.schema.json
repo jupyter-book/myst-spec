@@ -35,7 +35,8 @@
             },
             "kind": {
               "type": "string",
-              "enum": ["eq", "numref", "ref"]
+              "enum": ["eq", "numref", "ref"],
+              "description": "Indicates if the references should be numbered.\n```{warning}\nThe `kind` was based on docutils and is subject to change as we improve the `crossReference` experience.\n```"
             },
             "children": {
               "type": "array",
@@ -51,7 +52,7 @@
           "additionalProperties": false
         },
         { "$ref": "commonmark.schema.json#/$defs/Association" },
-        { "$ref": "unist.schema.json#/$defs/Node" }
+        { "$ref": "unist.schema.json#/$defs/Parent" }
       ]
     }
   }

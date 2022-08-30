@@ -39,14 +39,15 @@
                   { "$ref": "#/$defs/AdmonitionTitle" },
                   { "$ref": "myst.schema.json#/$defs/FlowContent" }
                 ]
-              }
+              },
+              "description": "An optional `admonitionTitle` followed by the admonitions content."
             },
             "position": {},
             "data": {}
           },
           "additionalProperties": false
         },
-        { "$ref": "unist.schema.json#/$defs/Node" }
+        { "$ref": "unist.schema.json#/$defs/Parent" }
       ]
     },
     "AdmonitionTitle": {
