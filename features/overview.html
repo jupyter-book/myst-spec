@@ -144,12 +144,12 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="references.html">
-   References &amp; Links
+   Directive Targets and Cross References
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="footnotes.html">
-   Footnotes
+   Footnote Definition Node Specification
   </a>
  </li>
  <li class="toctree-l1">
@@ -493,22 +493,28 @@ title="Print to PDF"
 <section id="specification">
 <h4>Specification<a class="headerlink" href="#specification" title="Permalink to this headline">#</a></h4>
 <p>Content block with predefined behavior</p>
-<ul class="simple">
-<li><p><strong>type*</strong>: <em>string</em> (“mystDirective”) - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>name*</strong>: <em>string</em></p></li>
-<li><p><strong>args</strong>: <em>string</em></p></li>
-<li><p><strong>options</strong>: <em>object</em></p></li>
-<li><p><strong>value</strong>: <em>string</em> - body of the directive, excluding options</p></li>
-<li><p><strong>children</strong>: <em>array</em> (<a class="reference internal" href="../myst.schema.html#flowcontent"><span class="std std-ref">FlowContent</span></a> | <a class="reference internal" href="../myst.schema.html#phrasingcontent"><span class="std std-ref">PhrasingContent</span></a>) - parsed directive content</p></li>
-<li><p><strong>position</strong>: <em>object</em> (<a class="reference internal" href="../myst.schema.html#position"><span class="std std-ref">Position</span></a>) - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>data</strong>: <em>object</em> - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
-</ul>
+<p><strong>type</strong>: <em>string</em>, (“mystDirective”)
+: See also <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>name</strong>: <em>string</em>
+: No description for this property.</p>
+<p><strong>args</strong>: <em>string</em>, <em>optional</em>
+: No description for this property.</p>
+<p><strong>options</strong>: <em>object</em>, <em>optional</em>
+: No description for this property.</p>
+<p><strong>value</strong>: <em>string</em>, <em>optional</em>
+: body of the directive, excluding options</p>
+<p><strong>children</strong>: <em>array</em>, <em>optional</em>, (<a class="reference internal" href="../myst.schema.html#flowcontent"><span class="std std-ref">FlowContent</span></a> | <a class="reference internal" href="../myst.schema.html#phrasingcontent"><span class="std std-ref">PhrasingContent</span></a>)
+: parsed directive content</p>
+<p><strong>position</strong>: <em>object</em>, <em>optional</em>, (<a class="reference internal" href="../myst.schema.html#position"><span class="std std-ref">Position</span></a>)
+: See also <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>data</strong>: <em>object</em>, <em>optional</em>
+: See also <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p>
 </section>
 <section id="example">
 <h4>Example<a class="headerlink" href="#example" title="Permalink to this headline">#</a></h4>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="80c8756a-b578-42eb-bbd9-f364b658fda7" name="509e6be0-e1bc-475d-b8fd-1b93986f8ffc" type="radio">
-</input><label class="sd-tab-label" data-sync-id="myst" for="80c8756a-b578-42eb-bbd9-f364b658fda7">
+<input checked="checked" id="9a95be73-1507-4b2a-bf68-d224f7a23300" name="fa028ee5-63c0-467d-a4e6-d5f73859e56d" type="radio">
+</input><label class="sd-tab-label" data-sync-id="myst" for="9a95be73-1507-4b2a-bf68-d224f7a23300">
 Markup</label><div class="sd-tab-content docutils">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```{abc} foo bar
 :a: one
@@ -519,8 +525,8 @@ ABC directive
 </pre></div>
 </div>
 </div>
-<input id="7d90317e-3b2d-4806-a3eb-3ae0fe7229da" name="509e6be0-e1bc-475d-b8fd-1b93986f8ffc" type="radio">
-</input><label class="sd-tab-label" data-sync-id="ast" for="7d90317e-3b2d-4806-a3eb-3ae0fe7229da">
+<input id="5948a70b-23cd-47d1-866f-60f82aa4d877" name="fa028ee5-63c0-467d-a4e6-d5f73859e56d" type="radio">
+</input><label class="sd-tab-label" data-sync-id="ast" for="5948a70b-23cd-47d1-866f-60f82aa4d877">
 AST</label><div class="sd-tab-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">root</span><span class="w"></span>
 <span class="nt">children</span><span class="p">:</span><span class="w"></span>
@@ -535,8 +541,8 @@ AST</label><div class="sd-tab-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="6f672fde-ebc6-4218-ac5a-a91b50a3c95a" name="509e6be0-e1bc-475d-b8fd-1b93986f8ffc" type="radio">
-</input><label class="sd-tab-label" data-sync-id="render" for="6f672fde-ebc6-4218-ac5a-a91b50a3c95a">
+<input id="8dedc04e-cc35-4540-8cd3-fa3209d165eb" name="fa028ee5-63c0-467d-a4e6-d5f73859e56d" type="radio">
+</input><label class="sd-tab-label" data-sync-id="render" for="8dedc04e-cc35-4540-8cd3-fa3209d165eb">
 Render</label><div class="sd-tab-content docutils">
 </div>
 </div>
@@ -595,27 +601,31 @@ My directive content.
 <section id="id1">
 <h4>Specification<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h4>
 <p>Custom in-line behavior</p>
-<ul class="simple">
-<li><p><strong>type*</strong>: <em>string</em> (“mystRole”) - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>name*</strong>: <em>string</em></p></li>
-<li><p><strong>value</strong>: <em>string</em> - content of the directive</p></li>
-<li><p><strong>children</strong>: <em>array</em> (<a class="reference internal" href="../myst.schema.html#phrasingcontent"><span class="std std-ref">PhrasingContent</span></a>) - parsed role content</p></li>
-<li><p><strong>position</strong>: <em>object</em> (<a class="reference internal" href="../myst.schema.html#position"><span class="std std-ref">Position</span></a>) - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>data</strong>: <em>object</em> - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
-</ul>
+<p><strong>type</strong>: <em>string</em>, (“mystRole”)
+: See also <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>name</strong>: <em>string</em>
+: No description for this property.</p>
+<p><strong>value</strong>: <em>string</em>, <em>optional</em>
+: content of the directive</p>
+<p><strong>children</strong>: <em>array</em>, <em>optional</em>, (<a class="reference internal" href="../myst.schema.html#phrasingcontent"><span class="std std-ref">PhrasingContent</span></a>)
+: parsed role content</p>
+<p><strong>position</strong>: <em>object</em>, <em>optional</em>, (<a class="reference internal" href="../myst.schema.html#position"><span class="std std-ref">Position</span></a>)
+: See also <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>data</strong>: <em>object</em>, <em>optional</em>
+: See also <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p>
 </section>
 <section id="id2">
 <h4>Example<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h4>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="91cfa71d-542b-41c7-894e-2c9d30224b09" name="2b9db7de-c77a-468d-8d2e-38a2a4d3dcd0" type="radio">
-</input><label class="sd-tab-label" data-sync-id="myst" for="91cfa71d-542b-41c7-894e-2c9d30224b09">
+<input checked="checked" id="c4818da3-057a-488b-9572-4b99e4a7ace5" name="b62ac251-7635-49e7-923b-f44fa871aaa5" type="radio">
+</input><label class="sd-tab-label" data-sync-id="myst" for="c4818da3-057a-488b-9572-4b99e4a7ace5">
 Markup</label><div class="sd-tab-content docutils">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>{abc}`ABC role`
 </pre></div>
 </div>
 </div>
-<input id="6c0db404-0fdb-40f0-a911-dfdf0a5d9660" name="2b9db7de-c77a-468d-8d2e-38a2a4d3dcd0" type="radio">
-</input><label class="sd-tab-label" data-sync-id="ast" for="6c0db404-0fdb-40f0-a911-dfdf0a5d9660">
+<input id="48899698-f540-48b6-848d-cfd881dae0b7" name="b62ac251-7635-49e7-923b-f44fa871aaa5" type="radio">
+</input><label class="sd-tab-label" data-sync-id="ast" for="48899698-f540-48b6-848d-cfd881dae0b7">
 AST</label><div class="sd-tab-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">root</span><span class="w"></span>
 <span class="nt">children</span><span class="p">:</span><span class="w"></span>
@@ -627,8 +637,8 @@ AST</label><div class="sd-tab-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="95481ac7-2ba0-44d6-8da4-f5d2cc7e9817" name="2b9db7de-c77a-468d-8d2e-38a2a4d3dcd0" type="radio">
-</input><label class="sd-tab-label" data-sync-id="render" for="95481ac7-2ba0-44d6-8da4-f5d2cc7e9817">
+<input id="663e008f-926c-4d84-bfad-d6ac00c66710" name="b62ac251-7635-49e7-923b-f44fa871aaa5" type="radio">
+</input><label class="sd-tab-label" data-sync-id="render" for="663e008f-926c-4d84-bfad-d6ac00c66710">
 Render</label><div class="sd-tab-content docutils">
 <p><a href="#id3"><span class="problematic" id="id4">:abc:`ABC role`</span></a></p>
 </div>

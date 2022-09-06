@@ -142,12 +142,12 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../features/references.html">
-   References &amp; Links
+   Directive Targets and Cross References
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../features/footnotes.html">
-   Footnotes
+   Footnote Definition Node Specification
   </a>
  </li>
  <li class="toctree-l1">
@@ -384,15 +384,24 @@ title="Print to PDF"
               <div>
                 
   <p>In-line reference to an associated node</p>
-<ul class="simple">
-<li><p><strong>type*</strong>: <em>string</em> (“crossReference”) - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>kind</strong>: <em>string</em> (“eq” | “numref” | “ref”)</p></li>
-<li><p><strong>children</strong>: <em>array</em> (<a class="reference internal" href="../myst.schema.html#staticphrasingcontent"><span class="std std-ref">StaticPhrasingContent</span></a>)</p></li>
-<li><p><strong>identifier*</strong>: <em>string</em> - See <a class="reference internal" href="../myst.schema.html#optionalassociation"><span class="std std-ref">OptionalAssociation</span></a></p></li>
-<li><p><strong>label</strong>: <em>string</em> - See <a class="reference internal" href="../myst.schema.html#optionalassociation"><span class="std std-ref">OptionalAssociation</span></a></p></li>
-<li><p><strong>position</strong>: <em>object</em> (<a class="reference internal" href="../myst.schema.html#position"><span class="std std-ref">Position</span></a>) - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>data</strong>: <em>object</em> - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
-</ul>
+<p><strong>type</strong>: <em>string</em>, (“crossReference”)
+: See also <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>kind</strong>: <em>string</em>, <em>optional</em>, (“eq” | “numref” | “ref”)
+: Indicates if the references should be numbered.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">kind</span></code> was based on docutils and is subject to change as we improve the <code class="docutils literal notranslate"><span class="pre">crossReference</span></code> experience.</p>
+</div>
+<p><strong>children</strong>: <em>array</em>, <em>optional</em>, (<a class="reference internal" href="../myst.schema.html#staticphrasingcontent"><span class="std std-ref">StaticPhrasingContent</span></a>)
+: Children of the crossReference, can include text with “%s” or “{number}” and enumerated references will be filled in.</p>
+<p><strong>identifier</strong>: <em>string</em>
+: See also <a class="reference internal" href="../myst.schema.html#optionalassociation"><span class="std std-ref">OptionalAssociation</span></a></p>
+<p><strong>label</strong>: <em>string</em>, <em>optional</em>
+: See also <a class="reference internal" href="../myst.schema.html#optionalassociation"><span class="std std-ref">OptionalAssociation</span></a></p>
+<p><strong>position</strong>: <em>object</em>, <em>optional</em>, (<a class="reference internal" href="../myst.schema.html#position"><span class="std std-ref">Position</span></a>)
+: See also <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>data</strong>: <em>object</em>, <em>optional</em>
+: See also <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p>
 
     <script type="text/x-thebe-config">
     {

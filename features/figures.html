@@ -144,12 +144,12 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="references.html">
-   References &amp; Links
+   Directive Targets and Cross References
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="footnotes.html">
-   Footnotes
+   Footnote Definition Node Specification
   </a>
  </li>
  <li class="toctree-l1">
@@ -458,30 +458,37 @@ title="Print to PDF"
 <section id="image-node-specification">
 <h2>Image Node Specification<a class="headerlink" href="#image-node-specification" title="Permalink to this headline">#</a></h2>
 <p>Image hyperlink</p>
-<ul class="simple">
-<li><p><strong>type*</strong>: <em>string</em> (“image”) - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>class</strong>: <em>string</em> - user-defined class for image</p></li>
-<li><p><strong>width</strong>: <em>string</em> - image width in pixels or percentage</p></li>
-<li><p><strong>align</strong>: <em>string</em> (“left” | “center” | “right”)</p></li>
-<li><p><strong>url*</strong>: <em>string</em> - See <a class="reference internal" href="../myst.schema.html#resource"><span class="std std-ref">Resource</span></a></p></li>
-<li><p><strong>title</strong>: <em>string</em> - See <a class="reference internal" href="../myst.schema.html#resource"><span class="std std-ref">Resource</span></a></p></li>
-<li><p><strong>alt</strong>: <em>string</em> - See <a class="reference internal" href="../myst.schema.html#alternative"><span class="std std-ref">Alternative</span></a></p></li>
-<li><p><strong>position</strong>: <em>object</em> (<a class="reference internal" href="../myst.schema.html#position"><span class="std std-ref">Position</span></a>) - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>data</strong>: <em>object</em> - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
-</ul>
+<p><strong>type</strong>: <em>string</em>, (“image”)
+: See also <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>class</strong>: <em>string</em>, <em>optional</em>
+: user-defined class for image</p>
+<p><strong>width</strong>: <em>string</em>, <em>optional</em>
+: image width in pixels or percentage</p>
+<p><strong>align</strong>: <em>string</em>, <em>optional</em>, (“left” | “center” | “right”)
+: No description for this property.</p>
+<p><strong>url</strong>: <em>string</em>
+: See also <a class="reference internal" href="../myst.schema.html#resource"><span class="std std-ref">Resource</span></a></p>
+<p><strong>title</strong>: <em>string</em>, <em>optional</em>
+: See also <a class="reference internal" href="../myst.schema.html#resource"><span class="std std-ref">Resource</span></a></p>
+<p><strong>alt</strong>: <em>string</em>, <em>optional</em>
+: See also <a class="reference internal" href="../myst.schema.html#alternative"><span class="std std-ref">Alternative</span></a></p>
+<p><strong>position</strong>: <em>object</em>, <em>optional</em>, (<a class="reference internal" href="../myst.schema.html#position"><span class="std std-ref">Position</span></a>)
+: See also <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>data</strong>: <em>object</em>, <em>optional</em>
+: See also <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p>
 </section>
 <section id="image-node-example">
 <h2>Image Node Example<a class="headerlink" href="#image-node-example" title="Permalink to this headline">#</a></h2>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="8dbcd182-bc1e-4ded-a722-624901546bba" name="79cfa667-db6d-4a36-aab8-0d59906158e2" type="radio">
-</input><label class="sd-tab-label" data-sync-id="myst" for="8dbcd182-bc1e-4ded-a722-624901546bba">
+<input checked="checked" id="7dd4c851-f8e4-482a-863a-00e3cdb89c01" name="ba1df086-37c9-4937-9eed-8a59be5d6c86" type="radio">
+</input><label class="sd-tab-label" data-sync-id="myst" for="7dd4c851-f8e4-482a-863a-00e3cdb89c01">
 Markup</label><div class="sd-tab-content docutils">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>![fishy](fun-fish.png)
 </pre></div>
 </div>
 </div>
-<input id="b4192594-d7dc-4609-a465-d71026688315" name="79cfa667-db6d-4a36-aab8-0d59906158e2" type="radio">
-</input><label class="sd-tab-label" data-sync-id="ast" for="b4192594-d7dc-4609-a465-d71026688315">
+<input id="61543432-e81b-4ac5-82a8-e69d36e636b2" name="ba1df086-37c9-4937-9eed-8a59be5d6c86" type="radio">
+</input><label class="sd-tab-label" data-sync-id="ast" for="61543432-e81b-4ac5-82a8-e69d36e636b2">
 AST</label><div class="sd-tab-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">root</span><span class="w"></span>
 <span class="nt">children</span><span class="p">:</span><span class="w"></span>
@@ -493,10 +500,10 @@ AST</label><div class="sd-tab-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="18295dba-7f0d-4c07-a02a-3adea70faa69" name="79cfa667-db6d-4a36-aab8-0d59906158e2" type="radio">
-</input><label class="sd-tab-label" data-sync-id="render" for="18295dba-7f0d-4c07-a02a-3adea70faa69">
+<input id="0597a669-cf9b-4221-9b12-3f57affabcba" name="ba1df086-37c9-4937-9eed-8a59be5d6c86" type="radio">
+</input><label class="sd-tab-label" data-sync-id="render" for="0597a669-cf9b-4221-9b12-3f57affabcba">
 Render</label><div class="sd-tab-content docutils">
-<p><img alt="fishy" src="features/fun-fish.png" /></p>
+<p><img alt="fishy" src="../_images/fun-fish.png" /></p>
 </div>
 </div>
 </section>
@@ -506,24 +513,32 @@ Render</label><div class="sd-tab-content docutils">
 <section id="container-node-specification">
 <h2>Container Node Specification<a class="headerlink" href="#container-node-specification" title="Permalink to this headline">#</a></h2>
 <p>Top-level container node to provide association and numbering to child content</p>
-<ul class="simple">
-<li><p><strong>type*</strong>: <em>string</em> (“container”) - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>kind*</strong>: <em>string</em> (“figure” | “table”) - kind of container contents</p></li>
-<li><p><strong>class</strong>: <em>string</em> - any custom class information</p></li>
-<li><p><strong>enumerated</strong>: <em>boolean</em> - count this container for numbering based on kind, e.g. Figure 1a</p></li>
-<li><p><strong>enumerator</strong>: <em>string</em> - resolved enumerated value for this container</p></li>
-<li><p><strong>children*</strong>: <em>array</em> (<a class="reference internal" href="../myst.schema.html#caption"><span class="std std-ref">Caption</span></a> | <a class="reference internal" href="../myst.schema.html#legend"><span class="std std-ref">Legend</span></a> | <a class="reference internal" href="../myst.schema.html#image"><span class="std std-ref">Image</span></a> | <a class="reference internal" href="../myst.schema.html#table"><span class="std std-ref">Table</span></a>) - See <a class="reference internal" href="../myst.schema.html#parent"><span class="std std-ref">Parent</span></a></p></li>
-<li><p><strong>identifier</strong>: <em>string</em> - See <a class="reference internal" href="../myst.schema.html#optionalassociation"><span class="std std-ref">OptionalAssociation</span></a></p></li>
-<li><p><strong>label</strong>: <em>string</em> - See <a class="reference internal" href="../myst.schema.html#optionalassociation"><span class="std std-ref">OptionalAssociation</span></a></p></li>
-<li><p><strong>position</strong>: <em>object</em> (<a class="reference internal" href="../myst.schema.html#position"><span class="std std-ref">Position</span></a>) - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>data</strong>: <em>object</em> - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
-</ul>
+<p><strong>type</strong>: <em>string</em>, (“container”)
+: See also <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>kind</strong>: <em>string</em>, (“figure” | “table”)
+: kind of container contents</p>
+<p><strong>class</strong>: <em>string</em>, <em>optional</em>
+: any custom class information</p>
+<p><strong>enumerated</strong>: <em>boolean</em>, <em>optional</em>
+: count this container for numbering based on kind, e.g. Figure 1a</p>
+<p><strong>enumerator</strong>: <em>string</em>, <em>optional</em>
+: resolved enumerated value for this container</p>
+<p><strong>children</strong>: <em>array</em>, (<a class="reference internal" href="../myst.schema.html#caption"><span class="std std-ref">Caption</span></a> | <a class="reference internal" href="../myst.schema.html#legend"><span class="std std-ref">Legend</span></a> | <a class="reference internal" href="../myst.schema.html#image"><span class="std std-ref">Image</span></a> | <a class="reference internal" href="../myst.schema.html#table"><span class="std std-ref">Table</span></a>)
+: See also <a class="reference internal" href="../myst.schema.html#parent"><span class="std std-ref">Parent</span></a></p>
+<p><strong>identifier</strong>: <em>string</em>, <em>optional</em>
+: See also <a class="reference internal" href="../myst.schema.html#optionalassociation"><span class="std std-ref">OptionalAssociation</span></a></p>
+<p><strong>label</strong>: <em>string</em>, <em>optional</em>
+: See also <a class="reference internal" href="../myst.schema.html#optionalassociation"><span class="std std-ref">OptionalAssociation</span></a></p>
+<p><strong>position</strong>: <em>object</em>, <em>optional</em>, (<a class="reference internal" href="../myst.schema.html#position"><span class="std std-ref">Position</span></a>)
+: See also <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>data</strong>: <em>object</em>, <em>optional</em>
+: See also <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p>
 </section>
 <section id="container-node-example">
 <h2>Container Node Example<a class="headerlink" href="#container-node-example" title="Permalink to this headline">#</a></h2>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="d3dc877f-ab2d-44c0-a963-4a64344945ca" name="7bc879c6-9868-4f1a-8cc4-b8d06745f2c1" type="radio">
-</input><label class="sd-tab-label" data-sync-id="myst" for="d3dc877f-ab2d-44c0-a963-4a64344945ca">
+<input checked="checked" id="e6487687-669b-4c2a-8530-affcbe50c271" name="6b9a46c2-ad20-4b25-86e8-02d073f5cf14" type="radio">
+</input><label class="sd-tab-label" data-sync-id="myst" for="e6487687-669b-4c2a-8530-affcbe50c271">
 Markup</label><div class="sd-tab-content docutils">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```{figure} https://via.placeholder.com/150
 This is the figure caption!
@@ -533,8 +548,8 @@ Something! A legend!?
 </pre></div>
 </div>
 </div>
-<input id="58b47292-a4c2-406b-a6b8-a480e18e62df" name="7bc879c6-9868-4f1a-8cc4-b8d06745f2c1" type="radio">
-</input><label class="sd-tab-label" data-sync-id="ast" for="58b47292-a4c2-406b-a6b8-a480e18e62df">
+<input id="ec482f70-1094-46f9-bf1a-c7ccd9e1e003" name="6b9a46c2-ad20-4b25-86e8-02d073f5cf14" type="radio">
+</input><label class="sd-tab-label" data-sync-id="ast" for="ec482f70-1094-46f9-bf1a-c7ccd9e1e003">
 AST</label><div class="sd-tab-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">root</span><span class="w"></span>
 <span class="nt">children</span><span class="p">:</span><span class="w"></span>
@@ -566,8 +581,8 @@ AST</label><div class="sd-tab-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="50229a1b-79e3-4504-b412-3b2ffc0d2cc9" name="7bc879c6-9868-4f1a-8cc4-b8d06745f2c1" type="radio">
-</input><label class="sd-tab-label" data-sync-id="render" for="50229a1b-79e3-4504-b412-3b2ffc0d2cc9">
+<input id="ce06ccc4-4908-4864-a6a1-44ae232c5696" name="6b9a46c2-ad20-4b25-86e8-02d073f5cf14" type="radio">
+</input><label class="sd-tab-label" data-sync-id="render" for="ce06ccc4-4908-4864-a6a1-44ae232c5696">
 Render</label><div class="sd-tab-content docutils">
 <figure class="align-default" id="id1">
 <img alt="https://via.placeholder.com/150" src="https://via.placeholder.com/150" />

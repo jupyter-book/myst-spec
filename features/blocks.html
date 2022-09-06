@@ -53,7 +53,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Node Type Index" href="../myst.schema.html" />
-    <link rel="prev" title="Footnotes" href="footnotes.html" />
+    <link rel="prev" title="Footnote Definition Node Specification" href="footnotes.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -144,12 +144,12 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="references.html">
-   References &amp; Links
+   Directive Targets and Cross References
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="footnotes.html">
-   Footnotes
+   Footnote Definition Node Specification
   </a>
  </li>
  <li class="toctree-l1 current active">
@@ -489,18 +489,20 @@ title="Print to PDF"
 <section id="specification">
 <h3>Specification<a class="headerlink" href="#specification" title="Permalink to this headline">#</a></h3>
 <p>Top-level break in the myst document, breaking it into Blocks</p>
-<ul class="simple">
-<li><p><strong>type*</strong>: <em>string</em> (“blockBreak”) - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>meta</strong>: <em>string</em> - block break metadata; conventionally, a stringified JSON dictionary but may be any arbitrary string</p></li>
-<li><p><strong>position</strong>: <em>object</em> (<a class="reference internal" href="../myst.schema.html#position"><span class="std std-ref">Position</span></a>) - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>data</strong>: <em>object</em> - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
-</ul>
+<p><strong>type</strong>: <em>string</em>, (“blockBreak”)
+: See also <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>meta</strong>: <em>string</em>, <em>optional</em>
+: Block metadata. Conventionally this is a stringified JSON dictionary but it may be any arbitrary string.</p>
+<p><strong>position</strong>: <em>object</em>, <em>optional</em>, (<a class="reference internal" href="../myst.schema.html#position"><span class="std std-ref">Position</span></a>)
+: See also <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>data</strong>: <em>object</em>, <em>optional</em>
+: See also <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p>
 </section>
 <section id="example">
 <h3>Example<a class="headerlink" href="#example" title="Permalink to this headline">#</a></h3>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="2fb0dbdd-dbff-4e25-9f3e-cf5f365a28bc" name="b1ae6538-36b3-461e-9bfd-eb192416ec00" type="radio">
-</input><label class="sd-tab-label" data-sync-id="myst" for="2fb0dbdd-dbff-4e25-9f3e-cf5f365a28bc">
+<input checked="checked" id="8b9effa8-6156-40a8-9e52-48898b194a40" name="7b657e50-cafe-4a0b-a0be-9f1e98482c7b" type="radio">
+</input><label class="sd-tab-label" data-sync-id="myst" for="8b9effa8-6156-40a8-9e52-48898b194a40">
 Markup</label><div class="sd-tab-content docutils">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">+++</span>
 <span class="c1"># Heading!</span>
@@ -508,8 +510,8 @@ Markup</label><div class="sd-tab-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="7ba40a93-e2a0-4a3b-8214-69ba6c5e7731" name="b1ae6538-36b3-461e-9bfd-eb192416ec00" type="radio">
-</input><label class="sd-tab-label" data-sync-id="ast" for="7ba40a93-e2a0-4a3b-8214-69ba6c5e7731">
+<input id="3c9e3071-945d-4c40-a979-056e3d72fed5" name="7b657e50-cafe-4a0b-a0be-9f1e98482c7b" type="radio">
+</input><label class="sd-tab-label" data-sync-id="ast" for="3c9e3071-945d-4c40-a979-056e3d72fed5">
 AST</label><div class="sd-tab-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">root</span><span class="w"></span>
 <span class="nt">children</span><span class="p">:</span><span class="w"></span>
@@ -523,8 +525,8 @@ AST</label><div class="sd-tab-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="72a8298e-f912-4d22-9472-e4ef5d403077" name="b1ae6538-36b3-461e-9bfd-eb192416ec00" type="radio">
-</input><label class="sd-tab-label" data-sync-id="render" for="72a8298e-f912-4d22-9472-e4ef5d403077">
+<input id="0cac7ea0-c6ea-4d58-830e-b6addb67bfa8" name="7b657e50-cafe-4a0b-a0be-9f1e98482c7b" type="radio">
+</input><label class="sd-tab-label" data-sync-id="render" for="0cac7ea0-c6ea-4d58-830e-b6addb67bfa8">
 Render</label><div class="sd-tab-content docutils">
 </div>
 </div>
@@ -539,18 +541,20 @@ Render</label><div class="sd-tab-content docutils">
 <section id="id1">
 <h3>Specification<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
 <p>Comment nodes for comments present in myst but ingnored upon render</p>
-<ul class="simple">
-<li><p><strong>type*</strong>: <em>string</em> (“mystComment”) - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>value*</strong>: <em>string</em> - See <a class="reference internal" href="../myst.schema.html#literal"><span class="std std-ref">Literal</span></a></p></li>
-<li><p><strong>position</strong>: <em>object</em> (<a class="reference internal" href="../myst.schema.html#position"><span class="std std-ref">Position</span></a>) - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>data</strong>: <em>object</em> - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
-</ul>
+<p><strong>type</strong>: <em>string</em>, (“mystComment”)
+: See also <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>value</strong>: <em>string</em>
+: See also <a class="reference internal" href="../myst.schema.html#literal"><span class="std std-ref">Literal</span></a></p>
+<p><strong>position</strong>: <em>object</em>, <em>optional</em>, (<a class="reference internal" href="../myst.schema.html#position"><span class="std std-ref">Position</span></a>)
+: See also <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>data</strong>: <em>object</em>, <em>optional</em>
+: See also <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p>
 </section>
 <section id="id2">
 <h3>Example<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="324a1915-d072-4892-841d-13b74c7c948b" name="71e35449-e820-4aa1-902b-773b5a7443ce" type="radio">
-</input><label class="sd-tab-label" data-sync-id="myst" for="324a1915-d072-4892-841d-13b74c7c948b">
+<input checked="checked" id="1ed661c7-79a5-44e2-b93e-70d2e3a1dc95" name="d21ab26b-880d-41f0-a59d-c10058b7769b" type="radio">
+</input><label class="sd-tab-label" data-sync-id="myst" for="1ed661c7-79a5-44e2-b93e-70d2e3a1dc95">
 Markup</label><div class="sd-tab-content docutils">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Something</span>
 <span class="o">%</span> <span class="n">A</span> <span class="n">comment</span>
@@ -558,8 +562,8 @@ Markup</label><div class="sd-tab-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="fc22511e-7c42-4168-99e4-ea66dc6a51ae" name="71e35449-e820-4aa1-902b-773b5a7443ce" type="radio">
-</input><label class="sd-tab-label" data-sync-id="ast" for="fc22511e-7c42-4168-99e4-ea66dc6a51ae">
+<input id="0aedd7f3-f1b2-4567-8de8-6edf100f318e" name="d21ab26b-880d-41f0-a59d-c10058b7769b" type="radio">
+</input><label class="sd-tab-label" data-sync-id="ast" for="0aedd7f3-f1b2-4567-8de8-6edf100f318e">
 AST</label><div class="sd-tab-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">root</span><span class="w"></span>
 <span class="nt">children</span><span class="p">:</span><span class="w"></span>
@@ -576,8 +580,8 @@ AST</label><div class="sd-tab-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="4f435db0-33c9-4b85-b90d-336555fb2dfa" name="71e35449-e820-4aa1-902b-773b5a7443ce" type="radio">
-</input><label class="sd-tab-label" data-sync-id="render" for="4f435db0-33c9-4b85-b90d-336555fb2dfa">
+<input id="3b211a27-c57a-43cf-9661-a07b0efd918f" name="d21ab26b-880d-41f0-a59d-c10058b7769b" type="radio">
+</input><label class="sd-tab-label" data-sync-id="render" for="3b211a27-c57a-43cf-9661-a07b0efd918f">
 Render</label><div class="sd-tab-content docutils">
 <p>Something</p>
 <p>Something else</p>
@@ -629,7 +633,7 @@ Render</label><div class="sd-tab-content docutils">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Footnotes</p>
+            <p class="prev-next-title">Footnote Definition Node Specification</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="../myst.schema.html" title="next page">

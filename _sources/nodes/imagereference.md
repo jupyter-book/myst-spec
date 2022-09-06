@@ -1,9 +1,23 @@
 Image through association
 
-- __type*__: _string_ ("imageReference") - See {ref}`node`
-- __referenceType*__: _string_ ("shortcut" | "collapsed" | "full") - See {ref}`reference`
-- __identifier*__: _string_ - See {ref}`optionalassociation`
-- __label__: _string_ - See {ref}`optionalassociation`
-- __alt__: _string_ - See {ref}`alternative`
-- __position__: _object_ ({ref}`position`) - See {ref}`node`
-- __data__: _object_ - See {ref}`node`
+__type__: _string_, ("imageReference")
+: See also {ref}`node`
+
+__referenceType__: _string_, ("shortcut" | "collapsed" | "full")
+: See also {ref}`reference`
+
+__identifier__: _string_
+: See also {ref}`optionalassociation`
+
+__label__: _string_, _optional_
+: See also {ref}`optionalassociation`
+
+__alt__: _string_, _optional_
+: See also {ref}`alternative`
+
+__position__: _object_, _optional_, ({ref}`position`)
+: See also {ref}`node`
+
+__data__: _object_, _optional_
+: See also {ref}`node`
+

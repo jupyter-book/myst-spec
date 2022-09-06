@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Footnotes</title>
+    <title>Footnote Definition Node Specification</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -53,7 +53,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Blocks &amp; Comments" href="blocks.html" />
-    <link rel="prev" title="References &amp; Links" href="references.html" />
+    <link rel="prev" title="Directive Targets and Cross References" href="references.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -144,12 +144,12 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="references.html">
-   References &amp; Links
+   Directive Targets and Cross References
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Footnotes
+   Footnote Definition Node Specification
   </a>
  </li>
  <li class="toctree-l1">
@@ -356,17 +356,17 @@ title="Print to PDF"
     </div>
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#footnote-definition-node-specification">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
    Footnote Definition Node Specification
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
+ <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#footnote-reference-node-specification">
    Footnote Reference Node Specification
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
+ <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#footnote-node-example">
    Footnote Node Example
   </a>
@@ -380,7 +380,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Footnotes</h1>
+                <h1>Footnote Definition Node Specification</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -390,17 +390,17 @@ title="Print to PDF"
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#footnote-definition-node-specification">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
    Footnote Definition Node Specification
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
+ <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#footnote-reference-node-specification">
    Footnote Reference Node Specification
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
+ <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#footnote-node-example">
    Footnote Node Example
   </a>
@@ -415,36 +415,42 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="footnotes">
-<h1>Footnotes<a class="headerlink" href="#footnotes" title="Permalink to this headline">#</a></h1>
+  <p>Footnotes use the standard Markdown syntax, including a numbered reference to the footnote in-line.</p>
 <section id="footnote-definition-node-specification">
-<h2>Footnote Definition Node Specification<a class="headerlink" href="#footnote-definition-node-specification" title="Permalink to this headline">#</a></h2>
+<h1>Footnote Definition Node Specification<a class="headerlink" href="#footnote-definition-node-specification" title="Permalink to this headline">#</a></h1>
 <p>Rich footnote content associated with footnote reference</p>
-<ul class="simple">
-<li><p><strong>type*</strong>: <em>string</em> (“footnoteDefinition”) - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>children*</strong>: <em>array</em> (<a class="reference internal" href="../myst.schema.html#flowcontent"><span class="std std-ref">FlowContent</span></a>) - See <a class="reference internal" href="../myst.schema.html#parent"><span class="std std-ref">Parent</span></a></p></li>
-<li><p><strong>identifier*</strong>: <em>string</em> - See <a class="reference internal" href="../myst.schema.html#optionalassociation"><span class="std std-ref">OptionalAssociation</span></a></p></li>
-<li><p><strong>label</strong>: <em>string</em> - See <a class="reference internal" href="../myst.schema.html#optionalassociation"><span class="std std-ref">OptionalAssociation</span></a></p></li>
-<li><p><strong>position</strong>: <em>object</em> (<a class="reference internal" href="../myst.schema.html#position"><span class="std std-ref">Position</span></a>) - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>data</strong>: <em>object</em> - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
-</ul>
+<p><strong>type</strong>: <em>string</em>, (“footnoteDefinition”)
+: See also <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>children</strong>: <em>array</em>, (<a class="reference internal" href="../myst.schema.html#flowcontent"><span class="std std-ref">FlowContent</span></a>)
+: See also <a class="reference internal" href="../myst.schema.html#parent"><span class="std std-ref">Parent</span></a></p>
+<p><strong>identifier</strong>: <em>string</em>
+: See also <a class="reference internal" href="../myst.schema.html#optionalassociation"><span class="std std-ref">OptionalAssociation</span></a></p>
+<p><strong>label</strong>: <em>string</em>, <em>optional</em>
+: See also <a class="reference internal" href="../myst.schema.html#optionalassociation"><span class="std std-ref">OptionalAssociation</span></a></p>
+<p><strong>position</strong>: <em>object</em>, <em>optional</em>, (<a class="reference internal" href="../myst.schema.html#position"><span class="std std-ref">Position</span></a>)
+: See also <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>data</strong>: <em>object</em>, <em>optional</em>
+: See also <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p>
 </section>
 <section id="footnote-reference-node-specification">
-<h2>Footnote Reference Node Specification<a class="headerlink" href="#footnote-reference-node-specification" title="Permalink to this headline">#</a></h2>
+<h1>Footnote Reference Node Specification<a class="headerlink" href="#footnote-reference-node-specification" title="Permalink to this headline">#</a></h1>
 <p>Inline reference to footnote</p>
-<ul class="simple">
-<li><p><strong>type*</strong>: <em>string</em> (“footnoteReference”) - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>identifier*</strong>: <em>string</em> - See <a class="reference internal" href="../myst.schema.html#optionalassociation"><span class="std std-ref">OptionalAssociation</span></a></p></li>
-<li><p><strong>label</strong>: <em>string</em> - See <a class="reference internal" href="../myst.schema.html#optionalassociation"><span class="std std-ref">OptionalAssociation</span></a></p></li>
-<li><p><strong>position</strong>: <em>object</em> (<a class="reference internal" href="../myst.schema.html#position"><span class="std std-ref">Position</span></a>) - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>data</strong>: <em>object</em> - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
-</ul>
+<p><strong>type</strong>: <em>string</em>, (“footnoteReference”)
+: See also <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>identifier</strong>: <em>string</em>
+: See also <a class="reference internal" href="../myst.schema.html#optionalassociation"><span class="std std-ref">OptionalAssociation</span></a></p>
+<p><strong>label</strong>: <em>string</em>, <em>optional</em>
+: See also <a class="reference internal" href="../myst.schema.html#optionalassociation"><span class="std std-ref">OptionalAssociation</span></a></p>
+<p><strong>position</strong>: <em>object</em>, <em>optional</em>, (<a class="reference internal" href="../myst.schema.html#position"><span class="std std-ref">Position</span></a>)
+: See also <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>data</strong>: <em>object</em>, <em>optional</em>
+: See also <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p>
 </section>
 <section id="footnote-node-example">
-<h2>Footnote Node Example<a class="headerlink" href="#footnote-node-example" title="Permalink to this headline">#</a></h2>
+<h1>Footnote Node Example<a class="headerlink" href="#footnote-node-example" title="Permalink to this headline">#</a></h1>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="c8c595c4-473f-4fd1-960b-6711a660a518" name="1f462fbe-9510-4220-813a-53d5d2f53518" type="radio">
-</input><label class="sd-tab-label" data-sync-id="myst" for="c8c595c4-473f-4fd1-960b-6711a660a518">
+<input checked="checked" id="8c1fbb23-45e8-4cb3-ac0b-e1e0bb8cab84" name="5f261ae2-ffc3-4f61-bed2-0f7441a8be12" type="radio">
+</input><label class="sd-tab-label" data-sync-id="myst" for="8c1fbb23-45e8-4cb3-ac0b-e1e0bb8cab84">
 Markup</label><div class="sd-tab-content docutils">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Here&#39;s a simple footnote,[^1] and here&#39;s a longer one.[^bignote]
 
@@ -460,8 +466,8 @@ Markup</label><div class="sd-tab-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="d6e6be83-7fd6-4055-a2dd-b54db0a7e75a" name="1f462fbe-9510-4220-813a-53d5d2f53518" type="radio">
-</input><label class="sd-tab-label" data-sync-id="ast" for="d6e6be83-7fd6-4055-a2dd-b54db0a7e75a">
+<input id="1588e92f-0c83-4ad8-80d2-ac0fc78e9f9d" name="5f261ae2-ffc3-4f61-bed2-0f7441a8be12" type="radio">
+</input><label class="sd-tab-label" data-sync-id="ast" for="1588e92f-0c83-4ad8-80d2-ac0fc78e9f9d">
 AST</label><div class="sd-tab-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">root</span><span class="w"></span>
 <span class="nt">children</span><span class="p">:</span><span class="w"></span>
@@ -508,8 +514,8 @@ AST</label><div class="sd-tab-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="58282ed0-59a2-41e8-ac9e-2afc80a2adf2" name="1f462fbe-9510-4220-813a-53d5d2f53518" type="radio">
-</input><label class="sd-tab-label" data-sync-id="render" for="58282ed0-59a2-41e8-ac9e-2afc80a2adf2">
+<input id="99e16522-f343-4130-a0ef-2112230d2e06" name="5f261ae2-ffc3-4f61-bed2-0f7441a8be12" type="radio">
+</input><label class="sd-tab-label" data-sync-id="render" for="99e16522-f343-4130-a0ef-2112230d2e06">
 Render</label><div class="sd-tab-content docutils">
 <p>Here’s a simple footnote,<a class="footnote-reference brackets" href="#id3" id="id1">1</a> and here’s a longer one.<a class="footnote-reference brackets" href="#bignote" id="id2">2</a></p>
 </div>
@@ -526,7 +532,6 @@ Render</label><div class="sd-tab-content docutils">
 <p>Add as many paragraphs as you like.</p>
 </dd>
 </dl>
-</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -560,7 +565,7 @@ Render</label><div class="sd-tab-content docutils">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">References &amp; Links</p>
+            <p class="prev-next-title">Directive Targets and Cross References</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="blocks.html" title="next page">

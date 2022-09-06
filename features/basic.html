@@ -142,12 +142,12 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="references.html">
-   References &amp; Links
+   Directive Targets and Cross References
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="footnotes.html">
-   Footnotes
+   Footnote Definition Node Specification
   </a>
  </li>
  <li class="toctree-l1">
@@ -418,22 +418,24 @@ title="Print to PDF"
 <section id="subscript">
 <h2>Subscript<a class="headerlink" href="#subscript" title="Permalink to this headline">#</a></h2>
 <p>Subscript content, using role {subscript}</p>
-<ul class="simple">
-<li><p><strong>type*</strong>: <em>string</em> (“subscript”) - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>children*</strong>: <em>array</em> (<a class="reference internal" href="../myst.schema.html#phrasingcontent"><span class="std std-ref">PhrasingContent</span></a>) - See <a class="reference internal" href="../myst.schema.html#parent"><span class="std std-ref">Parent</span></a></p></li>
-<li><p><strong>position</strong>: <em>object</em> (<a class="reference internal" href="../myst.schema.html#position"><span class="std std-ref">Position</span></a>) - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>data</strong>: <em>object</em> - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
-</ul>
+<p><strong>type</strong>: <em>string</em>, (“subscript”)
+: See also <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>children</strong>: <em>array</em>, (<a class="reference internal" href="../myst.schema.html#phrasingcontent"><span class="std std-ref">PhrasingContent</span></a>)
+: See also <a class="reference internal" href="../myst.schema.html#parent"><span class="std std-ref">Parent</span></a></p>
+<p><strong>position</strong>: <em>object</em>, <em>optional</em>, (<a class="reference internal" href="../myst.schema.html#position"><span class="std std-ref">Position</span></a>)
+: See also <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>data</strong>: <em>object</em>, <em>optional</em>
+: See also <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="c1346524-abd1-4c4c-9049-690ea2192278" name="e17e06b4-3e41-4903-bc60-a29ead52588e" type="radio">
-</input><label class="sd-tab-label" data-sync-id="myst" for="c1346524-abd1-4c4c-9049-690ea2192278">
+<input checked="checked" id="5a1b3cf2-0fbe-4b60-b6fe-07fad53921d9" name="8601f653-9f26-4873-8e50-f2c7149500ba" type="radio">
+</input><label class="sd-tab-label" data-sync-id="myst" for="5a1b3cf2-0fbe-4b60-b6fe-07fad53921d9">
 Markup</label><div class="sd-tab-content docutils">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>H{subscript}`2`O
 </pre></div>
 </div>
 </div>
-<input id="a68fbb4e-d2f8-4c3d-b11b-c36a41fc2f61" name="e17e06b4-3e41-4903-bc60-a29ead52588e" type="radio">
-</input><label class="sd-tab-label" data-sync-id="ast" for="a68fbb4e-d2f8-4c3d-b11b-c36a41fc2f61">
+<input id="ed8f5785-ed55-440e-a798-23f1e15206ec" name="8601f653-9f26-4873-8e50-f2c7149500ba" type="radio">
+</input><label class="sd-tab-label" data-sync-id="ast" for="ed8f5785-ed55-440e-a798-23f1e15206ec">
 AST</label><div class="sd-tab-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">root</span><span class="w"></span>
 <span class="nt">children</span><span class="p">:</span><span class="w"></span>
@@ -454,8 +456,8 @@ AST</label><div class="sd-tab-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="b86fec0e-e65c-4426-a049-de36f4819abd" name="e17e06b4-3e41-4903-bc60-a29ead52588e" type="radio">
-</input><label class="sd-tab-label" data-sync-id="render" for="b86fec0e-e65c-4426-a049-de36f4819abd">
+<input id="a9313b75-1570-4eb7-895b-35b240126dbb" name="8601f653-9f26-4873-8e50-f2c7149500ba" type="radio">
+</input><label class="sd-tab-label" data-sync-id="render" for="a9313b75-1570-4eb7-895b-35b240126dbb">
 Render</label><div class="sd-tab-content docutils">
 <p>H<sub>2</sub>O</p>
 </div>
@@ -464,22 +466,24 @@ Render</label><div class="sd-tab-content docutils">
 <section id="superscript">
 <h2>Superscript<a class="headerlink" href="#superscript" title="Permalink to this headline">#</a></h2>
 <p>Superscript content, using role {superscript}</p>
-<ul class="simple">
-<li><p><strong>type*</strong>: <em>string</em> (“superscript”) - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>children*</strong>: <em>array</em> (<a class="reference internal" href="../myst.schema.html#phrasingcontent"><span class="std std-ref">PhrasingContent</span></a>) - See <a class="reference internal" href="../myst.schema.html#parent"><span class="std std-ref">Parent</span></a></p></li>
-<li><p><strong>position</strong>: <em>object</em> (<a class="reference internal" href="../myst.schema.html#position"><span class="std std-ref">Position</span></a>) - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>data</strong>: <em>object</em> - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
-</ul>
+<p><strong>type</strong>: <em>string</em>, (“superscript”)
+: See also <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>children</strong>: <em>array</em>, (<a class="reference internal" href="../myst.schema.html#phrasingcontent"><span class="std std-ref">PhrasingContent</span></a>)
+: See also <a class="reference internal" href="../myst.schema.html#parent"><span class="std std-ref">Parent</span></a></p>
+<p><strong>position</strong>: <em>object</em>, <em>optional</em>, (<a class="reference internal" href="../myst.schema.html#position"><span class="std std-ref">Position</span></a>)
+: See also <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>data</strong>: <em>object</em>, <em>optional</em>
+: See also <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="8b9cfeab-c423-4239-b8ff-add36e0cd5f7" name="2961f02a-63e1-442f-b390-bd9027c95703" type="radio">
-</input><label class="sd-tab-label" data-sync-id="myst" for="8b9cfeab-c423-4239-b8ff-add36e0cd5f7">
+<input checked="checked" id="d1535c84-f7ed-4523-8850-b8dc76280300" name="7c288807-4600-4c3f-848c-5c64c1afdfd3" type="radio">
+</input><label class="sd-tab-label" data-sync-id="myst" for="d1535c84-f7ed-4523-8850-b8dc76280300">
 Markup</label><div class="sd-tab-content docutils">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>4{superscript}`th` of July
 </pre></div>
 </div>
 </div>
-<input id="bd86ec51-21a8-4d12-acd4-7a1756a0d560" name="2961f02a-63e1-442f-b390-bd9027c95703" type="radio">
-</input><label class="sd-tab-label" data-sync-id="ast" for="bd86ec51-21a8-4d12-acd4-7a1756a0d560">
+<input id="aebe9414-5282-4b23-8bbf-91124d6e0ac7" name="7c288807-4600-4c3f-848c-5c64c1afdfd3" type="radio">
+</input><label class="sd-tab-label" data-sync-id="ast" for="aebe9414-5282-4b23-8bbf-91124d6e0ac7">
 AST</label><div class="sd-tab-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">root</span><span class="w"></span>
 <span class="nt">children</span><span class="p">:</span><span class="w"></span>
@@ -500,8 +504,8 @@ AST</label><div class="sd-tab-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="63a99354-4b8b-4161-84ea-e389c231779d" name="2961f02a-63e1-442f-b390-bd9027c95703" type="radio">
-</input><label class="sd-tab-label" data-sync-id="render" for="63a99354-4b8b-4161-84ea-e389c231779d">
+<input id="69d1b636-e47e-4c87-8410-216d6c40c9d8" name="7c288807-4600-4c3f-848c-5c64c1afdfd3" type="radio">
+</input><label class="sd-tab-label" data-sync-id="render" for="69d1b636-e47e-4c87-8410-216d6c40c9d8">
 Render</label><div class="sd-tab-content docutils">
 <p>4<sup>th</sup> of July</p>
 </div>
@@ -510,23 +514,27 @@ Render</label><div class="sd-tab-content docutils">
 <section id="abbreviations">
 <h2>Abbreviations<a class="headerlink" href="#abbreviations" title="Permalink to this headline">#</a></h2>
 <p>Abbreviation node described by title</p>
-<ul class="simple">
-<li><p><strong>type*</strong>: <em>string</em> (“abbreviation”) - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>children*</strong>: <em>array</em> (<a class="reference internal" href="../myst.schema.html#staticphrasingcontent"><span class="std std-ref">StaticPhrasingContent</span></a>) - abbreviated value - See <a class="reference internal" href="../myst.schema.html#parent"><span class="std std-ref">Parent</span></a></p></li>
-<li><p><strong>title</strong>: <em>string</em> - advisory information for the abbreviation</p></li>
-<li><p><strong>position</strong>: <em>object</em> (<a class="reference internal" href="../myst.schema.html#position"><span class="std std-ref">Position</span></a>) - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>data</strong>: <em>object</em> - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
-</ul>
+<p><strong>type</strong>: <em>string</em>, (“abbreviation”)
+: See also <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>children</strong>: <em>array</em>, (<a class="reference internal" href="../myst.schema.html#staticphrasingcontent"><span class="std std-ref">StaticPhrasingContent</span></a>)
+: abbreviated value
+: See also <a class="reference internal" href="../myst.schema.html#parent"><span class="std std-ref">Parent</span></a></p>
+<p><strong>title</strong>: <em>string</em>, <em>optional</em>
+: advisory information for the abbreviation</p>
+<p><strong>position</strong>: <em>object</em>, <em>optional</em>, (<a class="reference internal" href="../myst.schema.html#position"><span class="std std-ref">Position</span></a>)
+: See also <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>data</strong>: <em>object</em>, <em>optional</em>
+: See also <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="8aa5b22b-d86c-4b8e-a350-299829f80c88" name="8d366c75-870e-4edb-8540-e2528e2a9987" type="radio">
-</input><label class="sd-tab-label" data-sync-id="myst" for="8aa5b22b-d86c-4b8e-a350-299829f80c88">
+<input checked="checked" id="ef69c232-e438-4345-a567-5e2a8f723474" name="9559e12a-02bf-4aca-83dc-0bd38eeb9a42" type="radio">
+</input><label class="sd-tab-label" data-sync-id="myst" for="ef69c232-e438-4345-a567-5e2a8f723474">
 Markup</label><div class="sd-tab-content docutils">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Well {abbr}`CSS (Cascading Style Sheets)` is cool?
 </pre></div>
 </div>
 </div>
-<input id="1632899b-7931-4ea2-886c-2cc55e7a9f87" name="8d366c75-870e-4edb-8540-e2528e2a9987" type="radio">
-</input><label class="sd-tab-label" data-sync-id="ast" for="1632899b-7931-4ea2-886c-2cc55e7a9f87">
+<input id="7041f47c-432f-46dd-b4d0-f839b760e6b3" name="9559e12a-02bf-4aca-83dc-0bd38eeb9a42" type="radio">
+</input><label class="sd-tab-label" data-sync-id="ast" for="7041f47c-432f-46dd-b4d0-f839b760e6b3">
 AST</label><div class="sd-tab-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">root</span><span class="w"></span>
 <span class="nt">children</span><span class="p">:</span><span class="w"></span>
@@ -548,8 +556,8 @@ AST</label><div class="sd-tab-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="af474298-6fcd-403e-aba3-516773b3458d" name="8d366c75-870e-4edb-8540-e2528e2a9987" type="radio">
-</input><label class="sd-tab-label" data-sync-id="render" for="af474298-6fcd-403e-aba3-516773b3458d">
+<input id="a98c518c-9e3b-4f89-925c-17ba5ec4fe87" name="9559e12a-02bf-4aca-83dc-0bd38eeb9a42" type="radio">
+</input><label class="sd-tab-label" data-sync-id="render" for="a98c518c-9e3b-4f89-925c-17ba5ec4fe87">
 Render</label><div class="sd-tab-content docutils">
 <p>Well <abbr title="Cascading Style Sheets">CSS</abbr> is cool?</p>
 </div>

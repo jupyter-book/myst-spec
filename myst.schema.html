@@ -143,12 +143,12 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="features/references.html">
-   References &amp; Links
+   Directive Targets and Cross References
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="features/footnotes.html">
-   Footnotes
+   Footnote Definition Node Specification
   </a>
  </li>
  <li class="toctree-l1">
@@ -1015,610 +1015,785 @@ title="Print to PDF"
 <section id="blockbreak">
 <span id="id5"></span><h2>BlockBreak<a class="headerlink" href="#blockbreak" title="Permalink to this headline">#</a></h2>
 <p>Top-level break in the myst document, breaking it into Blocks</p>
-<ul class="simple">
-<li><p><strong>type*</strong>: <em>string</em> (“blockBreak”) - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>meta</strong>: <em>string</em> - block break metadata; conventionally, a stringified JSON dictionary but may be any arbitrary string</p></li>
-<li><p><strong>position</strong>: <em>object</em> (<a class="reference internal" href="#position"><span class="std std-ref">Position</span></a>) - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>data</strong>: <em>object</em> - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-</ul>
+<p><strong>type</strong>: <em>string</em>, (“blockBreak”)
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>meta</strong>: <em>string</em>, <em>optional</em>
+: Block metadata. Conventionally this is a stringified JSON dictionary but it may be any arbitrary string.</p>
+<p><strong>position</strong>: <em>object</em>, <em>optional</em>, (<a class="reference internal" href="#position"><span class="std std-ref">Position</span></a>)
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>data</strong>: <em>object</em>, <em>optional</em>
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
 </section>
 <section id="block">
 <span id="id6"></span><h2>Block<a class="headerlink" href="#block" title="Permalink to this headline">#</a></h2>
 <p>Top-level content blocks or cells the myst document, delimited by BlockBreaks</p>
-<ul class="simple">
-<li><p><strong>type*</strong>: <em>string</em> (“block”) - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>meta</strong>: <em>string</em> - block metadata from preceding break; conventionally, a stringified JSON dictionary but may be any arbitrary string</p></li>
-<li><p><strong>children</strong>: <em>array</em> (<a class="reference internal" href="#flowcontent"><span class="std std-ref">FlowContent</span></a> | <a class="reference internal" href="#listcontent"><span class="std std-ref">ListContent</span></a> | <a class="reference internal" href="#phrasingcontent"><span class="std std-ref">PhrasingContent</span></a>) - Top-level children of myst document</p></li>
-<li><p><strong>position</strong>: <em>object</em> (<a class="reference internal" href="#position"><span class="std std-ref">Position</span></a>) - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>data</strong>: <em>object</em> - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-</ul>
+<p><strong>type</strong>: <em>string</em>, (“block”)
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>meta</strong>: <em>string</em>, <em>optional</em>
+: block metadata from preceding break; conventionally, a stringified JSON dictionary but may be any arbitrary string</p>
+<p><strong>children</strong>: <em>array</em>, <em>optional</em>, (<a class="reference internal" href="#flowcontent"><span class="std std-ref">FlowContent</span></a> | <a class="reference internal" href="#listcontent"><span class="std std-ref">ListContent</span></a> | <a class="reference internal" href="#phrasingcontent"><span class="std std-ref">PhrasingContent</span></a>)
+: Top-level children of myst document</p>
+<p><strong>position</strong>: <em>object</em>, <em>optional</em>, (<a class="reference internal" href="#position"><span class="std std-ref">Position</span></a>)
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>data</strong>: <em>object</em>, <em>optional</em>
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
 </section>
 <section id="role">
 <span id="id7"></span><h2>Role<a class="headerlink" href="#role" title="Permalink to this headline">#</a></h2>
 <p>Custom in-line behavior</p>
-<ul class="simple">
-<li><p><strong>type*</strong>: <em>string</em> (“mystRole”) - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>name*</strong>: <em>string</em></p></li>
-<li><p><strong>value</strong>: <em>string</em> - content of the directive</p></li>
-<li><p><strong>children</strong>: <em>array</em> (<a class="reference internal" href="#phrasingcontent"><span class="std std-ref">PhrasingContent</span></a>) - parsed role content</p></li>
-<li><p><strong>position</strong>: <em>object</em> (<a class="reference internal" href="#position"><span class="std std-ref">Position</span></a>) - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>data</strong>: <em>object</em> - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-</ul>
+<p><strong>type</strong>: <em>string</em>, (“mystRole”)
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>name</strong>: <em>string</em>
+: No description for this property.</p>
+<p><strong>value</strong>: <em>string</em>, <em>optional</em>
+: content of the directive</p>
+<p><strong>children</strong>: <em>array</em>, <em>optional</em>, (<a class="reference internal" href="#phrasingcontent"><span class="std std-ref">PhrasingContent</span></a>)
+: parsed role content</p>
+<p><strong>position</strong>: <em>object</em>, <em>optional</em>, (<a class="reference internal" href="#position"><span class="std std-ref">Position</span></a>)
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>data</strong>: <em>object</em>, <em>optional</em>
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
 </section>
 <section id="directive">
 <span id="id8"></span><h2>Directive<a class="headerlink" href="#directive" title="Permalink to this headline">#</a></h2>
 <p>Content block with predefined behavior</p>
-<ul class="simple">
-<li><p><strong>type*</strong>: <em>string</em> (“mystDirective”) - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>name*</strong>: <em>string</em></p></li>
-<li><p><strong>args</strong>: <em>string</em></p></li>
-<li><p><strong>options</strong>: <em>object</em></p></li>
-<li><p><strong>value</strong>: <em>string</em> - body of the directive, excluding options</p></li>
-<li><p><strong>children</strong>: <em>array</em> (<a class="reference internal" href="#flowcontent"><span class="std std-ref">FlowContent</span></a> | <a class="reference internal" href="#phrasingcontent"><span class="std std-ref">PhrasingContent</span></a>) - parsed directive content</p></li>
-<li><p><strong>position</strong>: <em>object</em> (<a class="reference internal" href="#position"><span class="std std-ref">Position</span></a>) - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>data</strong>: <em>object</em> - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-</ul>
+<p><strong>type</strong>: <em>string</em>, (“mystDirective”)
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>name</strong>: <em>string</em>
+: No description for this property.</p>
+<p><strong>args</strong>: <em>string</em>, <em>optional</em>
+: No description for this property.</p>
+<p><strong>options</strong>: <em>object</em>, <em>optional</em>
+: No description for this property.</p>
+<p><strong>value</strong>: <em>string</em>, <em>optional</em>
+: body of the directive, excluding options</p>
+<p><strong>children</strong>: <em>array</em>, <em>optional</em>, (<a class="reference internal" href="#flowcontent"><span class="std std-ref">FlowContent</span></a> | <a class="reference internal" href="#phrasingcontent"><span class="std std-ref">PhrasingContent</span></a>)
+: parsed directive content</p>
+<p><strong>position</strong>: <em>object</em>, <em>optional</em>, (<a class="reference internal" href="#position"><span class="std std-ref">Position</span></a>)
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>data</strong>: <em>object</em>, <em>optional</em>
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
 </section>
 <section id="target">
 <span id="id9"></span><h2>Target<a class="headerlink" href="#target" title="Permalink to this headline">#</a></h2>
 <p>Target node - provides identifier/label for the following node</p>
-<ul class="simple">
-<li><p><strong>type*</strong>: <em>string</em> (“mystTarget”) - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>label</strong>: <em>string</em> - unresolved target label</p></li>
-<li><p><strong>position</strong>: <em>object</em> (<a class="reference internal" href="#position"><span class="std std-ref">Position</span></a>) - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>data</strong>: <em>object</em> - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-</ul>
+<p><strong>type</strong>: <em>string</em>, (“mystTarget”)
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>label</strong>: <em>string</em>, <em>optional</em>
+: unresolved target label</p>
+<p><strong>position</strong>: <em>object</em>, <em>optional</em>, (<a class="reference internal" href="#position"><span class="std std-ref">Position</span></a>)
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>data</strong>: <em>object</em>, <em>optional</em>
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
 </section>
 <section id="crossreference">
 <span id="id10"></span><h2>CrossReference<a class="headerlink" href="#crossreference" title="Permalink to this headline">#</a></h2>
 <p>In-line reference to an associated node</p>
-<ul class="simple">
-<li><p><strong>type*</strong>: <em>string</em> (“crossReference”) - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>kind</strong>: <em>string</em> (“eq” | “numref” | “ref”)</p></li>
-<li><p><strong>children</strong>: <em>array</em> (<a class="reference internal" href="#staticphrasingcontent"><span class="std std-ref">StaticPhrasingContent</span></a>)</p></li>
-<li><p><strong>identifier*</strong>: <em>string</em> - See <a class="reference internal" href="#optionalassociation"><span class="std std-ref">OptionalAssociation</span></a></p></li>
-<li><p><strong>label</strong>: <em>string</em> - See <a class="reference internal" href="#optionalassociation"><span class="std std-ref">OptionalAssociation</span></a></p></li>
-<li><p><strong>position</strong>: <em>object</em> (<a class="reference internal" href="#position"><span class="std std-ref">Position</span></a>) - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>data</strong>: <em>object</em> - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-</ul>
+<p><strong>type</strong>: <em>string</em>, (“crossReference”)
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>kind</strong>: <em>string</em>, <em>optional</em>, (“eq” | “numref” | “ref”)
+: Indicates if the references should be numbered.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">kind</span></code> was based on docutils and is subject to change as we improve the <code class="docutils literal notranslate"><span class="pre">crossReference</span></code> experience.</p>
+</div>
+<p><strong>children</strong>: <em>array</em>, <em>optional</em>, (<a class="reference internal" href="#staticphrasingcontent"><span class="std std-ref">StaticPhrasingContent</span></a>)
+: Children of the crossReference, can include text with “%s” or “{number}” and enumerated references will be filled in.</p>
+<p><strong>identifier</strong>: <em>string</em>
+: See also <a class="reference internal" href="#optionalassociation"><span class="std std-ref">OptionalAssociation</span></a></p>
+<p><strong>label</strong>: <em>string</em>, <em>optional</em>
+: See also <a class="reference internal" href="#optionalassociation"><span class="std std-ref">OptionalAssociation</span></a></p>
+<p><strong>position</strong>: <em>object</em>, <em>optional</em>, (<a class="reference internal" href="#position"><span class="std std-ref">Position</span></a>)
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>data</strong>: <em>object</em>, <em>optional</em>
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
 </section>
 <section id="abbreviation">
 <span id="id11"></span><h2>Abbreviation<a class="headerlink" href="#abbreviation" title="Permalink to this headline">#</a></h2>
 <p>Abbreviation node described by title</p>
-<ul class="simple">
-<li><p><strong>type*</strong>: <em>string</em> (“abbreviation”) - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>children*</strong>: <em>array</em> (<a class="reference internal" href="#staticphrasingcontent"><span class="std std-ref">StaticPhrasingContent</span></a>) - abbreviated value - See <a class="reference internal" href="#parent"><span class="std std-ref">Parent</span></a></p></li>
-<li><p><strong>title</strong>: <em>string</em> - advisory information for the abbreviation</p></li>
-<li><p><strong>position</strong>: <em>object</em> (<a class="reference internal" href="#position"><span class="std std-ref">Position</span></a>) - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>data</strong>: <em>object</em> - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-</ul>
+<p><strong>type</strong>: <em>string</em>, (“abbreviation”)
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>children</strong>: <em>array</em>, (<a class="reference internal" href="#staticphrasingcontent"><span class="std std-ref">StaticPhrasingContent</span></a>)
+: abbreviated value
+: See also <a class="reference internal" href="#parent"><span class="std std-ref">Parent</span></a></p>
+<p><strong>title</strong>: <em>string</em>, <em>optional</em>
+: advisory information for the abbreviation</p>
+<p><strong>position</strong>: <em>object</em>, <em>optional</em>, (<a class="reference internal" href="#position"><span class="std std-ref">Position</span></a>)
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>data</strong>: <em>object</em>, <em>optional</em>
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
 </section>
 <section id="admonition">
 <span id="id12"></span><h2>Admonition<a class="headerlink" href="#admonition" title="Permalink to this headline">#</a></h2>
 <p>Admonition node for drawing attention to text, separate from the neighboring content</p>
-<ul class="simple">
-<li><p><strong>type*</strong>: <em>string</em> (“admonition”) - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>kind</strong>: <em>string</em> (“attention” | “caution” | “danger” | “error” | “hint” | “important” | “note” | “seealso” | “tip” | “warning”) - kind of admonition, to determine styling</p></li>
-<li><p><strong>class</strong>: <em>string</em> - admonition class info to override kind</p></li>
-<li><p><strong>children</strong>: <em>array</em> (<a class="reference internal" href="#admonitiontitle"><span class="std std-ref">AdmonitionTitle</span></a> | <a class="reference internal" href="#flowcontent"><span class="std std-ref">FlowContent</span></a>)</p></li>
-<li><p><strong>position</strong>: <em>object</em> (<a class="reference internal" href="#position"><span class="std std-ref">Position</span></a>) - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>data</strong>: <em>object</em> - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-</ul>
+<p><strong>type</strong>: <em>string</em>, (“admonition”)
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>kind</strong>: <em>string</em>, <em>optional</em>, (“attention” | “caution” | “danger” | “error” | “hint” | “important” | “note” | “seealso” | “tip” | “warning”)
+: kind of admonition, to determine styling</p>
+<p><strong>class</strong>: <em>string</em>, <em>optional</em>
+: admonition class info to override kind</p>
+<p><strong>children</strong>: <em>array</em>, <em>optional</em>, (<a class="reference internal" href="#admonitiontitle"><span class="std std-ref">AdmonitionTitle</span></a> | <a class="reference internal" href="#flowcontent"><span class="std std-ref">FlowContent</span></a>)
+: An optional <code class="docutils literal notranslate"><span class="pre">admonitionTitle</span></code> followed by the admonitions content.</p>
+<p><strong>position</strong>: <em>object</em>, <em>optional</em>, (<a class="reference internal" href="#position"><span class="std std-ref">Position</span></a>)
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>data</strong>: <em>object</em>, <em>optional</em>
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
 </section>
 <section id="admonitiontitle">
 <span id="id13"></span><h2>AdmonitionTitle<a class="headerlink" href="#admonitiontitle" title="Permalink to this headline">#</a></h2>
 <p>Custom title for admonition, replaces kind as title</p>
-<ul class="simple">
-<li><p><strong>type*</strong>: <em>string</em> (“admonitionTitle”) - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>children*</strong>: <em>array</em> (<a class="reference internal" href="#phrasingcontent"><span class="std std-ref">PhrasingContent</span></a>) - See <a class="reference internal" href="#parent"><span class="std std-ref">Parent</span></a></p></li>
-<li><p><strong>position</strong>: <em>object</em> (<a class="reference internal" href="#position"><span class="std std-ref">Position</span></a>) - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>data</strong>: <em>object</em> - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-</ul>
+<p><strong>type</strong>: <em>string</em>, (“admonitionTitle”)
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>children</strong>: <em>array</em>, (<a class="reference internal" href="#phrasingcontent"><span class="std std-ref">PhrasingContent</span></a>)
+: See also <a class="reference internal" href="#parent"><span class="std std-ref">Parent</span></a></p>
+<p><strong>position</strong>: <em>object</em>, <em>optional</em>, (<a class="reference internal" href="#position"><span class="std std-ref">Position</span></a>)
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>data</strong>: <em>object</em>, <em>optional</em>
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
 </section>
 <section id="container">
 <span id="id14"></span><h2>Container<a class="headerlink" href="#container" title="Permalink to this headline">#</a></h2>
 <p>Top-level container node to provide association and numbering to child content</p>
-<ul class="simple">
-<li><p><strong>type*</strong>: <em>string</em> (“container”) - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>kind*</strong>: <em>string</em> (“figure” | “table”) - kind of container contents</p></li>
-<li><p><strong>class</strong>: <em>string</em> - any custom class information</p></li>
-<li><p><strong>enumerated</strong>: <em>boolean</em> - count this container for numbering based on kind, e.g. Figure 1a</p></li>
-<li><p><strong>enumerator</strong>: <em>string</em> - resolved enumerated value for this container</p></li>
-<li><p><strong>children*</strong>: <em>array</em> (<a class="reference internal" href="#caption"><span class="std std-ref">Caption</span></a> | <a class="reference internal" href="#legend"><span class="std std-ref">Legend</span></a> | <a class="reference internal" href="#image"><span class="std std-ref">Image</span></a> | <a class="reference internal" href="#table"><span class="std std-ref">Table</span></a>) - See <a class="reference internal" href="#parent"><span class="std std-ref">Parent</span></a></p></li>
-<li><p><strong>identifier</strong>: <em>string</em> - See <a class="reference internal" href="#optionalassociation"><span class="std std-ref">OptionalAssociation</span></a></p></li>
-<li><p><strong>label</strong>: <em>string</em> - See <a class="reference internal" href="#optionalassociation"><span class="std std-ref">OptionalAssociation</span></a></p></li>
-<li><p><strong>position</strong>: <em>object</em> (<a class="reference internal" href="#position"><span class="std std-ref">Position</span></a>) - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>data</strong>: <em>object</em> - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-</ul>
+<p><strong>type</strong>: <em>string</em>, (“container”)
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>kind</strong>: <em>string</em>, (“figure” | “table”)
+: kind of container contents</p>
+<p><strong>class</strong>: <em>string</em>, <em>optional</em>
+: any custom class information</p>
+<p><strong>enumerated</strong>: <em>boolean</em>, <em>optional</em>
+: count this container for numbering based on kind, e.g. Figure 1a</p>
+<p><strong>enumerator</strong>: <em>string</em>, <em>optional</em>
+: resolved enumerated value for this container</p>
+<p><strong>children</strong>: <em>array</em>, (<a class="reference internal" href="#caption"><span class="std std-ref">Caption</span></a> | <a class="reference internal" href="#legend"><span class="std std-ref">Legend</span></a> | <a class="reference internal" href="#image"><span class="std std-ref">Image</span></a> | <a class="reference internal" href="#table"><span class="std std-ref">Table</span></a>)
+: See also <a class="reference internal" href="#parent"><span class="std std-ref">Parent</span></a></p>
+<p><strong>identifier</strong>: <em>string</em>, <em>optional</em>
+: See also <a class="reference internal" href="#optionalassociation"><span class="std std-ref">OptionalAssociation</span></a></p>
+<p><strong>label</strong>: <em>string</em>, <em>optional</em>
+: See also <a class="reference internal" href="#optionalassociation"><span class="std std-ref">OptionalAssociation</span></a></p>
+<p><strong>position</strong>: <em>object</em>, <em>optional</em>, (<a class="reference internal" href="#position"><span class="std std-ref">Position</span></a>)
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>data</strong>: <em>object</em>, <em>optional</em>
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
 </section>
 <section id="caption">
 <span id="id15"></span><h2>Caption<a class="headerlink" href="#caption" title="Permalink to this headline">#</a></h2>
 <p>Caption for container content</p>
-<ul class="simple">
-<li><p><strong>type*</strong>: <em>string</em> (“caption”) - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>children*</strong>: <em>array</em> (<a class="reference internal" href="#flowcontent"><span class="std std-ref">FlowContent</span></a>) - See <a class="reference internal" href="#parent"><span class="std std-ref">Parent</span></a></p></li>
-<li><p><strong>position</strong>: <em>object</em> (<a class="reference internal" href="#position"><span class="std std-ref">Position</span></a>) - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>data</strong>: <em>object</em> - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-</ul>
+<p><strong>type</strong>: <em>string</em>, (“caption”)
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>children</strong>: <em>array</em>, (<a class="reference internal" href="#flowcontent"><span class="std std-ref">FlowContent</span></a>)
+: See also <a class="reference internal" href="#parent"><span class="std std-ref">Parent</span></a></p>
+<p><strong>position</strong>: <em>object</em>, <em>optional</em>, (<a class="reference internal" href="#position"><span class="std std-ref">Position</span></a>)
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>data</strong>: <em>object</em>, <em>optional</em>
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
 </section>
 <section id="legend">
 <span id="id16"></span><h2>Legend<a class="headerlink" href="#legend" title="Permalink to this headline">#</a></h2>
 <p>Legend for container content</p>
-<ul class="simple">
-<li><p><strong>type*</strong>: <em>string</em> (“legend”) - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>children*</strong>: <em>array</em> (<a class="reference internal" href="#flowcontent"><span class="std std-ref">FlowContent</span></a>) - See <a class="reference internal" href="#parent"><span class="std std-ref">Parent</span></a></p></li>
-<li><p><strong>position</strong>: <em>object</em> (<a class="reference internal" href="#position"><span class="std std-ref">Position</span></a>) - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>data</strong>: <em>object</em> - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-</ul>
+<p><strong>type</strong>: <em>string</em>, (“legend”)
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>children</strong>: <em>array</em>, (<a class="reference internal" href="#flowcontent"><span class="std std-ref">FlowContent</span></a>)
+: See also <a class="reference internal" href="#parent"><span class="std std-ref">Parent</span></a></p>
+<p><strong>position</strong>: <em>object</em>, <em>optional</em>, (<a class="reference internal" href="#position"><span class="std std-ref">Position</span></a>)
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>data</strong>: <em>object</em>, <em>optional</em>
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
 </section>
 <section id="footnotereference">
 <span id="id17"></span><h2>FootnoteReference<a class="headerlink" href="#footnotereference" title="Permalink to this headline">#</a></h2>
 <p>Inline reference to footnote</p>
-<ul class="simple">
-<li><p><strong>type*</strong>: <em>string</em> (“footnoteReference”) - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>identifier*</strong>: <em>string</em> - See <a class="reference internal" href="#optionalassociation"><span class="std std-ref">OptionalAssociation</span></a></p></li>
-<li><p><strong>label</strong>: <em>string</em> - See <a class="reference internal" href="#optionalassociation"><span class="std std-ref">OptionalAssociation</span></a></p></li>
-<li><p><strong>position</strong>: <em>object</em> (<a class="reference internal" href="#position"><span class="std std-ref">Position</span></a>) - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>data</strong>: <em>object</em> - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-</ul>
+<p><strong>type</strong>: <em>string</em>, (“footnoteReference”)
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>identifier</strong>: <em>string</em>
+: See also <a class="reference internal" href="#optionalassociation"><span class="std std-ref">OptionalAssociation</span></a></p>
+<p><strong>label</strong>: <em>string</em>, <em>optional</em>
+: See also <a class="reference internal" href="#optionalassociation"><span class="std std-ref">OptionalAssociation</span></a></p>
+<p><strong>position</strong>: <em>object</em>, <em>optional</em>, (<a class="reference internal" href="#position"><span class="std std-ref">Position</span></a>)
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>data</strong>: <em>object</em>, <em>optional</em>
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
 </section>
 <section id="footnotedefinition">
 <span id="id18"></span><h2>FootnoteDefinition<a class="headerlink" href="#footnotedefinition" title="Permalink to this headline">#</a></h2>
 <p>Rich footnote content associated with footnote reference</p>
-<ul class="simple">
-<li><p><strong>type*</strong>: <em>string</em> (“footnoteDefinition”) - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>children*</strong>: <em>array</em> (<a class="reference internal" href="#flowcontent"><span class="std std-ref">FlowContent</span></a>) - See <a class="reference internal" href="#parent"><span class="std std-ref">Parent</span></a></p></li>
-<li><p><strong>identifier*</strong>: <em>string</em> - See <a class="reference internal" href="#optionalassociation"><span class="std std-ref">OptionalAssociation</span></a></p></li>
-<li><p><strong>label</strong>: <em>string</em> - See <a class="reference internal" href="#optionalassociation"><span class="std std-ref">OptionalAssociation</span></a></p></li>
-<li><p><strong>position</strong>: <em>object</em> (<a class="reference internal" href="#position"><span class="std std-ref">Position</span></a>) - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>data</strong>: <em>object</em> - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-</ul>
+<p><strong>type</strong>: <em>string</em>, (“footnoteDefinition”)
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>children</strong>: <em>array</em>, (<a class="reference internal" href="#flowcontent"><span class="std std-ref">FlowContent</span></a>)
+: See also <a class="reference internal" href="#parent"><span class="std std-ref">Parent</span></a></p>
+<p><strong>identifier</strong>: <em>string</em>
+: See also <a class="reference internal" href="#optionalassociation"><span class="std std-ref">OptionalAssociation</span></a></p>
+<p><strong>label</strong>: <em>string</em>, <em>optional</em>
+: See also <a class="reference internal" href="#optionalassociation"><span class="std std-ref">OptionalAssociation</span></a></p>
+<p><strong>position</strong>: <em>object</em>, <em>optional</em>, (<a class="reference internal" href="#position"><span class="std std-ref">Position</span></a>)
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>data</strong>: <em>object</em>, <em>optional</em>
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
 </section>
 <section id="math">
 <span id="id19"></span><h2>Math<a class="headerlink" href="#math" title="Permalink to this headline">#</a></h2>
 <p>Math node for presenting numbered equations</p>
-<ul class="simple">
-<li><p><strong>type*</strong>: <em>string</em> (“math”) - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>enumerated</strong>: <em>boolean</em> - count this math block for numbering based on kind, e.g. See equation (1a)</p></li>
-<li><p><strong>enumerator</strong>: <em>string</em> - resolved enumerated value for this math block</p></li>
-<li><p><strong>identifier</strong>: <em>string</em> - See <a class="reference internal" href="#optionalassociation"><span class="std std-ref">OptionalAssociation</span></a></p></li>
-<li><p><strong>label</strong>: <em>string</em> - See <a class="reference internal" href="#optionalassociation"><span class="std std-ref">OptionalAssociation</span></a></p></li>
-<li><p><strong>value*</strong>: <em>string</em> - See <a class="reference internal" href="#literal"><span class="std std-ref">Literal</span></a></p></li>
-<li><p><strong>position</strong>: <em>object</em> (<a class="reference internal" href="#position"><span class="std std-ref">Position</span></a>) - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>data</strong>: <em>object</em> - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-</ul>
+<p><strong>type</strong>: <em>string</em>, (“math”)
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>enumerated</strong>: <em>boolean</em>, <em>optional</em>
+: count this math block for numbering based on kind, e.g. See equation (1a)</p>
+<p><strong>enumerator</strong>: <em>string</em>, <em>optional</em>
+: resolved enumerated value for this math block</p>
+<p><strong>identifier</strong>: <em>string</em>, <em>optional</em>
+: See also <a class="reference internal" href="#optionalassociation"><span class="std std-ref">OptionalAssociation</span></a></p>
+<p><strong>label</strong>: <em>string</em>, <em>optional</em>
+: See also <a class="reference internal" href="#optionalassociation"><span class="std std-ref">OptionalAssociation</span></a></p>
+<p><strong>value</strong>: <em>string</em>
+: See also <a class="reference internal" href="#literal"><span class="std std-ref">Literal</span></a></p>
+<p><strong>position</strong>: <em>object</em>, <em>optional</em>, (<a class="reference internal" href="#position"><span class="std std-ref">Position</span></a>)
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>data</strong>: <em>object</em>, <em>optional</em>
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
 </section>
 <section id="inlinemath">
 <span id="id20"></span><h2>InlineMath<a class="headerlink" href="#inlinemath" title="Permalink to this headline">#</a></h2>
 <p>Fragment of math, similar to InlineCode, using role {math}</p>
-<ul class="simple">
-<li><p><strong>type*</strong>: <em>string</em> (“inlineMath”) - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>value*</strong>: <em>string</em> - See <a class="reference internal" href="#literal"><span class="std std-ref">Literal</span></a></p></li>
-<li><p><strong>position</strong>: <em>object</em> (<a class="reference internal" href="#position"><span class="std std-ref">Position</span></a>) - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>data</strong>: <em>object</em> - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-</ul>
+<p><strong>type</strong>: <em>string</em>, (“inlineMath”)
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>value</strong>: <em>string</em>
+: See also <a class="reference internal" href="#literal"><span class="std std-ref">Literal</span></a></p>
+<p><strong>position</strong>: <em>object</em>, <em>optional</em>, (<a class="reference internal" href="#position"><span class="std std-ref">Position</span></a>)
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>data</strong>: <em>object</em>, <em>optional</em>
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
 </section>
 <section id="table">
 <span id="id21"></span><h2>Table<a class="headerlink" href="#table" title="Permalink to this headline">#</a></h2>
 <p>Two-dimensional table data</p>
-<ul class="simple">
-<li><p><strong>type*</strong>: <em>string</em> (“table”) - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>align</strong>: <em>string</em> (“left” | “center” | “right”)</p></li>
-<li><p><strong>children*</strong>: <em>array</em> (<a class="reference internal" href="#tablerow"><span class="std std-ref">TableRow</span></a>) - See <a class="reference internal" href="#parent"><span class="std std-ref">Parent</span></a></p></li>
-<li><p><strong>position</strong>: <em>object</em> (<a class="reference internal" href="#position"><span class="std std-ref">Position</span></a>) - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>data</strong>: <em>object</em> - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-</ul>
+<p><strong>type</strong>: <em>string</em>, (“table”)
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>align</strong>: <em>string</em>, <em>optional</em>, (“left” | “center” | “right”)
+: No description for this property.</p>
+<p><strong>children</strong>: <em>array</em>, (<a class="reference internal" href="#tablerow"><span class="std std-ref">TableRow</span></a>)
+: See also <a class="reference internal" href="#parent"><span class="std std-ref">Parent</span></a></p>
+<p><strong>position</strong>: <em>object</em>, <em>optional</em>, (<a class="reference internal" href="#position"><span class="std std-ref">Position</span></a>)
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>data</strong>: <em>object</em>, <em>optional</em>
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
 </section>
 <section id="tablerow">
 <span id="id22"></span><h2>TableRow<a class="headerlink" href="#tablerow" title="Permalink to this headline">#</a></h2>
 <p>One row of table containing cells</p>
-<ul class="simple">
-<li><p><strong>type*</strong>: <em>string</em> (“tableRow”) - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>children*</strong>: <em>array</em> (<a class="reference internal" href="#tablecell"><span class="std std-ref">TableCell</span></a>) - See <a class="reference internal" href="#parent"><span class="std std-ref">Parent</span></a></p></li>
-<li><p><strong>position</strong>: <em>object</em> (<a class="reference internal" href="#position"><span class="std std-ref">Position</span></a>) - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>data</strong>: <em>object</em> - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-</ul>
+<p><strong>type</strong>: <em>string</em>, (“tableRow”)
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>children</strong>: <em>array</em>, (<a class="reference internal" href="#tablecell"><span class="std std-ref">TableCell</span></a>)
+: See also <a class="reference internal" href="#parent"><span class="std std-ref">Parent</span></a></p>
+<p><strong>position</strong>: <em>object</em>, <em>optional</em>, (<a class="reference internal" href="#position"><span class="std std-ref">Position</span></a>)
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>data</strong>: <em>object</em>, <em>optional</em>
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
 </section>
 <section id="tablecell">
 <span id="id23"></span><h2>TableCell<a class="headerlink" href="#tablecell" title="Permalink to this headline">#</a></h2>
 <p>One cell of table</p>
-<ul class="simple">
-<li><p><strong>type*</strong>: <em>string</em> (“tableCell”) - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>header</strong>: <em>boolean</em></p></li>
-<li><p><strong>align</strong>: <em>string</em> (“left” | “center” | “right”) - alignment of content within cell</p></li>
-<li><p><strong>children*</strong>: <em>array</em> (<a class="reference internal" href="#phrasingcontent"><span class="std std-ref">PhrasingContent</span></a>) - See <a class="reference internal" href="#parent"><span class="std std-ref">Parent</span></a></p></li>
-<li><p><strong>position</strong>: <em>object</em> (<a class="reference internal" href="#position"><span class="std std-ref">Position</span></a>) - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>data</strong>: <em>object</em> - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-</ul>
+<p><strong>type</strong>: <em>string</em>, (“tableCell”)
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>header</strong>: <em>boolean</em>, <em>optional</em>
+: No description for this property.</p>
+<p><strong>align</strong>: <em>string</em>, <em>optional</em>, (“left” | “center” | “right”)
+: alignment of content within cell</p>
+<p><strong>children</strong>: <em>array</em>, (<a class="reference internal" href="#phrasingcontent"><span class="std std-ref">PhrasingContent</span></a>)
+: See also <a class="reference internal" href="#parent"><span class="std std-ref">Parent</span></a></p>
+<p><strong>position</strong>: <em>object</em>, <em>optional</em>, (<a class="reference internal" href="#position"><span class="std std-ref">Position</span></a>)
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>data</strong>: <em>object</em>, <em>optional</em>
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
 </section>
 <section id="subscript">
 <span id="id24"></span><h2>Subscript<a class="headerlink" href="#subscript" title="Permalink to this headline">#</a></h2>
 <p>Subscript content, using role {subscript}</p>
-<ul class="simple">
-<li><p><strong>type*</strong>: <em>string</em> (“subscript”) - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>children*</strong>: <em>array</em> (<a class="reference internal" href="#phrasingcontent"><span class="std std-ref">PhrasingContent</span></a>) - See <a class="reference internal" href="#parent"><span class="std std-ref">Parent</span></a></p></li>
-<li><p><strong>position</strong>: <em>object</em> (<a class="reference internal" href="#position"><span class="std std-ref">Position</span></a>) - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>data</strong>: <em>object</em> - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-</ul>
+<p><strong>type</strong>: <em>string</em>, (“subscript”)
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>children</strong>: <em>array</em>, (<a class="reference internal" href="#phrasingcontent"><span class="std std-ref">PhrasingContent</span></a>)
+: See also <a class="reference internal" href="#parent"><span class="std std-ref">Parent</span></a></p>
+<p><strong>position</strong>: <em>object</em>, <em>optional</em>, (<a class="reference internal" href="#position"><span class="std std-ref">Position</span></a>)
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>data</strong>: <em>object</em>, <em>optional</em>
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
 </section>
 <section id="subscriptstatic">
 <span id="id25"></span><h2>SubscriptStatic<a class="headerlink" href="#subscriptstatic" title="Permalink to this headline">#</a></h2>
 <p>Subscript content, with static children; used when parent node requires static content</p>
-<ul class="simple">
-<li><p><strong>type*</strong>: <em>string</em> (“subscript”) - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>children*</strong>: <em>array</em> (<a class="reference internal" href="#staticphrasingcontent"><span class="std std-ref">StaticPhrasingContent</span></a>) - See <a class="reference internal" href="#parent"><span class="std std-ref">Parent</span></a></p></li>
-<li><p><strong>position</strong>: <em>object</em> (<a class="reference internal" href="#position"><span class="std std-ref">Position</span></a>) - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>data</strong>: <em>object</em> - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-</ul>
+<p><strong>type</strong>: <em>string</em>, (“subscript”)
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>children</strong>: <em>array</em>, (<a class="reference internal" href="#staticphrasingcontent"><span class="std std-ref">StaticPhrasingContent</span></a>)
+: See also <a class="reference internal" href="#parent"><span class="std std-ref">Parent</span></a></p>
+<p><strong>position</strong>: <em>object</em>, <em>optional</em>, (<a class="reference internal" href="#position"><span class="std std-ref">Position</span></a>)
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>data</strong>: <em>object</em>, <em>optional</em>
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
 </section>
 <section id="superscript">
 <span id="id26"></span><h2>Superscript<a class="headerlink" href="#superscript" title="Permalink to this headline">#</a></h2>
 <p>Superscript content, using role {superscript}</p>
-<ul class="simple">
-<li><p><strong>type*</strong>: <em>string</em> (“superscript”) - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>children*</strong>: <em>array</em> (<a class="reference internal" href="#phrasingcontent"><span class="std std-ref">PhrasingContent</span></a>) - See <a class="reference internal" href="#parent"><span class="std std-ref">Parent</span></a></p></li>
-<li><p><strong>position</strong>: <em>object</em> (<a class="reference internal" href="#position"><span class="std std-ref">Position</span></a>) - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>data</strong>: <em>object</em> - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-</ul>
+<p><strong>type</strong>: <em>string</em>, (“superscript”)
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>children</strong>: <em>array</em>, (<a class="reference internal" href="#phrasingcontent"><span class="std std-ref">PhrasingContent</span></a>)
+: See also <a class="reference internal" href="#parent"><span class="std std-ref">Parent</span></a></p>
+<p><strong>position</strong>: <em>object</em>, <em>optional</em>, (<a class="reference internal" href="#position"><span class="std std-ref">Position</span></a>)
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>data</strong>: <em>object</em>, <em>optional</em>
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
 </section>
 <section id="superscriptstatic">
 <span id="id27"></span><h2>SuperscriptStatic<a class="headerlink" href="#superscriptstatic" title="Permalink to this headline">#</a></h2>
 <p>Superscript content, with static children; used when parent node requires static content</p>
-<ul class="simple">
-<li><p><strong>type*</strong>: <em>string</em> (“superscript”) - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>children*</strong>: <em>array</em> (<a class="reference internal" href="#staticphrasingcontent"><span class="std std-ref">StaticPhrasingContent</span></a>) - See <a class="reference internal" href="#parent"><span class="std std-ref">Parent</span></a></p></li>
-<li><p><strong>position</strong>: <em>object</em> (<a class="reference internal" href="#position"><span class="std std-ref">Position</span></a>) - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>data</strong>: <em>object</em> - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-</ul>
+<p><strong>type</strong>: <em>string</em>, (“superscript”)
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>children</strong>: <em>array</em>, (<a class="reference internal" href="#staticphrasingcontent"><span class="std std-ref">StaticPhrasingContent</span></a>)
+: See also <a class="reference internal" href="#parent"><span class="std std-ref">Parent</span></a></p>
+<p><strong>position</strong>: <em>object</em>, <em>optional</em>, (<a class="reference internal" href="#position"><span class="std std-ref">Position</span></a>)
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>data</strong>: <em>object</em>, <em>optional</em>
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
 </section>
 <section id="underline">
 <span id="id28"></span><h2>Underline<a class="headerlink" href="#underline" title="Permalink to this headline">#</a></h2>
 <p>Underline content, using role {underline}</p>
-<ul class="simple">
-<li><p><strong>type*</strong>: <em>string</em> (“underline”) - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>children*</strong>: <em>array</em> (<a class="reference internal" href="#phrasingcontent"><span class="std std-ref">PhrasingContent</span></a>) - See <a class="reference internal" href="#parent"><span class="std std-ref">Parent</span></a></p></li>
-<li><p><strong>position</strong>: <em>object</em> (<a class="reference internal" href="#position"><span class="std std-ref">Position</span></a>) - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>data</strong>: <em>object</em> - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-</ul>
+<p><strong>type</strong>: <em>string</em>, (“underline”)
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>children</strong>: <em>array</em>, (<a class="reference internal" href="#phrasingcontent"><span class="std std-ref">PhrasingContent</span></a>)
+: See also <a class="reference internal" href="#parent"><span class="std std-ref">Parent</span></a></p>
+<p><strong>position</strong>: <em>object</em>, <em>optional</em>, (<a class="reference internal" href="#position"><span class="std std-ref">Position</span></a>)
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>data</strong>: <em>object</em>, <em>optional</em>
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
 </section>
 <section id="underlinestatic">
 <span id="id29"></span><h2>UnderlineStatic<a class="headerlink" href="#underlinestatic" title="Permalink to this headline">#</a></h2>
 <p>Underline content, with static children; used when parent node requires static content</p>
-<ul class="simple">
-<li><p><strong>type*</strong>: <em>string</em> (“underline”) - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>children*</strong>: <em>array</em> (<a class="reference internal" href="#staticphrasingcontent"><span class="std std-ref">StaticPhrasingContent</span></a>) - See <a class="reference internal" href="#parent"><span class="std std-ref">Parent</span></a></p></li>
-<li><p><strong>position</strong>: <em>object</em> (<a class="reference internal" href="#position"><span class="std std-ref">Position</span></a>) - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>data</strong>: <em>object</em> - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-</ul>
+<p><strong>type</strong>: <em>string</em>, (“underline”)
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>children</strong>: <em>array</em>, (<a class="reference internal" href="#staticphrasingcontent"><span class="std std-ref">StaticPhrasingContent</span></a>)
+: See also <a class="reference internal" href="#parent"><span class="std std-ref">Parent</span></a></p>
+<p><strong>position</strong>: <em>object</em>, <em>optional</em>, (<a class="reference internal" href="#position"><span class="std std-ref">Position</span></a>)
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>data</strong>: <em>object</em>, <em>optional</em>
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
 </section>
 <section id="comment">
 <span id="id30"></span><h2>Comment<a class="headerlink" href="#comment" title="Permalink to this headline">#</a></h2>
 <p>Comment nodes for comments present in myst but ingnored upon render</p>
-<ul class="simple">
-<li><p><strong>type*</strong>: <em>string</em> (“mystComment”) - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>value*</strong>: <em>string</em> - See <a class="reference internal" href="#literal"><span class="std std-ref">Literal</span></a></p></li>
-<li><p><strong>position</strong>: <em>object</em> (<a class="reference internal" href="#position"><span class="std std-ref">Position</span></a>) - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>data</strong>: <em>object</em> - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-</ul>
+<p><strong>type</strong>: <em>string</em>, (“mystComment”)
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>value</strong>: <em>string</em>
+: See also <a class="reference internal" href="#literal"><span class="std std-ref">Literal</span></a></p>
+<p><strong>position</strong>: <em>object</em>, <em>optional</em>, (<a class="reference internal" href="#position"><span class="std std-ref">Position</span></a>)
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>data</strong>: <em>object</em>, <em>optional</em>
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
 </section>
 <section id="paragraph">
 <span id="id31"></span><h2>Paragraph<a class="headerlink" href="#paragraph" title="Permalink to this headline">#</a></h2>
-<ul class="simple">
-<li><p><strong>type*</strong>: <em>string</em> (“paragraph”) - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>children*</strong>: <em>array</em> (<a class="reference internal" href="#phrasingcontent"><span class="std std-ref">PhrasingContent</span></a>) - See <a class="reference internal" href="#parent"><span class="std std-ref">Parent</span></a></p></li>
-<li><p><strong>position</strong>: <em>object</em> (<a class="reference internal" href="#position"><span class="std std-ref">Position</span></a>) - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>data</strong>: <em>object</em> - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-</ul>
+<p><strong>type</strong>: <em>string</em>, (“paragraph”)
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>children</strong>: <em>array</em>, (<a class="reference internal" href="#phrasingcontent"><span class="std std-ref">PhrasingContent</span></a>)
+: See also <a class="reference internal" href="#parent"><span class="std std-ref">Parent</span></a></p>
+<p><strong>position</strong>: <em>object</em>, <em>optional</em>, (<a class="reference internal" href="#position"><span class="std std-ref">Position</span></a>)
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>data</strong>: <em>object</em>, <em>optional</em>
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
 </section>
 <section id="heading">
 <span id="id32"></span><h2>Heading<a class="headerlink" href="#heading" title="Permalink to this headline">#</a></h2>
-<ul class="simple">
-<li><p><strong>type*</strong>: <em>string</em> (“heading”) - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>depth*</strong>: <em>integer</em></p></li>
-<li><p><strong>enumerated</strong>: <em>boolean</em> - count this heading for numbering based on kind, e.g. Section 2.4.1</p></li>
-<li><p><strong>enumerator</strong>: <em>string</em> - resolved enumerated value for this heading</p></li>
-<li><p><strong>children*</strong>: <em>array</em> (<a class="reference internal" href="#phrasingcontent"><span class="std std-ref">PhrasingContent</span></a>) - See <a class="reference internal" href="#parent"><span class="std std-ref">Parent</span></a></p></li>
-<li><p><strong>identifier</strong>: <em>string</em> - See <a class="reference internal" href="#optionalassociation"><span class="std std-ref">OptionalAssociation</span></a></p></li>
-<li><p><strong>label</strong>: <em>string</em> - See <a class="reference internal" href="#optionalassociation"><span class="std std-ref">OptionalAssociation</span></a></p></li>
-<li><p><strong>position</strong>: <em>object</em> (<a class="reference internal" href="#position"><span class="std std-ref">Position</span></a>) - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>data</strong>: <em>object</em> - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-</ul>
+<p><strong>type</strong>: <em>string</em>, (“heading”)
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>depth</strong>: <em>integer</em>
+: No description for this property.</p>
+<p><strong>enumerated</strong>: <em>boolean</em>, <em>optional</em>
+: count this heading for numbering based on kind, e.g. Section 2.4.1</p>
+<p><strong>enumerator</strong>: <em>string</em>, <em>optional</em>
+: resolved enumerated value for this heading</p>
+<p><strong>children</strong>: <em>array</em>, (<a class="reference internal" href="#phrasingcontent"><span class="std std-ref">PhrasingContent</span></a>)
+: See also <a class="reference internal" href="#parent"><span class="std std-ref">Parent</span></a></p>
+<p><strong>identifier</strong>: <em>string</em>, <em>optional</em>
+: See also <a class="reference internal" href="#optionalassociation"><span class="std std-ref">OptionalAssociation</span></a></p>
+<p><strong>label</strong>: <em>string</em>, <em>optional</em>
+: See also <a class="reference internal" href="#optionalassociation"><span class="std std-ref">OptionalAssociation</span></a></p>
+<p><strong>position</strong>: <em>object</em>, <em>optional</em>, (<a class="reference internal" href="#position"><span class="std std-ref">Position</span></a>)
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>data</strong>: <em>object</em>, <em>optional</em>
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
 </section>
 <section id="thematicbreak">
 <span id="id33"></span><h2>ThematicBreak<a class="headerlink" href="#thematicbreak" title="Permalink to this headline">#</a></h2>
-<ul class="simple">
-<li><p><strong>type*</strong>: <em>string</em> (“thematicBreak”) - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>position</strong>: <em>object</em> (<a class="reference internal" href="#position"><span class="std std-ref">Position</span></a>) - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>data</strong>: <em>object</em> - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-</ul>
+<p><strong>type</strong>: <em>string</em>, (“thematicBreak”)
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>position</strong>: <em>object</em>, <em>optional</em>, (<a class="reference internal" href="#position"><span class="std std-ref">Position</span></a>)
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>data</strong>: <em>object</em>, <em>optional</em>
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
 </section>
 <section id="blockquote">
 <span id="id34"></span><h2>Blockquote<a class="headerlink" href="#blockquote" title="Permalink to this headline">#</a></h2>
-<ul class="simple">
-<li><p><strong>type*</strong>: <em>string</em> (“blockquote”) - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>children*</strong>: <em>array</em> (<a class="reference internal" href="#flowcontent"><span class="std std-ref">FlowContent</span></a>) - See <a class="reference internal" href="#parent"><span class="std std-ref">Parent</span></a></p></li>
-<li><p><strong>position</strong>: <em>object</em> (<a class="reference internal" href="#position"><span class="std std-ref">Position</span></a>) - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>data</strong>: <em>object</em> - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-</ul>
+<p><strong>type</strong>: <em>string</em>, (“blockquote”)
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>children</strong>: <em>array</em>, (<a class="reference internal" href="#flowcontent"><span class="std std-ref">FlowContent</span></a>)
+: See also <a class="reference internal" href="#parent"><span class="std std-ref">Parent</span></a></p>
+<p><strong>position</strong>: <em>object</em>, <em>optional</em>, (<a class="reference internal" href="#position"><span class="std std-ref">Position</span></a>)
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>data</strong>: <em>object</em>, <em>optional</em>
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
 </section>
 <section id="list">
 <span id="id35"></span><h2>List<a class="headerlink" href="#list" title="Permalink to this headline">#</a></h2>
-<ul class="simple">
-<li><p><strong>type*</strong>: <em>string</em> (“list”) - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>ordered</strong>: <em>boolean</em> - Is item order important or not?</p></li>
-<li><p><strong>start</strong>: <em>integer</em> - Starting number of ordered list</p></li>
-<li><p><strong>spread</strong>: <em>boolean</em> - One or more children are separated with a blank line from others</p></li>
-<li><p><strong>children*</strong>: <em>array</em> (<a class="reference internal" href="#listcontent"><span class="std std-ref">ListContent</span></a>) - See <a class="reference internal" href="#parent"><span class="std std-ref">Parent</span></a></p></li>
-<li><p><strong>position</strong>: <em>object</em> (<a class="reference internal" href="#position"><span class="std std-ref">Position</span></a>) - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>data</strong>: <em>object</em> - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-</ul>
+<p><strong>type</strong>: <em>string</em>, (“list”)
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>ordered</strong>: <em>boolean</em>, <em>optional</em>
+: Is item order important or not?</p>
+<p><strong>start</strong>: <em>integer</em>, <em>optional</em>
+: Starting number of ordered list</p>
+<p><strong>spread</strong>: <em>boolean</em>, <em>optional</em>
+: One or more children are separated with a blank line from others</p>
+<p><strong>children</strong>: <em>array</em>, (<a class="reference internal" href="#listcontent"><span class="std std-ref">ListContent</span></a>)
+: See also <a class="reference internal" href="#parent"><span class="std std-ref">Parent</span></a></p>
+<p><strong>position</strong>: <em>object</em>, <em>optional</em>, (<a class="reference internal" href="#position"><span class="std std-ref">Position</span></a>)
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>data</strong>: <em>object</em>, <em>optional</em>
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
 </section>
 <section id="listitem">
 <span id="id36"></span><h2>ListItem<a class="headerlink" href="#listitem" title="Permalink to this headline">#</a></h2>
-<ul class="simple">
-<li><p><strong>type*</strong>: <em>string</em> (“listItem”) - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>spread</strong>: <em>boolean</em> - One or more children are separated with a blank line from others</p></li>
-<li><p><strong>children*</strong>: <em>array</em> (<a class="reference internal" href="#phrasingcontent"><span class="std std-ref">PhrasingContent</span></a> | <a class="reference internal" href="#flowcontent"><span class="std std-ref">FlowContent</span></a>) - See <a class="reference internal" href="#parent"><span class="std std-ref">Parent</span></a></p></li>
-<li><p><strong>position</strong>: <em>object</em> (<a class="reference internal" href="#position"><span class="std std-ref">Position</span></a>) - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>data</strong>: <em>object</em> - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-</ul>
+<p><strong>type</strong>: <em>string</em>, (“listItem”)
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>spread</strong>: <em>boolean</em>, <em>optional</em>
+: One or more children are separated with a blank line from others</p>
+<p><strong>children</strong>: <em>array</em>, (<a class="reference internal" href="#phrasingcontent"><span class="std std-ref">PhrasingContent</span></a> | <a class="reference internal" href="#flowcontent"><span class="std std-ref">FlowContent</span></a>)
+: See also <a class="reference internal" href="#parent"><span class="std std-ref">Parent</span></a></p>
+<p><strong>position</strong>: <em>object</em>, <em>optional</em>, (<a class="reference internal" href="#position"><span class="std std-ref">Position</span></a>)
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>data</strong>: <em>object</em>, <em>optional</em>
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
 </section>
 <section id="html">
 <span id="id37"></span><h2>HTML<a class="headerlink" href="#html" title="Permalink to this headline">#</a></h2>
 <p>Fragment of raw HTML - does not need to be valid or complete</p>
-<ul class="simple">
-<li><p><strong>type*</strong>: <em>string</em> (“html”) - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>value*</strong>: <em>string</em> - See <a class="reference internal" href="#literal"><span class="std std-ref">Literal</span></a></p></li>
-<li><p><strong>position</strong>: <em>object</em> (<a class="reference internal" href="#position"><span class="std std-ref">Position</span></a>) - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>data</strong>: <em>object</em> - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-</ul>
+<p><strong>type</strong>: <em>string</em>, (“html”)
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>value</strong>: <em>string</em>
+: See also <a class="reference internal" href="#literal"><span class="std std-ref">Literal</span></a></p>
+<p><strong>position</strong>: <em>object</em>, <em>optional</em>, (<a class="reference internal" href="#position"><span class="std std-ref">Position</span></a>)
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>data</strong>: <em>object</em>, <em>optional</em>
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
 </section>
 <section id="code">
 <span id="id38"></span><h2>Code<a class="headerlink" href="#code" title="Permalink to this headline">#</a></h2>
 <p>Block of preformatted text</p>
-<ul class="simple">
-<li><p><strong>type*</strong>: <em>string</em> (“code”) - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>lang</strong>: <em>string</em> - language of the code</p></li>
-<li><p><strong>meta</strong>: <em>string</em> - custom information relating to the node</p></li>
-<li><p><strong>class</strong>: <em>string</em> - user-defined class for code block</p></li>
-<li><p><strong>showLineNumbers</strong>: <em>boolean</em></p></li>
-<li><p><strong>startingLineNumber</strong>: <em>integer</em></p></li>
-<li><p><strong>emphasizeLines</strong>: <em>array</em> (integer)</p></li>
-<li><p><strong>identifier</strong>: <em>string</em> - See <a class="reference internal" href="#optionalassociation"><span class="std std-ref">OptionalAssociation</span></a></p></li>
-<li><p><strong>label</strong>: <em>string</em> - See <a class="reference internal" href="#optionalassociation"><span class="std std-ref">OptionalAssociation</span></a></p></li>
-<li><p><strong>value*</strong>: <em>string</em> - See <a class="reference internal" href="#literal"><span class="std std-ref">Literal</span></a></p></li>
-<li><p><strong>position</strong>: <em>object</em> (<a class="reference internal" href="#position"><span class="std std-ref">Position</span></a>) - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>data</strong>: <em>object</em> - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-</ul>
+<p><strong>type</strong>: <em>string</em>, (“code”)
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>lang</strong>: <em>string</em>, <em>optional</em>
+: language of the code</p>
+<p><strong>meta</strong>: <em>string</em>, <em>optional</em>
+: custom information relating to the node</p>
+<p><strong>class</strong>: <em>string</em>, <em>optional</em>
+: user-defined class for code block</p>
+<p><strong>showLineNumbers</strong>: <em>boolean</em>, <em>optional</em>
+: No description for this property.</p>
+<p><strong>startingLineNumber</strong>: <em>integer</em>, <em>optional</em>
+: No description for this property.</p>
+<p><strong>emphasizeLines</strong>: <em>array</em>, <em>optional</em>, (integer)
+: No description for this property.</p>
+<p><strong>identifier</strong>: <em>string</em>, <em>optional</em>
+: See also <a class="reference internal" href="#optionalassociation"><span class="std std-ref">OptionalAssociation</span></a></p>
+<p><strong>label</strong>: <em>string</em>, <em>optional</em>
+: See also <a class="reference internal" href="#optionalassociation"><span class="std std-ref">OptionalAssociation</span></a></p>
+<p><strong>value</strong>: <em>string</em>
+: See also <a class="reference internal" href="#literal"><span class="std std-ref">Literal</span></a></p>
+<p><strong>position</strong>: <em>object</em>, <em>optional</em>, (<a class="reference internal" href="#position"><span class="std std-ref">Position</span></a>)
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>data</strong>: <em>object</em>, <em>optional</em>
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
 </section>
 <section id="definition">
 <span id="id39"></span><h2>Definition<a class="headerlink" href="#definition" title="Permalink to this headline">#</a></h2>
 <p>Reference to a url resource</p>
-<ul class="simple">
-<li><p><strong>type*</strong>: <em>string</em> (“definition”) - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>identifier*</strong>: <em>string</em> - See <a class="reference internal" href="#optionalassociation"><span class="std std-ref">OptionalAssociation</span></a></p></li>
-<li><p><strong>label</strong>: <em>string</em> - See <a class="reference internal" href="#optionalassociation"><span class="std std-ref">OptionalAssociation</span></a></p></li>
-<li><p><strong>url*</strong>: <em>string</em> - See <a class="reference internal" href="#resource"><span class="std std-ref">Resource</span></a></p></li>
-<li><p><strong>title</strong>: <em>string</em> - See <a class="reference internal" href="#resource"><span class="std std-ref">Resource</span></a></p></li>
-<li><p><strong>position</strong>: <em>object</em> (<a class="reference internal" href="#position"><span class="std std-ref">Position</span></a>) - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>data</strong>: <em>object</em> - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-</ul>
+<p><strong>type</strong>: <em>string</em>, (“definition”)
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>identifier</strong>: <em>string</em>
+: See also <a class="reference internal" href="#optionalassociation"><span class="std std-ref">OptionalAssociation</span></a></p>
+<p><strong>label</strong>: <em>string</em>, <em>optional</em>
+: See also <a class="reference internal" href="#optionalassociation"><span class="std std-ref">OptionalAssociation</span></a></p>
+<p><strong>url</strong>: <em>string</em>
+: See also <a class="reference internal" href="#resource"><span class="std std-ref">Resource</span></a></p>
+<p><strong>title</strong>: <em>string</em>, <em>optional</em>
+: See also <a class="reference internal" href="#resource"><span class="std std-ref">Resource</span></a></p>
+<p><strong>position</strong>: <em>object</em>, <em>optional</em>, (<a class="reference internal" href="#position"><span class="std std-ref">Position</span></a>)
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>data</strong>: <em>object</em>, <em>optional</em>
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
 </section>
 <section id="text">
 <span id="id40"></span><h2>Text<a class="headerlink" href="#text" title="Permalink to this headline">#</a></h2>
-<ul class="simple">
-<li><p><strong>type*</strong>: <em>string</em> (“text”) - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>value*</strong>: <em>string</em> - See <a class="reference internal" href="#literal"><span class="std std-ref">Literal</span></a></p></li>
-<li><p><strong>position</strong>: <em>object</em> (<a class="reference internal" href="#position"><span class="std std-ref">Position</span></a>) - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>data</strong>: <em>object</em> - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-</ul>
+<p><strong>type</strong>: <em>string</em>, (“text”)
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>value</strong>: <em>string</em>
+: See also <a class="reference internal" href="#literal"><span class="std std-ref">Literal</span></a></p>
+<p><strong>position</strong>: <em>object</em>, <em>optional</em>, (<a class="reference internal" href="#position"><span class="std std-ref">Position</span></a>)
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>data</strong>: <em>object</em>, <em>optional</em>
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
 </section>
 <section id="emphasis">
 <span id="id41"></span><h2>Emphasis<a class="headerlink" href="#emphasis" title="Permalink to this headline">#</a></h2>
 <p>Stressed, italicized content</p>
-<ul class="simple">
-<li><p><strong>type*</strong>: <em>string</em> (“emphasis”) - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>children*</strong>: <em>array</em> (<a class="reference internal" href="#phrasingcontent"><span class="std std-ref">PhrasingContent</span></a>) - See <a class="reference internal" href="#parent"><span class="std std-ref">Parent</span></a></p></li>
-<li><p><strong>position</strong>: <em>object</em> (<a class="reference internal" href="#position"><span class="std std-ref">Position</span></a>) - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>data</strong>: <em>object</em> - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-</ul>
+<p><strong>type</strong>: <em>string</em>, (“emphasis”)
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>children</strong>: <em>array</em>, (<a class="reference internal" href="#phrasingcontent"><span class="std std-ref">PhrasingContent</span></a>)
+: See also <a class="reference internal" href="#parent"><span class="std std-ref">Parent</span></a></p>
+<p><strong>position</strong>: <em>object</em>, <em>optional</em>, (<a class="reference internal" href="#position"><span class="std std-ref">Position</span></a>)
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>data</strong>: <em>object</em>, <em>optional</em>
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
 </section>
 <section id="emphasisstatic">
 <span id="id42"></span><h2>EmphasisStatic<a class="headerlink" href="#emphasisstatic" title="Permalink to this headline">#</a></h2>
 <p>Stressed, italicized content, with static children; used when parent node requires static content</p>
-<ul class="simple">
-<li><p><strong>type*</strong>: <em>string</em> (“emphasis”) - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>children*</strong>: <em>array</em> (<a class="reference internal" href="#staticphrasingcontent"><span class="std std-ref">StaticPhrasingContent</span></a>) - See <a class="reference internal" href="#parent"><span class="std std-ref">Parent</span></a></p></li>
-<li><p><strong>position</strong>: <em>object</em> (<a class="reference internal" href="#position"><span class="std std-ref">Position</span></a>) - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>data</strong>: <em>object</em> - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-</ul>
+<p><strong>type</strong>: <em>string</em>, (“emphasis”)
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>children</strong>: <em>array</em>, (<a class="reference internal" href="#staticphrasingcontent"><span class="std std-ref">StaticPhrasingContent</span></a>)
+: See also <a class="reference internal" href="#parent"><span class="std std-ref">Parent</span></a></p>
+<p><strong>position</strong>: <em>object</em>, <em>optional</em>, (<a class="reference internal" href="#position"><span class="std std-ref">Position</span></a>)
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>data</strong>: <em>object</em>, <em>optional</em>
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
 </section>
 <section id="strong">
 <span id="id43"></span><h2>Strong<a class="headerlink" href="#strong" title="Permalink to this headline">#</a></h2>
 <p>Important, serious, urgent, bold content</p>
-<ul class="simple">
-<li><p><strong>type*</strong>: <em>string</em> (“strong”) - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>children*</strong>: <em>array</em> (<a class="reference internal" href="#phrasingcontent"><span class="std std-ref">PhrasingContent</span></a>) - See <a class="reference internal" href="#parent"><span class="std std-ref">Parent</span></a></p></li>
-<li><p><strong>position</strong>: <em>object</em> (<a class="reference internal" href="#position"><span class="std std-ref">Position</span></a>) - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>data</strong>: <em>object</em> - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-</ul>
+<p><strong>type</strong>: <em>string</em>, (“strong”)
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>children</strong>: <em>array</em>, (<a class="reference internal" href="#phrasingcontent"><span class="std std-ref">PhrasingContent</span></a>)
+: See also <a class="reference internal" href="#parent"><span class="std std-ref">Parent</span></a></p>
+<p><strong>position</strong>: <em>object</em>, <em>optional</em>, (<a class="reference internal" href="#position"><span class="std std-ref">Position</span></a>)
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>data</strong>: <em>object</em>, <em>optional</em>
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
 </section>
 <section id="strongstatic">
 <span id="id44"></span><h2>StrongStatic<a class="headerlink" href="#strongstatic" title="Permalink to this headline">#</a></h2>
 <p>Important, serious, urgent, bold content, with static children; used when parent node requires static content</p>
-<ul class="simple">
-<li><p><strong>type*</strong>: <em>string</em> (“strong”) - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>children*</strong>: <em>array</em> (<a class="reference internal" href="#staticphrasingcontent"><span class="std std-ref">StaticPhrasingContent</span></a>) - See <a class="reference internal" href="#parent"><span class="std std-ref">Parent</span></a></p></li>
-<li><p><strong>position</strong>: <em>object</em> (<a class="reference internal" href="#position"><span class="std std-ref">Position</span></a>) - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>data</strong>: <em>object</em> - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-</ul>
+<p><strong>type</strong>: <em>string</em>, (“strong”)
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>children</strong>: <em>array</em>, (<a class="reference internal" href="#staticphrasingcontent"><span class="std std-ref">StaticPhrasingContent</span></a>)
+: See also <a class="reference internal" href="#parent"><span class="std std-ref">Parent</span></a></p>
+<p><strong>position</strong>: <em>object</em>, <em>optional</em>, (<a class="reference internal" href="#position"><span class="std std-ref">Position</span></a>)
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>data</strong>: <em>object</em>, <em>optional</em>
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
 </section>
 <section id="inlinecode">
 <span id="id45"></span><h2>InlineCode<a class="headerlink" href="#inlinecode" title="Permalink to this headline">#</a></h2>
 <p>Fragment of code</p>
-<ul class="simple">
-<li><p><strong>type*</strong>: <em>string</em> (“inlineCode”) - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>value*</strong>: <em>string</em> - See <a class="reference internal" href="#literal"><span class="std std-ref">Literal</span></a></p></li>
-<li><p><strong>position</strong>: <em>object</em> (<a class="reference internal" href="#position"><span class="std std-ref">Position</span></a>) - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>data</strong>: <em>object</em> - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-</ul>
+<p><strong>type</strong>: <em>string</em>, (“inlineCode”)
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>value</strong>: <em>string</em>
+: See also <a class="reference internal" href="#literal"><span class="std std-ref">Literal</span></a></p>
+<p><strong>position</strong>: <em>object</em>, <em>optional</em>, (<a class="reference internal" href="#position"><span class="std std-ref">Position</span></a>)
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>data</strong>: <em>object</em>, <em>optional</em>
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
 </section>
 <section id="break">
 <span id="id46"></span><h2>Break<a class="headerlink" href="#break" title="Permalink to this headline">#</a></h2>
 <p>Line break</p>
-<ul class="simple">
-<li><p><strong>type*</strong>: <em>string</em> (“break”) - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>position</strong>: <em>object</em> (<a class="reference internal" href="#position"><span class="std std-ref">Position</span></a>) - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>data</strong>: <em>object</em> - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-</ul>
+<p><strong>type</strong>: <em>string</em>, (“break”)
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>position</strong>: <em>object</em>, <em>optional</em>, (<a class="reference internal" href="#position"><span class="std std-ref">Position</span></a>)
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>data</strong>: <em>object</em>, <em>optional</em>
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
 </section>
 <section id="link">
 <span id="id47"></span><h2>Link<a class="headerlink" href="#link" title="Permalink to this headline">#</a></h2>
 <p>Hyperlink</p>
-<ul class="simple">
-<li><p><strong>type*</strong>: <em>string</em> (“link”) - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>children*</strong>: <em>array</em> (<a class="reference internal" href="#staticphrasingcontent"><span class="std std-ref">StaticPhrasingContent</span></a>) - See <a class="reference internal" href="#parent"><span class="std std-ref">Parent</span></a></p></li>
-<li><p><strong>url*</strong>: <em>string</em> - See <a class="reference internal" href="#resource"><span class="std std-ref">Resource</span></a></p></li>
-<li><p><strong>title</strong>: <em>string</em> - See <a class="reference internal" href="#resource"><span class="std std-ref">Resource</span></a></p></li>
-<li><p><strong>position</strong>: <em>object</em> (<a class="reference internal" href="#position"><span class="std std-ref">Position</span></a>) - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>data</strong>: <em>object</em> - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-</ul>
+<p><strong>type</strong>: <em>string</em>, (“link”)
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>children</strong>: <em>array</em>, (<a class="reference internal" href="#staticphrasingcontent"><span class="std std-ref">StaticPhrasingContent</span></a>)
+: See also <a class="reference internal" href="#parent"><span class="std std-ref">Parent</span></a></p>
+<p><strong>url</strong>: <em>string</em>
+: See also <a class="reference internal" href="#resource"><span class="std std-ref">Resource</span></a></p>
+<p><strong>title</strong>: <em>string</em>, <em>optional</em>
+: See also <a class="reference internal" href="#resource"><span class="std std-ref">Resource</span></a></p>
+<p><strong>position</strong>: <em>object</em>, <em>optional</em>, (<a class="reference internal" href="#position"><span class="std std-ref">Position</span></a>)
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>data</strong>: <em>object</em>, <em>optional</em>
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
 </section>
 <section id="image">
 <span id="id48"></span><h2>Image<a class="headerlink" href="#image" title="Permalink to this headline">#</a></h2>
 <p>Image hyperlink</p>
-<ul class="simple">
-<li><p><strong>type*</strong>: <em>string</em> (“image”) - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>class</strong>: <em>string</em> - user-defined class for image</p></li>
-<li><p><strong>width</strong>: <em>string</em> - image width in pixels or percentage</p></li>
-<li><p><strong>align</strong>: <em>string</em> (“left” | “center” | “right”)</p></li>
-<li><p><strong>url*</strong>: <em>string</em> - See <a class="reference internal" href="#resource"><span class="std std-ref">Resource</span></a></p></li>
-<li><p><strong>title</strong>: <em>string</em> - See <a class="reference internal" href="#resource"><span class="std std-ref">Resource</span></a></p></li>
-<li><p><strong>alt</strong>: <em>string</em> - See <a class="reference internal" href="#alternative"><span class="std std-ref">Alternative</span></a></p></li>
-<li><p><strong>position</strong>: <em>object</em> (<a class="reference internal" href="#position"><span class="std std-ref">Position</span></a>) - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>data</strong>: <em>object</em> - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-</ul>
+<p><strong>type</strong>: <em>string</em>, (“image”)
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>class</strong>: <em>string</em>, <em>optional</em>
+: user-defined class for image</p>
+<p><strong>width</strong>: <em>string</em>, <em>optional</em>
+: image width in pixels or percentage</p>
+<p><strong>align</strong>: <em>string</em>, <em>optional</em>, (“left” | “center” | “right”)
+: No description for this property.</p>
+<p><strong>url</strong>: <em>string</em>
+: See also <a class="reference internal" href="#resource"><span class="std std-ref">Resource</span></a></p>
+<p><strong>title</strong>: <em>string</em>, <em>optional</em>
+: See also <a class="reference internal" href="#resource"><span class="std std-ref">Resource</span></a></p>
+<p><strong>alt</strong>: <em>string</em>, <em>optional</em>
+: See also <a class="reference internal" href="#alternative"><span class="std std-ref">Alternative</span></a></p>
+<p><strong>position</strong>: <em>object</em>, <em>optional</em>, (<a class="reference internal" href="#position"><span class="std std-ref">Position</span></a>)
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>data</strong>: <em>object</em>, <em>optional</em>
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
 </section>
 <section id="linkreference">
 <span id="id49"></span><h2>LinkReference<a class="headerlink" href="#linkreference" title="Permalink to this headline">#</a></h2>
 <p>Hyperlink through association</p>
-<ul class="simple">
-<li><p><strong>type*</strong>: <em>string</em> (“linkReference”) - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>children*</strong>: <em>array</em> (<a class="reference internal" href="#staticphrasingcontent"><span class="std std-ref">StaticPhrasingContent</span></a>) - See <a class="reference internal" href="#parent"><span class="std std-ref">Parent</span></a></p></li>
-<li><p><strong>referenceType*</strong>: <em>string</em> (“shortcut” | “collapsed” | “full”) - See <a class="reference internal" href="#reference"><span class="std std-ref">Reference</span></a></p></li>
-<li><p><strong>identifier*</strong>: <em>string</em> - See <a class="reference internal" href="#optionalassociation"><span class="std std-ref">OptionalAssociation</span></a></p></li>
-<li><p><strong>label</strong>: <em>string</em> - See <a class="reference internal" href="#optionalassociation"><span class="std std-ref">OptionalAssociation</span></a></p></li>
-<li><p><strong>position</strong>: <em>object</em> (<a class="reference internal" href="#position"><span class="std std-ref">Position</span></a>) - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>data</strong>: <em>object</em> - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-</ul>
+<p><strong>type</strong>: <em>string</em>, (“linkReference”)
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>children</strong>: <em>array</em>, (<a class="reference internal" href="#staticphrasingcontent"><span class="std std-ref">StaticPhrasingContent</span></a>)
+: See also <a class="reference internal" href="#parent"><span class="std std-ref">Parent</span></a></p>
+<p><strong>referenceType</strong>: <em>string</em>, (“shortcut” | “collapsed” | “full”)
+: See also <a class="reference internal" href="#reference"><span class="std std-ref">Reference</span></a></p>
+<p><strong>identifier</strong>: <em>string</em>
+: See also <a class="reference internal" href="#optionalassociation"><span class="std std-ref">OptionalAssociation</span></a></p>
+<p><strong>label</strong>: <em>string</em>, <em>optional</em>
+: See also <a class="reference internal" href="#optionalassociation"><span class="std std-ref">OptionalAssociation</span></a></p>
+<p><strong>position</strong>: <em>object</em>, <em>optional</em>, (<a class="reference internal" href="#position"><span class="std std-ref">Position</span></a>)
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>data</strong>: <em>object</em>, <em>optional</em>
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
 </section>
 <section id="imagereference">
 <span id="id50"></span><h2>ImageReference<a class="headerlink" href="#imagereference" title="Permalink to this headline">#</a></h2>
 <p>Image through association</p>
-<ul class="simple">
-<li><p><strong>type*</strong>: <em>string</em> (“imageReference”) - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>referenceType*</strong>: <em>string</em> (“shortcut” | “collapsed” | “full”) - See <a class="reference internal" href="#reference"><span class="std std-ref">Reference</span></a></p></li>
-<li><p><strong>identifier*</strong>: <em>string</em> - See <a class="reference internal" href="#optionalassociation"><span class="std std-ref">OptionalAssociation</span></a></p></li>
-<li><p><strong>label</strong>: <em>string</em> - See <a class="reference internal" href="#optionalassociation"><span class="std std-ref">OptionalAssociation</span></a></p></li>
-<li><p><strong>alt</strong>: <em>string</em> - See <a class="reference internal" href="#alternative"><span class="std std-ref">Alternative</span></a></p></li>
-<li><p><strong>position</strong>: <em>object</em> (<a class="reference internal" href="#position"><span class="std std-ref">Position</span></a>) - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>data</strong>: <em>object</em> - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-</ul>
+<p><strong>type</strong>: <em>string</em>, (“imageReference”)
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>referenceType</strong>: <em>string</em>, (“shortcut” | “collapsed” | “full”)
+: See also <a class="reference internal" href="#reference"><span class="std std-ref">Reference</span></a></p>
+<p><strong>identifier</strong>: <em>string</em>
+: See also <a class="reference internal" href="#optionalassociation"><span class="std std-ref">OptionalAssociation</span></a></p>
+<p><strong>label</strong>: <em>string</em>, <em>optional</em>
+: See also <a class="reference internal" href="#optionalassociation"><span class="std std-ref">OptionalAssociation</span></a></p>
+<p><strong>alt</strong>: <em>string</em>, <em>optional</em>
+: See also <a class="reference internal" href="#alternative"><span class="std std-ref">Alternative</span></a></p>
+<p><strong>position</strong>: <em>object</em>, <em>optional</em>, (<a class="reference internal" href="#position"><span class="std std-ref">Position</span></a>)
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>data</strong>: <em>object</em>, <em>optional</em>
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
 </section>
 <section id="resource">
 <span id="id51"></span><h2>Resource<a class="headerlink" href="#resource" title="Permalink to this headline">#</a></h2>
 <p>Reference to external resource</p>
-<ul class="simple">
-<li><p><strong>url*</strong>: <em>string</em></p></li>
-<li><p><strong>title</strong>: <em>string</em> - advisory information, e.g. for a tooltip</p></li>
-</ul>
+<p><strong>url</strong>: <em>string</em>
+: A Uniform Resource Locator (URL) to an external resource or link.</p>
+<p><strong>title</strong>: <em>string</em>, <em>optional</em>
+: advisory information, e.g. for a tooltip</p>
 </section>
 <section id="optionalassociation">
 <span id="id52"></span><h2>OptionalAssociation<a class="headerlink" href="#optionalassociation" title="Permalink to this headline">#</a></h2>
 <p>Internal relation from one node to another; not required by node</p>
-<ul class="simple">
-<li><p><strong>identifier</strong>: <em>string</em> - identifier that may match another node; value is unparsed and must be normalized such that whitespace is collapsed to single space, initial/final space is trimmed, and case is folded</p></li>
-<li><p><strong>label</strong>: <em>string</em> - node label; character escapes and references are parsed; may be normalized to a unique identifier</p></li>
-</ul>
+<p><strong>identifier</strong>: <em>string</em>, <em>optional</em>
+: identifier that may match another node; value is unparsed and must be normalized such that whitespace is collapsed to single space, initial/final space is trimmed, and case is folded</p>
+<p><strong>label</strong>: <em>string</em>, <em>optional</em>
+: node label; character escapes and references are parsed; may be normalized to a unique identifier</p>
 </section>
 <section id="association">
 <span id="id53"></span><h2>Association<a class="headerlink" href="#association" title="Permalink to this headline">#</a></h2>
 <p>Internal relation from one node to another</p>
-<ul class="simple">
-<li><p><strong>identifier*</strong>: <em>string</em> - See <a class="reference internal" href="#optionalassociation"><span class="std std-ref">OptionalAssociation</span></a></p></li>
-<li><p><strong>label</strong>: <em>string</em> - node label; character escapes and references are parsed; may be normalized to a unique identifier - See <a class="reference internal" href="#optionalassociation"><span class="std std-ref">OptionalAssociation</span></a></p></li>
-</ul>
+<p><strong>identifier</strong>: <em>string</em>
+: See also <a class="reference internal" href="#optionalassociation"><span class="std std-ref">OptionalAssociation</span></a></p>
+<p><strong>label</strong>: <em>string</em>, <em>optional</em>
+: node label; character escapes and references are parsed; may be normalized to a unique identifier
+: See also <a class="reference internal" href="#optionalassociation"><span class="std std-ref">OptionalAssociation</span></a></p>
 </section>
 <section id="alternative">
 <span id="id54"></span><h2>Alternative<a class="headerlink" href="#alternative" title="Permalink to this headline">#</a></h2>
 <p>Alternative description of image</p>
-<ul class="simple">
-<li><p><strong>alt</strong>: <em>string</em> - field describing the image</p></li>
-</ul>
+<p><strong>alt</strong>: <em>string</em>, <em>optional</em>
+: field describing the image</p>
 </section>
 <section id="reference">
 <span id="id55"></span><h2>Reference<a class="headerlink" href="#reference" title="Permalink to this headline">#</a></h2>
 <p>Marker associated to another node</p>
-<ul class="simple">
-<li><p><strong>referenceType*</strong>: <em>string</em> (“shortcut” | “collapsed” | “full”) - explicitness of the reference: shortcut - reference is implicit, identifier inferred; collapsed - refernce explicit, identifier inferred; full - reference explicit, identifier explicit</p></li>
-</ul>
+<p><strong>referenceType</strong>: <em>string</em>, (“shortcut” | “collapsed” | “full”)
+: explicitness of the reference:
+<code class="docutils literal notranslate"><span class="pre">shortcut</span></code> - reference is implicit, identifier inferred
+<code class="docutils literal notranslate"><span class="pre">collapsed</span></code> - reference explicit, identifier inferred
+<code class="docutils literal notranslate"><span class="pre">full</span></code> - reference explicit, identifier explicit</p>
 </section>
 <section id="node">
 <span id="id56"></span><h2>Node<a class="headerlink" href="#node" title="Permalink to this headline">#</a></h2>
-<p>Base unist node</p>
-<ul class="simple">
-<li><p><strong>type*</strong>: <em>string</em> - identifier for node variant</p></li>
-<li><p><strong>data</strong>: <em>object</em> - information associated by the ecosystem with the node; never specified by mdast</p></li>
-<li><p><strong>position</strong>: <em>object</em> (<a class="reference internal" href="#position"><span class="std std-ref">Position</span></a>) - location of node in source file; must not be present for generated nodes</p></li>
-</ul>
+<p>Base node object, based on the <a class="reference external" href="https://github.com/syntax-tree/unist">unist</a> syntax tree.</p>
+<p><strong>type</strong>: <em>string</em>
+: identifier for node variant</p>
+<p><strong>data</strong>: <em>object</em>, <em>optional</em>
+: information associated by the ecosystem with the node; never specified by mdast</p>
+<p><strong>position</strong>: <em>object</em>, <em>optional</em>, (<a class="reference internal" href="#position"><span class="std std-ref">Position</span></a>)
+: location of node in source file; must not be present for generated nodes</p>
 </section>
 <section id="literal">
 <span id="id57"></span><h2>Literal<a class="headerlink" href="#literal" title="Permalink to this headline">#</a></h2>
 <p>Basic node with required string value</p>
-<ul class="simple">
-<li><p><strong>value*</strong>: <em>string</em></p></li>
-<li><p><strong>type*</strong>: <em>string</em> - identifier for node variant - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>data</strong>: <em>object</em> - information associated by the ecosystem with the node; never specified by mdast - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>position</strong>: <em>object</em> (<a class="reference internal" href="#position"><span class="std std-ref">Position</span></a>) - location of node in source file; must not be present for generated nodes - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-</ul>
+<p><strong>value</strong>: <em>string</em>
+: The value of the node</p>
+<p><strong>type</strong>: <em>string</em>
+: identifier for node variant
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>data</strong>: <em>object</em>, <em>optional</em>
+: information associated by the ecosystem with the node; never specified by mdast
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>position</strong>: <em>object</em>, <em>optional</em>, (<a class="reference internal" href="#position"><span class="std std-ref">Position</span></a>)
+: location of node in source file; must not be present for generated nodes
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
 </section>
 <section id="parent">
 <span id="id58"></span><h2>Parent<a class="headerlink" href="#parent" title="Permalink to this headline">#</a></h2>
 <p>Basic node with required node children</p>
-<ul class="simple">
-<li><p><strong>children*</strong>: <em>array</em> (<a class="reference internal" href="#node"><span class="std std-ref">Node</span></a>)</p></li>
-<li><p><strong>type*</strong>: <em>string</em> - identifier for node variant - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>data</strong>: <em>object</em> - information associated by the ecosystem with the node; never specified by mdast - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>position</strong>: <em>object</em> (<a class="reference internal" href="#position"><span class="std std-ref">Position</span></a>) - location of node in source file; must not be present for generated nodes - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-</ul>
+<p><strong>children</strong>: <em>array</em>, (<a class="reference internal" href="#node"><span class="std std-ref">Node</span></a>)
+: List of children nodes</p>
+<p><strong>type</strong>: <em>string</em>
+: identifier for node variant
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>data</strong>: <em>object</em>, <em>optional</em>
+: information associated by the ecosystem with the node; never specified by mdast
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>position</strong>: <em>object</em>, <em>optional</em>, (<a class="reference internal" href="#position"><span class="std std-ref">Position</span></a>)
+: location of node in source file; must not be present for generated nodes
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
 </section>
 <section id="point">
 <span id="id59"></span><h2>Point<a class="headerlink" href="#point" title="Permalink to this headline">#</a></h2>
 <p>One place in a source file</p>
-<ul class="simple">
-<li><p><strong>line*</strong>: <em>integer</em> - line in the source file, 1-indexed</p></li>
-<li><p><strong>column*</strong>: <em>integer</em> - column in the source file, 1-indexed</p></li>
-<li><p><strong>offset</strong>: <em>integer</em> - offset character in the source file, 0-indexed</p></li>
-</ul>
+<p><strong>line</strong>: <em>integer</em>
+: line in the source file, 1-indexed</p>
+<p><strong>column</strong>: <em>integer</em>
+: column in the source file, 1-indexed</p>
+<p><strong>offset</strong>: <em>integer</em>, <em>optional</em>
+: offset character in the source file, 0-indexed</p>
 </section>
 <section id="position">
 <span id="id60"></span><h2>Position<a class="headerlink" href="#position" title="Permalink to this headline">#</a></h2>
 <p>Location of a node in a source file</p>
-<ul class="simple">
-<li><p><strong>start*</strong>: <em>object</em> (<a class="reference internal" href="#point"><span class="std std-ref">Point</span></a>) - place of first character of parsed source region</p></li>
-<li><p><strong>end*</strong>: <em>object</em> (<a class="reference internal" href="#point"><span class="std std-ref">Point</span></a>) - place of first character after parsed source region, whether it exists or not</p></li>
-<li><p><strong>indent</strong>: <em>array</em> (integer) - start column at each index in the source region, for elements that span multiple lines</p></li>
-</ul>
+<p><strong>start</strong>: <em>object</em>, (<a class="reference internal" href="#point"><span class="std std-ref">Point</span></a>)
+: place of first character of parsed source region</p>
+<p><strong>end</strong>: <em>object</em>, (<a class="reference internal" href="#point"><span class="std std-ref">Point</span></a>)
+: place of first character after parsed source region, whether it exists or not</p>
+<p><strong>indent</strong>: <em>array</em>, <em>optional</em>, (integer)
+: start column at each index in the source region, for elements that span multiple lines</p>
 </section>
 <section id="root">
 <span id="id61"></span><h2>Root<a class="headerlink" href="#root" title="Permalink to this headline">#</a></h2>
 <p>Myst syntax tree built on existing mdast schemas</p>
-<ul class="simple">
-<li><p><strong>type*</strong>: <em>string</em> (“root”) - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>children*</strong>: <em>array</em> (<a class="reference internal" href="#block"><span class="std std-ref">Block</span></a> | <a class="reference internal" href="#blockbreak"><span class="std std-ref">BlockBreak</span></a> | <a class="reference internal" href="#flowcontent"><span class="std std-ref">FlowContent</span></a>) - Top-level children of myst document - See <a class="reference internal" href="#parent"><span class="std std-ref">Parent</span></a></p></li>
-<li><p><strong>position</strong>: <em>object</em> (<a class="reference internal" href="#position"><span class="std std-ref">Position</span></a>) - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>data</strong>: <em>object</em> - See <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p></li>
-</ul>
+<p><strong>type</strong>: <em>string</em>, (“root”)
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>children</strong>: <em>array</em>, (<a class="reference internal" href="#block"><span class="std std-ref">Block</span></a> | <a class="reference internal" href="#blockbreak"><span class="std std-ref">BlockBreak</span></a> | <a class="reference internal" href="#flowcontent"><span class="std std-ref">FlowContent</span></a>)
+: Top-level children of myst document
+: See also <a class="reference internal" href="#parent"><span class="std std-ref">Parent</span></a></p>
+<p><strong>position</strong>: <em>object</em>, <em>optional</em>, (<a class="reference internal" href="#position"><span class="std std-ref">Position</span></a>)
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>data</strong>: <em>object</em>, <em>optional</em>
+: See also <a class="reference internal" href="#node"><span class="std std-ref">Node</span></a></p>
 </section>
 </section>
 

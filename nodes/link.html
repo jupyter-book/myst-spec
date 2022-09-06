@@ -142,12 +142,12 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../features/references.html">
-   References &amp; Links
+   Directive Targets and Cross References
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../features/footnotes.html">
-   Footnotes
+   Footnote Definition Node Specification
   </a>
  </li>
  <li class="toctree-l1">
@@ -384,14 +384,18 @@ title="Print to PDF"
               <div>
                 
   <p>Hyperlink</p>
-<ul class="simple">
-<li><p><strong>type*</strong>: <em>string</em> (“link”) - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>children*</strong>: <em>array</em> (<a class="reference internal" href="../myst.schema.html#staticphrasingcontent"><span class="std std-ref">StaticPhrasingContent</span></a>) - See <a class="reference internal" href="../myst.schema.html#parent"><span class="std std-ref">Parent</span></a></p></li>
-<li><p><strong>url*</strong>: <em>string</em> - See <a class="reference internal" href="../myst.schema.html#resource"><span class="std std-ref">Resource</span></a></p></li>
-<li><p><strong>title</strong>: <em>string</em> - See <a class="reference internal" href="../myst.schema.html#resource"><span class="std std-ref">Resource</span></a></p></li>
-<li><p><strong>position</strong>: <em>object</em> (<a class="reference internal" href="../myst.schema.html#position"><span class="std std-ref">Position</span></a>) - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>data</strong>: <em>object</em> - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
-</ul>
+<p><strong>type</strong>: <em>string</em>, (“link”)
+: See also <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>children</strong>: <em>array</em>, (<a class="reference internal" href="../myst.schema.html#staticphrasingcontent"><span class="std std-ref">StaticPhrasingContent</span></a>)
+: See also <a class="reference internal" href="../myst.schema.html#parent"><span class="std std-ref">Parent</span></a></p>
+<p><strong>url</strong>: <em>string</em>
+: See also <a class="reference internal" href="../myst.schema.html#resource"><span class="std std-ref">Resource</span></a></p>
+<p><strong>title</strong>: <em>string</em>, <em>optional</em>
+: See also <a class="reference internal" href="../myst.schema.html#resource"><span class="std std-ref">Resource</span></a></p>
+<p><strong>position</strong>: <em>object</em>, <em>optional</em>, (<a class="reference internal" href="../myst.schema.html#position"><span class="std std-ref">Position</span></a>)
+: See also <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>data</strong>: <em>object</em>, <em>optional</em>
+: See also <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p>
 
     <script type="text/x-thebe-config">
     {

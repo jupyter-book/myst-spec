@@ -1,8 +1,20 @@
 Rich footnote content associated with footnote reference
 
-- __type*__: _string_ ("footnoteDefinition") - See {ref}`node`
-- __children*__: _array_ ({ref}`flowcontent`) - See {ref}`parent`
-- __identifier*__: _string_ - See {ref}`optionalassociation`
-- __label__: _string_ - See {ref}`optionalassociation`
-- __position__: _object_ ({ref}`position`) - See {ref}`node`
-- __data__: _object_ - See {ref}`node`
+__type__: _string_, ("footnoteDefinition")
+: See also {ref}`node`
+
+__children__: _array_, ({ref}`flowcontent`)
+: See also {ref}`parent`
+
+__identifier__: _string_
+: See also {ref}`optionalassociation`
+
+__label__: _string_, _optional_
+: See also {ref}`optionalassociation`
+
+__position__: _object_, _optional_, ({ref}`position`)
+: See also {ref}`node`
+
+__data__: _object_, _optional_
+: See also {ref}`node`
+

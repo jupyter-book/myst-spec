@@ -144,12 +144,12 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="references.html">
-   References &amp; Links
+   Directive Targets and Cross References
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="footnotes.html">
-   Footnotes
+   Footnote Definition Node Specification
   </a>
  </li>
  <li class="toctree-l1">
@@ -415,20 +415,24 @@ title="Print to PDF"
 <section id="specification">
 <h2>Specification<a class="headerlink" href="#specification" title="Permalink to this headline">#</a></h2>
 <p>Admonition node for drawing attention to text, separate from the neighboring content</p>
-<ul class="simple">
-<li><p><strong>type*</strong>: <em>string</em> (“admonition”) - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>kind</strong>: <em>string</em> (“attention” | “caution” | “danger” | “error” | “hint” | “important” | “note” | “seealso” | “tip” | “warning”) - kind of admonition, to determine styling</p></li>
-<li><p><strong>class</strong>: <em>string</em> - admonition class info to override kind</p></li>
-<li><p><strong>children</strong>: <em>array</em> (<a class="reference internal" href="../myst.schema.html#admonitiontitle"><span class="std std-ref">AdmonitionTitle</span></a> | <a class="reference internal" href="../myst.schema.html#flowcontent"><span class="std std-ref">FlowContent</span></a>)</p></li>
-<li><p><strong>position</strong>: <em>object</em> (<a class="reference internal" href="../myst.schema.html#position"><span class="std std-ref">Position</span></a>) - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>data</strong>: <em>object</em> - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
-</ul>
+<p><strong>type</strong>: <em>string</em>, (“admonition”)
+: See also <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>kind</strong>: <em>string</em>, <em>optional</em>, (“attention” | “caution” | “danger” | “error” | “hint” | “important” | “note” | “seealso” | “tip” | “warning”)
+: kind of admonition, to determine styling</p>
+<p><strong>class</strong>: <em>string</em>, <em>optional</em>
+: admonition class info to override kind</p>
+<p><strong>children</strong>: <em>array</em>, <em>optional</em>, (<a class="reference internal" href="../myst.schema.html#admonitiontitle"><span class="std std-ref">AdmonitionTitle</span></a> | <a class="reference internal" href="../myst.schema.html#flowcontent"><span class="std std-ref">FlowContent</span></a>)
+: An optional <code class="docutils literal notranslate"><span class="pre">admonitionTitle</span></code> followed by the admonitions content.</p>
+<p><strong>position</strong>: <em>object</em>, <em>optional</em>, (<a class="reference internal" href="../myst.schema.html#position"><span class="std std-ref">Position</span></a>)
+: See also <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>data</strong>: <em>object</em>, <em>optional</em>
+: See also <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p>
 </section>
 <section id="example">
 <h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">#</a></h2>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="600c4bfd-d0c9-4a09-9ddf-d5b4c64a2d21" name="64806652-0c16-49bf-a16e-cd2014c3c2ea" type="radio">
-</input><label class="sd-tab-label" data-sync-id="myst" for="600c4bfd-d0c9-4a09-9ddf-d5b4c64a2d21">
+<input checked="checked" id="7c2996da-e98a-4bcc-b203-ffef6e20aed1" name="a97d73c5-9b1d-4ebd-8a81-bbd77ed03ca7" type="radio">
+</input><label class="sd-tab-label" data-sync-id="myst" for="7c2996da-e98a-4bcc-b203-ffef6e20aed1">
 Markup</label><div class="sd-tab-content docutils">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```{admonition} This is a title
   An example of an admonition with a _title_.
@@ -436,8 +440,8 @@ Markup</label><div class="sd-tab-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="104d9c54-2ddd-4379-b7fc-13b2aa3b5982" name="64806652-0c16-49bf-a16e-cd2014c3c2ea" type="radio">
-</input><label class="sd-tab-label" data-sync-id="ast" for="104d9c54-2ddd-4379-b7fc-13b2aa3b5982">
+<input id="71db11a4-ce23-4469-86eb-13c1c86767bb" name="a97d73c5-9b1d-4ebd-8a81-bbd77ed03ca7" type="radio">
+</input><label class="sd-tab-label" data-sync-id="ast" for="71db11a4-ce23-4469-86eb-13c1c86767bb">
 AST</label><div class="sd-tab-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">root</span><span class="w"></span>
 <span class="nt">children</span><span class="p">:</span><span class="w"></span>
@@ -465,8 +469,8 @@ AST</label><div class="sd-tab-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="a2c9c876-1061-44de-8f2e-e28ca8d55ac6" name="64806652-0c16-49bf-a16e-cd2014c3c2ea" type="radio">
-</input><label class="sd-tab-label" data-sync-id="render" for="a2c9c876-1061-44de-8f2e-e28ca8d55ac6">
+<input id="eff45a5f-1b9c-4f41-ae66-0fe65aa76621" name="a97d73c5-9b1d-4ebd-8a81-bbd77ed03ca7" type="radio">
+</input><label class="sd-tab-label" data-sync-id="render" for="eff45a5f-1b9c-4f41-ae66-0fe65aa76621">
 Render</label><div class="sd-tab-content docutils">
 <div class="admonition-this-is-a-title admonition">
 <p class="admonition-title">This is a title</p>

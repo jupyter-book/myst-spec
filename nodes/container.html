@@ -142,12 +142,12 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../features/references.html">
-   References &amp; Links
+   Directive Targets and Cross References
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../features/footnotes.html">
-   Footnotes
+   Footnote Definition Node Specification
   </a>
  </li>
  <li class="toctree-l1">
@@ -384,18 +384,26 @@ title="Print to PDF"
               <div>
                 
   <p>Top-level container node to provide association and numbering to child content</p>
-<ul class="simple">
-<li><p><strong>type*</strong>: <em>string</em> (“container”) - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>kind*</strong>: <em>string</em> (“figure” | “table”) - kind of container contents</p></li>
-<li><p><strong>class</strong>: <em>string</em> - any custom class information</p></li>
-<li><p><strong>enumerated</strong>: <em>boolean</em> - count this container for numbering based on kind, e.g. Figure 1a</p></li>
-<li><p><strong>enumerator</strong>: <em>string</em> - resolved enumerated value for this container</p></li>
-<li><p><strong>children*</strong>: <em>array</em> (<a class="reference internal" href="../myst.schema.html#caption"><span class="std std-ref">Caption</span></a> | <a class="reference internal" href="../myst.schema.html#legend"><span class="std std-ref">Legend</span></a> | <a class="reference internal" href="../myst.schema.html#image"><span class="std std-ref">Image</span></a> | <a class="reference internal" href="../myst.schema.html#table"><span class="std std-ref">Table</span></a>) - See <a class="reference internal" href="../myst.schema.html#parent"><span class="std std-ref">Parent</span></a></p></li>
-<li><p><strong>identifier</strong>: <em>string</em> - See <a class="reference internal" href="../myst.schema.html#optionalassociation"><span class="std std-ref">OptionalAssociation</span></a></p></li>
-<li><p><strong>label</strong>: <em>string</em> - See <a class="reference internal" href="../myst.schema.html#optionalassociation"><span class="std std-ref">OptionalAssociation</span></a></p></li>
-<li><p><strong>position</strong>: <em>object</em> (<a class="reference internal" href="../myst.schema.html#position"><span class="std std-ref">Position</span></a>) - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>data</strong>: <em>object</em> - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
-</ul>
+<p><strong>type</strong>: <em>string</em>, (“container”)
+: See also <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>kind</strong>: <em>string</em>, (“figure” | “table”)
+: kind of container contents</p>
+<p><strong>class</strong>: <em>string</em>, <em>optional</em>
+: any custom class information</p>
+<p><strong>enumerated</strong>: <em>boolean</em>, <em>optional</em>
+: count this container for numbering based on kind, e.g. Figure 1a</p>
+<p><strong>enumerator</strong>: <em>string</em>, <em>optional</em>
+: resolved enumerated value for this container</p>
+<p><strong>children</strong>: <em>array</em>, (<a class="reference internal" href="../myst.schema.html#caption"><span class="std std-ref">Caption</span></a> | <a class="reference internal" href="../myst.schema.html#legend"><span class="std std-ref">Legend</span></a> | <a class="reference internal" href="../myst.schema.html#image"><span class="std std-ref">Image</span></a> | <a class="reference internal" href="../myst.schema.html#table"><span class="std std-ref">Table</span></a>)
+: See also <a class="reference internal" href="../myst.schema.html#parent"><span class="std std-ref">Parent</span></a></p>
+<p><strong>identifier</strong>: <em>string</em>, <em>optional</em>
+: See also <a class="reference internal" href="../myst.schema.html#optionalassociation"><span class="std std-ref">OptionalAssociation</span></a></p>
+<p><strong>label</strong>: <em>string</em>, <em>optional</em>
+: See also <a class="reference internal" href="../myst.schema.html#optionalassociation"><span class="std std-ref">OptionalAssociation</span></a></p>
+<p><strong>position</strong>: <em>object</em>, <em>optional</em>, (<a class="reference internal" href="../myst.schema.html#position"><span class="std std-ref">Position</span></a>)
+: See also <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>data</strong>: <em>object</em>, <em>optional</em>
+: See also <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p>
 
     <script type="text/x-thebe-config">
     {

@@ -142,12 +142,12 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../features/references.html">
-   References &amp; Links
+   Directive Targets and Cross References
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../features/footnotes.html">
-   Footnotes
+   Footnote Definition Node Specification
   </a>
  </li>
  <li class="toctree-l1">
@@ -384,11 +384,12 @@ title="Print to PDF"
               <div>
                 
   <p>One place in a source file</p>
-<ul class="simple">
-<li><p><strong>line*</strong>: <em>integer</em> - line in the source file, 1-indexed</p></li>
-<li><p><strong>column*</strong>: <em>integer</em> - column in the source file, 1-indexed</p></li>
-<li><p><strong>offset</strong>: <em>integer</em> - offset character in the source file, 0-indexed</p></li>
-</ul>
+<p><strong>line</strong>: <em>integer</em>
+: line in the source file, 1-indexed</p>
+<p><strong>column</strong>: <em>integer</em>
+: column in the source file, 1-indexed</p>
+<p><strong>offset</strong>: <em>integer</em>, <em>optional</em>
+: offset character in the source file, 0-indexed</p>
 
     <script type="text/x-thebe-config">
     {

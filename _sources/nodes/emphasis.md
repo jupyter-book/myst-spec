@@ -1,6 +1,14 @@
 Stressed, italicized content
 
-- __type*__: _string_ ("emphasis") - See {ref}`node`
-- __children*__: _array_ ({ref}`phrasingcontent`) - See {ref}`parent`
-- __position__: _object_ ({ref}`position`) - See {ref}`node`
-- __data__: _object_ - See {ref}`node`
+__type__: _string_, ("emphasis")
+: See also {ref}`node`
+
+__children__: _array_, ({ref}`phrasingcontent`)
+: See also {ref}`parent`
+
+__position__: _object_, _optional_, ({ref}`position`)
+: See also {ref}`node`
+
+__data__: _object_, _optional_
+: See also {ref}`node`
+

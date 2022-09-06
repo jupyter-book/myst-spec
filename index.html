@@ -143,12 +143,12 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="features/references.html">
-   References &amp; Links
+   Directive Targets and Cross References
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="features/footnotes.html">
-   Footnotes
+   Footnote Definition Node Specification
   </a>
  </li>
  <li class="toctree-l1">
@@ -438,16 +438,17 @@ title="Print to PDF"
 <h1>MyST Specification<a class="headerlink" href="#myst-specification" title="Permalink to this headline">#</a></h1>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p><code class="docutils literal notranslate"><span class="pre">myst-spec</span></code> is still in development; any structures or features present in the JSON schema may change at any time without notice.</p>
-</div>
-<div class="note admonition">
-<p class="admonition-title">Test Cases</p>
-<p>Test cases are available for download here: <a class="reference external" href="https://unpkg.com/browse/myst-spec/dist/">https://unpkg.com/browse/myst-spec/dist/</a></p>
+<p><code class="docutils literal notranslate"><span class="pre">myst-spec</span></code> is in development; any structures or features present in the JSON schema may change at any time without notice.</p>
 </div>
 <p>MyST (Markedly Structured Text) is designed to create publication-quality, computational documents written entirely in Markdown. The main use case driving the development and design of MyST is <a class="reference external" href="https://jupyterbook.org/">JupyterBook</a>, which creates educational online textbooks and tutorials with Jupyter Notebooks and narrative content written in MyST.</p>
 <section id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">#</a></h2>
-<p>There are three components that this documentation and repository aims to formalize: (1) the MyST markup language, which is a superset of <a class="reference external" href="https://commonmark.org/">CommonMark</a> (a standard form of Markdown); (2) the MyST abstract syntax tree (AST), which is the datastructure of a document after it has been parsed, and can be used in transforming and rendering content; and (3) a set of unittests that can be used to test implementations of MyST (e.g. in Python and Javascript).</p>
+<p>There are three components that this documentation and repository aims to formalize:</p>
+<ol class="simple">
+<li><p>the MyST markup language, which is a superset of <a class="reference external" href="https://commonmark.org/">CommonMark</a> (a standard form of Markdown);</p></li>
+<li><p>the MyST abstract syntax tree (AST), which is the datastructure of a document after it has been parsed, and can be used in transforming and rendering content; and</p></li>
+<li><p>a set of unittests that can be used to test implementations of MyST (e.g. in Python and Javascript).</p></li>
+</ol>
 </section>
 <section id="myst-markup-langauge">
 <h2>MyST Markup Langauge<a class="headerlink" href="#myst-markup-langauge" title="Permalink to this headline">#</a></h2>
@@ -455,7 +456,7 @@ title="Print to PDF"
 </section>
 <section id="myst-abstract-syntax-tree">
 <h2>MyST Abstract Syntax Tree<a class="headerlink" href="#myst-abstract-syntax-tree" title="Permalink to this headline">#</a></h2>
-<p>Fundamentally, the specification for MyST documents can be broken down into abstract syntax tree (AST) node types and their document-level counterparts. The <code class="docutils literal notranslate"><span class="pre">myst-spec</span></code> AST builds on <a class="reference external" href="https://github.com/syntax-tree/mdast">Markdown AST, or <code class="docutils literal notranslate"><span class="pre">mdast</span></code></a>, an intermediate format that in turn builds upon the existing <a class="reference external" href="https://github.com/syntax-tree/unsit">Universal Syntax Tree, or <code class="docutils literal notranslate"><span class="pre">unist</span></code> spec</a>. <code class="docutils literal notranslate"><span class="pre">unist</span></code> is used throughout the <a class="reference external" href="https://unifiedjs.com/">unifiedjs</a> Javascript community with hundreds of <a class="reference external" href="https://unifiedjs.com/explore/">existing transformations</a>, <a class="reference external" href="https://unifiedjs.com/explore/keyword/unist-util/">utilities</a> and <a class="reference external" href="https://unifiedjs.com/explore/keyword/rehype/">serializers</a>. <code class="docutils literal notranslate"><span class="pre">unist</span></code> has a simple, with a <code class="docutils literal notranslate"><span class="pre">type</span></code> defining the node optional properties on the node and optional <code class="docutils literal notranslate"><span class="pre">children</span></code> (a leaf node has a <code class="docutils literal notranslate"><span class="pre">value</span></code>).</p>
+<p>Fundamentally, the specification for MyST documents can be broken down into abstract syntax tree (AST) node types and their document-level counterparts. The <code class="docutils literal notranslate"><span class="pre">myst-spec</span></code> AST builds on <a class="reference external" href="https://github.com/syntax-tree/mdast">Markdown AST, or <code class="docutils literal notranslate"><span class="pre">mdast</span></code></a>, an intermediate format that in turn builds upon the existing <a class="reference external" href="https://github.com/syntax-tree/unsit">Universal Syntax Tree, or <code class="docutils literal notranslate"><span class="pre">unist</span></code> spec</a>. <code class="docutils literal notranslate"><span class="pre">unist</span></code> is used throughout the <a class="reference external" href="https://unifiedjs.com/">unifiedjs</a> Javascript community with hundreds of <a class="reference external" href="https://unifiedjs.com/explore/">existing transformations</a>, <a class="reference external" href="https://unifiedjs.com/explore/keyword/unist-util/">utilities</a> and <a class="reference external" href="https://unifiedjs.com/explore/keyword/rehype/">serializers</a>. <code class="docutils literal notranslate"><span class="pre">unist</span></code> has a simple format, with a <code class="docutils literal notranslate"><span class="pre">type</span></code> defining the node optional properties on the node and optional <code class="docutils literal notranslate"><span class="pre">children</span></code> (a leaf node has a <code class="docutils literal notranslate"><span class="pre">value</span></code>).</p>
 <p>The MyST AST introduces nodes for directives and roles, as well as numerous new features, like admonitions, citiations, and equations, all of which build upon <code class="docutils literal notranslate"><span class="pre">mdast</span></code> and other existing standards and nomenclature. The MyST AST, like <code class="docutils literal notranslate"><span class="pre">mdast</span></code>, is serializable to JSON or YAML, and can be effectively shared between projects, languages, and implementations.</p>
 </section>
 <section id="myst-test-cases">
@@ -464,6 +465,11 @@ title="Print to PDF"
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>These test cases are still being expanded as the spec is developed.  They do not yet include all edge cases and are also subject to change as the spec is developed.</p>
+</div>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p><strong>Test Cases</strong></p>
+<p>Test cases are available for download here: <a class="reference external" href="https://unpkg.com/browse/myst-spec/dist/">https://unpkg.com/browse/myst-spec/dist/</a></p>
 </div>
 </section>
 <section id="working-with-the-myst-ast">

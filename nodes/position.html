@@ -142,12 +142,12 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../features/references.html">
-   References &amp; Links
+   Directive Targets and Cross References
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../features/footnotes.html">
-   Footnotes
+   Footnote Definition Node Specification
   </a>
  </li>
  <li class="toctree-l1">
@@ -384,11 +384,12 @@ title="Print to PDF"
               <div>
                 
   <p>Location of a node in a source file</p>
-<ul class="simple">
-<li><p><strong>start*</strong>: <em>object</em> (<a class="reference internal" href="../myst.schema.html#point"><span class="std std-ref">Point</span></a>) - place of first character of parsed source region</p></li>
-<li><p><strong>end*</strong>: <em>object</em> (<a class="reference internal" href="../myst.schema.html#point"><span class="std std-ref">Point</span></a>) - place of first character after parsed source region, whether it exists or not</p></li>
-<li><p><strong>indent</strong>: <em>array</em> (integer) - start column at each index in the source region, for elements that span multiple lines</p></li>
-</ul>
+<p><strong>start</strong>: <em>object</em>, (<a class="reference internal" href="../myst.schema.html#point"><span class="std std-ref">Point</span></a>)
+: place of first character of parsed source region</p>
+<p><strong>end</strong>: <em>object</em>, (<a class="reference internal" href="../myst.schema.html#point"><span class="std std-ref">Point</span></a>)
+: place of first character after parsed source region, whether it exists or not</p>
+<p><strong>indent</strong>: <em>array</em>, <em>optional</em>, (integer)
+: start column at each index in the source region, for elements that span multiple lines</p>
 
     <script type="text/x-thebe-config">
     {

@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>References &amp; Links</title>
+    <title>Directive Targets and Cross References</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,7 +52,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Footnotes" href="footnotes.html" />
+    <link rel="next" title="Footnote Definition Node Specification" href="footnotes.html" />
     <link rel="prev" title="Math &amp; Equations" href="math.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -144,12 +144,12 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   References &amp; Links
+   Directive Targets and Cross References
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="footnotes.html">
-   Footnotes
+   Footnote Definition Node Specification
   </a>
  </li>
  <li class="toctree-l1">
@@ -358,95 +358,88 @@ title="Print to PDF"
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
-   References &amp; Links
+   Directive Targets and Cross References
   </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#directive-targets-and-cross-references">
-     Directive Targets and Cross References
+    <a class="reference internal nav-link" href="#specification">
+     Specification
     </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#specification">
-       Specification
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#example">
-       Example
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#using-markdown-links">
-       Using Markdown Links
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#using-the-ref-role">
-       Using the
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         {ref}
-        </span>
-       </code>
-       role
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#numbering-references-with-numref">
-       Numbering references with
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         {numref}
-        </span>
-       </code>
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#using-the-eq-role">
-       Using the
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         {eq}
-        </span>
-       </code>
-       role
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#using-the-doc-role">
-       Using the
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         {doc}
-        </span>
-       </code>
-       role
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#equations-targets">
-       Equations Targets
-      </a>
-     </li>
-    </ul>
    </li>
    <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#target-node">
-     Target Node
+    <a class="reference internal nav-link" href="#example">
+     Example
     </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id1">
-       Specification
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id2">
-       Example
-      </a>
-     </li>
-    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#using-markdown-links">
+     Using Markdown Links
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#using-the-ref-role">
+     Using the
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       {ref}
+      </span>
+     </code>
+     role
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#numbering-references-with-numref">
+     Numbering references with
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       {numref}
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#using-the-eq-role">
+     Using the
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       {eq}
+      </span>
+     </code>
+     role
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#using-the-doc-role">
+     Using the
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       {doc}
+      </span>
+     </code>
+     role
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#equations-targets">
+     Equations Targets
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#target-node">
+   Target Node
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Specification
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     Example
+    </a>
    </li>
   </ul>
  </li>
@@ -471,7 +464,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>References & Links</h1>
+                <h1>Directive Targets and Cross References</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -483,95 +476,88 @@ title="Print to PDF"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
-   References &amp; Links
+   Directive Targets and Cross References
   </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#directive-targets-and-cross-references">
-     Directive Targets and Cross References
+    <a class="reference internal nav-link" href="#specification">
+     Specification
     </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#specification">
-       Specification
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#example">
-       Example
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#using-markdown-links">
-       Using Markdown Links
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#using-the-ref-role">
-       Using the
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         {ref}
-        </span>
-       </code>
-       role
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#numbering-references-with-numref">
-       Numbering references with
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         {numref}
-        </span>
-       </code>
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#using-the-eq-role">
-       Using the
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         {eq}
-        </span>
-       </code>
-       role
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#using-the-doc-role">
-       Using the
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         {doc}
-        </span>
-       </code>
-       role
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#equations-targets">
-       Equations Targets
-      </a>
-     </li>
-    </ul>
    </li>
    <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#target-node">
-     Target Node
+    <a class="reference internal nav-link" href="#example">
+     Example
     </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id1">
-       Specification
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id2">
-       Example
-      </a>
-     </li>
-    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#using-markdown-links">
+     Using Markdown Links
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#using-the-ref-role">
+     Using the
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       {ref}
+      </span>
+     </code>
+     role
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#numbering-references-with-numref">
+     Numbering references with
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       {numref}
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#using-the-eq-role">
+     Using the
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       {eq}
+      </span>
+     </code>
+     role
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#using-the-doc-role">
+     Using the
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       {doc}
+      </span>
+     </code>
+     role
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#equations-targets">
+     Equations Targets
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#target-node">
+   Target Node
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Specification
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     Example
+    </a>
    </li>
   </ul>
  </li>
@@ -597,11 +583,9 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="references-links">
-<h1>References &amp; Links<a class="headerlink" href="#references-links" title="Permalink to this headline">#</a></h1>
-<p>References refer to labeled content (e.g. a figure, document or table) and automatically generates links and extra information, like numbering. This page covers the basics of setting up references to content and shows examples for sections, figures, tables and equations.</p>
+  <p>References refer to labeled content (e.g. a figure, document or table) and automatically generates links and extra information, like numbering. This page covers the basics of setting up references to content and shows examples for sections, figures, tables and equations.</p>
 <section id="directive-targets-and-cross-references">
-<h2>Directive Targets and Cross References<a class="headerlink" href="#directive-targets-and-cross-references" title="Permalink to this headline">#</a></h2>
+<h1>Directive Targets and Cross References<a class="headerlink" href="#directive-targets-and-cross-references" title="Permalink to this headline">#</a></h1>
 <p>Targets are custom anchors that you can refer to elsewhere, for example, a figure, section, table, program, or proof. To be referenceable, they must have a <code class="docutils literal notranslate"><span class="pre">label</span></code>/<code class="docutils literal notranslate"><span class="pre">identifier</span></code> pair in the AST. These can be setup by setting the <code class="docutils literal notranslate"><span class="pre">label</span></code> or <code class="docutils literal notranslate"><span class="pre">name</span></code> option in a directive.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -609,23 +593,32 @@ title="Print to PDF"
 </div>
 <p>Cross-referencing content is accomplished with markdown link syntax (<code class="docutils literal notranslate"><span class="pre">[text](link)</span></code>) or through specific roles (<a class="reference internal" href="#ref-role"><span class="std std-ref">ref</span></a>, <a class="reference internal" href="#numref-role"><span class="std std-ref">numref</span></a>, <a class="reference internal" href="#eq-role"><span class="std std-ref">eq</span></a> or <a class="reference internal" href="#doc-role"><span class="std std-ref">doc</span></a>), depending on your use-case.</p>
 <section id="specification">
-<h3>Specification<a class="headerlink" href="#specification" title="Permalink to this headline">#</a></h3>
+<h2>Specification<a class="headerlink" href="#specification" title="Permalink to this headline">#</a></h2>
 <p>In-line reference to an associated node</p>
-<ul class="simple">
-<li><p><strong>type*</strong>: <em>string</em> (“crossReference”) - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>kind</strong>: <em>string</em> (“eq” | “numref” | “ref”)</p></li>
-<li><p><strong>children</strong>: <em>array</em> (<a class="reference internal" href="../myst.schema.html#staticphrasingcontent"><span class="std std-ref">StaticPhrasingContent</span></a>)</p></li>
-<li><p><strong>identifier*</strong>: <em>string</em> - See <a class="reference internal" href="../myst.schema.html#optionalassociation"><span class="std std-ref">OptionalAssociation</span></a></p></li>
-<li><p><strong>label</strong>: <em>string</em> - See <a class="reference internal" href="../myst.schema.html#optionalassociation"><span class="std std-ref">OptionalAssociation</span></a></p></li>
-<li><p><strong>position</strong>: <em>object</em> (<a class="reference internal" href="../myst.schema.html#position"><span class="std std-ref">Position</span></a>) - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>data</strong>: <em>object</em> - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
-</ul>
+<p><strong>type</strong>: <em>string</em>, (“crossReference”)
+: See also <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>kind</strong>: <em>string</em>, <em>optional</em>, (“eq” | “numref” | “ref”)
+: Indicates if the references should be numbered.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">kind</span></code> was based on docutils and is subject to change as we improve the <code class="docutils literal notranslate"><span class="pre">crossReference</span></code> experience.</p>
+</div>
+<p><strong>children</strong>: <em>array</em>, <em>optional</em>, (<a class="reference internal" href="../myst.schema.html#staticphrasingcontent"><span class="std std-ref">StaticPhrasingContent</span></a>)
+: Children of the crossReference, can include text with “%s” or “{number}” and enumerated references will be filled in.</p>
+<p><strong>identifier</strong>: <em>string</em>
+: See also <a class="reference internal" href="../myst.schema.html#optionalassociation"><span class="std std-ref">OptionalAssociation</span></a></p>
+<p><strong>label</strong>: <em>string</em>, <em>optional</em>
+: See also <a class="reference internal" href="../myst.schema.html#optionalassociation"><span class="std std-ref">OptionalAssociation</span></a></p>
+<p><strong>position</strong>: <em>object</em>, <em>optional</em>, (<a class="reference internal" href="../myst.schema.html#position"><span class="std std-ref">Position</span></a>)
+: See also <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>data</strong>: <em>object</em>, <em>optional</em>
+: See also <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p>
 </section>
 <section id="example">
-<h3>Example<a class="headerlink" href="#example" title="Permalink to this headline">#</a></h3>
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">#</a></h2>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="61a94f16-dcc7-4782-8311-e32652e4758d" name="da6445a4-60d5-4b09-bb83-e4115f276ac9" type="radio">
-</input><label class="sd-tab-label" data-sync-id="myst" for="61a94f16-dcc7-4782-8311-e32652e4758d">
+<input checked="checked" id="b9a1b62b-fd4b-49fa-ace8-0e86975ed302" name="43a74238-3d75-4033-a90e-b651d2d2f2fd" type="radio">
+</input><label class="sd-tab-label" data-sync-id="myst" for="b9a1b62b-fd4b-49fa-ace8-0e86975ed302">
 Markup</label><div class="sd-tab-content docutils">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>see {numref}`my-table`
 
@@ -638,8 +631,8 @@ Markup</label><div class="sd-tab-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="e3062621-7f57-4f37-8ecd-20eec0f597c3" name="da6445a4-60d5-4b09-bb83-e4115f276ac9" type="radio">
-</input><label class="sd-tab-label" data-sync-id="ast" for="e3062621-7f57-4f37-8ecd-20eec0f597c3">
+<input id="4dddae10-2b1d-4e9d-bc1d-b5fae6849d00" name="43a74238-3d75-4033-a90e-b651d2d2f2fd" type="radio">
+</input><label class="sd-tab-label" data-sync-id="ast" for="4dddae10-2b1d-4e9d-bc1d-b5fae6849d00">
 AST</label><div class="sd-tab-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">root</span><span class="w"></span>
 <span class="nt">children</span><span class="p">:</span><span class="w"></span>
@@ -692,8 +685,8 @@ AST</label><div class="sd-tab-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="fac50f65-b2a8-4ced-82ec-fe6c8eacd975" name="da6445a4-60d5-4b09-bb83-e4115f276ac9" type="radio">
-</input><label class="sd-tab-label" data-sync-id="render" for="fac50f65-b2a8-4ced-82ec-fe6c8eacd975">
+<input id="19e8ed77-ccf7-4466-8b6f-54b9533fc22d" name="43a74238-3d75-4033-a90e-b651d2d2f2fd" type="radio">
+</input><label class="sd-tab-label" data-sync-id="render" for="19e8ed77-ccf7-4466-8b6f-54b9533fc22d">
 Render</label><div class="sd-tab-content docutils">
 <p>see <a class="reference internal" href="#my-table"><span class="std std-numref">Table 1</span></a></p>
 <table class="table" id="my-table">
@@ -712,7 +705,7 @@ Render</label><div class="sd-tab-content docutils">
 </div>
 </section>
 <section id="using-markdown-links">
-<h3>Using Markdown Links<a class="headerlink" href="#using-markdown-links" title="Permalink to this headline">#</a></h3>
+<h2>Using Markdown Links<a class="headerlink" href="#using-markdown-links" title="Permalink to this headline">#</a></h2>
 <p>Using markdown link syntax is one of the most versatile ways to link to content. This uses the standard CommonMark syntax for a link (<code class="docutils literal notranslate"><span class="pre">[text](link)</span></code>), and the link can either be a label or a link to a document. For example:</p>
 <table class="table">
 <colgroup>
@@ -736,11 +729,11 @@ Render</label><div class="sd-tab-content docutils">
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Markdown links support nested markdown syntax. If you leave the text empty, MyST will fill in the link with the title, caption, document name, or equation number as appropriate.</p>
-<p>For example, <code class="docutils literal notranslate"><span class="pre">[](./references.md)</span></code> creates <a class="reference internal" href="#"><span class="doc std std-doc">References &amp; Links</span></a>.</p>
+<p>For example, <code class="docutils literal notranslate"><span class="pre">[](./footnotes.md)</span></code> creates <a class="reference internal" href="footnotes.html"><span class="doc std std-doc">Footnote Definition Node Specification</span></a>.</p>
 </div>
 </section>
 <section id="using-the-ref-role">
-<span id="ref-role"></span><h3>Using the <code class="docutils literal notranslate"><span class="pre">{ref}</span></code> role<a class="headerlink" href="#using-the-ref-role" title="Permalink to this headline">#</a></h3>
+<span id="ref-role"></span><h2>Using the <code class="docutils literal notranslate"><span class="pre">{ref}</span></code> role<a class="headerlink" href="#using-the-ref-role" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">{ref}</span></code> role can be used to bring the title or caption directly in line, the role can take a single argument which is the label:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>{ref}`reference-target`
 </pre></div>
@@ -751,19 +744,19 @@ Render</label><div class="sd-tab-content docutils">
 </div>
 </section>
 <section id="numbering-references-with-numref">
-<span id="numref-role"></span><h3>Numbering references with <code class="docutils literal notranslate"><span class="pre">{numref}</span></code><a class="headerlink" href="#numbering-references-with-numref" title="Permalink to this headline">#</a></h3>
+<span id="numref-role"></span><h2>Numbering references with <code class="docutils literal notranslate"><span class="pre">{numref}</span></code><a class="headerlink" href="#numbering-references-with-numref" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">{numref}</span></code> role is exactly the same as the above <code class="docutils literal notranslate"><span class="pre">{ref}</span></code> role, but also allows you to use a <code class="docutils literal notranslate"><span class="pre">%s</span></code> in place of the number, which will get filled in when the content is rendered. For example, <code class="docutils literal notranslate"><span class="pre">{numref}`Custom</span> <span class="pre">Table</span> <span class="pre">%s</span> <span class="pre">text</span> <span class="pre">&lt;my-table-ref&gt;`.</span></code> will become <code class="docutils literal notranslate"><span class="pre">Custom</span> <span class="pre">Table</span> <span class="pre">3</span> <span class="pre">text</span></code>. You can try this in the demo above!</p>
 </section>
 <section id="using-the-eq-role">
-<span id="eq-role"></span><h3>Using the <code class="docutils literal notranslate"><span class="pre">{eq}</span></code> role<a class="headerlink" href="#using-the-eq-role" title="Permalink to this headline">#</a></h3>
+<span id="eq-role"></span><h2>Using the <code class="docutils literal notranslate"><span class="pre">{eq}</span></code> role<a class="headerlink" href="#using-the-eq-role" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">{eq}`my-equation`</span></code> syntax creates a numbered link to the equation, which is equivalent to <code class="docutils literal notranslate"><span class="pre">[](my-equation)</span></code> as there is no text content to fill in a title or caption.</p>
 </section>
 <section id="using-the-doc-role">
-<span id="doc-role"></span><h3>Using the <code class="docutils literal notranslate"><span class="pre">{doc}</span></code> role<a class="headerlink" href="#using-the-doc-role" title="Permalink to this headline">#</a></h3>
+<span id="doc-role"></span><h2>Using the <code class="docutils literal notranslate"><span class="pre">{doc}</span></code> role<a class="headerlink" href="#using-the-doc-role" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">{doc}`./my-file.md`</span></code> syntax creates a link to the document, which is equivalent to <code class="docutils literal notranslate"><span class="pre">[](./my-file.md)</span></code>.</p>
 </section>
 <section id="equations-targets">
-<span id="targeting-equations"></span><h3>Equations Targets<a class="headerlink" href="#equations-targets" title="Permalink to this headline">#</a></h3>
+<span id="targeting-equations"></span><h2>Equations Targets<a class="headerlink" href="#equations-targets" title="Permalink to this headline">#</a></h2>
 <p>To reference equations, use the <code class="docutils literal notranslate"><span class="pre">{eq}</span></code> role. It will automatically insert the number of the equation. Note that you cannot modify the text of equation links.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```{math}
 :label: my-math-label
@@ -788,31 +781,33 @@ See Equation {eq}`my-math-label`!
 </section>
 </section>
 <section id="target-node">
-<h2>Target Node<a class="headerlink" href="#target-node" title="Permalink to this headline">#</a></h2>
+<h1>Target Node<a class="headerlink" href="#target-node" title="Permalink to this headline">#</a></h1>
 <p>Placing a Target node allows you to cross reference the subsequent node by target value.</p>
 <section id="id1">
-<h3>Specification<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
+<h2>Specification<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
 <p>Target node - provides identifier/label for the following node</p>
-<ul class="simple">
-<li><p><strong>type*</strong>: <em>string</em> (“mystTarget”) - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>label</strong>: <em>string</em> - unresolved target label</p></li>
-<li><p><strong>position</strong>: <em>object</em> (<a class="reference internal" href="../myst.schema.html#position"><span class="std std-ref">Position</span></a>) - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>data</strong>: <em>object</em> - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
-</ul>
+<p><strong>type</strong>: <em>string</em>, (“mystTarget”)
+: See also <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>label</strong>: <em>string</em>, <em>optional</em>
+: unresolved target label</p>
+<p><strong>position</strong>: <em>object</em>, <em>optional</em>, (<a class="reference internal" href="../myst.schema.html#position"><span class="std std-ref">Position</span></a>)
+: See also <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>data</strong>: <em>object</em>, <em>optional</em>
+: See also <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p>
 </section>
 <section id="id2">
-<h3>Example<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
+<h2>Example<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="1c074f2b-1416-439d-8b13-c4537e3c3ee9" name="7683a329-ccc6-494e-b8c4-1d1a4311ff65" type="radio">
-</input><label class="sd-tab-label" data-sync-id="myst" for="1c074f2b-1416-439d-8b13-c4537e3c3ee9">
+<input checked="checked" id="0d190238-be38-4130-a6cb-3860b5d60b80" name="013ac8c2-342c-454b-9bf9-30de3f3a3015" type="radio">
+</input><label class="sd-tab-label" data-sync-id="myst" for="0d190238-be38-4130-a6cb-3860b5d60b80">
 Markup</label><div class="sd-tab-content docutils">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">my_ID</span><span class="p">)</span><span class="o">=</span>
 <span class="c1"># My Header</span>
 </pre></div>
 </div>
 </div>
-<input id="380a875d-25dd-49c5-8c1f-f8241428e588" name="7683a329-ccc6-494e-b8c4-1d1a4311ff65" type="radio">
-</input><label class="sd-tab-label" data-sync-id="ast" for="380a875d-25dd-49c5-8c1f-f8241428e588">
+<input id="2ad02f8f-16ac-4a59-ac28-7efbcecda53a" name="013ac8c2-342c-454b-9bf9-30de3f3a3015" type="radio">
+</input><label class="sd-tab-label" data-sync-id="ast" for="2ad02f8f-16ac-4a59-ac28-7efbcecda53a">
 AST</label><div class="sd-tab-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">root</span><span class="w"></span>
 <span class="nt">children</span><span class="p">:</span><span class="w"></span>
@@ -826,12 +821,11 @@ AST</label><div class="sd-tab-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="9d9277b7-6563-4109-8a54-b16e9b66041f" name="7683a329-ccc6-494e-b8c4-1d1a4311ff65" type="radio">
-</input><label class="sd-tab-label" data-sync-id="render" for="9d9277b7-6563-4109-8a54-b16e9b66041f">
+<input id="dbeb323f-3c6b-4d8a-a182-8d443a9d4fe4" name="013ac8c2-342c-454b-9bf9-30de3f3a3015" type="radio">
+</input><label class="sd-tab-label" data-sync-id="render" for="dbeb323f-3c6b-4d8a-a182-8d443a9d4fe4">
 Render</label><div class="sd-tab-content docutils">
 </div>
 </div>
-</section>
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="my-header">
@@ -879,7 +873,7 @@ Render</label><div class="sd-tab-content docutils">
     <a class='right-next' id="next-link" href="footnotes.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Footnotes</p>
+        <p class="prev-next-title">Footnote Definition Node Specification</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

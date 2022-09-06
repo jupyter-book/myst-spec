@@ -142,12 +142,12 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../features/references.html">
-   References &amp; Links
+   Directive Targets and Cross References
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../features/footnotes.html">
-   Footnotes
+   Footnote Definition Node Specification
   </a>
  </li>
  <li class="toctree-l1">
@@ -384,20 +384,30 @@ title="Print to PDF"
               <div>
                 
   <p>Block of preformatted text</p>
-<ul class="simple">
-<li><p><strong>type*</strong>: <em>string</em> (“code”) - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>lang</strong>: <em>string</em> - language of the code</p></li>
-<li><p><strong>meta</strong>: <em>string</em> - custom information relating to the node</p></li>
-<li><p><strong>class</strong>: <em>string</em> - user-defined class for code block</p></li>
-<li><p><strong>showLineNumbers</strong>: <em>boolean</em></p></li>
-<li><p><strong>startingLineNumber</strong>: <em>integer</em></p></li>
-<li><p><strong>emphasizeLines</strong>: <em>array</em> (integer)</p></li>
-<li><p><strong>identifier</strong>: <em>string</em> - See <a class="reference internal" href="../myst.schema.html#optionalassociation"><span class="std std-ref">OptionalAssociation</span></a></p></li>
-<li><p><strong>label</strong>: <em>string</em> - See <a class="reference internal" href="../myst.schema.html#optionalassociation"><span class="std std-ref">OptionalAssociation</span></a></p></li>
-<li><p><strong>value*</strong>: <em>string</em> - See <a class="reference internal" href="../myst.schema.html#literal"><span class="std std-ref">Literal</span></a></p></li>
-<li><p><strong>position</strong>: <em>object</em> (<a class="reference internal" href="../myst.schema.html#position"><span class="std std-ref">Position</span></a>) - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>data</strong>: <em>object</em> - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
-</ul>
+<p><strong>type</strong>: <em>string</em>, (“code”)
+: See also <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>lang</strong>: <em>string</em>, <em>optional</em>
+: language of the code</p>
+<p><strong>meta</strong>: <em>string</em>, <em>optional</em>
+: custom information relating to the node</p>
+<p><strong>class</strong>: <em>string</em>, <em>optional</em>
+: user-defined class for code block</p>
+<p><strong>showLineNumbers</strong>: <em>boolean</em>, <em>optional</em>
+: No description for this property.</p>
+<p><strong>startingLineNumber</strong>: <em>integer</em>, <em>optional</em>
+: No description for this property.</p>
+<p><strong>emphasizeLines</strong>: <em>array</em>, <em>optional</em>, (integer)
+: No description for this property.</p>
+<p><strong>identifier</strong>: <em>string</em>, <em>optional</em>
+: See also <a class="reference internal" href="../myst.schema.html#optionalassociation"><span class="std std-ref">OptionalAssociation</span></a></p>
+<p><strong>label</strong>: <em>string</em>, <em>optional</em>
+: See also <a class="reference internal" href="../myst.schema.html#optionalassociation"><span class="std std-ref">OptionalAssociation</span></a></p>
+<p><strong>value</strong>: <em>string</em>
+: See also <a class="reference internal" href="../myst.schema.html#literal"><span class="std std-ref">Literal</span></a></p>
+<p><strong>position</strong>: <em>object</em>, <em>optional</em>, (<a class="reference internal" href="../myst.schema.html#position"><span class="std std-ref">Position</span></a>)
+: See also <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>data</strong>: <em>object</em>, <em>optional</em>
+: See also <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p>
 
     <script type="text/x-thebe-config">
     {

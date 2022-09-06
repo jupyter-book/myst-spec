@@ -1,8 +1,20 @@
 One cell of table
 
-- __type*__: _string_ ("tableCell") - See {ref}`node`
-- __header__: _boolean_ 
-- __align__: _string_ ("left" | "center" | "right") - alignment of content within cell 
-- __children*__: _array_ ({ref}`phrasingcontent`) - See {ref}`parent`
-- __position__: _object_ ({ref}`position`) - See {ref}`node`
-- __data__: _object_ - See {ref}`node`
+__type__: _string_, ("tableCell")
+: See also {ref}`node`
+
+__header__: _boolean_, _optional_
+: No description for this property.
+
+__align__: _string_, _optional_, ("left" | "center" | "right")
+: alignment of content within cell
+
+__children__: _array_, ({ref}`phrasingcontent`)
+: See also {ref}`parent`
+
+__position__: _object_, _optional_, ({ref}`position`)
+: See also {ref}`node`
+
+__data__: _object_, _optional_
+: See also {ref}`node`
+

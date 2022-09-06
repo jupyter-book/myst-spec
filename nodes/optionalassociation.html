@@ -142,12 +142,12 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../features/references.html">
-   References &amp; Links
+   Directive Targets and Cross References
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../features/footnotes.html">
-   Footnotes
+   Footnote Definition Node Specification
   </a>
  </li>
  <li class="toctree-l1">
@@ -384,10 +384,10 @@ title="Print to PDF"
               <div>
                 
   <p>Internal relation from one node to another; not required by node</p>
-<ul class="simple">
-<li><p><strong>identifier</strong>: <em>string</em> - identifier that may match another node; value is unparsed and must be normalized such that whitespace is collapsed to single space, initial/final space is trimmed, and case is folded</p></li>
-<li><p><strong>label</strong>: <em>string</em> - node label; character escapes and references are parsed; may be normalized to a unique identifier</p></li>
-</ul>
+<p><strong>identifier</strong>: <em>string</em>, <em>optional</em>
+: identifier that may match another node; value is unparsed and must be normalized such that whitespace is collapsed to single space, initial/final space is trimmed, and case is folded</p>
+<p><strong>label</strong>: <em>string</em>, <em>optional</em>
+: node label; character escapes and references are parsed; may be normalized to a unique identifier</p>
 
     <script type="text/x-thebe-config">
     {

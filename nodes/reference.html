@@ -142,12 +142,12 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../features/references.html">
-   References &amp; Links
+   Directive Targets and Cross References
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../features/footnotes.html">
-   Footnotes
+   Footnote Definition Node Specification
   </a>
  </li>
  <li class="toctree-l1">
@@ -384,9 +384,11 @@ title="Print to PDF"
               <div>
                 
   <p>Marker associated to another node</p>
-<ul class="simple">
-<li><p><strong>referenceType*</strong>: <em>string</em> (“shortcut” | “collapsed” | “full”) - explicitness of the reference: shortcut - reference is implicit, identifier inferred; collapsed - refernce explicit, identifier inferred; full - reference explicit, identifier explicit</p></li>
-</ul>
+<p><strong>referenceType</strong>: <em>string</em>, (“shortcut” | “collapsed” | “full”)
+: explicitness of the reference:
+<code class="docutils literal notranslate"><span class="pre">shortcut</span></code> - reference is implicit, identifier inferred
+<code class="docutils literal notranslate"><span class="pre">collapsed</span></code> - reference explicit, identifier inferred
+<code class="docutils literal notranslate"><span class="pre">full</span></code> - reference explicit, identifier explicit</p>
 
     <script type="text/x-thebe-config">
     {

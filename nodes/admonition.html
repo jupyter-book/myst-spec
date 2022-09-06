@@ -142,12 +142,12 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../features/references.html">
-   References &amp; Links
+   Directive Targets and Cross References
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../features/footnotes.html">
-   Footnotes
+   Footnote Definition Node Specification
   </a>
  </li>
  <li class="toctree-l1">
@@ -384,14 +384,18 @@ title="Print to PDF"
               <div>
                 
   <p>Admonition node for drawing attention to text, separate from the neighboring content</p>
-<ul class="simple">
-<li><p><strong>type*</strong>: <em>string</em> (“admonition”) - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>kind</strong>: <em>string</em> (“attention” | “caution” | “danger” | “error” | “hint” | “important” | “note” | “seealso” | “tip” | “warning”) - kind of admonition, to determine styling</p></li>
-<li><p><strong>class</strong>: <em>string</em> - admonition class info to override kind</p></li>
-<li><p><strong>children</strong>: <em>array</em> (<a class="reference internal" href="../myst.schema.html#admonitiontitle"><span class="std std-ref">AdmonitionTitle</span></a> | <a class="reference internal" href="../myst.schema.html#flowcontent"><span class="std std-ref">FlowContent</span></a>)</p></li>
-<li><p><strong>position</strong>: <em>object</em> (<a class="reference internal" href="../myst.schema.html#position"><span class="std std-ref">Position</span></a>) - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>data</strong>: <em>object</em> - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
-</ul>
+<p><strong>type</strong>: <em>string</em>, (“admonition”)
+: See also <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>kind</strong>: <em>string</em>, <em>optional</em>, (“attention” | “caution” | “danger” | “error” | “hint” | “important” | “note” | “seealso” | “tip” | “warning”)
+: kind of admonition, to determine styling</p>
+<p><strong>class</strong>: <em>string</em>, <em>optional</em>
+: admonition class info to override kind</p>
+<p><strong>children</strong>: <em>array</em>, <em>optional</em>, (<a class="reference internal" href="../myst.schema.html#admonitiontitle"><span class="std std-ref">AdmonitionTitle</span></a> | <a class="reference internal" href="../myst.schema.html#flowcontent"><span class="std std-ref">FlowContent</span></a>)
+: An optional <code class="docutils literal notranslate"><span class="pre">admonitionTitle</span></code> followed by the admonitions content.</p>
+<p><strong>position</strong>: <em>object</em>, <em>optional</em>, (<a class="reference internal" href="../myst.schema.html#position"><span class="std std-ref">Position</span></a>)
+: See also <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>data</strong>: <em>object</em>, <em>optional</em>
+: See also <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p>
 
     <script type="text/x-thebe-config">
     {

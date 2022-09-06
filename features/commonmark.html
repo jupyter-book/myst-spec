@@ -144,12 +144,12 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="references.html">
-   References &amp; Links
+   Directive Targets and Cross References
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="footnotes.html">
-   Footnotes
+   Footnote Definition Node Specification
   </a>
  </li>
  <li class="toctree-l1">
@@ -575,27 +575,34 @@ title="Print to PDF"
 <h2>Block Markup<a class="headerlink" href="#block-markup" title="Permalink to this headline">#</a></h2>
 <section id="headings">
 <h3>Headings<a class="headerlink" href="#headings" title="Permalink to this headline">#</a></h3>
-<ul class="simple">
-<li><p><strong>type*</strong>: <em>string</em> (“heading”) - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>depth*</strong>: <em>integer</em></p></li>
-<li><p><strong>enumerated</strong>: <em>boolean</em> - count this heading for numbering based on kind, e.g. Section 2.4.1</p></li>
-<li><p><strong>enumerator</strong>: <em>string</em> - resolved enumerated value for this heading</p></li>
-<li><p><strong>children*</strong>: <em>array</em> (<a class="reference internal" href="../myst.schema.html#phrasingcontent"><span class="std std-ref">PhrasingContent</span></a>) - See <a class="reference internal" href="../myst.schema.html#parent"><span class="std std-ref">Parent</span></a></p></li>
-<li><p><strong>identifier</strong>: <em>string</em> - See <a class="reference internal" href="../myst.schema.html#optionalassociation"><span class="std std-ref">OptionalAssociation</span></a></p></li>
-<li><p><strong>label</strong>: <em>string</em> - See <a class="reference internal" href="../myst.schema.html#optionalassociation"><span class="std std-ref">OptionalAssociation</span></a></p></li>
-<li><p><strong>position</strong>: <em>object</em> (<a class="reference internal" href="../myst.schema.html#position"><span class="std std-ref">Position</span></a>) - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>data</strong>: <em>object</em> - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
-</ul>
+<p><strong>type</strong>: <em>string</em>, (“heading”)
+: See also <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>depth</strong>: <em>integer</em>
+: No description for this property.</p>
+<p><strong>enumerated</strong>: <em>boolean</em>, <em>optional</em>
+: count this heading for numbering based on kind, e.g. Section 2.4.1</p>
+<p><strong>enumerator</strong>: <em>string</em>, <em>optional</em>
+: resolved enumerated value for this heading</p>
+<p><strong>children</strong>: <em>array</em>, (<a class="reference internal" href="../myst.schema.html#phrasingcontent"><span class="std std-ref">PhrasingContent</span></a>)
+: See also <a class="reference internal" href="../myst.schema.html#parent"><span class="std std-ref">Parent</span></a></p>
+<p><strong>identifier</strong>: <em>string</em>, <em>optional</em>
+: See also <a class="reference internal" href="../myst.schema.html#optionalassociation"><span class="std std-ref">OptionalAssociation</span></a></p>
+<p><strong>label</strong>: <em>string</em>, <em>optional</em>
+: See also <a class="reference internal" href="../myst.schema.html#optionalassociation"><span class="std std-ref">OptionalAssociation</span></a></p>
+<p><strong>position</strong>: <em>object</em>, <em>optional</em>, (<a class="reference internal" href="../myst.schema.html#position"><span class="std std-ref">Position</span></a>)
+: See also <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>data</strong>: <em>object</em>, <em>optional</em>
+: See also <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="30ef17a5-5fa7-49dd-bd26-09bb6f6fb0a3" name="8ce18fc0-2051-4b42-bf1a-416a4e0d4431" type="radio">
-</input><label class="sd-tab-label" data-sync-id="myst" for="30ef17a5-5fa7-49dd-bd26-09bb6f6fb0a3">
+<input checked="checked" id="74c8c52c-950f-4c28-afd2-9ef981f2a325" name="56615a14-8bb4-47a4-b4f8-c3398f5ec056" type="radio">
+</input><label class="sd-tab-label" data-sync-id="myst" for="74c8c52c-950f-4c28-afd2-9ef981f2a325">
 Markup</label><div class="sd-tab-content docutils">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">### Heading!</span>
 </pre></div>
 </div>
 </div>
-<input id="fdad449a-0e13-4b46-92b3-3f2bc9a0e051" name="8ce18fc0-2051-4b42-bf1a-416a4e0d4431" type="radio">
-</input><label class="sd-tab-label" data-sync-id="ast" for="fdad449a-0e13-4b46-92b3-3f2bc9a0e051">
+<input id="07aa178a-c9de-4353-bfbd-1af6714a40f0" name="56615a14-8bb4-47a4-b4f8-c3398f5ec056" type="radio">
+</input><label class="sd-tab-label" data-sync-id="ast" for="07aa178a-c9de-4353-bfbd-1af6714a40f0">
 AST</label><div class="sd-tab-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">root</span><span class="w"></span>
 <span class="nt">children</span><span class="p">:</span><span class="w"></span>
@@ -607,14 +614,14 @@ AST</label><div class="sd-tab-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="2d238099-e823-4a81-a6fe-a3e4e7ffd955" name="8ce18fc0-2051-4b42-bf1a-416a4e0d4431" type="radio">
-</input><label class="sd-tab-label" data-sync-id="render" for="2d238099-e823-4a81-a6fe-a3e4e7ffd955">
+<input id="24de07a1-1aaf-4a42-8b65-a67333b7bdaa" name="56615a14-8bb4-47a4-b4f8-c3398f5ec056" type="radio">
+</input><label class="sd-tab-label" data-sync-id="render" for="24de07a1-1aaf-4a42-8b65-a67333b7bdaa">
 Render</label><div class="sd-tab-content docutils">
 </div>
 </div>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p>Reference headings by preceding headers with a <code class="docutils literal notranslate"><span class="pre">(label)=</span></code>. See <a class="reference internal" href="references.html"><span class="doc std std-doc">References &amp; Links</span></a>!</p>
+<p>Reference headings by preceding headers with a <code class="docutils literal notranslate"><span class="pre">(label)=</span></code>. See <a class="reference internal" href="references.html"><span class="doc std std-doc">Directive Targets and Cross References</span></a>!</p>
 </div>
 </section>
 <section id="heading">
@@ -622,18 +629,23 @@ Render</label><div class="sd-tab-content docutils">
 </section>
 <section id="lists">
 <h3>Lists<a class="headerlink" href="#lists" title="Permalink to this headline">#</a></h3>
-<ul class="simple">
-<li><p><strong>type*</strong>: <em>string</em> (“list”) - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>ordered</strong>: <em>boolean</em> - Is item order important or not?</p></li>
-<li><p><strong>start</strong>: <em>integer</em> - Starting number of ordered list</p></li>
-<li><p><strong>spread</strong>: <em>boolean</em> - One or more children are separated with a blank line from others</p></li>
-<li><p><strong>children*</strong>: <em>array</em> (<a class="reference internal" href="../myst.schema.html#listcontent"><span class="std std-ref">ListContent</span></a>) - See <a class="reference internal" href="../myst.schema.html#parent"><span class="std std-ref">Parent</span></a></p></li>
-<li><p><strong>position</strong>: <em>object</em> (<a class="reference internal" href="../myst.schema.html#position"><span class="std std-ref">Position</span></a>) - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>data</strong>: <em>object</em> - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
-</ul>
+<p><strong>type</strong>: <em>string</em>, (“list”)
+: See also <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>ordered</strong>: <em>boolean</em>, <em>optional</em>
+: Is item order important or not?</p>
+<p><strong>start</strong>: <em>integer</em>, <em>optional</em>
+: Starting number of ordered list</p>
+<p><strong>spread</strong>: <em>boolean</em>, <em>optional</em>
+: One or more children are separated with a blank line from others</p>
+<p><strong>children</strong>: <em>array</em>, (<a class="reference internal" href="../myst.schema.html#listcontent"><span class="std std-ref">ListContent</span></a>)
+: See also <a class="reference internal" href="../myst.schema.html#parent"><span class="std std-ref">Parent</span></a></p>
+<p><strong>position</strong>: <em>object</em>, <em>optional</em>, (<a class="reference internal" href="../myst.schema.html#position"><span class="std std-ref">Position</span></a>)
+: See also <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>data</strong>: <em>object</em>, <em>optional</em>
+: See also <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="e7a63317-4064-48b2-bb40-cfff96149365" name="dac19a41-3d6b-47e5-8411-1fc2613276be" type="radio">
-</input><label class="sd-tab-label" data-sync-id="myst" for="e7a63317-4064-48b2-bb40-cfff96149365">
+<input checked="checked" id="5ba9ecbe-abdb-46c5-ab1a-6719f08c435f" name="0551ea52-df70-457b-bf27-2d0a23f2dc4d" type="radio">
+</input><label class="sd-tab-label" data-sync-id="myst" for="5ba9ecbe-abdb-46c5-ab1a-6719f08c435f">
 Markup</label><div class="sd-tab-content docutils">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">1.</span> <span class="n">quotes</span>
 <span class="mf">2.</span> <span class="n">breaks</span>
@@ -641,8 +653,8 @@ Markup</label><div class="sd-tab-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="5cb1c0eb-227e-4396-a502-addee351a120" name="dac19a41-3d6b-47e5-8411-1fc2613276be" type="radio">
-</input><label class="sd-tab-label" data-sync-id="ast" for="5cb1c0eb-227e-4396-a502-addee351a120">
+<input id="e9241279-71f4-4b52-afd4-cb7ed32d5314" name="0551ea52-df70-457b-bf27-2d0a23f2dc4d" type="radio">
+</input><label class="sd-tab-label" data-sync-id="ast" for="e9241279-71f4-4b52-afd4-cb7ed32d5314">
 AST</label><div class="sd-tab-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">root</span><span class="w"></span>
 <span class="nt">children</span><span class="p">:</span><span class="w"></span>
@@ -669,8 +681,8 @@ AST</label><div class="sd-tab-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="b145de20-874b-43f8-a6b9-c9471a66db64" name="dac19a41-3d6b-47e5-8411-1fc2613276be" type="radio">
-</input><label class="sd-tab-label" data-sync-id="render" for="b145de20-874b-43f8-a6b9-c9471a66db64">
+<input id="9c9f05d0-896e-4c38-9374-04fb33ecf589" name="0551ea52-df70-457b-bf27-2d0a23f2dc4d" type="radio">
+</input><label class="sd-tab-label" data-sync-id="render" for="9c9f05d0-896e-4c38-9374-04fb33ecf589">
 Render</label><div class="sd-tab-content docutils">
 <ol class="simple">
 <li><p>quotes</p></li>
@@ -683,23 +695,33 @@ Render</label><div class="sd-tab-content docutils">
 <section id="code">
 <h3>Code<a class="headerlink" href="#code" title="Permalink to this headline">#</a></h3>
 <p>Block of preformatted text</p>
-<ul class="simple">
-<li><p><strong>type*</strong>: <em>string</em> (“code”) - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>lang</strong>: <em>string</em> - language of the code</p></li>
-<li><p><strong>meta</strong>: <em>string</em> - custom information relating to the node</p></li>
-<li><p><strong>class</strong>: <em>string</em> - user-defined class for code block</p></li>
-<li><p><strong>showLineNumbers</strong>: <em>boolean</em></p></li>
-<li><p><strong>startingLineNumber</strong>: <em>integer</em></p></li>
-<li><p><strong>emphasizeLines</strong>: <em>array</em> (integer)</p></li>
-<li><p><strong>identifier</strong>: <em>string</em> - See <a class="reference internal" href="../myst.schema.html#optionalassociation"><span class="std std-ref">OptionalAssociation</span></a></p></li>
-<li><p><strong>label</strong>: <em>string</em> - See <a class="reference internal" href="../myst.schema.html#optionalassociation"><span class="std std-ref">OptionalAssociation</span></a></p></li>
-<li><p><strong>value*</strong>: <em>string</em> - See <a class="reference internal" href="../myst.schema.html#literal"><span class="std std-ref">Literal</span></a></p></li>
-<li><p><strong>position</strong>: <em>object</em> (<a class="reference internal" href="../myst.schema.html#position"><span class="std std-ref">Position</span></a>) - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>data</strong>: <em>object</em> - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
-</ul>
+<p><strong>type</strong>: <em>string</em>, (“code”)
+: See also <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>lang</strong>: <em>string</em>, <em>optional</em>
+: language of the code</p>
+<p><strong>meta</strong>: <em>string</em>, <em>optional</em>
+: custom information relating to the node</p>
+<p><strong>class</strong>: <em>string</em>, <em>optional</em>
+: user-defined class for code block</p>
+<p><strong>showLineNumbers</strong>: <em>boolean</em>, <em>optional</em>
+: No description for this property.</p>
+<p><strong>startingLineNumber</strong>: <em>integer</em>, <em>optional</em>
+: No description for this property.</p>
+<p><strong>emphasizeLines</strong>: <em>array</em>, <em>optional</em>, (integer)
+: No description for this property.</p>
+<p><strong>identifier</strong>: <em>string</em>, <em>optional</em>
+: See also <a class="reference internal" href="../myst.schema.html#optionalassociation"><span class="std std-ref">OptionalAssociation</span></a></p>
+<p><strong>label</strong>: <em>string</em>, <em>optional</em>
+: See also <a class="reference internal" href="../myst.schema.html#optionalassociation"><span class="std std-ref">OptionalAssociation</span></a></p>
+<p><strong>value</strong>: <em>string</em>
+: See also <a class="reference internal" href="../myst.schema.html#literal"><span class="std std-ref">Literal</span></a></p>
+<p><strong>position</strong>: <em>object</em>, <em>optional</em>, (<a class="reference internal" href="../myst.schema.html#position"><span class="std std-ref">Position</span></a>)
+: See also <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>data</strong>: <em>object</em>, <em>optional</em>
+: See also <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="ea530b71-f58c-4dcd-a0cc-ffb26064890d" name="53b86797-72cd-4371-a57d-aa481faff507" type="radio">
-</input><label class="sd-tab-label" data-sync-id="myst" for="ea530b71-f58c-4dcd-a0cc-ffb26064890d">
+<input checked="checked" id="cd6f36f8-77b7-4df8-af8e-507e2066a426" name="153099b8-7194-4734-b59e-3e04c3415f6b" type="radio">
+</input><label class="sd-tab-label" data-sync-id="myst" for="cd6f36f8-77b7-4df8-af8e-507e2066a426">
 Markup</label><div class="sd-tab-content docutils">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```python
 print(&#39;this is python&#39;)
@@ -707,8 +729,8 @@ print(&#39;this is python&#39;)
 </pre></div>
 </div>
 </div>
-<input id="e8a2021e-0fdd-49b4-ac96-8d448dc5ee68" name="53b86797-72cd-4371-a57d-aa481faff507" type="radio">
-</input><label class="sd-tab-label" data-sync-id="ast" for="e8a2021e-0fdd-49b4-ac96-8d448dc5ee68">
+<input id="72223373-4e2b-4bf6-9b9f-05f1a44ab64a" name="153099b8-7194-4734-b59e-3e04c3415f6b" type="radio">
+</input><label class="sd-tab-label" data-sync-id="ast" for="72223373-4e2b-4bf6-9b9f-05f1a44ab64a">
 AST</label><div class="sd-tab-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">root</span><span class="w"></span>
 <span class="nt">children</span><span class="p">:</span><span class="w"></span>
@@ -718,8 +740,8 @@ AST</label><div class="sd-tab-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="92aa79fa-d370-40d5-9d74-4fed9a90f2dd" name="53b86797-72cd-4371-a57d-aa481faff507" type="radio">
-</input><label class="sd-tab-label" data-sync-id="render" for="92aa79fa-d370-40d5-9d74-4fed9a90f2dd">
+<input id="60a7b4f0-a689-48b1-8cf2-c121e755f598" name="153099b8-7194-4734-b59e-3e04c3415f6b" type="radio">
+</input><label class="sd-tab-label" data-sync-id="render" for="60a7b4f0-a689-48b1-8cf2-c121e755f598">
 Render</label><div class="sd-tab-content docutils">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;this is python&#39;</span><span class="p">)</span>
 </pre></div>
@@ -733,22 +755,24 @@ Render</label><div class="sd-tab-content docutils">
 </section>
 <section id="blockquotes">
 <h3>Blockquotes<a class="headerlink" href="#blockquotes" title="Permalink to this headline">#</a></h3>
-<ul class="simple">
-<li><p><strong>type*</strong>: <em>string</em> (“blockquote”) - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>children*</strong>: <em>array</em> (<a class="reference internal" href="../myst.schema.html#flowcontent"><span class="std std-ref">FlowContent</span></a>) - See <a class="reference internal" href="../myst.schema.html#parent"><span class="std std-ref">Parent</span></a></p></li>
-<li><p><strong>position</strong>: <em>object</em> (<a class="reference internal" href="../myst.schema.html#position"><span class="std std-ref">Position</span></a>) - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>data</strong>: <em>object</em> - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
-</ul>
+<p><strong>type</strong>: <em>string</em>, (“blockquote”)
+: See also <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>children</strong>: <em>array</em>, (<a class="reference internal" href="../myst.schema.html#flowcontent"><span class="std std-ref">FlowContent</span></a>)
+: See also <a class="reference internal" href="../myst.schema.html#parent"><span class="std std-ref">Parent</span></a></p>
+<p><strong>position</strong>: <em>object</em>, <em>optional</em>, (<a class="reference internal" href="../myst.schema.html#position"><span class="std std-ref">Position</span></a>)
+: See also <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>data</strong>: <em>object</em>, <em>optional</em>
+: See also <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="2e1e7865-dde3-4ffe-97e1-b3ccb3699e4d" name="33c95c89-6c8f-4cf1-a8bb-241d3845973f" type="radio">
-</input><label class="sd-tab-label" data-sync-id="myst" for="2e1e7865-dde3-4ffe-97e1-b3ccb3699e4d">
+<input checked="checked" id="bfc7386b-0259-4f4e-a5f1-43f22a962714" name="70970ea5-c343-4a1d-9d44-f65775bb8ecf" type="radio">
+</input><label class="sd-tab-label" data-sync-id="myst" for="bfc7386b-0259-4f4e-a5f1-43f22a962714">
 Markup</label><div class="sd-tab-content docutils">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">To</span> <span class="n">be</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">to</span> <span class="n">be</span>
 </pre></div>
 </div>
 </div>
-<input id="4e694644-d029-48f7-ad50-d79e5288ecf0" name="33c95c89-6c8f-4cf1-a8bb-241d3845973f" type="radio">
-</input><label class="sd-tab-label" data-sync-id="ast" for="4e694644-d029-48f7-ad50-d79e5288ecf0">
+<input id="fccc7ec0-345d-43ee-9077-ee7142952f33" name="70970ea5-c343-4a1d-9d44-f65775bb8ecf" type="radio">
+</input><label class="sd-tab-label" data-sync-id="ast" for="fccc7ec0-345d-43ee-9077-ee7142952f33">
 AST</label><div class="sd-tab-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">root</span><span class="w"></span>
 <span class="nt">children</span><span class="p">:</span><span class="w"></span>
@@ -761,8 +785,8 @@ AST</label><div class="sd-tab-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="becf78b6-f641-49b1-b0ce-56aff3bb71b3" name="33c95c89-6c8f-4cf1-a8bb-241d3845973f" type="radio">
-</input><label class="sd-tab-label" data-sync-id="render" for="becf78b6-f641-49b1-b0ce-56aff3bb71b3">
+<input id="a624c585-902e-4228-a629-2b30afdb8f4e" name="70970ea5-c343-4a1d-9d44-f65775bb8ecf" type="radio">
+</input><label class="sd-tab-label" data-sync-id="render" for="a624c585-902e-4228-a629-2b30afdb8f4e">
 Render</label><div class="sd-tab-content docutils">
 <blockquote>
 <div><p>To be or not to be</p>
@@ -773,14 +797,15 @@ Render</label><div class="sd-tab-content docutils">
 <section id="thematic-break">
 <h3>Thematic Break<a class="headerlink" href="#thematic-break" title="Permalink to this headline">#</a></h3>
 <p>Line break</p>
-<ul class="simple">
-<li><p><strong>type*</strong>: <em>string</em> (“break”) - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>position</strong>: <em>object</em> (<a class="reference internal" href="../myst.schema.html#position"><span class="std std-ref">Position</span></a>) - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>data</strong>: <em>object</em> - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
-</ul>
+<p><strong>type</strong>: <em>string</em>, (“break”)
+: See also <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>position</strong>: <em>object</em>, <em>optional</em>, (<a class="reference internal" href="../myst.schema.html#position"><span class="std std-ref">Position</span></a>)
+: See also <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>data</strong>: <em>object</em>, <em>optional</em>
+: See also <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="9fb39586-ff2e-47a1-a0a8-69c5753c413a" name="0b2fe7cb-5e39-490f-ac70-fb3b9d36d578" type="radio">
-</input><label class="sd-tab-label" data-sync-id="myst" for="9fb39586-ff2e-47a1-a0a8-69c5753c413a">
+<input checked="checked" id="af46f214-6151-4a38-9b7f-673420645df5" name="10199f4c-fbb1-41fa-a3cf-2ed1013f4d55" type="radio">
+</input><label class="sd-tab-label" data-sync-id="myst" for="af46f214-6151-4a38-9b7f-673420645df5">
 Markup</label><div class="sd-tab-content docutils">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">thematic</span>
 
@@ -790,8 +815,8 @@ Markup</label><div class="sd-tab-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="b2a43e45-7d5e-4fab-b65f-165736d5f918" name="0b2fe7cb-5e39-490f-ac70-fb3b9d36d578" type="radio">
-</input><label class="sd-tab-label" data-sync-id="ast" for="b2a43e45-7d5e-4fab-b65f-165736d5f918">
+<input id="7ddf349c-865b-4ba2-b375-a383d8288523" name="10199f4c-fbb1-41fa-a3cf-2ed1013f4d55" type="radio">
+</input><label class="sd-tab-label" data-sync-id="ast" for="7ddf349c-865b-4ba2-b375-a383d8288523">
 AST</label><div class="sd-tab-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">root</span><span class="w"></span>
 <span class="nt">children</span><span class="p">:</span><span class="w"></span>
@@ -807,8 +832,8 @@ AST</label><div class="sd-tab-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="b6cf7a36-00ae-4e8e-8b74-d884f810451c" name="0b2fe7cb-5e39-490f-ac70-fb3b9d36d578" type="radio">
-</input><label class="sd-tab-label" data-sync-id="render" for="b6cf7a36-00ae-4e8e-8b74-d884f810451c">
+<input id="84ca85c4-bf39-4007-a3ac-5b09153bdd46" name="10199f4c-fbb1-41fa-a3cf-2ed1013f4d55" type="radio">
+</input><label class="sd-tab-label" data-sync-id="render" for="84ca85c4-bf39-4007-a3ac-5b09153bdd46">
 Render</label><div class="sd-tab-content docutils">
 <p>thematic</p>
 <hr class="docutils" />
@@ -824,39 +849,46 @@ which is used to structurally seperate content.</p>
 <section id="link-definitions">
 <h3>Link Definitions<a class="headerlink" href="#link-definitions" title="Permalink to this headline">#</a></h3>
 <p>Reference to a url resource</p>
-<ul class="simple">
-<li><p><strong>type*</strong>: <em>string</em> (“definition”) - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>identifier*</strong>: <em>string</em> - See <a class="reference internal" href="../myst.schema.html#optionalassociation"><span class="std std-ref">OptionalAssociation</span></a></p></li>
-<li><p><strong>label</strong>: <em>string</em> - See <a class="reference internal" href="../myst.schema.html#optionalassociation"><span class="std std-ref">OptionalAssociation</span></a></p></li>
-<li><p><strong>url*</strong>: <em>string</em> - See <a class="reference internal" href="../myst.schema.html#resource"><span class="std std-ref">Resource</span></a></p></li>
-<li><p><strong>title</strong>: <em>string</em> - See <a class="reference internal" href="../myst.schema.html#resource"><span class="std std-ref">Resource</span></a></p></li>
-<li><p><strong>position</strong>: <em>object</em> (<a class="reference internal" href="../myst.schema.html#position"><span class="std std-ref">Position</span></a>) - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>data</strong>: <em>object</em> - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
-</ul>
+<p><strong>type</strong>: <em>string</em>, (“definition”)
+: See also <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>identifier</strong>: <em>string</em>
+: See also <a class="reference internal" href="../myst.schema.html#optionalassociation"><span class="std std-ref">OptionalAssociation</span></a></p>
+<p><strong>label</strong>: <em>string</em>, <em>optional</em>
+: See also <a class="reference internal" href="../myst.schema.html#optionalassociation"><span class="std std-ref">OptionalAssociation</span></a></p>
+<p><strong>url</strong>: <em>string</em>
+: See also <a class="reference internal" href="../myst.schema.html#resource"><span class="std std-ref">Resource</span></a></p>
+<p><strong>title</strong>: <em>string</em>, <em>optional</em>
+: See also <a class="reference internal" href="../myst.schema.html#resource"><span class="std std-ref">Resource</span></a></p>
+<p><strong>position</strong>: <em>object</em>, <em>optional</em>, (<a class="reference internal" href="../myst.schema.html#position"><span class="std std-ref">Position</span></a>)
+: See also <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>data</strong>: <em>object</em>, <em>optional</em>
+: See also <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p>These can be used in <a class="reference internal" href="#inline-links"><span class="std std-ref">Inline links</span></a> and are similar to <a class="reference internal" href="references.html"><span class="doc std std-doc">References &amp; Links</span></a> in MyST.
-This syntax is also similar to <a class="reference internal" href="footnotes.html"><span class="doc std std-doc">Footnotes</span></a>.</p>
+<p>These can be used in <a class="reference internal" href="#inline-links"><span class="std std-ref">Inline links</span></a> and are similar to <a class="reference internal" href="references.html"><span class="doc std std-doc">Directive Targets and Cross References</span></a> in MyST.
+This syntax is also similar to <a class="reference internal" href="footnotes.html"><span class="doc std std-doc">Footnote Definition Node Specification</span></a>.</p>
 </div>
 </section>
 <section id="paragraph">
 <h3>Paragraph<a class="headerlink" href="#paragraph" title="Permalink to this headline">#</a></h3>
-<ul class="simple">
-<li><p><strong>type*</strong>: <em>string</em> (“paragraph”) - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>children*</strong>: <em>array</em> (<a class="reference internal" href="../myst.schema.html#phrasingcontent"><span class="std std-ref">PhrasingContent</span></a>) - See <a class="reference internal" href="../myst.schema.html#parent"><span class="std std-ref">Parent</span></a></p></li>
-<li><p><strong>position</strong>: <em>object</em> (<a class="reference internal" href="../myst.schema.html#position"><span class="std std-ref">Position</span></a>) - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>data</strong>: <em>object</em> - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
-</ul>
+<p><strong>type</strong>: <em>string</em>, (“paragraph”)
+: See also <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>children</strong>: <em>array</em>, (<a class="reference internal" href="../myst.schema.html#phrasingcontent"><span class="std std-ref">PhrasingContent</span></a>)
+: See also <a class="reference internal" href="../myst.schema.html#parent"><span class="std std-ref">Parent</span></a></p>
+<p><strong>position</strong>: <em>object</em>, <em>optional</em>, (<a class="reference internal" href="../myst.schema.html#position"><span class="std std-ref">Position</span></a>)
+: See also <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>data</strong>: <em>object</em>, <em>optional</em>
+: See also <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="945e196b-a339-4f52-896e-6943dd839c6d" name="4a8d0267-6c4d-493c-aef2-e94507915a10" type="radio">
-</input><label class="sd-tab-label" data-sync-id="myst" for="945e196b-a339-4f52-896e-6943dd839c6d">
+<input checked="checked" id="cc589202-875e-4edc-82e5-6e8da382f6ce" name="14756e36-5d93-48ee-b065-d5f2f2292583" type="radio">
+</input><label class="sd-tab-label" data-sync-id="myst" for="cc589202-875e-4edc-82e5-6e8da382f6ce">
 Markup</label><div class="sd-tab-content docutils">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Something</span>
 </pre></div>
 </div>
 </div>
-<input id="a86b1978-0099-43c0-b8f5-2c8d75cfd185" name="4a8d0267-6c4d-493c-aef2-e94507915a10" type="radio">
-</input><label class="sd-tab-label" data-sync-id="ast" for="a86b1978-0099-43c0-b8f5-2c8d75cfd185">
+<input id="652ec887-4cd6-460d-bf7d-6ad7a81a6835" name="14756e36-5d93-48ee-b065-d5f2f2292583" type="radio">
+</input><label class="sd-tab-label" data-sync-id="ast" for="652ec887-4cd6-460d-bf7d-6ad7a81a6835">
 AST</label><div class="sd-tab-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">root</span><span class="w"></span>
 <span class="nt">children</span><span class="p">:</span><span class="w"></span>
@@ -867,8 +899,8 @@ AST</label><div class="sd-tab-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="e0a1d719-e6f1-4cd3-be03-df7d3974d3e8" name="4a8d0267-6c4d-493c-aef2-e94507915a10" type="radio">
-</input><label class="sd-tab-label" data-sync-id="render" for="e0a1d719-e6f1-4cd3-be03-df7d3974d3e8">
+<input id="945dce62-6ab4-4f3b-9dad-1218d6c75c20" name="14756e36-5d93-48ee-b065-d5f2f2292583" type="radio">
+</input><label class="sd-tab-label" data-sync-id="render" for="945dce62-6ab4-4f3b-9dad-1218d6c75c20">
 Render</label><div class="sd-tab-content docutils">
 <p>Something</p>
 </div>
@@ -877,22 +909,24 @@ Render</label><div class="sd-tab-content docutils">
 <section id="valid-html">
 <h3>Valid HTML<a class="headerlink" href="#valid-html" title="Permalink to this headline">#</a></h3>
 <p>Fragment of raw HTML - does not need to be valid or complete</p>
-<ul class="simple">
-<li><p><strong>type*</strong>: <em>string</em> (“html”) - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>value*</strong>: <em>string</em> - See <a class="reference internal" href="../myst.schema.html#literal"><span class="std std-ref">Literal</span></a></p></li>
-<li><p><strong>position</strong>: <em>object</em> (<a class="reference internal" href="../myst.schema.html#position"><span class="std std-ref">Position</span></a>) - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>data</strong>: <em>object</em> - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
-</ul>
+<p><strong>type</strong>: <em>string</em>, (“html”)
+: See also <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>value</strong>: <em>string</em>
+: See also <a class="reference internal" href="../myst.schema.html#literal"><span class="std std-ref">Literal</span></a></p>
+<p><strong>position</strong>: <em>object</em>, <em>optional</em>, (<a class="reference internal" href="../myst.schema.html#position"><span class="std std-ref">Position</span></a>)
+: See also <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>data</strong>: <em>object</em>, <em>optional</em>
+: See also <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="b5e75fc6-9363-4701-82c9-fd9dd62111cd" name="dab1d886-0386-4db5-8fa5-c4dc6cbecbef" type="radio">
-</input><label class="sd-tab-label" data-sync-id="myst" for="b5e75fc6-9363-4701-82c9-fd9dd62111cd">
+<input checked="checked" id="18effdc0-73ae-4ca6-bdf3-ea2817502345" name="949f2c7d-3a4b-42fc-bcb0-f72d520d6026" type="radio">
+</input><label class="sd-tab-label" data-sync-id="myst" for="18effdc0-73ae-4ca6-bdf3-ea2817502345">
 Markup</label><div class="sd-tab-content docutils">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">div</span><span class="o">&gt;&lt;</span><span class="n">p</span><span class="o">&gt;*</span><span class="n">some</span> <span class="n">text</span><span class="o">*&lt;/</span><span class="n">p</span><span class="o">&gt;&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
 </pre></div>
 </div>
 </div>
-<input id="2b76cf86-ccf3-4a95-b9a3-8e94ef21db14" name="dab1d886-0386-4db5-8fa5-c4dc6cbecbef" type="radio">
-</input><label class="sd-tab-label" data-sync-id="ast" for="2b76cf86-ccf3-4a95-b9a3-8e94ef21db14">
+<input id="15484cf4-bd90-4761-9672-f6abb7405a3b" name="949f2c7d-3a4b-42fc-bcb0-f72d520d6026" type="radio">
+</input><label class="sd-tab-label" data-sync-id="ast" for="15484cf4-bd90-4761-9672-f6abb7405a3b">
 AST</label><div class="sd-tab-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">root</span><span class="w"></span>
 <span class="nt">children</span><span class="p">:</span><span class="w"></span>
@@ -901,8 +935,8 @@ AST</label><div class="sd-tab-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="62abb98d-670e-498b-9e72-9f2c14fb4c77" name="dab1d886-0386-4db5-8fa5-c4dc6cbecbef" type="radio">
-</input><label class="sd-tab-label" data-sync-id="render" for="62abb98d-670e-498b-9e72-9f2c14fb4c77">
+<input id="4682f457-4a12-44c3-8ef1-2e351ee5e94c" name="949f2c7d-3a4b-42fc-bcb0-f72d520d6026" type="radio">
+</input><label class="sd-tab-label" data-sync-id="render" for="4682f457-4a12-44c3-8ef1-2e351ee5e94c">
 Render</label><div class="sd-tab-content docutils">
 <div><p>*some text*</p></div>
 </div>
@@ -914,24 +948,28 @@ Render</label><div class="sd-tab-content docutils">
 <section id="inline-links">
 <span id="id1"></span><h3>Inline links<a class="headerlink" href="#inline-links" title="Permalink to this headline">#</a></h3>
 <p>Hyperlink</p>
-<ul class="simple">
-<li><p><strong>type*</strong>: <em>string</em> (“link”) - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>children*</strong>: <em>array</em> (<a class="reference internal" href="../myst.schema.html#staticphrasingcontent"><span class="std std-ref">StaticPhrasingContent</span></a>) - See <a class="reference internal" href="../myst.schema.html#parent"><span class="std std-ref">Parent</span></a></p></li>
-<li><p><strong>url*</strong>: <em>string</em> - See <a class="reference internal" href="../myst.schema.html#resource"><span class="std std-ref">Resource</span></a></p></li>
-<li><p><strong>title</strong>: <em>string</em> - See <a class="reference internal" href="../myst.schema.html#resource"><span class="std std-ref">Resource</span></a></p></li>
-<li><p><strong>position</strong>: <em>object</em> (<a class="reference internal" href="../myst.schema.html#position"><span class="std std-ref">Position</span></a>) - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>data</strong>: <em>object</em> - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
-</ul>
+<p><strong>type</strong>: <em>string</em>, (“link”)
+: See also <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>children</strong>: <em>array</em>, (<a class="reference internal" href="../myst.schema.html#staticphrasingcontent"><span class="std std-ref">StaticPhrasingContent</span></a>)
+: See also <a class="reference internal" href="../myst.schema.html#parent"><span class="std std-ref">Parent</span></a></p>
+<p><strong>url</strong>: <em>string</em>
+: See also <a class="reference internal" href="../myst.schema.html#resource"><span class="std std-ref">Resource</span></a></p>
+<p><strong>title</strong>: <em>string</em>, <em>optional</em>
+: See also <a class="reference internal" href="../myst.schema.html#resource"><span class="std std-ref">Resource</span></a></p>
+<p><strong>position</strong>: <em>object</em>, <em>optional</em>, (<a class="reference internal" href="../myst.schema.html#position"><span class="std std-ref">Position</span></a>)
+: See also <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>data</strong>: <em>object</em>, <em>optional</em>
+: See also <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="bca31da4-0104-4146-9f21-b93d06f22dd2" name="1a523173-e422-408d-9299-1adb9021e59a" type="radio">
-</input><label class="sd-tab-label" data-sync-id="myst" for="bca31da4-0104-4146-9f21-b93d06f22dd2">
+<input checked="checked" id="1a344968-fa8b-4de3-923a-afda4253f54f" name="a64f7270-a616-47bb-a882-537e6cc1bc48" type="radio">
+</input><label class="sd-tab-label" data-sync-id="myst" for="1a344968-fa8b-4de3-923a-afda4253f54f">
 Markup</label><div class="sd-tab-content docutils">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">search</span> <span class="n">engine</span><span class="p">](</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="o">.</span><span class="n">google</span><span class="o">.</span><span class="n">com</span> <span class="s2">&quot;Google&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input id="5a871fed-42be-48de-9799-cf77fd79e642" name="1a523173-e422-408d-9299-1adb9021e59a" type="radio">
-</input><label class="sd-tab-label" data-sync-id="ast" for="5a871fed-42be-48de-9799-cf77fd79e642">
+<input id="2d8d4975-48a5-4a68-b3bb-bf8a06c70afc" name="a64f7270-a616-47bb-a882-537e6cc1bc48" type="radio">
+</input><label class="sd-tab-label" data-sync-id="ast" for="2d8d4975-48a5-4a68-b3bb-bf8a06c70afc">
 AST</label><div class="sd-tab-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">root</span><span class="w"></span>
 <span class="nt">children</span><span class="p">:</span><span class="w"></span>
@@ -946,41 +984,48 @@ AST</label><div class="sd-tab-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="23387b91-c757-404e-a79d-42f3f6f74c4f" name="1a523173-e422-408d-9299-1adb9021e59a" type="radio">
-</input><label class="sd-tab-label" data-sync-id="render" for="23387b91-c757-404e-a79d-42f3f6f74c4f">
+<input id="baaa243e-a88e-47f0-82e9-1be9bcdf01fd" name="a64f7270-a616-47bb-a882-537e6cc1bc48" type="radio">
+</input><label class="sd-tab-label" data-sync-id="render" for="baaa243e-a88e-47f0-82e9-1be9bcdf01fd">
 Render</label><div class="sd-tab-content docutils">
 <p><a class="reference external" href="https://www.google.com">search engine</a></p>
 </div>
 </div>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p><a class="reference internal" href="references.html"><span class="doc std std-doc">References &amp; Links</span></a> provides other ways to reference inline content.</p>
+<p><a class="reference internal" href="references.html"><span class="doc std std-doc">Directive Targets and Cross References</span></a> provides other ways to reference inline content.</p>
 </div>
 </section>
 <section id="inline-images">
 <h3>Inline images<a class="headerlink" href="#inline-images" title="Permalink to this headline">#</a></h3>
 <p>Image hyperlink</p>
-<ul class="simple">
-<li><p><strong>type*</strong>: <em>string</em> (“image”) - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>class</strong>: <em>string</em> - user-defined class for image</p></li>
-<li><p><strong>width</strong>: <em>string</em> - image width in pixels or percentage</p></li>
-<li><p><strong>align</strong>: <em>string</em> (“left” | “center” | “right”)</p></li>
-<li><p><strong>url*</strong>: <em>string</em> - See <a class="reference internal" href="../myst.schema.html#resource"><span class="std std-ref">Resource</span></a></p></li>
-<li><p><strong>title</strong>: <em>string</em> - See <a class="reference internal" href="../myst.schema.html#resource"><span class="std std-ref">Resource</span></a></p></li>
-<li><p><strong>alt</strong>: <em>string</em> - See <a class="reference internal" href="../myst.schema.html#alternative"><span class="std std-ref">Alternative</span></a></p></li>
-<li><p><strong>position</strong>: <em>object</em> (<a class="reference internal" href="../myst.schema.html#position"><span class="std std-ref">Position</span></a>) - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>data</strong>: <em>object</em> - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
-</ul>
+<p><strong>type</strong>: <em>string</em>, (“image”)
+: See also <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>class</strong>: <em>string</em>, <em>optional</em>
+: user-defined class for image</p>
+<p><strong>width</strong>: <em>string</em>, <em>optional</em>
+: image width in pixels or percentage</p>
+<p><strong>align</strong>: <em>string</em>, <em>optional</em>, (“left” | “center” | “right”)
+: No description for this property.</p>
+<p><strong>url</strong>: <em>string</em>
+: See also <a class="reference internal" href="../myst.schema.html#resource"><span class="std std-ref">Resource</span></a></p>
+<p><strong>title</strong>: <em>string</em>, <em>optional</em>
+: See also <a class="reference internal" href="../myst.schema.html#resource"><span class="std std-ref">Resource</span></a></p>
+<p><strong>alt</strong>: <em>string</em>, <em>optional</em>
+: See also <a class="reference internal" href="../myst.schema.html#alternative"><span class="std std-ref">Alternative</span></a></p>
+<p><strong>position</strong>: <em>object</em>, <em>optional</em>, (<a class="reference internal" href="../myst.schema.html#position"><span class="std std-ref">Position</span></a>)
+: See also <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>data</strong>: <em>object</em>, <em>optional</em>
+: See also <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="2420699b-6827-4594-a04e-bf9a1b564439" name="15a5a7db-dfd0-4717-9138-419c82559ef0" type="radio">
-</input><label class="sd-tab-label" data-sync-id="myst" for="2420699b-6827-4594-a04e-bf9a1b564439">
+<input checked="checked" id="77d471af-81b9-4377-8f70-f02bb3d1a53e" name="7b1ca462-9c45-4308-891e-f51a5537ae09" type="radio">
+</input><label class="sd-tab-label" data-sync-id="myst" for="77d471af-81b9-4377-8f70-f02bb3d1a53e">
 Markup</label><div class="sd-tab-content docutils">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>![fishy](fun-fish.png)
 </pre></div>
 </div>
 </div>
-<input id="a7c2031c-442d-4e8f-ab0f-5a7cdfa8c128" name="15a5a7db-dfd0-4717-9138-419c82559ef0" type="radio">
-</input><label class="sd-tab-label" data-sync-id="ast" for="a7c2031c-442d-4e8f-ab0f-5a7cdfa8c128">
+<input id="7ae21d0a-bf42-4890-a284-a38469c616e1" name="7b1ca462-9c45-4308-891e-f51a5537ae09" type="radio">
+</input><label class="sd-tab-label" data-sync-id="ast" for="7ae21d0a-bf42-4890-a284-a38469c616e1">
 AST</label><div class="sd-tab-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">root</span><span class="w"></span>
 <span class="nt">children</span><span class="p">:</span><span class="w"></span>
@@ -992,10 +1037,10 @@ AST</label><div class="sd-tab-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="7af3cf75-b66b-4920-8824-211eda228dd5" name="15a5a7db-dfd0-4717-9138-419c82559ef0" type="radio">
-</input><label class="sd-tab-label" data-sync-id="render" for="7af3cf75-b66b-4920-8824-211eda228dd5">
+<input id="2f48d64e-e845-42bd-a2b1-05c3f56dd4f4" name="7b1ca462-9c45-4308-891e-f51a5537ae09" type="radio">
+</input><label class="sd-tab-label" data-sync-id="render" for="2f48d64e-e845-42bd-a2b1-05c3f56dd4f4">
 Render</label><div class="sd-tab-content docutils">
-<p><img alt="fishy" src="features/fun-fish.png" /></p>
+<p><img alt="fishy" src="../_images/fun-fish.png" /></p>
 </div>
 </div>
 <div class="admonition seealso">
@@ -1008,42 +1053,48 @@ Render</label><div class="sd-tab-content docutils">
 <section id="emphasis">
 <h4>Emphasis<a class="headerlink" href="#emphasis" title="Permalink to this headline">#</a></h4>
 <p>Stressed, italicized content</p>
-<ul class="simple">
-<li><p><strong>type*</strong>: <em>string</em> (“emphasis”) - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>children*</strong>: <em>array</em> (<a class="reference internal" href="../myst.schema.html#phrasingcontent"><span class="std std-ref">PhrasingContent</span></a>) - See <a class="reference internal" href="../myst.schema.html#parent"><span class="std std-ref">Parent</span></a></p></li>
-<li><p><strong>position</strong>: <em>object</em> (<a class="reference internal" href="../myst.schema.html#position"><span class="std std-ref">Position</span></a>) - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>data</strong>: <em>object</em> - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
-</ul>
+<p><strong>type</strong>: <em>string</em>, (“emphasis”)
+: See also <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>children</strong>: <em>array</em>, (<a class="reference internal" href="../myst.schema.html#phrasingcontent"><span class="std std-ref">PhrasingContent</span></a>)
+: See also <a class="reference internal" href="../myst.schema.html#parent"><span class="std std-ref">Parent</span></a></p>
+<p><strong>position</strong>: <em>object</em>, <em>optional</em>, (<a class="reference internal" href="../myst.schema.html#position"><span class="std std-ref">Position</span></a>)
+: See also <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>data</strong>: <em>object</em>, <em>optional</em>
+: See also <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p>
 </section>
 <section id="strong">
 <h4>Strong<a class="headerlink" href="#strong" title="Permalink to this headline">#</a></h4>
 <p>Important, serious, urgent, bold content</p>
-<ul class="simple">
-<li><p><strong>type*</strong>: <em>string</em> (“strong”) - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>children*</strong>: <em>array</em> (<a class="reference internal" href="../myst.schema.html#phrasingcontent"><span class="std std-ref">PhrasingContent</span></a>) - See <a class="reference internal" href="../myst.schema.html#parent"><span class="std std-ref">Parent</span></a></p></li>
-<li><p><strong>position</strong>: <em>object</em> (<a class="reference internal" href="../myst.schema.html#position"><span class="std std-ref">Position</span></a>) - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>data</strong>: <em>object</em> - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
-</ul>
+<p><strong>type</strong>: <em>string</em>, (“strong”)
+: See also <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>children</strong>: <em>array</em>, (<a class="reference internal" href="../myst.schema.html#phrasingcontent"><span class="std std-ref">PhrasingContent</span></a>)
+: See also <a class="reference internal" href="../myst.schema.html#parent"><span class="std std-ref">Parent</span></a></p>
+<p><strong>position</strong>: <em>object</em>, <em>optional</em>, (<a class="reference internal" href="../myst.schema.html#position"><span class="std std-ref">Position</span></a>)
+: See also <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>data</strong>: <em>object</em>, <em>optional</em>
+: See also <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p>
 </section>
 <section id="inline-code">
 <h4>Inline Code<a class="headerlink" href="#inline-code" title="Permalink to this headline">#</a></h4>
 <p>Fragment of code</p>
-<ul class="simple">
-<li><p><strong>type*</strong>: <em>string</em> (“inlineCode”) - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>value*</strong>: <em>string</em> - See <a class="reference internal" href="../myst.schema.html#literal"><span class="std std-ref">Literal</span></a></p></li>
-<li><p><strong>position</strong>: <em>object</em> (<a class="reference internal" href="../myst.schema.html#position"><span class="std std-ref">Position</span></a>) - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>data</strong>: <em>object</em> - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
-</ul>
+<p><strong>type</strong>: <em>string</em>, (“inlineCode”)
+: See also <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>value</strong>: <em>string</em>
+: See also <a class="reference internal" href="../myst.schema.html#literal"><span class="std std-ref">Literal</span></a></p>
+<p><strong>position</strong>: <em>object</em>, <em>optional</em>, (<a class="reference internal" href="../myst.schema.html#position"><span class="std std-ref">Position</span></a>)
+: See also <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>data</strong>: <em>object</em>, <em>optional</em>
+: See also <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="b2f0cebd-bf80-4026-a61c-8f667a646438" name="702c4432-bedb-4749-9701-c01243053077" type="radio">
-</input><label class="sd-tab-label" data-sync-id="myst" for="b2f0cebd-bf80-4026-a61c-8f667a646438">
+<input checked="checked" id="c9db2f40-1ccc-4096-ae5f-151510d2fc95" name="38f182a6-325e-426e-bca1-7afda6bc03e5" type="radio">
+</input><label class="sd-tab-label" data-sync-id="myst" for="c9db2f40-1ccc-4096-ae5f-151510d2fc95">
 Markup</label><div class="sd-tab-content docutils">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>**strong**, _emphasis_, `literal text`, \*escaped symbols\*
 </pre></div>
 </div>
 </div>
-<input id="e01bf5c6-378d-40f1-bd96-b3ea775c97b2" name="702c4432-bedb-4749-9701-c01243053077" type="radio">
-</input><label class="sd-tab-label" data-sync-id="ast" for="e01bf5c6-378d-40f1-bd96-b3ea775c97b2">
+<input id="08d91765-477a-45df-b488-9abef4513285" name="38f182a6-325e-426e-bca1-7afda6bc03e5" type="radio">
+</input><label class="sd-tab-label" data-sync-id="ast" for="08d91765-477a-45df-b488-9abef4513285">
 AST</label><div class="sd-tab-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">root</span><span class="w"></span>
 <span class="nt">children</span><span class="p">:</span><span class="w"></span>
@@ -1068,8 +1119,8 @@ AST</label><div class="sd-tab-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="838b93d1-b00e-42af-9013-f3e03aaf2c9d" name="702c4432-bedb-4749-9701-c01243053077" type="radio">
-</input><label class="sd-tab-label" data-sync-id="render" for="838b93d1-b00e-42af-9013-f3e03aaf2c9d">
+<input id="7b151772-c29e-481e-a7f7-bca93f128f1a" name="38f182a6-325e-426e-bca1-7afda6bc03e5" type="radio">
+</input><label class="sd-tab-label" data-sync-id="render" for="7b151772-c29e-481e-a7f7-bca93f128f1a">
 Render</label><div class="sd-tab-content docutils">
 <p><strong>strong</strong>, <em>emphasis</em>, <code class="docutils literal notranslate"><span class="pre">literal</span> <span class="pre">text</span></code>, *escaped symbols*</p>
 </div>

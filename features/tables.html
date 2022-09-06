@@ -144,12 +144,12 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="references.html">
-   References &amp; Links
+   Directive Targets and Cross References
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="footnotes.html">
-   Footnotes
+   Footnote Definition Node Specification
   </a>
  </li>
  <li class="toctree-l1">
@@ -410,19 +410,22 @@ title="Print to PDF"
 <section id="specification">
 <h2>Specification<a class="headerlink" href="#specification" title="Permalink to this headline">#</a></h2>
 <p>Two-dimensional table data</p>
-<ul class="simple">
-<li><p><strong>type*</strong>: <em>string</em> (“table”) - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>align</strong>: <em>string</em> (“left” | “center” | “right”)</p></li>
-<li><p><strong>children*</strong>: <em>array</em> (<a class="reference internal" href="../myst.schema.html#tablerow"><span class="std std-ref">TableRow</span></a>) - See <a class="reference internal" href="../myst.schema.html#parent"><span class="std std-ref">Parent</span></a></p></li>
-<li><p><strong>position</strong>: <em>object</em> (<a class="reference internal" href="../myst.schema.html#position"><span class="std std-ref">Position</span></a>) - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
-<li><p><strong>data</strong>: <em>object</em> - See <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p></li>
-</ul>
+<p><strong>type</strong>: <em>string</em>, (“table”)
+: See also <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>align</strong>: <em>string</em>, <em>optional</em>, (“left” | “center” | “right”)
+: No description for this property.</p>
+<p><strong>children</strong>: <em>array</em>, (<a class="reference internal" href="../myst.schema.html#tablerow"><span class="std std-ref">TableRow</span></a>)
+: See also <a class="reference internal" href="../myst.schema.html#parent"><span class="std std-ref">Parent</span></a></p>
+<p><strong>position</strong>: <em>object</em>, <em>optional</em>, (<a class="reference internal" href="../myst.schema.html#position"><span class="std std-ref">Position</span></a>)
+: See also <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p>
+<p><strong>data</strong>: <em>object</em>, <em>optional</em>
+: See also <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p>
 </section>
 <section id="example">
 <h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">#</a></h2>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="7d4bc87f-71c0-4b47-befe-29040c4084a4" name="bca3dfd6-d7fd-4b17-a673-71e717ac8669" type="radio">
-</input><label class="sd-tab-label" data-sync-id="myst" for="7d4bc87f-71c0-4b47-befe-29040c4084a4">
+<input checked="checked" id="a594a9d5-603f-4c77-941b-0df5d09ca41d" name="d730cfe4-2593-449c-b9a2-12dd909f01f2" type="radio">
+</input><label class="sd-tab-label" data-sync-id="myst" for="a594a9d5-603f-4c77-941b-0df5d09ca41d">
 Markup</label><div class="sd-tab-content docutils">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">|</span> <span class="n">header</span> <span class="mi">1</span> <span class="o">|</span> <span class="n">header</span> <span class="mi">2</span> <span class="o">|</span>
 <span class="o">|</span><span class="p">:</span><span class="o">---|---</span><span class="p">:</span><span class="o">|</span>
@@ -430,8 +433,8 @@ Markup</label><div class="sd-tab-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="6fc20f1b-e9e4-4ca9-8860-8f542d076f15" name="bca3dfd6-d7fd-4b17-a673-71e717ac8669" type="radio">
-</input><label class="sd-tab-label" data-sync-id="ast" for="6fc20f1b-e9e4-4ca9-8860-8f542d076f15">
+<input id="5f850b4f-b9d4-4ab7-990b-d11282d3068c" name="d730cfe4-2593-449c-b9a2-12dd909f01f2" type="radio">
+</input><label class="sd-tab-label" data-sync-id="ast" for="5f850b4f-b9d4-4ab7-990b-d11282d3068c">
 AST</label><div class="sd-tab-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">root</span><span class="w"></span>
 <span class="nt">children</span><span class="p">:</span><span class="w"></span>
@@ -466,8 +469,8 @@ AST</label><div class="sd-tab-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="c470cf08-1439-4659-9f4a-95656733a397" name="bca3dfd6-d7fd-4b17-a673-71e717ac8669" type="radio">
-</input><label class="sd-tab-label" data-sync-id="render" for="c470cf08-1439-4659-9f4a-95656733a397">
+<input id="f766a56b-6405-486a-bc3b-83a15c88a584" name="d730cfe4-2593-449c-b9a2-12dd909f01f2" type="radio">
+</input><label class="sd-tab-label" data-sync-id="render" for="f766a56b-6405-486a-bc3b-83a15c88a584">
 Render</label><div class="sd-tab-content docutils">
 <table class="colwidths-auto table">
 <thead>

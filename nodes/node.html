@@ -142,12 +142,12 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../features/references.html">
-   References &amp; Links
+   Directive Targets and Cross References
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../features/footnotes.html">
-   Footnotes
+   Footnote Definition Node Specification
   </a>
  </li>
  <li class="toctree-l1">
@@ -383,12 +383,13 @@ title="Print to PDF"
                 
               <div>
                 
-  <p>Base unist node</p>
-<ul class="simple">
-<li><p><strong>type*</strong>: <em>string</em> - identifier for node variant</p></li>
-<li><p><strong>data</strong>: <em>object</em> - information associated by the ecosystem with the node; never specified by mdast</p></li>
-<li><p><strong>position</strong>: <em>object</em> (<a class="reference internal" href="../myst.schema.html#position"><span class="std std-ref">Position</span></a>) - location of node in source file; must not be present for generated nodes</p></li>
-</ul>
+  <p>Base node object, based on the <a class="reference external" href="https://github.com/syntax-tree/unist">unist</a> syntax tree.</p>
+<p><strong>type</strong>: <em>string</em>
+: identifier for node variant</p>
+<p><strong>data</strong>: <em>object</em>, <em>optional</em>
+: information associated by the ecosystem with the node; never specified by mdast</p>
+<p><strong>position</strong>: <em>object</em>, <em>optional</em>, (<a class="reference internal" href="../myst.schema.html#position"><span class="std std-ref">Position</span></a>)
+: location of node in source file; must not be present for generated nodes</p>
 
     <script type="text/x-thebe-config">
     {

@@ -1,6 +1,14 @@
 Comment nodes for comments present in myst but ingnored upon render
 
-- __type*__: _string_ ("mystComment") - See {ref}`node`
-- __value*__: _string_ - See {ref}`literal`
-- __position__: _object_ ({ref}`position`) - See {ref}`node`
-- __data__: _object_ - See {ref}`node`
+__type__: _string_, ("mystComment")
+: See also {ref}`node`
+
+__value__: _string_
+: See also {ref}`literal`
+
+__position__: _object_, _optional_, ({ref}`position`)
+: See also {ref}`node`
+
+__data__: _object_, _optional_
+: See also {ref}`node`
+
