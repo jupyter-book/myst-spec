@@ -1,48 +1,59 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>CommonMark</title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -50,59 +61,93 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'features/commonmark';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Admonitions" href="admonitions.html" />
     <link rel="prev" title="Overview" href="overview.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-    <div class="container-fluid" id="banner"></div>
-
-    
-
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../index.html">
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="../_static/logo-wide.svg" class="logo" alt="logo">
-      
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
+    
+    
+    <img src="../_static/logo-wide.svg" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/logo-wide.svg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
@@ -112,469 +157,271 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="overview.html">
-   Overview
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   CommonMark
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="admonitions.html">
-   Admonitions
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="figures.html">
-   Figures &amp; Images
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="tables.html">
-   Tables
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="math.html">
-   Math &amp; Equations
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="references.html">
-   Directive Targets and Cross References
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="footnotes.html">
-   Footnote Definition Node Specification
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="blocks.html">
-   Blocks &amp; Comments
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../myst.schema.html">
-   Node Type Index
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">CommonMark</a></li>
+<li class="toctree-l1"><a class="reference internal" href="admonitions.html">Admonitions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="figures.html">Figures &amp; Images</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="tables.html">Tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="math.html">Math &amp; Equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html">Directive Targets and Cross References</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="footnotes.html">Footnote Definition Node Specification</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="blocks.html">Blocks &amp; Comments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../myst.schema.html">Node Type Index</a></li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Maintained by <a href="https://executablebooks.org">Executable Books</a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/myst-spec" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/myst-spec/edit/master/features/commonmark.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/myst-spec/issues/new?title=Issue%20on%20page%20%2Ffeatures/commonmark.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
 </div>
 
 
-          
-
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
-<div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
 
 
 
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/features/commonmark.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
   </span>
-
-</label>
-
-        
-    </div>
-    <div class="header-article__right">
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/executablebooks/myst-spec"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Source repository"
->
-  
+`);
+</script>
 
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="headerbtn__text-container">repository</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/executablebooks/myst-spec/issues/new?title=Issue%20on%20page%20%2Ffeatures/commonmark.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/executablebooks/myst-spec/edit/master/features/commonmark.md"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Edit this page"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-pencil-alt"></i>
-  </span>
-<span class="headerbtn__text-container">suggest edit</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="../_sources/features/commonmark.md"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.md</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </label>
-
+</div></div>
+      
     </div>
+  
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#block-markup">
-   Block Markup
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#headings">
-     Headings
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#heading">
-     Heading!
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#lists">
-     Lists
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#code">
-     Code
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#blockquotes">
-     Blockquotes
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#thematic-break">
-     Thematic Break
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#link-definitions">
-     Link Definitions
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#paragraph">
-     Paragraph
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#valid-html">
-     Valid HTML
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#inline-markup">
-   Inline Markup
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#inline-links">
-     Inline links
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#inline-images">
-     Inline images
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#text-formatting">
-     Text formatting
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#emphasis">
-       Emphasis
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#strong">
-       Strong
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#inline-code">
-       Inline Code
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>CommonMark</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#block-markup">
-   Block Markup
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#headings">
-     Headings
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#heading">
-     Heading!
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#lists">
-     Lists
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#code">
-     Code
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#blockquotes">
-     Blockquotes
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#thematic-break">
-     Thematic Break
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#link-definitions">
-     Link Definitions
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#paragraph">
-     Paragraph
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#valid-html">
-     Valid HTML
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#inline-markup">
-   Inline Markup
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#inline-links">
-     Inline links
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#inline-images">
-     Inline images
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#text-formatting">
-     Text formatting
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#emphasis">
-       Emphasis
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#strong">
-       Strong
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#inline-code">
-       Inline Code
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>CommonMark</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#block-markup">Block Markup</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#headings">Headings</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lists">Lists</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#code">Code</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#blockquotes">Blockquotes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#thematic-break">Thematic Break</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#link-definitions">Link Definitions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paragraph">Paragraph</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#valid-html">Valid HTML</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inline-markup">Inline Markup</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inline-links">Inline links</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inline-images">Inline images</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#text-formatting">Text formatting</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#emphasis">Emphasis</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#strong">Strong</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#inline-code">Inline Code</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
   <section class="tex2jax_ignore mathjax_ignore" id="commonmark">
-<h1>CommonMark<a class="headerlink" href="#commonmark" title="Permalink to this headline">#</a></h1>
+<h1>CommonMark<a class="headerlink" href="#commonmark" title="Permalink to this heading">#</a></h1>
 <p>This page provides an overview of the types of block and inline markup features supported by CommonMark and MyST, with pointers to additional content of interest. For full details on all the nuance of these features, please look at the <a class="reference external" href="https://spec.commonmark.org/">CommonMark Spec documentation</a>.</p>
 <p>MyST (Markedly Structured Text) was designed to make it easier to create publishable computational documents written with Markdown notation. It is a superset of <a class="reference external" href="https://commonmark.org/">CommonMark Markdown</a> and draws heavy inspiration from <a class="reference external" href="https://rmarkdown.rstudio.com/">RMarkdown</a> syntax. In addition to CommonMark, MyST also implements and extends <a class="reference external" href="https://github.com/syntax-tree/mdast">mdast</a>, which is a standard abstract syntax tree for Markdown. <code class="docutils literal notranslate"><span class="pre">mdast</span></code> is part of the <a class="reference external" href="https://unifiedjs.com">unifiedjs</a> community and has <a class="reference external" href="https://unifiedjs.com/explore/keyword/mdast/">many utilities</a> for exporting and transforming your content.</p>
 <section id="block-markup">
-<h2>Block Markup<a class="headerlink" href="#block-markup" title="Permalink to this headline">#</a></h2>
+<h2>Block Markup<a class="headerlink" href="#block-markup" title="Permalink to this heading">#</a></h2>
 <section id="headings">
-<h3>Headings<a class="headerlink" href="#headings" title="Permalink to this headline">#</a></h3>
+<h3>Headings<a class="headerlink" href="#headings" title="Permalink to this heading">#</a></h3>
 <p><strong>type</strong>: <em>string</em>, (“heading”)
 : See also <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p>
 <p><strong>depth</strong>: <em>integer</em>
@@ -594,15 +441,15 @@ title="Print to PDF"
 <p><strong>data</strong>: <em>object</em>, <em>optional</em>
 : See also <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="9a303be7-0e73-4824-8b65-a9b13a65296f" name="c0b62eca-924e-4d51-9187-11bf29551310" type="radio">
-</input><label class="sd-tab-label" data-sync-id="myst" for="9a303be7-0e73-4824-8b65-a9b13a65296f">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" data-sync-id="myst" for="sd-tab-item-0">
 Markup</label><div class="sd-tab-content docutils">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">### Heading!</span>
 </pre></div>
 </div>
 </div>
-<input id="6b125c53-a757-44d4-ab78-447aea68535a" name="c0b62eca-924e-4d51-9187-11bf29551310" type="radio">
-</input><label class="sd-tab-label" data-sync-id="ast" for="6b125c53-a757-44d4-ab78-447aea68535a">
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" data-sync-id="ast" for="sd-tab-item-1">
 AST</label><div class="sd-tab-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">root</span>
 <span class="nt">children</span><span class="p">:</span>
@@ -614,9 +461,10 @@ AST</label><div class="sd-tab-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="60f07b0e-22b6-4a83-8c72-d5ab1df49d82" name="c0b62eca-924e-4d51-9187-11bf29551310" type="radio">
-</input><label class="sd-tab-label" data-sync-id="render" for="60f07b0e-22b6-4a83-8c72-d5ab1df49d82">
+<input id="sd-tab-item-2" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" data-sync-id="render" for="sd-tab-item-2">
 Render</label><div class="sd-tab-content docutils">
+<p class="rubric">Heading!</p>
 </div>
 </div>
 <div class="admonition seealso">
@@ -624,11 +472,8 @@ Render</label><div class="sd-tab-content docutils">
 <p>Reference headings by preceding headers with a <code class="docutils literal notranslate"><span class="pre">(label)=</span></code>. See <a class="reference internal" href="references.html"><span class="doc std std-doc">Directive Targets and Cross References</span></a>!</p>
 </div>
 </section>
-<section id="heading">
-<h3>Heading!<a class="headerlink" href="#heading" title="Permalink to this headline">#</a></h3>
-</section>
 <section id="lists">
-<h3>Lists<a class="headerlink" href="#lists" title="Permalink to this headline">#</a></h3>
+<h3>Lists<a class="headerlink" href="#lists" title="Permalink to this heading">#</a></h3>
 <p><strong>type</strong>: <em>string</em>, (“list”)
 : See also <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p>
 <p><strong>ordered</strong>: <em>boolean</em>, <em>optional</em>
@@ -644,8 +489,8 @@ Render</label><div class="sd-tab-content docutils">
 <p><strong>data</strong>: <em>object</em>, <em>optional</em>
 : See also <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="dfb49a36-81d1-4b2c-8f53-5e7799ad2e10" name="5dfa7866-41ab-451e-a77c-8d3a99ae321b" type="radio">
-</input><label class="sd-tab-label" data-sync-id="myst" for="dfb49a36-81d1-4b2c-8f53-5e7799ad2e10">
+<input checked="checked" id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" data-sync-id="myst" for="sd-tab-item-3">
 Markup</label><div class="sd-tab-content docutils">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">1.</span> <span class="n">quotes</span>
 <span class="mf">2.</span> <span class="n">breaks</span>
@@ -653,8 +498,8 @@ Markup</label><div class="sd-tab-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="1b8b8dd5-2017-4a07-9c1e-fa74c6c20d47" name="5dfa7866-41ab-451e-a77c-8d3a99ae321b" type="radio">
-</input><label class="sd-tab-label" data-sync-id="ast" for="1b8b8dd5-2017-4a07-9c1e-fa74c6c20d47">
+<input id="sd-tab-item-4" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" data-sync-id="ast" for="sd-tab-item-4">
 AST</label><div class="sd-tab-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">root</span>
 <span class="nt">children</span><span class="p">:</span>
@@ -681,10 +526,10 @@ AST</label><div class="sd-tab-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="54590387-5715-467d-83ca-9cf92f618630" name="5dfa7866-41ab-451e-a77c-8d3a99ae321b" type="radio">
-</input><label class="sd-tab-label" data-sync-id="render" for="54590387-5715-467d-83ca-9cf92f618630">
+<input id="sd-tab-item-5" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" data-sync-id="render" for="sd-tab-item-5">
 Render</label><div class="sd-tab-content docutils">
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>quotes</p></li>
 <li><p>breaks</p></li>
 <li><p>links</p></li>
@@ -693,7 +538,7 @@ Render</label><div class="sd-tab-content docutils">
 </div>
 </section>
 <section id="code">
-<h3>Code<a class="headerlink" href="#code" title="Permalink to this headline">#</a></h3>
+<h3>Code<a class="headerlink" href="#code" title="Permalink to this heading">#</a></h3>
 <p>Block of preformatted text</p>
 <p><strong>type</strong>: <em>string</em>, (“code”)
 : See also <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p>
@@ -720,8 +565,8 @@ Render</label><div class="sd-tab-content docutils">
 <p><strong>data</strong>: <em>object</em>, <em>optional</em>
 : See also <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="6e116bc5-addb-4441-9229-f6c4198eb76f" name="a4348cb0-75d4-4724-a279-e79e5537a287" type="radio">
-</input><label class="sd-tab-label" data-sync-id="myst" for="6e116bc5-addb-4441-9229-f6c4198eb76f">
+<input checked="checked" id="sd-tab-item-6" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" data-sync-id="myst" for="sd-tab-item-6">
 Markup</label><div class="sd-tab-content docutils">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```python
 print(&#39;this is python&#39;)
@@ -729,8 +574,8 @@ print(&#39;this is python&#39;)
 </pre></div>
 </div>
 </div>
-<input id="09741861-8a2e-4c06-b3ac-ae3f5ff774ae" name="a4348cb0-75d4-4724-a279-e79e5537a287" type="radio">
-</input><label class="sd-tab-label" data-sync-id="ast" for="09741861-8a2e-4c06-b3ac-ae3f5ff774ae">
+<input id="sd-tab-item-7" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" data-sync-id="ast" for="sd-tab-item-7">
 AST</label><div class="sd-tab-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">root</span>
 <span class="nt">children</span><span class="p">:</span>
@@ -740,8 +585,8 @@ AST</label><div class="sd-tab-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="daadddc3-4374-4377-a621-a81dfe1fc2a0" name="a4348cb0-75d4-4724-a279-e79e5537a287" type="radio">
-</input><label class="sd-tab-label" data-sync-id="render" for="daadddc3-4374-4377-a621-a81dfe1fc2a0">
+<input id="sd-tab-item-8" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" data-sync-id="render" for="sd-tab-item-8">
 Render</label><div class="sd-tab-content docutils">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;this is python&#39;</span><span class="p">)</span>
 </pre></div>
@@ -754,7 +599,7 @@ Render</label><div class="sd-tab-content docutils">
 </div>
 </section>
 <section id="blockquotes">
-<h3>Blockquotes<a class="headerlink" href="#blockquotes" title="Permalink to this headline">#</a></h3>
+<h3>Blockquotes<a class="headerlink" href="#blockquotes" title="Permalink to this heading">#</a></h3>
 <p><strong>type</strong>: <em>string</em>, (“blockquote”)
 : See also <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p>
 <p><strong>children</strong>: <em>array</em>, (<a class="reference internal" href="../myst.schema.html#flowcontent"><span class="std std-ref">FlowContent</span></a>)
@@ -764,15 +609,15 @@ Render</label><div class="sd-tab-content docutils">
 <p><strong>data</strong>: <em>object</em>, <em>optional</em>
 : See also <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="ca687dc8-a397-4206-af41-da47d1b65a85" name="749546df-b772-495a-9aaa-afdc7f7f20fd" type="radio">
-</input><label class="sd-tab-label" data-sync-id="myst" for="ca687dc8-a397-4206-af41-da47d1b65a85">
+<input checked="checked" id="sd-tab-item-9" name="sd-tab-set-3" type="radio">
+</input><label class="sd-tab-label" data-sync-id="myst" for="sd-tab-item-9">
 Markup</label><div class="sd-tab-content docutils">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">To</span> <span class="n">be</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">to</span> <span class="n">be</span>
 </pre></div>
 </div>
 </div>
-<input id="6667f16f-0029-48a5-89da-7901228fdfc2" name="749546df-b772-495a-9aaa-afdc7f7f20fd" type="radio">
-</input><label class="sd-tab-label" data-sync-id="ast" for="6667f16f-0029-48a5-89da-7901228fdfc2">
+<input id="sd-tab-item-10" name="sd-tab-set-3" type="radio">
+</input><label class="sd-tab-label" data-sync-id="ast" for="sd-tab-item-10">
 AST</label><div class="sd-tab-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">root</span>
 <span class="nt">children</span><span class="p">:</span>
@@ -785,8 +630,8 @@ AST</label><div class="sd-tab-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="4870ab35-d095-4703-83b8-8ea6ca38cb38" name="749546df-b772-495a-9aaa-afdc7f7f20fd" type="radio">
-</input><label class="sd-tab-label" data-sync-id="render" for="4870ab35-d095-4703-83b8-8ea6ca38cb38">
+<input id="sd-tab-item-11" name="sd-tab-set-3" type="radio">
+</input><label class="sd-tab-label" data-sync-id="render" for="sd-tab-item-11">
 Render</label><div class="sd-tab-content docutils">
 <blockquote>
 <div><p>To be or not to be</p>
@@ -795,7 +640,7 @@ Render</label><div class="sd-tab-content docutils">
 </div>
 </section>
 <section id="thematic-break">
-<h3>Thematic Break<a class="headerlink" href="#thematic-break" title="Permalink to this headline">#</a></h3>
+<h3>Thematic Break<a class="headerlink" href="#thematic-break" title="Permalink to this heading">#</a></h3>
 <p>Line break</p>
 <p><strong>type</strong>: <em>string</em>, (“break”)
 : See also <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p>
@@ -804,8 +649,8 @@ Render</label><div class="sd-tab-content docutils">
 <p><strong>data</strong>: <em>object</em>, <em>optional</em>
 : See also <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="09e82a45-b307-4b99-ad9e-11c18d487e53" name="498aca70-1f88-4fbe-9f2f-125a71e497fd" type="radio">
-</input><label class="sd-tab-label" data-sync-id="myst" for="09e82a45-b307-4b99-ad9e-11c18d487e53">
+<input checked="checked" id="sd-tab-item-12" name="sd-tab-set-4" type="radio">
+</input><label class="sd-tab-label" data-sync-id="myst" for="sd-tab-item-12">
 Markup</label><div class="sd-tab-content docutils">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">thematic</span>
 
@@ -815,8 +660,8 @@ Markup</label><div class="sd-tab-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="4892751b-a5e3-423a-867f-8eeba8e97ece" name="498aca70-1f88-4fbe-9f2f-125a71e497fd" type="radio">
-</input><label class="sd-tab-label" data-sync-id="ast" for="4892751b-a5e3-423a-867f-8eeba8e97ece">
+<input id="sd-tab-item-13" name="sd-tab-set-4" type="radio">
+</input><label class="sd-tab-label" data-sync-id="ast" for="sd-tab-item-13">
 AST</label><div class="sd-tab-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">root</span>
 <span class="nt">children</span><span class="p">:</span>
@@ -832,8 +677,8 @@ AST</label><div class="sd-tab-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="7ef5e2de-c729-4287-b070-7853a7cd409c" name="498aca70-1f88-4fbe-9f2f-125a71e497fd" type="radio">
-</input><label class="sd-tab-label" data-sync-id="render" for="7ef5e2de-c729-4287-b070-7853a7cd409c">
+<input id="sd-tab-item-14" name="sd-tab-set-4" type="radio">
+</input><label class="sd-tab-label" data-sync-id="render" for="sd-tab-item-14">
 Render</label><div class="sd-tab-content docutils">
 <p>thematic</p>
 <hr class="docutils" />
@@ -847,7 +692,7 @@ which is used to structurally seperate content.</p>
 </div>
 </section>
 <section id="link-definitions">
-<h3>Link Definitions<a class="headerlink" href="#link-definitions" title="Permalink to this headline">#</a></h3>
+<h3>Link Definitions<a class="headerlink" href="#link-definitions" title="Permalink to this heading">#</a></h3>
 <p>Reference to a url resource</p>
 <p><strong>type</strong>: <em>string</em>, (“definition”)
 : See also <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p>
@@ -870,7 +715,7 @@ This syntax is also similar to <a class="reference internal" href="footnotes.htm
 </div>
 </section>
 <section id="paragraph">
-<h3>Paragraph<a class="headerlink" href="#paragraph" title="Permalink to this headline">#</a></h3>
+<h3>Paragraph<a class="headerlink" href="#paragraph" title="Permalink to this heading">#</a></h3>
 <p><strong>type</strong>: <em>string</em>, (“paragraph”)
 : See also <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p>
 <p><strong>children</strong>: <em>array</em>, (<a class="reference internal" href="../myst.schema.html#phrasingcontent"><span class="std std-ref">PhrasingContent</span></a>)
@@ -880,15 +725,15 @@ This syntax is also similar to <a class="reference internal" href="footnotes.htm
 <p><strong>data</strong>: <em>object</em>, <em>optional</em>
 : See also <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="f2484b14-ca1e-47de-9393-05772a2fec50" name="b0e49c76-797b-4909-8a77-2282551398b0" type="radio">
-</input><label class="sd-tab-label" data-sync-id="myst" for="f2484b14-ca1e-47de-9393-05772a2fec50">
+<input checked="checked" id="sd-tab-item-15" name="sd-tab-set-5" type="radio">
+</input><label class="sd-tab-label" data-sync-id="myst" for="sd-tab-item-15">
 Markup</label><div class="sd-tab-content docutils">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Something</span>
 </pre></div>
 </div>
 </div>
-<input id="835400f3-7ce6-4130-8f89-9ecb7f8323ba" name="b0e49c76-797b-4909-8a77-2282551398b0" type="radio">
-</input><label class="sd-tab-label" data-sync-id="ast" for="835400f3-7ce6-4130-8f89-9ecb7f8323ba">
+<input id="sd-tab-item-16" name="sd-tab-set-5" type="radio">
+</input><label class="sd-tab-label" data-sync-id="ast" for="sd-tab-item-16">
 AST</label><div class="sd-tab-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">root</span>
 <span class="nt">children</span><span class="p">:</span>
@@ -899,15 +744,15 @@ AST</label><div class="sd-tab-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="08e67a79-0810-4321-b8c7-820c735efa4b" name="b0e49c76-797b-4909-8a77-2282551398b0" type="radio">
-</input><label class="sd-tab-label" data-sync-id="render" for="08e67a79-0810-4321-b8c7-820c735efa4b">
+<input id="sd-tab-item-17" name="sd-tab-set-5" type="radio">
+</input><label class="sd-tab-label" data-sync-id="render" for="sd-tab-item-17">
 Render</label><div class="sd-tab-content docutils">
 <p>Something</p>
 </div>
 </div>
 </section>
 <section id="valid-html">
-<h3>Valid HTML<a class="headerlink" href="#valid-html" title="Permalink to this headline">#</a></h3>
+<h3>Valid HTML<a class="headerlink" href="#valid-html" title="Permalink to this heading">#</a></h3>
 <p>Fragment of raw HTML - does not need to be valid or complete</p>
 <p><strong>type</strong>: <em>string</em>, (“html”)
 : See also <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p>
@@ -918,15 +763,15 @@ Render</label><div class="sd-tab-content docutils">
 <p><strong>data</strong>: <em>object</em>, <em>optional</em>
 : See also <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="e5ff42ad-3748-42a4-9b42-7a300b98f5bb" name="a3d1397f-e962-49ef-b49a-b6f7d15d7809" type="radio">
-</input><label class="sd-tab-label" data-sync-id="myst" for="e5ff42ad-3748-42a4-9b42-7a300b98f5bb">
+<input checked="checked" id="sd-tab-item-18" name="sd-tab-set-6" type="radio">
+</input><label class="sd-tab-label" data-sync-id="myst" for="sd-tab-item-18">
 Markup</label><div class="sd-tab-content docutils">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">div</span><span class="o">&gt;&lt;</span><span class="n">p</span><span class="o">&gt;*</span><span class="n">some</span> <span class="n">text</span><span class="o">*&lt;/</span><span class="n">p</span><span class="o">&gt;&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
 </pre></div>
 </div>
 </div>
-<input id="c775aa84-dbdf-4d17-b551-7dd7ef429e22" name="a3d1397f-e962-49ef-b49a-b6f7d15d7809" type="radio">
-</input><label class="sd-tab-label" data-sync-id="ast" for="c775aa84-dbdf-4d17-b551-7dd7ef429e22">
+<input id="sd-tab-item-19" name="sd-tab-set-6" type="radio">
+</input><label class="sd-tab-label" data-sync-id="ast" for="sd-tab-item-19">
 AST</label><div class="sd-tab-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">root</span>
 <span class="nt">children</span><span class="p">:</span>
@@ -935,8 +780,8 @@ AST</label><div class="sd-tab-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="14fe2cac-794e-40f1-b405-bfc98eb2f620" name="a3d1397f-e962-49ef-b49a-b6f7d15d7809" type="radio">
-</input><label class="sd-tab-label" data-sync-id="render" for="14fe2cac-794e-40f1-b405-bfc98eb2f620">
+<input id="sd-tab-item-20" name="sd-tab-set-6" type="radio">
+</input><label class="sd-tab-label" data-sync-id="render" for="sd-tab-item-20">
 Render</label><div class="sd-tab-content docutils">
 <div><p>*some text*</p></div>
 </div>
@@ -944,9 +789,9 @@ Render</label><div class="sd-tab-content docutils">
 </section>
 </section>
 <section id="inline-markup">
-<h2>Inline Markup<a class="headerlink" href="#inline-markup" title="Permalink to this headline">#</a></h2>
+<h2>Inline Markup<a class="headerlink" href="#inline-markup" title="Permalink to this heading">#</a></h2>
 <section id="inline-links">
-<span id="id1"></span><h3>Inline links<a class="headerlink" href="#inline-links" title="Permalink to this headline">#</a></h3>
+<span id="id1"></span><h3>Inline links<a class="headerlink" href="#inline-links" title="Permalink to this heading">#</a></h3>
 <p>Hyperlink</p>
 <p><strong>type</strong>: <em>string</em>, (“link”)
 : See also <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p>
@@ -961,15 +806,15 @@ Render</label><div class="sd-tab-content docutils">
 <p><strong>data</strong>: <em>object</em>, <em>optional</em>
 : See also <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="3afe0e91-3c1e-4f65-9a57-02f2fc143a16" name="3cc30676-6dad-4deb-af8c-99992feea9b7" type="radio">
-</input><label class="sd-tab-label" data-sync-id="myst" for="3afe0e91-3c1e-4f65-9a57-02f2fc143a16">
+<input checked="checked" id="sd-tab-item-21" name="sd-tab-set-7" type="radio">
+</input><label class="sd-tab-label" data-sync-id="myst" for="sd-tab-item-21">
 Markup</label><div class="sd-tab-content docutils">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">search</span> <span class="n">engine</span><span class="p">](</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="o">.</span><span class="n">google</span><span class="o">.</span><span class="n">com</span> <span class="s2">&quot;Google&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input id="259befcc-5a51-4986-bd46-e0adab001d96" name="3cc30676-6dad-4deb-af8c-99992feea9b7" type="radio">
-</input><label class="sd-tab-label" data-sync-id="ast" for="259befcc-5a51-4986-bd46-e0adab001d96">
+<input id="sd-tab-item-22" name="sd-tab-set-7" type="radio">
+</input><label class="sd-tab-label" data-sync-id="ast" for="sd-tab-item-22">
 AST</label><div class="sd-tab-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">root</span>
 <span class="nt">children</span><span class="p">:</span>
@@ -984,8 +829,8 @@ AST</label><div class="sd-tab-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="a634983f-b1a2-4b24-8aad-04e6c927f05a" name="3cc30676-6dad-4deb-af8c-99992feea9b7" type="radio">
-</input><label class="sd-tab-label" data-sync-id="render" for="a634983f-b1a2-4b24-8aad-04e6c927f05a">
+<input id="sd-tab-item-23" name="sd-tab-set-7" type="radio">
+</input><label class="sd-tab-label" data-sync-id="render" for="sd-tab-item-23">
 Render</label><div class="sd-tab-content docutils">
 <p><a class="reference external" href="https://www.google.com">search engine</a></p>
 </div>
@@ -996,7 +841,7 @@ Render</label><div class="sd-tab-content docutils">
 </div>
 </section>
 <section id="inline-images">
-<h3>Inline images<a class="headerlink" href="#inline-images" title="Permalink to this headline">#</a></h3>
+<h3>Inline images<a class="headerlink" href="#inline-images" title="Permalink to this heading">#</a></h3>
 <p>Image hyperlink</p>
 <p><strong>type</strong>: <em>string</em>, (“image”)
 : See also <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p>
@@ -1017,15 +862,15 @@ Render</label><div class="sd-tab-content docutils">
 <p><strong>data</strong>: <em>object</em>, <em>optional</em>
 : See also <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="c5414647-73b8-4476-a701-da79a8acb3ec" name="17d15e08-daa3-4291-908e-0c90a6ff9b98" type="radio">
-</input><label class="sd-tab-label" data-sync-id="myst" for="c5414647-73b8-4476-a701-da79a8acb3ec">
+<input checked="checked" id="sd-tab-item-24" name="sd-tab-set-8" type="radio">
+</input><label class="sd-tab-label" data-sync-id="myst" for="sd-tab-item-24">
 Markup</label><div class="sd-tab-content docutils">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>![fishy](fun-fish.png)
 </pre></div>
 </div>
 </div>
-<input id="0bdcb5e8-0bad-43bc-be31-051d03c532c5" name="17d15e08-daa3-4291-908e-0c90a6ff9b98" type="radio">
-</input><label class="sd-tab-label" data-sync-id="ast" for="0bdcb5e8-0bad-43bc-be31-051d03c532c5">
+<input id="sd-tab-item-25" name="sd-tab-set-8" type="radio">
+</input><label class="sd-tab-label" data-sync-id="ast" for="sd-tab-item-25">
 AST</label><div class="sd-tab-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">root</span>
 <span class="nt">children</span><span class="p">:</span>
@@ -1037,8 +882,8 @@ AST</label><div class="sd-tab-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="e468d296-6ed2-403c-9ef3-b59a7a06f266" name="17d15e08-daa3-4291-908e-0c90a6ff9b98" type="radio">
-</input><label class="sd-tab-label" data-sync-id="render" for="e468d296-6ed2-403c-9ef3-b59a7a06f266">
+<input id="sd-tab-item-26" name="sd-tab-set-8" type="radio">
+</input><label class="sd-tab-label" data-sync-id="render" for="sd-tab-item-26">
 Render</label><div class="sd-tab-content docutils">
 <p><img alt="fishy" src="../_images/fun-fish.png" /></p>
 </div>
@@ -1049,9 +894,9 @@ Render</label><div class="sd-tab-content docutils">
 </div>
 </section>
 <section id="text-formatting">
-<h3>Text formatting<a class="headerlink" href="#text-formatting" title="Permalink to this headline">#</a></h3>
+<h3>Text formatting<a class="headerlink" href="#text-formatting" title="Permalink to this heading">#</a></h3>
 <section id="emphasis">
-<h4>Emphasis<a class="headerlink" href="#emphasis" title="Permalink to this headline">#</a></h4>
+<h4>Emphasis<a class="headerlink" href="#emphasis" title="Permalink to this heading">#</a></h4>
 <p>Stressed, italicized content</p>
 <p><strong>type</strong>: <em>string</em>, (“emphasis”)
 : See also <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p>
@@ -1063,7 +908,7 @@ Render</label><div class="sd-tab-content docutils">
 : See also <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p>
 </section>
 <section id="strong">
-<h4>Strong<a class="headerlink" href="#strong" title="Permalink to this headline">#</a></h4>
+<h4>Strong<a class="headerlink" href="#strong" title="Permalink to this heading">#</a></h4>
 <p>Important, serious, urgent, bold content</p>
 <p><strong>type</strong>: <em>string</em>, (“strong”)
 : See also <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p>
@@ -1075,7 +920,7 @@ Render</label><div class="sd-tab-content docutils">
 : See also <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p>
 </section>
 <section id="inline-code">
-<h4>Inline Code<a class="headerlink" href="#inline-code" title="Permalink to this headline">#</a></h4>
+<h4>Inline Code<a class="headerlink" href="#inline-code" title="Permalink to this heading">#</a></h4>
 <p>Fragment of code</p>
 <p><strong>type</strong>: <em>string</em>, (“inlineCode”)
 : See also <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p>
@@ -1086,15 +931,15 @@ Render</label><div class="sd-tab-content docutils">
 <p><strong>data</strong>: <em>object</em>, <em>optional</em>
 : See also <a class="reference internal" href="../myst.schema.html#node"><span class="std std-ref">Node</span></a></p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="8a7c6c55-f73b-496d-8282-8a7385c6cf0e" name="b1a1a8ef-489f-4c47-bd72-8135737eaf3e" type="radio">
-</input><label class="sd-tab-label" data-sync-id="myst" for="8a7c6c55-f73b-496d-8282-8a7385c6cf0e">
+<input checked="checked" id="sd-tab-item-27" name="sd-tab-set-9" type="radio">
+</input><label class="sd-tab-label" data-sync-id="myst" for="sd-tab-item-27">
 Markup</label><div class="sd-tab-content docutils">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>**strong**, _emphasis_, `literal text`, \*escaped symbols\*
 </pre></div>
 </div>
 </div>
-<input id="74e5ff64-7313-43c2-81ee-6b3e601341d8" name="b1a1a8ef-489f-4c47-bd72-8135737eaf3e" type="radio">
-</input><label class="sd-tab-label" data-sync-id="ast" for="74e5ff64-7313-43c2-81ee-6b3e601341d8">
+<input id="sd-tab-item-28" name="sd-tab-set-9" type="radio">
+</input><label class="sd-tab-label" data-sync-id="ast" for="sd-tab-item-28">
 AST</label><div class="sd-tab-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">root</span>
 <span class="nt">children</span><span class="p">:</span>
@@ -1119,8 +964,8 @@ AST</label><div class="sd-tab-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="62c4bb65-8cd2-43d6-8955-b871b9d05ce5" name="b1a1a8ef-489f-4c47-bd72-8135737eaf3e" type="radio">
-</input><label class="sd-tab-label" data-sync-id="render" for="62c4bb65-8cd2-43d6-8955-b871b9d05ce5">
+<input id="sd-tab-item-29" name="sd-tab-set-9" type="radio">
+</input><label class="sd-tab-label" data-sync-id="render" for="sd-tab-item-29">
 Render</label><div class="sd-tab-content docutils">
 <p><strong>strong</strong>, <em>emphasis</em>, <code class="docutils literal notranslate"><span class="pre">literal</span> <span class="pre">text</span></code>, *escaped symbols*</p>
 </div>
@@ -1146,7 +991,7 @@ Render</label><div class="sd-tab-content docutils">
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./features"
         },
         predefinedOutput: true
@@ -1154,50 +999,126 @@ Render</label><div class="sd-tab-content docutils">
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="overview.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Overview</p>
-        </div>
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="overview.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Overview</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="admonitions.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="admonitions.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Admonitions</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
-</div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
-  
-    By Executable Book Project<br/>
-  
-      &copy; Copyright 2022.<br/>
-</p>
-        </footer>
-    </div>
-    
-</div>
-
-
       </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#block-markup">Block Markup</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#headings">Headings</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lists">Lists</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#code">Code</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#blockquotes">Blockquotes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#thematic-break">Thematic Break</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#link-definitions">Link Definitions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paragraph">Paragraph</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#valid-html">Valid HTML</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inline-markup">Inline Markup</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inline-links">Inline links</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inline-images">Inline images</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#text-formatting">Text formatting</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#emphasis">Emphasis</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#strong">Strong</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#inline-code">Inline Code</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Executable Book Project
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>

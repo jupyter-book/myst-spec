@@ -1,4 +1,4 @@
-Comment nodes for comments present in myst but ingnored upon render
+Comment nodes for comments present in myst but ignored upon render
 
 __type__: _string_, ("mystComment")
 : See also {ref}`node`
