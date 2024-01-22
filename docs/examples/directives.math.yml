@@ -15,7 +15,7 @@ cases:
       Ax = b
       ```
     html: |-
-      <div class="math block">Ax = b</div>
+      <div class="math-display">Ax = b</div>
     latex: |-
       \begin{equation}
       Ax = b
