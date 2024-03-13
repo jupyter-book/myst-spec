@@ -16,7 +16,7 @@
             "kind": {
               "description": "kind of container contents",
               "type": "string",
-              "enum": ["figure", "table", "blockquote"]
+              "enum": ["figure", "table", "quote"]
             },
             "class": {
               "description": "any custom class information",
