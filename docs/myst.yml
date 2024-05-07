@@ -15,6 +15,7 @@ site:
       url: https://github.com/executablebooks/myst-spec
   domains:
     - mystmd-spec.curve.space
-  twitter: mystmarkdown
-  logo: public/logo.svg
-  logo_text: MyST Spec
+  options:
+    twitter: mystmarkdown
+    logo: public/logo.svg
+    logo_text: MyST Spec
