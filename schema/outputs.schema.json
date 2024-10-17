@@ -1,0 +1,61 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://spec.myst.tools/json-schema/outputs.schema.json",
+  "description": "execution output container types",
+  "$defs": {
+    "Output": {
+      "type": "object",
+      "description": "Container for execution output from a Jupyer Kernel",
+      "allOf": [
+        {
+          "properties": {
+            "type": {
+              "const": "output"
+            },
+            "meta": {
+              "description": "Raw IOutput data",
+              "$ref": "https://raw.githubusercontent.com/jupyter/nbformat/refs/heads/main/nbformat/v4/nbformat.v4.5.schema.json#/definitions/output"
+            },
+            "children": {
+              "description": "Children from parsing the raw IOutput data",
+              "type": "array",
+              "items": {
+                "$ref": "unist.schema.json#/$defs/node"
+              }
+            },
+            "position": {},
+            "data": {}
+          },
+          "additionalProperties": false
+        },
+        { "$ref": "unist.schema.json#/$defs/Parent" }
+      ]
+    },
+    "Outputs": {:w
+
+      "type": "object",
+      "description": "Container for a collection of execution outputs from a Jupyer Kernel",
+      "allOf": [
+        {
+          "properties": {
+            "type": {
+              "const": "outputs"
+            },
+	    "children": {
+              "description": "Individual output nodes",
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/Output"
+              }
+            },
+            "position": {},
+            "data": {}
+          },
+          "additionalProperties": false
+        },
+        { "$ref": "unist.schema.json#/$defs/Parent" }
+      ]
+    }
+
+  }
+}
