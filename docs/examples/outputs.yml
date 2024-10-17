@@ -1,0 +1,45 @@
+cases:
+  - title: output with children
+    mdast:
+      type: root
+      children:
+        - type: output
+          meta:
+            'text/plain': Hello world!
+          children:
+            - type: paragraph
+              children:
+                - type: text
+                  value: Hello world!
+  - title: output without children
+    mdast:
+      type: root
+      children:
+        - type: output
+          meta:
+            'application/json': '{"foo": 12}'
+          children: []
+  - title: outputs with children
+    mdast:
+      type: root
+      children:
+        - type: outputs
+          children:
+            - type: output
+              meta:
+                'text/plain': Hello world!
+              children:
+                - type: paragraph
+                  children:
+                    - type: text
+                      value: Hello world!
+  - title: outputs without children
+    mdast:
+      type: root
+      children:
+        - type: outputs
+          children:
+            - type: output
+              meta:
+                'application/json': '{"foo": 12}'
+              children: []
