@@ -315,6 +315,7 @@ const subschemas = [
   'comments',
   'commonmark',
   'unist',
+  'outputs',
 ];
 // Combine all schema files into the single myst schema document
 subschemas.forEach(
