@@ -20,7 +20,7 @@
               "description": "Children from parsing the raw IOutput data",
               "type": "array",
               "items": {
-                "$ref": "unist.schema.json#/$defs/node"
+                "$ref": "unist.schema.json#/$defs/Node"
               }
             },
             "position": {},
