@@ -31,8 +31,7 @@
         { "$ref": "unist.schema.json#/$defs/Parent" }
       ]
     },
-    "Outputs": {:w
-
+    "Outputs": {
       "type": "object",
       "description": "Container for a collection of execution outputs from a Jupyer Kernel",
       "allOf": [
@@ -41,7 +40,7 @@
             "type": {
               "const": "outputs"
             },
-	    "children": {
+            "children": {
               "description": "Individual output nodes",
               "type": "array",
               "items": {
@@ -56,6 +55,5 @@
         { "$ref": "unist.schema.json#/$defs/Parent" }
       ]
     }
-
   }
 }
