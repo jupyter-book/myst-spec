@@ -1,7 +1,19 @@
-import type { Blockquote, Code, Heading, Html, List, ThematicBreak, RootContent } from 'mdast';
+import type {
+  Blockquote,
+  Code,
+  Heading,
+  Html,
+  List,
+  ThematicBreak,
+  RootContent,
+  Paragraph,
+  Definition,
+  FootnoteDefinition,
+} from 'mdast';
 import type { Math } from './math';
 import type { Admonition } from './admonitions';
 import type { Comment } from './comments';
+import type { Container } from './containers';
 import type { Directive } from './directives';
 import type { Target } from './references';
 
@@ -12,12 +24,16 @@ export interface FlowContentMap {
   html: Html;
   list: List;
   thematicBreak: ThematicBreak;
-  rootContent: RootContent;
+  paragraph: Paragraph;
+  definition: Definition;
+  footnoteDefinition: FootnoteDefinition;
+
   math: Math;
+  admonition: Admonition;
   comment: Comment;
   directive: Directive;
-  admonition: Admonition;
   mystTarget: Target;
+  container: Container;
 }
 
 export type FlowContent = FlowContentMap[keyof FlowContentMap];

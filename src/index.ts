@@ -7,6 +7,7 @@ import type { InlineMath, Math } from './math';
 import type { Directive } from './directives';
 import type { CrossReference, Target } from './references';
 import type { Subscript, Superscript, Underline } from './styles';
+import type { Caption, Container, Legend } from './containers';
 
 declare module 'mdast' {
   // Extend Association to include HTML ID
@@ -61,6 +62,9 @@ declare module 'mdast' {
     underline: Underline;
     crossReference: CrossReference;
     mystTarget: Target;
+    container: Container;
+    caption: Caption;
+    legend: Legend;
   }
 }
 
