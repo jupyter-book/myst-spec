@@ -25,7 +25,9 @@
   },
   "scripts": {
     "test": "tsc -b test",
-    "build-schema": "typescript-json-schema 'src/*.ts' '*' --tsNodeRegister --required --strictNullChecks --aliasRefs --refs -o dist/myst.schema.json"
+    "clean": "rimraf src/build test/build dist",
+    "build": "typescript-json-schema 'src/*.ts' '*' --tsNodeRegister --required --strictNullChecks --aliasRefs --refs -o dist/myst.schema.json",
+    "lint": "prettier --write src/*.ts test/*.ts"
   },
   "bugs": {
     "url": "https://github.com/executablebooks/myst-spec/issues"
