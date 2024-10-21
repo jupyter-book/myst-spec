@@ -9,7 +9,6 @@
     "eslint:recommended",
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
-    "plugin:jest/recommended",
     "plugin:prettier/recommended"
   ],
   "globals": {
@@ -20,7 +19,7 @@
   "parserOptions": {
     "ecmaVersion": 2018,
     "sourceType": "module",
-    "project": ["./tsconfig.json"]
+    "project": ["./src/tsconfig.json", "./test/tsconfig.json"]
   },
   "plugins": ["@typescript-eslint", "no-skip-tests", "no-only-tests"],
   "rules": {
@@ -41,7 +40,7 @@
   "settings": {
     "import/resolver": {
       "node": {
-        "extensions": [".js", ".ts", ".spec.ts"]
+        "extensions": [".js", ".ts"]
       }
     }
   }
