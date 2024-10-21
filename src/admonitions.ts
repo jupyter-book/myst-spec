@@ -5,22 +5,19 @@ export interface AdmonitionTitle extends Parent {
   type: 'admonitionTitle';
   children: PhrasingContent[];
 }
-
-export type AdmonitionKind =
-  | 'attention'
-  | 'caution'
-  | 'danger'
-  | 'error'
-  | 'hint'
-  | 'important'
-  | 'note'
-  | 'seealso'
-  | 'tip'
-  | 'warning';
-
 export interface Admonition extends Parent {
   type: 'admonition';
-  kind?: AdmonitionKind;
+  kind?:
+    | 'attention'
+    | 'caution'
+    | 'danger'
+    | 'error'
+    | 'hint'
+    | 'important'
+    | 'note'
+    | 'seealso'
+    | 'tip'
+    | 'warning';
   class?: string;
   children: (FlowContent | AdmonitionTitle)[];
 }

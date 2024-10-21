@@ -310,9 +310,11 @@ var inlineCodeWithData = {
         someUnknownField: true,
     },
 };
+// @ts-expect-error: `url` is required.
+var linkWithoutUrl = {};
 var paragraphWithRole = {
     type: 'paragraph',
-    children: [{ type: 'mystRoles', name: 'ref', value: '' }],
+    children: [{ type: 'mystRole', name: 'ref', value: '', children: [] }],
 };
 // Assert that there are no incorrect keys.
 // If there are, these is not assignable.

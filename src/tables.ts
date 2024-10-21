@@ -1,10 +1,8 @@
 import type { Parent, PhrasingContent } from 'mdast';
 
-export type AlignType = 'left' | 'center' | 'right';
-
 export interface TableCell extends Parent {
   type: 'tableCell';
-  align?: AlignType;
+  align?: 'left' | 'center' | 'right';
   children: PhrasingContent[];
 }
 
@@ -15,6 +13,6 @@ export interface TableRow extends Parent {
 
 export interface Table extends Parent {
   type: 'table';
-  align?: AlignType;
+  align?: 'left' | 'center' | 'right';
   children: TableRow[];
 }
