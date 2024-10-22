@@ -30,7 +30,7 @@ export interface FlowContentMap {
 
   math: Math;
   admonition: Admonition;
-  comment: Comment;
+  mystComment: Comment;
   directive: Directive;
   mystTarget: Target;
   container: Container;

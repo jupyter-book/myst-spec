@@ -7,5 +7,5 @@ export interface Comment extends Literal {
   /**
    * Node type of myst comment.
    */
-  type: 'comment';
+  type: 'mystComment';
 }

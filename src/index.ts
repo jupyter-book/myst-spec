@@ -53,7 +53,7 @@ declare module 'mdast' {
     admonition: Admonition;
     admonitionTitle: AdmonitionTitle;
     abbreviation: Abbreviation;
-    comment: Comment;
+    mystComment: Comment;
     mystDirective: Directive;
     math: Math;
     inlineMath: InlineMath;
