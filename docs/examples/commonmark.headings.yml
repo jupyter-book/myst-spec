@@ -9,10 +9,8 @@ cases:
           children:
             - type: text
               value: Heading!
-    myst: |-
-      ### Heading!
-    html: |-
-      <h3>Heading!</h3>
+    myst: '### Heading!'
+    html: <h3>Heading!</h3>
   - title: CommonMark setext headings
     description: https://spec.commonmark.org/0.30/#setext-headings
     mdast:

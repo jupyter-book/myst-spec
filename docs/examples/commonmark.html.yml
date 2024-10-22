@@ -6,7 +6,5 @@ cases:
       children:
         - type: html
           value: <div><p>*some text*</p></div>
-    myst: |-
-      <div><p>*some text*</p></div>
-    html: |-
-      <div><p>*some text*</p></div>
+    myst: <div><p>*some text*</p></div>
+    html: <div><p>*some text*</p></div>

@@ -24,7 +24,7 @@ cases:
                         - type: text
                           value: title
                     - type: text
-                      value: '.'
+                      value: .
     myst: |-
       ```{admonition} This is a title
         An example of an admonition with a _title_.
@@ -39,7 +39,6 @@ cases:
         \section*{This is a title}
         An example of an admonition with a \textit{title}.
       \end{mdframed}
-
   - title: Note with no title
     mdast:
       type: root
@@ -68,7 +67,6 @@ cases:
       \begin{mdframed}[style=note]
         Please note!
       \end{mdframed}
-
   - title: Note with split title
     mdast:
       type: root
@@ -88,9 +86,7 @@ cases:
                 - type: paragraph
                   children:
                     - type: text
-                      value: |-
-                        and an example of a note admonition.
-
+                      value: and an example of a note admonition.
   - title: Danger on a single line
     mdast:
       type: root
@@ -106,7 +102,6 @@ cases:
                   children:
                     - type: text
                       value: This is a title!
-
   - title: Admonition with overridding class name
     mdast:
       type: root
@@ -136,9 +131,9 @@ cases:
                     - type: emphasis
                       children:
                         - type: text
-                          value: 'class'
+                          value: class
                     - type: text
-                      value: '.'
+                      value: .
     myst: |-
       ```{admonition} This is a title!
       :class: tip
@@ -155,7 +150,6 @@ cases:
         \section*{This is a title!}
         An example of a general \texttt{admonition} with a custom \textit{class}.
       \end{mdframed}
-
   - title: See Also with overridding class name of tip
     description: The `tip` class must be appended to the start
     mdast:
@@ -165,8 +159,7 @@ cases:
           name: seealso
           options:
             class: tip
-          value: |-
-            Tip class comes first!!
+          value: Tip class comes first!!
           children:
             - type: admonition
               kind: seealso
@@ -175,8 +168,7 @@ cases:
                 - type: paragraph
                   children:
                     - type: text
-                      value: |-
-                        Tip class comes first!!
+                      value: Tip class comes first!!
     myst: |-
       ```{seealso}
       :class: tip

@@ -13,10 +13,10 @@ cases:
                   kind: numref
                   identifier: my-figure
                   label: my-figure
-    myst: |-
-      {numref}`my-figure`
-    html: |-
-      <p><span class="reference role unhandled"><code class="kind">{numref}</code><code>my-figure</code></span></p>
+    myst: '{numref}`my-figure`'
+    html: >-
+      <p><span class="reference role unhandled"><code
+      class="kind">{numref}</code><code>my-figure</code></span></p>
   - title: Invalid figure reference
     mdast:
       type: root
@@ -34,10 +34,10 @@ cases:
                   children:
                     - type: text
                       value: Figure %s
-    myst: |-
-      {numref}`Figure %s <my-figure>`
-    html: |-
-      <p><span class="reference role unhandled"><code class="kind">{numref}</code><code>my-figure</code></span></p>
+    myst: '{numref}`Figure %s <my-figure>`'
+    html: >-
+      <p><span class="reference role unhandled"><code
+      class="kind">{numref}</code><code>my-figure</code></span></p>
   - title: Invalid figure reference with messy label
     mdast:
       type: root
@@ -55,10 +55,10 @@ cases:
                   children:
                     - type: text
                       value: Figure %s
-    myst: |-
-      {numref}`Figure %s <  My   -   Figure  >`
-    html: |-
-      <p><span class="reference role unhandled"><code class="kind">{numref}</code><code>my - figure</code></span></p>
+    myst: '{numref}`Figure %s <  My   -   Figure  >`'
+    html: >-
+      <p><span class="reference role unhandled"><code
+      class="kind">{numref}</code><code>my - figure</code></span></p>
   - title: Figure reference with default numref
     mdast:
       type: root
@@ -331,8 +331,10 @@ cases:
 
       Cool *caption*!
       ```
-    html: |-
-      <p>see <a href="#my-figure" title="Figure title">Cool <em>caption</em>!</a></p>
+    html: >-
+      <p>see <a href="#my-figure" title="Figure title">Cool
+      <em>caption</em>!</a></p>
+
       <figure id="my-figure" class="numbered">
         <img src="fig.jpg">
         <figcaption>

@@ -13,8 +13,7 @@ cases:
     myst: |-
       hard\
       break
-    html: |-
-      <p>hard<br>break</p>
+    html: <p>hard<br>break</p>
     latex: |-
       hard\\
       break
@@ -42,7 +41,6 @@ cases:
       <p>thematic</p>
       <hr>
       <p>break</p>
-
     latex: |-
       thematic
 

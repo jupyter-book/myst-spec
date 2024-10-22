@@ -4,24 +4,21 @@ cases:
       type: root
       children:
         - type: blockBreak
-    myst: |-
-      +++
+    myst: +++
   - title: block break node - with metadata
     mdast:
       type: root
       children:
         - type: blockBreak
           meta: '{"meta": "data"}'
-    myst: |-
-      +++ {"meta": "data"}
+    myst: '+++ {"meta": "data"}'
   - title: block break node - with broken metadata
     mdast:
       type: root
       children:
         - type: blockBreak
           meta: '{"meta: data}'
-    myst: |-
-      +++ {"meta: data}
+    myst: '+++ {"meta: data}'
   - title: block break nodes - dividing flow content
     id: blockbreak
     mdast:

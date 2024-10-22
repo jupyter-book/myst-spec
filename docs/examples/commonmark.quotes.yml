@@ -10,8 +10,7 @@ cases:
               children:
                 - type: text
                   value: To be or not to be
-    myst: |-
-      > To be or not to be
+    myst: '> To be or not to be'
     html: |-
       <blockquote>
         <p>To be or not to be</p>

@@ -9,10 +9,10 @@ cases:
             - type: mystRole
               name: abc
               value: ABC role
-    myst: |-
-      {abc}`ABC role`
-    html: |-
-      <p><span class="role unhandled"><code class="kind">{abc}</code><code>ABC role</code></span></p>
+    myst: '{abc}`ABC role`'
+    html: >-
+      <p><span class="role unhandled"><code class="kind">{abc}</code><code>ABC
+      role</code></span></p>
   - title: unknown role - no value
     mdast:
       type: root

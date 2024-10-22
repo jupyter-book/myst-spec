@@ -26,7 +26,6 @@ cases:
       \begin{mdframed}[style=attention]
         Admonition attention
       \end{mdframed}
-
   - title: caution
     mdast:
       type: root
@@ -54,7 +53,6 @@ cases:
       \begin{mdframed}[style=caution]
         Admonition caution
       \end{mdframed}
-
   - title: danger
     mdast:
       type: root
@@ -82,7 +80,6 @@ cases:
       \begin{mdframed}[style=danger]
         Admonition danger
       \end{mdframed}
-
   - title: error
     mdast:
       type: root
@@ -110,7 +107,6 @@ cases:
       \begin{mdframed}[style=error]
         Admonition error
       \end{mdframed}
-
   - title: important
     mdast:
       type: root
@@ -138,7 +134,6 @@ cases:
       \begin{mdframed}[style=important]
         Admonition important
       \end{mdframed}
-
   - title: hint
     mdast:
       type: root
@@ -166,7 +161,6 @@ cases:
       \begin{mdframed}[style=hint]
         Admonition hint
       \end{mdframed}
-
   - title: note
     mdast:
       type: root
@@ -194,7 +188,6 @@ cases:
       \begin{mdframed}[style=note]
         Admonition note
       \end{mdframed}
-
   - title: seealso
     mdast:
       type: root
@@ -222,7 +215,6 @@ cases:
       \begin{mdframed}[style=seealso]
         Admonition seealso
       \end{mdframed}
-
   - title: tip
     mdast:
       type: root
@@ -250,7 +242,6 @@ cases:
       \begin{mdframed}[style=tip]
         Admonition tip
       \end{mdframed}
-
   - title: warning
     mdast:
       type: root

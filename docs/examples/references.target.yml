@@ -14,5 +14,4 @@ cases:
     myst: |-
       (my_ID)=
       # My Header
-    html: |-
-      <h1 id="my_id">My Header</h1>
+    html: <h1 id="my_id">My Header</h1>
