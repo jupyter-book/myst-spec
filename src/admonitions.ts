@@ -1,4 +1,4 @@
-import type { Parent, PhrasingContent } from 'mdast';
+import type { Association, Parent, PhrasingContent } from 'mdast';
 import type { FlowContent } from './flow';
 
 /**
@@ -18,7 +18,7 @@ export interface AdmonitionTitle extends Parent {
 /**
  * Admonition node for drawing attention to text, separate from the neighboring content.
  */
-export interface Admonition extends Parent {
+export interface Admonition extends Parent, Partial<Association> {
   /**
    * Node type of myst admonition.
    */

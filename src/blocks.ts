@@ -1,4 +1,4 @@
-import type { Node, Parent } from 'mdast';
+import type { Association, Node, Parent } from 'mdast';
 import type { FlowContent } from './flow';
 
 /**
@@ -18,7 +18,7 @@ export interface BlockBreak extends Node {
 /**
  * Top-level content blocks or cells the myst document, delimited by BlockBreaks.
  */
-export interface Block extends Parent {
+export interface Block extends Parent, Partial<Association> {
   /**
    * Node type of myst block.
    */

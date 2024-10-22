@@ -1,4 +1,4 @@
-import type { Parent, Image, Table } from 'mdast';
+import type { Association, Parent, Image, Table } from 'mdast';
 import type { Enumerated } from './enumerated';
 import type { FlowContent } from './flow';
 
@@ -27,7 +27,7 @@ export interface Legend extends Parent {
 /**
  * Top-level container node to provide association and numbering to child content.
  */
-export interface Container extends Parent, Partial<Enumerated> {
+export interface Container extends Parent, Partial<Enumerated>, Partial<Association> {
   /**
    * Node type of myst container.
    */

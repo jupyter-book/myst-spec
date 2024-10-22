@@ -1,10 +1,10 @@
-import type { Parent, Literal, PhrasingContent } from 'mdast';
+import type { Association, Parent, Literal, PhrasingContent } from 'mdast';
 import type { FlowContent } from './flow';
 
 /**
  * Content block with predefined behavior.
  */
-export interface Directive extends Parent, Literal {
+export interface Directive extends Parent, Literal, Partial<Association> {
   /**
    * Node type of myst mystDirective.
    */

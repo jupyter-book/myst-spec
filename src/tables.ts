@@ -1,4 +1,4 @@
-import type { Parent, PhrasingContent } from 'mdast';
+import type { Association, Parent, PhrasingContent } from 'mdast';
 
 /**
  * One cell of table.
@@ -29,7 +29,7 @@ export interface TableRow extends Parent {
 /**
  * Two-dimensional table data.
  */
-export interface Table extends Parent {
+export interface Table extends Parent, Partial<Association> {
   /**
    * Node type of myst table.
    */
