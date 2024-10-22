@@ -30,7 +30,7 @@
     "test:prepare": "node ./build-tests.js",
     "test": "npm-run-all -s test:compile test:prepare test:run",
     "build": "typescript-json-schema 'src/*.ts' 'Root' --titles --tsNodeRegister --required --strictNullChecks --aliasRefs --refs --id https://spec.myst.tools/json-schema/myst.schema.json -o dist/myst.schema.json",
-    "lint": "prettier --write src/*.ts test/*.ts"
+    "lint": "prettier --write src/*.ts" 
   },
   "bugs": {
     "url": "https://github.com/executablebooks/myst-spec/issues"
