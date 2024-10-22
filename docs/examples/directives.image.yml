@@ -33,6 +33,7 @@ cases:
               class: bg-primary mb-1
               width: 200px
               align: center
+          value: ''
     myst: |-
       ```{image} fun-fish.png
       :alt: fishy
@@ -59,6 +60,7 @@ cases:
               url: fun-fish.png
               alt: fishy
               align: left
+          value: ''
     myst: |-
       ```{image} fun-fish.png
       :alt: fishy

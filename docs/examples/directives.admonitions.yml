@@ -102,6 +102,7 @@ cases:
                   children:
                     - type: text
                       value: This is a title!
+          value: ''
   - title: Admonition with overridding class name
     mdast:
       type: root

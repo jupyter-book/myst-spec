@@ -14,6 +14,7 @@ cases:
                   children:
                     - type: text
                       value: Admonition attention
+          value: ''
     myst: |-
       ```{attention} Admonition attention
       ```
@@ -41,6 +42,7 @@ cases:
                   children:
                     - type: text
                       value: Admonition caution
+          value: ''
     myst: |-
       ```{caution} Admonition caution
       ```
@@ -68,6 +70,7 @@ cases:
                   children:
                     - type: text
                       value: Admonition danger
+          value: ''
     myst: |-
       ```{danger} Admonition danger
       ```
@@ -95,6 +98,7 @@ cases:
                   children:
                     - type: text
                       value: Admonition error
+          value: ''
     myst: |-
       ```{error} Admonition error
       ```
@@ -122,6 +126,7 @@ cases:
                   children:
                     - type: text
                       value: Admonition important
+          value: ''
     myst: |-
       ```{important} Admonition important
       ```
@@ -149,6 +154,7 @@ cases:
                   children:
                     - type: text
                       value: Admonition hint
+          value: ''
     myst: |-
       ```{hint} Admonition hint
       ```
@@ -176,6 +182,7 @@ cases:
                   children:
                     - type: text
                       value: Admonition note
+          value: ''
     myst: |-
       ```{note} Admonition note
       ```
@@ -203,6 +210,7 @@ cases:
                   children:
                     - type: text
                       value: Admonition seealso
+          value: ''
     myst: |-
       ```{seealso} Admonition seealso
       ```
@@ -230,6 +238,7 @@ cases:
                   children:
                     - type: text
                       value: Admonition tip
+          value: ''
     myst: |-
       ```{tip} Admonition tip
       ```
@@ -257,6 +266,7 @@ cases:
                   children:
                     - type: text
                       value: Admonition warning
+          value: ''
     myst: |-
       ```{warning} Admonition warning
       ```

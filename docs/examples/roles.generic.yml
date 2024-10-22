@@ -9,6 +9,7 @@ cases:
             - type: mystRole
               name: abc
               value: ABC role
+              children: []
     myst: '{abc}`ABC role`'
     html: >-
       <p><span class="role unhandled"><code class="kind">{abc}</code><code>ABC
@@ -21,6 +22,8 @@ cases:
           children:
             - type: mystRole
               name: abc
+              value: ''
+              children: []
   - title: unknown role - invalid no kind
     invalid: true
     mdast:
@@ -30,3 +33,4 @@ cases:
           children:
             - type: mystRole
               value: ABC role
+              children: []
