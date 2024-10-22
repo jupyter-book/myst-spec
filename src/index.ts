@@ -30,6 +30,7 @@ declare module 'mdast' {
   interface Html extends Partial<Association> {}
   interface Image extends Partial<Association> {
     class?: string;
+    align?: 'left' | 'center' | 'right';
   }
   interface InlineCode extends Partial<Association> {}
   interface List extends Partial<Association> {}
