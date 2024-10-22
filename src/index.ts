@@ -1,3 +1,4 @@
+import type { AlignType } from 'mdast';
 import type { Role } from './roles';
 import type { BlockBreak, Block } from './blocks';
 import type { AdmonitionTitle, Admonition } from './admonitions';
@@ -44,7 +45,13 @@ declare module 'mdast' {
   interface Strong extends Partial<Association> {}
   interface Table extends Partial<Association> {}
   interface TableRow extends Partial<Association> {}
-  interface TableCell extends Partial<Association> {}
+  interface TableCell extends Partial<Association> {
+    header?: boolean;
+    /**
+     * Alignment of content within cell.
+     */
+    align?: AlignType | undefined | null;
+  }
   interface Text extends Partial<Association> {}
   interface ThematicBreak extends Partial<Association> {}
 
