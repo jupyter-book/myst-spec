@@ -18,12 +18,19 @@ declare module 'mdast' {
   // All nodes are referenceable now
   interface Blockquote extends Partial<Association> {}
   interface Break extends Partial<Association> {}
-  interface Code extends Partial<Association> {}
+  interface Code extends Partial<Association> {
+    class?: string;
+    showLineNumbers?: boolean;
+    startingLineNumber?: number;
+    emphasizeLines?: number[];
+  }
   interface Delete extends Partial<Association> {}
   interface Emphasis extends Partial<Association> {}
   interface Heading extends Partial<Association> {}
   interface Html extends Partial<Association> {}
-  interface Image extends Partial<Association> {}
+  interface Image extends Partial<Association> {
+    class?: string;
+  }
   interface InlineCode extends Partial<Association> {}
   interface List extends Partial<Association> {}
   interface ListItem extends Partial<Association> {}
