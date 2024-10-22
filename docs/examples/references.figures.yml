@@ -13,6 +13,7 @@ cases:
                   kind: numref
                   identifier: my-figure
                   label: my-figure
+                  children: []
     myst: '{numref}`my-figure`'
     html: >-
       <p><span class="reference role unhandled"><code
@@ -75,6 +76,7 @@ cases:
                   kind: numref
                   identifier: my-figure
                   label: my-figure
+                  children: []
         - type: mystDirective
           name: figure
           args: fig.jpg
@@ -182,6 +184,7 @@ cases:
                   kind: ref
                   identifier: my-figure
                   label: my-figure
+                  children: []
         - type: mystDirective
           name: figure
           args: fig.jpg

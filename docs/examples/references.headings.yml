@@ -15,6 +15,7 @@ cases:
                   kind: ref
                   identifier: my_id
                   label: my_id
+                  children: []
         - type: mystTarget
           label: my_id
         - type: heading

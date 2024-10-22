@@ -16,6 +16,7 @@ cases:
                   kind: numref
                   identifier: my-table
                   label: my-table
+                  children: []
         - type: mystDirective
           name: list-table
           args: Caption text
@@ -174,6 +175,7 @@ cases:
                   kind: ref
                   identifier: my-table
                   label: my-table
+                  children: []
         - type: mystDirective
           name: list-table
           args: Caption text

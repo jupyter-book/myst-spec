@@ -15,6 +15,7 @@ cases:
                   kind: eq
                   identifier: matrix
                   label: '  matrix  '
+                  children: []
         - type: mystDirective
           name: figure
           args: fig.jpg
@@ -70,6 +71,7 @@ cases:
                   kind: eq
                   identifier: matrix
                   label: matrix
+                  children: []
         - type: mystDirective
           name: math
           options:
