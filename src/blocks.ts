@@ -12,7 +12,7 @@ export interface BlockBreak extends Node {
   /**
    * Block metadata. Conventionally this is a stringified JSON dictionary but it may be any arbitrary string.
    */
-  meta: string;
+  meta?: string;
 }
 
 /**
@@ -26,7 +26,7 @@ export interface Block extends Parent {
   /**
    * Block metadata from preceding break; conventionally, a stringified JSON dictionary but may be any arbitrary string.
    */
-  meta: BlockBreak['meta'];
+  meta?: BlockBreak['meta'];
   /**
    * Top-level children of myst document.
    */
