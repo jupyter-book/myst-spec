@@ -31,6 +31,10 @@ declare module 'mdast' {
   interface Image extends Partial<Association> {
     class?: string;
     align?: 'left' | 'center' | 'right';
+    /**
+     * Image width in pixels or percentage.
+     */
+    width?: string;
   }
   interface InlineCode extends Partial<Association> {}
   interface List extends Partial<Association> {}
