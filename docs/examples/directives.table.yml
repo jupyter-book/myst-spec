@@ -99,7 +99,10 @@ cases:
                             - type: text
                               value: text
                 - type: table
-                  align: center
+                  align:
+                    - center
+                    - center
+                    - center
                   children:
                     - type: tableRow
                       children:
