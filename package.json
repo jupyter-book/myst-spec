@@ -25,9 +25,9 @@
   },
   "scripts": {
     "test:run": "tsc -b test",
-    "clean": "rimraf src/build test/build dist build-tests.js",
-    "test:compile": "tsc build-tests.ts  -t esnext -m nodenext",
-    "test:prepare": "node ./build-tests.js",
+    "clean": "rimraf src/build test/build dist scripts/build-tests.js",
+    "test:compile": "tsc scripts/build-tests.ts  -t esnext -m nodenext",
+    "test:prepare": "node ./scripts/build-tests.js",
     "test": "npm-run-all -s test:compile test:prepare test:run",
     "build": "typescript-json-schema 'src/*.ts' 'Root' --titles --tsNodeRegister --required --strictNullChecks --aliasRefs --refs --id https://spec.myst.tools/json-schema/myst.schema.json -o dist/myst.schema.json",
     "lint": "prettier --write src/*.ts" 

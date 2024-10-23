@@ -12,5 +12,7 @@ docs/nodes
 docs/myst.schema.md
 *.tsbuildinfo
 build
-/build-tests.js
-/test/compiled.ts
+/scripts/*
+!/scripts/build-tests.ts
+/test/*
+!/test/tsconfig.json
