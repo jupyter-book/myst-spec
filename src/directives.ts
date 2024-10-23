@@ -11,7 +11,7 @@ export interface Directive extends Parent, Literal, Partial<Association> {
   type: 'mystDirective';
   name: string;
   args?: string;
-  options?: Record<string, any>;
+  options?: { [key: string]: unknown };
   /**
    * body of the directive, excluding options.
    */
