@@ -152,10 +152,7 @@ function simplifySchemaOnce(schema: Schema) {
  * @param resolveRef - reference resolver
  * @param schema - type schema
  */
-function renderAdditionalTypeChildren(
-  resolveRef: ResolverType,
-  schema: Schema,
-): Node[] {
+function renderAdditionalTypeChildren(resolveRef: ResolverType, schema: Schema): Node[] {
   schema = simplifySchemaOnce(schema);
 
   if (schema.$ref !== undefined) {
@@ -243,8 +240,7 @@ function renderTypeChildren(resolveRef: ResolverType, schema: Schema): Node[] {
   }
 }
 
-const LINK_PATTERN =
-  /(?:\{@link\s*(\S*)\s*\|\s*(\S+)?\})|(?:\{@link\s*(\S*)\s*(\S+)?\})/;
+const LINK_PATTERN = /(?:\{@link\s*(\S*)\s*\|\s*(\S+)?\})|(?:\{@link\s*(\S*)\s*(\S+)?\})/;
 
 /**
  * Render the AST of a TSDoc type description
@@ -287,11 +283,7 @@ function renderDescription(text: string): Node {
  * @param name - name of type
  * @param schema - type schema
  */
-function renderObjectProperties(
-  resolveRef: ResolverType,
-  name: string,
-  schema: Schema,
-): Node {
+function renderObjectProperties(resolveRef: ResolverType, name: string, schema: Schema): Node {
   if (schema.properties === undefined) {
     return {
       type: 'mystDirective',
@@ -342,9 +334,7 @@ function renderObjectProperties(
                 value: ': ',
               },
               ...renderTypeChildren(resolveRef, subschema),
-              ...(isRequired(propName, schema)
-                ? [{ type: 'text', value: ' (required)' }]
-                : []),
+              ...(isRequired(propName, schema) ? [{ type: 'text', value: ' (required)' }] : []),
             ],
           },
           {
@@ -373,21 +363,34 @@ function renderObject(resolveRef: ResolverType, name: string, schema: Schema): N
     children: [
       { type: 'heading', depth: 1, children: [{ type: 'text', value: name }] },
       {
-        type: 'mystTarget',
-        label: typeToIdentifier(name),
-      },
-      {
         type: 'heading',
         depth: 2,
         children: [
           {
             type: 'text',
-            value: `${name} Specification`,
+            value: 'Specification',
           },
         ],
       },
-      renderDescription(schema.description ?? ''),
-      renderObjectProperties(resolveRef, name, schema),
+      {
+        type: 'mystTarget',
+        label: typeToIdentifier(name),
+      },
+      {
+        type: 'mystDirective',
+        name: 'div',
+        value: '...',
+        tight: 'before',
+        children: [
+          {
+            type: 'div',
+            children: [
+              renderDescription(schema.description ?? ''),
+              renderObjectProperties(resolveRef, name, schema),
+            ],
+          },
+        ],
+      },
       {
         type: 'heading',
         depth: 2,
@@ -432,7 +435,7 @@ function createIndexData(schema: Schema): Node {
                 {
                   type: 'link',
                   url: typeToURI(name),
-                  children: [],
+                  children: [{ type: 'inlineCode', value: name }],
                 },
               ],
             };
