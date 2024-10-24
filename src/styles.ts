@@ -1,7 +1,7 @@
 import type { Parent, PhrasingContent } from 'mdast';
 
 /**
- * Subscript content, using role {subscript}.
+ * Subscript content, using role `{subscript}`.
  */
 export interface Subscript extends Parent {
   /**
@@ -12,7 +12,7 @@ export interface Subscript extends Parent {
 }
 
 /**
- * Superscript content, using role {superscript}.
+ * Superscript content, using role `{superscript}`.
  */
 export interface Superscript extends Parent {
   /**
@@ -23,7 +23,7 @@ export interface Superscript extends Parent {
 }
 
 /**
- * Underline content, using role {underline}.
+ * Underline content, using role `{underline}`.
  */
 export interface Underline extends Parent {
   /**

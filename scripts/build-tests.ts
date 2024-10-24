@@ -22,7 +22,7 @@ const cases = files
   .map((data) => (load(data) as TestFile).cases)
   .flat() as TestCase[];
 
-const formatID = (id: string | undefined) => (id ? `(${id})` : ``);
+const formatID = (id: string | undefined) => (id ? `(${id})` : '');
 const makeIdentifier = (test: TestCase, idx: number) => {
   return `${test.title}_${test.id ?? ''}_${idx}`
     .replace(/\W/g, '_')
