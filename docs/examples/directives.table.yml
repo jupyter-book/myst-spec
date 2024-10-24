@@ -32,7 +32,6 @@ cases:
                   children:
                     - type: text
                       value: '4'
-
     myst: |-
       | header 1 | header 2 |
       |:---|---:|
@@ -60,7 +59,6 @@ cases:
         3 & 4 \\
         \hline
       \end{tabular}
-
   - title: Basic list table
     mdast:
       type: root
@@ -101,7 +99,10 @@ cases:
                             - type: text
                               value: text
                 - type: table
-                  align: center
+                  align:
+                    - center
+                    - center
+                    - center
                   children:
                     - type: tableRow
                       children:
@@ -152,7 +153,6 @@ cases:
                               children:
                                 - type: text
                                   value: Column 3
-
     myst: |-
       ```{list-table}  Caption *text*
       :name: my-table

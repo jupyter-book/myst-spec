@@ -44,7 +44,6 @@ cases:
           children:
             - type: text
               value: 'Some JSON:'
-
         - type: code
           lang: ''
           value: |-
