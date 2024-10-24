@@ -13,6 +13,6 @@ docs/myst.schema.md
 *.tsbuildinfo
 build
 /scripts/*
-!/scripts/build-tests.ts
+!/scripts/*.ts
 /test/*
 !/test/tsconfig.json
