@@ -37,7 +37,7 @@ const INTRINSIC_ATTRIBUTE_ORDER = [
  */
 function shouldExport(type_: string): boolean {
   return (
-    // Don't export these specific tyeps'
+    // Don't export these specific types:
     !['AlignType', 'Array'].includes(type_) &&
     // Don't export maps
     !type_.endsWith('Map') &&
@@ -157,41 +157,29 @@ function simplifySchemaOnce(schema: Schema) {
   return result;
 }
 
-/**
- * Render the AST node(s) corresponding to a schema type definition additional info
- *
- * This usually means the type of an array's content
- *
- * @param resolveRef - reference resolver
- * @param schema - type schema
- */
-function renderAdditionalTypeChildren(resolveRef: ResolverType, schema: Schema): Node[] {
-  schema = simplifySchemaOnce(schema);
-
-  if (schema.$ref !== undefined) {
-    const { name, schema: subschema } = resolveRef(schema.$ref);
-
-    // Only inlined types can possibly have additional info
-    if (shouldInline(name)) {
-      return renderAdditionalTypeChildren(resolveRef, subschema);
-    } else {
-      return [];
-    }
-  } else if (schema.type === 'array') {
-    return [{ type: 'text', value: 'Array of ' }, ...renderTypeChildren(resolveRef, schema.items)];
-  }
-  // No error branch -- renderTypeChildren should handle exhaustively
-  else {
-    return [];
+function renderLiteralType(value: any): Node {
+  if (typeof value === 'string') {
+    return {
+      type: 'inlineCode',
+      value: `'${value}'`,
+    };
+  } else if (typeof value === 'number') {
+    return {
+      type: 'inlineCode',
+      value: `${value}`,
+    };
+  } else {
+    throw new Error(typeof value);
   }
 }
+
 /**
  * Render the AST node(s) corresponding to a schema type definition
  *
  * @param resolveRef - reference resolver
  * @param schema - type schema
  */
-function renderTypeChildren(resolveRef: ResolverType, schema: Schema): Node[] {
+function renderTypeDefinitionFlat(resolveRef: ResolverType, schema: Schema, path: string): Node[] {
   schema = simplifySchemaOnce(schema);
 
   if (schema.$ref !== undefined) {
@@ -199,7 +187,7 @@ function renderTypeChildren(resolveRef: ResolverType, schema: Schema): Node[] {
 
     // If we should inline the ref, resolve it and render it
     if (shouldInline(name)) {
-      return renderTypeChildren(resolveRef, subschema);
+      return renderTypeDefinitionFlat(resolveRef, subschema, `${path}.$ref`);
     }
     // Otherwise, create a link
     else {
@@ -214,23 +202,46 @@ function renderTypeChildren(resolveRef: ResolverType, schema: Schema): Node[] {
   }
   // Const types
   else if (schema.const !== undefined) {
-    return [
-      {
-        type: 'inlineCode',
-        value: `'${schema.const}'`,
-      },
-    ];
+    return [renderLiteralType(schema.const)];
+  }
+  // Enum type
+  else if (schema.enum !== undefined) {
+    const optionNodes: Node[] = [];
+    schema.enum.forEach((literal: any) => {
+      optionNodes.push(renderLiteralType(literal), { type: 'text', value: ' | ' });
+    });
+    optionNodes.pop();
+    return optionNodes;
   }
   // Array types
   else if (schema.type === 'array') {
     // Leave this to the additional info section!
-    return [{ type: 'inlineCode', value: 'array' }];
+    return [
+      { type: 'inlineCode', value: 'array' },
+      {
+        type: 'footnoteReference',
+        identifier: path,
+      },
+      {
+        type: 'footnoteDefinition',
+        identifier: path,
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              { type: 'text', value: 'Array of ' },
+              ...renderTypeDefinitionFlat(resolveRef, schema.items, `${path}.items`),
+            ],
+          },
+        ],
+      },
+    ];
   }
   // Union types
   else if (schema.anyOf !== undefined) {
     const optionNodes: Node[] = [];
-    schema.anyOf.forEach((subschema: Schema) => {
-      const nodes = renderTypeChildren(resolveRef, subschema);
+    schema.anyOf.forEach((subschema: Schema, index: number) => {
+      const nodes = renderTypeDefinitionFlat(resolveRef, subschema, `${path}.${index}`);
       optionNodes.push(...nodes, { type: 'text', value: ' | ' });
     });
     optionNodes.pop();
@@ -258,7 +269,7 @@ const LINK_PATTERN = /(?:\{@link\s*(\S*)\s*\|\s*(\S+)?\})|(?:\{@link\s*(\S*)\s*(
  *
  * @param text - CommonMark-infused description
  */
-function renderDescription(text: string): Node {
+function renderTSDocDescription(text: string): Node {
   const pattern = new RegExp(LINK_PATTERN.source, LINK_PATTERN.flags + 'g');
   const textWithLinks = text.replaceAll(pattern, (match, p1, p2, p3, p4) => {
     const url = p1 ?? p3;
@@ -294,7 +305,7 @@ function renderDescription(text: string): Node {
  * @param name - name of type
  * @param schema - type schema
  */
-function renderObjectProperties(resolveRef: ResolverType, name: string, schema: Schema): Node {
+function renderFieldDefinitions(resolveRef: ResolverType, name: string, schema: Schema): Node {
   if (schema.properties === undefined) {
     return {
       type: 'mystDirective',
@@ -344,16 +355,13 @@ function renderObjectProperties(resolveRef: ResolverType, name: string, schema: 
                 type: 'text',
                 value: ': ',
               },
-              ...renderTypeChildren(resolveRef, subschema),
+              ...renderTypeDefinitionFlat(resolveRef, subschema, name),
               ...(isRequired(propName, schema) ? [{ type: 'text', value: ' (required)' }] : []),
             ],
           },
           {
             type: 'definitionDescription',
-            children: [
-              ...renderDescription(subschema.description ?? '').children,
-              ...renderAdditionalTypeChildren(resolveRef, subschema),
-            ],
+            children: renderTSDocDescription(subschema.description ?? '').children,
           },
         ];
       })
@@ -368,7 +376,7 @@ function renderObjectProperties(resolveRef: ResolverType, name: string, schema: 
  * @param name - name of type
  * @param schema - type schema
  */
-function renderObject(
+function renderTypeDefinition(
   resolveRef: ResolverType,
   name: string,
   schema: Schema,
@@ -401,8 +409,8 @@ function renderObject(
           {
             type: 'div',
             children: [
-              renderDescription(schema.description ?? ''),
-              renderObjectProperties(resolveRef, name, schema),
+              renderTSDocDescription(schema.description ?? ''),
+              renderFieldDefinitions(resolveRef, name, schema),
             ],
           },
         ],
@@ -431,20 +439,20 @@ function renderObject(
   };
 }
 
-function createDocument(
+function createTypeDocument(
   resolveRef: ResolverType,
   name: string,
   schema: Schema,
   exampleNode: Node | undefined,
 ): Record<string, any> {
-  const mdast = renderObject(resolveRef, name, schema, exampleNode);
+  const mdast = renderTypeDefinition(resolveRef, name, schema, exampleNode);
   return {
     kind: 'Article',
     mdast,
   };
 }
 
-function createIndexData(schema: Schema): Node {
+function createIndexDocument(schema: Schema): Node {
   const mdast = {
     type: 'root',
     children: [
@@ -627,7 +635,7 @@ if (!existsSync(join(dest, 'nodes'))) mkdirSync(join(dest, 'nodes'));
 const schema = loadSchema(src);
 
 // Write index
-writeFileSync(join(dest, 'nodes.myst.json'), JSON.stringify(createIndexData(schema)));
+writeFileSync(join(dest, 'nodes.myst.json'), JSON.stringify(createIndexDocument(schema)));
 
 /**
  * Resolve a JSON pointer reference into a name and schema
@@ -650,13 +658,12 @@ const typeToExample = loadExamples(examples);
 
 // Write entries
 Object.entries(schema.definitions)
-  .filter(([name, subschema]) => shouldExport(name))
+  .filter(([name]) => shouldExport(name))
   .forEach(([name, subschema]) => {
     const type_ = (subschema as any).properties?.type?.const;
     const example = typeToExample?.[type_];
-    console.log({ name, type_, example });
     writeFileSync(
       join(dest, 'nodes', `${name.toLowerCase()}.myst.json`),
-      JSON.stringify(createDocument(resolveRef, name, subschema, example)),
+      JSON.stringify(createTypeDocument(resolveRef, name, subschema, example)),
     );
   });
