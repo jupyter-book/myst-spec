@@ -1,5 +1,6 @@
 cases:
   - title: CommonMark hard breaks
+    id: break
     mdast:
       type: root
       children:
@@ -18,7 +19,7 @@ cases:
       hard\\
       break
   - title: CommonMark thematic breaks
-    id: break
+    id: thematicBreak
     mdast:
       type: root
       children:
