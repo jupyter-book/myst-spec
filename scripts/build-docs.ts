@@ -37,6 +37,8 @@ const INTRINSIC_ATTRIBUTE_ORDER = [
  */
 function shouldExport(type_: string): boolean {
   return (
+    // Mixin
+    type_ !== 'Association' &&
     // Don't export these specific types:
     !['AlignType', 'Array'].includes(type_) &&
     // Don't export maps
@@ -174,12 +176,13 @@ function renderLiteralType(value: any): Node {
 }
 
 /**
- * Render the AST node(s) corresponding to a schema type definition
+ * Render the AST node(s) corresponding to a field type definition
  *
  * @param resolveRef - reference resolver
  * @param schema - type schema
+ * @param path - path to field definition from type definition
  */
-function renderTypeDefinitionFlat(resolveRef: ResolverType, schema: Schema, path: string): Node[] {
+function renderFieldTypeFlat(resolveRef: ResolverType, schema: Schema, path: string): Node[] {
   schema = simplifySchemaOnce(schema);
 
   if (schema.$ref !== undefined) {
@@ -187,7 +190,7 @@ function renderTypeDefinitionFlat(resolveRef: ResolverType, schema: Schema, path
 
     // If we should inline the ref, resolve it and render it
     if (shouldInline(name)) {
-      return renderTypeDefinitionFlat(resolveRef, subschema, `${path}.$ref`);
+      return renderFieldTypeFlat(resolveRef, subschema, `${path}.$ref`);
     }
     // Otherwise, create a link
     else {
@@ -230,7 +233,7 @@ function renderTypeDefinitionFlat(resolveRef: ResolverType, schema: Schema, path
             type: 'paragraph',
             children: [
               { type: 'text', value: 'Array of ' },
-              ...renderTypeDefinitionFlat(resolveRef, schema.items, `${path}.items`),
+              ...renderFieldTypeFlat(resolveRef, schema.items, `${path}.items`),
             ],
           },
         ],
@@ -241,7 +244,7 @@ function renderTypeDefinitionFlat(resolveRef: ResolverType, schema: Schema, path
   else if (schema.anyOf !== undefined) {
     const optionNodes: Node[] = [];
     schema.anyOf.forEach((subschema: Schema, index: number) => {
-      const nodes = renderTypeDefinitionFlat(resolveRef, subschema, `${path}.${index}`);
+      const nodes = renderFieldTypeFlat(resolveRef, subschema, `${path}.${index}`);
       optionNodes.push(...nodes, { type: 'text', value: ' | ' });
     });
     optionNodes.pop();
@@ -299,7 +302,7 @@ function renderTSDocDescription(text: string): Node {
 }
 
 /**
- * Render the AST of the properties of an object type.
+ * Render the AST of the properties of a type.
  *
  * @param resolveRef - reference resolver
  * @param name - name of type
@@ -355,7 +358,7 @@ function renderFieldDefinitions(resolveRef: ResolverType, name: string, schema: 
                 type: 'text',
                 value: ': ',
               },
-              ...renderTypeDefinitionFlat(resolveRef, subschema, name),
+              ...renderFieldTypeFlat(resolveRef, subschema, name),
               ...(isRequired(propName, schema) ? [{ type: 'text', value: ' (required)' }] : []),
             ],
           },
@@ -370,11 +373,12 @@ function renderFieldDefinitions(resolveRef: ResolverType, name: string, schema: 
 }
 
 /**
- * Render the AST of an object type.
+ * Render the AST of a type.
  *
  * @param resolveRef - reference resolver
  * @param name - name of type
  * @param schema - type schema
+ * @param exampleNode - renderered example node
  */
 function renderTypeDefinition(
   resolveRef: ResolverType,
@@ -632,6 +636,8 @@ if (!existsSync(join(dest, 'nodes'))) mkdirSync(join(dest, 'nodes'));
 //   - array of primitive
 //   - `array`
 //   - `object`
+//
+// This schema is only for internal consumption, i.e. a convenient way to export type information from tsc
 const schema = loadSchema(src);
 
 // Write index
