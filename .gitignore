@@ -11,8 +11,6 @@ docs/examples/*.md
 docs/nodes
 docs/myst.schema.md
 *.tsbuildinfo
+
 build
-/scripts/*
-!/scripts/*.ts
-/test/*
-!/test/tsconfig.json
+/test/compiled.ts 
