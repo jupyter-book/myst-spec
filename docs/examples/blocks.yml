@@ -20,7 +20,7 @@ cases:
           meta: '{"meta: data}'
     myst: '+++ {"meta: data}'
   - title: block break nodes - dividing flow content
-    id: blockbreak
+    id: blockBreak
     mdast:
       type: root
       children:

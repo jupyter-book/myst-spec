@@ -8,7 +8,7 @@ cases:
     myst: '% A comment'
     html: <!--A comment-->
   - title: Comment between paragraphs
-    id: comment
+    id: mystComment
     mdast:
       type: root
       children:

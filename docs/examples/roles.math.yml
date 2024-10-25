@@ -1,6 +1,6 @@
 cases:
   - title: Math role
-    id: inlinemath
+    id: inlineMath
     mdast:
       type: root
       children:

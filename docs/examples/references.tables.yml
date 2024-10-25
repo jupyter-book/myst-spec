@@ -1,6 +1,6 @@
 cases:
   - title: Table figure reference with default numref
-    id: crossreference
+    id: crossReference
     mdast:
       type: root
       children:

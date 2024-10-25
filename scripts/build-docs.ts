@@ -1,8 +1,9 @@
 import { parseArgs } from 'node:util';
 import { unified } from 'unified';
 import remarkParse from 'remark-parse';
+import { dump, load } from 'js-yaml';
 
-import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'fs';
+import { existsSync, mkdirSync, readFileSync, writeFileSync, readdirSync } from 'fs';
 import { join } from 'path';
 
 type BooleanTest<T> = (test: T) => boolean;
@@ -16,6 +17,9 @@ function isNotInSet(values: string[]): BooleanTest<string> {
   return (other: string) => !valueSet.has(other);
 }
 
+/**
+ * Preferred ordering of schema properties
+ */
 const INTRINSIC_ATTRIBUTE_ORDER = [
   isEqual('type'),
   isEqual('children'),
@@ -67,6 +71,15 @@ function loadSchema(filename: string): Schema {
  */
 function typeToIdentifier(type_: string): string {
   return `spec:${type_.toLowerCase()}`;
+}
+
+/**
+ * Convert a type to a relative local URI identifier
+ *
+ * @param type_ - type name
+ */
+function typeExampleToIdentifier(type_: string): string {
+  return `example:${type_.toLowerCase()}`;
 }
 
 /**
@@ -165,11 +178,7 @@ function renderAdditionalTypeChildren(resolveRef: ResolverType, schema: Schema):
       return [];
     }
   } else if (schema.type === 'array') {
-    return [
-      { type: 'text', value: 'Array of ' },
-      // Note, this cannot in turn contain an array
-      ...renderTypeChildren(resolveRef, schema.items),
-    ];
+    return [{ type: 'text', value: 'Array of ' }, ...renderTypeChildren(resolveRef, schema.items)];
   }
   // No error branch -- renderTypeChildren should handle exhaustively
   else {
@@ -236,6 +245,8 @@ function renderTypeChildren(resolveRef: ResolverType, schema: Schema): Node[] {
       },
     ];
   } else {
+    // N.B. schema here may be, among other things, an object;
+    // we choose not to implement a recursive object renderer
     throw new Error(JSON.stringify(schema));
   }
 }
@@ -357,7 +368,12 @@ function renderObjectProperties(resolveRef: ResolverType, name: string, schema: 
  * @param name - name of type
  * @param schema - type schema
  */
-function renderObject(resolveRef: ResolverType, name: string, schema: Schema): Node {
+function renderObject(
+  resolveRef: ResolverType,
+  name: string,
+  schema: Schema,
+  exampleNode: Node | undefined,
+): Node {
   return {
     type: 'root',
     children: [
@@ -391,16 +407,26 @@ function renderObject(resolveRef: ResolverType, name: string, schema: Schema): N
           },
         ],
       },
-      {
-        type: 'heading',
-        depth: 2,
-        children: [
-          {
-            type: 'text',
-            value: 'Examples',
-          },
-        ],
-      },
+
+      ...(exampleNode
+        ? [
+            {
+              type: 'heading',
+              depth: 2,
+              children: [
+                {
+                  type: 'text',
+                  value: 'Examples',
+                },
+              ],
+            },
+            {
+              type: 'mystTarget',
+              label: typeExampleToIdentifier(name),
+            },
+            exampleNode,
+          ]
+        : []),
     ],
   };
 }
@@ -409,8 +435,9 @@ function createDocument(
   resolveRef: ResolverType,
   name: string,
   schema: Schema,
+  exampleNode: Node | undefined,
 ): Record<string, any> {
-  const mdast = renderObject(resolveRef, name, schema);
+  const mdast = renderObject(resolveRef, name, schema, exampleNode);
   return {
     kind: 'Article',
     mdast,
@@ -453,9 +480,110 @@ function createIndexData(schema: Schema): Node {
   };
 }
 
+type TestFile = {
+  cases: TestCase[];
+};
+type TestCase = {
+  title: string;
+  id?: string;
+  description?: string;
+  skip?: boolean;
+  invalid?: boolean;
+  mdast: Record<string, any>;
+  myst?: string;
+  html?: string;
+};
+
+type JsonTestCase = {
+  title: string;
+  mdast: Record<string, any>;
+  myst: string;
+  html?: string;
+};
+
+function loadExamples(path: string): Record<string, Node | undefined> {
+  const files: string[] = readdirSync(path).filter((name) => name.endsWith('.yml'));
+  let jsonTestCases: JsonTestCase[] = [];
+  const typeToCase: Record<string, Node | undefined> = {};
+  files.forEach((file) => {
+    const testYaml = readFileSync(join(path, file)).toString();
+    const cases = load(testYaml) as TestFile;
+    cases.cases.forEach((testCase) => {
+      if (!testCase.invalid && !testCase.skip && testCase.mdast && testCase.myst) {
+        let html = testCase.html;
+        if (html && !html.endsWith('\n')) {
+          html = html.concat('\n');
+        }
+        jsonTestCases = jsonTestCases.concat({
+          title: `${file.replace('.yml', '')}: ${testCase.title}`,
+          mdast: testCase.mdast,
+          myst: testCase.myst,
+          html,
+        });
+      }
+      if (testCase.id) {
+        const innerAST =
+          testCase.mdast.type === 'root' ? testCase.mdast.children : [testCase.mdast];
+        typeToCase[testCase.id] = {
+          type: 'mystDirective',
+          name: 'tab-set',
+          value: ':::{tab-item} Markup\n:::\n:::{tab-item} AST\n:::\n:::{tab-item} Render\n:::',
+          children: [
+            {
+              type: 'tabSet',
+              children: [
+                {
+                  type: 'mystDirective',
+                  name: 'tab-item',
+                  args: 'Markup',
+                  tight: 'after',
+                  children: [
+                    {
+                      type: 'tabItem',
+                      title: 'Markup',
+                      children: [{ type: 'code', lang: '', value: testCase.myst }],
+                    },
+                  ],
+                },
+                {
+                  type: 'mystDirective',
+                  name: 'tab-item',
+                  args: 'AST',
+                  tight: true,
+                  children: [
+                    {
+                      type: 'tabItem',
+                      title: 'AST',
+                      children: [{ type: 'code', lang: 'yaml', value: dump(testCase.mdast) }],
+                    },
+                  ],
+                },
+                {
+                  type: 'mystDirective',
+                  name: 'tab-item',
+                  args: 'Render',
+                  tight: 'before',
+                  children: [
+                    {
+                      type: 'tabItem',
+                      title: 'Render',
+                      children: [...innerAST],
+                    },
+                  ],
+                },
+              ],
+            },
+          ],
+        };
+      }
+    });
+  });
+  return typeToCase;
+}
+
 ///////////////////////// CLI
 const {
-  values: { src, dest },
+  values: { src, dest, examples },
 } = parseArgs({
   options: {
     src: {
@@ -465,6 +593,10 @@ const {
     dest: {
       type: 'string',
       short: 'o',
+    },
+    examples: {
+      type: 'string',
+      short: 'e',
     },
   },
 });
@@ -497,22 +629,34 @@ const schema = loadSchema(src);
 // Write index
 writeFileSync(join(dest, 'nodes.myst.json'), JSON.stringify(createIndexData(schema)));
 
+/**
+ * Resolve a JSON pointer reference into a name and schema
+ */
 const resolveRef = (ref: string) => {
   if (!ref.startsWith(schema.$id)) {
     return undefined;
   }
-  const [_, path] = ref.match(/.*?#\/(.*)/);
+  const match = ref.match(/.*?#\/(.*)/);
+  if (!match) {
+    return undefined;
+  }
+  const path = match[1];
   const parts = path.split('/');
   const subschema = parts.reduce((acc, val) => acc[val], schema);
   return { schema: subschema, name: getRefName(ref) };
 };
 
+const typeToExample = loadExamples(examples);
+
 // Write entries
 Object.entries(schema.definitions)
   .filter(([name, subschema]) => shouldExport(name))
   .forEach(([name, subschema]) => {
+    const type_ = (subschema as any).properties?.type?.const;
+    const example = typeToExample?.[type_];
+    console.log({ name, type_, example });
     writeFileSync(
       join(dest, 'nodes', `${name.toLowerCase()}.myst.json`),
-      JSON.stringify(createDocument(resolveRef, name, subschema)),
+      JSON.stringify(createDocument(resolveRef, name, subschema, example)),
     );
   });
