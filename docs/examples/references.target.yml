@@ -1,6 +1,6 @@
 cases:
   - title: Header with id label
-    id: target
+    id: mystTarget
     mdast:
       type: root
       children:
