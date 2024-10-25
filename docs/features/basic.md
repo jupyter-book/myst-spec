@@ -2,30 +2,30 @@
 
 ## Subscript
 
-```{include} ../nodes/subscript.md
+```{embed} spec:subscript
 
 ```
 
-```{include} ../examples/subscript.md
+```{embed} example:subscript
 
 ```
 
 ## Superscript
 
-```{include} ../nodes/superscript.md
+```{embed} spec:superscript
 
 ```
 
-```{include} ../examples/superscript.md
+```{embed} example:superscript
 
 ```
 
 ## Abbreviations
 
-```{include} ../nodes/abbreviation.md
+```{embed} spec:abbreviation
 
 ```
 
-```{include} ../examples/abbreviation.md
+```{embed} example:abbreviation
 
 ```

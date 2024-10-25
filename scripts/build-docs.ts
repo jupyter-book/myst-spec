@@ -1,0 +1,675 @@
+import { parseArgs } from 'node:util';
+import { unified } from 'unified';
+import remarkParse from 'remark-parse';
+import { dump, load } from 'js-yaml';
+
+import { existsSync, mkdirSync, readFileSync, writeFileSync, readdirSync } from 'fs';
+import { join } from 'path';
+
+type BooleanTest<T> = (test: T) => boolean;
+
+// High level control
+function isEqual(value: string): BooleanTest<string> {
+  return (other: string) => value === other;
+}
+function isNotInSet(values: string[]): BooleanTest<string> {
+  const valueSet = new Set(values);
+  return (other: string) => !valueSet.has(other);
+}
+
+/**
+ * Preferred ordering of schema properties
+ */
+const INTRINSIC_ATTRIBUTE_ORDER = [
+  isEqual('type'),
+  isEqual('children'),
+  isEqual('value'),
+  // Any attributes not in the given set are captured here
+  isNotInSet(['position', 'data']),
+  isEqual('data'),
+  isEqual('position'),
+];
+
+/**
+ * Return true if the given type should be exported
+ *
+ * @param type_ - type name
+ */
+function shouldExport(type_: string): boolean {
+  return (
+    // Mixin
+    type_ !== 'Association' &&
+    // Don't export these specific types:
+    !['AlignType', 'Array'].includes(type_) &&
+    // Don't export maps
+    !type_.endsWith('Map') &&
+    // Don't export content built from maps
+    !type_.endsWith('Content') &&
+    // Don't export frontmatter stuff
+    !type_.startsWith('Yaml')
+  );
+}
+
+/**
+ * Return true if the given type should be inlined
+ *
+ * @param type_ - type name
+ */
+function shouldInline(type_: string): boolean {
+  return !shouldExport(type_);
+}
+
+////////////////////////////////////////////////////////////
+type Schema = Record<string, any>;
+
+function loadSchema(filename: string): Schema {
+  return JSON.parse(readFileSync(filename, 'utf-8'));
+}
+
+/**
+ * Convert a type to a relative local URI identifier
+ *
+ * @param type_ - type name
+ */
+function typeToIdentifier(type_: string): string {
+  return `spec:${type_.toLowerCase()}`;
+}
+
+/**
+ * Convert a type to a relative local URI identifier
+ *
+ * @param type_ - type name
+ */
+function typeExampleToIdentifier(type_: string): string {
+  return `example:${type_.toLowerCase()}`;
+}
+
+/**
+ * Identify the name of a given ref target
+ *
+ * @param type_ - type name
+ */
+function getRefName(ref: string): string | undefined {
+  // Pull out the name
+  const match = ref.match(/#\/(.*)$/);
+  if (!match) {
+    return undefined;
+  }
+  // Take only final name
+  const fragment = match[1];
+  const nameMatch = fragment.match(/\/(\w+)$/);
+  return nameMatch?.[1];
+}
+
+/**
+ * Convert a type to a relative local URI
+ *
+ * @param type_ - type name
+ */
+function typeToURI(type_: string) {
+  return `#${typeToIdentifier(type_)}`;
+}
+
+type Node = Record<string, any>;
+
+type ResolverType = (ref: string) => Schema;
+
+/**
+ * Return true if the given name is required by the given schema
+ *
+ * @param name - name of attribute
+ * @param schema - schema to which attribute belongs
+ */
+function isRequired(name: string, schema: Schema) {
+  return (schema.required ?? []).includes(name);
+}
+
+/**
+ * Sort function for intrinsic mdast attributes
+ *
+ * @param left - left attribute name
+ * @param right - right attribute name
+ */
+function intrinsicAttributeCmp(left: string, right: string) {
+  for (const test of INTRINSIC_ATTRIBUTE_ORDER) {
+    const leftTest = test(left);
+    const rightTest = test(right);
+    if (leftTest) {
+      return -1;
+    } else if (rightTest) {
+      return +1;
+    }
+  }
+  return 0;
+}
+
+/**
+ * Simplify JSON schema to replace `type: array` with `anyOf`
+ *
+ * The two constructs are functionally identical.
+ *
+ * @param schema - type schema
+ */
+function simplifySchemaOnce(schema: Schema) {
+  const result = structuredClone(schema);
+  if (Array.isArray(result.type)) {
+    result.anyOf = result.type.map((type_) => ({ type: type_ }));
+    delete result.type;
+  }
+  return result;
+}
+
+function renderLiteralType(value: any): Node {
+  if (typeof value === 'string') {
+    return {
+      type: 'inlineCode',
+      value: `'${value}'`,
+    };
+  } else if (typeof value === 'number') {
+    return {
+      type: 'inlineCode',
+      value: `${value}`,
+    };
+  } else {
+    throw new Error(typeof value);
+  }
+}
+
+/**
+ * Render the AST node(s) corresponding to a field type definition
+ *
+ * @param resolveRef - reference resolver
+ * @param schema - type schema
+ * @param path - path to field definition from type definition
+ */
+function renderFieldTypeFlat(resolveRef: ResolverType, schema: Schema, path: string): Node[] {
+  schema = simplifySchemaOnce(schema);
+
+  if (schema.$ref !== undefined) {
+    const { name, schema: subschema } = resolveRef(schema.$ref);
+
+    // If we should inline the ref, resolve it and render it
+    if (shouldInline(name)) {
+      return renderFieldTypeFlat(resolveRef, subschema, `${path}.$ref`);
+    }
+    // Otherwise, create a link
+    else {
+      return [
+        {
+          type: 'link',
+          url: typeToURI(name),
+          children: [{ type: 'inlineCode', value: getRefName(schema.$ref) }],
+        },
+      ];
+    }
+  }
+  // Const types
+  else if (schema.const !== undefined) {
+    return [renderLiteralType(schema.const)];
+  }
+  // Enum type
+  else if (schema.enum !== undefined) {
+    const optionNodes: Node[] = [];
+    schema.enum.forEach((literal: any) => {
+      optionNodes.push(renderLiteralType(literal), { type: 'text', value: ' | ' });
+    });
+    optionNodes.pop();
+    return optionNodes;
+  }
+  // Array types
+  else if (schema.type === 'array') {
+    // Leave this to the additional info section!
+    return [
+      { type: 'inlineCode', value: 'array' },
+      {
+        type: 'footnoteReference',
+        identifier: path,
+      },
+      {
+        type: 'footnoteDefinition',
+        identifier: path,
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              { type: 'text', value: 'Array of ' },
+              ...renderFieldTypeFlat(resolveRef, schema.items, `${path}.items`),
+            ],
+          },
+        ],
+      },
+    ];
+  }
+  // Union types
+  else if (schema.anyOf !== undefined) {
+    const optionNodes: Node[] = [];
+    schema.anyOf.forEach((subschema: Schema, index: number) => {
+      const nodes = renderFieldTypeFlat(resolveRef, subschema, `${path}.${index}`);
+      optionNodes.push(...nodes, { type: 'text', value: ' | ' });
+    });
+    optionNodes.pop();
+    return optionNodes;
+  }
+  // Primitive named types
+  else if (typeof schema.type === 'string') {
+    return [
+      {
+        type: 'inlineCode',
+        value: schema.type,
+      },
+    ];
+  } else {
+    // N.B. schema here may be, among other things, an object;
+    // we choose not to implement a recursive object renderer
+    throw new Error(JSON.stringify(schema));
+  }
+}
+
+const LINK_PATTERN = /(?:\{@link\s*(\S*)\s*\|\s*(\S+)?\})|(?:\{@link\s*(\S*)\s*(\S+)?\})/;
+
+/**
+ * Render the AST of a TSDoc type description
+ *
+ * @param text - CommonMark-infused description
+ */
+function renderTSDocDescription(text: string): Node {
+  const pattern = new RegExp(LINK_PATTERN.source, LINK_PATTERN.flags + 'g');
+  const textWithLinks = text.replaceAll(pattern, (match, p1, p2, p3, p4) => {
+    const url = p1 ?? p3;
+    const label = p2 ?? p4;
+    const urlHasScheme = /^https?:/.test(url);
+    let linkURL: string;
+    let linkLabel: string;
+
+    if (urlHasScheme) {
+      linkURL = url;
+      linkLabel = label ?? '';
+    } else if (shouldExport(url)) {
+      linkURL = typeToURI(url);
+      linkLabel = label ?? url;
+    } else {
+      // Return quoted text!
+      return `\`${url}\``;
+    }
+    return `[${linkLabel}](${linkURL})`;
+  });
+
+  const processor = unified().use(remarkParse);
+  const root = processor.parse(textWithLinks);
+
+  // Create a div so that we don't consume the node budget for rich hover-previews
+  return { type: 'div', children: root.children };
+}
+
+/**
+ * Render the AST of the properties of a type.
+ *
+ * @param resolveRef - reference resolver
+ * @param name - name of type
+ * @param schema - type schema
+ */
+function renderFieldDefinitions(resolveRef: ResolverType, name: string, schema: Schema): Node {
+  if (schema.properties === undefined) {
+    return {
+      type: 'mystDirective',
+      name: 'note',
+      value: 'This interface does not define any fields.',
+      children: [
+        {
+          type: 'admonition',
+          kind: 'note',
+          children: [
+            {
+              type: 'paragraph',
+              children: [
+                {
+                  type: 'text',
+                  value: 'This interface does not define any fields.',
+                },
+              ],
+            },
+          ],
+        },
+      ],
+    };
+  }
+  return {
+    type: 'definitionList',
+    children: Object.entries((schema.properties ?? {}) as Record<string, Schema>)
+      .sort((left, right) => intrinsicAttributeCmp(left[0], right[0]))
+      .sort((left, right) =>
+        isRequired(left[0], schema) ? (isRequired(right[0], schema) ? +0 : -1) : +1,
+      )
+      .map(([propName, subschema]) => {
+        return [
+          {
+            type: 'definitionTerm',
+            children: [
+              {
+                type: 'strong',
+                children: [
+                  {
+                    type: 'text',
+                    value: propName,
+                  },
+                ],
+              },
+              {
+                type: 'text',
+                value: ': ',
+              },
+              ...renderFieldTypeFlat(resolveRef, subschema, name),
+              ...(isRequired(propName, schema) ? [{ type: 'text', value: ' (required)' }] : []),
+            ],
+          },
+          {
+            type: 'definitionDescription',
+            children: renderTSDocDescription(subschema.description ?? '').children,
+          },
+        ];
+      })
+      .flat(),
+  };
+}
+
+/**
+ * Render the AST of a type.
+ *
+ * @param resolveRef - reference resolver
+ * @param name - name of type
+ * @param schema - type schema
+ * @param exampleNode - renderered example node
+ */
+function renderTypeDefinition(
+  resolveRef: ResolverType,
+  name: string,
+  schema: Schema,
+  exampleNode: Node | undefined,
+): Node {
+  return {
+    type: 'root',
+    children: [
+      { type: 'heading', depth: 1, children: [{ type: 'text', value: name }] },
+      {
+        type: 'heading',
+        depth: 2,
+        children: [
+          {
+            type: 'text',
+            value: 'Specification',
+          },
+        ],
+      },
+      {
+        type: 'mystTarget',
+        label: typeToIdentifier(name),
+      },
+      {
+        type: 'mystDirective',
+        name: 'div',
+        value: '...',
+        tight: 'before',
+        children: [
+          {
+            type: 'div',
+            children: [
+              renderTSDocDescription(schema.description ?? ''),
+              renderFieldDefinitions(resolveRef, name, schema),
+            ],
+          },
+        ],
+      },
+
+      ...(exampleNode
+        ? [
+            {
+              type: 'heading',
+              depth: 2,
+              children: [
+                {
+                  type: 'text',
+                  value: 'Examples',
+                },
+              ],
+            },
+            {
+              type: 'mystTarget',
+              label: typeExampleToIdentifier(name),
+            },
+            exampleNode,
+          ]
+        : []),
+    ],
+  };
+}
+
+function createTypeDocument(
+  resolveRef: ResolverType,
+  name: string,
+  schema: Schema,
+  exampleNode: Node | undefined,
+): Record<string, any> {
+  const mdast = renderTypeDefinition(resolveRef, name, schema, exampleNode);
+  return {
+    kind: 'Article',
+    mdast,
+  };
+}
+
+function createIndexDocument(schema: Schema): Node {
+  const mdast = {
+    type: 'root',
+    children: [
+      {
+        type: 'list',
+        ordered: false,
+        spread: false,
+        children: Object.keys(schema.definitions)
+          .filter(shouldExport)
+          .map((name) => {
+            return {
+              type: 'listItem',
+              spread: true,
+              children: [
+                {
+                  type: 'link',
+                  url: typeToURI(name),
+                  children: [{ type: 'inlineCode', value: name }],
+                },
+              ],
+            };
+          }),
+      },
+    ],
+  };
+  return {
+    kind: 'Article',
+    frontmatter: {
+      title: 'MyST AST Index',
+      content_includes_title: true,
+    },
+    mdast,
+  };
+}
+
+type TestFile = {
+  cases: TestCase[];
+};
+type TestCase = {
+  title: string;
+  id?: string;
+  description?: string;
+  skip?: boolean;
+  invalid?: boolean;
+  mdast: Record<string, any>;
+  myst?: string;
+  html?: string;
+};
+
+type JsonTestCase = {
+  title: string;
+  mdast: Record<string, any>;
+  myst: string;
+  html?: string;
+};
+
+function loadExamples(path: string): Record<string, Node | undefined> {
+  const files: string[] = readdirSync(path).filter((name) => name.endsWith('.yml'));
+  let jsonTestCases: JsonTestCase[] = [];
+  const typeToCase: Record<string, Node | undefined> = {};
+  files.forEach((file) => {
+    const testYaml = readFileSync(join(path, file)).toString();
+    const cases = load(testYaml) as TestFile;
+    cases.cases.forEach((testCase) => {
+      if (!testCase.invalid && !testCase.skip && testCase.mdast && testCase.myst) {
+        let html = testCase.html;
+        if (html && !html.endsWith('\n')) {
+          html = html.concat('\n');
+        }
+        jsonTestCases = jsonTestCases.concat({
+          title: `${file.replace('.yml', '')}: ${testCase.title}`,
+          mdast: testCase.mdast,
+          myst: testCase.myst,
+          html,
+        });
+      }
+      if (testCase.id) {
+        const innerAST =
+          testCase.mdast.type === 'root' ? testCase.mdast.children : [testCase.mdast];
+        typeToCase[testCase.id] = {
+          type: 'mystDirective',
+          name: 'tab-set',
+          value: ':::{tab-item} Markup\n:::\n:::{tab-item} AST\n:::\n:::{tab-item} Render\n:::',
+          children: [
+            {
+              type: 'tabSet',
+              children: [
+                {
+                  type: 'mystDirective',
+                  name: 'tab-item',
+                  args: 'Markup',
+                  tight: 'after',
+                  children: [
+                    {
+                      type: 'tabItem',
+                      title: 'Markup',
+                      children: [{ type: 'code', lang: '', value: testCase.myst }],
+                    },
+                  ],
+                },
+                {
+                  type: 'mystDirective',
+                  name: 'tab-item',
+                  args: 'AST',
+                  tight: true,
+                  children: [
+                    {
+                      type: 'tabItem',
+                      title: 'AST',
+                      children: [{ type: 'code', lang: 'yaml', value: dump(testCase.mdast) }],
+                    },
+                  ],
+                },
+                {
+                  type: 'mystDirective',
+                  name: 'tab-item',
+                  args: 'Render',
+                  tight: 'before',
+                  children: [
+                    {
+                      type: 'tabItem',
+                      title: 'Render',
+                      children: [...innerAST],
+                    },
+                  ],
+                },
+              ],
+            },
+          ],
+        };
+      }
+    });
+  });
+  return typeToCase;
+}
+
+///////////////////////// CLI
+const {
+  values: { src, dest, examples },
+} = parseArgs({
+  options: {
+    src: {
+      type: 'string',
+      short: 'i',
+    },
+    dest: {
+      type: 'string',
+      short: 'o',
+    },
+    examples: {
+      type: 'string',
+      short: 'e',
+    },
+  },
+});
+if (src === undefined || dest === undefined) {
+  process.exit(1);
+}
+
+if (!existsSync(dest)) mkdirSync(dest);
+if (!existsSync(join(dest, 'nodes'))) mkdirSync(join(dest, 'nodes'));
+
+// Assume we have a schema of the form
+// {
+//   "definitions": [
+//     "Foo": {
+//       "type": ...
+//     }
+//   ]
+// }
+// where all refs are trivial #/definitions/Foo
+// and only the following types are present:
+//   - primitive
+//   - outer `anyOf`
+//   - `const`
+//   - `ref`
+//   - array of primitive
+//   - `array`
+//   - `object`
+//
+// This schema is only for internal consumption, i.e. a convenient way to export type information from tsc
+const schema = loadSchema(src);
+
+// Write index
+writeFileSync(join(dest, 'nodes.myst.json'), JSON.stringify(createIndexDocument(schema)));
+
+/**
+ * Resolve a JSON pointer reference into a name and schema
+ */
+const resolveRef = (ref: string) => {
+  if (!ref.startsWith(schema.$id)) {
+    return undefined;
+  }
+  const match = ref.match(/.*?#\/(.*)/);
+  if (!match) {
+    return undefined;
+  }
+  const path = match[1];
+  const parts = path.split('/');
+  const subschema = parts.reduce((acc, val) => acc[val], schema);
+  return { schema: subschema, name: getRefName(ref) };
+};
+
+const typeToExample = loadExamples(examples);
+
+// Write entries
+Object.entries(schema.definitions)
+  .filter(([name]) => shouldExport(name))
+  .forEach(([name, subschema]) => {
+    const type_ = (subschema as any).properties?.type?.const;
+    const example = typeToExample?.[type_];
+    writeFileSync(
+      join(dest, 'nodes', `${name.toLowerCase()}.myst.json`),
+      JSON.stringify(createTypeDocument(resolveRef, name, subschema, example)),
+    );
+  });

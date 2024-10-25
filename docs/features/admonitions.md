@@ -8,12 +8,12 @@ Here is a note!
 
 ## Specification
 
-```{include} ../nodes/admonition.md
+```{embed} spec:admonition
 
 ```
 
 ## Example
 
-```{include} ../examples/admonition.md
+```{embed} example:admonition
 
 ```

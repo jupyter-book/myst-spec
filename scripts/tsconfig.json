@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "module": "nodenext",
+    "types": [],
+    "composite": true,
+    "declaration": true,
+    "declarationMap": true,
+    "noEmitOnError": true,
+    "skipLibCheck": true,
+    "outDir": "../bin"
+  },
+  "extends": "../tsconfig.json",
+  "include": ["./**/*"]
+}

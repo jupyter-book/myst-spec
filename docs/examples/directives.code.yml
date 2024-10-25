@@ -28,7 +28,6 @@ cases:
       <pre><code class="language-python">def five():
         return 5
       </code></pre>
-
   - title: Code directive, starting line
     mdast:
       type: root
@@ -66,7 +65,6 @@ cases:
       <pre><code id="my code" class="language-python fun-code">def five():
         return 5
       </code></pre>
-
   - title: Code-block starting line
     mdast:
       type: root
@@ -106,7 +104,6 @@ cases:
       <pre><code id="my code" class="language-python fun-code">def five():
         return 5
       </code></pre>
-
   - title: Code-block directive shows line numbers without explicit linenos flag
     mdast:
       type: root
@@ -148,7 +145,6 @@ cases:
           value: |-
             def five():
               return 5
-
   - title: Code-block directive - emphasize lines
     mdast:
       type: root

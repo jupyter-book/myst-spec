@@ -4,13 +4,13 @@
 
 ### Specification
 
-```{include} ../nodes/math.md
+```{embed} spec:math
 
 ```
 
 ### Example
 
-```{include} ../examples/math.md
+```{embed} example:math
 
 ```
 
@@ -18,13 +18,13 @@
 
 ### Specification
 
-```{include} ../nodes/inlinemath.md
+```{embed} spec:inlinemath
 
 ```
 
 ### Example
 
-```{include} ../examples/inlinemath.md
+```{embed} example:inlinemath
 
 ```
 

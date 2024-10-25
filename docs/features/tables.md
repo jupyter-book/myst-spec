@@ -2,12 +2,12 @@
 
 ## Specification
 
-```{include} ../nodes/table.md
+```{embed} spec:table
 
 ```
 
 ## Example
 
-```{include} ../examples/table.md
+```{embed} example:table
 
 ```

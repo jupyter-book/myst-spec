@@ -8,10 +8,8 @@ cases:
           children:
             - type: text
               value: Something
-    myst: |-
-      Something
-    html: |-
-      <p>Something</p>
+    myst: Something
+    html: <p>Something</p>
   - title: CommomMark two paragraphs
     mdast:
       type: root
@@ -58,9 +56,10 @@ cases:
               value: literal text
             - type: text
               value: ', *escaped symbols*'
-    myst: |-
-      **strong**, _emphasis_, `literal text`, \*escaped symbols\*
-    html: |-
-      <p><strong>strong</strong>, <em>emphasis</em>, <code>literal text</code>, *escaped symbols*</p>
-    latex: |-
-      \textbf{strong}, \textit{emphasis}, \texttt{literal text}, *escaped symbols*
+    myst: '**strong**, _emphasis_, `literal text`, \*escaped symbols\*'
+    html: >-
+      <p><strong>strong</strong>, <em>emphasis</em>, <code>literal text</code>,
+      *escaped symbols*</p>
+    latex: >-
+      \textbf{strong}, \textit{emphasis}, \texttt{literal text}, *escaped
+      symbols*

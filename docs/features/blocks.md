@@ -7,12 +7,12 @@
 
 ### Specification
 
-```{include} ../nodes/blockbreak.md
+```{embed} spec:blockbreak
 ```
 
 ### Example
 
-```{include} ../examples/blockbreak.md
+```{embed} example:blockbreak
 ```
 
 ## Comments
@@ -22,12 +22,12 @@ You may add comments by putting the `%` character at the beginning of a line. Th
 
 ### Specification
 
-```{include} ../nodes/comment.md
+```{embed} spec:comment
 ```
 
 ### Example
 
-```{include} ../examples/comment.md
+```{embed} example:comment
 ```
 
 ````{important}

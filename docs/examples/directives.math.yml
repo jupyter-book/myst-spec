@@ -8,19 +8,16 @@ cases:
           value: Ax = b
           children:
             - type: math
-              value: |-
-                Ax = b
+              value: Ax = b
     myst: |-
       ```{math}
       Ax = b
       ```
-    html: |-
-      <div class="math-display">Ax = b</div>
+    html: <div class="math-display">Ax = b</div>
     latex: |-
       \begin{equation}
       Ax = b
       \end{equation}
-
   - title: Math directive with label
     id: math
     mdast:
@@ -35,15 +32,13 @@ cases:
             - type: math
               identifier: matrix
               label: matrix
-              value: |-
-                Ax = b
+              value: Ax = b
     myst: |-
       ```{math}
       :label: matrix
       Ax = b
       ```
-    html: |-
-      <div id="matrix" class="math-display">Ax = b</div>
+    html: <div id="matrix" class="math-display">Ax = b</div>
     latex: |-
       \begin{equation}
       \label{matrix}

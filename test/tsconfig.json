@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "module": "esnext",
+    "types": [],
+    "declaration": true,
+    "declarationMap": true,
+    "noEmitOnError": true,
+    "emitDeclarationOnly": true,
+    "outDir": "./build"
+  },
+  "references": [{ "path": "../src/tsconfig.json" }],
+  "extends": "../tsconfig.json",
+  "include": ["./**/*"]
+}

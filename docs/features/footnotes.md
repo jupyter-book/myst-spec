@@ -7,18 +7,18 @@ Footnotes use the standard Markdown syntax, including a numbered reference to th
 
 ## Footnote Definition Node Specification
 
-```{include} ../nodes/footnotedefinition.md
+```{embed} spec:footnotedefinition
 
 ```
 
 ## Footnote Reference Node Specification
 
-```{include} ../nodes/footnotereference.md
+```{embed} spec:footnotereference
 
 ```
 ## Footnote Node Example
 
-```{include} ../examples/footnote.md
+```{embed} example:footnote
 
 ```
 
