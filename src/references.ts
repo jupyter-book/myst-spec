@@ -21,9 +21,7 @@ export interface CrossReference extends Association, Pick<Parent, 'children'> {
   type: 'crossReference';
   /**
    * Indicates if the references should be numbered.
-   * ```{warning}
-   * The `kind` was based on docutils and is subject to change as we improve the `crossReference` experience.
-   * ```
+   * The inspiration for `kind` was taken from docutils, and is subject to change as we improve the `crossReference` experience.
    */
   kind?: 'eq' | 'numref' | 'ref';
   /**
