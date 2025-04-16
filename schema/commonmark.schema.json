@@ -318,7 +318,7 @@
         {
           "properties": {
             "type": {
-              "const": "emphasis"
+              "const": "emphasisStatic"
             },
             "children": {
               "type": "array",
