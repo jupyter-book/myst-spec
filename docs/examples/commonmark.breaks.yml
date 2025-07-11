@@ -1,5 +1,6 @@
 cases:
   - title: CommonMark hard breaks
+    id: break
     mdast:
       type: root
       children:
@@ -13,13 +14,12 @@ cases:
     myst: |-
       hard\
       break
-    html: |-
-      <p>hard<br>break</p>
+    html: <p>hard<br>break</p>
     latex: |-
       hard\\
       break
   - title: CommonMark thematic breaks
-    id: break
+    id: thematicBreak
     mdast:
       type: root
       children:
@@ -42,7 +42,6 @@ cases:
       <p>thematic</p>
       <hr>
       <p>break</p>
-
     latex: |-
       thematic
 

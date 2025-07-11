@@ -10,6 +10,7 @@ cases:
             :b: two
 
             ABC directive
+          children: []
     myst: |-
       ```{abc}
       :a: one
@@ -38,6 +39,7 @@ cases:
             :b: two
 
             ABC directive
+          children: []
     myst: |-
       ```{abc} foo bar
       :a: one

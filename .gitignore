@@ -10,3 +10,7 @@ docs/_build
 docs/examples/*.md
 docs/nodes
 docs/myst.schema.md
+*.tsbuildinfo
+
+build
+/test/compiled.ts 

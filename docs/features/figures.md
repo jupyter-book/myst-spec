@@ -2,13 +2,13 @@
 
 ## Image Node Specification
 
-```{include} ../nodes/image.md
+```{embed} spec:image
 
 ```
 
 ## Image Node Example
 
-```{include} ../examples/image.md
+```{embed} example:image
 
 ```
 
@@ -16,13 +16,13 @@
 
 ## Container Node Specification
 
-```{include} ../nodes/container.md
+```{embed} spec:container
 
 ```
 
 ## Container Node Example
 
-```{include} ../examples/container.md
+```{embed} example:container
 
 ```
 

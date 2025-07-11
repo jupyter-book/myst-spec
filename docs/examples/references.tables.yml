@@ -1,6 +1,6 @@
 cases:
   - title: Table figure reference with default numref
-    id: crossreference
+    id: crossReference
     mdast:
       type: root
       children:
@@ -16,6 +16,7 @@ cases:
                   kind: numref
                   identifier: my-table
                   label: my-table
+                  children: []
         - type: mystDirective
           name: list-table
           args: Caption text
@@ -35,7 +36,7 @@ cases:
                     - type: paragraph
                       children:
                         - type: text
-                          value: 'Caption text'
+                          value: Caption text
                 - type: table
                   children:
                     - type: tableRow
@@ -116,7 +117,7 @@ cases:
                     - type: paragraph
                       children:
                         - type: text
-                          value: 'Caption text'
+                          value: Caption text
                 - type: table
                   children:
                     - type: tableRow
@@ -174,6 +175,7 @@ cases:
                   kind: ref
                   identifier: my-table
                   label: my-table
+                  children: []
         - type: mystDirective
           name: list-table
           args: Caption text
@@ -193,7 +195,7 @@ cases:
                     - type: paragraph
                       children:
                         - type: text
-                          value: 'Caption text'
+                          value: Caption text
                 - type: table
                   children:
                     - type: tableRow
@@ -273,7 +275,7 @@ cases:
                     - type: paragraph
                       children:
                         - type: text
-                          value: 'Caption text'
+                          value: Caption text
                 - type: table
                   children:
                     - type: tableRow
@@ -345,7 +347,7 @@ cases:
                     - type: paragraph
                       children:
                         - type: text
-                          value: 'Caption text'
+                          value: Caption text
                 - type: table
                   children:
                     - type: tableRow
@@ -424,7 +426,7 @@ cases:
                     - type: paragraph
                       children:
                         - type: text
-                          value: 'Caption text'
+                          value: Caption text
                 - type: table
                   children:
                     - type: tableRow
@@ -447,8 +449,10 @@ cases:
 
       *   - Head 1
       *   - Row 1
-    html: |-
-      <p>see <a href="#my-table" title="different title">My <em>Table</em></a></p>
+    html: >-
+      <p>see <a href="#my-table" title="different title">My
+      <em>Table</em></a></p>
+
       <figure id="my-table" class="numbered">
         <figcaption>
           <p><span class="caption-number">Table 1</span>Caption text</p>

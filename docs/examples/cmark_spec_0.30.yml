@@ -142,8 +142,10 @@ cases:
             - type: listItem
               spread: true
               children:
-                - type: text
-                  value: foo
+                - type: paragraph
+                  children:
+                    - type: text
+                      value: foo
                 - type: list
                   ordered: false
                   spread: false
@@ -151,8 +153,10 @@ cases:
                     - type: listItem
                       spread: true
                       children:
-                        - type: text
-                          value: bar
+                        - type: paragraph
+                          children:
+                            - type: text
+                              value: bar
                         - type: list
                           ordered: false
                           spread: false
@@ -160,8 +164,10 @@ cases:
                             - type: listItem
                               spread: true
                               children:
-                                - type: text
-                                  value: baz
+                                - type: paragraph
+                                  children:
+                                    - type: text
+                                      value: baz
     myst: " - foo\n   - bar\n\t - baz\n"
     html: |-
       <ul>
@@ -185,16 +191,14 @@ cases:
             - type: text
               value: Foo
     myst: "#\tFoo\n"
-    html: |-
-      <h1>Foo</h1>
+    html: <h1>Foo</h1>
   - title: Tabs - example 11
     mdast:
       type: root
       children:
         - type: thematicBreak
     myst: "*\t*\t*\t\n"
-    html: |-
-      <hr />
+    html: <hr />
   - title: Backslash escapes - example 12
     mdast:
       type: root
@@ -205,8 +209,7 @@ cases:
               value: '!"#$%&''()*+,-./:;<=>?@[\]^_`{|}~'
     myst: |
       \!\"\#\$\%\&\'\(\)\*\+\,\-\.\/\:\;\<\=\>\?\@\[\\\]\^\_\`\{\|\}\~
-    html: |-
-      <p>!&quot;#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</p>
+    html: <p>!&quot;#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</p>
   - title: Backslash escapes - example 13
     mdast:
       type: root
@@ -268,8 +271,7 @@ cases:
                   value: emphasis
     myst: |
       \\*emphasis*
-    html: |-
-      <p>\<em>emphasis</em></p>
+    html: <p>\<em>emphasis</em></p>
   - title: Backslash escapes - example 16
     mdast:
       type: root
@@ -297,8 +299,7 @@ cases:
               value: \[\`
     myst: |
       `` \[\` ``
-    html: |-
-      <p><code>\[\`</code></p>
+    html: <p><code>\[\`</code></p>
   - title: Backslash escapes - example 18
     mdast:
       type: root
@@ -349,8 +350,7 @@ cases:
           value: <a href="/bar\/)">
     myst: |
       <a href="/bar\/)">
-    html: |-
-      <a href="/bar\/)">
+    html: <a href="/bar\/)">
   - title: Backslash escapes - example 22
     mdast:
       type: root
@@ -365,8 +365,7 @@ cases:
                   value: foo
     myst: |
       [foo](/bar\* "ti\*tle")
-    html: |-
-      <p><a href="/bar*" title="ti*tle">foo</a></p>
+    html: <p><a href="/bar*" title="ti*tle">foo</a></p>
   - title: Backslash escapes - example 23
     mdast:
       type: root
@@ -383,8 +382,7 @@ cases:
       [foo]
 
       [foo]: /bar\* "ti\*tle"
-    html: |-
-      <p><a href="/bar*" title="ti*tle">foo</a></p>
+    html: <p><a href="/bar*" title="ti*tle">foo</a></p>
   - title: Backslash escapes - example 24
     mdast:
       type: root
@@ -406,7 +404,10 @@ cases:
         - type: paragraph
           children:
             - type: text
-              value: "\u0020 & © Æ Ď\n¾ ℋ ⅆ\n∲ ≧̸"
+              value: |2-
+                  & © Æ Ď
+                ¾ ℋ ⅆ
+                ∲ ≧̸
     myst: |
       &nbsp; &amp; &copy; &AElig; &Dcaron;
       &frac34; &HilbertSpace; &DifferentialD;
@@ -425,8 +426,7 @@ cases:
               value: '# Ӓ Ϡ �'
     myst: |
       &#35; &#1234; &#992; &#0;
-    html: |-
-      <p># Ӓ Ϡ �</p>
+    html: <p># Ӓ Ϡ �</p>
   - title: Entity and numeric character references - example 27
     mdast:
       type: root
@@ -437,8 +437,7 @@ cases:
               value: '" ആ ಫ'
     myst: |
       &#X22; &#XD06; &#xcab;
-    html: |-
-      <p>&quot; ആ ಫ</p>
+    html: <p>&quot; ആ ಫ</p>
   - title: Entity and numeric character references - example 28
     mdast:
       type: root
@@ -471,8 +470,7 @@ cases:
               value: '&copy'
     myst: |
       &copy
-    html: |-
-      <p>&amp;copy</p>
+    html: <p>&amp;copy</p>
   - title: Entity and numeric character references - example 30
     mdast:
       type: root
@@ -483,8 +481,7 @@ cases:
               value: '&MadeUpEntity;'
     myst: |
       &MadeUpEntity;
-    html: |-
-      <p>&amp;MadeUpEntity;</p>
+    html: <p>&amp;MadeUpEntity;</p>
   - title: Entity and numeric character references - example 31
     mdast:
       type: root
@@ -493,8 +490,7 @@ cases:
           value: <a href="&ouml;&ouml;.html">
     myst: |
       <a href="&ouml;&ouml;.html">
-    html: |-
-      <a href="&ouml;&ouml;.html">
+    html: <a href="&ouml;&ouml;.html">
   - title: Entity and numeric character references - example 32
     mdast:
       type: root
@@ -509,8 +505,7 @@ cases:
                   value: foo
     myst: |
       [foo](/f&ouml;&ouml; "f&ouml;&ouml;")
-    html: |-
-      <p><a href="/f%C3%B6%C3%B6" title="föö">foo</a></p>
+    html: <p><a href="/f%C3%B6%C3%B6" title="föö">foo</a></p>
   - title: Entity and numeric character references - example 33
     mdast:
       type: root
@@ -527,8 +522,7 @@ cases:
       [foo]
 
       [foo]: /f&ouml;&ouml; "f&ouml;&ouml;"
-    html: |-
-      <p><a href="/f%C3%B6%C3%B6" title="föö">foo</a></p>
+    html: <p><a href="/f%C3%B6%C3%B6" title="föö">foo</a></p>
   - title: Entity and numeric character references - example 34
     mdast:
       type: root
@@ -553,8 +547,7 @@ cases:
               value: f&ouml;&ouml;
     myst: |
       `f&ouml;&ouml;`
-    html: |-
-      <p><code>f&amp;ouml;&amp;ouml;</code></p>
+    html: <p><code>f&amp;ouml;&amp;ouml;</code></p>
   - title: Entity and numeric character references - example 36
     mdast:
       type: root
@@ -601,8 +594,10 @@ cases:
             - type: listItem
               spread: true
               children:
-                - type: text
-                  value: foo
+                - type: paragraph
+                  children:
+                    - type: text
+                      value: foo
     myst: |
       &#42; foo
 
@@ -650,8 +645,7 @@ cases:
               value: '[a](url "tit")'
     myst: |
       [a](url &quot;tit&quot;)
-    html: |-
-      <p>[a](url &quot;tit&quot;)</p>
+    html: <p>[a](url &quot;tit&quot;)</p>
   - title: Precedence - example 42
     mdast:
       type: root
@@ -663,13 +657,17 @@ cases:
             - type: listItem
               spread: true
               children:
-                - type: text
-                  value: '`one'
+                - type: paragraph
+                  children:
+                    - type: text
+                      value: '`one'
             - type: listItem
               spread: true
               children:
-                - type: text
-                  value: two`
+                - type: paragraph
+                  children:
+                    - type: text
+                      value: two`
     myst: |
       - `one
       - two`
@@ -703,8 +701,7 @@ cases:
               value: '==='
     myst: |
       ===
-    html: |-
-      <p>===</p>
+    html: <p>===</p>
   - title: Thematic breaks - example 46
     mdast:
       type: root
@@ -774,8 +771,7 @@ cases:
         - type: thematicBreak
     myst: |
       _____________________________________
-    html: |-
-      <hr />
+    html: <hr />
   - title: Thematic breaks - example 51
     mdast:
       type: root
@@ -783,8 +779,7 @@ cases:
         - type: thematicBreak
     myst: |2
        - - -
-    html: |-
-      <hr />
+    html: <hr />
   - title: Thematic breaks - example 52
     mdast:
       type: root
@@ -792,8 +787,7 @@ cases:
         - type: thematicBreak
     myst: |2
        **  * ** * ** * **
-    html: |-
-      <hr />
+    html: <hr />
   - title: Thematic breaks - example 53
     mdast:
       type: root
@@ -801,8 +795,7 @@ cases:
         - type: thematicBreak
     myst: |
       -     -      -      -
-    html: |-
-      <hr />
+    html: <hr />
   - title: Thematic breaks - example 54
     mdast:
       type: root
@@ -810,8 +803,7 @@ cases:
         - type: thematicBreak
     myst: |
       - - - -
-    html: |-
-      <hr />
+    html: <hr />
   - title: Thematic breaks - example 55
     mdast:
       type: root
@@ -850,8 +842,7 @@ cases:
                   value: '-'
     myst: |2
        *-*
-    html: |-
-      <p><em>-</em></p>
+    html: <p><em>-</em></p>
   - title: Thematic breaks - example 57
     mdast:
       type: root
@@ -863,8 +854,10 @@ cases:
             - type: listItem
               spread: true
               children:
-                - type: text
-                  value: foo
+                - type: paragraph
+                  children:
+                    - type: text
+                      value: foo
         - type: thematicBreak
         - type: list
           ordered: false
@@ -873,8 +866,10 @@ cases:
             - type: listItem
               spread: true
               children:
-                - type: text
-                  value: bar
+                - type: paragraph
+                  children:
+                    - type: text
+                      value: bar
     myst: |
       - foo
       ***
@@ -939,8 +934,10 @@ cases:
             - type: listItem
               spread: true
               children:
-                - type: text
-                  value: Foo
+                - type: paragraph
+                  children:
+                    - type: text
+                      value: Foo
         - type: thematicBreak
         - type: list
           ordered: false
@@ -949,8 +946,10 @@ cases:
             - type: listItem
               spread: true
               children:
-                - type: text
-                  value: Bar
+                - type: paragraph
+                  children:
+                    - type: text
+                      value: Bar
     myst: |
       * Foo
       * * *
@@ -974,8 +973,10 @@ cases:
             - type: listItem
               spread: true
               children:
-                - type: text
-                  value: Foo
+                - type: paragraph
+                  children:
+                    - type: text
+                      value: Foo
             - type: listItem
               spread: true
               children:
@@ -1048,8 +1049,7 @@ cases:
               value: '####### foo'
     myst: |
       ####### foo
-    html: |-
-      <p>####### foo</p>
+    html: <p>####### foo</p>
   - title: ATX headings - example 64
     mdast:
       type: root
@@ -1079,8 +1079,7 @@ cases:
               value: '## foo'
     myst: |
       \## foo
-    html: |-
-      <p>## foo</p>
+    html: <p>## foo</p>
   - title: ATX headings - example 66
     mdast:
       type: root
@@ -1098,8 +1097,7 @@ cases:
               value: ' *baz*'
     myst: |
       # foo *bar* \*baz\*
-    html: |-
-      <h1>foo <em>bar</em> *baz*</h1>
+    html: <h1>foo <em>bar</em> *baz*</h1>
   - title: ATX headings - example 67
     mdast:
       type: root
@@ -1111,8 +1109,7 @@ cases:
               value: foo
     myst: |
       #                  foo
-    html: |-
-      <h1>foo</h1>
+    html: <h1>foo</h1>
   - title: ATX headings - example 68
     mdast:
       type: root
@@ -1219,8 +1216,7 @@ cases:
               value: foo
     myst: |
       ### foo ###
-    html: |-
-      <h3>foo</h3>
+    html: <h3>foo</h3>
   - title: ATX headings - example 74
     mdast:
       type: root
@@ -1232,8 +1228,7 @@ cases:
               value: 'foo ### b'
     myst: |
       ### foo ### b
-    html: |-
-      <h3>foo ### b</h3>
+    html: '<h3>foo ### b</h3>'
   - title: ATX headings - example 75
     mdast:
       type: root
@@ -1245,8 +1240,7 @@ cases:
               value: foo#
     myst: |
       # foo#
-    html: |-
-      <h1>foo#</h1>
+    html: <h1>foo#</h1>
   - title: ATX headings - example 76
     mdast:
       type: root
@@ -1503,8 +1497,7 @@ cases:
     myst: |
       Foo
          ----
-    html: |-
-      <h2>Foo</h2>
+    html: <h2>Foo</h2>
   - title: Setext headings - example 87
     mdast:
       type: root
@@ -1559,8 +1552,7 @@ cases:
     myst: |
       Foo  
       -----
-    html: |-
-      <h2>Foo</h2>
+    html: <h2>Foo</h2>
   - title: Setext headings - example 90
     mdast:
       type: root
@@ -1573,8 +1565,7 @@ cases:
     myst: |
       Foo\
       ----
-    html: |-
-      <h2>Foo\</h2>
+    html: <h2>Foo\</h2>
   - title: Setext headings - example 91
     mdast:
       type: root
@@ -1663,8 +1654,10 @@ cases:
             - type: listItem
               spread: true
               children:
-                - type: text
-                  value: Foo
+                - type: paragraph
+                  children:
+                    - type: text
+                      value: Foo
         - type: thematicBreak
     myst: |
       - Foo
@@ -1734,8 +1727,7 @@ cases:
     myst: |
 
       ====
-    html: |-
-      <p>====</p>
+    html: <p>====</p>
   - title: Setext headings - example 98
     mdast:
       type: root
@@ -1759,8 +1751,10 @@ cases:
             - type: listItem
               spread: true
               children:
-                - type: text
-                  value: foo
+                - type: paragraph
+                  children:
+                    - type: text
+                      value: foo
         - type: thematicBreak
     myst: |
       - foo
@@ -1816,8 +1810,7 @@ cases:
     myst: |
       \> foo
       ------
-    html: |-
-      <h2>&gt; foo</h2>
+    html: <h2>&gt; foo</h2>
   - title: Setext headings - example 103
     mdast:
       type: root
@@ -1988,8 +1981,10 @@ cases:
                     - type: listItem
                       spread: true
                       children:
-                        - type: text
-                          value: bar
+                        - type: paragraph
+                          children:
+                            - type: text
+                              value: bar
     myst: |
       1.  foo
 
@@ -2237,8 +2232,7 @@ cases:
       ``
       foo
       ``
-    html: |-
-      <p><code>foo</code></p>
+    html: <p><code>foo</code></p>
   - title: Fenced code blocks - example 122
     mdast:
       type: root
@@ -2320,8 +2314,7 @@ cases:
           value: ''
     myst: |
       ```
-    html: |-
-      <pre><code></code></pre>
+    html: <pre><code></code></pre>
   - title: Fenced code blocks - example 127
     mdast:
       type: root
@@ -2372,8 +2365,9 @@ cases:
       children:
         - type: code
           lang: ''
-          value: "\n  "
+          value: |2-
 
+              
     myst: |
       ```
 
@@ -2393,8 +2387,7 @@ cases:
     myst: |
       ```
       ```
-    html: |-
-      <pre><code></code></pre>
+    html: <pre><code></code></pre>
   - title: Fenced code blocks - example 131
     mdast:
       type: root
@@ -2661,8 +2654,7 @@ cases:
     myst: |
       ````;
       ````
-    html: |-
-      <pre><code class="language-;"></code></pre>
+    html: <pre><code class="language-;"></code></pre>
   - title: Fenced code blocks - example 145
     mdast:
       type: root
@@ -2944,8 +2936,7 @@ cases:
           value: <div><a href="bar">*foo*</a></div>
     myst: |
       <div><a href="bar">*foo*</a></div>
-    html: |-
-      <div><a href="bar">*foo*</a></div>
+    html: <div><a href="bar">*foo*</a></div>
   - title: HTML blocks - example 160
     mdast:
       type: root
@@ -3105,8 +3096,7 @@ cases:
               value: </del>
     myst: |
       <del>*foo*</del>
-    html: |-
-      <p><del><em>foo</em></del></p>
+    html: <p><del><em>foo</em></del></p>
   - title: HTML blocks - example 169
     mdast:
       type: root
@@ -3290,8 +3280,10 @@ cases:
             - type: listItem
               spread: true
               children:
-                - type: text
-                  value: foo
+                - type: paragraph
+                  children:
+                    - type: text
+                      value: foo
     myst: |
       - <div>
       - foo
@@ -3418,8 +3410,7 @@ cases:
           value: <!DOCTYPE html>
     myst: |
       <!DOCTYPE html>
-    html: |-
-      <!DOCTYPE html>
+    html: <!DOCTYPE html>
   - title: HTML blocks - example 182
     mdast:
       type: root
@@ -3705,8 +3696,7 @@ cases:
       [foo]: /url "title"
 
       [foo]
-    html: |-
-      <p><a href="/url" title="title">foo</a></p>
+    html: <p><a href="/url" title="title">foo</a></p>
   - title: Link reference definitions - example 193
     mdast:
       type: root
@@ -3725,8 +3715,7 @@ cases:
                  'the title'  
 
       [foo]
-    html: |-
-      <p><a href="/url" title="the title">foo</a></p>
+    html: <p><a href="/url" title="the title">foo</a></p>
   - title: Link reference definitions - example 194
     mdast:
       type: root
@@ -3743,8 +3732,7 @@ cases:
       [Foo*bar\]]:my_(url) 'title (with parens)'
 
       [Foo*bar\]]
-    html: |-
-      <p><a href="my_(url)" title="title (with parens)">Foo*bar]</a></p>
+    html: <p><a href="my_(url)" title="title (with parens)">Foo*bar]</a></p>
   - title: Link reference definitions - example 195
     mdast:
       type: root
@@ -3763,8 +3751,7 @@ cases:
       'title'
 
       [Foo bar]
-    html: |-
-      <p><a href="my%20url" title="title">Foo bar</a></p>
+    html: <p><a href="my%20url" title="title">Foo bar</a></p>
   - title: Link reference definitions - example 196
     mdast:
       type: root
@@ -3802,7 +3789,7 @@ cases:
         - type: paragraph
           children:
             - type: text
-              value: "[foo]: /url 'title"
+              value: '[foo]: /url ''title'
         - type: paragraph
           children:
             - type: text
@@ -3837,8 +3824,7 @@ cases:
       /url
 
       [foo]
-    html: |-
-      <p><a href="/url">foo</a></p>
+    html: <p><a href="/url">foo</a></p>
   - title: Link reference definitions - example 199
     mdast:
       type: root
@@ -3873,8 +3859,7 @@ cases:
       [foo]: <>
 
       [foo]
-    html: |-
-      <p><a href="">foo</a></p>
+    html: <p><a href="">foo</a></p>
   - title: Link reference definitions - example 201
     mdast:
       type: root
@@ -3914,8 +3899,7 @@ cases:
       [foo]: /url\bar\*baz "foo\"bar\baz"
 
       [foo]
-    html: |-
-      <p><a href="/url%5Cbar*baz" title="foo&quot;bar\baz">foo</a></p>
+    html: <p><a href="/url%5Cbar*baz" title="foo&quot;bar\baz">foo</a></p>
   - title: Link reference definitions - example 203
     mdast:
       type: root
@@ -3931,8 +3915,7 @@ cases:
       [foo]
 
       [foo]: url
-    html: |-
-      <p><a href="url">foo</a></p>
+    html: <p><a href="url">foo</a></p>
   - title: Link reference definitions - example 204
     mdast:
       type: root
@@ -3949,8 +3932,7 @@ cases:
 
       [foo]: first
       [foo]: second
-    html: |-
-      <p><a href="first">foo</a></p>
+    html: <p><a href="first">foo</a></p>
   - title: Link reference definitions - example 205
     mdast:
       type: root
@@ -3966,8 +3948,7 @@ cases:
       [FOO]: /url
 
       [Foo]
-    html: |-
-      <p><a href="/url">Foo</a></p>
+    html: <p><a href="/url">Foo</a></p>
   - title: Link reference definitions - example 206
     mdast:
       type: root
@@ -3983,8 +3964,7 @@ cases:
       [ΑΓΩ]: /φου
 
       [αγω]
-    html: |-
-      <p><a href="/%CF%86%CE%BF%CF%85">αγω</a></p>
+    html: <p><a href="/%CF%86%CE%BF%CF%85">αγω</a></p>
   - title: Link reference definitions - example 207
     mdast:
       type: root
@@ -4005,8 +3985,7 @@ cases:
       foo
       ]: /url
       bar
-    html: |-
-      <p>bar</p>
+    html: <p>bar</p>
   - title: Link reference definitions - example 209
     mdast:
       type: root
@@ -4017,8 +3996,7 @@ cases:
               value: '[foo]: /url "title" ok'
     myst: |
       [foo]: /url "title" ok
-    html: |-
-      <p>[foo]: /url &quot;title&quot; ok</p>
+    html: '<p>[foo]: /url &quot;title&quot; ok</p>'
   - title: Link reference definitions - example 210
     mdast:
       type: root
@@ -4030,8 +4008,7 @@ cases:
     myst: |
       [foo]: /url
       "title" ok
-    html: |-
-      <p>&quot;title&quot; ok</p>
+    html: <p>&quot;title&quot; ok</p>
   - title: Link reference definitions - example 211
     mdast:
       type: root
@@ -4402,7 +4379,6 @@ cases:
         
 
       # aaa
-
     html: |-
       <p>aaa</p>
       <h1>aaa</h1>
@@ -4588,8 +4564,10 @@ cases:
                 - type: listItem
                   spread: true
                   children:
-                    - type: text
-                      value: foo
+                    - type: paragraph
+                      children:
+                        - type: text
+                          value: foo
         - type: list
           ordered: false
           spread: false
@@ -4597,8 +4575,10 @@ cases:
             - type: listItem
               spread: true
               children:
-                - type: text
-                  value: bar
+                - type: paragraph
+                  children:
+                    - type: text
+                      value: bar
     myst: |
       > - foo
       - bar
@@ -5085,8 +5065,10 @@ cases:
             - type: listItem
               spread: true
               children:
-                - type: text
-                  value: one
+                - type: paragraph
+                  children:
+                    - type: text
+                      value: one
         - type: paragraph
           children:
             - type: text
@@ -5141,8 +5123,10 @@ cases:
             - type: listItem
               spread: true
               children:
-                - type: text
-                  value: one
+                - type: paragraph
+                  children:
+                    - type: text
+                      value: one
         - type: code
           lang: ''
           value: ' two'
@@ -5240,8 +5224,10 @@ cases:
                     - type: listItem
                       spread: true
                       children:
-                        - type: text
-                          value: one
+                        - type: paragraph
+                          children:
+                            - type: text
+                              value: one
                 - type: paragraph
                   children:
                     - type: text
@@ -5412,8 +5398,10 @@ cases:
             - type: listItem
               spread: true
               children:
-                - type: text
-                  value: ok
+                - type: paragraph
+                  children:
+                    - type: text
+                      value: ok
     myst: |
       123456789. ok
     html: |-
@@ -5430,8 +5418,7 @@ cases:
               value: 1234567890. not ok
     myst: |
       1234567890. not ok
-    html: |-
-      <p>1234567890. not ok</p>
+    html: <p>1234567890. not ok</p>
   - title: List items - example 267
     mdast:
       type: root
@@ -5444,8 +5431,10 @@ cases:
             - type: listItem
               spread: true
               children:
-                - type: text
-                  value: ok
+                - type: paragraph
+                  children:
+                    - type: text
+                      value: ok
     myst: |
       0. ok
     html: |-
@@ -5464,8 +5453,10 @@ cases:
             - type: listItem
               spread: true
               children:
-                - type: text
-                  value: ok
+                - type: paragraph
+                  children:
+                    - type: text
+                      value: ok
     myst: |
       003. ok
     html: |-
@@ -5482,8 +5473,7 @@ cases:
               value: '-1. not ok'
     myst: |
       -1. not ok
-    html: |-
-      <p>-1. not ok</p>
+    html: <p>-1. not ok</p>
   - title: List items - example 270
     mdast:
       type: root
@@ -5677,8 +5667,10 @@ cases:
             - type: listItem
               spread: true
               children:
-                - type: text
-                  value: foo
+                - type: paragraph
+                  children:
+                    - type: text
+                      value: foo
         - type: paragraph
           children:
             - type: text
@@ -5733,8 +5725,10 @@ cases:
             - type: listItem
               spread: true
               children:
-                - type: text
-                  value: foo
+                - type: paragraph
+                  children:
+                    - type: text
+                      value: foo
             - type: listItem
               spread: true
               children:
@@ -5779,8 +5773,10 @@ cases:
             - type: listItem
               spread: true
               children:
-                - type: text
-                  value: foo
+                - type: paragraph
+                  children:
+                    - type: text
+                      value: foo
     myst: |
       -   
         foo
@@ -5823,16 +5819,20 @@ cases:
             - type: listItem
               spread: true
               children:
-                - type: text
-                  value: foo
+                - type: paragraph
+                  children:
+                    - type: text
+                      value: foo
             - type: listItem
               spread: true
               children: []
             - type: listItem
               spread: true
               children:
-                - type: text
-                  value: bar
+                - type: paragraph
+                  children:
+                    - type: text
+                      value: bar
     myst: |
       - foo
       -
@@ -5854,16 +5854,20 @@ cases:
             - type: listItem
               spread: true
               children:
-                - type: text
-                  value: foo
+                - type: paragraph
+                  children:
+                    - type: text
+                      value: foo
             - type: listItem
               spread: true
               children: []
             - type: listItem
               spread: true
               children:
-                - type: text
-                  value: bar
+                - type: paragraph
+                  children:
+                    - type: text
+                      value: bar
     myst: |
       - foo
       -   
@@ -5886,16 +5890,20 @@ cases:
             - type: listItem
               spread: true
               children:
-                - type: text
-                  value: foo
+                - type: paragraph
+                  children:
+                    - type: text
+                      value: foo
             - type: listItem
               spread: true
               children: []
             - type: listItem
               spread: true
               children:
-                - type: text
-                  value: bar
+                - type: paragraph
+                  children:
+                    - type: text
+                      value: bar
     myst: |
       1. foo
       2.
@@ -6174,10 +6182,12 @@ cases:
             - type: listItem
               spread: true
               children:
-                - type: text
-                  value: |-
-                    A paragraph
-                    with two lines.
+                - type: paragraph
+                  children:
+                    - type: text
+                      value: |-
+                        A paragraph
+                        with two lines.
     myst: |2
         1.  A paragraph
           with two lines.
@@ -6269,8 +6279,10 @@ cases:
             - type: listItem
               spread: true
               children:
-                - type: text
-                  value: foo
+                - type: paragraph
+                  children:
+                    - type: text
+                      value: foo
                 - type: list
                   ordered: false
                   spread: false
@@ -6278,8 +6290,10 @@ cases:
                     - type: listItem
                       spread: true
                       children:
-                        - type: text
-                          value: bar
+                        - type: paragraph
+                          children:
+                            - type: text
+                              value: bar
                         - type: list
                           ordered: false
                           spread: false
@@ -6287,8 +6301,10 @@ cases:
                             - type: listItem
                               spread: true
                               children:
-                                - type: text
-                                  value: baz
+                                - type: paragraph
+                                  children:
+                                    - type: text
+                                      value: baz
                                 - type: list
                                   ordered: false
                                   spread: false
@@ -6296,8 +6312,10 @@ cases:
                                     - type: listItem
                                       spread: true
                                       children:
-                                        - type: text
-                                          value: boo
+                                        - type: paragraph
+                                          children:
+                                            - type: text
+                                              value: boo
     myst: |
       - foo
         - bar
@@ -6330,23 +6348,31 @@ cases:
             - type: listItem
               spread: true
               children:
-                - type: text
-                  value: foo
+                - type: paragraph
+                  children:
+                    - type: text
+                      value: foo
             - type: listItem
               spread: true
               children:
-                - type: text
-                  value: bar
+                - type: paragraph
+                  children:
+                    - type: text
+                      value: bar
             - type: listItem
               spread: true
               children:
-                - type: text
-                  value: baz
+                - type: paragraph
+                  children:
+                    - type: text
+                      value: baz
             - type: listItem
               spread: true
               children:
-                - type: text
-                  value: boo
+                - type: paragraph
+                  children:
+                    - type: text
+                      value: boo
     myst: |
       - foo
        - bar
@@ -6371,8 +6397,10 @@ cases:
             - type: listItem
               spread: true
               children:
-                - type: text
-                  value: foo
+                - type: paragraph
+                  children:
+                    - type: text
+                      value: foo
                 - type: list
                   ordered: false
                   spread: false
@@ -6380,8 +6408,10 @@ cases:
                     - type: listItem
                       spread: true
                       children:
-                        - type: text
-                          value: bar
+                        - type: paragraph
+                          children:
+                            - type: text
+                              value: bar
     myst: |
       10) foo
           - bar
@@ -6405,8 +6435,10 @@ cases:
             - type: listItem
               spread: true
               children:
-                - type: text
-                  value: foo
+                - type: paragraph
+                  children:
+                    - type: text
+                      value: foo
         - type: list
           ordered: false
           spread: false
@@ -6414,8 +6446,10 @@ cases:
             - type: listItem
               spread: true
               children:
-                - type: text
-                  value: bar
+                - type: paragraph
+                  children:
+                    - type: text
+                      value: bar
     myst: |
       10) foo
          - bar
@@ -6444,8 +6478,10 @@ cases:
                     - type: listItem
                       spread: true
                       children:
-                        - type: text
-                          value: foo
+                        - type: paragraph
+                          children:
+                            - type: text
+                              value: foo
     myst: |
       - - foo
     html: |-
@@ -6483,8 +6519,10 @@ cases:
                             - type: listItem
                               spread: true
                               children:
-                                - type: text
-                                  value: foo
+                                - type: paragraph
+                                  children:
+                                    - type: text
+                                      value: foo
     myst: |
       1. - 2. foo
     html: |-
@@ -6523,8 +6561,10 @@ cases:
                   children:
                     - type: text
                       value: Bar
-                - type: text
-                  value: baz
+                - type: paragraph
+                  children:
+                    - type: text
+                      value: baz
     myst: |
       - # Foo
       - Bar
@@ -6550,13 +6590,17 @@ cases:
             - type: listItem
               spread: true
               children:
-                - type: text
-                  value: foo
+                - type: paragraph
+                  children:
+                    - type: text
+                      value: foo
             - type: listItem
               spread: true
               children:
-                - type: text
-                  value: bar
+                - type: paragraph
+                  children:
+                    - type: text
+                      value: bar
         - type: list
           ordered: false
           spread: false
@@ -6564,8 +6608,10 @@ cases:
             - type: listItem
               spread: true
               children:
-                - type: text
-                  value: baz
+                - type: paragraph
+                  children:
+                    - type: text
+                      value: baz
     myst: |
       - foo
       - bar
@@ -6590,13 +6636,17 @@ cases:
             - type: listItem
               spread: true
               children:
-                - type: text
-                  value: foo
+                - type: paragraph
+                  children:
+                    - type: text
+                      value: foo
             - type: listItem
               spread: true
               children:
-                - type: text
-                  value: bar
+                - type: paragraph
+                  children:
+                    - type: text
+                      value: bar
         - type: list
           ordered: true
           start: 3
@@ -6605,8 +6655,10 @@ cases:
             - type: listItem
               spread: true
               children:
-                - type: text
-                  value: baz
+                - type: paragraph
+                  children:
+                    - type: text
+                      value: baz
     myst: |
       1. foo
       2. bar
@@ -6634,13 +6686,17 @@ cases:
             - type: listItem
               spread: true
               children:
-                - type: text
-                  value: bar
+                - type: paragraph
+                  children:
+                    - type: text
+                      value: bar
             - type: listItem
               spread: true
               children:
-                - type: text
-                  value: baz
+                - type: paragraph
+                  children:
+                    - type: text
+                      value: baz
     myst: |
       Foo
       - bar
@@ -6683,8 +6739,10 @@ cases:
             - type: listItem
               spread: true
               children:
-                - type: text
-                  value: The number of doors is 6.
+                - type: paragraph
+                  children:
+                    - type: text
+                      value: The number of doors is 6.
     myst: |
       The number of windows in my house is
       1.  The number of doors is 6.
@@ -6752,8 +6810,10 @@ cases:
             - type: listItem
               spread: true
               children:
-                - type: text
-                  value: foo
+                - type: paragraph
+                  children:
+                    - type: text
+                      value: foo
                 - type: list
                   ordered: false
                   spread: false
@@ -6761,8 +6821,10 @@ cases:
                     - type: listItem
                       spread: true
                       children:
-                        - type: text
-                          value: bar
+                        - type: paragraph
+                          children:
+                            - type: text
+                              value: bar
                         - type: list
                           ordered: false
                           spread: false
@@ -6811,13 +6873,17 @@ cases:
             - type: listItem
               spread: true
               children:
-                - type: text
-                  value: foo
+                - type: paragraph
+                  children:
+                    - type: text
+                      value: foo
             - type: listItem
               spread: true
               children:
-                - type: text
-                  value: bar
+                - type: paragraph
+                  children:
+                    - type: text
+                      value: bar
         - type: html
           value: <!-- -->
         - type: list
@@ -6827,13 +6893,17 @@ cases:
             - type: listItem
               spread: true
               children:
-                - type: text
-                  value: baz
+                - type: paragraph
+                  children:
+                    - type: text
+                      value: baz
             - type: listItem
               spread: true
               children:
-                - type: text
-                  value: bim
+                - type: paragraph
+                  children:
+                    - type: text
+                      value: bim
     myst: |
       - foo
       - bar
@@ -6917,38 +6987,52 @@ cases:
             - type: listItem
               spread: true
               children:
-                - type: text
-                  value: a
+                - type: paragraph
+                  children:
+                    - type: text
+                      value: a
             - type: listItem
               spread: true
               children:
-                - type: text
-                  value: b
+                - type: paragraph
+                  children:
+                    - type: text
+                      value: b
             - type: listItem
               spread: true
               children:
-                - type: text
-                  value: c
+                - type: paragraph
+                  children:
+                    - type: text
+                      value: c
             - type: listItem
               spread: true
               children:
-                - type: text
-                  value: d
+                - type: paragraph
+                  children:
+                    - type: text
+                      value: d
             - type: listItem
               spread: true
               children:
-                - type: text
-                  value: e
+                - type: paragraph
+                  children:
+                    - type: text
+                      value: e
             - type: listItem
               spread: true
               children:
-                - type: text
-                  value: f
+                - type: paragraph
+                  children:
+                    - type: text
+                      value: f
             - type: listItem
               spread: true
               children:
-                - type: text
-                  value: g
+                - type: paragraph
+                  children:
+                    - type: text
+                      value: g
     myst: |
       - a
        - b
@@ -7026,25 +7110,33 @@ cases:
             - type: listItem
               spread: true
               children:
-                - type: text
-                  value: a
+                - type: paragraph
+                  children:
+                    - type: text
+                      value: a
             - type: listItem
               spread: true
               children:
-                - type: text
-                  value: b
+                - type: paragraph
+                  children:
+                    - type: text
+                      value: b
             - type: listItem
               spread: true
               children:
-                - type: text
-                  value: c
+                - type: paragraph
+                  children:
+                    - type: text
+                      value: c
             - type: listItem
               spread: true
               children:
-                - type: text
-                  value: |-
-                    d
-                    - e
+                - type: paragraph
+                  children:
+                    - type: text
+                      value: |-
+                        d
+                        - e
     myst: |
       - a
        - b
@@ -7298,8 +7390,10 @@ cases:
             - type: listItem
               spread: true
               children:
-                - type: text
-                  value: a
+                - type: paragraph
+                  children:
+                    - type: text
+                      value: a
             - type: listItem
               spread: true
               children:
@@ -7311,8 +7405,10 @@ cases:
             - type: listItem
               spread: true
               children:
-                - type: text
-                  value: c
+                - type: paragraph
+                  children:
+                    - type: text
+                      value: c
     myst: |
       - a
       - ```
@@ -7343,8 +7439,10 @@ cases:
             - type: listItem
               spread: true
               children:
-                - type: text
-                  value: a
+                - type: paragraph
+                  children:
+                    - type: text
+                      value: a
                 - type: list
                   ordered: false
                   spread: false
@@ -7363,8 +7461,10 @@ cases:
             - type: listItem
               spread: true
               children:
-                - type: text
-                  value: d
+                - type: paragraph
+                  children:
+                    - type: text
+                      value: d
     myst: |
       - a
         - b
@@ -7394,8 +7494,10 @@ cases:
             - type: listItem
               spread: true
               children:
-                - type: text
-                  value: a
+                - type: paragraph
+                  children:
+                    - type: text
+                      value: a
                 - type: blockquote
                   children:
                     - type: paragraph
@@ -7405,8 +7507,10 @@ cases:
             - type: listItem
               spread: true
               children:
-                - type: text
-                  value: c
+                - type: paragraph
+                  children:
+                    - type: text
+                      value: c
     myst: |
       * a
         > b
@@ -7432,8 +7536,10 @@ cases:
             - type: listItem
               spread: true
               children:
-                - type: text
-                  value: a
+                - type: paragraph
+                  children:
+                    - type: text
+                      value: a
                 - type: blockquote
                   children:
                     - type: paragraph
@@ -7446,8 +7552,10 @@ cases:
             - type: listItem
               spread: true
               children:
-                - type: text
-                  value: d
+                - type: paragraph
+                  children:
+                    - type: text
+                      value: d
     myst: |
       - a
         > b
@@ -7477,8 +7585,10 @@ cases:
             - type: listItem
               spread: true
               children:
-                - type: text
-                  value: a
+                - type: paragraph
+                  children:
+                    - type: text
+                      value: a
     myst: |
       - a
     html: |-
@@ -7496,8 +7606,10 @@ cases:
             - type: listItem
               spread: true
               children:
-                - type: text
-                  value: a
+                - type: paragraph
+                  children:
+                    - type: text
+                      value: a
                 - type: list
                   ordered: false
                   spread: false
@@ -7505,8 +7617,10 @@ cases:
                     - type: listItem
                       spread: true
                       children:
-                        - type: text
-                          value: b
+                        - type: paragraph
+                          children:
+                            - type: text
+                              value: b
     myst: |
       - a
         - b
@@ -7573,8 +7687,10 @@ cases:
                     - type: listItem
                       spread: true
                       children:
-                        - type: text
-                          value: bar
+                        - type: paragraph
+                          children:
+                            - type: text
+                              value: bar
                 - type: paragraph
                   children:
                     - type: text
@@ -7616,13 +7732,17 @@ cases:
                     - type: listItem
                       spread: true
                       children:
-                        - type: text
-                          value: b
+                        - type: paragraph
+                          children:
+                            - type: text
+                              value: b
                     - type: listItem
                       spread: true
                       children:
-                        - type: text
-                          value: c
+                        - type: paragraph
+                          children:
+                            - type: text
+                              value: c
             - type: listItem
               spread: true
               children:
@@ -7637,13 +7757,17 @@ cases:
                     - type: listItem
                       spread: true
                       children:
-                        - type: text
-                          value: e
+                        - type: paragraph
+                          children:
+                            - type: text
+                              value: e
                     - type: listItem
                       spread: true
                       children:
-                        - type: text
-                          value: f
+                        - type: paragraph
+                          children:
+                            - type: text
+                              value: f
     myst: |
       - a
         - b
@@ -7681,8 +7805,7 @@ cases:
               value: lo`
     myst: |
       `hi`lo`
-    html: |-
-      <p><code>hi</code>lo`</p>
+    html: <p><code>hi</code>lo`</p>
   - title: Code spans - example 328
     mdast:
       type: root
@@ -7693,8 +7816,7 @@ cases:
               value: foo
     myst: |
       `foo`
-    html: |-
-      <p><code>foo</code></p>
+    html: <p><code>foo</code></p>
   - title: Code spans - example 329
     mdast:
       type: root
@@ -7705,8 +7827,7 @@ cases:
               value: foo ` bar
     myst: |
       `` foo ` bar ``
-    html: |-
-      <p><code>foo ` bar</code></p>
+    html: <p><code>foo ` bar</code></p>
   - title: Code spans - example 330
     mdast:
       type: root
@@ -7717,8 +7838,7 @@ cases:
               value: '``'
     myst: |
       ` `` `
-    html: |-
-      <p><code>``</code></p>
+    html: <p><code>``</code></p>
   - title: Code spans - example 331
     mdast:
       type: root
@@ -7729,8 +7849,7 @@ cases:
               value: ' `` '
     myst: |
       `  ``  `
-    html: |-
-      <p><code> `` </code></p>
+    html: <p><code> `` </code></p>
   - title: Code spans - example 332
     mdast:
       type: root
@@ -7741,8 +7860,7 @@ cases:
               value: ' a'
     myst: |
       ` a`
-    html: |-
-      <p><code> a</code></p>
+    html: <p><code> a</code></p>
   - title: Code spans - example 333
     mdast:
       type: root
@@ -7753,8 +7871,7 @@ cases:
               value: ' b '
     myst: |
       ` b `
-    html: |-
-      <p><code> b </code></p>
+    html: <p><code> b </code></p>
   - title: Code spans - example 334
     mdast:
       type: root
@@ -7788,8 +7905,7 @@ cases:
       bar  
       baz
       ``
-    html: |-
-      <p><code>foo bar   baz</code></p>
+    html: <p><code>foo bar   baz</code></p>
   - title: Code spans - example 336
     mdast:
       type: root
@@ -7802,8 +7918,7 @@ cases:
       ``
       foo 
       ``
-    html: |-
-      <p><code>foo </code></p>
+    html: <p><code>foo </code></p>
   - title: Code spans - example 337
     mdast:
       type: root
@@ -7815,8 +7930,7 @@ cases:
     myst: |
       `foo   bar 
       baz`
-    html: |-
-      <p><code>foo   bar  baz</code></p>
+    html: <p><code>foo   bar  baz</code></p>
   - title: Code spans - example 338
     mdast:
       type: root
@@ -7829,8 +7943,7 @@ cases:
               value: bar`
     myst: |
       `foo\`bar`
-    html: |-
-      <p><code>foo\</code>bar`</p>
+    html: <p><code>foo\</code>bar`</p>
   - title: Code spans - example 339
     mdast:
       type: root
@@ -7841,8 +7954,7 @@ cases:
               value: foo`bar
     myst: |
       ``foo`bar``
-    html: |-
-      <p><code>foo`bar</code></p>
+    html: <p><code>foo`bar</code></p>
   - title: Code spans - example 340
     mdast:
       type: root
@@ -7853,8 +7965,7 @@ cases:
               value: foo `` bar
     myst: |
       ` foo `` bar `
-    html: |-
-      <p><code>foo `` bar</code></p>
+    html: <p><code>foo `` bar</code></p>
   - title: Code spans - example 341
     mdast:
       type: root
@@ -7867,8 +7978,7 @@ cases:
               value: '*'
     myst: |
       *foo`*`
-    html: |-
-      <p>*foo<code>*</code></p>
+    html: <p>*foo<code>*</code></p>
   - title: Code spans - example 342
     mdast:
       type: root
@@ -7883,8 +7993,7 @@ cases:
               value: )
     myst: |
       [not a `link](/foo`)
-    html: |-
-      <p>[not a <code>link](/foo</code>)</p>
+    html: <p>[not a <code>link](/foo</code>)</p>
   - title: Code spans - example 343
     mdast:
       type: root
@@ -7897,8 +8006,7 @@ cases:
               value: '">`'
     myst: |
       `<a href="`">`
-    html: |-
-      <p><code>&lt;a href=&quot;</code>&quot;&gt;`</p>
+    html: <p><code>&lt;a href=&quot;</code>&quot;&gt;`</p>
   - title: Code spans - example 344
     mdast:
       type: root
@@ -7911,8 +8019,7 @@ cases:
               value: '`'
     myst: |
       <a href="`">`
-    html: |-
-      <p><a href="`">`</p>
+    html: <p><a href="`">`</p>
   - title: Code spans - example 345
     mdast:
       type: root
@@ -7925,8 +8032,7 @@ cases:
               value: baz>`
     myst: |
       `<http://foo.bar.`baz>`
-    html: |-
-      <p><code>&lt;http://foo.bar.</code>baz&gt;`</p>
+    html: <p><code>&lt;http://foo.bar.</code>baz&gt;`</p>
   - title: Code spans - example 346
     mdast:
       type: root
@@ -7942,8 +8048,7 @@ cases:
               value: '`'
     myst: |
       <http://foo.bar.`baz>`
-    html: |-
-      <p><a href="http://foo.bar.%60baz">http://foo.bar.`baz</a>`</p>
+    html: <p><a href="http://foo.bar.%60baz">http://foo.bar.`baz</a>`</p>
   - title: Code spans - example 347
     mdast:
       type: root
@@ -7954,8 +8059,7 @@ cases:
               value: '```foo``'
     myst: |
       ```foo``
-    html: |-
-      <p>```foo``</p>
+    html: <p>```foo``</p>
   - title: Code spans - example 348
     mdast:
       type: root
@@ -7966,8 +8070,7 @@ cases:
               value: '`foo'
     myst: |
       `foo
-    html: |-
-      <p>`foo</p>
+    html: <p>`foo</p>
   - title: Code spans - example 349
     mdast:
       type: root
@@ -7980,8 +8083,7 @@ cases:
               value: bar
     myst: |
       `foo``bar``
-    html: |-
-      <p>`foo<code>bar</code></p>
+    html: <p>`foo<code>bar</code></p>
   - title: Emphasis and strong emphasis - example 350
     mdast:
       type: root
@@ -7994,8 +8096,7 @@ cases:
                   value: foo bar
     myst: |
       *foo bar*
-    html: |-
-      <p><em>foo bar</em></p>
+    html: <p><em>foo bar</em></p>
   - title: Emphasis and strong emphasis - example 351
     mdast:
       type: root
@@ -8006,8 +8107,7 @@ cases:
               value: a * foo bar*
     myst: |
       a * foo bar*
-    html: |-
-      <p>a * foo bar*</p>
+    html: <p>a * foo bar*</p>
   - title: Emphasis and strong emphasis - example 352
     mdast:
       type: root
@@ -8018,8 +8118,7 @@ cases:
               value: a*"foo"*
     myst: |
       a*"foo"*
-    html: |-
-      <p>a*&quot;foo&quot;*</p>
+    html: <p>a*&quot;foo&quot;*</p>
   - title: Emphasis and strong emphasis - example 353
     mdast:
       type: root
@@ -8030,8 +8129,7 @@ cases:
               value: '* a *'
     myst: |
       * a *
-    html: |-
-      <p>* a *</p>
+    html: <p>* a *</p>
   - title: Emphasis and strong emphasis - example 354
     mdast:
       type: root
@@ -8046,8 +8144,7 @@ cases:
                   value: bar
     myst: |
       foo*bar*
-    html: |-
-      <p>foo<em>bar</em></p>
+    html: <p>foo<em>bar</em></p>
   - title: Emphasis and strong emphasis - example 355
     mdast:
       type: root
@@ -8064,8 +8161,7 @@ cases:
               value: '78'
     myst: |
       5*6*78
-    html: |-
-      <p>5<em>6</em>78</p>
+    html: <p>5<em>6</em>78</p>
   - title: Emphasis and strong emphasis - example 356
     mdast:
       type: root
@@ -8078,8 +8174,7 @@ cases:
                   value: foo bar
     myst: |
       _foo bar_
-    html: |-
-      <p><em>foo bar</em></p>
+    html: <p><em>foo bar</em></p>
   - title: Emphasis and strong emphasis - example 357
     mdast:
       type: root
@@ -8090,8 +8185,7 @@ cases:
               value: _ foo bar_
     myst: |
       _ foo bar_
-    html: |-
-      <p>_ foo bar_</p>
+    html: <p>_ foo bar_</p>
   - title: Emphasis and strong emphasis - example 358
     mdast:
       type: root
@@ -8102,8 +8196,7 @@ cases:
               value: a_"foo"_
     myst: |
       a_"foo"_
-    html: |-
-      <p>a_&quot;foo&quot;_</p>
+    html: <p>a_&quot;foo&quot;_</p>
   - title: Emphasis and strong emphasis - example 359
     mdast:
       type: root
@@ -8114,8 +8207,7 @@ cases:
               value: foo_bar_
     myst: |
       foo_bar_
-    html: |-
-      <p>foo_bar_</p>
+    html: <p>foo_bar_</p>
   - title: Emphasis and strong emphasis - example 360
     mdast:
       type: root
@@ -8126,8 +8218,7 @@ cases:
               value: '5_6_78'
     myst: |
       5_6_78
-    html: |-
-      <p>5_6_78</p>
+    html: <p>5_6_78</p>
   - title: Emphasis and strong emphasis - example 361
     mdast:
       type: root
@@ -8138,8 +8229,7 @@ cases:
               value: пристаням_стремятся_
     myst: |
       пристаням_стремятся_
-    html: |-
-      <p>пристаням_стремятся_</p>
+    html: <p>пристаням_стремятся_</p>
   - title: Emphasis and strong emphasis - example 362
     mdast:
       type: root
@@ -8150,8 +8240,7 @@ cases:
               value: aa_"bb"_cc
     myst: |
       aa_"bb"_cc
-    html: |-
-      <p>aa_&quot;bb&quot;_cc</p>
+    html: <p>aa_&quot;bb&quot;_cc</p>
   - title: Emphasis and strong emphasis - example 363
     mdast:
       type: root
@@ -8166,8 +8255,7 @@ cases:
                   value: (bar)
     myst: |
       foo-_(bar)_
-    html: |-
-      <p>foo-<em>(bar)</em></p>
+    html: <p>foo-<em>(bar)</em></p>
   - title: Emphasis and strong emphasis - example 364
     mdast:
       type: root
@@ -8178,8 +8266,7 @@ cases:
               value: _foo*
     myst: |
       _foo*
-    html: |-
-      <p>_foo*</p>
+    html: <p>_foo*</p>
   - title: Emphasis and strong emphasis - example 365
     mdast:
       type: root
@@ -8190,8 +8277,7 @@ cases:
               value: '*foo bar *'
     myst: |
       *foo bar *
-    html: |-
-      <p>*foo bar *</p>
+    html: <p>*foo bar *</p>
   - title: Emphasis and strong emphasis - example 366
     mdast:
       type: root
@@ -8218,8 +8304,7 @@ cases:
               value: '*(*foo)'
     myst: |
       *(*foo)
-    html: |-
-      <p>*(*foo)</p>
+    html: <p>*(*foo)</p>
   - title: Emphasis and strong emphasis - example 368
     mdast:
       type: root
@@ -8238,8 +8323,7 @@ cases:
                   value: )
     myst: |
       *(*foo*)*
-    html: |-
-      <p><em>(<em>foo</em>)</em></p>
+    html: <p><em>(<em>foo</em>)</em></p>
   - title: Emphasis and strong emphasis - example 369
     mdast:
       type: root
@@ -8254,8 +8338,7 @@ cases:
               value: bar
     myst: |
       *foo*bar
-    html: |-
-      <p><em>foo</em>bar</p>
+    html: <p><em>foo</em>bar</p>
   - title: Emphasis and strong emphasis - example 370
     mdast:
       type: root
@@ -8266,8 +8349,7 @@ cases:
               value: _foo bar _
     myst: |
       _foo bar _
-    html: |-
-      <p>_foo bar _</p>
+    html: <p>_foo bar _</p>
   - title: Emphasis and strong emphasis - example 371
     mdast:
       type: root
@@ -8278,8 +8360,7 @@ cases:
               value: _(_foo)
     myst: |
       _(_foo)
-    html: |-
-      <p>_(_foo)</p>
+    html: <p>_(_foo)</p>
   - title: Emphasis and strong emphasis - example 372
     mdast:
       type: root
@@ -8298,8 +8379,7 @@ cases:
                   value: )
     myst: |
       _(_foo_)_
-    html: |-
-      <p><em>(<em>foo</em>)</em></p>
+    html: <p><em>(<em>foo</em>)</em></p>
   - title: Emphasis and strong emphasis - example 373
     mdast:
       type: root
@@ -8310,8 +8390,7 @@ cases:
               value: _foo_bar
     myst: |
       _foo_bar
-    html: |-
-      <p>_foo_bar</p>
+    html: <p>_foo_bar</p>
   - title: Emphasis and strong emphasis - example 374
     mdast:
       type: root
@@ -8322,8 +8401,7 @@ cases:
               value: _пристаням_стремятся
     myst: |
       _пристаням_стремятся
-    html: |-
-      <p>_пристаням_стремятся</p>
+    html: <p>_пристаням_стремятся</p>
   - title: Emphasis and strong emphasis - example 375
     mdast:
       type: root
@@ -8336,8 +8414,7 @@ cases:
                   value: foo_bar_baz
     myst: |
       _foo_bar_baz_
-    html: |-
-      <p><em>foo_bar_baz</em></p>
+    html: <p><em>foo_bar_baz</em></p>
   - title: Emphasis and strong emphasis - example 376
     mdast:
       type: root
@@ -8352,8 +8429,7 @@ cases:
               value: .
     myst: |
       _(bar)_.
-    html: |-
-      <p><em>(bar)</em>.</p>
+    html: <p><em>(bar)</em>.</p>
   - title: Emphasis and strong emphasis - example 377
     mdast:
       type: root
@@ -8366,8 +8442,7 @@ cases:
                   value: foo bar
     myst: |
       **foo bar**
-    html: |-
-      <p><strong>foo bar</strong></p>
+    html: <p><strong>foo bar</strong></p>
   - title: Emphasis and strong emphasis - example 378
     mdast:
       type: root
@@ -8378,8 +8453,7 @@ cases:
               value: '** foo bar**'
     myst: |
       ** foo bar**
-    html: |-
-      <p>** foo bar**</p>
+    html: <p>** foo bar**</p>
   - title: Emphasis and strong emphasis - example 379
     mdast:
       type: root
@@ -8390,8 +8464,7 @@ cases:
               value: a**"foo"**
     myst: |
       a**"foo"**
-    html: |-
-      <p>a**&quot;foo&quot;**</p>
+    html: <p>a**&quot;foo&quot;**</p>
   - title: Emphasis and strong emphasis - example 380
     mdast:
       type: root
@@ -8406,8 +8479,7 @@ cases:
                   value: bar
     myst: |
       foo**bar**
-    html: |-
-      <p>foo<strong>bar</strong></p>
+    html: <p>foo<strong>bar</strong></p>
   - title: Emphasis and strong emphasis - example 381
     mdast:
       type: root
@@ -8420,8 +8492,7 @@ cases:
                   value: foo bar
     myst: |
       __foo bar__
-    html: |-
-      <p><strong>foo bar</strong></p>
+    html: <p><strong>foo bar</strong></p>
   - title: Emphasis and strong emphasis - example 382
     mdast:
       type: root
@@ -8432,8 +8503,7 @@ cases:
               value: __ foo bar__
     myst: |
       __ foo bar__
-    html: |-
-      <p>__ foo bar__</p>
+    html: <p>__ foo bar__</p>
   - title: Emphasis and strong emphasis - example 383
     mdast:
       type: root
@@ -8460,8 +8530,7 @@ cases:
               value: a__"foo"__
     myst: |
       a__"foo"__
-    html: |-
-      <p>a__&quot;foo&quot;__</p>
+    html: <p>a__&quot;foo&quot;__</p>
   - title: Emphasis and strong emphasis - example 385
     mdast:
       type: root
@@ -8472,8 +8541,7 @@ cases:
               value: foo__bar__
     myst: |
       foo__bar__
-    html: |-
-      <p>foo__bar__</p>
+    html: <p>foo__bar__</p>
   - title: Emphasis and strong emphasis - example 386
     mdast:
       type: root
@@ -8484,8 +8552,7 @@ cases:
               value: '5__6__78'
     myst: |
       5__6__78
-    html: |-
-      <p>5__6__78</p>
+    html: <p>5__6__78</p>
   - title: Emphasis and strong emphasis - example 387
     mdast:
       type: root
@@ -8496,8 +8563,7 @@ cases:
               value: пристаням__стремятся__
     myst: |
       пристаням__стремятся__
-    html: |-
-      <p>пристаням__стремятся__</p>
+    html: <p>пристаням__стремятся__</p>
   - title: Emphasis and strong emphasis - example 388
     mdast:
       type: root
@@ -8516,8 +8582,7 @@ cases:
                   value: ', baz'
     myst: |
       __foo, __bar__, baz__
-    html: |-
-      <p><strong>foo, <strong>bar</strong>, baz</strong></p>
+    html: <p><strong>foo, <strong>bar</strong>, baz</strong></p>
   - title: Emphasis and strong emphasis - example 389
     mdast:
       type: root
@@ -8532,8 +8597,7 @@ cases:
                   value: (bar)
     myst: |
       foo-__(bar)__
-    html: |-
-      <p>foo-<strong>(bar)</strong></p>
+    html: <p>foo-<strong>(bar)</strong></p>
   - title: Emphasis and strong emphasis - example 390
     mdast:
       type: root
@@ -8544,8 +8608,7 @@ cases:
               value: '**foo bar **'
     myst: |
       **foo bar **
-    html: |-
-      <p>**foo bar **</p>
+    html: <p>**foo bar **</p>
   - title: Emphasis and strong emphasis - example 391
     mdast:
       type: root
@@ -8556,8 +8619,7 @@ cases:
               value: '**(**foo)'
     myst: |
       **(**foo)
-    html: |-
-      <p>**(**foo)</p>
+    html: <p>**(**foo)</p>
   - title: Emphasis and strong emphasis - example 392
     mdast:
       type: root
@@ -8576,8 +8638,7 @@ cases:
                   value: )
     myst: |
       *(**foo**)*
-    html: |-
-      <p><em>(<strong>foo</strong>)</em></p>
+    html: <p><em>(<strong>foo</strong>)</em></p>
   - title: Emphasis and strong emphasis - example 393
     mdast:
       type: root
@@ -8625,8 +8686,7 @@ cases:
                   value: '" foo'
     myst: |
       **foo "*bar*" foo**
-    html: |-
-      <p><strong>foo &quot;<em>bar</em>&quot; foo</strong></p>
+    html: <p><strong>foo &quot;<em>bar</em>&quot; foo</strong></p>
   - title: Emphasis and strong emphasis - example 395
     mdast:
       type: root
@@ -8641,8 +8701,7 @@ cases:
               value: bar
     myst: |
       **foo**bar
-    html: |-
-      <p><strong>foo</strong>bar</p>
+    html: <p><strong>foo</strong>bar</p>
   - title: Emphasis and strong emphasis - example 396
     mdast:
       type: root
@@ -8653,8 +8712,7 @@ cases:
               value: __foo bar __
     myst: |
       __foo bar __
-    html: |-
-      <p>__foo bar __</p>
+    html: <p>__foo bar __</p>
   - title: Emphasis and strong emphasis - example 397
     mdast:
       type: root
@@ -8665,8 +8723,7 @@ cases:
               value: __(__foo)
     myst: |
       __(__foo)
-    html: |-
-      <p>__(__foo)</p>
+    html: <p>__(__foo)</p>
   - title: Emphasis and strong emphasis - example 398
     mdast:
       type: root
@@ -8685,8 +8742,7 @@ cases:
                   value: )
     myst: |
       _(__foo__)_
-    html: |-
-      <p><em>(<strong>foo</strong>)</em></p>
+    html: <p><em>(<strong>foo</strong>)</em></p>
   - title: Emphasis and strong emphasis - example 399
     mdast:
       type: root
@@ -8697,8 +8753,7 @@ cases:
               value: __foo__bar
     myst: |
       __foo__bar
-    html: |-
-      <p>__foo__bar</p>
+    html: <p>__foo__bar</p>
   - title: Emphasis and strong emphasis - example 400
     mdast:
       type: root
@@ -8709,8 +8764,7 @@ cases:
               value: __пристаням__стремятся
     myst: |
       __пристаням__стремятся
-    html: |-
-      <p>__пристаням__стремятся</p>
+    html: <p>__пристаням__стремятся</p>
   - title: Emphasis and strong emphasis - example 401
     mdast:
       type: root
@@ -8723,8 +8777,7 @@ cases:
                   value: foo__bar__baz
     myst: |
       __foo__bar__baz__
-    html: |-
-      <p><strong>foo__bar__baz</strong></p>
+    html: <p><strong>foo__bar__baz</strong></p>
   - title: Emphasis and strong emphasis - example 402
     mdast:
       type: root
@@ -8739,8 +8792,7 @@ cases:
               value: .
     myst: |
       __(bar)__.
-    html: |-
-      <p><strong>(bar)</strong>.</p>
+    html: <p><strong>(bar)</strong>.</p>
   - title: Emphasis and strong emphasis - example 403
     mdast:
       type: root
@@ -8758,8 +8810,7 @@ cases:
                       value: bar
     myst: |
       *foo [bar](/url)*
-    html: |-
-      <p><em>foo <a href="/url">bar</a></em></p>
+    html: <p><em>foo <a href="/url">bar</a></em></p>
   - title: Emphasis and strong emphasis - example 404
     mdast:
       type: root
@@ -8796,8 +8847,7 @@ cases:
                   value: ' baz'
     myst: |
       _foo __bar__ baz_
-    html: |-
-      <p><em>foo <strong>bar</strong> baz</em></p>
+    html: <p><em>foo <strong>bar</strong> baz</em></p>
   - title: Emphasis and strong emphasis - example 406
     mdast:
       type: root
@@ -8816,8 +8866,7 @@ cases:
                   value: ' baz'
     myst: |
       _foo _bar_ baz_
-    html: |-
-      <p><em>foo <em>bar</em> baz</em></p>
+    html: <p><em>foo <em>bar</em> baz</em></p>
   - title: Emphasis and strong emphasis - example 407
     mdast:
       type: root
@@ -8834,8 +8883,7 @@ cases:
                   value: ' bar'
     myst: |
       __foo_ bar_
-    html: |-
-      <p><em><em>foo</em> bar</em></p>
+    html: <p><em><em>foo</em> bar</em></p>
   - title: Emphasis and strong emphasis - example 408
     mdast:
       type: root
@@ -8852,8 +8900,7 @@ cases:
                       value: bar
     myst: |
       *foo *bar**
-    html: |-
-      <p><em>foo <em>bar</em></em></p>
+    html: <p><em>foo <em>bar</em></em></p>
   - title: Emphasis and strong emphasis - example 409
     mdast:
       type: root
@@ -8872,8 +8919,7 @@ cases:
                   value: ' baz'
     myst: |
       *foo **bar** baz*
-    html: |-
-      <p><em>foo <strong>bar</strong> baz</em></p>
+    html: <p><em>foo <strong>bar</strong> baz</em></p>
   - title: Emphasis and strong emphasis - example 410
     mdast:
       type: root
@@ -8892,8 +8938,7 @@ cases:
                   value: baz
     myst: |
       *foo**bar**baz*
-    html: |-
-      <p><em>foo<strong>bar</strong>baz</em></p>
+    html: <p><em>foo<strong>bar</strong>baz</em></p>
   - title: Emphasis and strong emphasis - example 411
     mdast:
       type: root
@@ -8906,8 +8951,7 @@ cases:
                   value: foo**bar
     myst: |
       *foo**bar*
-    html: |-
-      <p><em>foo**bar</em></p>
+    html: <p><em>foo**bar</em></p>
   - title: Emphasis and strong emphasis - example 412
     mdast:
       type: root
@@ -8924,8 +8968,7 @@ cases:
                   value: ' bar'
     myst: |
       ***foo** bar*
-    html: |-
-      <p><em><strong>foo</strong> bar</em></p>
+    html: <p><em><strong>foo</strong> bar</em></p>
   - title: Emphasis and strong emphasis - example 413
     mdast:
       type: root
@@ -8942,8 +8985,7 @@ cases:
                       value: bar
     myst: |
       *foo **bar***
-    html: |-
-      <p><em>foo <strong>bar</strong></em></p>
+    html: <p><em>foo <strong>bar</strong></em></p>
   - title: Emphasis and strong emphasis - example 414
     mdast:
       type: root
@@ -8960,8 +9002,7 @@ cases:
                       value: bar
     myst: |
       *foo**bar***
-    html: |-
-      <p><em>foo<strong>bar</strong></em></p>
+    html: <p><em>foo<strong>bar</strong></em></p>
   - title: Emphasis and strong emphasis - example 415
     mdast:
       type: root
@@ -8980,8 +9021,7 @@ cases:
               value: baz
     myst: |
       foo***bar***baz
-    html: |-
-      <p>foo<em><strong>bar</strong></em>baz</p>
+    html: <p>foo<em><strong>bar</strong></em>baz</p>
   - title: Emphasis and strong emphasis - example 416
     mdast:
       type: root
@@ -9002,8 +9042,7 @@ cases:
               value: '***baz'
     myst: |
       foo******bar*********baz
-    html: |-
-      <p>foo<strong><strong><strong>bar</strong></strong></strong>***baz</p>
+    html: <p>foo<strong><strong><strong>bar</strong></strong></strong>***baz</p>
   - title: Emphasis and strong emphasis - example 417
     mdast:
       type: root
@@ -9028,8 +9067,7 @@ cases:
                   value: ' bop'
     myst: |
       *foo **bar *baz* bim** bop*
-    html: |-
-      <p><em>foo <strong>bar <em>baz</em> bim</strong> bop</em></p>
+    html: <p><em>foo <strong>bar <em>baz</em> bim</strong> bop</em></p>
   - title: Emphasis and strong emphasis - example 418
     mdast:
       type: root
@@ -9049,8 +9087,7 @@ cases:
                           value: bar
     myst: |
       *foo [*bar*](/url)*
-    html: |-
-      <p><em>foo <a href="/url"><em>bar</em></a></em></p>
+    html: <p><em>foo <a href="/url"><em>bar</em></a></em></p>
   - title: Emphasis and strong emphasis - example 419
     mdast:
       type: root
@@ -9061,8 +9098,7 @@ cases:
               value: '** is not an empty emphasis'
     myst: |
       ** is not an empty emphasis
-    html: |-
-      <p>** is not an empty emphasis</p>
+    html: <p>** is not an empty emphasis</p>
   - title: Emphasis and strong emphasis - example 420
     mdast:
       type: root
@@ -9073,8 +9109,7 @@ cases:
               value: '**** is not an empty strong emphasis'
     myst: |
       **** is not an empty strong emphasis
-    html: |-
-      <p>**** is not an empty strong emphasis</p>
+    html: <p>**** is not an empty strong emphasis</p>
   - title: Emphasis and strong emphasis - example 421
     mdast:
       type: root
@@ -9092,8 +9127,7 @@ cases:
                       value: bar
     myst: |
       **foo [bar](/url)**
-    html: |-
-      <p><strong>foo <a href="/url">bar</a></strong></p>
+    html: <p><strong>foo <a href="/url">bar</a></strong></p>
   - title: Emphasis and strong emphasis - example 422
     mdast:
       type: root
@@ -9130,8 +9164,7 @@ cases:
                   value: ' baz'
     myst: |
       __foo _bar_ baz__
-    html: |-
-      <p><strong>foo <em>bar</em> baz</strong></p>
+    html: <p><strong>foo <em>bar</em> baz</strong></p>
   - title: Emphasis and strong emphasis - example 424
     mdast:
       type: root
@@ -9150,8 +9183,7 @@ cases:
                   value: ' baz'
     myst: |
       __foo __bar__ baz__
-    html: |-
-      <p><strong>foo <strong>bar</strong> baz</strong></p>
+    html: <p><strong>foo <strong>bar</strong> baz</strong></p>
   - title: Emphasis and strong emphasis - example 425
     mdast:
       type: root
@@ -9168,8 +9200,7 @@ cases:
                   value: ' bar'
     myst: |
       ____foo__ bar__
-    html: |-
-      <p><strong><strong>foo</strong> bar</strong></p>
+    html: <p><strong><strong>foo</strong> bar</strong></p>
   - title: Emphasis and strong emphasis - example 426
     mdast:
       type: root
@@ -9186,8 +9217,7 @@ cases:
                       value: bar
     myst: |
       **foo **bar****
-    html: |-
-      <p><strong>foo <strong>bar</strong></strong></p>
+    html: <p><strong>foo <strong>bar</strong></strong></p>
   - title: Emphasis and strong emphasis - example 427
     mdast:
       type: root
@@ -9206,8 +9236,7 @@ cases:
                   value: ' baz'
     myst: |
       **foo *bar* baz**
-    html: |-
-      <p><strong>foo <em>bar</em> baz</strong></p>
+    html: <p><strong>foo <em>bar</em> baz</strong></p>
   - title: Emphasis and strong emphasis - example 428
     mdast:
       type: root
@@ -9226,8 +9255,7 @@ cases:
                   value: baz
     myst: |
       **foo*bar*baz**
-    html: |-
-      <p><strong>foo<em>bar</em>baz</strong></p>
+    html: <p><strong>foo<em>bar</em>baz</strong></p>
   - title: Emphasis and strong emphasis - example 429
     mdast:
       type: root
@@ -9244,8 +9272,7 @@ cases:
                   value: ' bar'
     myst: |
       ***foo* bar**
-    html: |-
-      <p><strong><em>foo</em> bar</strong></p>
+    html: <p><strong><em>foo</em> bar</strong></p>
   - title: Emphasis and strong emphasis - example 430
     mdast:
       type: root
@@ -9262,8 +9289,7 @@ cases:
                       value: bar
     myst: |
       **foo *bar***
-    html: |-
-      <p><strong>foo <em>bar</em></strong></p>
+    html: <p><strong>foo <em>bar</em></strong></p>
   - title: Emphasis and strong emphasis - example 431
     mdast:
       type: root
@@ -9313,8 +9339,7 @@ cases:
                           value: bar
     myst: |
       **foo [*bar*](/url)**
-    html: |-
-      <p><strong>foo <a href="/url"><em>bar</em></a></strong></p>
+    html: <p><strong>foo <a href="/url"><em>bar</em></a></strong></p>
   - title: Emphasis and strong emphasis - example 433
     mdast:
       type: root
@@ -9325,8 +9350,7 @@ cases:
               value: __ is not an empty emphasis
     myst: |
       __ is not an empty emphasis
-    html: |-
-      <p>__ is not an empty emphasis</p>
+    html: <p>__ is not an empty emphasis</p>
   - title: Emphasis and strong emphasis - example 434
     mdast:
       type: root
@@ -9337,8 +9361,7 @@ cases:
               value: ____ is not an empty strong emphasis
     myst: |
       ____ is not an empty strong emphasis
-    html: |-
-      <p>____ is not an empty strong emphasis</p>
+    html: <p>____ is not an empty strong emphasis</p>
   - title: Emphasis and strong emphasis - example 435
     mdast:
       type: root
@@ -9349,8 +9372,7 @@ cases:
               value: foo ***
     myst: |
       foo ***
-    html: |-
-      <p>foo ***</p>
+    html: <p>foo ***</p>
   - title: Emphasis and strong emphasis - example 436
     mdast:
       type: root
@@ -9365,8 +9387,7 @@ cases:
                   value: '*'
     myst: |
       foo *\**
-    html: |-
-      <p>foo <em>*</em></p>
+    html: <p>foo <em>*</em></p>
   - title: Emphasis and strong emphasis - example 437
     mdast:
       type: root
@@ -9381,8 +9402,7 @@ cases:
                   value: _
     myst: |
       foo *_*
-    html: |-
-      <p>foo <em>_</em></p>
+    html: <p>foo <em>_</em></p>
   - title: Emphasis and strong emphasis - example 438
     mdast:
       type: root
@@ -9393,8 +9413,7 @@ cases:
               value: foo *****
     myst: |
       foo *****
-    html: |-
-      <p>foo *****</p>
+    html: <p>foo *****</p>
   - title: Emphasis and strong emphasis - example 439
     mdast:
       type: root
@@ -9409,8 +9428,7 @@ cases:
                   value: '*'
     myst: |
       foo **\***
-    html: |-
-      <p>foo <strong>*</strong></p>
+    html: <p>foo <strong>*</strong></p>
   - title: Emphasis and strong emphasis - example 440
     mdast:
       type: root
@@ -9425,8 +9443,7 @@ cases:
                   value: _
     myst: |
       foo **_**
-    html: |-
-      <p>foo <strong>_</strong></p>
+    html: <p>foo <strong>_</strong></p>
   - title: Emphasis and strong emphasis - example 441
     mdast:
       type: root
@@ -9441,8 +9458,7 @@ cases:
                   value: foo
     myst: |
       **foo*
-    html: |-
-      <p>*<em>foo</em></p>
+    html: <p>*<em>foo</em></p>
   - title: Emphasis and strong emphasis - example 442
     mdast:
       type: root
@@ -9457,8 +9473,7 @@ cases:
               value: '*'
     myst: |
       *foo**
-    html: |-
-      <p><em>foo</em>*</p>
+    html: <p><em>foo</em>*</p>
   - title: Emphasis and strong emphasis - example 443
     mdast:
       type: root
@@ -9473,8 +9488,7 @@ cases:
                   value: foo
     myst: |
       ***foo**
-    html: |-
-      <p>*<strong>foo</strong></p>
+    html: <p>*<strong>foo</strong></p>
   - title: Emphasis and strong emphasis - example 444
     mdast:
       type: root
@@ -9489,8 +9503,7 @@ cases:
                   value: foo
     myst: |
       ****foo*
-    html: |-
-      <p>***<em>foo</em></p>
+    html: <p>***<em>foo</em></p>
   - title: Emphasis and strong emphasis - example 445
     mdast:
       type: root
@@ -9505,8 +9518,7 @@ cases:
               value: '*'
     myst: |
       **foo***
-    html: |-
-      <p><strong>foo</strong>*</p>
+    html: <p><strong>foo</strong>*</p>
   - title: Emphasis and strong emphasis - example 446
     mdast:
       type: root
@@ -9521,8 +9533,7 @@ cases:
               value: '***'
     myst: |
       *foo****
-    html: |-
-      <p><em>foo</em>***</p>
+    html: <p><em>foo</em>***</p>
   - title: Emphasis and strong emphasis - example 447
     mdast:
       type: root
@@ -9533,8 +9544,7 @@ cases:
               value: foo ___
     myst: |
       foo ___
-    html: |-
-      <p>foo ___</p>
+    html: <p>foo ___</p>
   - title: Emphasis and strong emphasis - example 448
     mdast:
       type: root
@@ -9549,8 +9559,7 @@ cases:
                   value: _
     myst: |
       foo _\__
-    html: |-
-      <p>foo <em>_</em></p>
+    html: <p>foo <em>_</em></p>
   - title: Emphasis and strong emphasis - example 449
     mdast:
       type: root
@@ -9565,8 +9574,7 @@ cases:
                   value: '*'
     myst: |
       foo _*_
-    html: |-
-      <p>foo <em>*</em></p>
+    html: <p>foo <em>*</em></p>
   - title: Emphasis and strong emphasis - example 450
     mdast:
       type: root
@@ -9577,8 +9585,7 @@ cases:
               value: foo _____
     myst: |
       foo _____
-    html: |-
-      <p>foo _____</p>
+    html: <p>foo _____</p>
   - title: Emphasis and strong emphasis - example 451
     mdast:
       type: root
@@ -9593,8 +9600,7 @@ cases:
                   value: _
     myst: |
       foo __\___
-    html: |-
-      <p>foo <strong>_</strong></p>
+    html: <p>foo <strong>_</strong></p>
   - title: Emphasis and strong emphasis - example 452
     mdast:
       type: root
@@ -9609,8 +9615,7 @@ cases:
                   value: '*'
     myst: |
       foo __*__
-    html: |-
-      <p>foo <strong>*</strong></p>
+    html: <p>foo <strong>*</strong></p>
   - title: Emphasis and strong emphasis - example 453
     mdast:
       type: root
@@ -9625,8 +9630,7 @@ cases:
                   value: foo
     myst: |
       __foo_
-    html: |-
-      <p>_<em>foo</em></p>
+    html: <p>_<em>foo</em></p>
   - title: Emphasis and strong emphasis - example 454
     mdast:
       type: root
@@ -9641,8 +9645,7 @@ cases:
               value: _
     myst: |
       _foo__
-    html: |-
-      <p><em>foo</em>_</p>
+    html: <p><em>foo</em>_</p>
   - title: Emphasis and strong emphasis - example 455
     mdast:
       type: root
@@ -9657,8 +9660,7 @@ cases:
                   value: foo
     myst: |
       ___foo__
-    html: |-
-      <p>_<strong>foo</strong></p>
+    html: <p>_<strong>foo</strong></p>
   - title: Emphasis and strong emphasis - example 456
     mdast:
       type: root
@@ -9673,8 +9675,7 @@ cases:
                   value: foo
     myst: |
       ____foo_
-    html: |-
-      <p>___<em>foo</em></p>
+    html: <p>___<em>foo</em></p>
   - title: Emphasis and strong emphasis - example 457
     mdast:
       type: root
@@ -9689,8 +9690,7 @@ cases:
               value: _
     myst: |
       __foo___
-    html: |-
-      <p><strong>foo</strong>_</p>
+    html: <p><strong>foo</strong>_</p>
   - title: Emphasis and strong emphasis - example 458
     mdast:
       type: root
@@ -9705,8 +9705,7 @@ cases:
               value: ___
     myst: |
       _foo____
-    html: |-
-      <p><em>foo</em>___</p>
+    html: <p><em>foo</em>___</p>
   - title: Emphasis and strong emphasis - example 459
     mdast:
       type: root
@@ -9719,8 +9718,7 @@ cases:
                   value: foo
     myst: |
       **foo**
-    html: |-
-      <p><strong>foo</strong></p>
+    html: <p><strong>foo</strong></p>
   - title: Emphasis and strong emphasis - example 460
     mdast:
       type: root
@@ -9735,8 +9733,7 @@ cases:
                       value: foo
     myst: |
       *_foo_*
-    html: |-
-      <p><em><em>foo</em></em></p>
+    html: <p><em><em>foo</em></em></p>
   - title: Emphasis and strong emphasis - example 461
     mdast:
       type: root
@@ -9749,8 +9746,7 @@ cases:
                   value: foo
     myst: |
       __foo__
-    html: |-
-      <p><strong>foo</strong></p>
+    html: <p><strong>foo</strong></p>
   - title: Emphasis and strong emphasis - example 462
     mdast:
       type: root
@@ -9765,8 +9761,7 @@ cases:
                       value: foo
     myst: |
       _*foo*_
-    html: |-
-      <p><em><em>foo</em></em></p>
+    html: <p><em><em>foo</em></em></p>
   - title: Emphasis and strong emphasis - example 463
     mdast:
       type: root
@@ -9781,8 +9776,7 @@ cases:
                       value: foo
     myst: |
       ****foo****
-    html: |-
-      <p><strong><strong>foo</strong></strong></p>
+    html: <p><strong><strong>foo</strong></strong></p>
   - title: Emphasis and strong emphasis - example 464
     mdast:
       type: root
@@ -9797,8 +9791,7 @@ cases:
                       value: foo
     myst: |
       ____foo____
-    html: |-
-      <p><strong><strong>foo</strong></strong></p>
+    html: <p><strong><strong>foo</strong></strong></p>
   - title: Emphasis and strong emphasis - example 465
     mdast:
       type: root
@@ -9815,8 +9808,7 @@ cases:
                           value: foo
     myst: |
       ******foo******
-    html: |-
-      <p><strong><strong><strong>foo</strong></strong></strong></p>
+    html: <p><strong><strong><strong>foo</strong></strong></strong></p>
   - title: Emphasis and strong emphasis - example 466
     mdast:
       type: root
@@ -9831,8 +9823,7 @@ cases:
                       value: foo
     myst: |
       ***foo***
-    html: |-
-      <p><em><strong>foo</strong></em></p>
+    html: <p><em><strong>foo</strong></em></p>
   - title: Emphasis and strong emphasis - example 467
     mdast:
       type: root
@@ -9849,8 +9840,7 @@ cases:
                           value: foo
     myst: |
       _____foo_____
-    html: |-
-      <p><em><strong><strong>foo</strong></strong></em></p>
+    html: <p><em><strong><strong>foo</strong></strong></em></p>
   - title: Emphasis and strong emphasis - example 468
     mdast:
       type: root
@@ -9865,8 +9855,7 @@ cases:
               value: ' baz_'
     myst: |
       *foo _bar* baz_
-    html: |-
-      <p><em>foo _bar</em> baz_</p>
+    html: <p><em>foo _bar</em> baz_</p>
   - title: Emphasis and strong emphasis - example 469
     mdast:
       type: root
@@ -9885,8 +9874,7 @@ cases:
                   value: ' bam'
     myst: |
       *foo __bar *baz bim__ bam*
-    html: |-
-      <p><em>foo <strong>bar *baz bim</strong> bam</em></p>
+    html: <p><em>foo <strong>bar *baz bim</strong> bam</em></p>
   - title: Emphasis and strong emphasis - example 470
     mdast:
       type: root
@@ -9901,8 +9889,7 @@ cases:
                   value: bar baz
     myst: |
       **foo **bar baz**
-    html: |-
-      <p>**foo <strong>bar baz</strong></p>
+    html: <p>**foo <strong>bar baz</strong></p>
   - title: Emphasis and strong emphasis - example 471
     mdast:
       type: root
@@ -9917,8 +9904,7 @@ cases:
                   value: bar baz
     myst: |
       *foo *bar baz*
-    html: |-
-      <p>*foo <em>bar baz</em></p>
+    html: <p>*foo <em>bar baz</em></p>
   - title: Emphasis and strong emphasis - example 472
     mdast:
       type: root
@@ -9934,8 +9920,7 @@ cases:
                   value: bar*
     myst: |
       *[bar*](/url)
-    html: |-
-      <p>*<a href="/url">bar*</a></p>
+    html: <p>*<a href="/url">bar*</a></p>
   - title: Emphasis and strong emphasis - example 473
     mdast:
       type: root
@@ -9951,8 +9936,7 @@ cases:
                   value: bar_
     myst: |
       _foo [bar_](/url)
-    html: |-
-      <p>_foo <a href="/url">bar_</a></p>
+    html: <p>_foo <a href="/url">bar_</a></p>
   - title: Emphasis and strong emphasis - example 474
     mdast:
       type: root
@@ -9965,8 +9949,7 @@ cases:
               value: <img src="foo" title="*"/>
     myst: |
       *<img src="foo" title="*"/>
-    html: |-
-      <p>*<img src="foo" title="*"/></p>
+    html: <p>*<img src="foo" title="*"/></p>
   - title: Emphasis and strong emphasis - example 475
     mdast:
       type: root
@@ -9979,8 +9962,7 @@ cases:
               value: <a href="**">
     myst: |
       **<a href="**">
-    html: |-
-      <p>**<a href="**"></p>
+    html: <p>**<a href="**"></p>
   - title: Emphasis and strong emphasis - example 476
     mdast:
       type: root
@@ -9993,8 +9975,7 @@ cases:
               value: <a href="__">
     myst: |
       __<a href="__">
-    html: |-
-      <p>__<a href="__"></p>
+    html: <p>__<a href="__"></p>
   - title: Emphasis and strong emphasis - example 477
     mdast:
       type: root
@@ -10009,8 +9990,7 @@ cases:
                   value: '*'
     myst: |
       *a `*`*
-    html: |-
-      <p><em>a <code>*</code></em></p>
+    html: <p><em>a <code>*</code></em></p>
   - title: Emphasis and strong emphasis - example 478
     mdast:
       type: root
@@ -10025,8 +10005,7 @@ cases:
                   value: _
     myst: |
       _a `_`_
-    html: |-
-      <p><em>a <code>_</code></em></p>
+    html: <p><em>a <code>_</code></em></p>
   - title: Emphasis and strong emphasis - example 479
     mdast:
       type: root
@@ -10042,8 +10021,7 @@ cases:
                   value: http://foo.bar/?q=**
     myst: |
       **a<http://foo.bar/?q=**>
-    html: |-
-      <p>**a<a href="http://foo.bar/?q=**">http://foo.bar/?q=**</a></p>
+    html: <p>**a<a href="http://foo.bar/?q=**">http://foo.bar/?q=**</a></p>
   - title: Emphasis and strong emphasis - example 480
     mdast:
       type: root
@@ -10059,8 +10037,7 @@ cases:
                   value: http://foo.bar/?q=__
     myst: |
       __a<http://foo.bar/?q=__>
-    html: |-
-      <p>__a<a href="http://foo.bar/?q=__">http://foo.bar/?q=__</a></p>
+    html: <p>__a<a href="http://foo.bar/?q=__">http://foo.bar/?q=__</a></p>
   - title: Links - example 481
     mdast:
       type: root
@@ -10075,8 +10052,7 @@ cases:
                   value: link
     myst: |
       [link](/uri "title")
-    html: |-
-      <p><a href="/uri" title="title">link</a></p>
+    html: <p><a href="/uri" title="title">link</a></p>
   - title: Links - example 482
     mdast:
       type: root
@@ -10090,8 +10066,7 @@ cases:
                   value: link
     myst: |
       [link](/uri)
-    html: |-
-      <p><a href="/uri">link</a></p>
+    html: <p><a href="/uri">link</a></p>
   - title: Links - example 483
     mdast:
       type: root
@@ -10103,8 +10078,7 @@ cases:
               children: []
     myst: |
       [](./target.md)
-    html: |-
-      <p><a href="./target.md"></a></p>
+    html: <p><a href="./target.md"></a></p>
   - title: Links - example 484
     mdast:
       type: root
@@ -10118,8 +10092,7 @@ cases:
                   value: link
     myst: |
       [link]()
-    html: |-
-      <p><a href="">link</a></p>
+    html: <p><a href="">link</a></p>
   - title: Links - example 485
     mdast:
       type: root
@@ -10133,8 +10106,7 @@ cases:
                   value: link
     myst: |
       [link](<>)
-    html: |-
-      <p><a href="">link</a></p>
+    html: <p><a href="">link</a></p>
   - title: Links - example 486
     mdast:
       type: root
@@ -10146,8 +10118,7 @@ cases:
               children: []
     myst: |
       []()
-    html: |-
-      <p><a href=""></a></p>
+    html: <p><a href=""></a></p>
   - title: Links - example 487
     mdast:
       type: root
@@ -10158,8 +10129,7 @@ cases:
               value: '[link](/my uri)'
     myst: |
       [link](/my uri)
-    html: |-
-      <p>[link](/my uri)</p>
+    html: <p>[link](/my uri)</p>
   - title: Links - example 488
     mdast:
       type: root
@@ -10173,8 +10143,7 @@ cases:
                   value: link
     myst: |
       [link](</my uri>)
-    html: |-
-      <p><a href="/my%20uri">link</a></p>
+    html: <p><a href="/my%20uri">link</a></p>
   - title: Links - example 489
     mdast:
       type: root
@@ -10224,8 +10193,7 @@ cases:
                   value: a
     myst: |
       [a](<b)c>)
-    html: |-
-      <p><a href="b)c">a</a></p>
+    html: <p><a href="b)c">a</a></p>
   - title: Links - example 492
     mdast:
       type: root
@@ -10236,8 +10204,7 @@ cases:
               value: '[link](<foo>)'
     myst: |
       [link](<foo\>)
-    html: |-
-      <p>[link](&lt;foo&gt;)</p>
+    html: <p>[link](&lt;foo&gt;)</p>
   - title: Links - example 493
     mdast:
       type: root
@@ -10274,8 +10241,7 @@ cases:
                   value: link
     myst: |
       [link](\(foo\))
-    html: |-
-      <p><a href="(foo)">link</a></p>
+    html: <p><a href="(foo)">link</a></p>
   - title: Links - example 495
     mdast:
       type: root
@@ -10289,8 +10255,7 @@ cases:
                   value: link
     myst: |
       [link](foo(and(bar)))
-    html: |-
-      <p><a href="foo(and(bar))">link</a></p>
+    html: <p><a href="foo(and(bar))">link</a></p>
   - title: Links - example 496
     mdast:
       type: root
@@ -10301,8 +10266,7 @@ cases:
               value: '[link](foo(and(bar))'
     myst: |
       [link](foo(and(bar))
-    html: |-
-      <p>[link](foo(and(bar))</p>
+    html: <p>[link](foo(and(bar))</p>
   - title: Links - example 497
     mdast:
       type: root
@@ -10316,8 +10280,7 @@ cases:
                   value: link
     myst: |
       [link](foo\(and\(bar\))
-    html: |-
-      <p><a href="foo(and(bar)">link</a></p>
+    html: <p><a href="foo(and(bar)">link</a></p>
   - title: Links - example 498
     mdast:
       type: root
@@ -10331,8 +10294,7 @@ cases:
                   value: link
     myst: |
       [link](<foo(and(bar)>)
-    html: |-
-      <p><a href="foo(and(bar)">link</a></p>
+    html: <p><a href="foo(and(bar)">link</a></p>
   - title: Links - example 499
     mdast:
       type: root
@@ -10346,8 +10308,7 @@ cases:
                   value: link
     myst: |
       [link](foo\)\:)
-    html: |-
-      <p><a href="foo):">link</a></p>
+    html: <p><a href="foo):">link</a></p>
   - title: Links - example 500
     mdast:
       type: root
@@ -10396,8 +10357,7 @@ cases:
                   value: link
     myst: |
       [link](foo\bar)
-    html: |-
-      <p><a href="foo%5Cbar">link</a></p>
+    html: <p><a href="foo%5Cbar">link</a></p>
   - title: Links - example 502
     mdast:
       type: root
@@ -10411,8 +10371,7 @@ cases:
                   value: link
     myst: |
       [link](foo%20b&auml;)
-    html: |-
-      <p><a href="foo%20b%C3%A4">link</a></p>
+    html: <p><a href="foo%20b%C3%A4">link</a></p>
   - title: Links - example 503
     mdast:
       type: root
@@ -10426,8 +10385,7 @@ cases:
                   value: link
     myst: |
       [link]("title")
-    html: |-
-      <p><a href="%22title%22">link</a></p>
+    html: <p><a href="%22title%22">link</a></p>
   - title: Links - example 504
     mdast:
       type: root
@@ -10480,8 +10438,7 @@ cases:
                   value: link
     myst: |
       [link](/url "title \"&quot;")
-    html: |-
-      <p><a href="/url" title="title &quot;&quot;">link</a></p>
+    html: <p><a href="/url" title="title &quot;&quot;">link</a></p>
   - title: Links - example 506
     mdast:
       type: root
@@ -10489,14 +10446,13 @@ cases:
         - type: paragraph
           children:
             - type: link
-              url: "/url\u00A0\"title\""
+              url: "/url\_\"title\""
               children:
                 - type: text
                   value: link
     myst: |
       [link](/url "title")
-    html: |-
-      <p><a href="/url%C2%A0%22title%22">link</a></p>
+    html: <p><a href="/url%C2%A0%22title%22">link</a></p>
   - title: Links - example 507
     mdast:
       type: root
@@ -10507,8 +10463,7 @@ cases:
               value: '[link](/url "title "and" title")'
     myst: |
       [link](/url "title "and" title")
-    html: |-
-      <p>[link](/url &quot;title &quot;and&quot; title&quot;)</p>
+    html: <p>[link](/url &quot;title &quot;and&quot; title&quot;)</p>
   - title: Links - example 508
     mdast:
       type: root
@@ -10523,8 +10478,7 @@ cases:
                   value: link
     myst: |
       [link](/url 'title "and" title')
-    html: |-
-      <p><a href="/url" title="title &quot;and&quot; title">link</a></p>
+    html: <p><a href="/url" title="title &quot;and&quot; title">link</a></p>
   - title: Links - example 509
     mdast:
       type: root
@@ -10540,8 +10494,7 @@ cases:
     myst: |
       [link](   /uri
         "title"  )
-    html: |-
-      <p><a href="/uri" title="title">link</a></p>
+    html: <p><a href="/uri" title="title">link</a></p>
   - title: Links - example 510
     mdast:
       type: root
@@ -10552,8 +10505,7 @@ cases:
               value: '[link] (/uri)'
     myst: |
       [link] (/uri)
-    html: |-
-      <p>[link] (/uri)</p>
+    html: <p>[link] (/uri)</p>
   - title: Links - example 511
     mdast:
       type: root
@@ -10567,8 +10519,7 @@ cases:
                   value: link [foo [bar]]
     myst: |
       [link [foo [bar]]](/uri)
-    html: |-
-      <p><a href="/uri">link [foo [bar]]</a></p>
+    html: <p><a href="/uri">link [foo [bar]]</a></p>
   - title: Links - example 512
     mdast:
       type: root
@@ -10579,8 +10530,7 @@ cases:
               value: '[link] bar](/uri)'
     myst: |
       [link] bar](/uri)
-    html: |-
-      <p>[link] bar](/uri)</p>
+    html: <p>[link] bar](/uri)</p>
   - title: Links - example 513
     mdast:
       type: root
@@ -10596,8 +10546,7 @@ cases:
                   value: bar
     myst: |
       [link [bar](/uri)
-    html: |-
-      <p>[link <a href="/uri">bar</a></p>
+    html: <p>[link <a href="/uri">bar</a></p>
   - title: Links - example 514
     mdast:
       type: root
@@ -10611,8 +10560,7 @@ cases:
                   value: link [bar
     myst: |
       [link \[bar](/uri)
-    html: |-
-      <p><a href="/uri">link [bar</a></p>
+    html: <p><a href="/uri">link [bar</a></p>
   - title: Links - example 515
     mdast:
       type: root
@@ -10655,8 +10603,7 @@ cases:
                   alt: moon
     myst: |
       [![moon](moon.jpg)](/uri)
-    html: |-
-      <p><a href="/uri"><img src="moon.jpg" alt="moon" /></a></p>
+    html: <p><a href="/uri"><img src="moon.jpg" alt="moon" /></a></p>
   - title: Links - example 517
     mdast:
       type: root
@@ -10674,8 +10621,7 @@ cases:
               value: '](/uri)'
     myst: |
       [foo [bar](/uri)](/uri)
-    html: |-
-      <p>[foo <a href="/uri">bar</a>](/uri)</p>
+    html: <p>[foo <a href="/uri">bar</a>](/uri)</p>
   - title: Links - example 518
     mdast:
       type: root
@@ -10699,8 +10645,7 @@ cases:
               value: '](/uri)'
     myst: |
       [foo *[bar [baz](/uri)](/uri)*](/uri)
-    html: |-
-      <p>[foo <em>[bar <a href="/uri">baz</a>](/uri)</em>](/uri)</p>
+    html: <p>[foo <em>[bar <a href="/uri">baz</a>](/uri)</em>](/uri)</p>
   - title: Links - example 519
     mdast:
       type: root
@@ -10712,8 +10657,7 @@ cases:
               alt: '[foo](uri2)'
     myst: |
       ![[[foo](uri1)](uri2)](uri3)
-    html: |-
-      <p><img src="uri3" alt="[foo](uri2)" /></p>
+    html: <p><img src="uri3" alt="[foo](uri2)" /></p>
   - title: Links - example 520
     mdast:
       type: root
@@ -10729,8 +10673,7 @@ cases:
                   value: foo*
     myst: |
       *[foo*](/uri)
-    html: |-
-      <p>*<a href="/uri">foo*</a></p>
+    html: <p>*<a href="/uri">foo*</a></p>
   - title: Links - example 521
     mdast:
       type: root
@@ -10744,8 +10687,7 @@ cases:
                   value: foo *bar
     myst: |
       [foo *bar](baz*)
-    html: |-
-      <p><a href="baz*">foo *bar</a></p>
+    html: <p><a href="baz*">foo *bar</a></p>
   - title: Links - example 522
     mdast:
       type: root
@@ -10760,8 +10702,7 @@ cases:
               value: ' baz]'
     myst: |
       *foo [bar* baz]
-    html: |-
-      <p><em>foo [bar</em> baz]</p>
+    html: <p><em>foo [bar</em> baz]</p>
   - title: Links - example 523
     mdast:
       type: root
@@ -10774,8 +10715,7 @@ cases:
               value: <bar attr="](baz)">
     myst: |
       [foo <bar attr="](baz)">
-    html: |-
-      <p>[foo <bar attr="](baz)"></p>
+    html: <p>[foo <bar attr="](baz)"></p>
   - title: Links - example 524
     mdast:
       type: root
@@ -10788,8 +10728,7 @@ cases:
               value: '](/uri)'
     myst: |
       [foo`](/uri)`
-    html: |-
-      <p>[foo<code>](/uri)</code></p>
+    html: <p>[foo<code>](/uri)</code></p>
   - title: Links - example 525
     mdast:
       type: root
@@ -10824,8 +10763,7 @@ cases:
       [foo][bar]
 
       [bar]: /url "title"
-    html: |-
-      <p><a href="/url" title="title">foo</a></p>
+    html: <p><a href="/url" title="title">foo</a></p>
   - title: Links - example 527
     mdast:
       type: root
@@ -10841,8 +10779,7 @@ cases:
       [link [foo [bar]]][ref]
 
       [ref]: /uri
-    html: |-
-      <p><a href="/uri">link [foo [bar]]</a></p>
+    html: <p><a href="/uri">link [foo [bar]]</a></p>
   - title: Links - example 528
     mdast:
       type: root
@@ -10858,8 +10795,7 @@ cases:
       [link \[bar][ref]
 
       [ref]: /uri
-    html: |-
-      <p><a href="/uri">link [bar</a></p>
+    html: <p><a href="/uri">link [bar</a></p>
   - title: Links - example 529
     mdast:
       type: root
@@ -10906,8 +10842,7 @@ cases:
       [![moon](moon.jpg)][ref]
 
       [ref]: /uri
-    html: |-
-      <p><a href="/uri"><img src="moon.jpg" alt="moon" /></a></p>
+    html: <p><a href="/uri"><img src="moon.jpg" alt="moon" /></a></p>
   - title: Links - example 531
     mdast:
       type: root
@@ -10932,8 +10867,7 @@ cases:
       [foo [bar](/uri)][ref]
 
       [ref]: /uri
-    html: |-
-      <p>[foo <a href="/uri">bar</a>]<a href="/uri">ref</a></p>
+    html: <p>[foo <a href="/uri">bar</a>]<a href="/uri">ref</a></p>
   - title: Links - example 532
     mdast:
       type: root
@@ -10962,8 +10896,7 @@ cases:
       [foo *bar [baz][ref]*][ref]
 
       [ref]: /uri
-    html: |-
-      <p>[foo <em>bar <a href="/uri">baz</a></em>]<a href="/uri">ref</a></p>
+    html: <p>[foo <em>bar <a href="/uri">baz</a></em>]<a href="/uri">ref</a></p>
   - title: Links - example 533
     mdast:
       type: root
@@ -10981,8 +10914,7 @@ cases:
       *[foo*][ref]
 
       [ref]: /uri
-    html: |-
-      <p>*<a href="/uri">foo*</a></p>
+    html: <p>*<a href="/uri">foo*</a></p>
   - title: Links - example 534
     mdast:
       type: root
@@ -11000,8 +10932,7 @@ cases:
       [foo *bar][ref]*
 
       [ref]: /uri
-    html: |-
-      <p><a href="/uri">foo *bar</a>*</p>
+    html: <p><a href="/uri">foo *bar</a>*</p>
   - title: Links - example 535
     mdast:
       type: root
@@ -11016,8 +10947,7 @@ cases:
       [foo <bar attr="][ref]">
 
       [ref]: /uri
-    html: |-
-      <p>[foo <bar attr="][ref]"></p>
+    html: <p>[foo <bar attr="][ref]"></p>
   - title: Links - example 536
     mdast:
       type: root
@@ -11032,8 +10962,7 @@ cases:
       [foo`][ref]`
 
       [ref]: /uri
-    html: |-
-      <p>[foo<code>][ref]</code></p>
+    html: <p>[foo<code>][ref]</code></p>
   - title: Links - example 537
     mdast:
       type: root
@@ -11070,8 +10999,7 @@ cases:
       [foo][BaR]
 
       [bar]: /url "title"
-    html: |-
-      <p><a href="/url" title="title">foo</a></p>
+    html: <p><a href="/url" title="title">foo</a></p>
   - title: Links - example 539
     mdast:
       type: root
@@ -11087,8 +11015,7 @@ cases:
       [ẞ]
 
       [SS]: /url
-    html: |-
-      <p><a href="/url">ẞ</a></p>
+    html: <p><a href="/url">ẞ</a></p>
   - title: Links - example 540
     mdast:
       type: root
@@ -11105,8 +11032,7 @@ cases:
         bar]: /url
 
       [Baz][Foo bar]
-    html: |-
-      <p><a href="/url">Baz</a></p>
+    html: <p><a href="/url">Baz</a></p>
   - title: Links - example 541
     mdast:
       type: root
@@ -11125,8 +11051,7 @@ cases:
       [foo] [bar]
 
       [bar]: /url "title"
-    html: |-
-      <p>[foo] <a href="/url" title="title">bar</a></p>
+    html: <p>[foo] <a href="/url" title="title">bar</a></p>
   - title: Links - example 542
     mdast:
       type: root
@@ -11167,8 +11092,7 @@ cases:
       [foo]: /url2
 
       [bar][foo]
-    html: |-
-      <p><a href="/url1">bar</a></p>
+    html: <p><a href="/url1">bar</a></p>
   - title: Links - example 544
     mdast:
       type: root
@@ -11181,8 +11105,7 @@ cases:
       [bar][foo\!]
 
       [foo!]: /url
-    html: |-
-      <p>[bar][foo!]</p>
+    html: <p>[bar][foo!]</p>
   - title: Links - example 545
     mdast:
       type: root
@@ -11255,8 +11178,7 @@ cases:
       [foo][ref\[]
 
       [ref\[]: /uri
-    html: |-
-      <p><a href="/uri">foo</a></p>
+    html: <p><a href="/uri">foo</a></p>
   - title: Links - example 549
     mdast:
       type: root
@@ -11272,8 +11194,7 @@ cases:
       [bar\\]: /uri
 
       [bar\\]
-    html: |-
-      <p><a href="/uri">bar\</a></p>
+    html: <p><a href="/uri">bar\</a></p>
   - title: Links - example 550
     mdast:
       type: root
@@ -11336,8 +11257,7 @@ cases:
       [foo][]
 
       [foo]: /url "title"
-    html: |-
-      <p><a href="/url" title="title">foo</a></p>
+    html: <p><a href="/url" title="title">foo</a></p>
   - title: Links - example 553
     mdast:
       type: root
@@ -11358,8 +11278,7 @@ cases:
       [*foo* bar][]
 
       [*foo* bar]: /url "title"
-    html: |-
-      <p><a href="/url" title="title"><em>foo</em> bar</a></p>
+    html: <p><a href="/url" title="title"><em>foo</em> bar</a></p>
   - title: Links - example 554
     mdast:
       type: root
@@ -11376,8 +11295,7 @@ cases:
       [Foo][]
 
       [foo]: /url "title"
-    html: |-
-      <p><a href="/url" title="title">Foo</a></p>
+    html: <p><a href="/url" title="title">Foo</a></p>
   - title: Links - example 555
     mdast:
       type: root
@@ -11418,8 +11336,7 @@ cases:
       [foo]
 
       [foo]: /url "title"
-    html: |-
-      <p><a href="/url" title="title">foo</a></p>
+    html: <p><a href="/url" title="title">foo</a></p>
   - title: Links - example 557
     mdast:
       type: root
@@ -11440,8 +11357,7 @@ cases:
       [*foo* bar]
 
       [*foo* bar]: /url "title"
-    html: |-
-      <p><a href="/url" title="title"><em>foo</em> bar</a></p>
+    html: <p><a href="/url" title="title"><em>foo</em> bar</a></p>
   - title: Links - example 558
     mdast:
       type: root
@@ -11466,8 +11382,7 @@ cases:
       [[*foo* bar]]
 
       [*foo* bar]: /url "title"
-    html: |-
-      <p>[<a href="/url" title="title"><em>foo</em> bar</a>]</p>
+    html: <p>[<a href="/url" title="title"><em>foo</em> bar</a>]</p>
   - title: Links - example 559
     mdast:
       type: root
@@ -11485,8 +11400,7 @@ cases:
       [[bar [foo]
 
       [foo]: /url
-    html: |-
-      <p>[[bar <a href="/url">foo</a></p>
+    html: <p>[[bar <a href="/url">foo</a></p>
   - title: Links - example 560
     mdast:
       type: root
@@ -11503,8 +11417,7 @@ cases:
       [Foo]
 
       [foo]: /url "title"
-    html: |-
-      <p><a href="/url" title="title">Foo</a></p>
+    html: <p><a href="/url" title="title">Foo</a></p>
   - title: Links - example 561
     mdast:
       type: root
@@ -11522,8 +11435,7 @@ cases:
       [foo] bar
 
       [foo]: /url
-    html: |-
-      <p><a href="/url">foo</a> bar</p>
+    html: <p><a href="/url">foo</a> bar</p>
   - title: Links - example 562
     mdast:
       type: root
@@ -11536,8 +11448,7 @@ cases:
       \[foo]
 
       [foo]: /url "title"
-    html: |-
-      <p>[foo]</p>
+    html: <p>[foo]</p>
   - title: Links - example 563
     mdast:
       type: root
@@ -11555,8 +11466,7 @@ cases:
       [foo*]: /url
 
       *[foo*]
-    html: |-
-      <p>*<a href="/url">foo*</a></p>
+    html: <p>*<a href="/url">foo*</a></p>
   - title: Links - example 564
     mdast:
       type: root
@@ -11573,8 +11483,7 @@ cases:
 
       [foo]: /url1
       [bar]: /url2
-    html: |-
-      <p><a href="/url2">foo</a></p>
+    html: <p><a href="/url2">foo</a></p>
   - title: Links - example 565
     mdast:
       type: root
@@ -11590,8 +11499,7 @@ cases:
       [foo][]
 
       [foo]: /url1
-    html: |-
-      <p><a href="/url1">foo</a></p>
+    html: <p><a href="/url1">foo</a></p>
   - title: Links - example 566
     mdast:
       type: root
@@ -11607,8 +11515,7 @@ cases:
       [foo]()
 
       [foo]: /url1
-    html: |-
-      <p><a href="">foo</a></p>
+    html: <p><a href="">foo</a></p>
   - title: Links - example 567
     mdast:
       type: root
@@ -11626,8 +11533,7 @@ cases:
       [foo](not a link)
 
       [foo]: /url1
-    html: |-
-      <p><a href="/url1">foo</a>(not a link)</p>
+    html: <p><a href="/url1">foo</a>(not a link)</p>
   - title: Links - example 568
     mdast:
       type: root
@@ -11645,8 +11551,7 @@ cases:
       [foo][bar][baz]
 
       [baz]: /url
-    html: |-
-      <p>[foo]<a href="/url">bar</a></p>
+    html: <p>[foo]<a href="/url">bar</a></p>
   - title: Links - example 569
     mdast:
       type: root
@@ -11668,8 +11573,7 @@ cases:
 
       [baz]: /url1
       [bar]: /url2
-    html: |-
-      <p><a href="/url2">foo</a><a href="/url1">baz</a></p>
+    html: <p><a href="/url2">foo</a><a href="/url1">baz</a></p>
   - title: Links - example 570
     mdast:
       type: root
@@ -11688,8 +11592,7 @@ cases:
 
       [baz]: /url1
       [foo]: /url2
-    html: |-
-      <p>[foo]<a href="/url1">bar</a></p>
+    html: <p>[foo]<a href="/url1">bar</a></p>
   - title: Images - example 571
     mdast:
       type: root
@@ -11702,8 +11605,7 @@ cases:
               title: title
     myst: |
       ![foo](/url "title")
-    html: |-
-      <p><img src="/url" alt="foo" title="title" /></p>
+    html: <p><img src="/url" alt="foo" title="title" /></p>
   - title: Images - example 572
     mdast:
       type: root
@@ -11718,8 +11620,7 @@ cases:
       ![foo *bar*]
 
       [foo *bar*]: train.jpg "train & tracks"
-    html: |-
-      <p><img src="train.jpg" alt="foo bar" title="train &amp; tracks" /></p>
+    html: <p><img src="train.jpg" alt="foo bar" title="train &amp; tracks" /></p>
   - title: Images - example 573
     mdast:
       type: root
@@ -11731,8 +11632,7 @@ cases:
               alt: foo bar
     myst: |
       ![foo ![bar](/url)](/url2)
-    html: |-
-      <p><img src="/url2" alt="foo bar" /></p>
+    html: <p><img src="/url2" alt="foo bar" /></p>
   - title: Images - example 574
     mdast:
       type: root
@@ -11744,8 +11644,7 @@ cases:
               alt: foo bar
     myst: |
       ![foo [bar](/url)](/url2)
-    html: |-
-      <p><img src="/url2" alt="foo bar" /></p>
+    html: <p><img src="/url2" alt="foo bar" /></p>
   - title: Images - example 575
     mdast:
       type: root
@@ -11760,8 +11659,7 @@ cases:
       ![foo *bar*][]
 
       [foo *bar*]: train.jpg "train & tracks"
-    html: |-
-      <p><img src="train.jpg" alt="foo bar" title="train &amp; tracks" /></p>
+    html: <p><img src="train.jpg" alt="foo bar" title="train &amp; tracks" /></p>
   - title: Images - example 576
     mdast:
       type: root
@@ -11776,8 +11674,7 @@ cases:
       ![foo *bar*][foobar]
 
       [FOOBAR]: train.jpg "train & tracks"
-    html: |-
-      <p><img src="train.jpg" alt="foo bar" title="train &amp; tracks" /></p>
+    html: <p><img src="train.jpg" alt="foo bar" title="train &amp; tracks" /></p>
   - title: Images - example 577
     mdast:
       type: root
@@ -11789,8 +11686,7 @@ cases:
               alt: foo
     myst: |
       ![foo](train.jpg)
-    html: |-
-      <p><img src="train.jpg" alt="foo" /></p>
+    html: <p><img src="train.jpg" alt="foo" /></p>
   - title: Images - example 578
     mdast:
       type: root
@@ -11805,8 +11701,7 @@ cases:
               title: title
     myst: |
       My ![foo bar](/path/to/train.jpg  "title"   )
-    html: |-
-      <p>My <img src="/path/to/train.jpg" alt="foo bar" title="title" /></p>
+    html: <p>My <img src="/path/to/train.jpg" alt="foo bar" title="title" /></p>
   - title: Images - example 579
     mdast:
       type: root
@@ -11818,8 +11713,7 @@ cases:
               alt: foo
     myst: |
       ![foo](<url>)
-    html: |-
-      <p><img src="url" alt="foo" /></p>
+    html: <p><img src="url" alt="foo" /></p>
   - title: Images - example 580
     mdast:
       type: root
@@ -11830,8 +11724,7 @@ cases:
               url: /url
     myst: |
       ![](/url)
-    html: |-
-      <p><img src="/url" alt="" /></p>
+    html: <p><img src="/url" alt="" /></p>
   - title: Images - example 581
     mdast:
       type: root
@@ -11845,8 +11738,7 @@ cases:
       ![foo][bar]
 
       [bar]: /url
-    html: |-
-      <p><img src="/url" alt="foo" /></p>
+    html: <p><img src="/url" alt="foo" /></p>
   - title: Images - example 582
     mdast:
       type: root
@@ -11860,8 +11752,7 @@ cases:
       ![foo][bar]
 
       [BAR]: /url
-    html: |-
-      <p><img src="/url" alt="foo" /></p>
+    html: <p><img src="/url" alt="foo" /></p>
   - title: Images - example 583
     mdast:
       type: root
@@ -11876,8 +11767,7 @@ cases:
       ![foo][]
 
       [foo]: /url "title"
-    html: |-
-      <p><img src="/url" alt="foo" title="title" /></p>
+    html: <p><img src="/url" alt="foo" title="title" /></p>
   - title: Images - example 584
     mdast:
       type: root
@@ -11892,8 +11782,7 @@ cases:
       ![*foo* bar][]
 
       [*foo* bar]: /url "title"
-    html: |-
-      <p><img src="/url" alt="foo bar" title="title" /></p>
+    html: <p><img src="/url" alt="foo bar" title="title" /></p>
   - title: Images - example 585
     mdast:
       type: root
@@ -11908,8 +11797,7 @@ cases:
       ![Foo][]
 
       [foo]: /url "title"
-    html: |-
-      <p><img src="/url" alt="Foo" title="title" /></p>
+    html: <p><img src="/url" alt="Foo" title="title" /></p>
   - title: Images - example 586
     mdast:
       type: root
@@ -11946,8 +11834,7 @@ cases:
       ![foo]
 
       [foo]: /url "title"
-    html: |-
-      <p><img src="/url" alt="foo" title="title" /></p>
+    html: <p><img src="/url" alt="foo" title="title" /></p>
   - title: Images - example 588
     mdast:
       type: root
@@ -11962,8 +11849,7 @@ cases:
       ![*foo* bar]
 
       [*foo* bar]: /url "title"
-    html: |-
-      <p><img src="/url" alt="foo bar" title="title" /></p>
+    html: <p><img src="/url" alt="foo bar" title="title" /></p>
   - title: Images - example 589
     mdast:
       type: root
@@ -11997,8 +11883,7 @@ cases:
       ![Foo]
 
       [foo]: /url "title"
-    html: |-
-      <p><img src="/url" alt="Foo" title="title" /></p>
+    html: <p><img src="/url" alt="Foo" title="title" /></p>
   - title: Images - example 591
     mdast:
       type: root
@@ -12011,8 +11896,7 @@ cases:
       !\[foo]
 
       [foo]: /url "title"
-    html: |-
-      <p>![foo]</p>
+    html: <p>![foo]</p>
   - title: Images - example 592
     mdast:
       type: root
@@ -12031,8 +11915,7 @@ cases:
       \![foo]
 
       [foo]: /url "title"
-    html: |-
-      <p>!<a href="/url" title="title">foo</a></p>
+    html: <p>!<a href="/url" title="title">foo</a></p>
   - title: Autolinks - example 593
     mdast:
       type: root
@@ -12046,8 +11929,7 @@ cases:
                   value: http://foo.bar.baz
     myst: |
       <http://foo.bar.baz>
-    html: |-
-      <p><a href="http://foo.bar.baz">http://foo.bar.baz</a></p>
+    html: <p><a href="http://foo.bar.baz">http://foo.bar.baz</a></p>
   - title: Autolinks - example 594
     mdast:
       type: root
@@ -12077,8 +11959,7 @@ cases:
                   value: irc://foo.bar:2233/baz
     myst: |
       <irc://foo.bar:2233/baz>
-    html: |-
-      <p><a href="irc://foo.bar:2233/baz">irc://foo.bar:2233/baz</a></p>
+    html: <p><a href="irc://foo.bar:2233/baz">irc://foo.bar:2233/baz</a></p>
   - title: Autolinks - example 596
     mdast:
       type: root
@@ -12092,8 +11973,7 @@ cases:
                   value: MAILTO:FOO@BAR.BAZ
     myst: |
       <MAILTO:FOO@BAR.BAZ>
-    html: |-
-      <p><a href="MAILTO:FOO@BAR.BAZ">MAILTO:FOO@BAR.BAZ</a></p>
+    html: <p><a href="MAILTO:FOO@BAR.BAZ">MAILTO:FOO@BAR.BAZ</a></p>
   - title: Autolinks - example 597
     mdast:
       type: root
@@ -12107,8 +11987,7 @@ cases:
                   value: a+b+c:d
     myst: |
       <a+b+c:d>
-    html: |-
-      <p><a href="a+b+c:d">a+b+c:d</a></p>
+    html: <p><a href="a+b+c:d">a+b+c:d</a></p>
   - title: Autolinks - example 598
     mdast:
       type: root
@@ -12122,8 +12001,7 @@ cases:
                   value: made-up-scheme://foo,bar
     myst: |
       <made-up-scheme://foo,bar>
-    html: |-
-      <p><a href="made-up-scheme://foo,bar">made-up-scheme://foo,bar</a></p>
+    html: <p><a href="made-up-scheme://foo,bar">made-up-scheme://foo,bar</a></p>
   - title: Autolinks - example 599
     mdast:
       type: root
@@ -12137,8 +12015,7 @@ cases:
                   value: http://../
     myst: |
       <http://../>
-    html: |-
-      <p><a href="http://../">http://../</a></p>
+    html: <p><a href="http://../">http://../</a></p>
   - title: Autolinks - example 600
     mdast:
       type: root
@@ -12152,8 +12029,7 @@ cases:
                   value: localhost:5001/foo
     myst: |
       <localhost:5001/foo>
-    html: |-
-      <p><a href="localhost:5001/foo">localhost:5001/foo</a></p>
+    html: <p><a href="localhost:5001/foo">localhost:5001/foo</a></p>
   - title: Autolinks - example 601
     mdast:
       type: root
@@ -12164,8 +12040,7 @@ cases:
               value: <http://foo.bar/baz bim>
     myst: |
       <http://foo.bar/baz bim>
-    html: |-
-      <p>&lt;http://foo.bar/baz bim&gt;</p>
+    html: <p>&lt;http://foo.bar/baz bim&gt;</p>
   - title: Autolinks - example 602
     mdast:
       type: root
@@ -12179,8 +12054,7 @@ cases:
                   value: http://example.com/\[\
     myst: |
       <http://example.com/\[\>
-    html: |-
-      <p><a href="http://example.com/%5C%5B%5C">http://example.com/\[\</a></p>
+    html: <p><a href="http://example.com/%5C%5B%5C">http://example.com/\[\</a></p>
   - title: Autolinks - example 603
     mdast:
       type: root
@@ -12194,8 +12068,7 @@ cases:
                   value: foo@bar.example.com
     myst: |
       <foo@bar.example.com>
-    html: |-
-      <p><a href="mailto:foo@bar.example.com">foo@bar.example.com</a></p>
+    html: <p><a href="mailto:foo@bar.example.com">foo@bar.example.com</a></p>
   - title: Autolinks - example 604
     mdast:
       type: root
@@ -12222,8 +12095,7 @@ cases:
               value: <foo+@bar.example.com>
     myst: |
       <foo\+@bar.example.com>
-    html: |-
-      <p>&lt;foo+@bar.example.com&gt;</p>
+    html: <p>&lt;foo+@bar.example.com&gt;</p>
   - title: Autolinks - example 606
     mdast:
       type: root
@@ -12234,8 +12106,7 @@ cases:
               value: <>
     myst: |
       <>
-    html: |-
-      <p>&lt;&gt;</p>
+    html: <p>&lt;&gt;</p>
   - title: Autolinks - example 607
     mdast:
       type: root
@@ -12246,8 +12117,7 @@ cases:
               value: < http://foo.bar >
     myst: |
       < http://foo.bar >
-    html: |-
-      <p>&lt; http://foo.bar &gt;</p>
+    html: <p>&lt; http://foo.bar &gt;</p>
   - title: Autolinks - example 608
     mdast:
       type: root
@@ -12258,8 +12128,7 @@ cases:
               value: <m:abc>
     myst: |
       <m:abc>
-    html: |-
-      <p>&lt;m:abc&gt;</p>
+    html: <p>&lt;m:abc&gt;</p>
   - title: Autolinks - example 609
     mdast:
       type: root
@@ -12270,8 +12139,7 @@ cases:
               value: <foo.bar.baz>
     myst: |
       <foo.bar.baz>
-    html: |-
-      <p>&lt;foo.bar.baz&gt;</p>
+    html: <p>&lt;foo.bar.baz&gt;</p>
   - title: Autolinks - example 610
     mdast:
       type: root
@@ -12282,8 +12150,7 @@ cases:
               value: http://example.com
     myst: |
       http://example.com
-    html: |-
-      <p>http://example.com</p>
+    html: <p>http://example.com</p>
   - title: Autolinks - example 611
     mdast:
       type: root
@@ -12294,8 +12161,7 @@ cases:
               value: foo@bar.example.com
     myst: |
       foo@bar.example.com
-    html: |-
-      <p>foo@bar.example.com</p>
+    html: <p>foo@bar.example.com</p>
   - title: Raw HTML - example 612
     mdast:
       type: root
@@ -12310,8 +12176,7 @@ cases:
               value: <c2c>
     myst: |
       <a><bab><c2c>
-    html: |-
-      <p><a><bab><c2c></p>
+    html: <p><a><bab><c2c></p>
   - title: Raw HTML - example 613
     mdast:
       type: root
@@ -12324,8 +12189,7 @@ cases:
               value: <b2/>
     myst: |
       <a/><b2/>
-    html: |-
-      <p><a/><b2/></p>
+    html: <p><a/><b2/></p>
   - title: Raw HTML - example 614
     mdast:
       type: root
@@ -12372,8 +12236,7 @@ cases:
               value: <responsive-image src="foo.jpg" />
     myst: |
       Foo <responsive-image src="foo.jpg" />
-    html: |-
-      <p>Foo <responsive-image src="foo.jpg" /></p>
+    html: <p>Foo <responsive-image src="foo.jpg" /></p>
   - title: Raw HTML - example 617
     mdast:
       type: root
@@ -12384,8 +12247,7 @@ cases:
               value: <33> <__>
     myst: |
       <33> <__>
-    html: |-
-      <p>&lt;33&gt; &lt;__&gt;</p>
+    html: <p>&lt;33&gt; &lt;__&gt;</p>
   - title: Raw HTML - example 618
     mdast:
       type: root
@@ -12396,8 +12258,7 @@ cases:
               value: <a h*#ref="hi">
     myst: |
       <a h*#ref="hi">
-    html: |-
-      <p>&lt;a h*#ref=&quot;hi&quot;&gt;</p>
+    html: <p>&lt;a h*#ref=&quot;hi&quot;&gt;</p>
   - title: Raw HTML - example 619
     mdast:
       type: root
@@ -12408,8 +12269,7 @@ cases:
               value: <a href="hi'> <a href=hi'>
     myst: |
       <a href="hi'> <a href=hi'>
-    html: |-
-      <p>&lt;a href=&quot;hi'&gt; &lt;a href=hi'&gt;</p>
+    html: <p>&lt;a href=&quot;hi'&gt; &lt;a href=hi'&gt;</p>
   - title: Raw HTML - example 620
     mdast:
       type: root
@@ -12442,8 +12302,7 @@ cases:
               value: <a href='bar'title=title>
     myst: |
       <a href='bar'title=title>
-    html: |-
-      <p>&lt;a href='bar'title=title&gt;</p>
+    html: <p>&lt;a href='bar'title=title&gt;</p>
   - title: Raw HTML - example 622
     mdast:
       type: root
@@ -12456,8 +12315,7 @@ cases:
               value: </foo >
     myst: |
       </a></foo >
-    html: |-
-      <p></a></foo ></p>
+    html: <p></a></foo ></p>
   - title: Raw HTML - example 623
     mdast:
       type: root
@@ -12468,8 +12326,7 @@ cases:
               value: </a href="foo">
     myst: |
       </a href="foo">
-    html: |-
-      <p>&lt;/a href=&quot;foo&quot;&gt;</p>
+    html: <p>&lt;/a href=&quot;foo&quot;&gt;</p>
   - title: Raw HTML - example 624
     mdast:
       type: root
@@ -12498,8 +12355,7 @@ cases:
               value: foo <!-- not a comment -- two hyphens -->
     myst: |
       foo <!-- not a comment -- two hyphens -->
-    html: |-
-      <p>foo &lt;!-- not a comment -- two hyphens --&gt;</p>
+    html: <p>foo &lt;!-- not a comment -- two hyphens --&gt;</p>
   - title: Raw HTML - example 626
     mdast:
       type: root
@@ -12531,8 +12387,7 @@ cases:
               value: <?php echo $a; ?>
     myst: |
       foo <?php echo $a; ?>
-    html: |-
-      <p>foo <?php echo $a; ?></p>
+    html: <p>foo <?php echo $a; ?></p>
   - title: Raw HTML - example 628
     mdast:
       type: root
@@ -12545,8 +12400,7 @@ cases:
               value: <!ELEMENT br EMPTY>
     myst: |
       foo <!ELEMENT br EMPTY>
-    html: |-
-      <p>foo <!ELEMENT br EMPTY></p>
+    html: <p>foo <!ELEMENT br EMPTY></p>
   - title: Raw HTML - example 629
     mdast:
       type: root
@@ -12559,8 +12413,7 @@ cases:
               value: <![CDATA[>&<]]>
     myst: |
       foo <![CDATA[>&<]]>
-    html: |-
-      <p>foo <![CDATA[>&<]]></p>
+    html: <p>foo <![CDATA[>&<]]></p>
   - title: Raw HTML - example 630
     mdast:
       type: root
@@ -12573,8 +12426,7 @@ cases:
               value: <a href="&ouml;">
     myst: |
       foo <a href="&ouml;">
-    html: |-
-      <p>foo <a href="&ouml;"></p>
+    html: <p>foo <a href="&ouml;"></p>
   - title: Raw HTML - example 631
     mdast:
       type: root
@@ -12587,8 +12439,7 @@ cases:
               value: <a href="\*">
     myst: |
       foo <a href="\*">
-    html: |-
-      <p>foo <a href="\*"></p>
+    html: <p>foo <a href="\*"></p>
   - title: Raw HTML - example 632
     mdast:
       type: root
@@ -12599,8 +12450,7 @@ cases:
               value: <a href=""">
     myst: |
       <a href="\"">
-    html: |-
-      <p>&lt;a href=&quot;&quot;&quot;&gt;</p>
+    html: <p>&lt;a href=&quot;&quot;&quot;&gt;</p>
   - title: Hard line breaks - example 633
     mdast:
       type: root
@@ -12735,8 +12585,7 @@ cases:
     myst: |
       `code  
       span`
-    html: |-
-      <p><code>code   span</code></p>
+    html: <p><code>code   span</code></p>
   - title: Hard line breaks - example 641
     mdast:
       type: root
@@ -12748,8 +12597,7 @@ cases:
     myst: |
       `code\
       span`
-    html: |-
-      <p><code>code\ span</code></p>
+    html: <p><code>code\ span</code></p>
   - title: Hard line breaks - example 642
     mdast:
       type: root
@@ -12792,8 +12640,7 @@ cases:
               value: foo\
     myst: |
       foo\
-    html: |-
-      <p>foo\</p>
+    html: <p>foo\</p>
   - title: Hard line breaks - example 645
     mdast:
       type: root
@@ -12804,8 +12651,7 @@ cases:
               value: foo
     myst: |
       foo
-    html: |-
-      <p>foo</p>
+    html: <p>foo</p>
   - title: Hard line breaks - example 646
     mdast:
       type: root
@@ -12817,8 +12663,7 @@ cases:
               value: foo\
     myst: |
       ### foo\
-    html: |-
-      <h3>foo\</h3>
+    html: <h3>foo\</h3>
   - title: Hard line breaks - example 647
     mdast:
       type: root
@@ -12830,8 +12675,7 @@ cases:
               value: foo
     myst: |
       ### foo
-    html: |-
-      <h3>foo</h3>
+    html: <h3>foo</h3>
   - title: Soft line breaks - example 648
     mdast:
       type: root
@@ -12874,8 +12718,7 @@ cases:
               value: hello $.;'there
     myst: |
       hello $.;'there
-    html: |-
-      <p>hello $.;'there</p>
+    html: <p>hello $.;'there</p>
   - title: Textual content - example 651
     mdast:
       type: root
@@ -12886,8 +12729,7 @@ cases:
               value: Foo χρῆν
     myst: |
       Foo χρῆν
-    html: |-
-      <p>Foo χρῆν</p>
+    html: <p>Foo χρῆν</p>
   - title: Textual content - example 652
     mdast:
       type: root
@@ -12898,5 +12740,4 @@ cases:
               value: Multiple     spaces
     myst: |
       Multiple     spaces
-    html: |-
-      <p>Multiple     spaces</p>
+    html: <p>Multiple     spaces</p>

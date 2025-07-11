@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "module": "esnext",
+    "types": [],
+    "composite": true,
+    "declaration": true,
+    "declarationMap": true,
+    "noEmitOnError": true,
+    "skipLibCheck": true,
+    "emitDeclarationOnly": true
+  },
+  "extends": "../tsconfig.json",
+  "include": ["./**/*"]
+}
