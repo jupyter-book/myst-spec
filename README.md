@@ -1,5 +1,8 @@
 # MyST Spec
 
+> [!Important]
+> The myst-spec is currently being transferred to the main https://github.com/jupyter-book/mystmd repository.
+
 > :warning: The MyST AST specification is still in dev; any structures or features present in the JSON schema may change at any time without notice.
 
 MyST (Markedly Structured Text) is designed to create publication-quality, computational documents written entirely in Markdown. The main use case driving the development and design of MyST is [JupyterBook](https://jupyterbook.org/), which creates educational online textbooks and tutorials with Jupyter Notebooks and narrative content written in MyST.
