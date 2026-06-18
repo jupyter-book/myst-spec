@@ -10,13 +10,17 @@ cases:
             - type: listItem
               spread: true
               children:
-                - type: text
-                  value: headings
+                - type: paragraph
+                  children:
+                    - type: text
+                      value: headings
             - type: listItem
               spread: true
               children:
-                - type: text
-                  value: lists
+                - type: paragraph
+                  children:
+                    - type: text
+                      value: lists
                 - type: list
                   ordered: false
                   spread: false
@@ -24,18 +28,24 @@ cases:
                     - type: listItem
                       spread: true
                       children:
-                        - type: text
-                          value: bullets
+                        - type: paragraph
+                          children:
+                            - type: text
+                              value: bullets
                     - type: listItem
                       spread: true
                       children:
-                        - type: text
-                          value: numbers
+                        - type: paragraph
+                          children:
+                            - type: text
+                              value: numbers
             - type: listItem
               spread: true
               children:
-                - type: text
-                  value: code blocks
+                - type: paragraph
+                  children:
+                    - type: text
+                      value: code blocks
     myst: |-
       - headings
       - lists
@@ -76,18 +86,24 @@ cases:
             - type: listItem
               spread: true
               children:
-                - type: text
-                  value: quotes
+                - type: paragraph
+                  children:
+                    - type: text
+                      value: quotes
             - type: listItem
               spread: true
               children:
-                - type: text
-                  value: breaks
+                - type: paragraph
+                  children:
+                    - type: text
+                      value: breaks
             - type: listItem
               spread: true
               children:
-                - type: text
-                  value: links
+                - type: paragraph
+                  children:
+                    - type: text
+                      value: links
     myst: |-
       1. quotes
       2. breaks

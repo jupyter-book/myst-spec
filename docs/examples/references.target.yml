@@ -1,6 +1,6 @@
 cases:
   - title: Header with id label
-    id: target
+    id: mystTarget
     mdast:
       type: root
       children:
@@ -14,5 +14,4 @@ cases:
     myst: |-
       (my_ID)=
       # My Header
-    html: |-
-      <h1 id="my_id">My Header</h1>
+    html: <h1 id="my_id">My Header</h1>

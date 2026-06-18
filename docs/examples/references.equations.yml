@@ -15,6 +15,7 @@ cases:
                   kind: eq
                   identifier: matrix
                   label: '  matrix  '
+                  children: []
         - type: mystDirective
           name: figure
           args: fig.jpg
@@ -44,8 +45,10 @@ cases:
 
       Cool caption!
       ```
-    html: |-
-      <p>see <span class="reference role unhandled"><code class="kind">{eq}</code><code>matrix</code></span></p>
+    html: >-
+      <p>see <span class="reference role unhandled"><code
+      class="kind">{eq}</code><code>matrix</code></span></p>
+
       <figure id="matrix" class="numbered">
         <img src="fig.jpg">
         <figcaption>
@@ -68,6 +71,7 @@ cases:
                   kind: eq
                   identifier: matrix
                   label: matrix
+                  children: []
         - type: mystDirective
           name: math
           options:
@@ -77,8 +81,7 @@ cases:
             - type: math
               identifier: matrix
               label: matrix
-              value: |-
-                Ax = b
+              value: Ax = b
     myst: |-
 
       see {eq}`matrix`
@@ -110,8 +113,7 @@ cases:
             - type: math
               identifier: matrix
               label: matrix
-              value: |-
-                Ax = b
+              value: Ax = b
     myst: |-
 
       see [](matrix)

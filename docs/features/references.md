@@ -22,13 +22,13 @@ Cross-referencing content is accomplished with markdown link syntax (`[text](#li
 
 ### Specification
 
-```{include} ../nodes/crossreference.md
+```{embed} spec:crossreference
 
 ```
 
 ### Example
 
-```{include} ../examples/crossreference.md
+```{embed} example:crossreference
 
 ```
 
@@ -135,13 +135,13 @@ Placing a Target node allows you to cross reference the subsequent node by targe
 
 ### Specification
 
-```{include} ../nodes/target.md
+```{embed} spec:target
 
 ```
 
 ### Example
 
-```{include} ../examples/target.md
+```{embed} example:target
 
 ```
 

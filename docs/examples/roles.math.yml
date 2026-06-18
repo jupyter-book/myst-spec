@@ -1,6 +1,6 @@
 cases:
   - title: Math role
-    id: inlinemath
+    id: inlineMath
     mdast:
       type: root
       children:
@@ -14,7 +14,5 @@ cases:
               children:
                 - type: inlineMath
                   value: e=mc^2
-    myst: |-
-      This is genius {math}`e=mc^2`
-    html: |-
-      <p>This is genius <span class="math-inline">e=mc^2</span></p>
+    myst: This is genius {math}`e=mc^2`
+    html: <p>This is genius <span class="math-inline">e=mc^2</span></p>

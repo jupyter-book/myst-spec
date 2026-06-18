@@ -16,13 +16,13 @@ Directives are multi-line containers that include an identifier, arguments, opti
 
 #### Specification
 
-```{include} ../nodes/directive.md
+```{embed} spec:directive
 
 ```
 
 #### Example
 
-```{include} ../examples/directive.md
+```{embed} example:directive
 
 ```
 
@@ -75,13 +75,13 @@ Roles are very similar to directives, but they are written entirely in one line.
 
 #### Specification
 
-```{include} ../nodes/role.md
+```{embed} spec:role
 
 ```
 
 #### Example
 
-```{include} ../examples/role.md
+```{embed} example:role
 
 ```
 

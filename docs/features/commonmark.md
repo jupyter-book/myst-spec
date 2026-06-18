@@ -8,11 +8,11 @@ MyST (Markedly Structured Text) was designed to make it easier to create publish
 
 ### Headings
 
-```{include} ../nodes/heading.md
+```{embed} spec:heading
 
 ```
 
-```{include} ../examples/heading.md
+```{embed} example:heading
 
 ```
 
@@ -22,21 +22,21 @@ Reference headings by preceding headers with a `(label)=`. See [](./references.m
 
 ### Lists
 
-```{include} ../nodes/list.md
+```{embed} spec:list
 
 ```
 
-```{include} ../examples/list.md
+```{embed} example:list
 
 ```
 
 ### Code
 
-```{include} ../nodes/code.md
+```{embed} spec:code
 
 ```
 
-```{include} ../examples/code.md
+```{embed} example:code
 
 ```
 
@@ -49,21 +49,21 @@ Create code-blocks with additional highlighting using the `code-block` directive
 
 ### Blockquotes
 
-```{include} ../nodes/blockquote.md
+```{embed} spec:blockquote
 
 ```
 
-```{include} ../examples/blockquote.md
+```{embed} example:blockquote
 
 ```
 
 ### Thematic Break
 
-```{include} ../nodes/break.md
+```{embed} spec:break
 
 ```
 
-```{include} ../examples/break.md
+```{embed} example:break
 
 ```
 
@@ -74,7 +74,7 @@ which is used to structurally seperate content.
 
 ### Link Definitions
 
-```{include} ../nodes/definition.md
+```{embed} spec:definition
 
 ```
 
@@ -85,21 +85,21 @@ This syntax is also similar to [](./footnotes.md).
 
 ### Paragraph
 
-```{include} ../nodes/paragraph.md
+```{embed} spec:paragraph
 
 ```
 
-```{include} ../examples/paragraph.md
+```{embed} example:paragraph
 
 ```
 
 ### Valid HTML
 
-```{include} ../nodes/html.md
+```{embed} spec:html
 
 ```
 
-```{include} ../examples/html.md
+```{embed} example:html
 
 ```
 
@@ -109,11 +109,11 @@ This syntax is also similar to [](./footnotes.md).
 
 ### Inline links
 
-```{include} ../nodes/link.md
+```{embed} spec:link
 
 ```
 
-```{include} ../examples/link.md
+```{embed} example:link
 
 ```
 
@@ -123,11 +123,11 @@ This syntax is also similar to [](./footnotes.md).
 
 ### Inline images
 
-```{include} ../nodes/image.md
+```{embed} spec:image
 
 ```
 
-```{include} ../examples/image.md
+```{embed} example:image
 
 ```
 
@@ -139,23 +139,23 @@ This syntax is also similar to [](./footnotes.md).
 
 #### Emphasis
 
-```{include} ../nodes/emphasis.md
+```{embed} spec:emphasis
 
 ```
 
 #### Strong
 
-```{include} ../nodes/strong.md
+```{embed} spec:strong
 
 ```
 
 #### Inline Code
 
-```{include} ../nodes/inlinecode.md
+```{embed} spec:inlinecode
 
 ```
 
-```{include} ../examples/formatting.md
+```{embed} example:formatting
 
 ```
 
