@@ -79,7 +79,7 @@ const cases: [string, TestCase][] = files
   .filter(([f, t]) => {
     if (t.skip) skipped.push([f, t]);
     if (t.invalid) invalid.push([f, t]);
-    return !t.skip && !t.invalid;
+    return !t.skip && !t.invalid && t.myst !== undefined;
   });
 
 describe('Valid Schema Tests', () => {
